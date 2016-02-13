@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user_details-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/blog_badge_list.css" />
+
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+		
+
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="user-header">
+
+
+
+
+					<ul class="clearfix" id="userTabs">
+
+						<li class="selected"><a
+							href="${siteurl}user_details.htm?id=${id!'-1'}">个人主页</a></li>
+
+						<li><a
+							href="${siteurl}user_details_lists.htm?id=${id!'-1'}">列表</a></li>
+
+						<li><a
+							href="${siteurl}user_details_reviews_self.htm?id=${id!'-1'}">评语</a></li>
+
+						<li><a
+							href="${siteurl}user_details_quicktips.htm?id=${id!'-1'}">贴士</a></li>
+
+						<li><a
+							href="${siteurl}user_details_thanx.htm?id=${id!'-1'}">赞扬</a></li>
+
+						<li><a
+							href="${siteurl}user_details_friends.htm?id=${id!'-1'}">朋友</a></li>
+
+						<li><a href="${siteurl}user_details_following.htm?id=${id!'-1'}">关注中</a></li>
+
+						<li><a
+							href="${siteurl}user_details_bookmarks.htm?id=${id!'-1'}">收藏</a></li>
+						<li><a
+							href="${siteurl}user_details_events.htm?id=${id!'-1'}">活动</a></li>
+					</ul>
+
+					<div class="about-connections">
+						[#include "user_details_include_top.html"]
+					</div>
+
+				</div>
+
+
+				<div id="user-details" class="container">
+					<div
+						class="clearfix layout-block layout-o layout-border equalize-columns">
+						<div id="user_main_content" class="column column-alpha ">
+
+
+							<div class="clearfix layout-block layout-sub-a">
+								<div id="user_reviews_list" class="column column-sub-alpha ">
+									<div id="empty_reviews">
+										<img
+											style="float: left; vertical-align: middle; margin-right: 20px;"
+											src="[#if userinfo.headimg??]${userinfo.headimg!}[#else]${siteurl}assets/img/header.jpg[/#if]">
+										<p>
+											你未撰写过评语喎。点解唔写噃啲呢？<br>系你做评论家嘅时候啦！
+										</p>
+
+										<p class="aligncent">
+											<a class="ybtn ybtn-primary"
+												href="https://zh.yelp.com.hk/writeareview">写评语</a>
+										</p>
+									</div>
+
+
+								</div>
+								<div id="user_right_column"
+									class="column column-sub-beta equal-columns">
+									<div id="friends_list" class="clearfix module">
+
+										<h3>
+											<a href="/user_details_friends.htm?id=${id!'-1'}">
+												2个朋友 </a>
+										</h3>
+										<div class="clearfix">
+											<div class="friend-passport">
+												<span class="smallest friend-update-status"> &nbsp; </span>
+												<div class="user-passport">
+
+
+
+
+
+													<div class="photo-box pb-ss">
+														<a
+															href="${siteurl}/user_details.htm?userid=jMeX4PJOtELXyRJCnkp4Pg">
+															<img width="40" height="40"
+															src="http://s3-media1.fl.yelpcdn.com/photo/4yPE2mUY-Xybu4pxC3uw-w/ss.jpg"
+															class="photo-box-img" alt="Vincent L.的相片">
+														</a>
+													</div>
+
+													<ul class="user-stats">
+														<li class="friend-count miniOrange"><span
+															class="i-wrap ig-wrap-common i-friends-orange-common-wrap"><i
+																class="i ig-common i-friends-orange-common"></i> 91<span
+																class="offscreen">个朋友</span></span></li>
+														<li class="review-count miniOrange"><span
+															class="i-wrap ig-wrap-common i-star-orange-common-wrap"><i
+																class="i ig-common i-star-orange-common"></i> 26<span
+																class="offscreen">条评语</span></span></li>
+														<li class="is-elite"><a title="用家为精英"
+															href="/elite" class="miniOrange">精英'15</a>
+														</li>
+													</ul>
+
+
+													<ul class="user-passport-info ieSucks">
+														<li class="user-name"><a
+															href="${siteurl}/user_details.htm?userid=jMeX4PJOtELXyRJCnkp4Pg">Vincent
+																L.</a></li>
+													</ul>
+												</div>
+
+
+											</div>
+											<div class="friend-passport">
+												<span class="smallest friend-update-status"> &nbsp; </span>
+												<div class="user-passport">
+
+
+
+
+
+													<div class="photo-box pb-ss">
+														<a
+															href="${siteurl}/user_details.htm?userid=yEJTkeFltGIADeu4sT0OBg">
+															<img width="40" height="40"
+															src="http://s3-media2.fl.yelpcdn.com/photo/8wtSDkbQcEuUeDBkNWI7eQ/ss.jpg"
+															class="photo-box-img" alt="Zixuan C.的相片">
+														</a>
+													</div>
+
+													<ul class="user-stats">
+														<li class="friend-count miniOrange"><span
+															class="i-wrap ig-wrap-common i-friends-orange-common-wrap"><i
+																class="i ig-common i-friends-orange-common"></i> 18<span
+																class="offscreen">个朋友</span></span></li>
+														<li class="review-count miniOrange"><span
+															class="i-wrap ig-wrap-common i-star-orange-common-wrap"><i
+																class="i ig-common i-star-orange-common"></i> 0<span
+																class="offscreen">条评语</span></span></li>
+													</ul>
+
+
+													<ul class="user-passport-info ieSucks">
+														<li class="user-name"><a
+															href="${siteurl}/user_details.htm?userid=yEJTkeFltGIADeu4sT0OBg">Zixuan
+																C.</a></li>
+													</ul>
+												</div>
+
+
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="module" id="comp_teaser">
+										<h3>
+											<a href="/user_details_thanx.htm?id=${id!'-1'}">2个赞扬</a>
+										</h3>
+										<ul class="ylist">
+											<li class="media-block">
+												<div class="media-avatar">
+
+
+
+
+													<div class="photo-box pb-ss">
+														<a href="${siteurl}/user_details.htm?userid=yEJTkeFltGIADeu4sT0OBg">
+															<img width="40" height="40"
+															src="http://s3-media2.fl.yelpcdn.com/photo/8wtSDkbQcEuUeDBkNWI7eQ/ss.jpg"
+															class="photo-box-img" alt="">
+														</a>
+													</div>
+
+												</div>
+												<div class="media-story">
+													<span
+														class="i-wrap ig-wrap-compliments i-funny_20x20-compliments-wrap"><i
+														class="i ig-compliments i-funny_20x20-compliments"></i> 有趣</span>
+													<p>有好</p>
+												</div>
+											</li>
+											<li class="media-block">
+												<div class="media-avatar">
+
+
+
+
+													<div class="photo-box pb-ss">
+														<a href="${siteurl}/user_details.htm?userid=Dsg3INxZtnxOIugsHZsBaA">
+															<img width="40" height="40"
+															src="http://s3-media2.fl.yelpcdn.com/photo/oX4nfwFwRX9DGv7aZWXT8g/ss.jpg"
+															class="photo-box-img" alt="">
+														</a>
+													</div>
+
+												</div>
+												<div class="media-story">
+													<span
+														class="i-wrap ig-wrap-compliments i-note_20x20-compliments-wrap"><i
+														class="i ig-compliments i-note_20x20-compliments"></i>
+														一个简单嘅赞扬</span>
+													<p>
+														Welcome to Yelp Ada! And early happy Chinese New Year! I'm
+														Kevin, your… <a class="read-more"
+															href="/user_details_thanx.htm?id=${id!'-1'}">更多
+															»</a>
+													</p>
+												</div>
+											</li>
+										</ul>
+										<a class="ybtn ybtn-small"
+											href="/user_details_thanx.htm?id=${id!'-1'}">更多
+											»</a>
+									</div>
+
+
+
+
+
+								</div>
+							</div>
+						</div>
+						 [#include "user_details_left.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

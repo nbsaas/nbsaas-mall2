@@ -1,0 +1,48 @@
+package com.openyelp.core.dao.impl;
+
+import org.hibernate.Criteria;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.openyelp.core.dao.ConfigDao;
+import com.openyelp.core.entity.Config;
+import com.openyelp.data.core.BaseDaoImpl;
+import com.openyelp.data.core.Pagination;
+
+@Repository
+public class ConfigDaoImpl extends BaseDaoImpl<Config, Integer> implements ConfigDao {
+	public Pagination getPage(int pageNo, int pageSize) {
+		Criteria crit = createCriteria();
+		Pagination page = findByCriteria(crit, pageNo, pageSize);
+		return page;
+	}
+
+	public Config findById(Integer id) {
+		Config entity = get(id);
+		return entity;
+	}
+
+	public Config save(Config bean) {
+		getSession().save(bean);
+		return bean;
+	}
+
+	public Config deleteById(Integer id) {
+		Config entity = super.get(id);
+		if (entity != null) {
+			getSession().delete(entity);
+		}
+		return entity;
+	}
+	
+	@Override
+	protected Class<Config> getEntityClass() {
+		return Config.class;
+	}
+	
+	@Autowired
+	public void setSuperSessionFactory(SessionFactory sessionFactory){
+	    super.setSessionFactory(sessionFactory);
+	}
+}

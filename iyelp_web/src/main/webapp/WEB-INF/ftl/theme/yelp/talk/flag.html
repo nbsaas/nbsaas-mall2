@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/flag_content.css" />
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container homepage">
+					[#include "/theme/yelp/common/page-header.html"]
+					<div class="clearfix layout-block layout-a layout-border">
+						<div class="content-container" id="super-container">
+
+
+							<div id="alert-container"></div>
+
+
+							<div class="container">
+
+
+								<div class="clearfix page-header">
+									<h1 class="heading">确认举报</h1>
+
+								</div>
+								<div class="clearfix layout-block layout-h">
+									<div class="column column-alpha topic">
+
+										<p>
+											请参考我们的<a href="#">内容指引</a>及<a
+												href="#">服务条款</a>，详细说明为何你认为此内容有可能违反指引。
+										</p>
+
+
+
+
+
+
+
+										<form name="flag_content" method="POST" id="flag-form"
+											data-is-support-center-supported="" data-is-biz-country-us=""
+											class="yform" action="${siteurl}talk/flagsubmit">
+											<input type="hidden"
+												value="7f92db7e2d71f8ac139185e7d91db74920e7f61381a8bfceb05f15544634eae4"
+												class="csrftok" name="csrftok"> <input type="hidden"
+												value="" name="context"> <input type="hidden"
+												value="yFiXb3Lt2aNOP4d4gym0Cw" name="flag_id"> <input
+												type="hidden" value="topic" name="flag_type"> <input
+												type="hidden"
+												value="http://zh.yelp.com.hk/topic/%E9%A6%99%E6%B8%AF-will-yelp-be-in-macau-soon"
+												name="previous_url">
+
+
+											<div class="field ">
+												<label for="reason-field"> 原因： </label> <select
+													class="form200 js-reason-select" name="reason"
+													id="reason-field">
+													<option value="default">请选择其中一项...</option>
+													<option value="R">攻击性评论</option>
+													<option value="M">人身攻击</option>
+													<option value="S">个人资料</option>
+													<option value="C">违法行为</option>
+													<option value="X">垃圾邮件</option>
+													<option value="O">其它</option>
+												</select>
+											</div>
+
+
+
+
+											<div class="js-describe-container">
+												<div class="field " id="field-message">
+
+
+													<label for="message-field">请在下面提供更具体的细节：</label>
+													<textarea name="message" id="message-field"></textarea>
+
+													<input type="hidden" value="" name="offending_biz_user_id">
+													<input type="hidden" value="" name="offending_user_id">
+												</div>
+
+
+											</div>
+
+
+											<div class="js-submit-container">
+												<button class="ybtn ybtn-primary" value="submit"
+													type="submit">
+													<span>举报</span>
+												</button>
+												<a id="cancel-flag"
+													href="http://zh.yelp.com.hk/topic/%E9%A6%99%E6%B8%AF-will-yelp-be-in-macau-soon">取消</a>
+											</div>
+
+										</form>
+
+
+
+
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

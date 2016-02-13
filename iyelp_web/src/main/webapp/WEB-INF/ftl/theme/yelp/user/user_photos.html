@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container homepage">
+					[#include "/theme/yelp/common/page-header.html"]
+					<div class="clearfix layout-block layout-a layout-border"></div>
+
+					<div class="media-landing_header">
+						<div class="ytype section-header media-header">
+							<div class="arrange arrange--12 arrange--bottom">
+								<div class="arrange_unit arrange_unit--fill">
+									<ul class="breadcrumbs">
+										<li><a href="${siteurl}user_details.htm?id=${userinfo.id!''}">${userinfo.name!""}</a></li>
+										<li><span
+											class="i-wrap ig-wrap-common i-breadcrumb-arrow-common-wrap breadcrumb-wrap"><i
+												class="i ig-common i-breadcrumb-arrow-common"></i> 個人檔案相片</span></li>
+									</ul>
+
+									<h1 class="media-header_title h2">${page.totalCount!'0'}張${userinfo.name!""}的相片</h1>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+					<div class="media-landing js-media-landing"
+						data-component-bound="true">
+						<div class="media-landing_gallery photos">
+                          [#if list??]
+							<ul data-starting-index="0"
+								data-media-url="/user_photos/get_media_slice/GbJ9ZDBPXCnl98AZ4Qdcvg"
+								data-media-count="26"
+								data-ga-path="media_lightbox/servlet:user_photos/type:user"
+								data-dfp-type="user" data-dfp-sizes="[[728, 90]]"
+								data-dfp-attributes="[[&quot;city&quot;, &quot;\u9999\u6e2f&quot;], [&quot;signed_in&quot;, &quot;yes&quot;], [&quot;language&quot;, &quot;zh&quot;], [&quot;country&quot;, &quot;hk&quot;], [&quot;section&quot;, &quot;userphotos&quot;], [&quot;dma_code&quot;, &quot;000&quot;], [&quot;sk&quot;, &quot;no&quot;], [&quot;lu&quot;, [&quot;a&quot;]], [&quot;au&quot;, [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]], [&quot;mode&quot;, &quot;live&quot;]]"
+								class="photo-box-grid photo-box-grid--highlight photo-box-grid--small clearfix lightbox-media-parent">
+								[#list list as item]
+								<li data-photo-id="hNPKSuxvRocTq042dwppQg">
+									<div class="photo-box photo-box--interactive">
+
+										<img width="226" height="226"
+											src="${item.url}"
+											class="photo-box-img"
+											alt="Ginkgo Forest at Changping Beijing">
+
+
+
+										<div class="photo-box-overlay js-overlay">
+											<div class="photo-box-overlay_caption">${item.name!"无"}</div>
+										</div>
+
+
+
+
+										<a style="display: none;"
+											href="/user_photos?select=hNPKSuxvRocTq042dwppQg&amp;userid=GbJ9ZDBPXCnl98AZ4Qdcvg"
+											class="biz-shim js-lightbox-media-link"> <span
+											class="offscreen">Ginkgo Forest at Changping Beijing</span>
+										</a>
+
+									</div>
+
+								</li>
+								[/#list]
+							</ul>
+                         [/#if]
+						</div>
+						<div class="media-landing_footer">
+							  [#include "/theme/yelp/common/pageryelp.html"]
+                            [@pager page curpage "${siteurl}user_photos.htm?id=${id}&pagesize=${pagesize}"][/@pager]
+					     
+						</div>
+
+						<div class="throbber-overlay" style="display: none;">
+							<div class="throbber-container"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

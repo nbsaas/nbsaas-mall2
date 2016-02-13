@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/locations.css" />
+		[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container">
+
+					<div class="clearfix page-header">
+						<h1 class="heading">更多地方</h1>
+
+					</div>
+					<div class="clearfix layout-block layout-full">
+						<div class="column column-alpha ">
+
+							<ul class="locations-list">
+								<li class="state">
+								     [@hotarea size=50]
+										<div>[#if city??]${city.name!""}[#else]西安[/#if]</div>
+										<ul id="cities">
+										[#if list??]
+										[#list list as item]
+											<li><a href="${siteurl}city.htm?id=${item.id}">${item.name}</a></li>
+										[/#list]
+										[/#if]
+										</ul>
+									[/@hotarea]
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

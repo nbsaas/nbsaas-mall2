@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>活动</title>
+<link rel="stylesheet" href="assets/css/www-pkg.css" />
+<link rel="stylesheet" href="assets/css/events.css" />
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container landing">
+                   <div id="page-header">
+						<div class="ieSucks clearfix" id="loc-bar"
+							data-component-bound="true">
+							[#include "/theme/yelp/common/citys.html"]</div>
+
+					</div>
+
+					<div class="clearfix layout-block layout-a layout-border">
+						<div id="main_events" class="column column-alpha ">
+						    [@eventgood]
+						    [#if goodEvent??]
+							<div id="featured_event">
+								<h2>活动焦点</h2>
+								<div itemtype="http://schema.org/Event" itemscope="">
+									<div class="media-block">
+										<div class="media-avatar">
+											<div class="photo-box pb-ms">
+												<a
+													href="${siteurl}events/view.htm?id=${goodEvent.id}"
+													class="event-photo"> <img width="100" height="100"
+													src="${goodEvent.img!'/assets/images/head.png'}"
+													alt=""
+													class="photo-box-img">
+												</a>
+											</div>
+
+
+										</div>
+										<div class="media-story">
+											<h3 class="title">
+												<a itemprop="url"
+													href="${siteurl}events/view.htm?id=${goodEvent.id}"><span
+													itemprop="name">${goodEvent.name}</span></a>
+											</h3>
+											<p class="times">
+
+
+												[@html.dateweek date=goodEvent.starts_month_day_year][/@html.dateweek]
+											</p>
+											<p itemprop="description">
+												${goodEvent.description}
+											</p>
+											<p class="attending_count">${goodEvent.joins!"0"}人有兴趣！</p>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							[/#if]
+							[/@eventgood]
+							<div id="event_feed">
+								<h3>活动更新</h3>
+								<a class="ybtn ybtn-small ybtn-more" href="${siteurl}events/feed.htm">更多
+									»</a>
+								<ul>
+								[#if joins??]
+								[#list joins as item]
+									<li class="clearfix"><em
+										class="floatLink smaller desc_time">[@html.date date=item.addDate][/@html.date]</em>
+										<div class="photo-box pb-ss">
+											<a
+												href="${siteurl}user_details.htm?id=${item.user.id}">
+												<img width="40" height="40"
+												src="${item.user.headimg!'/assets/images/head.png'}"
+												class="photo-box-img" alt="${item.user.name!''}">
+											</a>
+										</div>
+
+										<div style="padding-right: 80px;" class="desc_text">
+											<a href="${siteurl}user_details.htm?id=${item.user.id}">${item.user.name}</a> 对<a
+												href="${siteurl}events/view.htm?id=${item.eventInfo.id}">${(item.eventInfo.name)!"真真点评"}</a>表示"有型"
+
+										</div></li>
+									[/#list]
+									[/#if]
+								</ul>
+
+							</div>
+							<div id="popular_events">
+								<h1>本周在${city.name!""}的人气活动</h1>
+								<a class="ybtn ybtn-small ybtn-more"
+									href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322">更多
+									»</a>
+
+								<ul class="clearfix">
+								     [#list hots as item]
+									<li itemtype="http://schema.org/Event" itemscope="">
+										<div class="media-block">
+											<div class="media-avatar">
+												<div class="photo-box pb-ms">
+													<a
+													href="${siteurl}events/view.htm?id=${item.id}"
+													class="event-photo"> <img width="100" height="100"
+													src="${item.img!'/assets/images/head.png'}"
+													alt=""
+													class="photo-box-img">
+												</a>
+													</a>
+												</div>
+
+
+											</div>
+											<div class="media-story">
+												<h3 class="title">
+													<a itemprop="url"
+													href="${siteurl}events/view.htm?id=${item.id}"><span
+													itemprop="name">${item.name}</span></a>
+												</h3>
+												<p class="times">
+
+
+													[@html.dateweek date=item.starts_month_day_year][/@html.dateweek]
+												</p>
+												<p itemprop="description">${item.description!""}</p>
+												<p class="attending_count">${item.joins!"0"}人有兴趣！</p>
+											</div>
+										</div>
+
+									</li>
+				                     [/#list]
+								</ul>
+							</div>
+
+							<div id="event_timeframe_chooser">
+								<div class="clearfix">
+									<h3>其它人气活动</h3>
+									<a class="ybtn ybtn-small ybtn-more" id="other_events_ybtn"
+										href="${siteurl}events/browse.htm">浏览所有活动»</a>
+								</div>
+
+								查看有关的活动：
+								<ul>
+									<li><a href="${siteurl}events/browse.htm?start_date=20150319">今日</a>
+										|</li>
+									<li><a href="${siteurl}events/browse.htm?start_date=20150320">明日</a>
+										|</li>
+									<li><a
+										href="${siteurl}events/browse.htm?start_date=20150320&amp;end_date=20150322">本週未</a>
+										|</li>
+									<li><a
+										href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322">本週</a>
+										|</li>
+									<li><a
+										href="${siteurl}events/browse.htm?start_date=20150323&amp;end_date=20150329">下週</a>
+										|</li>
+									<li id="browse-link" class="pseudoLink">跳到日期 »</li>
+								</ul>
+
+						
+
+							</div>
+							<ul id="main_events_list">
+							    [#if hots??]
+								[#list hots as item]
+								<li>
+									<div class="media-block">
+										<div class="media-avatar">
+											<div class="photo-box pb-ms">
+												<a
+													href="${siteurl}events/view.htm?id=${item.id}"
+													class="event-photo"> <img width="100" height="100"
+													src="${item.img!'/assets/images/head.png'}"
+													alt=""
+													class="photo-box-img">
+												</a>
+											</div>
+
+
+										</div>
+										<div class="media-story">
+											<h3 class="title">
+												<a itemprop="url"
+													href="${siteurl}events/view.htm?id=${item.id}"><span
+													itemprop="name">${item.name}</span></a>
+											</h3>
+											<p>
+												[@html.dateweek date=item.starts_month_day_year][/@html.dateweek]
+											</p>
+											<p itemprop="description" class="event_desc ieSucks">${item.description!""}</p>
+
+											<div class="submitted_by">
+												<label class="event_user_label">提交者：</label>
+
+
+
+
+												<div class="photo-box pb-xss">
+													<a
+														href="${siteurl}user_details.htm?id=${item.user.id}">
+														<img width="20" height="20"
+														src="${item.user.headimg!'/assets/images/head.png'}"
+														class="photo-box-img" alt="Kevin L. photo">
+													</a>
+												</div>
+
+												<a
+													href="${siteurl}user_details_events.htm?id=${item.user.id}">${item.user.name}</a>
+											</div>
+
+											<p class="attending_count">${item.joins!"0"}人有兴趣！</p>
+										</div>
+									</div>
+
+								</li>
+								 [/#list]
+								 [/#if]
+							</ul>
+							<a class="ybtn ybtn-small ybtn-more" href="${siteurl}events/browse.htm">浏览所有活动»</a>
+
+						</div>
+						[#include "events/events_sidebar.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

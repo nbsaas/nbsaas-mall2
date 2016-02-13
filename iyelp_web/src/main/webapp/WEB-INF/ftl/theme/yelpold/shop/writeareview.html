@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>${shop.name!""}</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/revieww.css" />
+
+
+[#include "/theme/yelp/common/scripts.html"]
+<link rel="stylesheet"
+	href="${siteurl}assets/plugs/raty/jquery.raty.css">
+<script type="text/javascript"
+	src="${siteurl}assets/plugs/raty/jquery.raty.js"></script>
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+
+				<div class="container review_rate">
+					<div class="clearfix layout-block layout-a layout-border">
+						<div class="column column-alpha ">
+
+
+
+
+
+							<form name="review_rate_form" method="POST" id="review_rate_form"
+								action="${siteurl}shop/commentshop.htm">
+								<input type="hidden" value="${shop.id}" name="shop.id">
+								<input type="hidden"
+									value="http://www.yelp.com/biz/1S2p1xBtwP20qb2JTMacsA"
+									name="return_url"> <input type="hidden"
+									value="writeareview-biz" name="review_origin">
+
+								<div class="clearfix" id="war-header">
+									<h2>
+										<strong> 填写你的评语： </strong> <a
+											href="${siteurl}shop/view.htm?id=${shop.id}">${shop.name!""}</a>
+									</h2>
+									<address>
+										香港站<br>香港
+									</address>
+								</div>
+
+								<ul class="write-a-review clearfix">
+
+
+
+									<input type="hidden" value="zh" id="review-language-detect"
+										name="review-language-detect">
+
+									<li class="review-element"><label class="primary">
+											<strong> 星级评分 </strong>
+									</label>
+										<div id="field-star-rating" class="primary clearfix">
+												<div class="floatitem" id="star1" style="margin-left: 10px"></div>
+												<input type="hidden" name="servicescore" id="descriptionscore"/>
+											<p id="ratingDescription" class="no-js-hidden">滚动至星级评分，然后按投票</p>
+										</div></li>
+
+
+									<li class="review-element"><label for="review-text"
+										class="primary"> <strong> 你的评语 </strong> <br> <br>
+											<a class="guidelines-pop-link smaller" href="/guidelines">查阅我们的评语指引</a>
+									</label>
+										<div class="primary">
+											<textarea
+												name="comment" id="review-text"
+												class="form400 default_valued_text_field" rows="8" cols="40"
+												style="height: 115px;"></textarea>
+											<p id="comment_footer">
+												<em id="update_status"> <span
+													style="text-transform: capitalize"> <span
+														id="auto_label">自动－</span>储存
+												</span> <span id="update_time">刚刚</span><span id="update_timestamp"></span>。
+												</em> <span class="grey" id="save_now">立即储存</span><br>
+											</p>
+
+
+										</div></li>
+
+
+								</ul>
+
+								<input type="hidden" value="kPAPsp6uaxdXr4TPvCb5nw"
+									name="context">
+
+
+								<div class="biz-rate-attr clearfix" id="biz_rate_attrib">
+									<h2 class="additional-information">
+										提供更多有关此商店的撇步？<em>（可选择填写与否）</em>
+									</h2>
+									<p>我们正在进行有关此商店的调查，以便我们显示主流意见认同的讯息。</p>
+
+									<input type="hidden" value="True"
+										name="show_biz_photo_feedback">
+									
+
+									<div class="ytype yform">
+										<ol class="voteable-attributes-list">
+											<li class="voteable-attribute clearfix"><label
+												class="formField"> 是否接受订位 </label>
+												<fieldset class="inline-fields">
+													<label> <input type="radio" value="True"
+														name="RestaurantsReservations"
+														id="av_box:RestaurantsReservations:True"> <span>是
+													</span>
+													</label> <label> <input type="radio" value="False"
+														name="RestaurantsReservations"
+														id="av_box:RestaurantsReservations:False"> <span>否
+													</span>
+													</label> <label> <input type="radio" value="不确定"
+														name="RestaurantsReservations"
+														id="av_box:RestaurantsReservations:None"> <span>不确定</span>
+													</label>
+												</fieldset></li>
+
+											<li class="voteable-attribute clearfix"><label
+												class="formField"> 环境气氛 </label>
+												<fieldset class="inline-fields">
+													<label for="av_box:Ambience:casual"> <input
+														type="checkbox" value="休閒" name="ambience"
+														id="av_box:Ambience:casual"> <span>休閒 </span>
+													</label> <label for="av_box:Ambience:touristy"> <input
+														type="checkbox" value="旅游景点" name="ambience"
+														id="av_box:Ambience:touristy"> <span>旅游景点 </span>
+													</label> <label for="av_box:Ambience:trendy"> <input
+														type="checkbox" value="时尚之最" name="ambience"
+														id="av_box:Ambience:trendy"> <span>时尚之最 </span>
+													</label> <label for="av_box:Ambience:intimate"> <input
+														type="checkbox" value="贴心" name="ambience"
+														id="av_box:Ambience:intimate"> <span>贴心 </span>
+													</label> <label for="av_box:Ambience:romantic"> <input
+														type="checkbox" value="浪漫" name="ambience"
+														id="av_box:Ambience:romantic"> <span>浪漫 </span>
+													</label> <label for="av_box:Ambience:classy"> <input
+														type="checkbox" value="优雅" name="ambience"
+														id="av_box:Ambience:classy"> <span>优雅 </span>
+													</label> <label for="av_box:Ambience:upscale"> <input
+														type="checkbox" value="高档 " name="ambience"
+														id="av_box:Ambience:upscale"> <span>高档 </span>
+													</label>
+												</fieldset></li>
+
+											<li class="voteable-attribute clearfix js-hidden"><label
+												class="formField"> 价格范围 </label>
+
+												<div class="clearfix js-attributes-price-range hkd"
+													id="attributes_price_range">
+													<fieldset id="price_choices">
+														<legend class="offscreen">价格范围：</legend>
+														<p class="offscreen">按人计价：</p>
+														<div class="floatitem" id="price" style="margin-left: 10px"></div>
+													    <input type="hidden" name="pricescore" id="pricescore"/>
+													</fieldset>
+													<span title="" id="price_tip"
+														class="no-js-hidden pseudoLink">按人计价：</span> <span
+														id="price_range" class="no-js-hidden">滚动至价格，然后按投票</span>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否接受信用卡 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="businessacceptscreditcards"
+																id="av_box:BusinessAcceptsCreditCards:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="businessacceptscreditcards"
+																id="av_box:BusinessAcceptsCreditCards:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="businessacceptscreditcards"
+																id="av_box:BusinessAcceptsCreditCards:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 停车场 </label>
+														<fieldset class="inline-fields">
+															<label for="av_box:BusinessParking:valet"> <input
+																type="checkbox" value="代客" name="businessparking"
+																id="av_box:BusinessParking:valet"> <span>代客
+															</span>
+															</label> <label for="av_box:BusinessParking:garage"> <input
+																type="checkbox" value="停车场" name="businessparking"
+																id="av_box:BusinessParking:garage"> <span>停车场
+															</span>
+															</label> <label for="av_box:BusinessParking:street"> <input
+																type="checkbox" value="街道" name="businessparking"
+																id="av_box:BusinessParking:street"> <span>街道
+															</span>
+															</label> <label for="av_box:BusinessParking:lot"> <input
+																type="checkbox" value="私人停车场" name="businessparking"
+																id="av_box:BusinessParking:lot"> <span>私人停车场
+															</span>
+															</label> <label for="av_box:BusinessParking:validated"> <input
+																type="checkbox" value="免费泊车"
+																name="businessparking"
+																id="av_box:BusinessParking:validated"> <span>免费泊车
+															</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否有单车停车位 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="bikeparking" id="av_box:BikeParking:True">
+																<span>是 </span>
+															</label> <label> <input type="radio" value="否"
+																name="bikeparking" id="av_box:BikeParking:False">
+																<span>否 </span>
+															</label> <label> <input type="radio" value="不确定"
+																name="bikeparking" id="av_box:BikeParking:None">
+																<span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 衣著 </label>
+														<fieldset class="inline-fields">
+															<label for="av_box:RestaurantsAttire:casual"> <input
+																type="radio" value="休閒" name="restaurantsattire"
+																id="av_box:restaurantsattire:casual"> <span>休閒
+															</span>
+															</label> <label for="av_box:restaurantsattire:dressy"> <input
+																type="radio" value="时尚" name="restaurantsattire"
+																id="av_box:restaurantsattire:dressy"> <span>时尚
+															</span>
+															</label> <label for="av_box:restaurantsattire:formal"> <input
+																type="radio" value="正式" name="restaurantsattire"
+																id="av_box:restaurantsattire:formal"> <span>正式
+															</span>
+															</label> <label for="av_box:restaurantsattire:None"> <input
+																type="radio" value="不确定" name="restaurantsattire"
+																id="av_box:restaurantsattire:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否适合团体 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="restaurantsgoodforgroups"
+																id="av_box:restaurantsgoodforgroups:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="restaurantsgoodforgroups"
+																id="av_box:restaurantsgoodforgroups:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="restaurantsgoodforgroups"
+																id="av_box:restaurantsgoodforgroups:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否适合儿童 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="goodforkids" id="av_box:goodforkids:True">
+																<span>是 </span>
+															</label> <label> <input type="radio" value="否"
+																name="goodforkids" id="av_box:goodforkids:False">
+																<span>否 </span>
+															</label> <label> <input type="radio" value="不确定"
+																name="goodforkids" id="av_box:goodforkids:None">
+																<span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否提供外送 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="restaurantsdelivery"
+																id="av_box:restaurantsdelivery:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="restaurantsdelivery"
+																id="av_box:restaurantsdelivery:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="restaurantsdelivery"
+																id="av_box:restaurantsdelivery:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否接受外带 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="restaurantstakeout"
+																id="av_box:restaurantstakeout:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="restaurantstakeout"
+																id="av_box:restaurantstakeout:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="restaurantstakeout"
+																id="av_box:restaurantstakeout:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否有服务生服务 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="restaurantstableservice"
+																id="av_box:restaurantstableservice:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="restaurantstableservice"
+																id="av_box:restaurantstableservice:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="restaurantstableservice"
+																id="av_box:restaurantstableservice:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否提供户外座位 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="outdoorseating" id="av_box:outdoorseating:True">
+																<span>是 </span>
+															</label> <label> <input type="radio" value="否"
+																name="outdoorseating" id="av_box:outdoorseating:False">
+																<span>否 </span>
+															</label> <label> <input type="radio" value="不确定"
+																name="outdoorseating" id="av_box:outdoorseating:None">
+																<span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> Wi-Fi </label>
+														<fieldset class="inline-fields">
+															<label for="av_box:wifi:free"> <input
+																type="radio" value="免费 " name="wifi"
+																id="av_box:wifi:free"> <span>免费 </span>
+															</label> <label for="av_box:wifi:paid"> <input
+																type="radio" value="收费" name="wifi"
+																id="av_box:wifi:paid"> <span>收费 </span>
+															</label> <label for="av_box:wifi:no"> <input type="radio"
+																value="无" name="wifi" id="av_box:wifi:no"> <span>无
+															</span>
+															</label> <label for="av_box:wifi:None"> <input
+																type="radio" value="不确定" name="wifi" id="av_box:wifi:None">
+																<span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 适合 </label>
+														<fieldset class="inline-fields">
+															<label for="av_box:GoodForMeal:breakfast"> <input
+																type="checkbox" value="早餐" name="goodformeal_breakfast"
+																id="av_box:GoodForMeal:breakfast"> <span>早餐
+															</span>
+															</label> <label for="av_box:GoodForMeal:brunch"> <input
+																type="checkbox" value="早午餐" name="goodformeal_breakfast"
+																id="av_box:GoodForMeal:brunch"> <span>早午餐
+															</span>
+															</label> <label for="av_box:GoodForMeal:lunch"> <input
+																type="checkbox" value="午餐" name="goodformeal_breakfast"
+																id="av_box:GoodForMeal:lunch"> <span>午餐 </span>
+															</label> <label for="av_box:GoodForMeal:dinner"> <input
+																type="checkbox" value="晚餐" name="goodformeal_breakfast"
+																id="av_box:GoodForMeal:dinner"> <span>晚餐
+															</span>
+															</label> <label for="av_box:GoodForMeal:latenight"> <input
+																type="checkbox" value="宵夜" name="goodformeal_breakfast"
+																id="av_box:GoodForMeal:latenight"> <span>宵夜
+															</span>
+															</label> <label for="av_box:GoodForMeal:dessert"> <input
+																type="checkbox" value="甜点" name="goodformeal_breakfast"
+																id="av_box:GoodForMeal:dessert"> <span>甜点
+															</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 酒类饮品 </label>
+														<fieldset class="inline-fields">
+															<label for="av_box:alcohol:beer_and_wine"> <input
+																type="radio" value="啤酒及餐酒" name="alcohol"
+																id="av_box:alcohol:beer_and_wine"> <span>啤酒及餐酒
+															</span>
+															</label> <label for="av_box:alcohol:full_bar"> <input
+																type="radio" value="酒吧" name="alcohol"
+																id="av_box:alcohol:full_bar"> <span>酒吧 </span>
+															</label> <label for="av_box:alcohol:none"> <input
+																type="radio" value="无" name="alcohol"
+																id="av_box:alcohol:none"> <span>无 </span>
+															</label> <label for="av_box:alcohol:None"> <input
+																type="radio" value="不确定" name="alcohol"
+																id="av_box:alcohol:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 噪音音量 </label>
+														<fieldset class="inline-fields">
+															<label for="av_box:noiselevel:quiet"> <input
+																type="radio" value="宁静 " name="noiselevel"
+																id="av_box:noiselevel:quiet"> <span>宁静 </span>
+															</label> <label for="av_box:noiselevel:average"> <input
+																type="radio" value="一般" name="noiselevel"
+																id="av_box:noiselevel:average"> <span>一般
+															</span>
+															</label> <label for="av_box:noiselevel:loud"> <input
+																type="radio" value="有点吵" name="noiselevel"
+																id="av_box:noiselevel:loud"> <span>有点吵 </span>
+															</label> <label for="av_box:noiselevel:very_loud"> <input
+																type="radio" value="很吵" name="noiselevel"
+																id="av_box:noiselevel:very_loud"> <span>很吵
+															</span>
+															</label> <label for="av_box:noiselevel:None"> <input
+																type="radio" value="不确定" name="noiselevel"
+																id="av_box:noiselevel:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否有电视 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="hastv" id="av_box:hastv:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="hastv" id="av_box:hastv:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="hastv" id="av_box:hastv:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+
+													<li class="voteable-attribute clearfix js-hidden"><label
+														class="formField"> 是否承办宴席 </label>
+														<fieldset class="inline-fields">
+															<label> <input type="radio" value="是"
+																name="caters" id="av_box:caters:True"> <span>是
+															</span>
+															</label> <label> <input type="radio" value="否"
+																name="caters" id="av_box:caters:False"> <span>否
+															</span>
+															</label> <label> <input type="radio" value="不确定"
+																name="caters" id="av_box:caters:None"> <span>不确定</span>
+															</label>
+														</fieldset></li>
+										</ol>
+									</div>
+
+									<div id="unhide_attributes_button" class="no-js-hidden">
+										<a href="#">显示较多评语摘要 »</a>
+									</div>
+
+									<div class="clearfix" id="review_rate_form_footer">
+										<p class="clearfix">
+											<a href="${siteurl}shop/view.htm?id=${shop.id}"
+												class="cancel-review">取消</a> <input type="hidden"
+												id="rating-form-action" value="submit" name="action_submit">
+											<button class="ybtn ybtn-primary ybtn-small" value="submit"
+												type="submit" id="review-submit-button">
+												<span>分享</span>
+											</button>
+										</p>
+										<div class="loading-message">
+											<span class="throbber">正在发表你的评语 …</span>
+										</div>
+										<p>
+											<em class="smaller grey">＊你可以在稍后时间编辑或移除评语。</em>
+										</p>
+									</div>
+
+
+								</div>
+
+							</form>
+
+						</div>
+						<div id="biz_reviews" class="column column-beta ">
+							<h3>对添好运点心专门店的评语</h3>
+							<div id="biz_reviews_list" class="">
+								<ul>
+									<li>
+
+
+
+
+										<div class="photo-box pb-xss">
+											<a
+												href="http://www.yelp.com.tw/user_details?userid=V8Er2gTc05o_eJ1H_kPcLQ">
+												<img width="20" height="20"
+												src="https://s3-media2.fl.yelpcdn.com/photo/nwtscvxFlbupk8bgTeNe8Q/xss.jpg"
+												class="photo-box-img" alt="">
+											</a>
+										</div> <a href="/user_details?userid=V8Er2gTc05o_eJ1H_kPcLQ">Carmen
+											W.</a>
+
+										<div class="formNote">
+
+											<div class="rating">
+												<i title="4.0星级评分" class="star-img stars_4"> <img
+													width="84" height="303"
+													src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+													class="offscreen" alt="4.0星级评分">
+												</i>
+											</div>
+
+											2014/9/1
+										</div>
+										<p class="nobtm comment">
+											太夸张太夸张！点解我每一次黎，几点都好，都会有一"大"堆人系­门口排队？呢间野可以做得甘成功，我真希望我是他的老板，好似啲­人很乐意地排队比钱甘！<br>
+											<br>排队起码要一个钟先有位，但系啲人仲系好愿意排！讲真，我很佩服­他们！<br> <br>今日佣人生日，我同家姐约左佢食lunch。知道佢未饮过茶，知­道佢一早会去中环，所以想带佢试下呢间，我已经提早半个小时去排­队，但实在太夸张，我太赶时间，所以最后买外卖去IFC花园平台­食。<br>
+											<br>点心唔贵，而且好食！所以先甘多人排队。我其中最中意食系叉烧包­，同出面普通饮茶地方既叉烧包唔同！肠粉好滑好好味！虾饺，糯米­鸡，鲍汁凤爪都系好味既点心！其实样样出品都好味好新鲜，只不过­你愿意排至少一个小时黎食吗？你自己睇时间吧！要不是买外卖也不­错的！
+										</p>
+									</li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$(".js-hidden").hide();
+		$('#star1').raty({
+			path : '${siteurl}assets/plugs/raty/images',
+			half : false,
+			score : 5,
+			starOff : 'star-off.png',
+			starOn : 'star-on.png',
+			space : false,
+			target : '#descriptionscore',
+			starHalf : 'star-half.png',
+			targetKeep : true,
+			targetType : 'score'
+		});
+		
+		$('#price').raty({
+			path : '${siteurl}assets/plugs/raty/images',
+			half : false,
+			score : 5,
+			starOff : 'star-off.png',
+			starOn : 'star-on.png',
+			space : false,
+			starHalf : 'star-half.png',
+			target : '#pricescore',
+			targetKeep : true,
+			targetType  : 'score'  
+		});
+		
+		
+		$("#unhide_attributes_button").click(function(){
+			$(this).hide();
+			$(".js-hidden").show();
+		});
+	});
+</script>
+
+</html>
