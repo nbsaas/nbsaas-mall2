@@ -1,0 +1,61 @@
+<div class="footer">
+	<div class="content-container">
+		<div class="footer-menu-wrap clearfix">
+			<div class="footer-menu clearfix">
+				<h3 class="menu-header">关于我们</h3>
+				<ul class="menu-list">
+				    [@article id=2 size=10]
+				    [#list list as item]
+					<li><a href="${siteurl}article/view.htm?id=${item.id}">${item.title!""}</a></li>
+					[/#list]
+					[/@article]
+				</ul>
+			</div>
+
+			<div class="footer-menu clearfix">
+				<h3 class="menu-header">探索</h3>
+				<ul class="menu-list">
+					[@article id=3 size=10]
+				    [#list list as item]
+					<li><a href="${siteurl}article/view.htm?id=${item.id}">${item.title!""}</a></li>
+					[/#list]
+					[/@article]
+				</ul>
+			</div>
+
+			<div class="footer-menu clearfix">
+				<h3 class="menu-header">商户专用帐户</h3>
+				<ul class="menu-list">
+					[@article id=4 size=10]
+				    [#list list as item]
+					<li><a href="${siteurl}article/view.htm?id=${item.id}">${item.title!""}</a></li>
+					[/#list]
+					[/@article]
+				</ul>
+			</div>
+
+		
+
+		</div>
+
+
+		<div class="city-landscape-img"></div>
+
+		<div class="footer-copyright">
+			<small> Copyright &copy; 2004&ndash;2015 真真点评
+			</small>
+		</div>
+
+	</div>
+</div>
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "//hm.baidu.com/hm.js?2cb37ab593900f8f8ab9db22dce7e3a1";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+

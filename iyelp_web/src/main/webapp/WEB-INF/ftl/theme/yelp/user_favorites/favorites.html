@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>真真点评</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container">
+					<div class="clearfix page-header">
+						<h2 class="heading">${list.title!''}</h2>
+						<span style="padding-left: 15px;"> <a
+							id="edit_box_bt" href="#">編輯標題及描述</a> | <a
+							id="delete_box_bt" href="#">刪除此列表</a>
+						</span>
+
+
+						<p>
+							<strong>${list.note!''}</strong>
+						</p>
+
+
+					</div>
+					<div class="clearfix layout-block layout-full">
+						<div class="column column-alpha ">
+
+							<div id="pane">
+
+								<div style="display: none;" id="edit_box">
+
+
+
+
+
+									<form name="edit_details" method="POST" class="yform"
+										action="${siteurl}user_favorites/update_list.htm">
+										<input type="hidden"
+											value="${list.id}"
+											class="csrftok" name="id"> <label>列表名稱</label> <input
+											type="text" value="${list.title!''}" id="list_name" name="title"
+											size="52"> <label>描述</label>
+										<textarea
+											name="note" cols="50" rows="8" id="list_desc">${list.note!''}</textarea>
+										<button class="ybtn ybtn-primary ybtn-small" value="submit"
+											type="submit">
+											<span>更新</span>
+										</button>
+										<a href="#"
+											onclick="toggle_box('edit_box', false); return false;">取消</a>
+									</form>
+								</div>
+
+								<div style="display: none; margin: 30px;" id="delete_box">
+
+
+
+
+
+									<form name="delete_list" method="POST"
+										action="${siteurl}user_favorites/delete_list.htm">
+										<input type="hidden"
+											value="${list.id!''}"
+											class="csrftok" name="id">
+										<h2>確認移除</h2>
+										<p>你是否確認要刪除'去过的地方'列表？</p>
+										<br>
+										<button
+											id="delete_cancel" type="button">取消</button>
+										<button type="submit">刪除列表</button>
+									</form>
+								</div>
+
+
+								<div id="listContainer">
+									<h3>拖曳及放下選項以建立或重新排列你的列表。</h3>
+
+									<div id="list_left">
+										<h4>你的全部評語：</h4>
+										按以下排列： <select onchange="ratings_list_sort(this);"
+											id="ratings_sort" name="ratings_sort">
+											<option value="time">日期</option>
+											<option value="alphabetical">姓名</option>
+											<option value="rating">星級評分</option>
+										</select>
+										<ul id="review_box" style="position: relative;">
+											<li class="clearfix" revid="zVtymVcCqD51PQBs8QHKaA"
+												id="reviewBox_0" style="position: relative;"><strong
+												class="bizName">Connie</strong><span class="bizCat">寵物領養</span><span
+												class="bizComment">it's good</span><input type="hidden"
+												value="zVtymVcCqD51PQBs8QHKaA" name="review_items">
+											<div class="rating-small">
+													<i title="4.0星級評分" class="star-img stars_4"> <img
+														width="84" height="303"
+														src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+														class="offscreen" alt="4.0星級評分">
+													</i>
+												</div></li>
+										</ul>
+										<p id="pager">
+											<a style="font-weight: bold; color: #666;"
+												onclick="javascript:pageChange(0,this,sort_by);" href="#">1</a>
+										</p>
+										<h3 style="float: left; margin-top: 10px;">或者寫篇新評語，評語將會被增加到列表中。</h3>
+										<p style="float: left;">
+											<a class="ybtn ybtn-small write-a-review"
+												href="https://www.yelp.com.tw/writeareview?favorites_list_id=mNl8t2aVG80NItnylzE0ag&amp;fsid=WN05MwJDYrq6Es94p6ZdQg"><span
+												class="i-wrap ig-wrap-common i-review-star-tiny-common-wrap"><i
+													class="i ig-common i-review-star-tiny-common"></i> 寫評語</span></a>
+										</p>
+									</div>
+
+
+
+
+
+
+									<form name="list_chooser" method="POST"
+										action="/user_favorites/update_list/mNl8t2aVG80NItnylzE0ag">
+										<input type="hidden"
+											value="d93d8e24701b5dfdbd0ee57d2eb4f27ce7d04060834842db0944ad58c724b925"
+											class="csrftok" name="csrftok">
+										<div id="list_right">
+											<h4>你的列表：</h4>
+											<span class="btns">
+												<button class="ybtn ybtn-small" value="submit" type="submit">
+													<span>完成</span>
+												</button>
+											</span>
+											<ul id="list_items" style="position: relative;"></ul>
+										</div>
+									</form>
+
+									<br style="clear: both;">
+								</div>
+							</div>
+
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+	
+	
+	$("#edit_box_bt").click(function(){
+		$("#edit_box").show();
+		$("#delete_box").hide();
+		$("#listContainer").hide();
+	});
+	
+	$("#delete_box_bt").click(function(){
+		$("#delete_box").show();
+		$("#edit_box").hide();
+		$("#listContainer").hide();
+	});
+	$("#delete_cancel").click(function(){
+		$("#listContainer").show();
+		$("#edit_box").hide();
+		$("#delete_box").hide();
+	});
+	
+	
+	
+});
+
+</script>
+</body>
+
+</html>

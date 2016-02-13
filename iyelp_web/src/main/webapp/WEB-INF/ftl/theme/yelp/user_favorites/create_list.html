@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>真真点评</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container">
+					<div class="section-header">
+						<h2>建立一个新列表</h2>
+					</div>
+
+					<div class="clearfix layout-block layout-a">
+						<div class="column column-alpha ">
+							<p>
+								从右边选择其中一个建议，或者自已写一个。你的列表会被显示在你的<a
+									href="/user_details?userid=1Rtu0bzXGSweb4agwAUu2Q">关於我</a>的页面上。你可以随时更新或删除你的列表。
+							</p>
+
+
+
+
+
+
+							<form name="create_list" method="POST" class="yform"
+								action="${siteurl}user_favorites/create_list.htm">
+								<input type="hidden"
+									value="da397dc494ca5268321282af85fce1c29438caa27eae50eb0eabaf89f221abd5"
+									class="csrftok" name="csrftok">
+								<div class="user_favorites_form_box" data-component-bound="true">
+									<input type="hidden" value="OG1bkWUMwUebwQa4DHN-NA"
+										name="context"> <label>列表名称</label> <input type="text"
+										value="最适合上网工作的地方" name="title" id="list_name"> <label>描述</label>
+									<textarea name="note" class="list_desc vert-resize">上网喝咖啡吃蛋糕最舒服！</textarea>
+									<span class="info-field pull-right"></span>
+								</div>
+								<button class="ybtn ybtn-primary ytype" value="1" type="submit">
+									<span>建立</span>
+								</button>
+
+							</form>
+
+						</div>
+						<div class="column column-beta ">
+							<div class="island yform">
+								<h3>想法列表</h3>
+								<p>试试其中一个啦。</p>
+								<fieldset>
+									<label class="radio-check"> <input type="radio"
+										onclick="do_select(0);return true;" id="list0"
+										name="list_choice"> <span> <strong>最适合上网工作的地方</strong><br>
+											<small>上网喝咖啡吃蛋糕最舒服！</small>
+									</span>
+									</label> <label class="radio-check"> <input type="radio"
+										onclick="do_select(1);return true;" id="list1"
+										name="list_choice"> <span> <strong>对文化的兴趣</strong><br>
+											<small>博物馆、美术馆、或其它喜欢的地方</small>
+									</span>
+									</label> <label class="radio-check"> <input type="radio"
+										onclick="do_select(2);return true;" id="list2"
+										name="list_choice"> <span> <strong>适合团体</strong><br>
+											<small>有足够空间可以同时与6人以上用餐</small>
+									</span>
+									</label> <label class="radio-check"> <input type="radio"
+										onclick="do_select(3);return true;" id="list3"
+										name="list_choice"> <span> <strong>理想的幸福婚姻</strong><br>
+											<small>最理想的婚礼</small>
+									</span>
+									</label>
+								</fieldset>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

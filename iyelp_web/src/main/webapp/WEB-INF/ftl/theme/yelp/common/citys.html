@@ -1,0 +1,14 @@
+[@hotarea size=10]
+<h1>[#if city??]${city.name!""}[#else]西安[/#if]</h1>
+<ul id="other-cities-list">
+[#if list??]
+[#list list as item]
+	<li><a href="${siteurl}city.htm?id=${item.id}">${item.name}</a></li>
+[/#list]
+[/#if]
+	<li><a id="loc-box-toggle" class="main-box-toggle"
+		href="${siteurl}locations.htm">更多城市 »</a></li>
+</ul>
+[/@hotarea]
+
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user_details-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="user-header">
+
+
+
+
+
+					<ul class="clearfix" id="userTabs">
+
+						<li><a href="${siteurl}user_details.htm?id=${id!'-1'}">个人主页</a></li>
+
+						<li class="selected"><a
+							href="${siteurl}user_details_lists.htm?id=${id!'-1'}">列表</a></li>
+
+						<li><a
+							href="${siteurl}user_details_reviews_self.htm?id=${id!'-1'}">评语</a></li>
+
+						<li><a
+							href="${siteurl}user_details_quicktips.htm?id=${id!'-1'}">贴士</a></li>
+
+						<li><a href="${siteurl}user_details_thanx.htm?id=${id!'-1'}">赞扬</a></li>
+
+						<li><a
+							href="${siteurl}user_details_friends.htm?id=${id!'-1'}">朋友</a></li>
+
+						<li><a
+							href="${siteurl}user_details_following.htm?id=${id!'-1'}">关注中</a></li>
+
+						<li><a
+							href="${siteurl}user_details_bookmarks.htm?id=${id!'-1'}">收藏</a></li>
+						<li><a
+							href="${siteurl}user_details_events.htm?id=${id!'-1'}">活动</a></li>
+					</ul>
+
+					<div class="about-connections">[#include
+						"user_details_include_top.html"]</div>
+
+				</div>
+
+
+				<div id="user-details" class="container">
+					<div class="clearfix layout-block layout-o layout-border">
+						<div id="user_main_content" class="column column-alpha ">
+
+							<div id="user_lists_list" class="ieSucks clearfix">
+								[#if user.id==id] <a
+									class="ybtn ybtn-primary ybtn-small create-list"
+									href="${siteurl}user_favorites/create_list.htm?return_url=%2Fuser_details_lists%3Fuserid%3D1Rtu0bzXGSweb4agwAUu2Q">建立列表</a>
+								[/#if]
+								<h3>列表</h3>
+								[#if list?? && list?size>0]
+								
+									[#list list as item]
+									[#if (item_index+1)%2==0]
+									<div class="list_row clearfix">
+									[/#if]
+									<div class="list_snippet">
+										<h3>
+											<a href="${siteurl}user_favorites/list.htm?id=${item.id}">[@html.htmlcut s=item.title append="..." len=10][/@html.htmlcut]</a>
+										</h3>
+										<span class="item_count"><a
+											href="${siteurl}user_favorites/list.htm?id=${item.id}">0个项目</a></span>
+										<p class="list_desc">[@html.htmlcut s=item.note append="..." len=20][/@html.htmlcut]</p>
+										<ul>
+										</ul>
+										<p style="padding: 10px 10px 10px 0px;" class="highlight3">
+											没有项目。</p>
+
+										<p class="list_snippet_footer smaller">
+											<a href="/list/mNl8t2aVG80NItnylzE0ag" class="see_full_list">查阅所有列表
+												»</a> 
+												[#if user.id==id]
+												<a class="i-wrap ig-wrap-common i-edit-pencil-common-wrap"
+												href="${siteurl}user_favorites/view_list.htm?id=${item.id}"><i
+												class="i ig-common i-edit-pencil-common"></i> 编辑此列表</a>
+												[/#if]
+										</p>
+									</div>
+									[#if (item_index+1)%2==0]
+									</div>
+									[/#if]
+									[/#list]
+							
+								
+
+								[#else]
+								<div id="empty_reviews">
+									<img
+										style="float: left; vertical-align: middle; margin-right: 20px;"
+										src="http://s3-media4.fl.yelpcdn.com/assets/2/www/img/a2bf6452b6e7/gfx/empty_reviews.gif">
+									<p>写点什么呢？该自己做评论家的时候啦！</p>
+									<p class="aligncent">
+										<a class="ybtn ybtn-primary"
+											href="https://zh.yelp.com.hk/writeareview">写评语</a>
+									</p>
+								</div>
+								[/#if]
+							</div>
+
+						</div>
+						[#include "user_details_left.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

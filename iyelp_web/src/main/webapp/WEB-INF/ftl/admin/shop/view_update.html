@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta charset="utf-8"/>
+    <title>Blank Page - Ace Admin</title>
+    [#include "/admin/common/commonurl.html"]
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=slXaZk8V8DUWQF2MQnuW4Q5x"></script>
+
+    <script src="${siteurl}assets/js/knockout-3.3.0.js"></script>
+   <style type="text/css">
+       #day-hours-BusinessHours li{
+           float: left;
+           list-style: none;
+           margin-top: 15px;
+       }
+
+   </style>
+</head>
+
+<body class="no-skin">
+<div id="navbar" class="navbar navbar-default">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('navbar', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    [#include "/admin/common/navbar.html"]
+
+    <!-- /.navbar-container -->
+</div>
+
+<div class="main-container" id="main-container">
+    <script type="text/javascript">
+        try {
+            ace.settings.check('main-container', 'fixed')
+        } catch (e) {
+        }
+    </script>
+
+    <div id="sidebar" class="sidebar                  responsive">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'fixed')
+            } catch (e) {
+            }
+        </script>
+        [#include "/admin/common/shortcuts.html"]
+        <!-- /.sidebar-shortcuts -->
+
+        <!-- .nav-list -->
+        [#include "/admin/common/commonmenu.html"]
+        <ul class="nav nav-list">
+            [@menustag id=1]
+            [#list list as item]
+            [@menu item "1,44,48"]
+            [/@menu]
+            [/#list]
+            [/@menustag]
+        </ul>
+        <!-- /.nav-list -->
+
+        <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+            <i class="ace-icon fa fa-angle-double-left"
+               data-icon1="ace-icon fa fa-angle-double-left"
+               data-icon2="ace-icon fa fa-angle-double-right"></i>
+        </div>
+
+        <script type="text/javascript">
+            try {
+                ace.settings.check('sidebar', 'collapsed')
+            } catch (e) {
+            }
+        </script>
+    </div>
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">
+                try {
+                    ace.settings.check('breadcrumbs', 'fixed')
+                } catch (e) {
+                }
+            </script>
+
+            <ul class="breadcrumb">
+                <li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">首页</a>
+                </li>
+
+                <li class="active">欢迎光临</li>
+            </ul>
+            <!-- /.breadcrumb -->
+
+            <div class="nav-search" id="nav-search">
+                <form class="form-search">
+						<span class="input-icon"> <input type="text"
+                                                         placeholder="Search ..." class="nav-search-input"
+                                                         id="nav-search-input" autocomplete="off"/> <i
+                                class="ace-icon fa fa-search nav-search-icon"></i>
+						</span>
+                </form>
+            </div>
+            <!-- /.nav-search -->
+        </div>
+
+        <div class="page-content">
+            [#include "/admin/common/settings.html"]
+            <!-- /.ace-settings-container -->
+
+            <div class="page-content-area">
+                <div class="page-header">
+                    <h1>
+                        商家信息管理
+                        <small>
+                            <i class="ace-icon fa fa-angle-double-right"></i>
+                            ${shop.name!""}
+                        </small>
+                    </h1>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <!-- PAGE CONTENT BEGINS -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="tabbable">
+                                    <ul id="myTab" class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#home" data-toggle="tab">
+                                                <i class="green ace-icon fa fa-home bigger-120"></i>
+                                                商家基本信息
+                                            </a>
+                                        </li>
+
+                                        <li class="">
+                                            <a href="#messages" data-toggle="tab">
+                                                <i class="green ace-icon fa fa-calendar  bigger-120"></i>
+                                                营业时间
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#map" data-toggle="tab">
+                                                <i class="green ace-icon fa fa-map-marker  bigger-120"></i>
+                                                百度地图
+                                            </a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div class="tab-pane fade active in" id="home">
+                                            <form role="form" method="post"
+                                                  action="${siteurl}admin/shop/model_update.htm"
+                                                  class="form-horizontal">
+                                                <input type="hidden" name="id" value="${shop.id}"/>
+                                                <input type="hidden" name="distance" value="${shop.distance!'0'}"/>
+
+
+                                                <div class="form-group">
+                                                    <label for="form-field-1"
+                                                           class="col-sm-3 control-label no-padding-right">
+                                                        商家名称 </label>
+
+                                                    <div class="col-sm-9">
+                                                        <input type="text" name="name" value="${shop.name!''}"
+                                                               class="col-xs-10 col-sm-5"
+                                                               placeholder="商家名称" id="form-field-1">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="form-field-1-1"
+                                                           class="col-sm-3 control-label no-padding-right">
+                                                        商家地址 </label>
+
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="col-xs-10 col-sm-5"
+                                                               value="${shop.address!''}" name="address"
+                                                               class="form-control" placeholder="商家地址"
+                                                               id="form-field-1-1">
+                                                    </div>
+                                                </div>
+
+                                                <div class="space-4"></div>
+
+                                                <div class="form-group">
+                                                    <label for="form-field-1-1"
+                                                           class="col-sm-3 control-label no-padding-right">
+                                                        商家电话 </label>
+
+                                                    <div class="col-sm-9">
+                                                        <input type="text" class="col-xs-10 col-sm-5"
+                                                               value="${shop.phone!''}" name="phone"
+                                                               class="form-control" placeholder="商家电话"
+                                                                >
+                                                    </div>
+                                                </div>
+
+                                                <div class="space-4"></div>
+                                                <div class="clearfix form-actions">
+                                                    <div class="col-md-offset-3 col-md-9">
+                                                        <button type="submit" class="btn btn-info">
+                                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                                            保存
+                                                        </button>
+
+                                                        &nbsp; &nbsp; &nbsp;
+                                                        <button type="reset" class="btn">
+                                                            <i class="ace-icon fa fa-undo bigger-110"></i>
+                                                            重置
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+
+                                                <!-- /.row -->
+
+
+                                            </form>
+
+                                        </div>
+
+                                        <div class="tab-pane fade" id="messages">
+                                            <form  action="${siteurl}admin/shop/time_update.htm" method="post">
+                                                <input type="hidden" name="id" value="${shop.id}"/>
+                                                <input type="hidden" name="distance" value="${shop.distance!'0'}"/>
+                                            <li class="BusinessHours"><label for="attr_BusinessHours"> 营业时间</label>
+
+                                                <div id="day-hours-BusinessHours" class="day-hours">
+                                                    <div class="hours-display" data-bind="foreach: days">
+                                                        <div class="hours">
+                                                            <span class="weekday"
+                                                                  data-bind="text: weekname"></span><span class="start"
+                                                                                                          data-bind="text: minname"></span><span>-</span><span
+                                                                class="end" data-bind="text: maxname"></span><a href="#"
+                                                                                                                data-bind="click: $root.removeDay"
+                                                                                                                class="remove-hours">移除</a>
+                                                            <input data-bind="value:maxindex"
+                                                                   type="hidden" name="maxindex">
+                                                            <input data-bind="value:minindex"
+                                                                   type="hidden" name="minindex">
+                                                            <input data-bind="value:weekindex"
+                                                                   type="hidden" name="weeks">
+                                                        </div>
+
+                                                    </div>
+                                                    <ul class="hours-select clearfix inline-layout up-4"
+                                                        data-bind='visible: days().length <7'>
+                                                        <li><select class="weekday " id="weekday">
+                                                            <option value="0">周一</option>
+                                                            <option value="1">周二</option>
+                                                            <option value="2">周三</option>
+                                                            <option value="3">周四</option>
+                                                            <option value="4">周五</option>
+                                                            <option value="5">周六</option>
+                                                            <option value="6">周日</option>
+                                                        </select></li>
+                                                        <li><select class="hours-start" id="hours-start">
+                                                            [#list mintimes as item]
+                                                            <option value="${item.index}">${item.name}</option>
+                                                            [/#list]
+
+                                                        </select></li>
+                                                        <li><select class="hours-end" id="hours-end">
+                                                            [#list maxtimes as item]
+                                                            <option value="${item.index}">${item.name}</option>
+                                                            [/#list]
+
+                                                        </select></li>
+                                                        <li>
+                                                            <button class="btn btn-primary btn-xs"
+                                                                    value="submit" type="button"
+                                                                    data-bind="click: addDay">
+                                                                <span>增加時段</span>
+                                                            </button>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                                <div class="clearfix form-actions">
+                                                    <div class="col-md-offset-3 col-md-9">
+                                                        <button type="submit" class="btn btn-info">
+                                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                                            保存
+                                                        </button>
+
+                                                    </div>
+                                                </div>
+                                            </form>
+
+                                        </div>
+
+                                        <div class="tab-pane fade" id="map">
+                                            <form role="form" method="post"
+                                                  action="${siteurl}admin/shop/model_update.htm"
+                                                  class="form-horizontal">
+                                                <input type="hidden" name="id" value="${shop.id}"/>
+
+                                                <input type="hidden" name="gps" id="gps" value="${shop.gps!''}">
+                                                <input type="hidden" name="city" id="city" value="${shop.city!''}">
+
+                                                <input type="hidden"
+                                                       name="longitude" id="longitude" value="${shop.longitude!''}">
+                                                <input type="hidden"
+                                                       name="latitude" id="latitude" value="${shop.latitude!''}">
+
+                                                <div class="clearfix form-actions">
+                                                    <div class="col-md-offset-3 col-md-9">
+                                                        <button type="submit" class="btn btn-info">
+                                                            <i class="ace-icon fa fa-check bigger-110"></i>
+                                                            保存
+                                                        </button>
+
+                                                        &nbsp; &nbsp; &nbsp;
+                                                        <button type="reset" class="btn">
+                                                            <i class="ace-icon fa fa-undo bigger-110"></i>
+                                                            重置
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <div id="allmap" class="" style="height: 600px;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.col -->
+
+
+                        </div>
+                        <!-- /.row -->
+
+
+                        <!-- PAGE CONTENT ENDS -->
+                    </div>
+                    <!-- /.col -->
+                </div>
+            </div>
+            <!-- /.page-content-area -->
+        </div>
+        <!-- /.page-content -->
+    </div>
+    <!-- /.main-content -->
+
+    [#include "/admin/common/footer.html"]
+
+</div>
+<!-- /.main-container -->
+
+<!-- basic scripts -->
+
+[#include "/admin/common/scripts.html"]
+
+<!-- inline scripts related to this page -->
+<script type="text/javascript">
+    function formatCurrency(value) {
+        return "$" + value.toFixed(2);
+    }
+
+    var DayTime =function(){
+        var self = this;
+        self.week= ko.observable();
+        self.weekindex= ko.observable();
+        self.minname=ko.observable();
+        self.minindex=ko.observable();
+        self.maxname=ko.observable();
+        self.maxindex=ko.observable();
+    };
+    var Times = function() {
+        // Stores an array of lines, and from these, can work out the grandTotal
+        var self = this;
+        self.days=ko.observableArray();
+
+        self.addDay = function() {
+            var mday=new DayTime();
+            mday.weekname=$("#weekday").find("option:selected").text();  //获取Select选择的Text
+            mday.weekindex=$("#weekday").val();  //获取Select选择的Value
+            mday.minname=$("#hours-start").find("option:selected").text();  //获取Select选择的Text
+            mday.minindex=$("#hours-start").val();  //获取Select选择的Value
+            mday.maxname=$("#hours-end").find("option:selected").text();  //获取Select选择的Text
+            mday.maxindex=$("#hours-end").val();  //获取Select选择的Value
+
+            self.days.push(mday);
+            var mweekindex=parseInt(mday.weekindex)+1;
+            if(mweekindex>6){
+                mweekindex=0;
+            }
+            $("#weekday").val(mweekindex)
+        };
+        self.removeDay = function(day) {
+            self.days.remove(day);
+        };
+
+
+
+
+    };
+
+    var times=new Times();
+    [#if shop.times?? && shop.times?size>0]
+    [#list shop.times?keys as item]
+      var xx=new DayTime();
+      xx.week=${item};
+
+      times.days.push(xx);
+    [/#list]
+    [/#if]
+
+    ko.applyBindings(times);
+</script>
+<script type="text/javascript">
+
+
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+
+    //var marker = new BMap.Marker(point);
+    //map.addOverlay(marker);
+
+    var top_left_control = new BMap.ScaleControl({
+        anchor: BMAP_ANCHOR_TOP_LEFT
+    });// 左上角，添加比例尺
+    var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
+    var top_right_navigation = new BMap.NavigationControl({
+        anchor: BMAP_ANCHOR_TOP_RIGHT,
+        type: BMAP_NAVIGATION_CONTROL_SMALL
+    }); //右上角，仅包含平移和缩放按钮
+    /*缩放控件type有四种类型:
+     BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+
+    //添加控件和比例尺
+    function add_control() {
+        map.addControl(top_left_control);
+        //map.addControl(top_left_navigation);
+        map.addControl(top_right_navigation);
+    }
+
+    add_control();
+
+    // 添加带有定位的导航控件
+    var navigationControl = new BMap.NavigationControl({
+        // 靠左上角位置
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        // LARGE类型
+        type: BMAP_NAVIGATION_CONTROL_LARGE,
+        // 启用显示定位
+        enableGeolocation: true
+    });
+    map.addControl(navigationControl);
+    // 添加定位控件
+
+
+    var geoc = new BMap.Geocoder();
+    map.addEventListener("click", function (e) {
+
+        $("#gps").val(e.point.lng + "," + e.point.lat);
+        $("#longitude").val(e.point.lng + "");
+        $("#latitude").val(e.point.lat + "");
+        map.clearOverlays();
+        var marker = new BMap.Marker(e.point); // 创建标注
+        map.addOverlay(marker);
+        marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+        geoc.getLocation(e.point, function (rs) {
+            var addComp = rs.addressComponents;
+            var addres = addComp.city + ""
+                    + addComp.district + "" + addComp.street + ""
+                    + addComp.streetNumber;
+            $("#city").val(addComp.city);
+            var add = $("#address").val();
+            $("#address").val(addres);
+            if (add.length <= 1) {
+                $("#address").val(addres);
+                //$("#cityname").val(addComp.city);
+                //$("#townname").val(addComp.district);
+                //$("#townid").val(addComp.district);
+            }
+
+        });
+    });
+    var curpoint = new BMap.Point(${shop.gps!"108.952308, 34.27783"});
+
+    //map.clearOverlays();
+    var marker = new BMap.Marker(curpoint); // 创建标注
+    map.addOverlay(marker);
+    marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+    map.centerAndZoom(curpoint, 10);
+    map.panTo(curpoint);
+
+    setTimeout(function () {
+        map.panTo(curpoint);   //两秒后移动到广州
+    }, 2000);
+    //geowork();
+</script>
+</body>
+</html>

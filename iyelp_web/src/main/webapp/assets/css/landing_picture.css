@@ -1,0 +1,91 @@
+.embossed-box {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	background: transparent;
+	padding-bottom: 0
+}
+
+.sub-text-box {
+	width: 300px
+}
+
+#super-container {
+	min-height: 720px
+}
+
+.signup-wrapper {
+	float: left;
+	padding: 0 15px;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 50%;
+	*width: 459px;
+	overflow: hidden;
+	margin-top: 6px
+}
+
+.ltie8 .signup-wrapper {
+	width: 453px
+}
+
+.signup-flow>* {
+	width: 382px
+}
+
+.picture-container {
+	float: left;
+	padding: 0 15px;
+	min-height: 1px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 50%;
+	*width: 459px;
+	margin-top: 117px
+}
+
+.picture-container img {
+	margin-left: 30px;
+	border-radius: 5px
+}
+
+.flow-start, .facebook, .login {
+	margin-left: 25.5px
+}
+
+.ltie8 .flow-start, .ltie8 .facebook, .ltie8 .login {
+	margin-left: 0
+}
+
+.facebook {
+	margin-top: 72px
+}
+
+.extra {
+	margin-top: 78px;
+	margin-left: 18px
+}
+
+.ltie8 .extra {
+	margin-left: 0
+}
+
+.login {
+	margin-top: 114px
+}
+
+.ie9 .hr-line, .ie9 button.photo-upload, .ltie9 .hr-line, .ltie9 button.photo-upload
+	{
+	display: none
+}
+
+.ie9 .embossed-box, .ltie9 .embossed-box {
+	background: none
+}
+
+.forgot {
+	margin-left: 25.5px;
+	margin-top: 117px
+}

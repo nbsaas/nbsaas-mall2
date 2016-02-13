@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>朋友</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/friends_widget.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/profile.css" />
+				[#include "/theme/yelp/common/scripts.html"]
+
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div id="profile" class="container">
+					<div class="clearfix layout-block layout-a">
+						<div id="some-id-related-to-this-column"
+							class="column column-alpha ">
+							<div id="breadcrumbs">
+								<a class="inline-block" href="${siteurl}profile/profile.htm"> 帳戶設定 </a> » 管理朋友
+							</div>
+
+							<div class="profile-block">
+
+
+								<div class="profile-header">
+									<h2 class="header-content top-h2">管理朋友</h2>
+									<span class="header-content">想"脫毒"？</span>
+
+
+								</div>
+								<div class="profile-main">
+									<div id="friends-top-section">
+										<div id="search-friends">
+											<form action="${siteurl}profile/profile_friends.htm" method="GET">
+												<input value="" name="key">
+												<button class="ybtn ybtn-small" value="submit" type="submit"
+													id="search-friends-button">
+													<span>查找朋友</span>
+												</button>
+											</form>
+										</div>
+
+										<div class="drop-menu-origin pull-right" id="sort-button"
+											data-component-bound="true">
+											<span id="sort-by">按以下排列</span> <a
+												class="drop-menu-link inline-block" id="friends-sortby-link"
+												href="#" data-component-bound="true"> <span
+												class="i-wrap ig-wrap-common i-dropdown-arrow-common-wrap ig-wrap-common-r dropdown-arrow"><i
+													class="i ig-common i-dropdown-arrow-common"></i> A-Z </span>
+											</a>
+											<div id="sort-dropdown" class="drop-menu"
+												data-component-bound="true">
+												<ul>
+													<li class="drop-down-menu-link"><a
+														href="/profile_friends">按字母順序 A-Z</a></li>
+													<li class="drop-down-menu-link"><a
+														href="/profile_friends?sort=z_a">按字母逆序 Z-A</a></li>
+													<li class="drop-down-menu-link"><a
+														href="/profile_friends?sort=recently_added">最近新增</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								[#if list??]
+								[#list list as item]
+									<div data-display-name="Vincent L."
+										data-undoid="jMeX4PJOtELXyRJCnkp4Pg"
+										data-friendid="jMeX4PJOtELXyRJCnkp4Pg"
+										class="profile-friend clearfix">
+										<div class="media-block friend-info">
+											<div class="media-avatar">
+												<div class="user-passport">
+
+
+
+
+
+													<div class="photo-box pb-ss">
+														<a
+															href="${siteurl}user_details.htm?id=${item.user.id}">
+															<img width="40" height="40"
+															src="${item.user.headimg!'/assets/images/head.png'}"
+															class="photo-box-img" alt="${item.user.name!''}">
+														</a>
+													</div>
+
+													<ul class="user-stats">
+														<li class="friend-count miniOrange"><span
+															class="i-wrap ig-wrap-common i-friends-orange-common-wrap"><i
+																class="i ig-common i-friends-orange-common"></i> ${item.user.friends!"0"}<span
+																class="offscreen">個朋友</span></span></li>
+														<li class="review-count miniOrange"><span
+															class="i-wrap ig-wrap-common i-star-orange-common-wrap"><i
+																class="i ig-common i-star-orange-common"></i> ${item.user.comments!"0"}<span
+																class="offscreen">則評語</span></span></li>
+														<li class="is-elite"><a title="用家為精英"
+															href="/elite" class="miniOrange">精英'${item.user.goods!"0"}</a>
+														</li>
+													</ul>
+
+
+												</div>
+
+
+											</div>
+											<div class="media-story">
+												<ul class="user-info">
+													<li class="user-name"><a
+														class="reviewer-name reviewer"
+														href="${siteurl}/user_details.htm?userid=jMeX4PJOtELXyRJCnkp4Pg">${item.user.name!""}</a></li>
+													<li class="user-location smaller">${item.user.city!""}</li>
+												</ul>
+											</div>
+										</div>
+										<div class="friend-actions clearfix">
+
+											<form name="remove_confirm_form" method="post"
+												class="remove-confirm-form"
+												action="${siteurl}profile/profile_friends_remove.htm">
+												<input type="hidden"
+													value="${item.id}"
+													class="" name="id"> <input
+													type="hidden" value="${curpage}"
+													name="curpage"> <input type="hidden"
+													value="${pagesize}" name="pagesize">
+												<button class="ycon-button friend-remove" type="submit">
+													<i class="i ig-common i-x-close-gray-common"></i>
+												</button>
+
+											</form>
+
+										</div>
+									</div>
+								 [/#list] 
+								 [/#if]	
+								
+
+							[#include "/theme/yelp/common/pageryelp.html"]
+                            [@pager page curpage "${siteurl}profile/profile_friends.htm?pagesize=${pagesize!'10'}"][/@pager]
+				
+
+
+								</div>
+							</div>
+
+
+
+						</div>
+						<div class="column column-beta ">
+							<div class="island friends-widget ysection">
+								<h3>邀請朋友</h3>
+								<p>新增更多朋友，獲得更多評語。</p>
+								<ul class="email-providers">
+									<li class="yahoo inline-block"><a title="Yahoo"
+										href="/find_friends/address_book"> <i
+											class="i ig-email_providers i-yahoo-email_providers email-service-icon"></i>
+									</a></li>
+									<li class="gmail inline-block"><a title="Gmail"
+										href="/find_friends/address_book"> <i
+											class="i ig-email_providers i-gmail-email_providers email-service-icon"></i>
+									</a></li>
+								</ul>
+								<a class="ybtn ybtn-small" href="/find_friends/">尋找你的朋友</a>
+							</div>
+
+							<div class="friends-sidebar-content">
+								查看你<a href="${siteurl}profile/profile_friends_invited.htm">4個交友邀請</a>
+							</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

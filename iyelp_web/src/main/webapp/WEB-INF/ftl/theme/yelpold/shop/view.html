@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>${shop.name!""}</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/baz-pkg.css" />
+
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--full">
+			<div class="top-shelf">
+				<div class="content-container">
+
+
+					<div id="alert-container"></div>
+
+
+
+					<div class="biz-page-header clearfix">
+						<div class="biz-page-header-left">
+
+
+
+
+							<h1 itemprop="name" class="biz-page-title embossed-text-white">
+								${shop.name!""}</h1>
+
+							<div class="alternate-names h3 alternate">Tim Ho Wan, the
+								Dim-Sum Specialists</div>
+
+
+							<div class="biz-main-info embossed-text-white">
+
+								<div class="rating-info clearfix">
+									<div itemtype="http://schema.org/AggregateRating" itemscope=""
+										itemprop="aggregateRating"
+										class="biz-rating biz-rating-very-large clearfix">
+
+										<div class="rating-very-large">
+											<i title="4.5星級評分" class="star-img stars_4_half"> <img
+												width="84" height="303"
+												src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+												class="offscreen" alt="4.5星級評分">
+											</i>
+											<meta content="4.5" itemprop="ratingValue">
+										</div>
+
+
+										<span class="review-count rating-qualifier"> <span
+											itemprop="reviewCount">${shop.comment_num!"0"}</span>則評語
+										</span>
+
+									</div>
+
+
+									<div class="rating-details">
+										<a
+											class="chiclet-link chiclet-link--with-text show-tooltip js-rating-details-trigger"
+											data-pop-uri="/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF/ratings_histogram/"
+											href="javascript:;" data-component-bound="true"> <span
+											class="i-wrap ig-wrap-biz_details i-histogram-biz_details-wrap"><i
+												class="i ig-biz_details i-histogram-biz_details"></i> 詳盡分析 <span
+												class="offscreen">, 開啟彈出式視窗</span> </span> <span
+											class="tooltip-wrapper"> <span class="tooltip">星級評分細節</span>
+										</span>
+										</a>
+									</div>
+
+								</div>
+
+								<div class="price-category">
+									<span class="bullet-after"> <span itemprop="priceRange"
+										class="business-attribute price-range">$</span>
+									</span> <span class="category-str-list"> <a
+										href="/c/hk/%E5%BB%A3%E6%9D%B1%E8%8F%9C">廣東菜</a>, <a
+										href="/c/hk/%E6%B8%AF%E5%BC%8F%E9%BB%9E%E5%BF%83">點心</a>
+									</span> <a href="/biz_attribute?biz_id=1S2p1xBtwP20qb2JTMacsA"
+										data-ro-mode-action="編輯分類"
+										data-pop-uri="/edit_category_popup/1S2p1xBtwP20qb2JTMacsA"
+										class="edit-category chiclet-link chiclet-link--with-text show-tooltip"
+										data-component-bound="true"> <span
+										class="i-wrap ig-wrap-common i-edit-pencil-common-wrap"><i
+											class="i ig-common i-edit-pencil-common"></i> 編輯 <span
+											class="offscreen">, 開啟彈出式視窗</span> </span> <span
+										class="tooltip-wrapper"> <span class="tooltip">編輯分類</span>
+									</span>
+									</a>
+
+								</div>
+							</div>
+
+						</div>
+						<div class="biz-page-header-right">
+							<div class="biz-page-actions nowrap">
+
+
+								<a class="ybtn ybtn-primary war-button"
+									href="${siteurl}shop/writeareview.htm?id=${shop.id}"><span
+									class="i-wrap ig-wrap-common i-war-star-common-wrap"><i
+										class="i ig-common i-war-star-common"></i> 寫評語</span></a> <span
+									class="ybtn-group clearfix"> <a
+									class="ybtn ybtn-small add-photo-button"
+									href="${siteurl}shop/user_photos.htm?id=${shop.id}"><span
+										class="i-wrap ig-wrap-biz_details i-add-photo-biz_details-wrap"><i
+											class="i ig-biz_details i-add-photo-biz_details"></i> 新增相片</span></a> <a
+									class="ybtn ybtn-small share-icon js-business-send-to-friend"
+									href="/biz_share?bizid=1S2p1xBtwP20qb2JTMacsA&amp;return_url=%2Fbiz%2F1S2p1xBtwP20qb2JTMacsA"
+									data-ro-mode-action="分享商店"
+									data-pop-uri="${siteurl}shop/send_to_friend.htm?id=${shop.id}"
+									data-component-bound="true"><span
+										class="i-wrap ig-wrap-common i-share-common-wrap"><i
+											class="i ig-common i-share-common"></i> 分享 <span
+											class="offscreen">, 開啟彈出式視窗</span> </span></a> <a
+									class="ybtn ybtn-small bookmark-button js-bookmark-button not-bookmarked"
+									href="#" id="bookmark-popup-add"
+									data-signup-object="biz_id:1S2p1xBtwP20qb2JTMacsA"
+									data-ro-mode-action="新增收藏"><span
+										class="i-wrap ig-wrap-biz_details i-bookmark-biz_details-wrap"><i
+											class="i ig-biz_details i-bookmark-biz_details"></i> 收藏 <span
+											class="offscreen">, 開啟彈出式視窗</span> </span></a>
+								</span>
+							</div>
+
+						</div>
+					</div>
+
+
+
+
+
+					<div class="biz-page-subheader">
+						<div class="mapbox-container">
+							<div data-lightbox-page-title="查看路程 - 添好運點心專門店 - 香港島"
+								class="mapbox" data-component-bound="true">
+								<div class="mapbox-map">
+									<a class="biz-map-directions"
+										href="/map/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF"
+										data-component-bound="true"> <img width="286" height="135"
+										src="http://maps.google.com/maps/api/staticmap?scale=2&amp;center=22.284578%2C114.158153&amp;language=en&amp;zoom=15&amp;markers=scale%3A2%7Cshadow%3Afalse%7Cicon%3Ahttp%3A%2F%2Fyelp-images.s3.amazonaws.com%2Fassets%2Fmap-markers%2Fannotation_64x86.png%7C22.284578%2C114.158153&amp;client=gme-yelp&amp;sensor=false&amp;size=286x135&amp;signature=PzgK4dH4Yp5CMkLMos-q1JU4DPM="
+										alt="地圖">
+
+
+									</a>
+									<div
+										data-googlead-attrs="[[&quot;attrtakeou&quot;, &quot;yes&quot;], [&quot;attrambian&quot;, [&quot;casual&quot;]], [&quot;attrgrupok&quot;, &quot;no&quot;], [&quot;attroutdor&quot;, &quot;no&quot;], [&quot;au&quot;, [&quot;b&quot;, &quot;e&quot;, &quot;f&quot;]], [&quot;attrwaiter&quot;, &quot;yes&quot;], [&quot;attrrating&quot;, &quot;4.5&quot;], [&quot;attrdelivr&quot;, &quot;no&quot;], [&quot;category&quot;, [&quot;restaurant&quot;]], [&quot;city&quot;, &quot;\u9999\u6e2f&quot;], [&quot;attrcredit&quot;, &quot;no&quot;], [&quot;attralcoho&quot;, &quot;no&quot;], [&quot;attraccess&quot;, &quot;notset&quot;], [&quot;section&quot;, &quot;map&quot;], [&quot;zipcode&quot;, &quot;&quot;], [&quot;dma_code&quot;, &quot;000&quot;], [&quot;signed_in&quot;, &quot;yes&quot;], [&quot;attrkidsok&quot;, &quot;yes&quot;], [&quot;qncst_segs&quot;, [&quot;D&quot;]], [&quot;attrreserv&quot;, &quot;no&quot;], [&quot;attrnoise&quot;, &quot;loud&quot;], [&quot;scategory2&quot;, [&quot;dimsum&quot;, &quot;chinese&quot;, &quot;cantonese&quot;]], [&quot;lu&quot;, [&quot;c&quot;]], [&quot;attrparkin&quot;, &quot;notset&quot;], [&quot;attrdogsok&quot;, &quot;notset&quot;], [&quot;attrcater&quot;, &quot;yes&quot;], [&quot;attrprice&quot;, &quot;1&quot;], [&quot;attrsmeals&quot;, [&quot;brunch&quot;]], [&quot;bizid&quot;, &quot;1S2p1xBtwP20qb2JTMacsA&quot;], [&quot;language&quot;, &quot;zh&quot;], [&quot;country&quot;, &quot;hk&quot;], [&quot;sk&quot;, &quot;no&quot;], [&quot;remove_ads&quot;, &quot;no&quot;], [&quot;attrattire&quot;, &quot;casual&quot;], [&quot;mode&quot;, &quot;live&quot;], [&quot;attrhastv&quot;, &quot;no&quot;], [&quot;attrwifi&quot;, &quot;no&quot;]]"
+										data-googlead-slot-sizes="[[728, 90]]"
+										data-location-dropper-uri="/locations"
+										data-business-id="1S2p1xBtwP20qb2JTMacsA"
+										data-map-state="{&quot;overlay_width&quot;: 335, &quot;service_areas&quot;: [], &quot;library&quot;: &quot;google&quot;, &quot;zoom_control_position&quot;: &quot;top_right&quot;, &quot;market&quot;: null, &quot;center&quot;: {&quot;latitude&quot;: 22.284577927519202, &quot;longitude&quot;: 114.158152525131}, &quot;zoom&quot;: 15, &quot;markers&quot;: {&quot;directions_marker&quot;: {&quot;location&quot;: null, &quot;key&quot;: &quot;directions_marker&quot;, &quot;icon&quot;: {&quot;anchor_offset&quot;: [12, 32], &quot;active_uri&quot;: &quot;//s3-media2.fl.yelpcdn.com/assets/2/www/img/7249ab345ac8/ico/yelp_map/directions_highlighted@2x.png&quot;, &quot;regular_uri&quot;: &quot;//s3-media2.fl.yelpcdn.com/assets/2/www/img/79f63ebc20db/ico/yelp_map/directions@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;active_origin&quot;: [0, 0], &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}, &quot;starred_business&quot;: {&quot;url&quot;: &quot;/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF&quot;, &quot;location&quot;: {&quot;latitude&quot;: 22.284577927519202, &quot;longitude&quot;: 114.158152525131}, &quot;key&quot;: &quot;starred_business&quot;, &quot;hovercard_id&quot;: &quot;r5SkcG09GxhtB5M3lTVkjw&quot;, &quot;resource_type&quot;: &quot;business&quot;, &quot;icon&quot;: {&quot;anchor_offset&quot;: [12, 32], &quot;active_uri&quot;: &quot;//s3-media2.fl.yelpcdn.com/assets/2/www/img/63e0e17c0579/ico/yelp_map/annotation_star_highlighted@2x.png&quot;, &quot;regular_uri&quot;: &quot;//s3-media2.fl.yelpcdn.com/assets/2/www/img/7ffd8e34c576/ico/yelp_map/annotation_star@2x.png&quot;, &quot;scaled_size&quot;: [24, 32], &quot;active_origin&quot;: [0, 0], &quot;regular_origin&quot;: [0, 0], &quot;size&quot;: [24, 32]}}}, &quot;top_biz_bounds&quot;: null, &quot;hoods&quot;: [], &quot;scrollwheel_zoom&quot;: false}"
+										class="lightbox-map hidden">
+
+										<div id="yelp_tw_map_modal_728x90-wrapper"
+											class="googlead-leader-wrapper">
+											<div class="google-ads googlead-leader-container">
+												<div id="yelp_tw_map_modal_728x90"
+													data-slot-id="/1014943/yelp_tw/map_modal/728x90"
+													class="google-ads-block googlead-leader"></div>
+											</div>
+										</div>
+
+
+										<div class="map-wrapper">
+											<div class="side-box">
+
+												<div class="get-directions-box island">
+													<div class="get-directions-content">
+														<h3>查看路程</h3>
+														<div class="contentbox">
+
+															<form method="GET" class="clearfix yform"
+																action="/map/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF">
+
+																<div
+																	class="transit-buttons ybtn-group ybtn-group-full clearfix">
+																	<a
+																		class="ybtn transit-tab show-tooltip alt-tooltip tab selected"
+																		href="javascript:;" data-tab-id="driving"> <i
+																		class="i ig-directions i-driving-directions active"></i>
+																		<span class="tooltip-wrapper"> <span
+																			class="tooltip">駕駛</span>
+																	</span>
+																	</a> <a
+																		class="ybtn transit-tab show-tooltip alt-tooltip tab"
+																		href="javascript:;" data-tab-id="transit"> <i
+																		class="i ig-directions i-transit-directions"
+																		classname=""></i> <span class="tooltip-wrapper">
+																			<span class="tooltip">公共交通</span>
+																	</span>
+																	</a> <a
+																		class="ybtn transit-tab show-tooltip alt-tooltip tab"
+																		href="javascript:;" data-tab-id="walking"> <i
+																		class="i ig-directions i-walking-directions"
+																		classname=""></i> <span class="tooltip-wrapper">
+																			<span class="tooltip">步行</span>
+																	</span>
+																	</a> <a
+																		class="ybtn transit-tab show-tooltip alt-tooltip tab"
+																		href="javascript:;" data-tab-id="cycling"> <i
+																		class="i ig-directions i-cycling-directions"
+																		classname=""></i> <span class="tooltip-wrapper">
+																			<span class="tooltip">踩單車</span>
+																	</span>
+																	</a>
+																</div>
+
+																<div class="starting-point">
+																	<a href="javascript:;"
+																		class="swapper pull-right read-more">互換出發點／目的地</a> <label>出發點</label>
+																	<div class="location">
+																		<div class="user-location nested-icon-label">
+																			<i class="i ig-directions i-start_small-directions"></i>
+																			<div class="input-with-dropper">
+																				<input type="text" name="location"
+																					id="js-dropper-text" autocomplete="off"> <a
+																					class="i-wrap ig-wrap-common i-location-picker-arrow-common-wrap location-dropper"
+																					id="js-dropper-btn" href="#"><i
+																					class="i ig-common i-location-picker-arrow-common"></i>
+																					選擇地點</a>
+																			</div>
+
+																		</div>
+																	</div>
+																</div>
+
+																<div class="ending-point">
+																	<strong class="hidden">出發點</strong> <a
+																		href="javascript:;"
+																		class="swapper pull-right read-more hidden">互換出發點／目的地</a>
+																	<div class="location">
+																		<div class="business-location media-block">
+																			<div class="media-avatar">
+																				<i class="i ig-directions i-end_small-directions"></i>
+																			</div>
+																			<div class="media-story">
+																				<div class="media-title">
+																					<a data-hovercard-id="r5SkcG09GxhtB5M3lTVkjw"
+																						href="/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF"
+																						class="biz-name">添好運點心專門店</a>
+
+																				</div>
+																				<address itemtype="http://schema.org/PostalAddress"
+																					itemscope="" itemprop="address">
+																					<span itemprop="streetAddress">Shop 12A,
+																						Hong Kong Station<br>香港站12A鋪
+																					</span><br>香港
+																				</address>
+
+																			</div>
+																		</div>
+																	</div>
+																</div>
+
+																<button
+																	class="ybtn ybtn-primary ybtn-small ytype get-directions-button"
+																	value="submit" type="submit">
+																	<span>查看路程</span>
+																</button>
+
+															</form>
+
+															<h3 class="result-header hidden"></h3>
+															<div class="textual-results"></div>
+														</div>
+
+													</div>
+
+												</div>
+
+											</div>
+
+											<div class="yelp-map-container directions-map">
+												<div class="engine-container"></div>
+											</div>
+										</div>
+
+
+									</div>
+								</div>
+
+								<div class="mapbox-text">
+									<a
+										class="i-wrap ig-wrap-common i-action-edit-common-wrap link-more mapbox-edit"
+										href="/biz_attribute?biz_id=1S2p1xBtwP20qb2JTMacsA"><i
+										class="i ig-common i-action-edit-common"></i> 編輯</a>
+									<ul>
+										<li class="address"><strong class="street-address">
+												<address itemtype="http://schema.org/PostalAddress"
+													itemscope="" itemprop="address">
+													<span itemprop="streetAddress">香港站<br>12A鋪
+													</span><br>香港
+												</address>
+
+										</strong> <span class="neighborhood-str-list"> 香港島, 中環 </span></li>
+
+
+										<li class="clearfix"><a class="biz-directions"
+											href="/map/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF"
+											data-component-bound="true">查看路程</a></li>
+
+										<li><span
+											class="i-wrap ig-wrap-common i-phone-cta-common-wrap mapbox-icon"><i
+												class="i ig-common i-phone-cta-common"></i> <span
+												class="offscreen">電話號碼</span> <span itemprop="telephone"
+												class="biz-phone"> +852 2332 3078 </span> </span></li>
+
+
+									</ul>
+								</div>
+
+							</div>
+
+
+
+							<span itemtype="http://data-vocabulary.org/Breadcrumb"
+								class="hidden" itemscope=""> <a itemprop="url"
+								href="/c/hk/restaurants"> <span itemprop="title">餐廳</span>
+							</a> <span itemtype="http://data-vocabulary.org/Breadcrumb"
+								itemprop="child" itemscope=""> <a itemprop="url"
+									href="/c/hk/%E4%B8%AD%E5%9C%8B%E8%8F%9C"> <span
+										itemprop="title">中國菜</span>
+								</a> <span itemtype="http://data-vocabulary.org/Breadcrumb"
+									itemprop="child" itemscope=""> <a itemprop="url"
+										href="/c/hk/%E5%BB%A3%E6%9D%B1%E8%8F%9C"> <span
+											itemprop="title">廣東菜</span>
+									</a>
+
+
+								</span></span></span> <span itemtype="http://data-vocabulary.org/Breadcrumb"
+								class="hidden" itemscope=""> <a itemprop="url"
+								href="/c/hk/restaurants"> <span itemprop="title">餐廳</span>
+							</a> <span itemtype="http://data-vocabulary.org/Breadcrumb"
+								itemprop="child" itemscope=""> <a itemprop="url"
+									href="/c/hk/%E4%B8%AD%E5%9C%8B%E8%8F%9C"> <span
+										itemprop="title">中國菜</span>
+								</a> <span itemtype="http://data-vocabulary.org/Breadcrumb"
+									itemprop="child" itemscope=""> <a itemprop="url"
+										href="/c/hk/%E6%B8%AF%E5%BC%8F%E9%BB%9E%E5%BF%83"> <span
+											itemprop="title">點心</span>
+									</a>
+
+
+								</span></span></span>
+
+						</div>
+						<div class="showcase-container">
+
+
+							<div class="showcase showcase-3-photo">
+
+								<div class="top-shelf-grey"></div>
+
+								<div class="showcase-footer-links"></div>
+
+
+								<div class="lightbox-media-parent">
+									<div class="showcase-photos">
+
+
+
+
+
+
+										<div data-media-index="1" data-ga-label="left_photo"
+											class="js-photo photo photo-1">
+											<div class="showcase-photo-box">
+
+												<a
+													href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=SipDKp7Dn8PEsVHMM090pw">
+
+													<img width="250" height="250"
+													src="http://s3-media4.fl.yelpcdn.com/bphoto/SipDKp7Dn8PEsVHMM090pw/ls.jpg"
+													class="photo-box-img"
+													alt="添好運點心專門店 - Steamed Pork Dumplings w/ Shrimp - 香港">
+
+												</a>
+
+											</div>
+
+
+											<div class="photo-box-overlay js-overlay">
+												<div class="media-block photo-box-overlay_caption">
+													<div class="media-avatar avatar">
+														<div data-hovercard-id="XKcno7mqX5vcvnSO4qVPhQ"
+															class="photo-box pb-30s">
+															<a href="/user_details?userid=TdYKJgSgY2GF_YJnwsi5yQ">
+																<img width="30" height="30"
+																src="//s3-media1.fl.yelpcdn.com/photo/wxXfGxZzN3pE9aWCsNCYdg/30s.jpg"
+																class="photo-box-img" alt="Amelinda L.">
+
+															</a>
+
+														</div>
+
+
+
+													</div>
+
+													<div class="media-story">
+														<a
+															href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=SipDKp7Dn8PEsVHMM090pw"
+															class="photo-desc"> Steamed Pork Dumplings w/ Shrimp
+														</a> <span class="author"> 作者： <a
+															data-hovercard-id="XKcno7mqX5vcvnSO4qVPhQ"
+															href="/user_details?userid=TdYKJgSgY2GF_YJnwsi5yQ"
+															class="user-display-name">Amelinda L.</a>
+														</span>
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+
+
+
+
+
+
+
+										<div data-media-index="0" data-ga-label="middle_photo"
+											class="js-photo photo photo-2">
+											<div class="showcase-photo-box">
+
+												<a
+													href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=XPKenxZzCiYe2GEotnLUEQ">
+
+													<img width="250" height="250"
+													src="http://s3-media2.fl.yelpcdn.com/bphoto/XPKenxZzCiYe2GEotnLUEQ/ls.jpg"
+													class="photo-box-img"
+													alt="添好運點心專門店 - They do have order sheet in English! Whew!  :-)  Jan 2015 - 香港">
+
+												</a>
+
+											</div>
+
+
+											<div class="photo-box-overlay js-overlay">
+												<div class="media-block photo-box-overlay_caption">
+													<div class="media-avatar avatar">
+														<div data-hovercard-id="1VjKa9myxBpibQbf2gFxGw"
+															class="photo-box pb-30s">
+															<a href="/user_details?userid=fZY97UjlP-iv35beOl_OfQ">
+																<img width="30" height="30"
+																src="//s3-media1.fl.yelpcdn.com/photo/ATlTKrsdlR0iNri50ydq1Q/30s.jpg"
+																class="photo-box-img" alt="Peter S.">
+
+															</a>
+
+														</div>
+
+
+
+													</div>
+
+													<div class="media-story">
+														<a
+															href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=XPKenxZzCiYe2GEotnLUEQ"
+															class="photo-desc"> They do have order sheet in
+															English!… </a> <span class="author"> 作者： <a
+															data-hovercard-id="1VjKa9myxBpibQbf2gFxGw"
+															href="/user_details?userid=fZY97UjlP-iv35beOl_OfQ"
+															class="user-display-name">Peter S.</a>
+														</span>
+													</div>
+
+												</div>
+											</div>
+
+										</div>
+
+
+
+
+
+
+
+										<div data-media-index="2" data-ga-label="right_photo"
+											class="js-photo photo photo-3 photo-grid">
+											<div class="showcase-photo-box">
+
+												<a
+													href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=KF4PVq7Gp6HU3sWmkGloWA">
+
+													<img width="250" height="250"
+													src="http://s3-media4.fl.yelpcdn.com/bphoto/KF4PVq7Gp6HU3sWmkGloWA/ls.jpg"
+													class="photo-box-img" alt="添好運點心專門店 - Baked pork buns - 香港">
+
+												</a> <a
+													href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=UGKGAmF_Ql5FnHVdL1d9cw">
+
+													<img width="180" height="180"
+													src="http://s3-media2.fl.yelpcdn.com/bphoto/UGKGAmF_Ql5FnHVdL1d9cw/180s.jpg"
+													class="photo-box-img"
+													alt="添好運點心專門店 - the famous baked pork buns - 香港">
+
+												</a> <a
+													href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=pWCOSgVwgt1DnM4EJebEhg">
+
+													<img width="180" height="180"
+													src="http://s3-media2.fl.yelpcdn.com/bphoto/pWCOSgVwgt1DnM4EJebEhg/180s.jpg"
+													class="photo-box-img"
+													alt="添好運點心專門店 - 叉燒包 (烤) | Baked Char Siu Bao - 香港">
+
+												</a> <a
+													href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=E68KP1XFHQWgweVP-2_5cQ">
+
+													<img width="180" height="180"
+													src="http://s3-media2.fl.yelpcdn.com/bphoto/E68KP1XFHQWgweVP-2_5cQ/180s.jpg"
+													class="photo-box-img"
+													alt="添好運點心專門店 - A sample of their delicious Dimsum dishes! This small popular eatery is located in IFC Mall, Podium Level of MTR.   Jan 2015 - 香港">
+
+												</a>
+
+											</div>
+
+
+											<a
+												href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF"
+												class="see-more show-all-overlay"> <i
+												class="i ig-biz_details i-more-photos-white-biz_details"></i>
+												查看所有189張相片
+											</a>
+
+										</div>
+
+
+										<meta
+											content="http://s3-media4.fl.yelpcdn.com/bphoto/SipDKp7Dn8PEsVHMM090pw/ls.jpg"
+											itemprop="image">
+
+									</div>
+								</div>
+
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<div class="content-container" id="super-container">
+
+				<div class="container">
+					<div
+						class="clearfix layout-block layout-right-rail layout-border ysection">
+						<div class="column column-alpha main-section">
+
+							<div class="review-highlights" data-component-bound="true"
+								style="position: relative;">
+								<div class="review-highlights-content"></div>
+								<div class="throbber-overlay" style="display: none;">
+									<div class="throbber-container"></div>
+								</div>
+							</div>
+
+
+
+							<div>
+								<div class="feed" data-component-bound="true">
+									<div class="feed-header" data-component-bound="true">
+										<div class="feed-header-search-row">
+											<h2>推薦評語</h2>
+
+										</div>
+										<div class="feed-sorts-filters clearfix">
+											<ul class="tabs-pill feed-sorts pull-left">
+												<li class="inline-block tab selected"><a
+													href="http://www.yelp.com.tw/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?sort_by=relevance_desc&amp;start=0">
+														Yelp挑選 <span class="offscreen">已選擇</span>
+												</a></li>
+												<li class="inline-block tab tab-resortable"><a
+													href="http://www.yelp.com.tw/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?sort_by=date_desc&amp;start=0">
+														日期 </a></li>
+												<li class="inline-block tab tab-resortable"><a
+													href="http://www.yelp.com.tw/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?sort_by=rating_desc&amp;start=0">
+														星級評分 </a></li>
+												<li class="inline-block"><span class="subtle-text">精英</span>
+												</li>
+											</ul>
+
+											<ul class="tabs-pill feed-language-filters pull-right">
+
+												<li class="tab inline-block js-language-link selected">
+													<a data-lang="zh"
+													href="http://zh.yelp.com.hk/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF">繁體中文<span
+														class="offscreen">已選擇</span></a><span class="count">1</span>
+												</li>
+
+												<li class="tab inline-block js-language-link"><a
+													data-lang="en"
+													href="http://www.yelp.com/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF">英文</a><span
+													class="count">65</span></li>
+
+												<li class="tab inline-block js-language-link"><a
+													data-lang="de"
+													href="http://www.yelp.de/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF">德文</a><span
+													class="count">1</span></li>
+
+
+											</ul>
+										</div>
+										<div class="feed-trust-banner">
+											<div class="display-table">
+												<div class="display-table-cell">
+													<i
+														class="i ig-biz_details i-large-burst-biz_details inline-block trust-banner-burst"></i>
+												</div>
+												<div class="display-table-cell trust-banner-text">
+													<span class="legal-copy"> <b>我們著重誠信，</b>所以商店不可以通過付款去更改或移除屬於他們的評語。<a
+														href="/advertiser_faq">了解更多</a>
+													</span>
+												</div>
+												<div class="display-table-cell">
+													<a href="#"
+														class="alert-dismiss dismiss-trust-banner js-dismiss-trust-banner">
+														× </a>
+												</div>
+											</div>
+										</div>
+
+
+									</div>
+
+									<div class="review-list" data-component-bound="true"
+										style="position: relative;">
+										<ul class="ylist ylist-bordered reviews"
+											data-component-bound="true">
+											[#if list??]
+											[#list list as item]
+											<li>
+												<div itemtype="http://schema.org/Review" itemscope=""
+													itemprop="review"
+													data-signup-object="user_id:V8Er2gTc05o_eJ1H_kPcLQ"
+													data-review-id="KLjVYBL2L71s0SA7A__qFw"
+													class="review review--with-sidebar">
+													<meta content="Carmen W." itemprop="author">
+													<div class="review-sidebar">
+														<div class="review-sidebar-content">
+															<div class="ypassport media-block">
+																<div class="media-avatar">
+																	<div data-hovercard-id="t-EdLemiNV8AB9Wv-pn3wA"
+																		class="photo-box pb-60s">
+																		<a href="${siteurl}/user_details.htm?id=${item.user.id}">
+																			<img width="60" height="60"
+																			src="//s3-media1.fl.yelpcdn.com/photo/nwtscvxFlbupk8bgTeNe8Q/60s.jpg"
+																			class="photo-box-img" alt="${item.user.name}">
+
+																		</a>
+
+																	</div>
+
+
+
+																</div>
+																<div class="media-story">
+																	<ul class="user-passport-info">
+																		<li class="user-name"><a
+																			data-hovercard-id="t-EdLemiNV8AB9Wv-pn3wA"
+																			href="/user_details?userid=V8Er2gTc05o_eJ1H_kPcLQ"
+																			class="user-display-name">${item.user.name!""}</a></li>
+																		<li class="user-location"><b>香港</b></li>
+																	</ul>
+
+																	<ul class="user-passport-stats">
+																		<li class="friend-count"><span
+																			class="i-wrap ig-wrap-common_sprite i-friends-orange-common_sprite-wrap"><i
+																				class="i ig-common_sprite i-friends-orange-common_sprite"></i>
+																				<b>5</b>個朋友</span></li>
+																		<li class="review-count"><span
+																			class="i-wrap ig-wrap-common_sprite i-star-orange-common_sprite-wrap"><i
+																				class="i ig-common_sprite i-star-orange-common_sprite"></i>
+																				<b>149</b>則評語</span></li>
+
+																	</ul>
+
+																</div>
+															</div>
+
+															<ul class="iconed-list action-link-list">
+
+																<li class="iconed-list-item"><a
+																	href="/biz_share?bizid=1S2p1xBtwP20qb2JTMacsA&amp;return_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF&amp;reviewid=KLjVYBL2L71s0SA7A__qFw"
+																	data-pop-uri="/send_to_friend/review/KLjVYBL2L71s0SA7A__qFw"
+																	class="action-link send-to-friend">
+																		<div class="iconed-list-avatar">
+																			<i class="i ig-common i-action-share-common"></i>
+																		</div>
+																		<div class="iconed-list-story">分享評語</div>
+																</a></li>
+
+																<li class="iconed-list-item"><a
+																	href="/thanx?complimentable_id=KLjVYBL2L71s0SA7A__qFw&amp;complimentable_type=REVIEW&amp;previous_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF&amp;user_id=V8Er2gTc05o_eJ1H_kPcLQ"
+																	class="action-link send-compliment">
+																		<div class="iconed-list-avatar">
+																			<i class="i ig-common i-action-compliment-common"></i>
+																		</div>
+																		<div class="iconed-list-story">讚美</div>
+																</a></li>
+
+																<li class="iconed-list-item"><a rel="Carmen W."
+																	href="/mail?action_send_form=1&amp;dst=V8Er2gTc05o_eJ1H_kPcLQ&amp;return_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF"
+																	class="action-link send-pm">
+																		<div class="iconed-list-avatar">
+																			<i class="i ig-common i-action-message-common"></i>
+																		</div>
+																		<div class="iconed-list-story">傳送訊息</div>
+																</a></li>
+
+																<li class="iconed-list-item manage-follow-container">
+																	<a style="" rel="V8Er2gTc05o_eJ1H_kPcLQ"
+																	href="/following_user/add?dst_user_id=V8Er2gTc05o_eJ1H_kPcLQ&amp;previous_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF"
+																	data-csrf-token="31e194185c6326e53b83b1418457b9204580725328f90a29641dd3439dd97989"
+																	class="action-link manage-following-add">
+																		<div class="iconed-list-avatar">
+																			<i class="i ig-common i-action-follow-common"></i>
+																		</div>
+																		<div class="iconed-list-story">關注 Carmen W.</div>
+																</a> <a style="display: none;" rel="V8Er2gTc05o_eJ1H_kPcLQ"
+																	href="/following_user/remove?dst_user_id=V8Er2gTc05o_eJ1H_kPcLQ&amp;previous_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF"
+																	data-csrf-token="31e194185c6326e53b83b1418457b9204580725328f90a29641dd3439dd97989"
+																	class="action-link manage-following-remove">
+																		<div class="iconed-list-avatar">
+																			<i class="i ig-common i-action-unfollow-common"></i>
+																		</div>
+																		<div class="iconed-list-story">停止關注Carmen W.</div>
+																</a>
+
+																</li>
+															</ul>
+
+														</div>
+													</div>
+
+													<div class="review-wrapper">
+														<div class="review-content">
+															<div class="biz-rating biz-rating-very-large clearfix">
+																<div itemtype="http://schema.org/Rating" itemscope=""
+																	itemprop="reviewRating">
+
+																	<div class="rating-very-large">
+																		<i title="${item.servicescore!''}星級評分" class="star-img stars_${item.servicescore!''}"> <img
+																			width="84" height="303"
+																			src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																			class="offscreen" alt="4.0星級評分">
+																		</i>
+																		<meta content="4.0" itemprop="ratingValue">
+																	</div>
+
+
+																</div>
+																<span class="rating-qualifier">
+																	<meta content="2014-08-31" itemprop="datePublished">
+																	${item.addDate!""}
+																</span>
+
+															</div>
+
+
+															<p lang="zh" itemprop="description">
+															${item.comment!""}
+															</p>
+															<ul class="photo-box-grid clearfix js-content-expandable"
+																data-component-bound="true">
+																<li style="width: 348px; height: 348px;">
+																	<div
+																		class="photo-box photo-box--interactive has-overlay">
+
+																		<img width="348" height="348"
+																			src="//s3-media1.fl.yelpcdn.com/bphoto/N0wtChHILynFU7r7QccmTw/348s.jpg"
+																			class="photo-box-img" alt="添好運點心專門店 - 香港"> <a
+																			href="/biz_photos/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?select=N0wtChHILynFU7r7QccmTw&amp;userid=V8Er2gTc05o_eJ1H_kPcLQ"
+																			class="biz-shim"> </a>
+
+																	</div>
+
+																</li>
+
+															</ul>
+
+														</div>
+														<div class="review-footer clearfix">
+															<div data-review-id="KLjVYBL2L71s0SA7A__qFw"
+																class="rateReview voting-feedback">
+																<p class="voting-intro voting-prompt">你覺得這則評語 …?</p>
+																<ul
+																	data-csrf-token="3925f85de660761303235399baf55112274c456b3dbb54fbad499fcb45f9df1f"
+																	class="voting-buttons">
+
+
+																	<li class="vote-item inline-block"><a
+																		class="ybtn ybtn-small useful" rel="useful"
+																		href="javascript:;"><span
+																			class="i-wrap ig-wrap-common i-ufc-useful-common-wrap button-content"><i
+																				class="i ig-common i-ufc-useful-common"></i> <span
+																				class="vote-type">有用</span> <span class="count">1</span></span></a>
+																	</li>
+
+
+
+																	<li class="vote-item inline-block"><a
+																		class="ybtn ybtn-small funny" rel="funny"
+																		href="javascript:;"><span
+																			class="i-wrap ig-wrap-common i-ufc-funny-common-wrap button-content"><i
+																				class="i ig-common i-ufc-funny-common"></i> <span
+																				class="vote-type">有趣</span> <span class="count">1</span></span></a>
+																	</li>
+
+
+
+																	<li class="vote-item inline-block"><a
+																		class="ybtn ybtn-small cool" rel="cool"
+																		href="javascript:;"><span
+																			class="i-wrap ig-wrap-common i-ufc-cool-common-wrap button-content"><i
+																				class="i ig-common i-ufc-cool-common"></i> <span
+																				class="vote-type">很酷</span> <span class="count">1</span></span></a>
+																	</li>
+
+																</ul>
+
+															</div>
+
+															<div class="review-footer-actions pull-right clearfix">
+
+
+																<a
+																	href="/flag_content?biz_id=1S2p1xBtwP20qb2JTMacsA&amp;flag_id=KLjVYBL2L71s0SA7A__qFw&amp;flag_type=review&amp;previous_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF"
+																	data-pop-uri="/flag_content?biz_id=1S2p1xBtwP20qb2JTMacsA&amp;flag_id=KLjVYBL2L71s0SA7A__qFw&amp;flag_type=review&amp;previous_url=http%3A%2F%2Fwww.yelp.com.tw%2Fbiz%2F%25E6%25B7%25BB%25E5%25A5%25BD%25E9%2581%258B%25E9%25BB%259E%25E5%25BF%2583%25E5%25B0%2588%25E9%2596%2580%25E5%25BA%2597-%25E9%25A6%2599%25E6%25B8%25AF"
+																	class="chiclet-link show-tooltip chiclet-link--flag">
+																	<i class="i ig-common i-24x24_flag-common"></i> <span
+																	class="tooltip-wrapper"> <span class="tooltip">舉報評語</span>
+																</span>
+																</a>
+
+															</div>
+
+														</div>
+
+
+
+													</div>
+												</div>
+
+											</li>
+                                            [/#list]
+                                            [/#if]
+										</ul>
+
+										<div class="throbber-overlay" style="display: none;">
+											<div class="throbber-container"></div>
+										</div>
+									</div>
+									<div class="review-pager" data-component-bound="true">
+
+											[#include "/theme/yelp/common/pageryelp.html"]
+				                            [@pager page curpage "${siteurl}events/browse.htm?a=1"][/@pager]
+									</div>
+								</div>
+
+
+								<div class="not-recommended ysection"
+									data-component-bound="true">
+									<a rel="nofollow"
+										href="/not_recommended_reviews/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF"
+										class="subtle-text inline-block js-expander-link"><span
+										class="i-wrap ig-wrap-common i-dropdown-arrow-common-wrap ig-wrap-common-r dropdown-arrow"><i
+											class="i i-dropdown-arrow-common ig-common"></i> 1則暫時未被推薦的評語
+									</span></a>
+									<div
+										class="not-recommended-reviews-drawer filtered-reviews-content js-expander-content hidden"></div>
+								</div>
+
+
+								<div
+									class="js-best-of-yelp-container best-of-yelp-container eight-col"
+									data-component-bound="true">
+									<div class="ysection js-best-of-yelp">
+										<h3>附近的好東西</h3>
+
+										<ul class="photo-box-list clearfix"
+											data-component-bound="true">
+											<li>
+
+												<div
+													class="photo-box photo-box--interactive biz-listing-photo has-overlay">
+													<img width="180" height="180"
+														src="//s3-media1.fl.yelpcdn.com/bphoto/37xCPP1r8TdfJuwQ2eKY9w/180s.jpg"
+														class="photo-box-img" alt="正斗粥麵專家">
+
+
+													<div class="photo-box-overlay js-overlay"
+														style="bottom: -18px;">
+														<div class="clearfix">
+															<a data-hovercard-id="NKH7VgXRZuqJpOkq9Bwrog"
+																href="/biz/%E6%AD%A3%E6%96%97%E7%B2%A5%E9%BA%B5%E5%B0%88%E5%AE%B6-%E9%A6%99%E6%B8%AF-2?page_src=best_of_yelp"
+																class="biz-name">正斗粥麵專家</a>
+
+															<div class="biz-rating biz-rating-medium clearfix">
+
+																<div class="rating">
+																	<i title="4.5星級評分" class="star-img stars_4_half"> <img
+																		width="84" height="303"
+																		src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																		class="offscreen" alt="4.5星級評分">
+																	</i>
+																</div>
+
+
+																<span class="review-count rating-qualifier">
+																	12則評語 </span>
+
+															</div>
+
+														</div>
+														<div class="additional-info js-hidden-info">
+															<span class="neighborhood-str-list"> 香港島 </span>
+
+														</div>
+													</div>
+													<a
+														href="/biz/%E6%AD%A3%E6%96%97%E7%B2%A5%E9%BA%B5%E5%B0%88%E5%AE%B6-%E9%A6%99%E6%B8%AF-2?page_src=best_of_yelp"
+														class="biz-shim"> <span class="offscreen">正斗粥麵專家</span>
+													</a>
+
+												</div>
+
+											</li>
+											<li>
+
+												<div
+													class="photo-box photo-box--interactive biz-listing-photo has-overlay">
+													<img width="180" height="180"
+														src="//s3-media1.fl.yelpcdn.com/bphoto/zBzcws3ijLTeuZeW2pjrVg/180s.jpg"
+														class="photo-box-img" alt="添好運點心專門店">
+
+
+													<div class="photo-box-overlay js-overlay"
+														style="bottom: -18px;">
+														<div class="clearfix">
+															<a data-hovercard-id="ushXqK233l0oD0WLnB4qYQ"
+																href="/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF-6?page_src=best_of_yelp"
+																class="biz-name">添好運點心專門店</a>
+
+															<div class="biz-rating biz-rating-medium clearfix">
+
+																<div class="rating">
+																	<i title="4.5星級評分" class="star-img stars_4_half"> <img
+																		width="84" height="303"
+																		src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																		class="offscreen" alt="4.5星級評分">
+																	</i>
+																</div>
+
+
+																<span class="review-count rating-qualifier">
+																	28則評語 </span>
+
+															</div>
+
+														</div>
+														<div class="additional-info js-hidden-info">
+															<span class="neighborhood-str-list"> 九龍 </span>
+
+														</div>
+													</div>
+													<a
+														href="/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF-6?page_src=best_of_yelp"
+														class="biz-shim"> <span class="offscreen">添好運點心專門店</span>
+													</a>
+
+												</div>
+
+											</li>
+											<li>
+
+												<div
+													class="photo-box photo-box--interactive biz-listing-photo has-overlay">
+													<img width="180" height="180"
+														src="//s3-media4.fl.yelpcdn.com/bphoto/gpCt1lga547Oz2IvrMjg7g/180s.jpg"
+														class="photo-box-img" alt="沾仔記">
+
+
+													<div class="photo-box-overlay js-overlay"
+														style="bottom: -18px;">
+														<div class="clearfix">
+															<a data-hovercard-id="Fz_bd2vJOKzFeU0cDt0yAw"
+																href="/biz/%E6%B2%BE%E4%BB%94%E8%A8%98-%E9%A6%99%E6%B8%AF?page_src=best_of_yelp"
+																class="biz-name">沾仔記</a>
+
+															<div class="biz-rating biz-rating-medium clearfix">
+
+																<div class="rating">
+																	<i title="4.5星級評分" class="star-img stars_4_half"> <img
+																		width="84" height="303"
+																		src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																		class="offscreen" alt="4.5星級評分">
+																	</i>
+																</div>
+
+
+																<span class="review-count rating-qualifier">
+																	22則評語 </span>
+
+															</div>
+
+														</div>
+														<div class="additional-info js-hidden-info">
+															<span class="neighborhood-str-list"> 香港島 </span>
+
+														</div>
+													</div>
+													<a
+														href="/biz/%E6%B2%BE%E4%BB%94%E8%A8%98-%E9%A6%99%E6%B8%AF?page_src=best_of_yelp"
+														class="biz-shim"> <span class="offscreen">沾仔記</span>
+													</a>
+
+												</div>
+
+											</li>
+										</ul>
+
+										<a href="/c/hk/%E5%BB%A3%E6%9D%B1%E8%8F%9C" class="link-more">查看更多<b>廣東菜，在香港</b></a>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="column column-beta sidebar">
+							<div class="open-rail clearfix">
+
+
+
+								<h3 class="offscreen">商店資料總結</h3>
+								<div class="island summary">
+									<ul class="iconed-list">
+										<li class="biz-hours iconed-list-item">
+											<div class="iconed-list-avatar">
+												<i class="i ig-biz_details i-clock-open-biz_details"></i>
+											</div>
+											<div class="iconed-list-story">
+												<dl class="short-def-list">
+													<dt class="attribute-key">今日</dt>
+													<dd>
+														<span class="hour-range"><span class="nowrap">09:00</span>
+															- <span class="nowrap">21:00</span></span> <span
+															class="nowrap extra open">開放中</span>
+													</dd>
+												</dl>
+											</div>
+										</li>
+
+
+
+										<li class="iconed-list-item">
+											<div class="iconed-list-avatar">
+
+												<span data-remainder="$$$"
+													class="business-attribute price-range">$</span>
+											</div>
+											<div class="iconed-list-story">
+												<dl class="short-def-list">
+													<dt class="attribute-key">價格範圍</dt>
+													<dd class="nowrap price-description">HK$70以下</dd>
+												</dl>
+											</div>
+										</li>
+
+
+
+
+
+										<li class="iconed-list-item claim-business">
+											<div class="iconed-list-avatar">
+												<i class="i ig-biz_details i-suitcase-red-star-biz_details"></i>
+											</div>
+											<div class="iconed-list-story">
+												<a
+													href="https://biz.yelp.com/signup/1S2p1xBtwP20qb2JTMacsA/account">
+													<b>在此工作？</b>註冊此商店
+												</a>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+
+
+
+
+
+							</div>
+							<div class="bordered-rail">
+								<div class="ywidget biz-hours">
+									<h3>營業時間</h3>
+									<table class="table table-simple hours-table">
+										<tbody>
+											<tr>
+												<th scope="row">周一</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"></td>
+											</tr>
+											<tr>
+												<th scope="row">周二</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"></td>
+											</tr>
+											<tr>
+												<th scope="row">周三</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"></td>
+											</tr>
+											<tr>
+												<th scope="row">周四</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"></td>
+											</tr>
+											<tr>
+												<th scope="row">周五</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"></td>
+											</tr>
+											<tr>
+												<th scope="row">周六</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"></td>
+											</tr>
+											<tr>
+												<th scope="row">周日</th>
+												<td><span class="nowrap">09:00</span> - <span
+													class="nowrap">21:00</span></td>
+												<td class="extra"><span class="nowrap open">開放中</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+
+									<a
+										class="i-wrap ig-wrap-common i-action-edit-common-wrap link-more edit-info"
+										href="/biz_attribute?biz_id=1S2p1xBtwP20qb2JTMacsA"><i
+										class="i ig-common i-action-edit-common"></i> 編輯商店資訊</a>
+
+								</div>
+
+
+
+								<div class="ywidget">
+									<h3>更多商家資訊</h3>
+
+									<ul class="ylist">
+										<li>
+											<div class="short-def-list">
+
+												<dl>
+													<dt class="attribute-key">是否接受訂位</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否提供外送</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否接受外帶</dt>
+													<dd>是</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否接受信用卡</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">適合</dt>
+													<dd>早午餐</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否有單車停車位</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否適合兒童</dt>
+													<dd>是</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否適合團體</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">衣著</dt>
+													<dd>休閒</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">環境氣氛</dt>
+													<dd>休閒</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">噪音音量</dt>
+													<dd>有點吵</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">酒類飲品</dt>
+													<dd>無</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否提供戶外座位</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">Wi-Fi</dt>
+													<dd>無</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否有電視</dt>
+													<dd>否</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否有服務生服務</dt>
+													<dd>是</dd>
+												</dl>
+
+												<dl>
+													<dt class="attribute-key">是否承辦宴席</dt>
+													<dd>是</dd>
+												</dl>
+											</div>
+										</li>
+
+									</ul>
+								</div>
+
+
+
+								<div class="media-block first-to-review ywidget"
+									data-component-bound="true">
+									<div class="media-avatar">
+										<i class="i ig-biz_details i-first-to-review-biz_details"></i>
+										<div data-hovercard-id="BzdsJK1-LUKlvf9KN9vdAw"
+											class="photo-box pb-30s">
+											<a href="/user_details?userid=EaMuuxSHQPDElARm9lTWeA"> <img
+												width="30" height="30"
+												src="//s3-media1.fl.yelpcdn.com/photo/fY0NBvVDb-dB50gfoQ4Lag/30s.jpg"
+												class="photo-box-img" alt="Vince H.">
+
+											</a>
+
+										</div>
+
+
+
+									</div>
+									<div class="media-story">
+										<div class="media-title">
+											<a data-hovercard-id="BzdsJK1-LUKlvf9KN9vdAw"
+												href="/user_details?userid=EaMuuxSHQPDElARm9lTWeA"
+												class="user-display-name">Vince H.</a>
+										</div>
+										<a data-review-id="CFv3Fw0M9MTIJapS932CJw"
+											class="disableable-link label"
+											href="/biz/%E6%B7%BB%E5%A5%BD%E9%81%8B%E9%BB%9E%E5%BF%83%E5%B0%88%E9%96%80%E5%BA%97-%E9%A6%99%E6%B8%AF?hrid=CFv3Fw0M9MTIJapS932CJw">
+											分享評語第一人 </a>
+									</div>
+								</div>
+
+
+
+								<div class="ywidget related-businesses">
+									<h3>用家同時Yelp</h3>
+									<ul class="ylist">
+										<li>
+											<div class="media-block media-block--12 biz-listing-medium">
+												<div class="media-avatar">
+													<div class="photo-box pb-60s">
+														<a
+															href="/biz/%E9%BC%8E%E6%B3%B0%E8%B1%90-%E9%A6%99%E6%B8%AF?page_src=related_bizes">
+															<img width="60" height="60"
+															src="//s3-media2.fl.yelpcdn.com/bphoto/DWCj13CreRQYY8BWE_wGAQ/60s.jpg"
+															class="photo-box-img" alt="鼎泰豐">
+
+														</a>
+
+													</div>
+
+
+
+												</div>
+												<div class="media-story">
+													<div class="media-title clearfix">
+														<a data-hovercard-id="4DMpCs5yZy8vTSyL4lgQyA"
+															href="/biz/%E9%BC%8E%E6%B3%B0%E8%B1%90-%E9%A6%99%E6%B8%AF?page_src=related_bizes"
+															class="biz-name">鼎泰豐</a>
+
+													</div>
+
+													<span class="biz-alternate-names">Din Tai Fung</span>
+
+													<div class="biz-rating biz-rating-medium clearfix">
+
+														<div class="rating">
+															<i title="4.5星級評分" class="star-img stars_4_half"> <img
+																width="84" height="303"
+																src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																class="offscreen" alt="4.5星級評分">
+															</i>
+														</div>
+
+
+														<span class="review-count rating-qualifier"> 30則評語
+														</span>
+
+													</div>
+
+
+													<q> </q>
+												</div>
+											</div>
+
+										</li>
+										<li>
+											<div class="media-block media-block--12 biz-listing-medium">
+												<div class="media-avatar">
+													<div class="photo-box pb-60s">
+														<a
+															href="/biz/%E6%BE%B3%E6%B4%B2%E7%89%9B%E5%A5%B6%E5%85%AC%E5%8F%B8-%E9%A6%99%E6%B8%AF-2?page_src=related_bizes">
+															<img width="60" height="60"
+															src="//s3-media2.fl.yelpcdn.com/bphoto/lA4ZE1IBQIv35qn1TzMcSw/60s.jpg"
+															class="photo-box-img" alt="澳洲牛奶公司">
+
+														</a>
+
+													</div>
+
+
+
+												</div>
+												<div class="media-story">
+													<div class="media-title clearfix">
+														<a data-hovercard-id="r5TzlQVb1V4j9TpeZ0-0tQ"
+															href="/biz/%E6%BE%B3%E6%B4%B2%E7%89%9B%E5%A5%B6%E5%85%AC%E5%8F%B8-%E9%A6%99%E6%B8%AF-2?page_src=related_bizes"
+															class="biz-name">澳洲牛奶公司</a>
+
+													</div>
+
+													<span class="biz-alternate-names">Australia Dairy
+														Company</span>
+
+													<div class="biz-rating biz-rating-medium clearfix">
+
+														<div class="rating">
+															<i title="4.0星級評分" class="star-img stars_4"> <img
+																width="84" height="303"
+																src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																class="offscreen" alt="4.0星級評分">
+															</i>
+														</div>
+
+
+														<span class="review-count rating-qualifier"> 58則評語
+														</span>
+
+													</div>
+
+
+													<q> </q>
+												</div>
+											</div>
+
+										</li>
+										<li>
+											<div class="media-block media-block--12 biz-listing-medium">
+												<div class="media-avatar">
+													<div class="photo-box pb-60s">
+														<a
+															href="/biz/%E8%8F%AF%E5%AB%82%E5%86%B0%E5%AE%A4-%E9%A6%99%E6%B8%AF-2?page_src=related_bizes">
+															<img width="60" height="60"
+															src="//s3-media4.fl.yelpcdn.com/bphoto/hy-ga2KbgvRGi2MdPRCbQw/60s.jpg"
+															class="photo-box-img" alt="華嫂冰室">
+
+														</a>
+
+													</div>
+
+
+
+												</div>
+												<div class="media-story">
+													<div class="media-title clearfix">
+														<a data-hovercard-id="WVRIbe_Nx8e8P8HlaTsF7w"
+															href="/biz/%E8%8F%AF%E5%AB%82%E5%86%B0%E5%AE%A4-%E9%A6%99%E6%B8%AF-2?page_src=related_bizes"
+															class="biz-name">華嫂冰室</a>
+
+													</div>
+
+
+													<div class="biz-rating biz-rating-medium clearfix">
+
+														<div class="rating">
+															<i title="4.5星級評分" class="star-img stars_4_half"> <img
+																width="84" height="303"
+																src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																class="offscreen" alt="4.5星級評分">
+															</i>
+														</div>
+
+
+														<span class="review-count rating-qualifier"> 11則評語
+														</span>
+
+													</div>
+
+
+													<q> </q>
+												</div>
+											</div>
+
+										</li>
+									</ul>
+								</div>
+
+
+
+
+
+								<div class="ywidget nearby-links">
+									<h3>瀏覽鄰近</h3>
+									<a
+										href="/search?find_desc=%E9%A4%90%E5%BB%B3&amp;find_loc=%E9%A6%99%E6%B8%AF%E7%AB%99%2C+%E9%A6%99%E6%B8%AF">餐廳</a>,
+									<a
+										href="/search?find_desc=%E5%A4%9C%E7%94%9F%E6%B4%BB&amp;find_loc=%E9%A6%99%E6%B8%AF%E7%AB%99%2C+%E9%A6%99%E6%B8%AF">夜生活</a>,
+									<a
+										href="/search?find_desc=%E8%B3%BC%E7%89%A9&amp;find_loc=%E9%A6%99%E6%B8%AF%E7%AB%99%2C+%E9%A6%99%E6%B8%AF">購物</a>,
+									<a
+										href="/search?find_desc=&amp;find_loc=%E9%A6%99%E6%B8%AF%E7%AB%99%2C+%E9%A6%99%E6%B8%AF">顯示全部</a>
+								</div>
+
+
+
+								<div class="ywidget claim-business">
+									<h3>在此工作嗎？註冊此商店</h3>
+									<ul class="bullet-list-round">
+										<li>回覆評語以及向顧客傳送私人訊息</li>
+										<li>註冊是完全免費，只需幾分鐘</li>
+									</ul>
+									<a class="ybtn ybtn-small ytype"
+										href="https://biz.yelp.com/signup/1S2p1xBtwP20qb2JTMacsA/account">註冊此商店</a>
+								</div>
+
+
+
+
+
+	
+
+
+							</div>
+
+						</div>
+					</div>
+
+
+				</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				<img width="1" height="1"
+					src="https://www.facebook.com/tr?id=1432291440371688&amp;ev=NoScript&amp;ampcd%5Bcategory%5D=cantonese&amp;ampcd%5Bcategory%5D=dimsum"
+					style="display: none" alt="">
+
+			</div>
+		</div>
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+<div id="bookmark-popups" style="display: none;">
+    <div class="body-overlay" data-component-bound="true" style="display: block;" id="bookmark-popups-overlay"></div>
+	<div class="ypop" id="bookmark-popup" role="dialog"
+		aria-labelledby="bookmark-popup-title"
+		style="display: block; position: absolute; left: 441px; top: 160px;">
+		<div class="ypop-content clearfix" id="bookmark-popup-content">
+			<a class="offscreen ypop-close-offscreen" href="#">關閉彈出式視窗</a>
+			<div class="ypop-title" id="bookmark-popup-title">
+				<h2>編輯已收藏商店</h2>
+				<i class="i i-x-close-inset-common ig-common ypop-close" id="bookmark-popups-close"></i>
+			</div>
+			<div class="flash clearfix" style="display: none;"></div>
+			<div class="ypop-inner clearfix" id="bookmark-popup-inner">
+				<div>
+					<div class="flash flash-success flash-initial">商店已被增加到已收藏商店中。</div>
+
+
+
+
+
+
+					<form name="bookmark_form" method="POST" class="yform"
+						action="/bookmark/edit_biz">
+						<input type="hidden"
+							value="7fd49f91f4a099f46e87faa6c22c88771d95e3ab9f4f5a9ab882774b3ae85064"
+							class="csrftok" name="csrftok"> <input type="hidden"
+							name="bookmark_id" value="S_-HpI4xSABopot931VAOA"> <input
+							type="hidden" name="biz_id" value="H6wbsSPZFk3qQNrlw7-DrQ">
+						<input type="hidden" name="review_id" value=""> <input
+							type="hidden" name="action" value="add_biz"> <input
+							type="hidden" value="" name="from_bookLogPop">
+						<ul class="radio-list radio-list-buttons">
+							<li class="inline-block"><label> <input type="radio"
+									checked="checked" value="To Try" name="label" class="radio">
+									<span class="ybtn ybtn-small ytype js-bookmark-type">要試試</span>
+							</label></li>
+							<li class="inline-block"><label> <input type="radio"
+									value="To Review" name="label" class="radio"> <span
+									class="ybtn ybtn-small ytype js-bookmark-type">撰寫評語</span>
+							</label></li>
+							<li class="inline-block"><label> <input type="radio"
+									value="" name="label" class="radio"> <span
+									class="ybtn ybtn-small ytype js-bookmark-type">沒有標籤</span>
+							</label></li>
+						</ul>
+						<label for="bookmark-popup-note">備註</label> <span
+							class="help-inline">可選擇填寫與否</span>
+						<textarea placeholder="例如：阿森叫我去這，生日參會的地點建議" name="note"
+							id="bookmark-popup-note"></textarea>
+					</form>
+				</div>
+			</div>
+			<div class="ypop-footer clearfix" id="bookmark-popup-footer">
+				<div class="ypop-status"></div>
+				<div class="ypop-buttons">
+					<button type="submit" value="submit"
+						class="ybtn ybtn-primary ybtn-small">
+						<span>儲存</span>
+					</button>
+					<a href="#">刪除已收藏商店</a>
+				</div>
+			</div>
+			<a class="offscreen ypop-close-offscreen" href="#">關閉彈出式視窗</a>
+			<div class="throbber-overlay" style="display: none;">
+				<div class="throbber-container"></div>
+			</div>
+		</div>
+		<div class="ypop-shade"></div>
+	</div>
+</div>
+	<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+		$("#bookmark-popup-add").click(function(){
+			$("#bookmark-popups").show();
+		});
+		$("#bookmark-popups-close").click(function(){
+			$("#bookmark-popups").hide();
+		});
+		$("#bookmark-popups-overlay").click(function(){
+			$("#bookmark-popups").hide();
+		});
+		
+		
+	});
+	</script>
+</body>
+
+</html>
