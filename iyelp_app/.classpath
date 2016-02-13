@@ -6,7 +6,10 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="src" path="src/main/resources"/>
+=======
+>>>>>>> branch 'master' of https://git.oschina.net/cng1985/iyelp.git
 	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
 		<attributes>
 			<attribute name="optional" value="true"/>
