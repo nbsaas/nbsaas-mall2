@@ -17,7 +17,7 @@ import com.openyelp.data.shop.vo.ShopCatalog;
 
 @RestController
 @RequestMapping(value = "shopcatalog")
-public class ShopCatalogRest {
+public class ShopCatalogRestController {
 	
 	@Autowired
 	ShopCategoryService areaService;

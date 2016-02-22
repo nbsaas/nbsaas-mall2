@@ -16,7 +16,7 @@ import com.openyelp.data.service.AreaService;
 
 @Controller
 @RequestMapping(value = "area")
-public class AreaController {
+public class AreaRestController {
 	
 	@Autowired
 	AreaService areaService;

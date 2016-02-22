@@ -191,7 +191,7 @@
 											</div>
 											<a class="add-another-cat link-more" href="#"  data-bind='click: addLine ,visible: lines().length <3'>新增另一分类</a>
 										</div> 
-										<a href="/developers/documentation/v2/category_list"
+										<a href="${siteurl}develop/shopcataloglist.htm"
 										target="_blank" class="see-all-categories link-more hidden"
 										style="display: inline;">查看所有分类</a></li>
 									<li class="newly-opened-biz"><label for="newly-opened-biz">
@@ -568,7 +568,7 @@
 			
 			
 			var id=$("#province").val();
-			 $.getJSON("${siteurl}/area/querybycircle.htm?id="+id, function(data) { 
+			 $.getJSON("${siteurl}area/querybycircle.htm?id="+id, function(data) { 
 				    // Now use this data to update your view models, 
 				    // and Knockout will update your UI automatically 
 				 var template = $.templates("#areastemplate");
@@ -586,7 +586,7 @@
 		KindEditor.ready(function(K) {
 			var editor = KindEditor.editor({
 				allowFileManager : true,
-				uploadJson : '${siteurl}/image/upimgwork.htm'
+				uploadJson : '${siteurl}image/upimgwork.htm'
 			});
 			K('#image1').click(
 					function() {
@@ -607,7 +607,7 @@
 		
 		function getAreaList(ele,id,level){
 			// alert(id);
-			 $.getJSON("${siteurl}/area/querybycircle.htm?id="+id, function(data) { 
+			 $.getJSON("${siteurl}area/querybycircle.htm?id="+id, function(data) { 
 				    // Now use this data to update your view models, 
 				    // and Knockout will update your UI automatically 
 				 var template = $.templates("#areastemplate");
