@@ -40,7 +40,14 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
-
+	<filter>
+		<filter-name>cors</filter-name>
+		<filter-class>com.openyelp.filter.SimpleCORSFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>cors</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
