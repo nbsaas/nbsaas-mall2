@@ -36,8 +36,8 @@ public class AreaManagerAction {
 			Model model) {
 
 		List<Area> rs = areaService.findByParent(id);
-
 		model.addAttribute("list", rs);
+		model.addAttribute("tops", areaService.findByTops(id));
 		model.addAttribute("id", id);
 		model.addAttribute("courseitem", areaService.findById(id));
 		model.addAttribute("menus", areaService.findByParent(1));
@@ -67,7 +67,7 @@ public class AreaManagerAction {
 	}
 
 	@RequestMapping(value = "area/view_add", method = RequestMethod.GET)
-	public String view_add(HttpServletRequest request, int pid,
+	public String view_add(HttpServletRequest request, Integer pid,
 			HttpServletResponse response, Model model) {
 		Area item = areaService.findById(pid);
 		model.addAttribute("item", item);

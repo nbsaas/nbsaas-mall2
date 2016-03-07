@@ -29,8 +29,6 @@ public class AreaServiceImpl implements AreaService {
 	}
 
 	
-	@Cacheable(value="area_cache")
-	@Transactional(readOnly = true)
 	public Area findById(Integer id) {
 		Area entity = dao.findById(id);
 		return entity;
@@ -151,14 +149,13 @@ public class AreaServiceImpl implements AreaService {
 	}
 
 	
-	@Cacheable(value="area_cache")
 	@Transactional(readOnly = true)
 	@Override
 	public List<Area> findByTops(Integer id) {
 		LinkedList<Area> areas = new LinkedList<Area>();
 		int areaid = id;
 		Area area = dao.findById(id);
-		while (area.getParent()!=null&&area.getParent().getId() > 1) {
+		while (area.getParent()!=null&&area.getParent().getId() > 0) {
 			areas.addFirst(area);
 			area=dao.findById(area.getParentId());
 		}

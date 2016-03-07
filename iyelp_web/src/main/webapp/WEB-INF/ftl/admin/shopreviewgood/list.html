@@ -101,6 +101,7 @@
 										<td class="col-xs-2 text-center">操作</td>
 									</tr>
 									[#list list as item]
+									[#if item.shopReview?? && (item.shopReview.shop)??]
 									<tr id="trr${item.id}">
 										<td>${item.shopReview.shop.name!""}</td>
 										<td class="text-left">${item.shopReview.comment!""}</td>
@@ -118,10 +119,11 @@
 											</div>
 										</td>
 									</tr>
+									[/#if]
 									[/#list]
 								</table>
 							</div>
-	                  	[@pager page curpage "${siteurl}admin/xaioerarticle/list.htm?x=1"][/@pager]
+	                  	[@pager page curpage "${siteurl}admin/shopreviewgood/list.htm?x=1"][/@pager]
 	                  
 	
 						</div>
