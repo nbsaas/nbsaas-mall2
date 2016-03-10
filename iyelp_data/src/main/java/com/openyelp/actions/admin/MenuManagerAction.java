@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.data.entity.Menu;
-import com.openyelp.data.service.MenuService;
+import com.ada.admin.entity.Menu;
+import com.ada.admin.service.MenuService;
 
 @Controller
 @RequestMapping(value = "admin")
@@ -25,75 +25,78 @@ public class MenuManagerAction {
 	@Autowired
 	MenuService menuService;
 
-	@Autowired
-	MenuService articleService;
-
 	Logger logger = LoggerFactory.getLogger("log");
 	int aid = 0;
 
 	@RequestMapping(value = "menu/list", method = RequestMethod.GET)
-	public String list(
-			@RequestParam(value = "id", required = true, defaultValue = "1") int id,
-			HttpServletRequest request, HttpServletResponse response,
-			Model model) {
+	public String list(@RequestParam(value = "id", required = true, defaultValue = "1") int id,
+			HttpServletRequest request, HttpServletResponse response, Model model) {
 
-		List<Menu> rs = menuService.findChild(id);
-
-		model.addAttribute("list", rs);
 		model.addAttribute("id", id);
-		model.addAttribute("courseitem", menuService.findById(id));
-		model.addAttribute("menus",menuService.findChild(1));
+		model.addAttribute("tops", menuService.findTop(id));
+		model.addAttribute("list", menuService.findChild(id));
 
 		return "admin/menu/list";
 	}
 
 	@RequestMapping(value = "menu/index", method = RequestMethod.GET)
-	public String index(HttpServletRequest request,
-			HttpServletResponse response, Model model) {
+	public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
 		return "admin/menu/index";
 	}
 
 	@RequestMapping(value = "menu/view_add", method = RequestMethod.GET)
-	public String view_add(HttpServletRequest request, int pid,
-			HttpServletResponse response, Model model) {
+	public String view_add(HttpServletRequest request, int pid, HttpServletResponse response, Model model) {
 		Menu item = menuService.findById(pid);
 		model.addAttribute("item", item);
 		return "admin/menu/view_add";
 	}
 
 	@RequestMapping(value = "menu/model_add", method = RequestMethod.POST)
-	public String model_add(Menu menu, HttpServletRequest request,
-			HttpServletResponse response, Model model) {
-		
-		menu=	menuService.save(menu);
-		
-		return "redirect:/admin/menu/list.htm?id="+menu.getParentId();
+	public String model_add(Menu menu, HttpServletRequest request, HttpServletResponse response, Model model) {
+
+		menuService.save(menu);
+		if (menu.getParentId() != null) {
+			return "redirect:/admin/menu/list.htm?id=" + menu.getParentId();
+
+		} else {
+			return "redirect:/admin/menu/list.htm";
+
+		}
 	}
 
 	@RequestMapping(value = "menu/view_update", method = RequestMethod.GET)
-	public String view_update(HttpServletRequest request,
-			HttpServletResponse response, Model model) {
+	public String view_update(Integer id, HttpServletRequest request, HttpServletResponse response, Model model) {
+		model.addAttribute("model", menuService.findById(id));
 		return "admin/menu/view_update";
 	}
 
-	@RequestMapping(value = "menu/model_update", method = RequestMethod.GET)
-	public String model_update(Menu menu,
-			HttpServletRequest request, HttpServletResponse response,
-			Model model) {
+	@RequestMapping(value = "menu/model_update")
+	public String model_update(Menu menu, HttpServletRequest request, HttpServletResponse response, Model model) {
 
-		menuService.update(menu);
+		menu = menuService.update(menu);
 
-		return "admin/menu/model_update";
+		Integer id = null;
+		if (menu != null) {
+			id = menu.getParentId();
+		} else {
+			id = 1;
+		}
+
+		return "redirect:/admin/menu/list.htm?id=" + id;
 	}
 
 	@RequestMapping(value = "menu/model_delete", method = RequestMethod.GET)
-	public String model_delete(int typeid, HttpServletRequest request,
-			HttpServletResponse response, Model model) {
-
-		Menu m=	menuService.findById(typeid);
-		Integer id=m.getParentId();
+	public String model_delete(int typeid, HttpServletRequest request, HttpServletResponse response, Model model) {
+		Menu menu = menuService.findById(typeid);
+		Integer id = null;
+		if (menu != null) {
+			id = menu.getParentId();
+		} else {
+			id = 1;
+		}
 		menuService.deleteById(typeid);
-		return "redirect:/admin/menu/list.htm?id="+id;
+
+		return "redirect:/admin/menu/list.htm?id=" + id;
 	}
 
 	private HttpSession getSession(HttpServletRequest request) {
