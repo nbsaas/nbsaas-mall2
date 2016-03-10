@@ -11,7 +11,6 @@ import com.openyelp.data.core.Pagination;
 import com.openyelp.data.core.Updater;
 import com.openyelp.data.dao.EventInfoCategoryDao;
 import com.openyelp.data.entity.EventInfoCategory;
-import com.openyelp.data.entity.Menu;
 import com.openyelp.data.service.EventInfoCategoryService;
 
 @Service

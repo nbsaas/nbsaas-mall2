@@ -5,7 +5,6 @@ import java.util.List;
 import com.openyelp.annotation.RestFul;
 import com.openyelp.data.core.Pagination;
 import com.openyelp.data.entity.EventInfoCategory;
-import com.openyelp.data.entity.Menu;
 
 
 

@@ -12,7 +12,6 @@ import com.openyelp.data.core.Finder;
 import com.openyelp.data.core.Pagination;
 import com.openyelp.data.dao.AreaDao;
 import com.openyelp.data.entity.Area;
-import com.openyelp.data.entity.Menu;
 
 @Repository
 public class AreaDaoImpl extends BaseDaoImpl<Area, Integer> implements AreaDao {

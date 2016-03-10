@@ -16,9 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.openyelp.data.entity.EventInfoCategory;
-import com.openyelp.data.entity.Menu;
 import com.openyelp.data.service.EventInfoCategoryService;
-import com.openyelp.data.service.MenuService;
 
 @Controller
 @RequestMapping(value = "admin")

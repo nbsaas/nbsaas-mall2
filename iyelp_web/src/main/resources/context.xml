@@ -153,8 +153,16 @@
 	<mvc:annotation-driven
 		ignore-default-model-on-redirect="true">
 	</mvc:annotation-driven>
+	
+		<bean name="openSessionInViewInterceptor"
+		class="org.springframework.orm.hibernate4.support.OpenSessionInViewInterceptor">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
 	<mvc:interceptors>
 		<ref bean="siteHandlerInterceptor" />
+		<ref bean="openSessionInViewInterceptor" />
 	</mvc:interceptors>
 
 
