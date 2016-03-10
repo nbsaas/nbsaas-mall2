@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
+import com.ada.area.entity.Area;
+import com.ada.area.service.AreaService;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopCategory;
-import com.openyelp.data.service.AreaService;
 import com.openyelp.data.service.ShopService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;

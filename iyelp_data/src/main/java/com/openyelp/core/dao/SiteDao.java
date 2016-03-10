@@ -2,9 +2,9 @@ package com.openyelp.core.dao;
 
 
 import com.openyelp.core.entity.Site;
-import com.openyelp.data.core.BaseDao;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.BaseDao;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 
 public interface SiteDao extends BaseDao<Site, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);

@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.openyelp.data.core.Finder;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Finder;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 import com.openyelp.data.dao.PhotoDao;
 import com.openyelp.data.entity.Photo;
 import com.openyelp.data.service.PhotoService;

@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.openyelp.article.dao.ArticleDao;
 import com.openyelp.article.entity.Article;
-import com.openyelp.data.core.BaseDaoImpl;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.BaseDaoImpl;
+import com.ada.data.core.Pagination;
 
 @Repository
 public class ArticleDaoImpl extends BaseDaoImpl<Article, Long> implements ArticleDao {

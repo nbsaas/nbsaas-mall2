@@ -12,6 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.ada.area.entity.Area;
+
 @Entity
 @Table(name = "eventinfo_entity")
 public class EventInfo {

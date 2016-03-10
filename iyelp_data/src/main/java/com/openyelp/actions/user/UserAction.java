@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ada.common.action.BaseAction;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.service.UserService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;

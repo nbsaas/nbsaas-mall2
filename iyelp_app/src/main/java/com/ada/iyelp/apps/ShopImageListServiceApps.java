@@ -2,7 +2,7 @@ package com.ada.iyelp.apps;
 
 import java.util.List;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.ShopImage;
 import com.openyelp.data.entity.ShopImageList;
 import com.openyelp.data.service.ShopImageListService;

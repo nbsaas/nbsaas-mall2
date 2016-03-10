@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ada.common.action.BaseAction;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Talk;
 import com.openyelp.data.entity.TalkCategory;
 import com.openyelp.data.entity.TalkReply;

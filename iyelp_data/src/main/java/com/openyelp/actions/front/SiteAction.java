@@ -18,13 +18,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.ada.area.entity.Area;
+import com.ada.area.service.AreaService;
 import com.openyelp.data.apps.ObjectFactory;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.EntityContent;
 import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.service.AreaService;
-import com.openyelp.data.service.CommentService;
 import com.openyelp.data.service.EntityContentService;
 import com.openyelp.data.service.EventInfoJoinService;
 import com.openyelp.data.service.EventInfoService;

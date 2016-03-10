@@ -9,9 +9,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.openyelp.data.entity.Area;
 import com.openyelp.data.entity.TalkCategoryArea;
-import com.openyelp.data.service.AreaService;
 import com.openyelp.data.service.TalkCategoryAreaService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.DirectiveUtils;

@@ -9,29 +9,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.openyelp.data.entity.Area;
-import com.openyelp.data.service.AreaService;
-
-
+import com.ada.area.entity.Area;
+import com.ada.area.service.AreaService;
 
 @Controller
 @RequestMapping(value = "area")
 public class AreaRestController {
-	
+
 	@Autowired
 	AreaService areaService;
+
 	@RequestMapping(value = "querybylist", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Area> findByArea(@RequestParam(value = "id", required = true, defaultValue = "1") int id){
-		List<Area> result=areaService.findByParent(id);
+	public List<Area> findByArea(@RequestParam(value = "id", required = true, defaultValue = "1") int id) {
+		List<Area> result = areaService.findByParent(id);
 		return result;
 	}
-	
-	
+
 	@RequestMapping(value = "querybycircle", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Area> findByCircle(@RequestParam(value = "id", required = true, defaultValue = "1") int id){
-		List<Area> result=areaService.pageByLevel(id,5,1,100).getList();
+	public List<Area> findByCircle(@RequestParam(value = "id", required = true, defaultValue = "1") int id) {
+		List<Area> result = areaService.pageByLevel(id, 5, 1, 100).getList();
 		return result;
 	}
 

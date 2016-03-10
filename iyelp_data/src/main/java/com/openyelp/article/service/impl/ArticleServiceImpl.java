@@ -12,9 +12,9 @@ import com.openyelp.article.entity.Article;
 import com.openyelp.article.entity.ArticleCatalog;
 import com.openyelp.article.page.ArticlePage;
 import com.openyelp.article.service.ArticleService;
-import com.openyelp.data.core.Finder;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Finder;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 
 @Service
 @Transactional

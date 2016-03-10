@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.openyelp.annotation.RestFul;
 import com.openyelp.article.entity.ArticleCatalog;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 
 
 

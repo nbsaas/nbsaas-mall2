@@ -2,9 +2,9 @@ package com.openyelp.article.dao;
 
 
 import com.openyelp.article.entity.ArticleComment;
-import com.openyelp.data.core.BaseDao;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.BaseDao;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 
 public interface ArticleCommentDao extends BaseDao<ArticleComment, Long>{
 	public Pagination getPage(int pageNo, int pageSize);

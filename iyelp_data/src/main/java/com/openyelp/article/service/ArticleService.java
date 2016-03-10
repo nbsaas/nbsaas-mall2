@@ -3,7 +3,7 @@ package com.openyelp.article.service;
 import com.openyelp.annotation.RestFul;
 import com.openyelp.article.entity.Article;
 import com.openyelp.article.page.ArticlePage;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 
 
 

@@ -1,7 +1,7 @@
 package com.openyelp.core.service;
 
 import com.openyelp.core.entity.Config;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 
 public interface ConfigService {
 	public Pagination getPage(int pageNo, int pageSize);

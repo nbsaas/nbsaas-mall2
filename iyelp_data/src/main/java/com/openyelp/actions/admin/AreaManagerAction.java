@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
-import com.openyelp.data.service.AreaService;
+import com.ada.area.entity.Area;
+import com.ada.area.page.AreaPage;
+import com.ada.area.service.AreaService;
+import com.ada.data.core.Pagination;
+import com.ada.data.page.Page;
 
 @Controller
 @RequestMapping(value = "admin")
@@ -52,7 +54,7 @@ public class AreaManagerAction {
 			HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		Pagination rs = areaService.pageByLevel(5, curpage, pagesize);
+		AreaPage rs = areaService.pageByLevel(5, curpage, pagesize);
 		model.addAttribute("page", rs);
 		model.addAttribute("list", rs.getList());
 		model.addAttribute("curpage", curpage);

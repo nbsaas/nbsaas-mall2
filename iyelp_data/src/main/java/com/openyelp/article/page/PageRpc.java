@@ -3,7 +3,7 @@ package com.openyelp.article.page;
 import java.io.Serializable;
 import java.util.List;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 
 public class PageRpc<T> implements Serializable {
 

@@ -3,10 +3,9 @@ package com.openyelp.shiro.utils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
-import com.openyelp.data.entity.Area;
+import com.ada.area.entity.Area;
 import com.openyelp.data.entity.UserInfo;
 import com.openyelp.shiro.realm.UserRealm.ShiroUser;
-import com.openyelp.site.AreaModel;
 
 public class UserUtil {
 	/**

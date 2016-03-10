@@ -6,12 +6,12 @@ import java.util.List;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
+import com.ada.area.entity.Area;
+import com.ada.area.service.AreaService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.openyelp.data.apps.ObjectFactory;
-import com.openyelp.data.entity.Area;
-import com.openyelp.data.service.AreaService;
 
 public class ProvinceApps {
 	public static final String TOWN="http://cdn.weather.hao.360.cn/sed_api_area_query.php?grade=town&_jsonp=loadTown&code=0804";

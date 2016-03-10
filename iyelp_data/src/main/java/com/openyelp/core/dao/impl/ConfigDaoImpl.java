@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.openyelp.core.dao.ConfigDao;
 import com.openyelp.core.entity.Config;
-import com.openyelp.data.core.BaseDaoImpl;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.BaseDaoImpl;
+import com.ada.data.core.Pagination;
 
 @Repository
 public class ConfigDaoImpl extends BaseDaoImpl<Config, Integer> implements ConfigDao {

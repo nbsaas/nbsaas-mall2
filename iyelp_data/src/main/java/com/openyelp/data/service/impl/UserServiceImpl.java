@@ -10,9 +10,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ada.common.security.Digests;
 import com.ada.common.security.Encodes;
-import com.openyelp.data.core.Finder;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Finder;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 import com.openyelp.data.dao.PhotoDao;
 import com.openyelp.data.dao.UserDao;
 import com.openyelp.data.dao.UserFollowDao;

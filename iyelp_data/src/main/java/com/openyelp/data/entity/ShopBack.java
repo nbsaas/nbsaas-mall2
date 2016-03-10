@@ -17,6 +17,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.ada.area.entity.Area;
+
 @Entity
 @Table(name = "shop_back")
 public class ShopBack {

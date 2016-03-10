@@ -1,6 +1,6 @@
 package com.openyelp.data.service;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.ShopBack;
 
 public interface ShopBackService {

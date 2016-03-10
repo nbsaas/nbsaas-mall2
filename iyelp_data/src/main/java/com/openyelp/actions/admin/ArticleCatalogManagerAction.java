@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.openyelp.article.entity.ArticleCatalog;
 import com.openyelp.article.service.ArticleCatalogService;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 
 @Controller
 @RequestMapping(value = "admin")

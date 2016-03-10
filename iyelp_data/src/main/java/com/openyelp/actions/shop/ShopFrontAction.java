@@ -1,6 +1,5 @@
 package com.openyelp.actions.shop;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
+import com.ada.area.entity.Area;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopBack;
 import com.openyelp.data.entity.ShopCategory;

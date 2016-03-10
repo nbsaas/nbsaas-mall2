@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.AreaHot;
 import com.openyelp.data.service.AreaHotService;
 
