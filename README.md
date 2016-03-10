@@ -15,12 +15,12 @@
 * 其它 Jsoup、gson
 * [icore](http://git.oschina.net/cng1985/icore)
 
-### iwan 工程介绍
+### iyelp 工程介绍
 
-* iwan_api	api工程
-* iwan_app	本地测试工程
-* iwan_data	工程的controller，数据模块
-* iwan_web	视图工程，不放代码，使用freemarker作为视图
+* iyelp_api	api工程
+* iyelp_app	本地测试工程
+* iyelp_data	工程的controller，数据模块
+* iyelp_web	视图工程，不放代码，使用freemarker作为视图
 
 
 ### icore 包介绍：
