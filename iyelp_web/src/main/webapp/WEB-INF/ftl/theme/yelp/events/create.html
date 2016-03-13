@@ -55,18 +55,18 @@
 				
 			}
 		});
-		$("input[name='venue_type']").change(function(data){
-			
-			if($(this).val()=="private"){
-				
-				
-				$("#find_business_pane").hide();
-				$("#create_venue_pane").show();
-			}else{
-				$("#find_business_pane").show();
-				$("#create_venue_pane").hide();
-			}
-		}); 
+		// $("input[name='venue_type']").change(function(data){
+// 			
+			// if($(this).val()=="private"){
+// 				
+// 				
+				// $("#find_business_pane").hide();
+				// $("#create_venue_pane").show();
+			// }else{
+				// $("#find_business_pane").show();
+				// $("#create_venue_pane").hide();
+			// }
+		// }); 
 		
 		$("#starts_month_day_year").datetimepicker({
 			  format:'Y-m-d',
@@ -190,44 +190,11 @@
 
 								<label for="selected_business">边度</label>
 								<div id="venue_picker">
-									<fieldset id="venue_picker_tabs">
-										<label class="radio-check" for="biz_tab"> <input
-											type="radio" checked="" value="public" name="venue_type"
-											id="biz_tab"> <span>公开场地</span>
-										</label> <label class="radio-check" for="add_tab"> <input
-											type="radio" value="private" name="venue_type" id="add_tab">
-											<span>私人地址</span>
-										</label>
-									</fieldset>
+									<input
+											type="hidden" value="private" name="venue_type" >
 
-									<div id="find_business_pane">
-										<div id="venue_picker_container">
-											<div class="business_finder clearfix">
-												<div class="form_container clearfix">
-													<label class="query_label">商店名称<input type="text"
-														name="query" class="text" placeholder="太兴，扒王之王"></label><label
-														class="location_label">邻近<input type="text"
-														name="location" class="text" placeholder="香港"></label>
-													<div class="submit_container">
-														<button
-															class="ybtn ybtn-secondary ybtn-small searchButton"
-															value="submit" type="submit">
-															<span>搜寻</span>
-														</button>
-														<span class="js-loading-animation throbber"
-															style="display: none;"></span>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div id="selected_business"></div>
-										<input type="hidden" value="" name="enc_business_id"
-											id="business_id">
-										<p style="display: none;" id="similar_event_msg">可能已经有人新增该活动。
-											请在提交活动前先检查右方的现有活动。</p>
-									</div>
 
-									<div style="display: none;" id="create_venue_pane">
+									<div  id="create_venue_pane">
 										<label for="venue_name"> 姓名 </label> <input type="text"
 											value="" id="venue_name" name="venue_name"> <label
 											for="venue_street"> 地址 </label> <input type="text" value=""

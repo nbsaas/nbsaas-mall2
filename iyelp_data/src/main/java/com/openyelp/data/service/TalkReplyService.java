@@ -2,6 +2,8 @@ package com.openyelp.data.service;
 
 import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
 import com.openyelp.data.entity.TalkReply;
 
 
@@ -21,4 +23,7 @@ public interface TalkReplyService {
 	public TalkReply deleteById(Integer id);
 	
 	public TalkReply[] deleteByIds(Integer[] ids);
+
+
+	public Page<TalkReply> findPage(Pageable pageable);
 }

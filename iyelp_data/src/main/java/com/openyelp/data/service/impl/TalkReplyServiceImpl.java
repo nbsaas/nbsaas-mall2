@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
 import com.openyelp.data.dao.TalkDao;
 import com.openyelp.data.dao.TalkReplyDao;
 import com.openyelp.data.entity.Talk;
@@ -81,5 +83,12 @@ public class TalkReplyServiceImpl implements TalkReplyService {
 		finder.setParam("talkid", talkid);
 		finder.append(" order by t.id desc");
 		return dao.find(finder , pageNo, pageSize);
+	}
+	
+	@Transactional(readOnly = true)
+	@Override
+	public Page<TalkReply> findPage(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return dao.findPage(pageable);
 	}
 }

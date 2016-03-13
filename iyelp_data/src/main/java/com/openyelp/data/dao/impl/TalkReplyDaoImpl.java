@@ -5,13 +5,13 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ada.data.core.BaseDaoImpl;
+import com.ada.data.core.CriteriaDaoImpl;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.dao.TalkReplyDao;
 import com.openyelp.data.entity.TalkReply;
 
 @Repository
-public class TalkReplyDaoImpl extends BaseDaoImpl<TalkReply, Integer> implements TalkReplyDao {
+public class TalkReplyDaoImpl extends CriteriaDaoImpl<TalkReply, Integer> implements TalkReplyDao {
 	public Pagination getPage(int pageNo, int pageSize) {
 		Criteria crit = createCriteria();
 		Pagination page = findByCriteria(crit, pageNo, pageSize);

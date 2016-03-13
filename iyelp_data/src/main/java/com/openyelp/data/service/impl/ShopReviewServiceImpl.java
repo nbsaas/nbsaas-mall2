@@ -82,8 +82,16 @@ public class ShopReviewServiceImpl implements ShopReviewService {
         Finder findersum = Finder
                 .create("select sum(s.servicescore) from ShopReview s where s.shop.id =" + shop.getId());
         Long sumscore = dao.<Long>hql(findersum);
-        float score= (float) (sumscore/(comments*1.0));
-        shop.setService_rating(score);
+        try {
+        	if (comments==0) {
+				return;
+			}
+            float score= (float) (sumscore/(comments*1.0));
+            shop.setService_rating(score);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
     }
 
     @Transactional

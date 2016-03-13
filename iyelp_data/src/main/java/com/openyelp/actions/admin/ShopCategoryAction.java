@@ -48,33 +48,34 @@ public class ShopCategoryAction {
 	}
 
 	@RequestMapping("/admin/shopcategory/view_edit")
-	public String edit(Pageable pageable,Integer id, Integer pageNo, HttpServletRequest request, ModelMap model) {
+	public String edit(Pageable pageable,Integer id,Integer pid, Integer pageNo, HttpServletRequest request, ModelMap model) {
 		model.addAttribute("model", manager.findById(id));
 		model.addAttribute("pageNo", pageNo);
 		model.addAttribute("page", pageable);
+		model.addAttribute("pid", pid);
 		return "admin/shopcategory/edit";
 	}
 
 	@RequestMapping("/admin/shopcategory/model_save")
-	public String save(ShopCategory bean, HttpServletRequest request, ModelMap model) {
+	public String save(ShopCategory bean,Integer pid, HttpServletRequest request, ModelMap model) {
 		bean = manager.save(bean);
 		log.info("save Teacher id={}", bean.getId());
-		return "redirect:view_list.htm";
+		return "redirect:/admin/shopcategory/view_list.htm?id="+pid;
 	}
 
 	@RequestMapping("/admin/shopcategory/model_update")
-	public String update(Pageable pageable, ShopCategory bean,HttpServletRequest request, ModelMap model) {
+	public String update(Pageable pageable,Integer pid, ShopCategory bean,HttpServletRequest request, ModelMap model) {
 		bean = manager.update(bean);
 		log.info("update Teacher id={}.", bean.getId());
-		return "redirect:/admin/shopcategory/view_list.htm?pageNumber="+pageable.getPageNumber();
+		return "redirect:/admin/shopcategory/view_list.htm?pageNumber="+pageable.getPageNumber()+"&id="+pid;
 	}
 
 	@RequestMapping("/admin/shopcategory/model_delete")
-	public String delete(Pageable pageable, Integer id, HttpServletRequest request, ModelMap model) {
+	public String delete(Pageable pageable,Integer pid, Integer id, HttpServletRequest request, ModelMap model) {
 			 
 				manager.deleteById(id);
 			 
-		return "redirect:/admin/shopcategory/view_list.htm?pageNumber="+pageable.getPageNumber();
+		return "redirect:/admin/shopcategory/view_list.htm?pageNumber="+pageable.getPageNumber()+"&id="+pid;
 	}
 	@RequestMapping("/admin/shopcategory/model_deletes")
 	public String deletes(Pageable pageable, Integer[] ids, HttpServletRequest request, ModelMap model) {

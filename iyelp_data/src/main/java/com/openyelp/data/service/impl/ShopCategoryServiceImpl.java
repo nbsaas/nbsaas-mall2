@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -45,7 +46,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		ShopCategory entity = dao.findById(id);
 		return entity;
 	}
-
+	@CacheEvict(allEntries = true,value="shop_catalog_cache")
 	@Transactional
 	public ShopCategory save(ShopCategory bean) {
 		dao.save(bean);
@@ -73,20 +74,20 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		}
 		return bean;
 	}
-
+	@CacheEvict(allEntries = true,value="shop_catalog_cache")
 	@Transactional
 	public ShopCategory update(ShopCategory bean) {
 		Updater<ShopCategory> updater = new Updater<ShopCategory>(bean);
 		bean = dao.updateByUpdater(updater);
 		return bean;
 	}
-
+	@CacheEvict(allEntries = true,value="shop_catalog_cache")
 	@Transactional
 	public ShopCategory deleteById(Integer id) {
 		ShopCategory bean = dao.deleteById(id);
 		return bean;
 	}
-
+	@CacheEvict(allEntries = true,value="shop_catalog_cache")
 	@Transactional
 	public ShopCategory[] deleteByIds(Integer[] ids) {
 		ShopCategory[] beans = new ShopCategory[ids.length];
@@ -111,7 +112,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		finder.setParam("pid", id);
 		return dao.find(finder);
 	}
-
+    @Cacheable(value="shop_catalog_cache")
 	@Transactional
 	@Override
 	public ShopCategory findByName(String name) {
@@ -136,7 +137,7 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		return result;
 	}
 	
-	
+    @Cacheable(value="shop_catalog_cache")
 	@Transactional(readOnly = true)
 	@Override
 	public String findByPidForJson(int id) {
