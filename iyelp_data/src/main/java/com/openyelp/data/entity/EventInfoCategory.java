@@ -16,40 +16,21 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import com.ada.common.hibernate.HibernateTree;
+import com.ada.data.entity.CatalogEntity;
 
 @Entity
 @Table(name = "eventinfo_category")
-public class EventInfoCategory implements HibernateTree<Integer> {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-
-	private java.lang.String name;
-
-	private Integer sortnum;
-	public Integer getSortnum() {
-		return sortnum;
-	}
-
-	public void setSortnum(Integer sortnum) {
-		this.sortnum = sortnum;
-	}
+public class EventInfoCategory extends CatalogEntity {
 
 	private java.lang.String path;
 
 	private java.lang.String icon;
 
-	private java.lang.String ids;
-
-	private java.lang.Integer lft;
-	private java.lang.Integer rgt;
-	private Integer levelinfo;
-
 	@JoinColumn(name = "pid")
 	@ManyToOne
 	private EventInfoCategory parent;
 
-	@OneToMany(mappedBy = "parent", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
 	private List<EventInfoCategory> childrens;
 
 	public List<EventInfoCategory> getChildrens() {
@@ -61,43 +42,12 @@ public class EventInfoCategory implements HibernateTree<Integer> {
 
 		}
 	}
-
 	public java.lang.String getIcon() {
 		return icon;
 	}
-
-	@Override
-	public Integer getId() {
-		// TODO Auto-generated method stub
-		return id;
-	}
-	public java.lang.String getIds() {
-		return ids;
-	}
-
-	public Integer getLevelinfo() {
-		return levelinfo;
-	}
-
-	public java.lang.Integer getLft() {
-		return lft;
-	}
-
-	/**
-	 * @see HibernateTree#getLftName()
-	 */
-	public String getLftName() {
-		return DEF_LEFT_NAME;
-	}
-
-	public java.lang.String getName() {
-		return name;
-	}
-
 	public EventInfoCategory getParent() {
 		return parent;
 	}
-
 	public Integer getParentId() {
 		EventInfoCategory parent = getParent();
 		if (parent != null) {
@@ -106,29 +56,9 @@ public class EventInfoCategory implements HibernateTree<Integer> {
 			return null;
 		}
 	}
-
-	/**
-	 * @see HibernateTree#getParentName()
-	 */
-	public String getParentName() {
-		return DEF_PARENT_NAME;
-	}
-
 	public java.lang.String getPath() {
 		return path;
 	}
-
-	public java.lang.Integer getRgt() {
-		return rgt;
-	}
-
-	/**
-	 * @see HibernateTree#getRgtName()
-	 */
-	public String getRgtName() {
-		return DEF_RIGHT_NAME;
-	}
-
 	@Override
 	public String getTreeCondition() {
 		// TODO Auto-generated method stub
@@ -143,26 +73,6 @@ public class EventInfoCategory implements HibernateTree<Integer> {
 		this.icon = icon;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
-	public void setIds(java.lang.String ids) {
-		this.ids = ids;
-	}
-
-	public void setLevelinfo(Integer levelinfo) {
-		this.levelinfo = levelinfo;
-	}
-
-	public void setLft(java.lang.Integer lft) {
-		this.lft = lft;
-	}
-
-	public void setName(java.lang.String name) {
-		this.name = name;
-	}
-
 	public void setParent(EventInfoCategory parent) {
 		this.parent = parent;
 	}
@@ -171,7 +81,4 @@ public class EventInfoCategory implements HibernateTree<Integer> {
 		this.path = path;
 	}
 
-	public void setRgt(java.lang.Integer rgt) {
-		this.rgt = rgt;
-	}
 }

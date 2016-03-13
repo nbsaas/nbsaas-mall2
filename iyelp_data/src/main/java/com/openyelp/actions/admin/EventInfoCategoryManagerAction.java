@@ -23,74 +23,69 @@ import com.openyelp.data.service.EventInfoCategoryService;
 public class EventInfoCategoryManagerAction {
 
 	@Autowired
-	EventInfoCategoryService menuService;
+	EventInfoCategoryService categoryService;
 
 	Logger logger = LoggerFactory.getLogger("log");
 	int aid = 0;
 
 	@RequestMapping(value = "eventinfocategory/list", method = RequestMethod.GET)
-	public String list(
-			@RequestParam(value = "id", required = true, defaultValue = "1") int id,
-			HttpServletRequest request, HttpServletResponse response,
-			Model model) {
+	public String list(@RequestParam(value = "id", required = true, defaultValue = "1") int id,
+			HttpServletRequest request, HttpServletResponse response, Model model) {
 
-		List<EventInfoCategory> rs = menuService.findByPid(id);
+		List<EventInfoCategory> rs = categoryService.findByPid(id);
 
 		model.addAttribute("list", rs);
 		model.addAttribute("id", id);
-		model.addAttribute("courseitem", menuService.findById(id));
-		model.addAttribute("menus",menuService.findByPid(1));
+		model.addAttribute("courseitem", categoryService.findById(id));
+		model.addAttribute("menus", categoryService.findByPid(1));
 
 		return "admin/eventinfocategory/list";
 	}
 
 	@RequestMapping(value = "eventinfocategory/index", method = RequestMethod.GET)
-	public String index(HttpServletRequest request,
-			HttpServletResponse response, Model model) {
+	public String index(HttpServletRequest request, HttpServletResponse response, Model model) {
 		return "admin/eventinfocategory/index";
 	}
 
 	@RequestMapping(value = "eventinfocategory/view_add", method = RequestMethod.GET)
-	public String view_add(HttpServletRequest request, int pid,
-			HttpServletResponse response, Model model) {
-		EventInfoCategory item = menuService.findById(pid);
+	public String view_add(HttpServletRequest request, int pid, HttpServletResponse response, Model model) {
+		EventInfoCategory item = categoryService.findById(pid);
 		model.addAttribute("item", item);
 		return "admin/eventinfocategory/view_add";
 	}
 
 	@RequestMapping(value = "eventinfocategory/model_add", method = RequestMethod.POST)
-	public String model_add(EventInfoCategory menu, HttpServletRequest request,
-			HttpServletResponse response, Model model) {
-		
-		menuService.save(menu);
-		
-		return "redirect:/admin/eventinfocategory/list.htm?id="+menu.getParentId();
+	public String model_add(EventInfoCategory menu, HttpServletRequest request, HttpServletResponse response,
+			Model model) {
+
+		categoryService.save(menu);
+
+		return "redirect:/admin/eventinfocategory/list.htm?id=" + menu.getParentId();
 	}
 
 	@RequestMapping(value = "eventinfocategory/view_update", method = RequestMethod.GET)
-	public String view_update(HttpServletRequest request,
+	public String view_update(Integer id,HttpServletRequest request,
 			HttpServletResponse response, Model model) {
+		model.addAttribute("model", categoryService.findById(id));
 		return "admin/eventinfocategory/view_update";
 	}
 
 	@RequestMapping(value = "eventinfocategory/model_update", method = RequestMethod.GET)
-	public String model_update(EventInfoCategory menu,
-			HttpServletRequest request, HttpServletResponse response,
+	public String model_update(EventInfoCategory menu, HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		menuService.update(menu);
+		menu = categoryService.update(menu);
 
-		return "admin/eventinfocategory/model_update";
+		return "redirect:/admin/eventinfocategory/list.htm?id=" + menu.getParentId();
 	}
 
 	@RequestMapping(value = "eventinfocategory/model_delete", method = RequestMethod.GET)
-	public String model_delete(int typeid, HttpServletRequest request,
-			HttpServletResponse response, Model model) {
-		EventInfoCategory m=	menuService.findById(typeid);
-		Integer id=m.getParentId();
-		menuService.deleteById(typeid);
+	public String model_delete(int typeid, HttpServletRequest request, HttpServletResponse response, Model model) {
+		EventInfoCategory m = categoryService.findById(typeid);
+		Integer id = m.getParentId();
+		categoryService.deleteById(typeid);
 
-		return "redirect:/admin/eventinfocategory/list.htm?id="+id;
+		return "redirect:/admin/eventinfocategory/list.htm?id=" + id;
 	}
 
 	private HttpSession getSession(HttpServletRequest request) {

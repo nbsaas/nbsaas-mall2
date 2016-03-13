@@ -1,5 +1,6 @@
 package com.openyelp.template;
 
+import com.ada.template.ModuleGenerator;
 
 public class CmsModuleGenerator {
 	private static String packName = "com.openyelp.template";

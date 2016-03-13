@@ -79,75 +79,48 @@ public class UserInfo {
 	 */
 	private Integer goods;
 
-	public Integer getFriends() {
-		return friends;
+	private String headimg;
+
+
+	private String phonenum;
+
+
+	@Column(nullable=true)
+	private String email;
+
+
+	private String password;
+
+
+	private String macaddress;
+
+
+	private Date addDate=new Date();
+
+
+
+	private Date lastDate=new Date();
+	private Integer logintimes;
+
+
+	@ManyToMany(fetch = FetchType.EAGER)
+	@JoinTable(name = "users_role_links")
+	private Set<UserRole> roles = new HashSet<UserRole>();
+
+
+
+	private String salt; // 加密密码的盐
+	@Transient
+	private String plainPassword;
+
+	public Date getAddDate() {
+		return addDate;
 	}
-
-
-	public void setFriends(Integer friends) {
-		this.friends = friends;
-	}
-
 
 	public Integer getComments() {
 		return comments;
 	}
 
-
-	public void setComments(Integer comments) {
-		this.comments = comments;
-	}
-
-
-	public Integer getGoods() {
-		return goods;
-	}
-
-
-	public void setGoods(Integer goods) {
-		this.goods = goods;
-	}
-
-
-
-	private String headimg;
-	public String getHeadimg() {
-		return headimg;
-	}
-
-
-	public void setHeadimg(String headimg) {
-		this.headimg = headimg;
-	}
-
-
-
-	private String phonenum;
-	@Column(nullable=true)
-	private String email;
-
-	private String password;
-
-	private String macaddress;
-
-	private Date addDate=new Date();
-
-	private Date lastDate=new Date();
-
-	private Integer logintimes;
-	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "users_role_links")
-	private Set<UserRole> roles = new HashSet<UserRole>();
-	private String salt; // 加密密码的盐
-	
-	@Transient
-	private String plainPassword;
-	public Date getAddDate() {
-		return addDate;
-	}
-
-	
 	public String getCredentialsSalt() {
 		return username + salt;
 	}
@@ -156,15 +129,25 @@ public class UserInfo {
 		return email;
 	}
 
-
+	public Integer getFriends() {
+		return friends;
+	}
+	
+	public Integer getGoods() {
+		return goods;
+	}
+	public String getHeadimg() {
+		return headimg;
+	}
+	
 	public Long getId() {
 		return id;
 	}
-
 	public Date getLastDate() {
 		return lastDate;
 	}
 
+	
 	public Integer getLogintimes() {
 		return logintimes;
 	}
@@ -172,6 +155,7 @@ public class UserInfo {
 	public String getMacaddress() {
 		return macaddress;
 	}
+
 
 	public String getName() {
 		return name;
@@ -191,8 +175,6 @@ public class UserInfo {
 		return phonenum;
 	}
 
-	// 不持久化到数据库，也不显示在Restful接口的属性.
-	
 	@JsonIgnore
 	public String getPlainPassword() {
 		return plainPassword;
@@ -201,7 +183,6 @@ public class UserInfo {
 	public UserProfile getProfile() {
 		return profile;
 	}
-
 
 	public Set<UserRole> getRoles() {
 		if(roles==null){
@@ -214,6 +195,8 @@ public class UserInfo {
 		return salt;
 	}
 
+	// 不持久化到数据库，也不显示在Restful接口的属性.
+	
 	/**
 	 * Returns the username associated with this user account;
 	 *
@@ -227,8 +210,25 @@ public class UserInfo {
 		this.addDate = addDate;
 	}
 
+
+	public void setComments(Integer comments) {
+		this.comments = comments;
+	}
+
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public void setFriends(Integer friends) {
+		this.friends = friends;
+	}
+
+	public void setGoods(Integer goods) {
+		this.goods = goods;
+	}
+
+	public void setHeadimg(String headimg) {
+		this.headimg = headimg;
 	}
 
 	public void setId(Long id) {
