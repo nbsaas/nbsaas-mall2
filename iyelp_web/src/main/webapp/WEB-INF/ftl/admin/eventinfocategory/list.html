@@ -70,7 +70,7 @@
 				<a href="#">首页</a>
 			</li>
 
-			<li class="active">欢迎光临</li>
+			<li class="active">活动分类管理</li>
 		</ul><!-- /.breadcrumb -->
 
 		<div class="nav-search" id="nav-search">
@@ -144,10 +144,10 @@
 												class="visible-md visible-lg hidden-sm hidden-xs btn-group">
 
 												<a class="btn btn-xs btn-info"
-													href="${siteurl}admin/eventinfocategory/view_edit.htm?id=${item.id}">
+													href="${siteurl}admin/eventinfocategory/view_edit.htm?id=${item.id}&pageNumber=${page.pageNumber}">
 														<i class="icon-edit bigger-120">更新</i>
 											</a> <a  class="btn btn-xs btn-danger"
-													href="${siteurl}admin/eventinfocategory/model_delete.htm?id=${item.id}">
+													href="${siteurl}admin/eventinfocategory/model_delete.htm?id=${item.id}&pageNumber=${page.pageNumber}">
 														<i class="icon-trash bigger-120">删除</i>
 												</a>
 											</div>

@@ -101,6 +101,7 @@ public class EventInfoCategoryServiceImpl implements EventInfoCategoryService {
 	public List<EventInfoCategory> findByPid(Integer id) {
 		Finder finder=Finder.create();
 		finder.append("from EventInfoCategory c where c.parent.id =:pid");
+		finder .append(" order by c.sortnum asc ");
 		finder.setParam("pid", id);
 		return dao.find(finder);
 	}

@@ -3,8 +3,11 @@ package com.openyelp.data.service;
 import java.util.List;
 
 import com.ada.data.core.Pagination;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
 import com.openyelp.annotation.RestFul;
 import com.openyelp.data.entity.ShopCategory;
+import com.openyelp.data.entity.TalkCategory;
 import com.openyelp.data.shop.vo.ShopCatalog;
 
 
@@ -42,4 +45,9 @@ public interface ShopCategoryService {
 	 * @return 根据级数
 	 */
 	public Integer updateNumsAndTime(Integer id);
+	
+	public Page<ShopCategory> findPage(Pageable pageable);
+
+	public List<ShopCategory> findTop(int id);
+
 }

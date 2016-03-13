@@ -10,9 +10,12 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ada.admin.entity.Menu;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
@@ -22,6 +25,7 @@ import com.openyelp.data.dao.ShopCategoryDao;
 import com.openyelp.data.dao.ShopDao;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopCategory;
+import com.openyelp.data.entity.TalkCategory;
 import com.openyelp.data.service.ShopCategoryService;
 import com.openyelp.data.shop.vo.ShopCatalog;
 
@@ -45,6 +49,28 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 	@Transactional
 	public ShopCategory save(ShopCategory bean) {
 		dao.save(bean);
+		if (bean.getParentId() != null) {
+			ShopCategory parent = dao.findById(bean.getParentId());
+			if (parent != null) {
+				if (parent.getLevelinfo() != null) {
+					bean.setLevelinfo(parent.getLevelinfo() + 1);
+				} else {
+					bean.setLevelinfo(2);
+				}
+				if (parent.getIds() != null) {
+					bean.setIds(parent.getIds() + "," + bean.getId());
+
+				} else {
+					bean.setIds(parent.getId() + "," + bean.getId());
+				}
+			} else {
+				bean.setLevelinfo(1);
+				bean.setIds("" + bean.getId());
+			}
+		} else {
+			bean.setLevelinfo(1);
+			bean.setIds("" + bean.getId());
+		}
 		return bean;
 	}
 
@@ -238,4 +264,28 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		// TODO Auto-generated method stub
 		return dao.updateNums(id);
 	}
+
+	@Transactional
+	@Override
+	public Page<ShopCategory> findPage(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return dao.findPage(pageable);
+	}
+
+	@Transactional
+	@Override
+	public List<ShopCategory> findTop(int id) {
+		LinkedList<ShopCategory> menus = new LinkedList<ShopCategory>();
+		ShopCategory menu = dao.findById(id);
+		while (menu.getParent() != null && menu.getId() > 0) {
+			menus.addFirst(menu);
+			menu = dao.findById(menu.getParentId());
+		}
+
+		if (menu != null && menu.getId() != null) {
+			menus.addFirst(menu);
+		}
+		return menus;
+	}
+
 }
