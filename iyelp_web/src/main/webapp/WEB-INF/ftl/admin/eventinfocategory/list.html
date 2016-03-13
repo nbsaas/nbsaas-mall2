@@ -127,6 +127,7 @@
 							</div>
 						</div>
 						<div class="col-xs-12">
+							<form id="listForm">
 							<div class="table-responsive">
 								<table class="table table-striped table-bordered table-hover">
 									<tr>
@@ -142,16 +143,12 @@
 											<div
 												class="visible-md visible-lg hidden-sm hidden-xs btn-group">
 
-												<a
-													href="${siteurl}/admin/eventinfocategory/list.htm?id=${item.id}">
-													<button class="btn btn-xs btn-info">
+												<a class="btn btn-xs btn-info"
+													href="${siteurl}admin/eventinfocategory/view_edit.htm?id=${item.id}">
 														<i class="icon-edit bigger-120">更新</i>
-													</button>
-												</a> <a 
-													href="${siteurl}/admin/eventinfocategory/model_delete.htm?typeid=${item.id}">
-													<button class="btn btn-xs btn-danger">
+											</a> <a  class="btn btn-xs btn-danger"
+													href="${siteurl}admin/eventinfocategory/model_delete.htm?id=${item.id}">
 														<i class="icon-trash bigger-120">删除</i>
-													</button>
 												</a>
 											</div>
 										</td>
@@ -159,8 +156,10 @@
 									[/#list]
 								</table>
 							</div>
-	
-	
+	                        				      [#include "/admin/common/page2.html"]
+
+	                       [@pager page ][/@pager]       
+	                       </form>          
 						</div>
 					</div>
 

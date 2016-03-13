@@ -1,12 +1,12 @@
 package com.openyelp.data.dao;
 
 
-import  com.ada.data.core.BaseDao;
+import  com.ada.data.core.CriteriaDao;
 import  com.ada.data.core.Updater;
 import com.ada.data.core.Pagination;
 import  com.openyelp.data.entity.EventInfoCategory;
 
-public interface EventInfoCategoryDao extends BaseDao<EventInfoCategory, Integer>{
+public interface EventInfoCategoryDao extends CriteriaDao<EventInfoCategory, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);
 
 	public EventInfoCategory findById(Integer id);
