@@ -32,6 +32,7 @@ public interface UserService {
 	public UserInfo deleteById(Long id);
 
 	public UserInfo login(String username, String password, String macaddress);
+	public UserInfo loginqq(String openid, String nickname, String figureurl_qq_1);
 
 	public UserInfo[] deleteByIds(Long[] ids);
 
