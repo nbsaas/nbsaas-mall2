@@ -5,9 +5,7 @@ import java.util.List;
 import com.ada.area.entity.Area;
 import com.ada.area.page.AreaPage;
 import com.ada.area.service.AreaService;
-import com.ada.data.core.Pagination;
-import com.ada.data.page.Page;
-import com.openyelp.data.entity.UserInfo;
+import com.ada.user.entity.UserInfo;
 
 public class AreaApps {
 

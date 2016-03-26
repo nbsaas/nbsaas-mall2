@@ -11,6 +11,7 @@ import com.ada.area.entity.Area;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.dao.FeedDao;
 import com.openyelp.data.dao.ShopCategoryDao;
 import com.openyelp.data.dao.ShopDao;
@@ -18,7 +19,6 @@ import com.openyelp.data.dao.ShopReviewDao;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopCategory;
 import com.openyelp.data.entity.ShopReview;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.service.ShopReviewService;
 import com.openyelp.data.service.UserService;
 

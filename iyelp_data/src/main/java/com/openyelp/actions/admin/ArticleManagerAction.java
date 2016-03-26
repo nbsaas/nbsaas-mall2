@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.article.entity.Article;
-import com.openyelp.article.entity.ArticleCatalog;
-import com.openyelp.article.service.ArticleCatalogService;
-import com.openyelp.article.service.ArticleService;
+import com.ada.article.entity.Article;
+import com.ada.article.entity.ArticleCatalog;
+import com.ada.article.service.ArticleCatalogService;
+import com.ada.article.service.ArticleService;
 import com.ada.data.core.Pagination;
 
 @Controller

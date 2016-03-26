@@ -1,6 +1,6 @@
 package com.openyelp.data.apps;
 
-import com.openyelp.data.entity.UserInfo;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.entity.UserProfile;
 import com.openyelp.data.service.UserProfileService;
 

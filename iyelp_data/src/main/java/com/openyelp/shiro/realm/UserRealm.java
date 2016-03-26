@@ -23,9 +23,9 @@ import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Service;
 
 import com.ada.common.security.Encodes;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.entity.UserRole;
 import com.google.common.base.Objects;
-import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.entity.UserRole;
 import com.openyelp.data.service.UserService;
 import com.openyelp.shiro.utils.UserUtil;
 

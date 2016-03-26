@@ -4,7 +4,7 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
 import com.ada.area.entity.Area;
-import com.openyelp.data.entity.UserInfo;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.shiro.realm.UserRealm.ShiroUser;
 
 public class UserUtil {

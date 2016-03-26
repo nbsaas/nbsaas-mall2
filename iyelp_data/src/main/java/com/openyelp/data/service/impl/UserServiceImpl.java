@@ -13,14 +13,14 @@ import com.ada.common.security.Encodes;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
+import com.ada.user.dao.UserFollowDao;
+import com.ada.user.dao.UserInfoDao;
+import com.ada.user.entity.UserFollow;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.entity.UserRole;
 import com.openyelp.data.dao.PhotoDao;
-import com.openyelp.data.dao.UserDao;
-import com.openyelp.data.dao.UserFollowDao;
 import com.openyelp.data.dto.UserFollowState;
 import com.openyelp.data.entity.Photo;
-import com.openyelp.data.entity.UserFollow;
-import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.entity.UserRole;
 import com.openyelp.data.service.UserService;
 
 @Service
@@ -79,10 +79,10 @@ public class UserServiceImpl implements UserService {
 		return beans;
 	}
 
-	private UserDao dao;
+	private UserInfoDao dao;
 
 	@Autowired
-	public void setDao(UserDao dao) {
+	public void setDao(UserInfoDao dao) {
 		this.dao = dao;
 	}
 

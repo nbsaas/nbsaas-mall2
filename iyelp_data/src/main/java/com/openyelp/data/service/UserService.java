@@ -1,9 +1,9 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
-import com.openyelp.data.entity.UserRole;
-import com.openyelp.data.entity.UserInfo;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.entity.UserRole;
+import com.openyelp.annotation.RestFul;
 
 @RestFul(api=UserService.class,value="UserService")
 public interface UserService {

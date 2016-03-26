@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.ada.user.entity.UserInfo;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.service.UserService;
 import com.openyelp.shiro.filter.UsernamePasswordCaptchaToken;
 import com.openyelp.shiro.utils.UserUtil;

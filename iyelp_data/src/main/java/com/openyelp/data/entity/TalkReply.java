@@ -14,6 +14,8 @@ import javax.persistence.Table;
 
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
+
+import com.ada.user.entity.UserInfo;
 @Entity
 @Table(name = "talk_reply")
 public class TalkReply {

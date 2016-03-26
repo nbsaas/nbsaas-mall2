@@ -1,8 +1,8 @@
 package com.ada.iyelp.apps;
 
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.entity.EventInfo;
 import com.openyelp.data.entity.EventInfoPhoto;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.service.EventInfoPhotoService;
 
 public class EventInfoPhotoServiceApps {

@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.article.service.ArticleCatalogService;
-import com.openyelp.article.service.ArticleService;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.service.ShopReviewService;
 

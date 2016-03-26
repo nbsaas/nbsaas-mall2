@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.openyelp.data.entity.UserFollow;
-import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.service.UserFollowService;
+import com.ada.user.entity.UserFollow;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.service.UserFollowService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;
 
@@ -39,7 +39,7 @@ public class FollowerController {
 			follow.setUser(UserUtil.getCurrentUser());
 			UserInfo friend=new UserInfo();
 			friend.setId(id);
-			follow.setFriend(friend);
+			follow.setFollower(friend);
 			UserFollow result=userFollowService.save(follow);
 			if (result!=null&&result.getId()>0) {
 				return "success";
@@ -67,7 +67,7 @@ public class FollowerController {
 			follow.setUser(UserUtil.getCurrentUser());
 			UserInfo friend=new UserInfo();
 			friend.setId(id);
-			follow.setFriend(friend);
+			follow.setFollower(friend);
 			UserFollow result=userFollowService.remove(follow);
 			if (result!=null&&result.getId()>0) {
 				return "success";

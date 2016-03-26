@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.ada.user.entity.UserInfo;
+
 @Entity
 @Table(name = "user_points")
 public class UserPoints implements Serializable {

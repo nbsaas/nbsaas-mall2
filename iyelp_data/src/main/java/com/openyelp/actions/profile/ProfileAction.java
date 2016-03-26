@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.core.web.WebErrors;
 import com.ada.data.core.Pagination;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.service.UserFriendRequestService;
+import com.ada.user.service.UserFriendService;
+import com.openyelp.core.web.WebErrors;
 import com.openyelp.data.entity.Photo;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.entity.UserProfile;
 import com.openyelp.data.entity.UserSetting;
 import com.openyelp.data.service.PhotoService;
-import com.openyelp.data.service.UserFriendRequestService;
-import com.openyelp.data.service.UserFriendService;
 import com.openyelp.data.service.UserProfileService;
 import com.openyelp.data.service.UserService;
 import com.openyelp.data.service.UserSettingService;
@@ -36,7 +36,7 @@ public class ProfileAction {
 	public String profile_bio(HttpServletRequest request,
 			HttpServletResponse response, Model model) {
 
-		UserProfile profile = UserUtil.getCurrentUser().getProfile();
+		UserProfile profile = null;//UserUtil.getCurrentUser().getProfile();
 		if (profile == null) {
 			profile = new UserProfile();
 		} else {
@@ -56,7 +56,7 @@ public class ProfileAction {
 		info.setName(name);
 		info = userService.update(info);
 		UserUtil.setCurrentUser(info);
-		UserUtil.getCurrentUser().setProfile(profile);
+		//UserUtil.getCurrentUser().setProfile(profile);
 		model.addAttribute("message", "你的个人资料已被更新！");
 		return FrontUtils.getPath("profile/profile");
 	}
@@ -181,13 +181,12 @@ public class ProfileAction {
 	@Autowired
 	UserService userService;
 
-	@RequestMapping(value = "profile_email_notifications", method = RequestMethod.GET)
-	public String profile_email_notifications(String old_password,
-			String password, String confirm_password,
+	@RequestMapping(value = "profile_email_notifications")
+	public String profile_email_notifications(
 			HttpServletRequest request, HttpServletResponse response,
 			Model model) {
-		userService.updatePassword(UserUtil.getCurrentShiroUser().getId(),
-				old_password, password);
+//		userService.updatePassword(UserUtil.getCurrentShiroUser().getId(),
+//				old_password, password);
 		return FrontUtils.getPath("profile/profile_email_notifications");
 	}
 

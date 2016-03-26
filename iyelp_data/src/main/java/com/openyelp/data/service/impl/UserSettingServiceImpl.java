@@ -8,9 +8,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
-import com.openyelp.data.dao.UserDao;
+import com.ada.user.dao.UserInfoDao;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.dao.UserSettingDao;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.entity.UserSetting;
 import com.openyelp.data.service.UserSettingService;
 
@@ -65,7 +65,7 @@ public class UserSettingServiceImpl implements UserSettingService {
 	}
 
 	@Autowired
-	UserDao userDao;
+	UserInfoDao userDao;
 
 	@Transactional
 	@Override
