@@ -191,8 +191,8 @@
 									<tr>
 										<td class="col-xs-2">菜单标题</td>
 										<td class="col-xs-1 text-center">图标</td>
-										<td class="col-xs-7 text-center">url</td>
-										<td class="col-xs-2 text-center">操作</td>
+										<td class="col-xs-6 text-center">url</td>
+										<td class="col-xs-3 text-center">操作</td>
 									</tr>
 									[#list list as item]
 									<tr id="trr${item.id}">
@@ -200,13 +200,13 @@
 										<td class="text-center"><i class="${item.icon!''}"></i></td>
 										<td class="col-xs-2">${item.path!""}</td>
 										<td class="text-center">
-										<div
-										class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+										<div>
 
 											<a href="${siteurl}admin/menu/list.htm?id=${item.id}">
-											<button class="btn btn-xs btn-info">
+											<div class="btn btn-xs btn-info">
 												<i class="icon-edit bigger-120">查看子菜单</i>
-											</button> </a>
+											</div>
+											 </a>
 											
 											<a  class="btn btn-xs btn-danger"
 											href="${siteurl}admin/menu/view_update.htm?id=${item.id}">
@@ -214,10 +214,11 @@
 											 </a>
 											<a  onclick="return confirm('删除后无法恢复,确定要删除吗')"
 											href="${siteurl}admin/menu/model_delete.htm?typeid=${item.id}">
-											<button class="btn btn-xs btn-danger">
+											<div class="btn btn-xs btn-danger">
 												<i class="icon-trash bigger-120">删除</i>
-											</button> </a>
-										</div></td>
+											</div> </a>
+										</div>
+										</td>
 									</tr>
 									[/#list]
 								</table>
