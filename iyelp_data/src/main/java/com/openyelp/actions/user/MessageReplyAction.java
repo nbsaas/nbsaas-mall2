@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.openyelp.actions.entity.Back;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.MessageReply;
 import com.openyelp.data.service.MessageReplyService;
 import com.openyelp.data.service.MessagesService;

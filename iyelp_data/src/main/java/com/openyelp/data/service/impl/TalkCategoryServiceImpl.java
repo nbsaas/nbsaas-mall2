@@ -1,26 +1,28 @@
 package com.openyelp.data.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.openyelp.data.core.Finder;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Finder;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 import com.openyelp.data.dao.TalkCategoryDao;
 import com.openyelp.data.entity.TalkCategory;
 import com.openyelp.data.service.TalkCategoryService;
+import com.openyelp.data.page.TalkCategoryPage;
+
+import com.ada.data.page.Filter;
+import com.ada.data.page.Order;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
+import java.util.List;
+
 
 @Service
 @Transactional
 public class TalkCategoryServiceImpl implements TalkCategoryService {
-	@Transactional(readOnly = true)
-	public Pagination getPage(int pageNo, int pageSize) {
-		Pagination page = dao.getPage(pageNo, pageSize);
-		return page;
-	}
+	
 
 	@Transactional(readOnly = true)
 	public TalkCategory findById(Integer id) {
@@ -63,6 +65,36 @@ public class TalkCategoryServiceImpl implements TalkCategoryService {
 		this.dao = dao;
 	}
 	
+	@Transactional(readOnly = true)
+	public TalkCategoryPage getPage(int pageNo, int pageSize) {
+	    TalkCategoryPage result = null;
+		Finder finder=Finder.create();
+		finder.append("from TalkCategory f ");
+		finder.append(" order by f.id desc  ");
+		Pagination<TalkCategory> page = dao.find(finder,pageNo, pageSize);
+		result = new TalkCategoryPage(page);
+		return result;
+	}
+	
+	
+	@Transactional(readOnly = true)
+	public Page<TalkCategory> findPage(Pageable pageable){
+	     return dao.findPage(pageable);
+	}
+
+	@Transactional(readOnly = true)
+	public long count(Filter... filters){
+	     
+	     return dao.count(filters);
+	     
+	}
+
+	@Transactional(readOnly = true)
+	public List<TalkCategory> findList(Integer first, Integer count, List<Filter> filters, List<Order> orders){
+	
+		     return dao.findList(first,count,filters,orders);
+	
+	}
 	
 	@Transactional(readOnly = true)
 	@Override

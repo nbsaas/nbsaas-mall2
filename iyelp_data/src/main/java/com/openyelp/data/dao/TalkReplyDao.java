@@ -1,12 +1,12 @@
 package com.openyelp.data.dao;
 
 
-import  com.openyelp.data.core.BaseDao;
-import  com.openyelp.data.core.Updater;
-import com.openyelp.data.core.Pagination;
+import  com.ada.data.core.CriteriaDao;
+import  com.ada.data.core.Updater;
+import com.ada.data.core.Pagination;
 import  com.openyelp.data.entity.TalkReply;
 
-public interface TalkReplyDao extends BaseDao<TalkReply, Integer>{
+public interface TalkReplyDao extends CriteriaDao<TalkReply, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);
 
 	public TalkReply findById(Integer id);

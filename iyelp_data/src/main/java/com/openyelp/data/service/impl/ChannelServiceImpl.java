@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 import com.openyelp.data.dao.ChannelDao;
 import com.openyelp.data.entity.Channel;
 import com.openyelp.data.service.ChannelService;

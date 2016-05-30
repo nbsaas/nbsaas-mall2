@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Blank Page - Ace Admin</title>
+	<title>讨论管理</title>
 
      [#include "/admin/common/commonurl.html"]
      <style type="text/css">
@@ -70,7 +70,7 @@
 				<a href="#">首页</a>
 			</li>
 
-			<li class="active">欢迎光临</li>
+			<li class="active">讨论管理</li>
 		</ul><!-- /.breadcrumb -->
 
 		<div class="nav-search" id="nav-search">
@@ -92,28 +92,25 @@
 							<div class="table-responsive">
 								<table class="table table-striped table-bordered table-hover">
 									<tr>
-										<td class="col-xs-1">讨论主题</td>
+										<td class="col-xs-3">讨论主题</td>
 										<td class="col-xs-3">讨论内容</td>
+										<td class="col-xs-1">讨论人</td>
 										<td class="col-xs-2">讨论时间</td>
 										<td class="col-xs-1">所在地区</td>
-										<td class="col-xs-2 text-center">管理</td>
+										<td class="col-xs-1 text-center">管理</td>
 									</tr>
 									[#list list as item]
 									<tr id="trr${item.id}">
 										<td>${item.topic!""}</td>
 										<td >[@html.textcut s=item.message len=20  append='..'/]</td>
+										<td >${(item.user.name)!""}</td>
 										<td >${item.adddate!""}</td>
-										<td >${item.area.area.name!""}</td>
+										<td >${(item.area.area.name)!""}</td>
 										<td class="text-center">
 											<div
 												class="visible-md visible-lg hidden-sm hidden-xs btn-group">
 
-												<a
-													href="${siteurl}/admin/talk/list.htm?id=${item.id}">
-													<button class="btn btn-xs btn-info">
-														<i class="icon-edit bigger-120">评论管理</i>
-													</button>
-												</a> <a 
+												 <a 
 													href="${siteurl}/admin/talk/model_delete.htm?typeid=${item.id}&curpage=${curpage}">
 													<button class="btn btn-xs btn-danger">
 														<i class="icon-trash bigger-120">删除</i>

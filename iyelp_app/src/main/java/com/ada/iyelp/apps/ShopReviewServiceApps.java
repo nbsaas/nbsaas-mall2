@@ -1,11 +1,8 @@
 package com.ada.iyelp.apps;
 
-import java.util.List;
-
-import com.openyelp.data.core.Pagination;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopReview;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.service.ShopReviewService;
 
 public class ShopReviewServiceApps {

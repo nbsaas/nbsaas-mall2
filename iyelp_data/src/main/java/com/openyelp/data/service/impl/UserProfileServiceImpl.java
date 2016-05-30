@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.dao.UserProfileDao;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.entity.UserProfile;
 import com.openyelp.data.service.UserProfileService;
 import com.openyelp.shiro.utils.UserUtil;

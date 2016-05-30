@@ -2,11 +2,12 @@ package com.openyelp.data.dao;
 
 
 import com.ada.data.core.BaseDao;
+import com.ada.data.core.CriteriaDao;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
 import  com.openyelp.data.entity.ShopCategory;
 
-public interface ShopCategoryDao extends BaseDao<ShopCategory, Integer>{
+public interface ShopCategoryDao extends CriteriaDao<ShopCategory, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);
 
 	public ShopCategory findById(Integer id);

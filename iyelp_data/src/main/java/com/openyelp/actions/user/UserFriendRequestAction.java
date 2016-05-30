@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.openyelp.data.entity.UserFriendRequest;
-import com.openyelp.data.service.UserFriendRequestService;
+import com.ada.user.entity.UserFriendRequest;
+import com.ada.user.service.UserFriendRequestService;
 import com.openyelp.shiro.utils.UserUtil;
 
 
@@ -28,7 +28,7 @@ public class UserFriendRequestAction {
 	@ResponseBody
 	public String add(UserFriendRequest friendRequest,HttpServletRequest request, HttpServletResponse response,
 			Model model){
-		friendRequest.setUserInfo(UserUtil.getCurrentUser());
+		friendRequest.setUser(UserUtil.getCurrentUser());
 		friendRequestService.save(friendRequest);
 		return "success";
 	}

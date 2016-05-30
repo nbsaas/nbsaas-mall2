@@ -10,6 +10,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.ada.area.entity.Area;
+import com.ada.user.entity.UserInfo;
+
 
 /**
  * 用户的 关联的城市

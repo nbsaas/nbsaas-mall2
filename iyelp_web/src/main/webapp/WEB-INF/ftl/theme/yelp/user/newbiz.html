@@ -1,630 +1,634 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-<meta charset="utf-8">
-<title>商家添加</title>
-<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
-<link rel="stylesheet" href="${siteurl}assets/css/biz_attribute.css" />
-<link rel="stylesheet" href="${siteurl}assets/css/new_business.css" />
+	<head>
+		<meta charset="utf-8">
+		<title>商家添加</title>
+		<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+		<link rel="stylesheet" href="${siteurl}assets/css/biz_attribute.css" />
+		<link rel="stylesheet" href="${siteurl}assets/css/new_business.css" />
 
 		[#include "/theme/yelp/common/scripts.html"]
 
-<script src="${siteurl}assets/js/knockout-3.3.0.js"></script>
-<script type="text/javascript" src="${siteurl}types.js"></script>
-	<script src="${siteurl}assets/js/jsrender.min.js"></script>
+		<script src="${siteurl}assets/js/knockout-3.3.0.js"></script>
+		<script type="text/javascript" src="${siteurl}types.js"></script>
+		<script src="${siteurl}assets/js/jsrender.min.js"></script>
 
-<script type="text/javascript"
-	src="http://api.map.baidu.com/api?v=2.0&ak=slXaZk8V8DUWQF2MQnuW4Q5x"></script>
+		<script type="text/javascript"
+		src="http://api.map.baidu.com/api?v=2.0&ak=slXaZk8V8DUWQF2MQnuW4Q5x"></script>
 
+		<link rel="stylesheet"
+		href="${siteurl}assets/plugs/raty/jquery.raty.css">
+		<script type="text/javascript"
+		src="${siteurl}assets/plugs/raty/jquery.raty.js"></script>
 
-<link rel="stylesheet"
-	href="${siteurl}assets/plugs/raty/jquery.raty.css">
-<script type="text/javascript"
-	src="${siteurl}assets/plugs/raty/jquery.raty.js"></script>
-	
-<link rel="stylesheet" href="${siteurl}assets/plugs/datetimepicker/jquery.datetimepicker.css" />
-<script type="text/javascript" src="${siteurl}assets/plugs/datetimepicker/jquery.datetimepicker.js"></script>
-	
-	
-<link rel="stylesheet"
-	href="${siteurl}assets/plugs/kindeditor/themes/default/default.css" />
-<script charset="utf-8"
-	src="${siteurl}assets/plugs/kindeditor/kindeditor-min.js"></script>
-<script charset="utf-8"
-	src="${siteurl}assets/plugs/kindeditor/lang/zh_CN.js"></script>	
-	
-</head>
+		<link rel="stylesheet" href="${siteurl}assets/plugs/datetimepicker/jquery.datetimepicker.css" />
+		<script type="text/javascript" src="${siteurl}assets/plugs/datetimepicker/jquery.datetimepicker.js"></script>
 
-<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+		<link rel="stylesheet"
+		href="${siteurl}assets/plugs/kindeditor/themes/default/default.css" />
+		<script charset="utf-8"
+		src="${siteurl}assets/plugs/kindeditor/kindeditor-min.js"></script>
+		<script charset="utf-8"
+		src="${siteurl}assets/plugs/kindeditor/lang/zh_CN.js"></script>
+		[#include "/theme/yelp/common/imagesimple.html" /]
+
+	</head>
+
+	<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
 	ryt13230="1">
 
-	<div id="fb-root"></div>
+		<div id="fb-root"></div>
 
-	<div class="lang-en" id="wrap">
+		<div class="lang-en" id="wrap">
 
+			[#include "/theme/yelp/common/header.html"]
 
-
-		[#include "/theme/yelp/common/header.html"]
-
-		<div id="print-masthead">
-			<img alt="Yelp" class="print-bkg-img"
+			<div id="print-masthead">
+				<img alt="Yelp" class="print-bkg-img"
 				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
-		</div>
+			</div>
 
-		<span class="offscreen" id="page-content">&nbsp;</span>
+			<span class="offscreen" id="page-content">&nbsp;</span>
 
-		<div class="main-content-wrap main-content-wrap--box">
+			<div class="main-content-wrap main-content-wrap--box">
 
-			<div class="content-container" id="super-container">
+				<div class="content-container" id="super-container">
 
+					<div id="alert-container"></div>
 
-				<div id="alert-container"></div>
+					<div class="container new-biz-container" data-component-bound="true">
+						<h2>新增商店</h2>
+						<p>
+							请注意：在资料未被我们团队确认并核实前，此商店资料页将不会被显示在搜寻结果上。
+						</p>
 
-
-				<div class="container new-biz-container" data-component-bound="true">
-					<h2>新增商店</h2>
-					<p>请注意：在资料未被我们团队确认并核实前，此商店资料页将不会被显示在搜寻结果上。</p>
-
-					<form name="review_rate_form" method="POST" id="review_rate_form"
+						<form name="review_rate_form" method="POST" id="review_rate_form"
 						class="biz-attrib-form new-biz-form yform"
 						action="${siteurl}user/newbiz.htm">
-						
-								<input type="hidden" name="gps" id="gps"> 
-										<input type="hidden" name="city" id="city"> 
-		
-								<input type="hidden"
-									name="longitude" id="longitude">
-									 <input type="hidden"
-									name="latitude" id="latitude">
-						<input type="hidden"
+
+							<input type="hidden" name="gps" id="gps">
+							<input type="hidden" name="city" id="city">
+
+							<input type="hidden"
+							name="longitude" id="longitude">
+							<input type="hidden"
+							name="latitude" id="latitude">
+							<input type="hidden"
 							value="3a07c037c69fa31c8f3a457fbfa0b6505564383d09bdf55266cd230d2cce0051"
 							class="csrftok" name="csrftok">
-						<div class="clearfix layout-block layout-right-rail">
-							<div class="column column-alpha ">
-								<div class="duplicate-business-suggestions hidden"
+							<div class="clearfix layout-block layout-right-rail">
+								<div class="column column-alpha ">
+									<div class="duplicate-business-suggestions hidden"
 									data-component-bound="true">
-									<p>
-										<strong>你系咪谂紧</strong>
-									</p>
-									<div class="biz_matches"></div>
-								</div>
-								<ul>
-									
-									<li>
-									<label for="review-country">城市 </label> 
-									<select id="province" onchange="javascript:getAreaList(&quot;circle&quot;,this.value,0)"
-										name="province" id="review-country" data-component-bound="true">
-											[#if areas??]
-											[#list areas as item]
-											<option value="${item.id!''}">${item.name!""}</option>
-											[/#list]
-											[/#if]
-									</select>
-									</li>
+										<p>
+											<strong>你系咪谂紧</strong>
+										</p>
+										<div class="biz_matches"></div>
+									</div>
+									<ul>
 
-									<li>
-									<label for="review-country">商圈 </label> 
-									<select id="circle" required="required"
-										name="area.id" id="review-country" data-component-bound="true">
-										
-									</select>
-									</li>
+										<li>
+											<label for="review-country">城市 </label>
+											<select id="province" onchange="javascript:getAreaList(&quot;circle&quot;,this.value,0)"
+											name="province" id="review-country" data-component-bound="true">
+												[#if areas??]
+												[#list areas as item]
+												<option value="${item.id!''}">${item.name!""}</option>
+												[/#list]
+												[/#if]
+											</select>
+										</li>
 
-									
-									
-									
-									<li class="js-example-business-name"><label for="name">
-											商店名称 (中文) </label> <span class="placeholder-sub help-block">肯德基</span>
+										<li>
+											<label for="review-country">商圈 </label>
+											<select id="circle" required="required"
+											name="area.id" id="review-country" data-component-bound="true">
 
-										<input type="text" value="" style="" size="35" required="required"
-										placeholder="肯德基" name="name" maxlength="64" id="name"
-										autocomplete="off"></li>
+											</select>
+										</li>
 
+										<li class="js-example-business-name">
+											<label for="name"> 商店名称 (中文) </label><span class="placeholder-sub help-block">肯德基</span>
 
+											<input type="text" value="" style="" size="35" required="required"
+											placeholder="肯德基" name="name" maxlength="64" id="name"
+											autocomplete="off">
+										</li>
 
-
-									<li>
-										<div class="js-example-business-address1">
-											<label for="address1"> 地址 </label> <span
-												class="placeholder-sub help-block"></span> <input  required="required" type="text" value="" style=""
+										<li>
+											<div class="js-example-business-address1">
+												<label for="address1"> 地址 </label><span
+												class="placeholder-sub help-block"></span>
+												<input  required="required" type="text" value="" style=""
 												size="35" placeholder="商家所在地址"
 												name="address" maxlength="64" id="address"
 												autocomplete="off">
-												
-										</div>
 
-									</li>
-			                         <li>
-										<div >
-											<label for="address1"> 商店照片 </label> <span
-												class="placeholder-sub help-block"></span> <input  required="required" type="text" value="" style=""
-												size="35" placeholder=" 商店照片 "
-												name="image" maxlength="250" id="image"
-												autocomplete="off">
-												<input type="button" id="image1" value="选择图片" />
+											</div>
 
-										</div>
+										</li>
+										<li>
+											<div >
+												<label for="address1"> 商店照片 </label><span
+												class="placeholder-sub help-block"></span>
+												<input   type="hidden" value="" style=""
+												size="35" id="uploaderthumbpath"
+												name="image" >
+												<div style="max-width: 100px;" id="fileListuploaderthumb" class="uploader-list"></div>
+												<div id="uploaderthumb">
+													选择图片
+												</div>
 
-									</li>
-									<li class="js-example-business-zip"><label
-										style="display: none;" for="location"> 城市 </label> <input
-										type="text" value="" style="display: none;" size="35"
-										name="location" maxlength="64" id="location"
-										autocomplete="off"></li>
+											</div>
 
+										</li>
+										<li class="js-example-business-zip">
+											<label
+											style="display: none;" for="location"> 城市 </label>
+											<input
+											type="text" value="" style="display: none;" size="35"
+											name="location" maxlength="64" id="location"
+											autocomplete="off">
+										</li>
 
+										<li class="js-example-business-phone">
+											<label for="phone"> 电话号码 </label><span class="placeholder-sub help-block">2525
+												6338</span>
+											<input type="text" value="" style="" size="35" required="required"
+											placeholder="2525 6338" name="phone" maxlength="64" id="phone"
+											autocomplete="off">
+										</li>
+										<li class="js-example-business-url">
+											<label for="website"> 网址 </label><span class="placeholder-sub help-block">http://www.zzdp.me/</span>
 
-
-									<li class="js-example-business-phone"><label for="phone">
-											电话号码 </label> <span class="placeholder-sub help-block">2525
-											6338</span> <input type="text" value="" style="" size="35" required="required"
-										placeholder="2525 6338" name="phone" maxlength="64" id="phone"
-										autocomplete="off"></li>
-									<li class="js-example-business-url"><label for="website">
-											网址 </label> <span class="placeholder-sub help-block">http://www.zzdp.me/</span>
-
-										<input type="text" value="" style="" size="35"
-										placeholder="http://www.zzdp.me/" name="website"
-										maxlength="255" id="website" autocomplete="off"></li>
-									<li class="BusinessCategoryYelp"><label
-										for="category-select"> 分类 </label>
-										<div class="js-categories-loading throbber"
+											<input type="text" value="" style="" size="35"
+											placeholder="http://www.zzdp.me/" name="website"
+											maxlength="255" id="website" autocomplete="off">
+										</li>
+										<li class="BusinessCategoryYelp">
+											<label
+											for="category-select"> 分类 </label>
+											<div class="js-categories-loading throbber"
 											style="display: none;"></div>
-										<div class="category-container" data-component-bound="true">
-											<div class="category-picker">
-												<div class="preselected-categories"></div>
-												<div class="new-categories"  data-bind='foreach: lines'>
-													<div>
-														<select class="category-select"
-															data-bind='options: catalogs, optionsText: "name", optionsCaption: "选择分类", value: category'>
-														</select> 
-														
-														<span data-bind="with: category"> 
-														<select name="ids" class="category-select"
-															data-bind='options: clilds , optionsText: "name",optionsValue:"id" , optionsCaption: "选择分类"'>
-														</select>
-														</span>
-														 <span class="read-more remove-category" data-bind='click: $parent.removeLine'>移除</span>
+											<div class="category-container" data-component-bound="true">
+												<div class="category-picker">
+													<div class="preselected-categories"></div>
+													<div class="new-categories"  data-bind='foreach: lines'>
+														<div>
+															<select class="category-select"
+															data-bind='options: catalogs, optionsText: "name", optionsCaption: "选择分类", value: category'></select>
+
+															<span data-bind="with: category"> <select name="ids" class="category-select"
+																data-bind='options: clilds , optionsText: "name",optionsValue:"id" , optionsCaption: "选择分类"'></select> </span>
+															<span class="read-more remove-category" data-bind='click: $parent.removeLine'>移除</span>
+														</div>
 													</div>
 												</div>
+												<a class="add-another-cat link-more" href="#"  data-bind='click: addLine ,visible: lines().length <3'>新增另一分类</a>
 											</div>
-											<a class="add-another-cat link-more" href="#"  data-bind='click: addLine ,visible: lines().length <3'>新增另一分类</a>
-										</div> 
-										<a href="/developers/documentation/v2/category_list"
-										target="_blank" class="see-all-categories link-more hidden"
-										style="display: inline;">查看所有分类</a></li>
-									<li class="newly-opened-biz"><label for="newly-opened-biz">
-											<input type="checkbox" value="1" id="newly-opened-biz"
-											name="opening_date_should_be_added"> 此商店岩岩开张或就快开张
-									</label>
-										<div id="js-opening-date-element-div"
+											<a href="/developers/documentation/v2/category_list"
+											target="_blank" class="see-all-categories link-more hidden"
+											style="display: inline;">查看所有分类</a>
+										</li>
+										<li class="newly-opened-biz">
+											<label for="newly-opened-biz">
+												<input type="checkbox" value="1" id="newly-opened-biz"
+												name="opening_date_should_be_added">
+												此商店岩岩开张或就快开张 </label>
+											<div id="js-opening-date-element-div"
 											class="js-opening-date-element business-date-picker hidden">
-											你知唔知此商店会几时向公众开放？
+												你知唔知此商店会几时向公众开放？
 
-											<div class="nested-icon-label date-picker"
+												<div class="nested-icon-label date-picker"
 												data-component-bound="true">
-												<i class="i ig-common i-calendar-gray-common"></i> <input
+													<i class="i ig-common i-calendar-gray-common"></i>
+													<input
 													type="text" value="3/3/2015" title="yyyy/mm/dd"
 													name="opening_date_month_day_year"
 													id="opening_date_month_day_year"
 													data-date-format="yyyy/MM/dd" class="date-input ">
+												</div>
+
 											</div>
+										</li>
+										<li>
+											<label for="includes-review">
+												<input
+												type="checkbox" value="1"
+												id="includes-review" name="includes_review">
+												为此商店写评语 </label>
+											<input type="hidden" value="" name="review_base_language">
+											<input type="hidden" value="newbiz" name="review_origin">
 
-										</div></li>
-									<li><label for="includes-review"> <input
-											type="checkbox" value="1"
-											id="includes-review" name="includes_review"> 为此商店写评语
-									</label> <input type="hidden" value="" name="review_base_language">
-										<input type="hidden" value="newbiz" name="review_origin">
-
-
-										<div id="review-widget-div" class="review-widget review-widget--decorated" style="display: none;"
+											<div id="review-widget-div" class="review-widget review-widget--decorated" style="display: none;"
 											data-component-bound="true">
-											<a href="/guidelines" class="guidelines"
+												<a href="/guidelines" class="guidelines"
 												data-component-bound="true">查阅我们的评语指引</a>
 
-											<div class="review-stars clearfix">
-												<div class="floatitem" id="star1" style="margin-left: 10px"></div>
-												<input type="hidden" name="descriptionscore" id="descriptionscore"/>
-																			
+												<div class="review-stars clearfix">
+													<div class="floatitem" id="star1" style="margin-left: 10px"></div>
+													<input type="hidden" name="descriptionscore" id="descriptionscore"/>
 
-											</div>
+												</div>
 
-											<div class="review-textbox">
-												<input type="hidden" class="comment-field" name="comment">
-
-												<textarea autocomplete="off" name="comment_js"
+												<div class="review-textbox">
+													<input type="hidden" class="comment-field" name="comment">
+													<textarea autocomplete="off" name="comment_js"
 													class="review-textarea" data-component-bound="true">开始写评语...</textarea>
+													
 
-												<div class="hidden-text-measurer"
+ <div class="hidden-text-measurer"
 													data-component-bound="true"></div>
+												</div>
 											</div>
-										</div></li>
-									<li class="submit-review">
-										<button class="ybtn ybtn-primary ytype" value="submit"
+										</li>
+										<li class="submit-review">
+											<button class="ybtn ybtn-primary ytype" value="submit"
 											type="submit" id="review-submit-button">
-											<span>新增商店</span>
-										</button> <span class="submit-in-progress hidden">新增商店中…</span> <input
-										type="hidden" value="select" name="default_action"> <input
-										type="hidden" id="rating-form-action" value="select"
-										name="action_select">
-									</li>
-								</ul>
+												<span>新增商店</span>
+											</button>
+											<span class="submit-in-progress hidden">新增商店中…</span>
+											<input
+											type="hidden" value="select" name="default_action">
+											<input
+											type="hidden" id="rating-form-action" value="select"
+											name="action_select">
+										</li>
+									</ul>
 
-
-							</div>
-							<div class="column column-beta ">
-								<div class="map-suggestion-container">
-									<div class="map-container yelp-map-container ieSucks">
-										<div id="allmap" class="engine-container"
+								</div>
+								<div class="column column-beta ">
+									<div class="map-suggestion-container">
+										<div class="map-container yelp-map-container ieSucks">
+											<div id="allmap" class="engine-container"
 											style="background-color: rgb(229, 227, 223);"></div>
-									</div>
+										</div>
 
-									<div style="" class="js-change-location">
-										<a
+										<div style="" class="js-change-location">
+											<a
 											class="i-wrap ig-wrap-common i-distance-marker-common-wrap show-locator-popup pull-right"
 											href="javascript:;"><i
 											class="i ig-common i-distance-marker-common"></i> 修正错误的地图标记</a>
+										</div>
 									</div>
-								</div>
-								<div style="display: none;">
-									<div
+									<div style="display: none;">
+										<div
 										class="js-addbiz-popup-map-container addbiz-popup-map-container"
 										data-component-bound="true">
-										<div class="map-popup-info google-map">
-											<p>
-												拖曳并将别针放下在正确的地点上。 <br> 使用地图上的工具放大地图，查看细节。
-											</p>
-										</div>
-										<div class="addbiz-popup-map popup-map">
-											<div class="engine-container"
+											<div class="map-popup-info google-map">
+												<p>
+													拖曳并将别针放下在正确的地点上。
+													<br>
+													使用地图上的工具放大地图，查看细节。
+												</p>
+											</div>
+											<div class="addbiz-popup-map popup-map">
+												<div class="engine-container"
 												style="background-color: rgb(229, 227, 223);"></div>
+											</div>
 										</div>
+
 									</div>
 
 								</div>
-
 							</div>
-						</div>
-					</form>
+						</form>
 
+					</div>
 				</div>
 			</div>
+
+			[#include "/theme/yelp/common/footer.html"]
+
 		</div>
 
-		[#include "/theme/yelp/common/footer.html"]
+		<script type="text/javascript">
+			$(document).ready(function() {
 
-
-	</div>
-
-    <script type="text/javascript">
-    
-    $(document).ready(function(){
-    	
-    	
-    	$("#province").change(function(){
-    		var s=    $("#province").find("option:selected").text();
-    		geowork(s);
-    	});
-    	
-    });
-    
-    
-    
-    
-	// 百度地图API功能
-	var map = new BMap.Map("allmap");
-	// 编写自定义函数,创建标注
-	function addMarker(point) {
-		var marker = new BMap.Marker(point);
-		map.addOverlay(marker);
-	}
-	//var marker = new BMap.Marker(point);
-	//map.addOverlay(marker);
-
-	var top_left_control = new BMap.ScaleControl({
-		anchor : BMAP_ANCHOR_TOP_LEFT
-	});// 左上角，添加比例尺
-	var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
-	var top_right_navigation = new BMap.NavigationControl({
-		anchor : BMAP_ANCHOR_TOP_RIGHT,
-		type : BMAP_NAVIGATION_CONTROL_SMALL
-	}); //右上角，仅包含平移和缩放按钮
-	/*缩放控件type有四种类型:
-	BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
-
-	//添加控件和比例尺
-	function add_control() {
-		map.addControl(top_left_control);
-		//map.addControl(top_left_navigation);
-		map.addControl(top_right_navigation);
-	}
-	//移除控件和比例尺
-	function delete_control() {
-		map.removeControl(top_left_control);
-		map.removeControl(top_left_navigation);
-		map.removeControl(top_right_navigation);
-	}
-	add_control();
-
-	// 添加带有定位的导航控件
-	var navigationControl = new BMap.NavigationControl({
-		// 靠左上角位置
-		anchor : BMAP_ANCHOR_TOP_LEFT,
-		// LARGE类型
-		type : BMAP_NAVIGATION_CONTROL_LARGE,
-		// 启用显示定位
-		enableGeolocation : true
-	});
-	map.addControl(navigationControl);
-	// 添加定位控件
-	var geolocationControl = new BMap.GeolocationControl();
-	geolocationControl.addEventListener("locationSuccess", function(e) {
-		// 定位成功事件
-		var address = '';
-		address += e.addressComponent.province;
-		address += e.addressComponent.city;
-		address += e.addressComponent.district;
-		address += e.addressComponent.street;
-		address += e.addressComponent.streetNumber;
-		//alert("当前定位地址为：" + address);
-	});
-	geolocationControl.addEventListener("locationError", function(e) {
-		// 定位失败事件
-		// alert(e.message);
-	});
-	map.addControl(geolocationControl);
-
-	var opts = {
-		width : 250, // 信息窗口宽度
-		height : 80, // 信息窗口高度
-		title : "信息窗口", // 信息窗口标题
-		enableMessage : true
-	//设置允许信息窗发送短息
-	};
-	var content = "门道网";
-	// marker.addEventListener("click",function(e){openInfo(content,e)});
-	function openInfo(content, e) {
-		var p = e.target;
-		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
-		var infoWindow = new BMap.InfoWindow(content, opts); // 创建信息窗口对象 
-		map.openInfoWindow(infoWindow, point); //开启信息窗口
-	}
-
-	// 创建地址解析器实例
-	function geowork() {
-		var myGeo = new BMap.Geocoder();
-		// 将地址解析结果显示在地图上,并调整地图视野
-		myGeo.getPoint("高新一路", function(point) {
-			if (point) {
-				map.centerAndZoom(point, 16);
-				//map.addOverlay(new BMap.Marker(point));
-			}
-		}, "西安市");
-	}
-	function geowork(city) {
-		var myGeo = new BMap.Geocoder();
-		// 将地址解析结果显示在地图上,并调整地图视野
-		myGeo.getPoint(city, function(point) {
-			if (point) {
-				map.centerAndZoom(point, 10);
-				//map.addOverlay(new BMap.Marker(point));
-			}
-		}, city);
-	}
-	function geoworkbyaddress(city,address) {
-		var myGeo = new BMap.Geocoder();
-		// 将地址解析结果显示在地图上,并调整地图视野
-		myGeo.getPoint(address, function(point) {
-			if (point) {
-				map.centerAndZoom(point, 13);
-				//map.addOverlay(new BMap.Marker(point));
-			}
-		}, city);
-	}
-	function golocal() {
-
-		var geolocation = new BMap.Geolocation();
-		geolocation.getCurrentPosition(function(r) {
-			if (this.getStatus() == BMAP_STATUS_SUCCESS) {
-				//var mk = new BMap.Marker(r.point);
-				//map.addOverlay(mk);
-				map.panTo(r.point);
-				//alert('您的位置：'+r.point.lng+','+r.point.lat);
-			} else {
-				geowork();
-			}
-		}, {
-			enableHighAccuracy : true
-		})
-
-	}
-	var geoc = new BMap.Geocoder();
-	map.addEventListener("click", function(e) {
-
-		$("#gps").val(e.point.lng + "," + e.point.lat);
-		$("#longitude").val(e.point.lng + "");
-		$("#latitude").val(e.point.lat + "");
-		map.clearOverlays();
-		var marker = new BMap.Marker(e.point); // 创建标注
-		map.addOverlay(marker);
-		marker.setAnimation(BMAP_ANIMATION_BOUNCE);
-		geoc.getLocation(e.point, function(rs) {
-			var addComp = rs.addressComponents;
-			var addres = addComp.city + ""
-					+ addComp.district + "" + addComp.street + ""
-					+ addComp.streetNumber;
-			$("#city").val(addComp.city);
-		var add=$("#address").val();
-		$("#address").val(addres);
-		 if(add.length<=1){
-		    $("#address").val(addres);
-		    //$("#cityname").val(addComp.city);
-			//$("#townname").val(addComp.district);
-			//$("#townid").val(addComp.district);
-		 }
-			
-		});
-	});
-	map.centerAndZoom(new BMap.Point(108.952308, 34.27783), 14);
-	//geowork();
-</script>
-
-
-<script type="text/javascript">
-		function formatCurrency(value) {
-			return "$" + value.toFixed(2);
-		}
-		var CartLine = function() {
-			var self = this;
-			self.category = ko.observable();
-			self.product = ko.observable();
-			
-		};
-		var Cart = function() {
-			// Stores an array of lines, and from these, can work out the grandTotal
-			var self = this;
-			self.lines = ko.observableArray(); // Put one line in by default
-			self.catalog = ko.observableArray(); 
-			self.grandTotal = ko.pureComputed(function() {
-				var total = 0;
-				$.each(self.lines(), function() {
-					total += this.subtotal()
-				})
-				return total;
-			});
-			// Operations
-			self.addLine = function() {
-				self.lines.push(new CartLine())
-			};
-			self.removeLine = function(line) {
-				self.lines.remove(line)
-			};
-			self.save = function() {
-				var dataToSave = $.map(self.lines(), function(line) {
-					return line.product() ? {
-						productName : line.product().name,
-						quantity : line.quantity()
-					} : undefined
+				$("#province").change(function() {
+					var s = $("#province").find("option:selected").text();
+					geowork(s);
 				});
-				alert("Could now send this to server: "
-						+ JSON.stringify(dataToSave));
+
+			});
+
+			// 百度地图API功能
+			var map = new BMap.Map("allmap");
+			// 编写自定义函数,创建标注
+			function addMarker(point) {
+				var marker = new BMap.Marker(point);
+				map.addOverlay(marker);
+			}
+
+			//var marker = new BMap.Marker(point);
+			//map.addOverlay(marker);
+
+			var top_left_control = new BMap.ScaleControl({
+				anchor : BMAP_ANCHOR_TOP_LEFT
+			});
+			// 左上角，添加比例尺
+			var top_left_navigation = new BMap.NavigationControl();
+			//左上角，添加默认缩放平移控件
+			var top_right_navigation = new BMap.NavigationControl({
+				anchor : BMAP_ANCHOR_TOP_RIGHT,
+				type : BMAP_NAVIGATION_CONTROL_SMALL
+			});
+			//右上角，仅包含平移和缩放按钮
+			/*缩放控件type有四种类型:
+			BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+
+			//添加控件和比例尺
+			function add_control() {
+				map.addControl(top_left_control);
+				//map.addControl(top_left_navigation);
+				map.addControl(top_right_navigation);
+			}
+
+			//移除控件和比例尺
+			function delete_control() {
+				map.removeControl(top_left_control);
+				map.removeControl(top_left_navigation);
+				map.removeControl(top_right_navigation);
+			}
+
+			add_control();
+
+			// 添加带有定位的导航控件
+			var navigationControl = new BMap.NavigationControl({
+				// 靠左上角位置
+				anchor : BMAP_ANCHOR_TOP_LEFT,
+				// LARGE类型
+				type : BMAP_NAVIGATION_CONTROL_LARGE,
+				// 启用显示定位
+				enableGeolocation : true
+			});
+			map.addControl(navigationControl);
+			// 添加定位控件
+			var geolocationControl = new BMap.GeolocationControl();
+			geolocationControl.addEventListener("locationSuccess", function(e) {
+				// 定位成功事件
+				var address = '';
+				address += e.addressComponent.province;
+				address += e.addressComponent.city;
+				address += e.addressComponent.district;
+				address += e.addressComponent.street;
+				address += e.addressComponent.streetNumber;
+				//alert("当前定位地址为：" + address);
+			});
+			geolocationControl.addEventListener("locationError", function(e) {
+				// 定位失败事件
+				// alert(e.message);
+			});
+			map.addControl(geolocationControl);
+
+			var opts = {
+				width : 250, // 信息窗口宽度
+				height : 80, // 信息窗口高度
+				title : "信息窗口", // 信息窗口标题
+				enableMessage : true
+				//设置允许信息窗发送短息
 			};
-		};
-		var carts=new  Cart();
-		ko.applyBindings(carts);
-		var catalogs={};
-	</script>
-    	<script type="text/javascript">
-		$(document).ready(function() {
-			
-			$.getJSON("${siteurl}shopcatalog/querybylevel.htm?id=1",function(data){
-				catalogs=data;
+			var content = "门道网";
+			// marker.addEventListener("click",function(e){openInfo(content,e)});
+			function openInfo(content, e) {
+				var p = e.target;
+				var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+				var infoWindow = new BMap.InfoWindow(content, opts);
+				// 创建信息窗口对象
+				map.openInfoWindow(infoWindow, point);
+				//开启信息窗口
+			}
+
+			// 创建地址解析器实例
+			function geowork() {
+				var myGeo = new BMap.Geocoder();
+				// 将地址解析结果显示在地图上,并调整地图视野
+				myGeo.getPoint("高新一路", function(point) {
+					if (point) {
+						map.centerAndZoom(point, 16);
+						//map.addOverlay(new BMap.Marker(point));
+					}
+				}, "西安市");
+			}
+
+			function geowork(city) {
+				var myGeo = new BMap.Geocoder();
+				// 将地址解析结果显示在地图上,并调整地图视野
+				myGeo.getPoint(city, function(point) {
+					if (point) {
+						map.centerAndZoom(point, 10);
+						//map.addOverlay(new BMap.Marker(point));
+					}
+				}, city);
+			}
+
+			function geoworkbyaddress(city, address) {
+				var myGeo = new BMap.Geocoder();
+				// 将地址解析结果显示在地图上,并调整地图视野
+				myGeo.getPoint(address, function(point) {
+					if (point) {
+						map.centerAndZoom(point, 13);
+						//map.addOverlay(new BMap.Marker(point));
+					}
+				}, city);
+			}
+
+			function golocal() {
+
+				var geolocation = new BMap.Geolocation();
+				geolocation.getCurrentPosition(function(r) {
+					if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+						//var mk = new BMap.Marker(r.point);
+						//map.addOverlay(mk);
+						map.panTo(r.point);
+						//alert('您的位置：'+r.point.lng+','+r.point.lat);
+					} else {
+						geowork();
+					}
+				}, {
+					enableHighAccuracy : true
+				})
+
+			}
+
+			var geoc = new BMap.Geocoder();
+			map.addEventListener("click", function(e) {
+
+				$("#gps").val(e.point.lng + "," + e.point.lat);
+				$("#longitude").val(e.point.lng + "");
+				$("#latitude").val(e.point.lat + "");
+				map.clearOverlays();
+				var marker = new BMap.Marker(e.point);
+				// 创建标注
+				map.addOverlay(marker);
+				marker.setAnimation(BMAP_ANIMATION_BOUNCE);
+				geoc.getLocation(e.point, function(rs) {
+					var addComp = rs.addressComponents;
+					var addres = addComp.city + "" + addComp.district + "" + addComp.street + "" + addComp.streetNumber;
+					$("#city").val(addComp.city);
+					var add = $("#address").val();
+					$("#address").val(addres);
+					if (add.length <= 1) {
+						$("#address").val(addres);
+						//$("#cityname").val(addComp.city);
+						//$("#townname").val(addComp.district);
+						//$("#townid").val(addComp.district);
+					}
+
+				});
+			});
+			map.centerAndZoom(new BMap.Point(108.952308, 34.27783), 14);
+			//geowork();
+		</script>
+
+		<script type="text/javascript">
+			function formatCurrency(value) {
+				return "$" + value.toFixed(2);
+			}
+
+			var CartLine = function() {
+				var self = this;
+				self.category = ko.observable();
+				self.product = ko.observable();
+
+			};
+			var Cart = function() {
+				// Stores an array of lines, and from these, can work out the grandTotal
+				var self = this;
+				self.lines = ko.observableArray();
+				// Put one line in by default
+				self.catalog = ko.observableArray();
+				self.grandTotal = ko.pureComputed(function() {
+					var total = 0;
+					$.each(self.lines(), function() {
+						total += this.subtotal()
+					})
+					return total;
+				});
+				// Operations
+				self.addLine = function() {
+					self.lines.push(new CartLine())
+				};
+				self.removeLine = function(line) {
+					self.lines.remove(line)
+				};
+				self.save = function() {
+					var dataToSave = $.map(self.lines(), function(line) {
+						return line.product() ? {
+							productName : line.product().name,
+							quantity : line.quantity()
+						} : undefined
+					});
+					alert("Could now send this to server: " + JSON.stringify(dataToSave));
+				};
+			};
+			var carts = new Cart();
+			ko.applyBindings(carts);
+			var catalogs = {};
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$.getJSON("${siteurl}shopcatalog/querybylevel.htm?id=1", function(data) {
+					catalogs = data;
+				});
+
+				$('#star1').raty({
+					path : '${siteurl}assets/plugs/raty/images',
+					half : false,
+					score : 5,
+					starOff : 'star-off.png',
+					starOn : 'star-on.png',
+					space : false,
+					target : '#descriptionscore',
+					starHalf : 'star-half.png',
+					targetKeep : true,
+					targetType : 'score'
+				});
+
+				$("#newly-opened-biz").change(function() {
+
+					if ($("#newly-opened-biz").is(':checked')) {
+						$("#js-opening-date-element-div").show();
+					} else {
+						$("#js-opening-date-element-div").hide();
+					}
+
+				});
+
+				$("#includes-review").change(function() {
+
+					if ($("#includes-review").is(':checked')) {
+						$("#review-widget-div").show();
+					} else {
+						$("#review-widget-div").hide();
+					}
+
+				});
+
+				$("#opening_date_month_day_year").datetimepicker({
+					datepicker : true,
+					timepicker : false,
+					format : 'Y-m-d',
+					step : 15
+				});
+
+				var id = $("#province").val();
+				$.getJSON("${siteurl}/area/querybycircle.htm?id=" + id, function(data) {
+					// Now use this data to update your view models,
+					// and Knockout will update your UI automatically
+					var template = $.templates("#areastemplate");
+					var areas = {};
+					areas.areas = data;
+					var htmlOutput = template.render(areas);
+
+					$("#circle").html(htmlOutput);
+				});
+
 			});
 
-			$('#star1').raty({
-				path : '${siteurl}assets/plugs/raty/images',
-				half : false,
-				score : 5,
-				starOff : 'star-off.png',
-				starOn : 'star-on.png',
-				space : false,
-				target : '#descriptionscore',
-				starHalf : 'star-half.png',
-				targetKeep : true,
-				targetType : 'score'
-			});
-			
-			$("#newly-opened-biz").change(function(){
-
-				if($("#newly-opened-biz").is(':checked')){
-					$("#js-opening-date-element-div").show();
-				}else{
-					$("#js-opening-date-element-div").hide();
-				}
-				
-			});
-			
-			$("#includes-review").change(function(){
-
-				if($("#includes-review").is(':checked')){
-					$("#review-widget-div").show();
-				}else{
-					$("#review-widget-div").hide();
-				}
-				
-			});
-			
-			
-			
-			$("#opening_date_month_day_year").datetimepicker({
-				  datepicker:true,
-				  timepicker:false,
-				  format:'Y-m-d',
-				  step:15
-			});
-			
-			
-			
-			var id=$("#province").val();
-			 $.getJSON("${siteurl}/area/querybycircle.htm?id="+id, function(data) { 
-				    // Now use this data to update your view models, 
-				    // and Knockout will update your UI automatically 
-				 var template = $.templates("#areastemplate");
-	           var areas={};
-	           areas.areas=data;
-				 var htmlOutput = template.render(areas);
-				
-				 $("#circle").html(htmlOutput);
-			});
-			
-			
-		});
-		
-		
-		KindEditor.ready(function(K) {
-			var editor = KindEditor.editor({
-				allowFileManager : true,
-				uploadJson : '${siteurl}/image/upimgwork.htm'
-			});
-			K('#image1').click(
-					function() {
-						editor.loadPlugin('image', function() {
-							editor.plugin.imageDialog({
-								imageUrl : K('#image').val(),
-								clickFn : function(url, title, width, height,
-										border, align) {
-									K('#image').val(url);
-									editor.hideDialog();
-								}
-							});
+			KindEditor.ready(function(K) {
+				var editor = KindEditor.editor({
+					allowFileManager : true,
+					uploadJson : '${siteurl}/image/upimgwork.htm'
+				});
+				K('#image1').click(function() {
+					editor.loadPlugin('image', function() {
+						editor.plugin.imageDialog({
+							imageUrl : K('#image').val(),
+							clickFn : function(url, title, width, height, border, align) {
+								K('#image').val(url);
+								editor.hideDialog();
+							}
 						});
 					});
-		});
-		
-		
-		
-		function getAreaList(ele,id,level){
-			// alert(id);
-			 $.getJSON("${siteurl}/area/querybycircle.htm?id="+id, function(data) { 
-				    // Now use this data to update your view models, 
-				    // and Knockout will update your UI automatically 
-				 var template = $.templates("#areastemplate");
-	           var areas={};
-	           areas.areas=data;
-				 var htmlOutput = template.render(areas);
-				
-				 $("#"+ele).html(htmlOutput);
+				});
 			});
-		 }
-	</script>
-    <script id="areastemplate" type="text/x-jsrender">
-  <option value="">请选择</option>
-  {{for areas}}
-   <option value="{{>id}}">{{>name}}</option>
-  {{/for}}
-	</script>
-</body>
+
+			function getAreaList(ele, id, level) {
+				// alert(id);
+				$.getJSON("${siteurl}/area/querybycircle.htm?id=" + id, function(data) {
+					// Now use this data to update your view models,
+					// and Knockout will update your UI automatically
+					var template = $.templates("#areastemplate");
+					var areas = {};
+					areas.areas = data;
+					var htmlOutput = template.render(areas);
+
+					$("#" + ele).html(htmlOutput);
+				});
+			}
+		</script>
+		<script id="areastemplate" type="text/x-jsrender">
+			<option value="">请选择</option>
+			{{for areas}}
+			<option value="{{>id}}">{{>name}}</option>
+			{{/for}}
+		</script>
+
+		[@imagesimple "uploaderthumb" "fileListuploaderthumb" "uploaderthumbpath"][/@imagesimple]
+
+	</body>
 
 </html>

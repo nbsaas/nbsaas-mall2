@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<meta charset="utf-8" />
-	<title>Blank Page - Ace Admin</title>
+	<title>商店评论管理</title>
 
      [#include "/admin/common/commonurl.html"]
 </head>
@@ -72,7 +72,7 @@
 				<a href="#">首页</a>
 			</li>
 
-			<li class="active">知识体系管理</li>
+			<li class="active">商店评论管理</li>
 		</ul><!-- /.breadcrumb -->
 
 		<div class="nav-search" id="nav-search">
@@ -92,24 +92,17 @@
 				       [#include "/admin/common/settings.html"]
 					<div class="row">
 						<div class="col-xs-12">
-						    <div class="operate panel panel-default">
-								<div class="panel-body">
-									<div class="pull-left">
-										<a href="${siteurl}/admin/article/view_add.htm" class="btn btn-sm btn-primary" >添加文章</a>
-									</div>
-								</div>
-							</div>
 							<div class="table-responsive">
 								<table class="table table-striped table-bordered table-hover">
 									<tr>
-										<td class="col-xs-3">文章标题</td>
-										<td class="col-xs-5 text-center">简单介绍</td>
+										<td class="col-xs-3">商店名称</td>
+										<td class="col-xs-5 text-center">评论类容</td>
 										<td class="col-xs-2 text-center">添加时间</td>
 										<td class="col-xs-2 text-center">操作</td>
 									</tr>
 									[#list list as item]
 									<tr id="trr${item.id}">
-										<td>${item.shop.name!""}</td>
+										<td>${(item.shop.name)!""}</td>
 										<td class="text-left">${item.comment!""}</td>
 										<td class="text-center">${item.addDate!""}</td>
 										

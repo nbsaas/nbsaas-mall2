@@ -7,7 +7,7 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.openyelp.data.entity.UserInfo;
+import com.ada.user.entity.UserInfo;
 
 /**
  * <p>User: Zhang Kaitao

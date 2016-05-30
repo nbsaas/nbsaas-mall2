@@ -1,9 +1,30 @@
 package com.openyelp.data.entity;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
+import javax.persistence.Table;
 
+import com.ada.area.entity.Area;
+import com.ada.user.entity.UserInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -17,11 +38,6 @@ public class Shop {
     @Column(unique = true, nullable = false)
     private Long id;
 
-    @Override
-    public String toString() {
-        return "Shop [id=" + id + ", name=" + name + "]";
-    }
-
     @Column(length = 100)
     private String address;
 
@@ -34,44 +50,6 @@ public class Shop {
     @OrderBy("week asc ")
     private Map<Integer, ShopTime> times = new HashMap<Integer, ShopTime>();
 
-
-    public Map<Integer, ShopTime> getTimes() {
-        return times;
-    }
-
-    public List<ShopTime> getDays() {
-        List<ShopTime> days = new ArrayList<ShopTime>();
-        if (times != null && times.values() != null && times.values().size() > 0) {
-            days.addAll(times.values());
-        }
-        return days;
-    }
-
-    public ShopTime getCurDay() {
-        Calendar calendar = Calendar.getInstance();
-        int curweek = calendar.get(Calendar.DAY_OF_WEEK);
-        curweek=curweek-2;
-        if(curweek==-1){
-            curweek=6;
-        }
-        //1周天 6
-        //2 周一0
-        //7 周六-5
-        //        weeks.put(0, "周一");
-       //		weeks.put(1, "周二");
-       //weeks.put(2, "周三");
-      //weeks.put(3, "周四");
-     //.put(4, "周五");
-     //weeks.put(5, "周六");
-     //weeks.put(6, "周日");
-
-        return times.get(curweek);
-    }
-
-    public void setTimes(Map<Integer, ShopTime> times) {
-        this.times = times;
-    }
-
     /**
      * 商家所有分类
      */
@@ -79,6 +57,7 @@ public class Shop {
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "shop_category_links")
     private Set<ShopCategory> categorys = new HashSet<ShopCategory>();
+
 
     @Column(length = 100)
     private String gps;
@@ -95,14 +74,6 @@ public class Shop {
     @Column(length = 300)
     private String image;
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
     @Column(length = 100)
     private String phone;
 
@@ -118,9 +89,11 @@ public class Shop {
      * 纬度
      */
     private Double latitude;
+
     private Date addDate;
 
     private Date lastDate;
+
     /**
      * 距离中心点的距离
      */
@@ -145,7 +118,6 @@ public class Shop {
      * poi商户的价格
      */
     private Float price;
-
     /**
      * 营业时间
      */
@@ -155,11 +127,11 @@ public class Shop {
      * 总体评分
      */
     private Float overall_rating;
-
     /**
      * 口味评分
      */
     private Float taste_rating;
+
     /**
      * 服务评分
      */
@@ -189,11 +161,11 @@ public class Shop {
      * 图片数
      */
     private Float image_num;
+
     /**
      * 团购数
      */
     private Integer groupon_num;
-
     /**
      * 优惠数
      */
@@ -203,24 +175,25 @@ public class Shop {
      * 评论数
      */
     private Integer comment_num;
+
     /**
      * 收藏数
      */
     private Integer favorite_num;
+
     /**
      * 签到数
      */
     private Integer checkin_num;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "shop_tag_links")
     private Set<ShopTag> tags = new HashSet<ShopTag>();
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "userid")
     private UserInfo user;
-
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "areaid")
     private Area area;
 
@@ -231,11 +204,9 @@ public class Shop {
     public String getAddress() {
         return address;
     }
-
     public Area getArea() {
         return area;
     }
-
     public Set<ShopCategory> getCategorys() {
         return categorys;
     }
@@ -246,6 +217,35 @@ public class Shop {
 
     public Integer getComment_num() {
         return comment_num;
+    }
+
+    public ShopTime getCurDay() {
+        Calendar calendar = Calendar.getInstance();
+        int curweek = calendar.get(Calendar.DAY_OF_WEEK);
+        curweek=curweek-2;
+        if(curweek==-1){
+            curweek=6;
+        }
+        //1周天 6
+        //2 周一0
+        //7 周六-5
+        //        weeks.put(0, "周一");
+       //		weeks.put(1, "周二");
+       //weeks.put(2, "周三");
+      //weeks.put(3, "周四");
+     //.put(4, "周五");
+     //weeks.put(5, "周六");
+     //weeks.put(6, "周日");
+
+        return times.get(curweek);
+    }
+
+    public List<ShopTime> getDays() {
+        List<ShopTime> days = new ArrayList<ShopTime>();
+        if (times != null && times.values() != null && times.values().size() > 0) {
+            days.addAll(times.values());
+        }
+        return days;
     }
 
     public String getDetail_url() {
@@ -288,6 +288,10 @@ public class Shop {
         return id;
     }
 
+    public String getImage() {
+        return image;
+    }
+
     public Float getImage_num() {
         return image_num;
     }
@@ -324,13 +328,6 @@ public class Shop {
         return price;
     }
 
-    public Float getService_rating() {
-        if (service_rating == null) {
-            service_rating = 0f;
-        }
-        return service_rating;
-    }
-
     public float getRating() {
         if (service_rating == null) {
             service_rating = 0f;
@@ -362,6 +359,13 @@ public class Shop {
         }
     }
 
+    public Float getService_rating() {
+        if (service_rating == null) {
+            service_rating = 0f;
+        }
+        return service_rating;
+    }
+
     public String getShop_hours() {
         return shop_hours;
     }
@@ -380,6 +384,10 @@ public class Shop {
 
     public Float getTechnology_rating() {
         return technology_rating;
+    }
+
+    public Map<Integer, ShopTime> getTimes() {
+        return times;
     }
 
     public String getUid() {
@@ -458,6 +466,10 @@ public class Shop {
         this.id = id;
     }
 
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public void setImage_num(Float image_num) {
         this.image_num = image_num;
     }
@@ -518,6 +530,10 @@ public class Shop {
         this.technology_rating = technology_rating;
     }
 
+    public void setTimes(Map<Integer, ShopTime> times) {
+        this.times = times;
+    }
+
     public void setUid(String uid) {
         this.uid = uid;
     }
@@ -528,6 +544,11 @@ public class Shop {
 
     public void setWebsite(String website) {
         this.website = website;
+    }
+
+    @Override
+    public String toString() {
+        return "Shop [id=" + id + ", name=" + name + "]";
     }
 
 }

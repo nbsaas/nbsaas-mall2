@@ -2,7 +2,7 @@ package com.openyelp.data.apps;
 
 import java.util.List;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopTime;
 import com.openyelp.data.service.ShopService;

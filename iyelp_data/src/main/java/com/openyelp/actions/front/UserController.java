@@ -12,16 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.UserInfo;
+import com.ada.data.core.Pagination;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.page.UserFriendPage;
+import com.ada.user.service.UserFollowService;
+import com.ada.user.service.UserFriendService;
 import com.openyelp.data.service.EventInfoService;
 import com.openyelp.data.service.PhotoService;
 import com.openyelp.data.service.ShopBookMarksService;
 import com.openyelp.data.service.ShopReviewListService;
 import com.openyelp.data.service.ShopReviewService;
 import com.openyelp.data.service.UserComplimentService;
-import com.openyelp.data.service.UserFollowService;
-import com.openyelp.data.service.UserFriendService;
 import com.openyelp.data.service.UserService;
 import com.openyelp.web.utils.FrontUtils;
 
@@ -48,7 +49,7 @@ public class UserController {
 		if (u.getId() < 0) {
 			return toindex();
 		}
-		Pagination friends = friendService.pageByUser(id, 1, 4);
+		UserFriendPage friends = friendService.pageByUser(id, 1, 4);
 		model.addAttribute("friends", friends.getList());
 		
 		Pagination compliments = userComplimentService.pageByUser(u.getId(), 1,
@@ -189,7 +190,7 @@ public class UserController {
 		if (u.getId() < 0) {
 			return toindex();
 		}
-		Pagination rs = friendService.pageByUser(id, curpage, pagesize);
+		UserFriendPage rs = friendService.pageByUser(id, curpage, pagesize);
 		if (rs != null) {
 			model.addAttribute("list", rs.getList());
 			model.addAttribute("page", rs);

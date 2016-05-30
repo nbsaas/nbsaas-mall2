@@ -17,14 +17,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 
+import com.ada.area.entity.Area;
+import com.ada.area.service.AreaService;
+import com.ada.data.core.Pagination;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.apps.ObjectFactory;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
 import com.openyelp.data.entity.EntityContent;
-import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.service.AreaService;
-import com.openyelp.data.service.CommentService;
 import com.openyelp.data.service.EntityContentService;
 import com.openyelp.data.service.EventInfoJoinService;
 import com.openyelp.data.service.EventInfoService;
@@ -170,7 +170,13 @@ public class SiteAction {
 			@RequestParam(value = "pagesize", required = true, defaultValue = "10") int pagesize,
 			HttpServletRequest request, HttpServletResponse response,
 			Model model) {
+		
+		
 		Integer areaid = UserUtil.getCurrentCity().getId();
+		
+		//CookieLocaleResolver
+		
+		
 		Pagination hots = eventInfoService.pageByHot(areaid, 1, 6);
 		model.addAttribute("hots", hots.getList());
 

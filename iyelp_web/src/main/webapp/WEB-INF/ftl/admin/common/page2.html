@@ -1,0 +1,53 @@
+[#macro pager page ]
+<input type="hidden" id="pageSize" name="pageSize" value="${page.pageSize}" />
+<input type="hidden" id="searchProperty" name="searchProperty" value="${(page.searchProperty)!}" />
+<input type="hidden" id="orderProperty" name="orderProperty" value="${(page.orderProperty)!}" />
+<input type="hidden" id="orderDirection" name="orderDirection" value="${(page.orderDirection)!}" />
+<div>
+[#if page.totalPages > 1]
+    <span class="pageSkip pull-right pagination " style="margin-left: 20px;margin-top: 25px;">
+			<span >共${page.totalPages}页到第 <input class="input-mini spinner-inpu" id="pageNumber" name="pageNumber" value="${page.pageNumber}" maxlength="9" onpaste="return false;" />页
+			</span>
+			<button class="btn btn-xs btn-primary" type="submit">
+			<i class="ace-icon glyphicon glyphicon-search"></i>
+			</button>
+		</span>
+	<ul class="pagination pull-right">
+		[#if page.pageNumber==1]
+			<li class="firstPage">&nbsp;</li>
+		[#else]
+			<li class="firstPage"><a class="firstPage" href="javascript: $.pageSkip(1);">首页</a></li>
+		[/#if]
+		[#if page.pageNumber > 2]
+		<li>	<a class="previousPage" href="javascript: $.pageSkip(${page.pageNumber-1});">
+			<i class="ace-icon fa fa-angle-double-left"></i>
+			</a>
+		</li>
+		[#else]
+		[/#if]
+		[#list page.firstNo..page.endNo as  segmentPageNumber]
+			[#if segmentPageNumber_index == 0 && segmentPageNumber > 2]
+			
+			[/#if]
+			[#if segmentPageNumber != page.pageNumber]
+				<li><a href="javascript: $.pageSkip(${segmentPageNumber});">${segmentPageNumber}</a></li>
+			[#else]
+				<li class="active"><span class="currentPage">${segmentPageNumber}</span></li>
+			[/#if]
+		[/#list]
+		[#if page.pageNumber lt page.totalPages]
+			<li><a class="nextPage" href="javascript: $.pageSkip(${page.pageNumber+1});">
+			<i class="ace-icon fa fa-angle-double-right"></i>
+			</a></li>
+		[#else]
+		[/#if]
+		[#if page.pageNumber==page.totalPages]
+			<span class="lastPage">&nbsp;</span>
+		[#else]
+			<li><a class="lastPage" href="javascript: $.pageSkip(${page.totalPages});">最后一页</a></li>
+		[/#if]
+	</ul>
+	
+[/#if]
+</div>
+[/#macro]

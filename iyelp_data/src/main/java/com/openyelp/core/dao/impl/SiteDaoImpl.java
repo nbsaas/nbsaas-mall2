@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 
 import com.openyelp.core.dao.SiteDao;
 import com.openyelp.core.entity.Site;
-import com.openyelp.data.core.BaseDaoImpl;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.BaseDaoImpl;
+import com.ada.data.core.Pagination;
 
 @Repository
 public class SiteDaoImpl extends BaseDaoImpl<Site, Integer> implements SiteDao {

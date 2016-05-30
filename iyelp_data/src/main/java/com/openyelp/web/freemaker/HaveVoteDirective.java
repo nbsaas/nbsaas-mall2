@@ -4,16 +4,12 @@ import static freemarker.template.ObjectWrapper.DEFAULT_WRAPPER;
 
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.openyelp.data.entity.Area;
 import com.openyelp.data.entity.ShopReviewVote;
-import com.openyelp.data.service.AreaService;
 import com.openyelp.data.service.ShopReviewVoteService;
-import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.DirectiveUtils;
 
 import freemarker.core.Environment;

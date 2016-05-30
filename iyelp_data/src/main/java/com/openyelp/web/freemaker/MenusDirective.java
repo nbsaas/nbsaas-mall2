@@ -9,8 +9,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.openyelp.data.entity.Menu;
-import com.openyelp.data.service.MenuService;
+import com.ada.admin.entity.Menu;
+import com.ada.admin.service.MenuService;
 import com.openyelp.web.utils.DirectiveUtils;
 
 import freemarker.core.Environment;

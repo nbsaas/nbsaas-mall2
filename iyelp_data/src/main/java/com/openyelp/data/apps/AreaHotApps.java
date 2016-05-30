@@ -2,7 +2,7 @@ package com.openyelp.data.apps;
 
 import java.util.Date;
 
-import com.openyelp.data.entity.Area;
+import com.ada.area.entity.Area;
 import com.openyelp.data.entity.AreaHot;
 import com.openyelp.data.service.AreaHotService;
 

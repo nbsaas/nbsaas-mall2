@@ -1,6 +1,6 @@
 package com.openyelp.data.apps;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.service.EventInfoService;
 
 public class EventInfoApps {

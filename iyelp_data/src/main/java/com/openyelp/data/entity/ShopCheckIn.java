@@ -1,8 +1,13 @@
 package com.openyelp.data.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
-import javax.persistence.*;
+import com.ada.data.entity.AbstractEntity;
+import com.ada.user.entity.UserInfo;
 
 /**
  * Created by 年高 on 2015/11/22.

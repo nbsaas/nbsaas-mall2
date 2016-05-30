@@ -2,18 +2,16 @@ package com.openyelp.data.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.openyelp.data.core.Finder;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
-import com.openyelp.data.dao.AreaDao;
+import com.ada.area.dao.AreaDao;
+import com.ada.area.entity.Area;
+import com.ada.data.core.Finder;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 import com.openyelp.data.dao.FeedDao;
-import com.openyelp.data.entity.Area;
 import com.openyelp.data.entity.Feed;
-import com.openyelp.data.entity.ShopCategory;
 import com.openyelp.data.service.FeedService;
 
 @Service

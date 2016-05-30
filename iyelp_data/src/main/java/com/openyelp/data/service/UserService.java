@@ -1,9 +1,9 @@
 package com.openyelp.data.service;
 
+import com.ada.data.core.Pagination;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.entity.UserRole;
 import com.openyelp.annotation.RestFul;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.UserRole;
-import com.openyelp.data.entity.UserInfo;
 
 @RestFul(api=UserService.class,value="UserService")
 public interface UserService {
@@ -32,6 +32,7 @@ public interface UserService {
 	public UserInfo deleteById(Long id);
 
 	public UserInfo login(String username, String password, String macaddress);
+	public UserInfo loginqq(String openid, String nickname, String figureurl_qq_1);
 
 	public UserInfo[] deleteByIds(Long[] ids);
 

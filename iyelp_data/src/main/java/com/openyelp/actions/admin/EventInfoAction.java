@@ -1,6 +1,6 @@
 package com.openyelp.actions.admin;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.EventInfo;
 import com.openyelp.data.entity.EventInfoCategory;
 import com.openyelp.data.service.EventInfoCategoryService;

@@ -7,15 +7,14 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ada.article.entity.ArticleCatalog;
-import com.ada.data.core.BaseDaoImpl;
+import com.ada.data.core.CriteriaDaoImpl;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.dao.ShopCategoryDao;
 import com.openyelp.data.entity.ShopCategory;
 
 @Repository
-public class ShopCategoryDaoImpl extends BaseDaoImpl<ShopCategory, Integer> implements ShopCategoryDao {
+public class ShopCategoryDaoImpl extends CriteriaDaoImpl<ShopCategory, Integer> implements ShopCategoryDao {
 	public Pagination getPage(int pageNo, int pageSize) {
 		Criteria crit = createCriteria();
 		com.ada.data.core.Pagination page = findByCriteria(crit, pageNo, pageSize);

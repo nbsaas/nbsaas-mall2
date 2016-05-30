@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.Pagination;
+import com.ada.user.entity.UserInfo;
 import com.openyelp.data.entity.Messages;
-import com.openyelp.data.entity.UserInfo;
 import com.openyelp.data.service.MessagesService;
 import com.openyelp.data.service.UserService;
 import com.openyelp.shiro.utils.UserUtil;

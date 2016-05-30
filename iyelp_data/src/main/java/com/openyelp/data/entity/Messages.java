@@ -15,6 +15,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.ColumnDefault;
 
+import com.ada.user.entity.UserInfo;
+
 
 /**
  * 消息

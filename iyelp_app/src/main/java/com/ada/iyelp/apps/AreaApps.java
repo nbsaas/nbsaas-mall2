@@ -2,17 +2,17 @@ package com.ada.iyelp.apps;
 
 import java.util.List;
 
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.entity.Area;
-import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.service.AreaService;
+import com.ada.area.entity.Area;
+import com.ada.area.page.AreaPage;
+import com.ada.area.service.AreaService;
+import com.ada.user.entity.UserInfo;
 
 public class AreaApps {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		AreaService service = ObjectFactory.get().getBean(AreaService.class);
-		Pagination<Area> as = service.pageByLevelState(3,1, 1, 10);
+		AreaPage as = service.pageByLevelState(3,1, 1, 10);
 
 		System.out.println(as);
 		List<Area> ass = (List<Area>) as.getList();
@@ -23,7 +23,7 @@ public class AreaApps {
 
 	private static void list() {
 		AreaService service = ObjectFactory.get().getBean(AreaService.class);
-		Pagination<Area> as = service.pageByLevel(5, 1, 10);
+		AreaPage as = service.pageByLevel(5, 1, 10);
 
 		System.out.println(as);
 		List<Area> ass = (List<Area>) as.getList();

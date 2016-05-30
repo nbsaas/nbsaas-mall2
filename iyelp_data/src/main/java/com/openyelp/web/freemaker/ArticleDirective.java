@@ -8,9 +8,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.openyelp.article.page.ArticlePage;
-import com.openyelp.article.service.ArticleService;
-import com.openyelp.shiro.utils.UserUtil;
+import com.ada.article.page.ArticlePage;
+import com.ada.article.service.ArticleService;
 import com.openyelp.web.utils.DirectiveUtils;
 
 import freemarker.core.Environment;

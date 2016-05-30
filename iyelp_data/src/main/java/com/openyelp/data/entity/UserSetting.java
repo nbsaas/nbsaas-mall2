@@ -2,28 +2,20 @@ package com.openyelp.data.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.ColumnDefault;
+import com.ada.data.entity.AbstractEntity;
+import com.ada.user.entity.UserInfo;
 
 
 @Entity
 @Table(name = "user_setting")
-public class UserSetting {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+public class UserSetting extends AbstractEntity{
 	
-	@ColumnDefault("")
 	private String title="";
 	
-	@ColumnDefault("")
 	private String description="";
 	
 	
@@ -33,19 +25,10 @@ public class UserSetting {
 	
 	private String share_setting;
 	
-	@ColumnDefault("1")
 	private Integer bookmarksPublic;
 	
-	@ColumnDefault("1")
 	private Integer memberSearch;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
 
 	public String getTitle() {
 		return title;

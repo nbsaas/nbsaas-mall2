@@ -4,9 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-import com.openyelp.data.entity.UserInfo;
-import com.openyelp.data.entity.UserProfile;
-import com.openyelp.data.entity.UserRole;
+import com.ada.user.entity.UserInfo;
+import com.ada.user.entity.UserRole;
 
 public class UserFollowState implements Serializable {
 
@@ -96,9 +95,6 @@ public class UserFollowState implements Serializable {
 		return user.getPlainPassword();
 	}
 
-	public UserProfile getProfile() {
-		return user.getProfile();
-	}
 
 	public Set<UserRole> getRoles() {
 		return user.getRoles();
@@ -152,9 +148,6 @@ public class UserFollowState implements Serializable {
 		user.setPlainPassword(plainPassword);
 	}
 
-	public void setProfile(UserProfile profile) {
-		user.setProfile(profile);
-	}
 
 	public void setRoles(Set<UserRole> roles) {
 		user.setRoles(roles);

@@ -2,294 +2,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta charset="utf-8" />
-<title>商店分类管理</title> [#include "/admin/common/commonurl.html"]
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>商家分类管理</title>
 
-	<script src="${siteurl}assets/plugs/layer/layer.js"></script>
-	<link rel="stylesheet" href="${siteurl}assets/plugs/layer/skin/layer.css" />
-
-
-<style type="text/css">
-.titleinfo {
-	width: 60px;
-}
-</style>
-
-<script type="text/javascript">
-
-	$(document).ready(function(){
-
-		[#if msg??]
-		alert("${msg}");
-//		layer.open({
-//			type: 1,
-//			area: ['200px', '160px'],
-//			content: '${msg}' //这里content是一个普通的String
-//		});
-		[/#if]
-	});
-
-
-</script>
+     [#include "/admin/common/commonurl.html"]
+     <style type="text/css">
+     .titleinfo{
+     width: 60px;
+     }
+     </style>
 </head>
 
 <body class="no-skin">
-	<div id="navbar" class="navbar navbar-default">
+<div id="navbar" class="navbar navbar-default">
+<script type="text/javascript">
+	try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+</script>
+
+[#include "/admin/common/navbar.html"]
+
+<!-- /.navbar-container -->
+</div>
+
+<div class="main-container" id="main-container">
+<script type="text/javascript">
+	try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+</script>
+
+<div id="sidebar" class="sidebar                  responsive">
+<script type="text/javascript">
+	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+</script>
+[#include "/admin/common/shortcuts.html"]
+<!-- /.sidebar-shortcuts -->
+
+<!-- .nav-list -->
+					[#include "/admin/common/commonmenu.html"]
+                      	<ul class="nav nav-list">
+                      	[@menustag id=1]
+						[#list list as item]
+					     [@menu item "1,44,47"]
+					     [/@menu]
+					     [/#list]
+					     [/@menustag]
+					     </ul>
+<!-- /.nav-list -->
+
+<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+	<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+</div>
+
+<script type="text/javascript">
+	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+</script>
+</div>
+
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
 		<script type="text/javascript">
-			try {
-				ace.settings.check('navbar', 'fixed')
-			} catch (e) {
-			}
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 		</script>
 
-		[#include "/admin/common/navbar.html"]
+		<ul class="breadcrumb">
+			<li>
+				<i class="ace-icon fa fa-home home-icon"></i>
+				<a href="#">首页</a>
+			</li>
 
-		<!-- /.navbar-container -->
+			<li class="active">商家分类管理</li>
+		</ul><!-- /.breadcrumb -->
+
+		<div class="nav-search" id="nav-search">
+			<form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+								<i class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+			</form>
+		</div><!-- /.nav-search -->
 	</div>
 
-	<div class="main-container" id="main-container">
-		<script type="text/javascript">
-			try {
-				ace.settings.check('main-container', 'fixed')
-			} catch (e) {
-			}
-		</script>
 
-		<div id="sidebar" class="sidebar                  responsive">
-			<script type="text/javascript">
-				try {
-					ace.settings.check('sidebar', 'fixed')
-				} catch (e) {
-				}
-			</script>
-			[#include "/admin/common/shortcuts.html"]
-			<!-- /.sidebar-shortcuts -->
-
-			<!-- .nav-list -->
-			[#include "/admin/common/commonmenu.html"]
-			<ul class="nav nav-list">[@menustag id=1] [#list list as item]
-				[@menu item "1,44,47"] [/@menu] [/#list] [/@menustag]
-			</ul>
-			<!-- /.nav-list -->
-
-			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-				<i class="ace-icon fa fa-angle-double-left"
-					data-icon1="ace-icon fa fa-angle-double-left"
-					data-icon2="ace-icon fa fa-angle-double-right"></i>
-			</div>
-
-			<script type="text/javascript">
-				try {
-					ace.settings.check('sidebar', 'collapsed')
-				} catch (e) {
-				}
-			</script>
-		</div>
-
-		<div class="main-content">
-			<div class="breadcrumbs" id="breadcrumbs">
-				<script type="text/javascript">
-					try {
-						ace.settings.check('breadcrumbs', 'fixed')
-					} catch (e) {
-					}
-				</script>
-
-				<ul class="breadcrumb">
-					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">首页</a>
-					</li>
-
-					<li class="active">欢迎光临</li>
-				</ul>
-				<!-- /.breadcrumb -->
-
-				<div class="nav-search" id="nav-search">
-					<form class="form-search">
-						<span class="input-icon"> <input type="text"
-							placeholder="Search ..." class="nav-search-input"
-							id="nav-search-input" autocomplete="off" /> <i
-							class="ace-icon fa fa-search nav-search-icon"></i>
-						</span>
-					</form>
-				</div>
-				<!-- /.nav-search -->
-			</div>
-
-
-
-			<div class="page-content">
-
-				[#include "/admin/common/settings.html"] [#if courseitem.parent??]
-				<h1>
-					<a
-						href="${siteurl}/admin/shopcategory/list.htm?id=${courseitem.parent.id}">${courseitem.cname!""}:返回上一级</a>
-				</h1>
-				[/#if]
-				<div class="col-xs-4  no-padding">
-					<div class="widget-box collapsed">
-						<div class="widget-header">
-							<h4 class="widget-title">添加分类</h4>
-
-							<div class="widget-toolbar">
-								<a data-action="collapse" href="#"> <i
-									class="ace-icon fa fa-chevron-down"></i>
-								</a>
-							</div>
+	
+				<div class="page-content">
+				
+					<!-- /.page-header -->
+					<div class="row">
+												<div class="col-xs-12">
+							<ul class="breadcrumb">
+								[#if tops??]
+								[#list tops as item]
+								[#if item.id==id]
+								<li>
+									${item.cname}
+								</li>
+								[#else]
+								<li>
+									<a  href="${siteurl}admin/shopcategory/view_list.htm?id=${item.id}">${item.cname}</a>
+									[/#if]
+								</li>
+								[/#list]
+								[/#if]
+							</ul>
 						</div>
+						
+						<div class="col-xs-12">
 
-						<div class="widget-body">
-							<div class="widget-main">
+							<div class="widget-box">
+
 								<form class="form-inline" role="form"
-									action="${siteurl}/admin/shopcategory/model_add.htm"
-									method="post">
-									<input type="hidden" name="parent.id" value="${id}"> <input
-										type="hidden" name="priority" value="1"> <input
-										type="hidden" name="id" value="${id}">
-									<div>
-										<label class="control-label no-padding-right titleinfo"
-											for="name">分类名</label> <input class="form-control"
-											type="text" placeholder="分类名" name="cname" id="name">
-									</div>
+								action="${siteurl}admin/shopcategory/model_save.htm" method="post">
+									<input type="hidden" name="parent.id" value="${id}">
+									<input type="hidden" name="pid" value="${id}">
+									<div class="widget-body">
+										<div class="widget-main">
+											<div class="row">
+												<div class="col-xs-12 col-sm-12 ">
+													<div class="form-group">
+														<label for="control-label no-padding-right">分类</label>
+														<input type="text" name="cname" placeholder="分类 "
+														class="form-control search-query">
 
-									<hr>
+													</div>
+													<div class="form-group">
+														<label for="control-label no-padding-right">英文分类</label>
+														<input type="text" name="name" placeholder="英文分类 "
+														class="form-control search-query">
 
-									<div>
-										<label for="control-label no-padding-right"
-											style="width: 60px;">英文名</label> <input class="form-control"
-											type="text" placeholder="英文名称" name="name" id="path">
-									</div>
+													</div>
+													<div class ="form-group" >
 
-									<hr>
-
-
-
-									<div>
-										<button type="submit" class="btn btn-info">添加</button>
+														<label for="control-label no-padding-right">排序号</label>
+														<input class="form-control"
+														type="number" placeholder="排序号" name="sortnum" id="path">
+													</div>
+													<div class ="form-group">
+														<span>
+															<button class="btn btn-purple btn-sm" type="submit">
+																添加 <i
+																class="ace-icon fa fa-plus icon-on-right bigger-110"></i>
+															</button> </span>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</form>
 							</div>
 						</div>
-					</div>
-				</div>
-				<!-- /.page-header -->
-				<div class="row">
+						<div class="col-xs-12">
+							<form id="listForm">
+							<input type="hidden" name="id" value="${id}">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover">
+									<tr>
+										<td class="col-xs-4">分类名称</td>
+										<td class="col-xs-2">英文名称</td>
+										<td class="col-xs-2">商家数量</td>
+										<td class="col-xs-2 text-center">排序号</td>
+										<td class="col-xs-2 text-center">操作</td>
+									</tr>
+									[#list list as item]
+									<tr id="trr${item.id}">
+										<td>${item.cname!""}</td>
+										<td>${item.name!""}</td>
+										<td>${item.nums!""}</td>
+										<td class="text-center">${item.sortnum!"0"}</td>
+										<td class="text-center">
+											<div
+												class="visible-md visible-lg hidden-sm hidden-xs btn-group">
 
-
-					<div class="col-xs-12">
-						<div class="row"  style="display: none;">
-							<div class="col-xs-12">
-								<p>
-									<a class="btn no-border" href="${siteurl}admin/shopcategory/view_add.htm">
-										<i class="ace-icon fa fa-pencil align-top bigger-125"></i>
-										添加分类
-									</a>
-								</p>
+											<a class="btn btn-xs btn-info"
+													href="${siteurl}admin/shopcategory/view_edit.htm?id=${item.id}&pid=${item.parent.id}&pageNumber=${page.pageNumber}">
+														<i class="icon-edit bigger-120">更新</i>
+											</a> 
+											<a class="btn btn-xs btn-info"
+													href="${siteurl}admin/shopcategory/view_list.htm?id=${item.id}">
+														<i class="icon-edit bigger-120">子分类</i>
+											</a> 											
+											<a  class="btn btn-xs btn-danger"
+													href="${siteurl}admin/shopcategory/model_delete.htm?id=${item.id}&pid=${item.parent.id}&pageNumber=${page.pageNumber}">
+														<i class="icon-trash bigger-120">删除</i>
+												</a>
+											</div>
+										</td>
+									</tr>
+									[/#list]
+								</table>
 							</div>
+	                        				      [#include "/admin/common/page2.html"]
+
+	                       [@pager page ][/@pager]       
+	                       </form>          
 						</div>
-						<div class="table-responsive">
-							<table class="table table-striped table-bordered table-hover">
-								<tr>
-									<td class="col-xs-2">分类名称</td>
-									<td class="col-xs-2 text-center">英文名称</td>
-									<td class="col-xs-2 text-center">操作</td>
-								</tr>
-								[#if list??] [#list list as item]
-								<tr id="trr${item.id}">
-									<td>${item.cname!""}</td>
-									<td class="text-center">${item.name!""}</td>
-									<td class="text-center">
-										<div
-											class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-
-											<a>
-											<button class="btn btn-xs btn-primary" data-toggle="modal"
-													data-target="#myModal${item.id}">修改</button>
-											</a>
-											<a  onclick="return confirm('删除后无法恢复,确定要删除吗')" href="${siteurl}/admin/shopcategory/model_delete.htm?typeid=${item.id}">
-												<button class="btn btn-xs btn-danger">
-													<i class="icon-trash bigger-120"></i>删除
-												</button>
-											</a>
-
-											<a
-													href="${siteurl}/admin/shopcategory/list.htm?id=${item.id}">
-												<button class="btn btn-xs btn-info">
-													<i class="icon-edit bigger-120">查看子菜单</i>
-												</button>
-											</a>
-										</div>
-									</td>
-								</tr>
-								[/#list] [/#if]
-							</table>
-
-							[#list list as item]
-
-							<div class="modal fade" id="myModal${item.id}" tabindex="-1"
-								 role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-								<div class="modal-dialog modal-sm">
-									<div class="modal-content">
-										<form
-												action="${siteurl}admin/shopcategory/model_update.htm"
-												method="post">
-											<input type="hidden" name="id" value="${item.id}" />
-											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"
-														aria-label="Close">
-													<span aria-hidden="true">&times;</span>
-												</button>
-												<h4 class="modal-title" id="myModalLabel">修改标题</h4>
-											</div>
-											<div class="modal-body">
-												<div class="row">
-													<label for="form-field-1"
-														   class="col-sm-3 control-label no-padding-right">
-														中文名称</label>
-													<div class="col-sm-9">
-														<input type="text" name="cname" value="${item.cname!''}"/>
-													</div>
-												</div>
-												<div class="row" style="margin-top:10px;">
-													<label for="form-field-1"
-														   class="col-sm-3 control-label no-padding-right">
-														英文名称</label>
-													<div class="col-sm-9">
-														<input type="text" name="name" value="${item.name!''}"/>
-													</div>
-												</div>
-											</div>
-											<div class="modal-footer">
-												<button type="button" class="btn btn-default"
-														data-dismiss="modal">关闭</button>
-												<button type="submit" class="btn btn-primary">保存</button>
-											</div>
-										</form>
-									</div>
-								</div>
-							</div>
-							[/#list]
-
-						</div>
-
-
 					</div>
+
+
 				</div>
+</div><!-- /.main-content -->
 
+     [#include "/admin/common/footer.html"]
 
-			</div>
-		</div>
-		<!-- /.main-content -->
+</div><!-- /.main-container -->
 
-		[#include "/admin/common/footer.html"]
+<!-- basic scripts -->
 
-	</div>
-	<!-- /.main-container -->
+     [#include "/admin/common/scripts.html"]
 
-	<!-- basic scripts -->
-
-	[#include "/admin/common/scripts.html"]
-
-	<!-- inline scripts related to this page -->
+<!-- inline scripts related to this page -->
 </body>
 </html>

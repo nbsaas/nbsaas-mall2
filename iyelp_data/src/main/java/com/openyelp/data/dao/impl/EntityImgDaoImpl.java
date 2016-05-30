@@ -5,8 +5,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.openyelp.data.core.BaseDaoImpl;
-import com.openyelp.data.core.Pagination;
+import com.ada.data.core.BaseDaoImpl;
+import com.ada.data.core.Pagination;
 import com.openyelp.data.dao.EntityImgDao;
 import com.openyelp.data.entity.EntityImg;
 

@@ -7,8 +7,8 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Locale;
 
-import com.openyelp.data.entity.Menu;
-import com.openyelp.data.service.MenuService;
+import com.ada.admin.entity.Menu;
+import com.ada.admin.service.MenuService;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

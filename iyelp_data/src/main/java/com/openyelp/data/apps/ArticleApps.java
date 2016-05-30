@@ -2,12 +2,12 @@ package com.openyelp.data.apps;
 
 import java.util.List;
 
-import com.openyelp.article.entity.Article;
-import com.openyelp.article.entity.ArticleCatalog;
-import com.openyelp.article.page.ArticlePage;
-import com.openyelp.article.service.ArticleCatalogService;
-import com.openyelp.article.service.ArticleService;
-import com.openyelp.data.entity.UserInfo;
+import com.ada.article.entity.Article;
+import com.ada.article.entity.ArticleCatalog;
+import com.ada.article.page.ArticlePage;
+import com.ada.article.service.ArticleCatalogService;
+import com.ada.article.service.ArticleService;
+import com.ada.user.entity.UserInfo;
 
 public class ArticleApps {
 

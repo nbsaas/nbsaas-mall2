@@ -2,12 +2,13 @@ package com.openyelp.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.ada.user.entity.UserInfo;
 /**
  * 用户的个人资料
  * @author 年高

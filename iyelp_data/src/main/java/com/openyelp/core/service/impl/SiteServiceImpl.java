@@ -7,8 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.openyelp.core.dao.SiteDao;
 import com.openyelp.core.entity.Site;
 import com.openyelp.core.service.SiteService;
-import com.openyelp.data.core.Pagination;
-import com.openyelp.data.core.Updater;
+import com.ada.data.core.Pagination;
+import com.ada.data.core.Updater;
 
 @Service
 @Transactional

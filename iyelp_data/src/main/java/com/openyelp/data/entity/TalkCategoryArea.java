@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.ada.area.entity.Area;
 
 @Entity
 @Table(name = "talk_category_area")
