@@ -573,7 +573,7 @@
  
  [#if item.catalog==6]
   [@shopimagelist_ id=item.oid]
-[#if oneshopimagelist??]
+[#if oneshopimagelist?? && oneshopimagelist.num??]
 <li class="media-block event-block media-block--12">
 	<div class="media-avatar">
 
