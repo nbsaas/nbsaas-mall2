@@ -1,1 +1,8 @@
 /target/
+/*.iml
+/.idea
+/iyelp_api/*.iml
+/iyelp_app/iyelp_app.iml
+/iyelp_data/*.iml
+/iyelp_rest/*.iml
+/iyelp_web/*.iml
