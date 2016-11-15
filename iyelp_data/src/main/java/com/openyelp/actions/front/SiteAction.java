@@ -126,9 +126,12 @@ public class SiteAction {
 
 		UserInfo u = UserUtil.getCurrentUser();
 		if (u.getId() > 0) {
-			;
-
-			model.addAttribute("shop", shopService.findByRand(id));
+			try {
+				model.addAttribute("shop", shopService.findByRand(id));
+			}
+			catch (Exception e){
+				e.printStackTrace();
+			}
 
 		}
 		model.addAttribute("siteindex", 1);

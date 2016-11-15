@@ -42,7 +42,7 @@
                       	<ul class="nav nav-list">
                       	[@menustag id=1]
 						[#list list as item]
-					     [@menu item "1,49,54"]
+					     [@menu item "1,14,17"]
 					     [/@menu]
 					     [/#list]
 					     [/@menustag]
@@ -105,7 +105,7 @@
 										<td >[@html.textcut s=item.message len=20  append='..'/]</td>
 										<td >${(item.user.name)!""}</td>
 										<td >${item.adddate!""}</td>
-										<td >${(item.area.area.name)!""}</td>
+										<td >${(item.area.area.name)!""}-${(item.area.talkCategory.name)!""}</td>
 										<td class="text-center">
 											<div
 												class="visible-md visible-lg hidden-sm hidden-xs btn-group">

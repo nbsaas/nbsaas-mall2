@@ -402,6 +402,9 @@ public class ShopServiceImpl implements ShopService {
 	@Override
 	public Shop findByRand(int areaid) {
 		Area area = areaDao.findById(areaid);
+		if (area==null){
+			return null;
+		}
 
 		Finder finder = Finder.create();
 		finder.append("select max(s.id) from Shop s ");

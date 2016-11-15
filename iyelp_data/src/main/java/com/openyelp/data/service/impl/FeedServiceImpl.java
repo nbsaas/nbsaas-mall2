@@ -92,7 +92,7 @@ public class FeedServiceImpl implements FeedService {
 			}
 			return p;
 		} else {
-			return null;
+			return new Pagination<Feed>() ;
 		}
 
 	}
