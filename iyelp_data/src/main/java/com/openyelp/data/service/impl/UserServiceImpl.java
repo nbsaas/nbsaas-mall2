@@ -146,12 +146,12 @@ public class UserServiceImpl implements UserService {
 	public UserInfo updateUserLogin(UserInfo user) {
 		user = dao.findById(user.getId());
 		user.setLastDate(new Date());
-		Integer times = user.getLogintimes();
+		Integer times = user.getLoginSize();
 		if (times == null) {
 			times = 0;
 		}
 		times++;
-		user.setLogintimes(times);
+		user.setLoginSize(times);
 		return update(user);
 	}
 
@@ -166,14 +166,14 @@ public class UserServiceImpl implements UserService {
 		if (us != null && us.size() > 0) {
 			result = us.get(0);
 			if (checkPassword(result, password)) {
-				result.setMacaddress(macaddress);
+				//result.setMacaddress(macaddress);
 				result.setLastDate(new Date());
-				Integer logintime = result.getLogintimes();
+				Integer logintime = result.getLoginSize();
 				if (logintime == null) {
 					logintime = 0;
 				}
 				logintime++;
-				result.setLogintimes(logintime);
+				result.setLoginSize(logintime);
 			} else {
 				result = null;
 			}
@@ -260,7 +260,7 @@ public class UserServiceImpl implements UserService {
 		try {
 			userinfo = dao.findById(uid);
 			Photo photo = photoDao.findById(id);
-			userinfo.setHeadimg(photo.getUrl());
+			userinfo.setAvatar(photo.getUrl());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -331,7 +331,7 @@ public class UserServiceImpl implements UserService {
 			user.setUsername(openid);
 			user.setName(nickname);
 			user.setName(nickname);
-			user.setHeadimg(figureurl_qq_1);
+			user.setAvatar(figureurl_qq_1);
 			user.setPlainPassword("123456");
 			entryptPassword(user);
 			result=dao.save(user);

@@ -1,11 +1,9 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Talk;
 
 
-@RestFul(api=TalkService.class,value="TalkService")
 public interface TalkService {
 	public Pagination getPage(int pageNo, int pageSize);
 

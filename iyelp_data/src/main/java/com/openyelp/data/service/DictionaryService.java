@@ -1,13 +1,11 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Dictionary;
 
 
 
 
-@RestFul(api=DictionaryService.class,value="DictionaryService")
 public interface DictionaryService {
 	public Pagination getPage(int pageNo, int pageSize);
 	public Pagination page(int pageNo, int pageSize);

@@ -1,13 +1,6 @@
 package com.openyelp.services.ipseek;
 
-import java.io.IOException;
-
 import org.apache.commons.lang3.StringUtils;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -69,21 +62,22 @@ public class IpSeekUtils {
 	}
 	
 	private  static String getIpAddress(String api,String ip,String ak){
-		String apiAddress=api+"?ip="+ip;
-		if(StringUtils.isNotBlank(ak)){
-			apiAddress+="&ak="+ak;
-		}
-		HttpClient client =new DefaultHttpClient();
-		HttpGet get=new HttpGet(apiAddress);
-		String result="";
-		try {
-			HttpResponse response=client.execute(get);
-			byte[]data=EntityUtils.toByteArray(response.getEntity());
-			result=new String(data);
-		} catch (IOException e) {
-			//e.printStackTrace();
-		}
-		return result;
+//		String apiAddress=api+"?ip="+ip;
+//		if(StringUtils.isNotBlank(ak)){
+//			apiAddress+="&ak="+ak;
+//		}
+//		HttpClient client =new DefaultHttpClient();
+//		HttpGet get=new HttpGet(apiAddress);
+//		String result="";
+//		try {
+//			HttpResponse response=client.execute(get);
+//			byte[]data=EntityUtils.toByteArray(response.getEntity());
+//			result=new String(data);
+//		} catch (IOException e) {
+//			//e.printStackTrace();
+//		}
+//		return result;
+		return "";
 	}
 
 	/**

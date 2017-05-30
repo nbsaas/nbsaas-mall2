@@ -3,9 +3,7 @@ package com.openyelp.data.service;
 import com.ada.data.core.Pagination;
 import com.ada.user.entity.UserInfo;
 import com.ada.user.entity.UserRole;
-import com.openyelp.annotation.RestFul;
 
-@RestFul(api=UserService.class,value="UserService")
 public interface UserService {
 	/**加密方法*/
 	public static final String HASH_ALGORITHM = "SHA-1";

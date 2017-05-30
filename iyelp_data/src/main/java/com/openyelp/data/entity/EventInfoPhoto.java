@@ -59,7 +59,7 @@ public class EventInfoPhoto {
 	public int getPhoto() {
 		int result = 0;
 
-		String uurl = getUser().getHeadimg();
+		String uurl = getUser().getAvatar();
 		if (uurl != null && uurl.equals(url)) {
 			result = 1;
 		}

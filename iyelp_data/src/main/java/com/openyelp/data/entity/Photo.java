@@ -47,7 +47,7 @@ public class Photo {
 	public int getPhoto() {
 		int result = 0;
 
-		String uurl = getUserInfo().getHeadimg();
+		String uurl = getUserInfo().getAvatar();
 		if (uurl != null && uurl.equals(url)) {
 			result = 1;
 		}

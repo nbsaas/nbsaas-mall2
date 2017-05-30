@@ -1,46 +1,29 @@
 package com.openyelp.actions.front;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.jsoup.Jsoup;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.i18n.CookieLocaleResolver;
-
 import com.ada.area.entity.Area;
 import com.ada.area.service.AreaService;
 import com.ada.data.core.Pagination;
 import com.ada.user.entity.UserInfo;
 import com.openyelp.data.apps.ObjectFactory;
 import com.openyelp.data.entity.EntityContent;
-import com.openyelp.data.service.EntityContentService;
-import com.openyelp.data.service.EventInfoJoinService;
-import com.openyelp.data.service.EventInfoService;
-import com.openyelp.data.service.FeedService;
-import com.openyelp.data.service.ShopCategoryService;
-import com.openyelp.data.service.ShopImageService;
-import com.openyelp.data.service.ShopReviewGoodService;
-import com.openyelp.data.service.ShopReviewListService;
-import com.openyelp.data.service.ShopReviewService;
-import com.openyelp.data.service.ShopService;
-import com.openyelp.data.service.UserService;
+import com.openyelp.data.service.*;
 import com.openyelp.services.haoservice.lifeservice.joke.ContentList;
 import com.openyelp.services.haoservice.lifeservice.joke.JokeApi;
 import com.openyelp.services.haoservice.lifeservice.joke.JokeContent;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;
+import org.jsoup.Jsoup;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Controller
 public class SiteAction {
@@ -336,7 +319,7 @@ public class SiteAction {
 	@RequestMapping(value = "signup", method = RequestMethod.POST)
 	public String signup(HttpServletRequest request, UserInfo user,
 			HttpServletResponse response, Model model) {
-		user.setEmail("");
+		//user.setEmail("");
 		user.setAddDate(new Date());
 		user.setLastDate(new Date());
 		UserInfo u = userService.save(user);

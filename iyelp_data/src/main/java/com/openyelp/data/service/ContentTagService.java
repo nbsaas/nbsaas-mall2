@@ -1,12 +1,10 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.ContentTag;
 
 
 
-@RestFul(api=ContentTagService.class,value="ContentTagService")
 public interface ContentTagService {
 	public Pagination getPage(int pageNo, int pageSize);
 

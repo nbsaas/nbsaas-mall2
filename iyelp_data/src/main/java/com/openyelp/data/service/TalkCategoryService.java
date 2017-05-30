@@ -1,16 +1,14 @@
 package com.openyelp.data.service;
 
-import com.openyelp.data.entity.TalkCategory;
-import com.openyelp.data.page.TalkCategoryPage;
 import com.ada.data.page.Filter;
 import com.ada.data.page.Order;
 import com.ada.data.page.Page;
 import com.ada.data.page.Pageable;
+import com.openyelp.data.entity.TalkCategory;
+import com.openyelp.data.page.TalkCategoryPage;
+
 import java.util.List;
 
-import com.openyelp.annotation.RestFul;
-
-@RestFul(api=TalkCategoryService.class,value="TalkCategoryService")
 public interface TalkCategoryService {
 
 	public TalkCategory findById(Integer id);

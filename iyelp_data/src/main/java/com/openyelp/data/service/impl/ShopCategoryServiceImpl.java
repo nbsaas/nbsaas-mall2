@@ -21,7 +21,6 @@ import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.openyelp.annotation.NoGson;
 import com.openyelp.data.dao.ShopCategoryDao;
 import com.openyelp.data.dao.ShopDao;
 import com.openyelp.data.entity.Shop;
@@ -151,10 +150,6 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 
 					@Override
 					public boolean shouldSkipField(FieldAttributes f) {
-						NoGson noGson = f.getAnnotation(NoGson.class);
-						if (noGson != null) {
-							return true;
-						}
 						return false;
 					}
 

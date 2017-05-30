@@ -1,12 +1,10 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Comment;
 
 
 
-@RestFul(api=CommentService.class,value="CommentService")
 public interface CommentService {
 	public Pagination getPage(int pageNo, int pageSize);
 

@@ -114,8 +114,8 @@ public class ProvinceApps {
 				String body = "";
 				Connection con = Jsoup
 						.connect("http://cdn.weather.hao.360.cn/sed_api_area_query.php");
-				con.data("code", province.getCode() < 10 ? "0" + province.getCode()
-						+ "" : province.getCode() + "");
+//				con.data("code", province.getCode() < 10 ? "0" + province.getCode()
+//						+ "" : province.getCode() + "");
 				con.data("grade", "city");
 				con.data("_jsonp", "loadCity");
 
@@ -134,7 +134,7 @@ public class ProvinceApps {
 					Area city = new Area();
 					city.setParent(province);
 					city.setName(name);
-					city.setCode(id);
+					//city.setCode(id);
 					city.setLevelinfo(3);
 					service.save(city);
 					System.out.println("" + name + "  id:" + id);
@@ -155,8 +155,8 @@ public class ProvinceApps {
 			try {
 				Connection con = Jsoup
 						.connect("http://cdn.weather.hao.360.cn/sed_api_area_query.php");
-				con.data("code", province.getCode() < 1000 ? "0" + province.getCode()
-						+ "" : province.getCode() + "");
+				//con.data("code", province.getCode() < 1000 ? "0" + province.getCode()
+				//		+ "" : province.getCode() + "");
 				con.data("grade", "town");
 				con.data("_jsonp", "loadTown");
 
@@ -175,7 +175,7 @@ public class ProvinceApps {
 					Area city = new Area();
 					city.setParent(province);
 					city.setName(name);
-					city.setCode(id);
+					//city.setCode(id);
 					city.setLevelinfo(4);
 					service.save(city);
 					System.out.println("" + name + "  id:" + id);
@@ -208,7 +208,7 @@ public class ProvinceApps {
 				Area area=new Area();
 				area.setId(1);
 				Area p = new Area();
-				p.setCode(id);
+				//p.setCode(id);
 				p.setName(name);
 				p.setLevelinfo(2);
 				p.setParent(area);

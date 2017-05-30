@@ -16,35 +16,34 @@ public class UserFollowState implements Serializable {
 	}
 
 	public Integer getFriends() {
-		return user.getFriends();
+		return 1;
 	}
 
 	public void setFriends(Integer friends) {
-		user.setFriends(friends);
+
 	}
 
 	public Integer getComments() {
-		return user.getComments();
+		return 1;
 	}
 
 	public void setComments(Integer comments) {
-		user.setComments(comments);
+
 	}
 
 	public Integer getGoods() {
-		return user.getGoods();
+		return 1;
 	}
 
 	public void setGoods(Integer goods) {
-		user.setGoods(goods);
 	}
 
 	public String getHeadimg() {
-		return user.getHeadimg();
+		return user.getAvatar();
 	}
 
 	public void setHeadimg(String headimg) {
-		user.setHeadimg(headimg);
+		user.setAvatar(headimg);
 	}
 
 	public Date getAddDate() {
@@ -56,11 +55,11 @@ public class UserFollowState implements Serializable {
 	}
 
 	public String getCredentialsSalt() {
-		return user.getCredentialsSalt();
+		return user.getSalt();
 	}
 
 	public String getEmail() {
-		return user.getEmail();
+		return "";
 	}
 
 	public Long getId() {
@@ -72,11 +71,11 @@ public class UserFollowState implements Serializable {
 	}
 
 	public Integer getLogintimes() {
-		return user.getLogintimes();
+		return user.getLoginSize();
 	}
 
 	public String getMacaddress() {
-		return user.getMacaddress();
+		return "";
 	}
 
 	public String getName() {
@@ -88,7 +87,7 @@ public class UserFollowState implements Serializable {
 	}
 
 	public String getPhonenum() {
-		return user.getPhonenum();
+		return "";
 	}
 
 	public String getPlainPassword() {
@@ -113,7 +112,7 @@ public class UserFollowState implements Serializable {
 	}
 
 	public void setEmail(String email) {
-		user.setEmail(email);
+
 	}
 
 	public void setId(Long id) {
@@ -125,11 +124,11 @@ public class UserFollowState implements Serializable {
 	}
 
 	public void setLogintimes(Integer logintimes) {
-		user.setLogintimes(logintimes);
+		user.setLoginSize(logintimes);
 	}
 
 	public void setMacaddress(String macaddress) {
-		user.setMacaddress(macaddress);
+
 	}
 
 	public void setName(String name) {
@@ -141,7 +140,7 @@ public class UserFollowState implements Serializable {
 	}
 
 	public void setPhonenum(String phonenum) {
-		user.setPhonenum(phonenum);
+
 	}
 
 	public void setPlainPassword(String plainPassword) {

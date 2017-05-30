@@ -1,12 +1,10 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.ContentCount;
 
 
 
-@RestFul(api=ContentCountService.class,value="ContentCountService")
 public interface ContentCountService {
 	public Pagination getPage(int pageNo, int pageSize);
 

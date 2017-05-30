@@ -1,12 +1,10 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.UserCity;
 
 
 
-@RestFul(api=UserCityService.class,value="UserCityService")
 public interface UserCityService {
 	public Pagination getPage(int pageNo, int pageSize);
 

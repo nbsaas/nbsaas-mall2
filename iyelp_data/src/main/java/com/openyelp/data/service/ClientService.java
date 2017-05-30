@@ -1,13 +1,11 @@
 package com.openyelp.data.service;
 
-import java.util.List;
-
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Client;
 
+import java.util.List;
 
-@RestFul(api=ClientService.class,value="ClientService")
+
 public interface ClientService {
 	public Pagination getPage(int pageNo, int pageSize);
 

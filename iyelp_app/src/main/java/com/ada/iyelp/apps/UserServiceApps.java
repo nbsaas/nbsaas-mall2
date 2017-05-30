@@ -12,7 +12,7 @@ public class UserServiceApps {
 				UserService.class);
 		UserInfo m=new 	UserInfo();
 		m.setUsername("ada");
-		m.setEmail("f");
+		//m.setEmail("f");
 		m.setPassword("123456");
 		m.setPlainPassword("123456");
 		userService.save(m);

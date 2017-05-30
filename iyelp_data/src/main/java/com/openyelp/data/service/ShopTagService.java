@@ -1,9 +1,7 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.ShopTag;
-@RestFul(value="ShopTagService",api=ShopTagService.class)
 public interface ShopTagService {
 	public Pagination getPage(int pageNo, int pageSize);
 

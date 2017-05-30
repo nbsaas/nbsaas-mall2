@@ -1,17 +1,14 @@
 package com.openyelp.data.service;
 
-import java.util.List;
-
 import com.ada.data.core.Pagination;
 import com.ada.data.page.Page;
 import com.ada.data.page.Pageable;
-import com.openyelp.annotation.RestFul;
 import com.openyelp.data.entity.ShopCategory;
-import com.openyelp.data.entity.TalkCategory;
 import com.openyelp.data.shop.vo.ShopCatalog;
 
+import java.util.List;
 
-@RestFul(api=ShopCategoryService.class,value="ShopCategoryService")
+
 public interface ShopCategoryService {
 	public Pagination getPage(int pageNo, int pageSize);
 

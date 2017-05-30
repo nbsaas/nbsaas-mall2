@@ -1,11 +1,9 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.EventInfo;
 
 
-@RestFul(api=EventInfoService.class,value="EventInfoService")
 public interface EventInfoService {
 	public Pagination getPage(int pageNo, int pageSize);
 

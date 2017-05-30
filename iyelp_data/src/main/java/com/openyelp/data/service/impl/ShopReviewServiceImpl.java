@@ -73,7 +73,7 @@ public class ShopReviewServiceImpl implements ShopReviewService {
                 .create("from ShopReview s where s.user.id =:userid");
         finderuser.setParam("userid", user.getId());
         int usercomment = dao.countQueryResult(finderuser);
-        user.setComments(usercomment);
+        //user.setComments(usercomment);
         // userService
 
         bean.setAddDate(new Date());

@@ -12,7 +12,7 @@ public class UserCityServiceApps {
 				UserCityService.class);
 		UserInfo m=new 	UserInfo();
 		m.setUsername("ada1");
-		m.setEmail("f");
+		//m.setEmail("f");
 		m.setPassword("123456");
 		m.setPlainPassword("123456");
 		m.setId(1l);

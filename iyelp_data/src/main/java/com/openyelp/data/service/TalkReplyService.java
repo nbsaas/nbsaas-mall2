@@ -1,13 +1,11 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.ada.data.page.Page;
 import com.ada.data.page.Pageable;
 import com.openyelp.data.entity.TalkReply;
 
 
-@RestFul(api=TalkReplyService.class,value="TalkReplyService")
 public interface TalkReplyService {
 	public Pagination getPage(int pageNo, int pageSize);
 

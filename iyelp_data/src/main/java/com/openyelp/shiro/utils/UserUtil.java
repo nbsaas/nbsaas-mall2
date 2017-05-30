@@ -91,13 +91,13 @@ public class UserUtil {
 			Area e = (Area) session.getAttribute("area");
 			if (e == null) {
 				e = new Area();
-				e.setId(111);
+				e.setId(110);
 				e.setName("西安");
 			}
 			return e;
 		} else {
 			Area e = new Area();
-			e.setId(111);
+			e.setId(110);
 			e.setName("西安");
 			return e;
 		}

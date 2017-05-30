@@ -1,12 +1,10 @@
 package com.openyelp.data.service;
 
 import com.ada.data.core.Pagination;
-import com.openyelp.annotation.RestFul;
-import com.openyelp.data.entity.AreaHot; 
+import com.openyelp.data.entity.AreaHot;
 
 
 
-@RestFul(value="AreaHotService",api=AreaHotService.class)
 public interface AreaHotService {
 	public Pagination getPage(int pageNo, int pageSize);
 

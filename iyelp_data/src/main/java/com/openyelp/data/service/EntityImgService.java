@@ -1,12 +1,10 @@
 package com.openyelp.data.service;
 
-import com.openyelp.annotation.RestFul;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.EntityImg;
 
 
 
-@RestFul(api=EntityImgService.class,value="EntityImgService")
 public interface EntityImgService {
 	public Pagination getPage(int pageNo, int pageSize);
 

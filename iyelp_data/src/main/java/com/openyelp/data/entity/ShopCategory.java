@@ -1,24 +1,10 @@
 package com.openyelp.data.entity;
 
-import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
-import com.ada.common.hibernate.HibernateTree;
 import com.ada.data.entity.CatalogEntity;
-import com.openyelp.annotation.NoGson;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "shop_category")
@@ -49,13 +35,11 @@ public class ShopCategory extends CatalogEntity  {
 	private java.lang.String icon;
 
 	@JsonIgnore
-	@NoGson
 	@JoinColumn(name = "pid")
 	@ManyToOne
 	private ShopCategory parent;
 
 	@JsonIgnore
-	@NoGson
 	@OneToMany(mappedBy = "parent", fetch = FetchType.LAZY)
 	private List<ShopCategory> childrens;
 
