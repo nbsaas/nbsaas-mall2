@@ -5,10 +5,10 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ada</groupId>
-		<artifactId>iyelp</artifactId>
+		<artifactId>quhaodian</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>iyelp_app</artifactId>
+	<artifactId>app</artifactId>
 	<name>iyelp_app</name>
 	<url>http://maven.apache.org</url>
 	<properties>
@@ -23,17 +23,17 @@
 		</dependency>
 		<dependency>
 			<groupId>com.ada</groupId>
-			<artifactId>iyelp_api</artifactId>
+			<artifactId>api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.ada</groupId>
-			<artifactId>iyelp_data</artifactId>
+			<artifactId>data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.ada</groupId>
-			<artifactId>iyelp_rest</artifactId>
+			<artifactId>rest</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 

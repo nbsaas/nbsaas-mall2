@@ -4,11 +4,11 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/applicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/context-shiro.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/context_article.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/contextback.xml</file>
+          <file>file://$MODULE_DIR$/../iyelp_app/src/main/resources/applicationContext.xml</file>
+          <file>file://$MODULE_DIR$/../iyelp_app/src/main/resources/context.xml</file>
+          <file>file://$MODULE_DIR$/../iyelp_app/src/main/resources/context-shiro.xml</file>
+          <file>file://$MODULE_DIR$/../iyelp_app/src/main/resources/context_article.xml</file>
+          <file>file://$MODULE_DIR$/../iyelp_app/src/main/resources/contextback.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -25,8 +25,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="TEST" name="Maven: junit:junit:3.8.1" level="project" />
-    <orderEntry type="module" module-name="iyelp_api" />
-    <orderEntry type="module" module-name="iyelp_data" />
+    <orderEntry type="module" module-name="api" />
+    <orderEntry type="module" module-name="data" />
     <orderEntry type="library" name="Maven: commons-collections:commons-collections:3.2.2" level="project" />
     <orderEntry type="library" name="Maven: com.tongna:discover_hibernate:1.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.tongna:discover_hibernate_common:1.1.1" level="project" />
@@ -96,7 +96,7 @@
     <orderEntry type="library" name="Maven: org.json:json:20140107" level="project" />
     <orderEntry type="library" name="Maven: com.openyelp:baidulbsyun:1.0.2" level="project" />
     <orderEntry type="library" name="Maven: com.github.stuxuhai:jpinyin:1.0" level="project" />
-    <orderEntry type="module" module-name="iyelp_rest" />
+    <orderEntry type="module" module-name="rest" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
   </component>
 </module>

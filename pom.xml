@@ -3,11 +3,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.ada</groupId>
-	<artifactId>iyelp</artifactId>
+	<artifactId>quhaodian</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
-	<name>iyelp</name>
+	<name>quhaodian</name>
 	<url>http://maven.apache.org</url>
 	<repositories>
 		<repository>
@@ -22,11 +22,11 @@
 	<dependencies>
 	</dependencies>
 	<modules>
-		<module>iyelp_api</module>
-		<module>iyelp_app</module>
-		<module>iyelp_data</module>
-		<module>iyelp_rest</module>
-		<module>iyelp_web</module>
+		<module>api</module>
+		<module>app</module>
+		<module>data</module>
+		<module>rest</module>
+		<module>web</module>
 	</modules>
 
 	<build>

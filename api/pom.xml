@@ -4,10 +4,10 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>com.ada</groupId>
-    <artifactId>iyelp</artifactId>
+    <artifactId>quhaodian</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>iyelp_api</artifactId>
+  <artifactId>api</artifactId>
   <name>iyelp_api</name>
   <url>http://maven.apache.org</url>
   <properties>

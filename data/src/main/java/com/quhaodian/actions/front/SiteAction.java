@@ -10,7 +10,6 @@ import com.ada.user.service.UserAccountService;
 import com.ada.user.vo.UserAccountVo;
 import com.quhaodian.data.apps.ObjectFactory;
 import com.quhaodian.data.entity.EntityContent;
-import com.openyelp.data.service.*;
 import com.quhaodian.data.service.*;
 import com.quhaodian.services.haoservice.lifeservice.joke.ContentList;
 import com.quhaodian.services.haoservice.lifeservice.joke.JokeApi;
