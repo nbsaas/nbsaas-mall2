@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>编辑</title> 
+[#include "/admin/common/commonurl.html"]
+
+<style type="text/css">
+
+.fieldSet label{
+
+margin-right: 10px;
+}
+</style>
+</head>
+
+<body class="no-skin">
+	<div id="navbar" class="navbar navbar-default">
+
+		[#include "/admin/common/navbar.html"]
+
+		<!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+
+		<div id="sidebar" class="sidebar                  responsive">
+			<!-- [#include "/admin/common/shortcuts.html"] -->
+			<!-- /.sidebar-shortcuts -->
+
+			<!-- .nav-list -->
+			[#include "/admin/common/commonmenu.html"]
+			<ul class="nav nav-list">[@menustag id=1] [#list list as item]
+				[@menu item "1,54,82"] [/@menu] [/#list] [/@menustag]
+			</ul>
+			<!-- /.nav-list -->
+
+			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+				<i class="ace-icon fa fa-angle-double-left"
+					data-icon1="ace-icon fa fa-angle-double-left"
+					data-icon2="ace-icon fa fa-angle-double-right"></i>
+			</div>
+
+		</div>
+
+		<div class="main-content">
+			<div class="breadcrumbs" id="breadcrumbs">
+				<script type="text/javascript">
+					try {
+						ace.settings.check('breadcrumbs', 'fixed')
+					} catch (e) {
+					}
+				</script>
+
+				<ul class="breadcrumb">
+					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">首页</a>
+					</li>
+
+					<li class="active">更新</li>
+				</ul>
+				<!-- /.breadcrumb -->
+
+				<div class="nav-search" id="nav-search">
+					<form class="form-search">
+						<span class="input-icon"> <input type="text"
+							placeholder="Search ..." class="nav-search-input"
+							id="nav-search-input" autocomplete="off" /> <i
+							class="ace-icon fa fa-search nav-search-icon"></i>
+						</span>
+					</form>
+				</div>
+				<!-- /.nav-search -->
+			</div>
+
+
+
+			<div class="page-content">
+				[#include "/admin/common/page.html"] [#include
+				"/admin/common/settings.html"]
+				<div class="row">
+					<div class="col-xs-12">
+
+						<form role="form" method="post" class="form-horizontal"
+							action="${siteurl}admin/userrole/model_update.htm">
+							<input type="hidden" name="id" value="${model.id}" />
+							<div class="form-group">
+								<label
+									class="col-sm-1 control-label no-padding-right">角色名</label>
+
+								<div class="col-sm-11">
+									<input required="required"  type="text" value="${(model.name)!''}" name="name" class="col-xs-3 col-sm-3"
+										placeholder="角色名" >
+								</div>
+							</div>
+							
+					       <div class="form-group">
+								<label
+									class="col-sm-1 control-label no-padding-right"> 别名</label>
+
+								<div class="col-sm-11">
+									<input value="${(model.alias)!''}"   type="text" name="alias" class="col-xs-3 col-sm-3"
+										placeholder="别名" >
+								</div>
+							</div>								
+							
+							<div class="form-group">
+								<label
+									class="col-sm-1 control-label no-padding-right"> 描述</label>
+
+								<div class="col-sm-11">
+									<input value="${(model.description)!''}"  type="text" name="description" class="col-xs-3 col-sm-3"
+										placeholder="描述" >
+								</div>
+							</div>
+							[#list menus as item]
+							<div class="form-group">
+								<label
+									class="col-sm-1 control-label no-padding-right"> ${item.name}
+									</label>
+
+								<div class="col-sm-11">
+									<span class="fieldSet">
+									    [#if item.childrens?? && item.childrens?size>0]
+									    [@menuchilds id=item.id]
+									    [#list list as childitem]
+										<label>
+											<input type="checkbox" [#if model.authorities?seq_contains("${childitem.permission}")] checked="checked"[/#if]  value="${childitem.permission}" name="authorities">${childitem.name}
+										</label>
+										[/#list]
+										[/@menuchilds]
+										[/#if]
+									</span>
+								</div>
+							</div>
+							[/#list]
+							<div class="clearfix form-actions">
+								<div class="col-md-offset-3 col-md-9">
+									<button type="submit" class="btn btn-info">
+										<i class="ace-icon fa fa-check bigger-110"></i> 保存
+									</button>
+
+									&nbsp; &nbsp; &nbsp;
+									<button type="reset" class="btn">
+										<i class="ace-icon fa fa-undo bigger-110"></i> 重置
+									</button>
+								</div>
+							</div>
+
+							<div class="hr hr-24"></div>
+
+
+
+
+						</form>
+
+
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<!-- /.main-content -->
+
+		[#include "/admin/common/footer.html"]
+
+	</div>
+	<!-- /.main-container -->
+
+	<!-- basic scripts -->
+
+	[#include "/admin/common/scripts.html"]
+
+</body>
+</html>

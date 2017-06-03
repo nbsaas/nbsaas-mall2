@@ -1,0 +1,762 @@
+[#if item.catalog==4]
+[@shopreview_ id=item.oid]
+  
+  [#if onereview??  && onereview.shop??]
+<li class="media-block event-block media-block--12">
+	<div class="media-avatar">
+
+
+
+
+		<div class="photo-box pb-60s">
+			<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+				width="60" height="60"
+				src="${item.user.headimg!'/assets/images/head.png'}"
+				class="photo-box-img" alt="">
+			</a>
+		</div>
+
+
+	</div>
+	<div class="media-story">
+
+
+		<div class="feed-content">
+			<div class="media-title item-title clearfix">
+				<div class="title-text">
+					<a data-hovercard-id="YyO1blKSJZ1uHvPZ0GE8ig"
+						href="${siteurl}user_details.htm?id=${item.user.id}"
+						class="user-name">${item.user.name}</a>对<a
+						href="${siteurl}shop/view.htm?id=${onereview.shop.id}">
+						${(onereview.shop.name)!""}</a>进行了评论
+
+				</div>
+				<div class="time-stamp">[@html.date
+					date=item.adddate][/@html.date]</div>
+			</div>
+			<div class="item-description">
+
+
+				<div class="biz-rating biz-rating-very-large clearfix">
+					<div>
+
+						<div class="rating-very-large">
+							<i title="4.0星級評分"
+								class="star-img stars_${onereview.servicescore?string('#')}">
+								<img width="84" height="303"
+								src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+								class="offscreen" alt="4.0星級評分">
+							</i>
+						</div>
+
+
+					</div>
+					<span class="rating-qualifier"> [@html.date
+						date=item.addDate][/@html.date] </span>
+
+				</div>
+
+				<p class="js-content-expandable" data-component-bound="true">
+					${onereview.comment!""}</p>
+
+				<div data-review-id="kjMw-hOZ4eiOpnIP4lHAQw"
+					class="rateReview voting-feedback" data-component-bound="true">
+					<p class="voting-intro voting-prompt saving-msg"
+						data-component-bound="true">你觉得这则评语 …?</p>
+					<ul
+						data-csrf-token="289627c0a5b9564ba8176085e243b19ac83d941ae6636dc2478537dddac70cef"
+						class="voting-buttons" data-component-bound="true">
+
+						[@havevote uid=user.id rid=onereview.id catalog=1] [#if vote_m??]
+						<li class="vote-item inline-block"
+							onclick="vote(1,${onereview.id},this)"><a
+							class="ybtn ybtn-small useful voted" rel="useful"
+							href="javascript:;"><span
+								class="i-wrap ig-wrap-common i-ufc-useful-common-wrap button-content active"><i
+									class="i ig-common i-ufc-useful-common"></i> <span
+									class="vote-type">有用</span> <span class="count">${onereview.vote1!""}</span></span></a></li>
+						[#else]
+						<li class="vote-item inline-block"
+							onclick="vote(1,${onereview.id},this)"><a
+							class="ybtn ybtn-small useful" rel="useful" href="javascript:;"><span
+								class="i-wrap ig-wrap-common i-ufc-useful-common-wrap button-content"><i
+									class="i ig-common i-ufc-useful-common"></i> <span
+									class="vote-type">有用</span> <span class="count">${onereview.vote1!""}</span></span></a></li>
+						[/#if] [/@havevote] [@havevote uid=user.id rid=onereview.id
+						catalog=2] [#if vote_m??]
+						<li class="vote-item inline-block"
+							onclick="vote(2,${onereview.id},this)"><a
+							class="ybtn ybtn-small funny voted" rel="funny"
+							href="javascript:;"><span
+								class="i-wrap ig-wrap-common i-ufc-funny-common-wrap button-content active"><i
+									class="i ig-common i-ufc-funny-common"></i> <span
+									class="vote-type">有趣</span> <span class="count">${onereview.vote2!""}</span></span></a></li>
+						[#else]
+						<li class="vote-item inline-block"
+							onclick="vote(2,${onereview.id},this)"><a
+							class="ybtn ybtn-small funny" rel="funny" href="javascript:;"><span
+								class="i-wrap ig-wrap-common i-ufc-funny-common-wrap button-content"><i
+									class="i ig-common i-ufc-funny-common"></i> <span
+									class="vote-type">有趣</span> <span class="count">${onereview.vote2!""}</span></span></a></li>
+
+						[/#if] [/@havevote] [@havevote uid=user.id rid=onereview.id
+						catalog=3] [#if vote_m??]
+						<li class="vote-item inline-block"
+							onclick="vote(3,${onereview.id},this)"><a
+							class="ybtn ybtn-small cool voted" rel="cool" href="javascript:;"><span
+								class="i-wrap ig-wrap-common i-ufc-cool-common-wrap button-content active"><i
+									class="i ig-common i-ufc-cool-common"></i> <span
+									class="vote-type">有型</span> <span class="count">${onereview.vote3!""}</span></span></a></li>
+
+						[#else]
+						<li class="vote-item inline-block"
+							onclick="vote(3,${onereview.id},this)"><a
+							class="ybtn ybtn-small cool" rel="cool" href="javascript:;"><span
+								class="i-wrap ig-wrap-common i-ufc-cool-common-wrap button-content"><i
+									class="i ig-common i-ufc-cool-common"></i> <span
+									class="vote-type">有型</span> <span class="count">${onereview.vote3!""}</span></span></a></li>
+						[/#if] [/@havevote]
+					</ul>
+
+				</div>
+
+
+				<div style="display: none;" class="inline-compliment"
+					data-component-bound="true">
+
+					<form name="send_thanx" method="POST" class="yform" action="/thanx">
+						<input type="hidden"
+							value="f426338236d0a92a2ca828f54b17e33fc8efe7c613addc6b68b3132af2add783"
+							class="csrftok" name="csrftok"> <i
+							class="i ig-common i-compliment-common"></i>
+						<fieldset>
+							<input type="hidden" value="9TMO4y1oTIe9wehA9pJaUQ"
+								name="user_id"> <input type="hidden" value="REVIEW"
+								name="complimentable_type"> <input type="hidden"
+								value="kjMw-hOZ4eiOpnIP4lHAQw" name="complimentable_id">
+							<textarea name="message" data-component-bound="true">傳送讚揚...</textarea>
+							<div style="display: none;" class="compliment-controls clearfix">
+								<div class="drop-menu-origin pull-left clearfix"
+									data-component-bound="true">
+									<a
+										class="compliment-controls-expander drop-menu-link drop-menu-link--dark embossed-text-white"
+										href="#" data-component-bound="true"> <span
+										class="i-wrap ig-wrap-common i-dropdown-arrow-common-wrap ig-wrap-common-r dropdown-arrow"><i
+											class="i ig-common i-dropdown-arrow-common"></i> <span
+											class="i-wrap ig-wrap-compliments i-24x24_plain-compliments-wrap"><i
+												class="i ig-compliments i-24x24_plain-compliments"></i> 多謝</span></span>
+									</a>
+									<div style="display: none;"
+										class="compliment-menu clearfix drop-menu drop-menu-left"
+										data-component-bound="true">
+										<fieldset>
+											<ul class="inline-layout clearfix" id="compliment-types">
+												<li><label data-comp-type="plain" class="clearfix">
+														<input type="radio" checked="checked" value="plain"
+														name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_plain-compliments-wrap"><i
+															class="i ig-compliments i-24x24_plain-compliments"></i>
+															感激！</span>
+												</label></li>
+												<li><label data-comp-type="cute" class="clearfix">
+														<input type="radio" value="cute" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_cute-compliments-wrap"><i
+															class="i ig-compliments i-24x24_cute-compliments"></i> 可愛</span>
+												</label></li>
+												<li><label data-comp-type="writer" class="clearfix">
+														<input type="radio" value="writer" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_writer-compliments-wrap"><i
+															class="i ig-compliments i-24x24_writer-compliments"></i>
+															好作家</span>
+												</label></li>
+												<li><label data-comp-type="hot" class="clearfix">
+														<input type="radio" value="hot" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_hot-compliments-wrap"><i
+															class="i ig-compliments i-24x24_hot-compliments"></i> 正喎！</span>
+												</label></li>
+												<li><label data-comp-type="note" class="clearfix">
+														<input type="radio" value="note" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_note-compliments-wrap"><i
+															class="i ig-compliments i-24x24_note-compliments"></i>
+															一個簡單嘅讚揚</span>
+												</label></li>
+												<li><label data-comp-type="profile" class="clearfix">
+														<input type="radio" value="profile" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_profile-compliments-wrap"><i
+															class="i ig-compliments i-24x24_profile-compliments"></i>
+															個人檔案好正</span>
+												</label></li>
+												<li><label data-comp-type="more" class="clearfix">
+														<input type="radio" value="more" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_more-compliments-wrap"><i
+															class="i ig-compliments i-24x24_more-compliments"></i>
+															寫多啲！</span>
+												</label></li>
+												<li><label data-comp-type="cool" class="clearfix">
+														<input type="radio" value="cool" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_cool-compliments-wrap"><i
+															class="i ig-compliments i-24x24_cool-compliments"></i> 有型</span>
+												</label></li>
+												<li><label data-comp-type="photos" class="clearfix">
+														<input type="radio" value="photos" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_photos-compliments-wrap"><i
+															class="i ig-compliments i-24x24_photos-compliments"></i>
+															影得靚</span>
+												</label></li>
+												<li><label data-comp-type="list" class="clearfix">
+														<input type="radio" value="list" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_list-compliments-wrap"><i
+															class="i ig-compliments i-24x24_list-compliments"></i>
+															列表好正！</span>
+												</label></li>
+												<li><label data-comp-type="funny" class="clearfix">
+														<input type="radio" value="funny" name="type"> <span
+														class="i-wrap ig-wrap-compliments i-24x24_funny-compliments-wrap"><i
+															class="i ig-compliments i-24x24_funny-compliments"></i>
+															有趣</span>
+												</label></li>
+											</ul>
+										</fieldset>
+									</div>
+								</div>
+
+								<span class="action-buttons pull-right"
+									data-component-bound="true">
+									<button class="ybtn ybtn-primary ybtn-small ytype pull-right"
+										value="submit" type="submit">
+										<span>傳送</span>
+									</button> <a class="cancel" href="#">取消</a>
+								</span>
+							</div>
+
+							<div class="status-messages">
+								<p class="compliment-status saving-msg"
+									data-component-bound="true"></p>
+								<a class="send-again">傳送另一個讚揚</a>
+							</div>
+						</fieldset>
+
+					</form>
+				</div>
+
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+</li>
+[/#if]
+[/@shopreview_] 
+
+[/#if] 
+
+
+
+
+[#if item.catalog==3] 
+
+[@talk_ id=item.oid]
+[#if onetalk??]
+<li class="media-block event-block media-block--12">
+	<div class="media-avatar">
+
+
+
+
+		<div class="photo-box pb-60s">
+			<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+				width="60" height="60"
+				src="${item.user.headimg!'/assets/images/head.png'}"
+				class="photo-box-img" alt="">
+			</a>
+		</div>
+
+
+	</div>
+	<div class="media-story">
+
+
+		<div class="feed-content">
+			<div class="media-title item-title clearfix">
+				<div class="title-text">
+					<a data-hovercard-id="YyO1blKSJZ1uHvPZ0GE8ig"
+						href="${siteurl}user_details.htm?id=${item.user.id}"
+						class="user-name">${item.user.name}</a>创建了一个讨论
+
+				</div>
+				<div class="time-stamp">[@html.date
+					date=item.adddate][/@html.date]</div>
+			</div>
+			<div class="item-description">
+				<div class="media-block media-block--12 event-listing-large">
+
+					<div class="media-story">
+						<div class="media-title">
+
+							<a href="${siteurl}talk/topic.htm?id=${onetalk.id}">
+								${onetalk.topic!""}</a>
+
+						</div>
+						<div class="date"></div>
+
+						<p class="event-description">
+						[@html.htmlcut s=onetalk.message append="..." len=200][/@html.htmlcut]
+						</p>
+
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+</li>
+[/#if]
+
+[/@talk_] 
+
+[/#if]
+
+
+
+ [#if item.catalog==2] 
+ [@events_ id=item.oid]
+ [#if oneevent??]
+<li class="media-block event-block media-block--12">
+	<div class="media-avatar">
+
+
+
+
+		<div class="photo-box pb-60s">
+			<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+				width="60" height="60"
+				src="${item.user.headimg!'/assets/images/head.png'}"
+				class="photo-box-img" alt="">
+			</a>
+		</div>
+
+
+	</div>
+	<div class="media-story">
+
+
+		<div class="feed-content">
+			<div class="media-title item-title clearfix">
+				<div class="title-text">
+					<a data-hovercard-id="YyO1blKSJZ1uHvPZ0GE8ig"
+						href="${siteurl}user_details.htm?id=${item.user.id}"
+						class="user-name">${item.user.name}</a>创建了一个活动
+
+				</div>
+				<div class="time-stamp">[@html.date
+					date=item.adddate][/@html.date]</div>
+			</div>
+			<div class="item-description">
+				<div class="media-block media-block--12 event-listing-large">
+
+					<div class="media-story">
+						<div class="media-title">
+
+							<a href="${siteurl}events/view.htm?id=${oneevent.id}">
+								${oneevent.name!""}</a>
+
+						</div>
+						<div class="date"></div>
+
+						<p class="event-description">
+						[@html.htmlcut s=oneevent.description append="..." len=200][/@html.htmlcut]
+						</p>
+
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+</li>
+[/#if]
+[/@events_]
+
+ [/#if] 
+
+
+[#if item.catalog==1] 
+[@shop_ id=item.oid]
+[#if oneshop??]
+<li class="media-block event-block media-block--12">
+	<div class="media-avatar">
+
+
+
+
+		<div class="photo-box pb-60s">
+			<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+				width="60" height="60"
+				src="${item.user.headimg!'/assets/images/head.png'}"
+				class="photo-box-img" alt="">
+			</a>
+		</div>
+
+
+	</div>
+	<div class="media-story">
+
+
+		<div class="feed-content">
+			<div class="media-title item-title clearfix">
+				<div class="title-text">
+					<a data-hovercard-id="YyO1blKSJZ1uHvPZ0GE8ig"
+						href="${siteurl}user_details.htm?id=${item.user.id}"
+						class="user-name">${item.user.name}</a>创建了一个商店
+				</div>
+				<div class="time-stamp">[@html.date
+					date=item.adddate][/@html.date]</div>
+			</div>
+			<div class="item-description">
+				<div class="media-block media-block--12 event-listing-large">
+					[#if oneshop.image??]
+					<div class="media-avatar">
+
+						<div class="photo-box pb-90s">
+							<a href="${siteurl}shop/view.htm?id=${oneshop.id}"> <img
+								width="90" height="90" src="${oneshop.image}"
+								class="photo-box-img" alt="孩子的声音: 文  艺与想像">
+
+							</a>
+
+						</div>
+
+
+					</div>
+					[/#if]
+					<div class="media-story">
+						<div class="media-title">
+
+							<a href="${siteurl}shop/view.htm?id=${oneshop.id}">
+								${oneshop.name}</a>
+
+						</div>
+						<div class="date"></div>
+
+						<p class="event-description">${oneshop.comment!""}</p>
+
+					</div>
+				</div>
+
+
+
+
+			</div>
+		</div>
+
+	</div>
+</li>
+[/#if]
+[/@shop_]
+[/#if] 
+
+
+[#if item.catalog==5] 
+[@shopimage_ id=item.oid]
+[#if oneshopimage??]
+<li class="media-block event-block media-block--12">
+	<div class="media-avatar">
+
+
+
+
+		<div class="photo-box pb-60s">
+			<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+				width="60" height="60"
+				src="${item.user.headimg!'/assets/images/head.png'}"
+				class="photo-box-img" alt="">
+			</a>
+		</div>
+
+
+	</div>
+	<div class="media-story">
+		<div class="feed-content">
+			<div class="media-title item-title clearfix">
+				<div class="title-text">
+					<a data-hovercard-id="bObZqE95QnIKOjtYGLYHgg"
+						href="${siteurl}user_details.htm?id=${item.user.id}"
+						class="user-name">${item.user.name!'真真网友'}</a> 在 <a
+						data-hovercard-id="VN8odtfJ3cZQcTw2T22ndw"
+						href="${siteurl}shop/view.htm?id=${(oneshopimage.shop.id)!''}"
+						class="biz-name"><span>${(oneshopimage.shop.name)!''}</span></a>新增了1张<b>照片</b>
+
+				</div>
+				<div class="time-stamp"> [@html.date
+						date=item.addDate][/@html.date]</div>
+			</div>
+			<div class="item-description">
+
+				<ul data-starting-index="0"
+					data-media-url="/biz_photos/get_media_by_ids/kqjCEuA_aPqHyXviLoelcg?ids=9n6cQAzS5HUfOetVYfg8Cg"
+					data-media-count="1"
+					data-logging-uri="/biz_photos/kqjCEuA_aPqHyXviLoelcg/log_views"
+					data-logging-csrf="2b322dcd9ca93d686ba4e82acc7388b3ba995a4b1c94403454a913063c62295e"
+					data-ga-path="media_lightbox/servlet:activity_feed/type:biz"
+					data-dfp-type="biz" data-dfp-sizes="[[728, 90]]"
+					data-dfp-attributes="[[&quot;city&quot;, &quot;\u53f0\u5317\u5e02&quot;], [&quot;signed_in&quot;, &quot;yes&quot;], [&quot;language&quot;, &quot;zh&quot;], [&quot;country&quot;, &quot;tw&quot;], [&quot;section&quot;, &quot;welcome&quot;], [&quot;dma_code&quot;, &quot;000&quot;], [&quot;sk&quot;, &quot;no&quot;], [&quot;lu&quot;, [&quot;a&quot;]], [&quot;au&quot;, [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]], [&quot;mode&quot;, &quot;live&quot;]]"
+					data-ad-logging-uri="/ad_acknowledgment"
+					data-ad-logging-csrf="3c7b3121ac594e6e06532d3b53fdc98a8675f8b1d604304ae810e1da8a95dd11"
+					class="photo-box-grid clearfix js-content-expandable lightbox-media-parent"
+					data-component-bound="true">
+
+
+					<li style="width: 258px; height: 258px;">
+						<div class="photo-box photo-box--interactive">
+
+							<img width="258" height="258" src="${oneshopimage.url!''}"
+								class="photo-box-img">
+
+
+
+							<div class="photo-box_actions" style="display: none;">
+								<ul>
+
+
+
+									<li><a href="javascript:;"
+										data-resource-id="9n6cQAzS5HUfOetVYfg8Cg"
+										class="photo-box_action-link like-button"> <span
+											class="i-wrap ig-wrap-common i-action-photo-like-common-wrap"
+											classname=""><i
+												class="i ig-common i-action-photo-like-common"></i> <span
+												class="like-button-text">Like</span></span>
+									</a></li>
+
+								</ul>
+							</div>
+
+
+
+							<a
+								href="${siteurl}shop/photos.htm?id=${(oneshopimage.shop.id)!''}"
+								class="biz-shim js-lightbox-media-link"> <span
+								class="offscreen"></span>
+							</a>
+
+						</div>
+
+					</li>
+
+				</ul>
+
+
+			</div>
+		</div>
+
+
+	</div>
+</li>
+ [/#if] 
+[/@shopimage_]
+
+ [/#if] 
+ 
+ 
+ 
+ 
+ [#if item.catalog==6]
+  [@shopimagelist_ id=item.oid]
+[#if oneshopimagelist?? && oneshopimagelist.num??]
+<li class="media-block event-block media-block--12">
+	<div class="media-avatar">
+
+
+
+
+		<div class="photo-box pb-60s">
+			<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+				width="60" height="60"
+				src="${item.user.headimg!'/assets/images/head.png'}"
+				class="photo-box-img" alt="">
+			</a>
+		</div>
+
+
+	</div>
+	<div class="media-story">
+		<div class="feed-content">
+			<div class="media-title item-title clearfix">
+				<div class="title-text">
+					<a data-hovercard-id="bObZqE95QnIKOjtYGLYHgg"
+						href="${siteurl}user_details.htm?id=${item.user.id}"
+						class="user-name">${item.user.name!'真真网友'}</a> 在 <a
+						data-hovercard-id="VN8odtfJ3cZQcTw2T22ndw"
+						href="${siteurl}shop/view.htm?id=${(oneshopimagelist.shop.id)!''}"
+						class="biz-name"><span>${(oneshopimagelist.shop.name)!''}</span></a>新增了${oneshopimagelist.num!"0"}张<b>照片</b>
+
+				</div>
+				<div class="time-stamp"> [@html.date
+						date=item.addDate][/@html.date]</div>
+			</div>
+			<div class="item-description">
+
+				<ul data-starting-index="0"
+					data-media-url="/biz_photos/get_media_by_ids/kqjCEuA_aPqHyXviLoelcg?ids=9n6cQAzS5HUfOetVYfg8Cg"
+					data-media-count="1"
+					data-logging-uri="/biz_photos/kqjCEuA_aPqHyXviLoelcg/log_views"
+					data-logging-csrf="2b322dcd9ca93d686ba4e82acc7388b3ba995a4b1c94403454a913063c62295e"
+					data-ga-path="media_lightbox/servlet:activity_feed/type:biz"
+					data-dfp-type="biz" data-dfp-sizes="[[728, 90]]"
+					data-dfp-attributes="[[&quot;city&quot;, &quot;\u53f0\u5317\u5e02&quot;], [&quot;signed_in&quot;, &quot;yes&quot;], [&quot;language&quot;, &quot;zh&quot;], [&quot;country&quot;, &quot;tw&quot;], [&quot;section&quot;, &quot;welcome&quot;], [&quot;dma_code&quot;, &quot;000&quot;], [&quot;sk&quot;, &quot;no&quot;], [&quot;lu&quot;, [&quot;a&quot;]], [&quot;au&quot;, [&quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]], [&quot;mode&quot;, &quot;live&quot;]]"
+					data-ad-logging-uri="/ad_acknowledgment"
+					data-ad-logging-csrf="3c7b3121ac594e6e06532d3b53fdc98a8675f8b1d604304ae810e1da8a95dd11"
+					class="photo-box-grid clearfix js-content-expandable lightbox-media-parent"
+					data-component-bound="true">
+
+					[#if oneshopimagelist.num==3] 
+					
+					[#list oneshopimagelist.images as  item]
+					
+					 [#if item_index==0]
+					 
+					<li style="width: 348px; height: 348px;">
+						<div class="photo-box photo-box--interactive">
+
+							<img width="348" height="348" src="${item.url!''}"
+								class="photo-box-img">
+
+
+
+							<div class="photo-box_actions" style="display: none;">
+								<ul>
+									<li><a href="javascript:;"
+										data-resource-id="9n6cQAzS5HUfOetVYfg8Cg"
+										class="photo-box_action-link like-button"> <span
+											class="i-wrap ig-wrap-common i-action-photo-like-common-wrap"
+											classname=""><i
+												class="i ig-common i-action-photo-like-common"></i> <span
+												class="like-button-text">Like</span></span>
+									</a></li>
+								</ul>
+							</div>
+
+
+
+							<a
+								href="${siteurl}shop/photos.htm?id=${(item.shop.id)!''}"
+								class="biz-shim js-lightbox-media-link"> <span
+								class="offscreen"></span>
+							</a>
+
+						</div>
+
+					</li>
+					 [#else]
+					 
+					<li style="width: 168px; height: 168px;">
+						<div class="photo-box photo-box--interactive">
+
+							<img width="168" height="168" src="${item.url!''}"
+								class="photo-box-img" alt="烤魚">
+
+
+
+							<div class="photo-box_actions" style="display: none;">
+								<ul>
+
+
+
+									<li><a href="javascript:;"
+										data-resource-id="CX0aAxy2_GHD1qSOA8k34Q"
+										class="photo-box_action-link like-button"> <span
+											class="i-wrap ig-wrap-common i-action-photo-like-common-wrap"
+											classname=""><i
+												class="i ig-common i-action-photo-like-common"></i> <span
+												class="like-button-text">Like</span></span>
+									</a></li>
+
+								</ul>
+							</div>
+
+							<div style="display: none;" class="photo-box-overlay js-overlay">
+								<div class="photo-box-overlay_caption">烤魚</div>
+							</div>
+
+
+							<a
+								href="${siteurl}shop/photos.htm?id=${(item.shop.id)!''}"
+								class="biz-shim js-lightbox-media-link"> <span
+								class="offscreen"></span>
+							</a>
+
+						</div>
+
+					</li>
+					
+					 [/#if] 
+					 [/#list] 
+					 
+					 [#else]
+					 
+					  [#list oneshopimagelist.images as item]
+
+					<li style="width: 258px; height: 258px;">
+						<div class="photo-box photo-box--interactive">
+
+							<img width="258" height="258" src="${item.url!''}"
+								class="photo-box-img">
+
+
+
+							<div class="photo-box_actions" style="display: none;">
+								<ul>
+									<li><a href="javascript:;"
+										data-resource-id="9n6cQAzS5HUfOetVYfg8Cg"
+										class="photo-box_action-link like-button"> <span
+											class="i-wrap ig-wrap-common i-action-photo-like-common-wrap"
+											classname=""><i
+												class="i ig-common i-action-photo-like-common"></i> <span
+												class="like-button-text">Like</span></span>
+									</a></li>
+								</ul>
+							</div>
+
+
+
+							<a
+								href="${siteurl}shop/photos.htm?id=${(item.shop.id)!''}"
+								class="biz-shim js-lightbox-media-link"> <span
+								class="offscreen"></span>
+							</a>
+
+						</div>
+
+					</li>
+					
+					 [/#list]
+					 
+					  [/#if]
+
+
+
+				</ul>
+
+
+			</div>
+		</div>
+
+
+	</div>
+</li>
+
+[/#if]
+[/@shopimagelist_] 
+
+[/#if]

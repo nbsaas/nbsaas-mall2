@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>${area.name!""}附近的${curcatalog.cname!""}</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/category.css" />
+
+
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container">
+					<div id="page-header">
+					<div class="ieSucks clearfix" id="loc-bar">
+					        [#if tops?? && tops?size >1]
+							<ul class="cat_breadcrumbs breadcrumbs pull-left">
+							   [#list tops as item]
+							   [#if item_index==0]
+								<li itemtype="http://data-vocabulary.org/Breadcrumb"
+									itemscope="itemscope"><a itemprop="url" 
+									href="${siteurl}city/${area.id}/catalog/${item.id!'1'}.htm"> <span
+										itemprop="title">${item.cname!""}</span>
+
+								</a></li>
+								[#else]
+									<li itemtype="http://data-vocabulary.org/Breadcrumb"
+									itemscope="itemscope"><a
+									class="i-wrap ig-wrap-common i-breadcrumb-arrow-common-wrap breadcrumb-wrap"
+									itemprop="url"
+									href="${siteurl}city/${area.id}/catalog/${item.id!'1'}.htm"><i
+										class="i ig-common i-breadcrumb-arrow-common"></i> <span
+										itemprop="title">${item.cname!""}</span> </a></li>
+								[/#if]
+								[/#list]
+								
+							</ul>
+							[#else]
+							 <h1>真真精选</h1>
+							[/#if]
+
+						</div>
+					
+					
+					</div>
+
+
+					<div id="best-of-category" class="ysection clearfix">
+						<div class="arrange arrange--12 arrange--baseline">
+							<div class="arrange_unit arrange_unit--fill">
+								<h2>${area.name!""}${curcatalog.cname!""}中的极品</h2>
+							</div>
+							<div class="arrange_unit nowrap">
+
+								
+
+							</div>
+							<div class="arrange_unit nowrap">
+								<ul class="tabs-pill js-tabs clearfix"
+									data-component-bound="true">
+									<li data-tab-id="best-of-category-mosaic" class="tab selected">
+										<a href="javascript:;"> <span
+											class="i-wrap ig-wrap-category i-mosaic-category-wrap active"><i
+												class="i ig-category i-mosaic-category"></i> 图示</span>
+									</a>
+									</li>
+									<li data-tab-id="best-of-category-list" class="tab"><a
+										href="javascript:;"> <span
+											class="i-wrap ig-wrap-category i-list-category-wrap"><i
+												class="i ig-category i-list-category"></i> 列表</span>
+									</a></li>
+								</ul>
+							</div>
+
+						</div>
+						<div class="content">
+							<ul class="content-list">
+								<li style="display: none;" id="best-of-category-list"
+									data-section-id="best-of-category-list" class="clearfix">
+									 [#list shops as item]
+									<ul class="column-set" style="width: 430px;">
+
+										<li class="media-block media-block--11">
+											<div class="media-avatar">
+												<div class="photo-box pb-60s">
+													<a
+														href="${siteurl}shop/view.htm?id=${item.id}">
+														<img width="60" height="60"
+														src="${item.image!'/assets/images/head.png'}"
+														class="photo-box-img" alt="${item.name!''}">
+
+													</a>
+
+												</div>
+
+
+
+
+											</div>
+											<div class="media-story">
+												<div class="media-title">
+													<span class="indexed-biz-name">1. <a
+														data-hovercard-id="DTHeKbBvboFaNMp5bkMEpw"
+														href="${siteurl}shop/view.htm?id=${item.id}"
+														class="biz-name">[@html.htmlcut s=item.name append="..." len=20][/@html.htmlcut]</a>
+													</span>
+
+
+												</div>
+												<div>
+													<span class="biz-alternate-names">&nbsp;</span>
+
+													<div class="biz-rating biz-rating-medium clearfix">
+
+														<div class="rating">
+															<i title="5.0星级评分" class="star-img stars_${item.service_rating?string('#')}"> <img
+																width="84" height="303" alt="5.0星级评分"
+																src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																class="offscreen">
+															</i>
+														</div>
+
+
+														<span class="review-count rating-qualifier">${item.comment_num!"0"}则评语
+														</span>
+
+													</div>
+
+
+													<div class="media-block"></div>
+												</div>
+
+											</div>
+
+										</li>
+
+									</ul>
+									[/#list]
+								</li>
+
+								<li id="best-of-category-mosaic"
+									data-section-id="best-of-category-mosaic" class="clearfix">
+                                      [#list shops as item]
+                                      [#if item_index==0]
+									<div
+										class="mosaic-container mosaic-container-460-300 photo-box has-overlay biz-listing-photo">
+										<div
+											style="background-image: url(${item.image!'/assets/images/head.png'});"
+											class="mosaic-image-background photo-box-img"></div>
+										<div class="photo-box-overlay">
+											<h3 class="biz-name">${item.name}</h3>
+											<div class="biz-rating biz-rating-medium clearfix">
+
+												<div class="rating">
+													<i title="4.0星级评分" class="star-img stars_4"> <img
+														width="84" height="303" alt="4.0星级评分"
+														src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+														class="offscreen">
+													</i>
+												</div>
+
+
+												<span class="review-count rating-qualifier"> 15则评语 </span>
+
+											</div>
+
+										</div>
+										<a href="${siteurl}shop/view.htm?id=${item.id}"
+											class="biz-shim"> <span class="offscreen">${item.name}</span>
+										</a>
+									</div>
+                                    [/#if]
+                                     [#if item_index==1]
+									<div
+										class="mosaic-container mosaic-container-160-300 photo-box has-overlay biz-listing-photo">
+										<div
+											style="background-image: url(${item.image!'/assets/images/head.png'});"
+											class="mosaic-image-background photo-box-img"></div>
+										<div class="photo-box-overlay">
+											<h3 class="biz-name">鼎泰丰 101店</h3>
+											<div class="biz-rating biz-rating-medium clearfix">
+
+												<div class="rating">
+													<i title="4.5星级评分" class="star-img stars_4_half"> <img
+														width="84" height="303" alt="4.5星级评分"
+														src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+														class="offscreen">
+													</i>
+												</div>
+
+
+												<span class="review-count rating-qualifier"> 35则评语 </span>
+
+											</div>
+
+										</div>
+										<a
+											href="${siteurl}shop/view.htm?id=${item.id}"
+											class="biz-shim"> <span class="offscreen">${item.name}</span>
+										</a>
+									</div>
+                                    [/#if]
+                                     [#if item_index==2]
+									<div
+										class="mosaic-container mosaic-container-300-140 photo-box has-overlay biz-listing-photo mosaic-container-right-edge">
+										<div
+											style="background-image: url(${item.image!'/assets/images/head.png'});"
+											class="mosaic-image-background photo-box-img"></div>
+										<div class="photo-box-overlay">
+											<h3 class="biz-name">${item.name}</h3>
+											<div class="biz-rating biz-rating-medium clearfix">
+
+												<div class="rating">
+													<i title="5.0星级评分" class="star-img stars_5"> <img
+														width="84" height="303" alt="5.0星级评分"
+														src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+														class="offscreen">
+													</i>
+												</div>
+
+
+												<span class="review-count rating-qualifier"> 45则评语 </span>
+
+											</div>
+
+										</div>
+										<a
+											href="${siteurl}shop/view.htm?id=${item.id}"
+											class="biz-shim"> <span class="offscreen">${item.name}</span>
+										</a>
+									</div>
+                                     [/#if]
+                                      [#if item_index==3]
+									<div
+										class="mosaic-container mosaic-container-140-140 photo-box has-overlay biz-listing-photo">
+										<div
+											style="background-image: url(${item.image!'/assets/images/head.png'});"
+											class="mosaic-image-background photo-box-img"></div>
+										
+										<div class="photo-box-overlay">
+											<h3 class="biz-name">${item.name}</h3>
+											<div class="biz-rating biz-rating-medium clearfix">
+
+												<div class="rating">
+													<i title="4.0星级评分" class="star-img stars_4"> <img
+														width="84" height="303" alt="4.0星级评分"
+														src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+														class="offscreen">
+													</i>
+												</div>
+
+
+												<span class="review-count rating-qualifier"> 4则评语 </span>
+
+											</div>
+
+										</div>
+										
+										<a href="${siteurl}shop/view.htm?id=${item.id}"
+											class="biz-shim"> <span class="offscreen">${item.name}</span>
+										</a>
+										
+									</div>
+                                      [/#if]
+                                      [#if item_index==4]
+									<div
+										class="mosaic-container mosaic-container-140-140 photo-box has-overlay biz-listing-photo mosaic-container-right-edge">
+										<div
+											style="background-image: url(${item.image!'/assets/images/head.png'});"
+											class="mosaic-image-background photo-box-img"></div>
+										<div class="photo-box-overlay">
+											<h3 class="biz-name">${item.name}</h3>
+											<div class="biz-rating biz-rating-medium clearfix">
+
+												<div class="rating">
+													<i title="3.5星级评分" class="star-img stars_3_half"> <img
+														width="84" height="303" alt="3.5星级评分"
+														src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+														class="offscreen">
+													</i>
+												</div>
+
+
+												<span class="review-count rating-qualifier"> 2则评语 </span>
+
+											</div>
+
+										</div>
+										<a
+											href="${siteurl}shop/view.htm?id=${item.id}"
+											class="biz-shim"> <span class="offscreen">${item.name}</span>
+										</a>
+									</div>
+									[/#if]
+                                    [/#list]
+								</li>
+
+							</ul>
+						</div>
+						<a class="ybtn ybtn-primary button-more"
+							href="${siteurl}search.htm?catalog=${curcatalog.id}">搜寻更多${curcatalog.cname!""}</a>
+					</div>
+
+
+
+
+					<div class="clearfix layout-block layout-a">
+						<div class="column column-alpha ">
+							<div class="arrange arrange--30 arrange--wrap arrange--2-units">
+								<div class="arrange_unit">
+									<div id="neighborhoods-list" class="ysection clearfix"
+										data-component-bound="true">
+										<h2 class="h3">${area.name!""}地区</h2>
+										<div class="content" data-component-bound="true">
+											<ul class="content-list">
+												<li data-section-id="top-neighborhoods"
+													class="column-container clearfix">
+													[#list areas as item]
+													<ul class="column-set">
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">${item.name!""}</a></li>
+														
+													</ul>
+													[/#list]
+												</li>
+
+											</ul>
+											<a href="#" class="js-see-more link-more">更多邻近地区</a>
+											<div class="throbber-overlay"
+												style="width: 300px; height: 210px; display: none;">
+												<div class="throbber-container"
+													style="left: 149px; top: 59px;"></div>
+											</div>
+										</div>
+									</div>
+
+
+
+
+								</div>
+								<div class="arrange_unit">
+									<div id="prices-list" class="ysection clearfix">
+										<h2 class="h3">价格</h2>
+										<div class="content">
+											<ul class="content-list">
+												<li class="clearfix">
+													<ul class="column-set">
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}"
+															data-remainder="$$$" class="price-range"> $</a></li>
+
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}"
+															data-remainder="$$" class="price-range"> $$</a></li>
+
+													</ul>
+													<ul class="column-set">
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}"
+															data-remainder="$" class="price-range"> $$$</a></li>
+
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}"
+															data-remainder="" class="price-range"> $$$$</a></li>
+
+													</ul>
+												</li>
+
+											</ul>
+										</div>
+									</div>
+
+									<div id="features-list" class="ysection clearfix"
+										data-component-bound="true">
+										<div class="arrange arrange--12 arrange--baseline">
+											<div class="arrange_unit arrange_unit--fill">
+												<h2 class="h3">特点</h2>
+											</div>
+											<div class="arrange_unit nowrap">
+												<a href="javascript:;" class="js-see-more link-more">更多筛选项目</a>
+											</div>
+										</div>
+
+										<div class="content" data-component-bound="true">
+											<ul class="content-list">
+												<li data-section-id="top-features" class="clearfix">
+													<ul class="column-set">
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">可供轮椅进出</a></li>
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">接收比特币</a></li>
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">是否承办宴席</a></li>
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">是否接受信用卡</a></li>
+													</ul>
+													<ul class="column-set">
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">是否提供外送</a></li>
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">是否有单车停车位</a></li>
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">是否有服务生服务</a></li>
+														<li><a
+															href="${siteurl}search.htm?catalog=${curcatalog.id}">是否适合团体</a></li>
+													</ul>
+												</li>
+
+											</ul>
+											<div class="throbber-overlay"
+												style="width: 300px; height: 99px; display: none;">
+												<div class="throbber-container"
+													style="left: 149px; top: 3.5px;"></div>
+											</div>
+										</div>
+									</div>
+
+
+								</div>
+							</div>
+
+						</div>
+						<div class="column column-beta ">
+
+							
+
+
+
+						</div>
+					</div>
+					<div class="clearfix layout-block layout-a">
+						<div class="column column-alpha ">
+						    [#if reviews??]
+							<div id="recent-reviews" class="ysection clearfix">
+								<h2>最新${curcatalog.cname!""}的评语</h2>
+								<ul class="content clearfix">
+								     [#list images as item]
+									<li class="media-block media-block--12 review">
+										<div class="media-avatar">
+
+
+
+
+											<div class="photo-box pb-60s">
+												<a
+													href="${siteurl}user_details.htm?id=${item.user.id}">
+													<img width="60" height="60"
+													src="${item.user.headimg!'/assets/images/head.png'}"
+													class="photo-box-img" alt="">
+												</a>
+											</div>
+
+
+										</div>
+										<div class="media-story">
+											<a href="${siteurl}user_details.htm?id=${item.user.id}">${item.user.name}</a>发表了对<a
+												href="${siteurl}shop/view.htm?id=${item.shop.id}">${item.shop.name!""}</a>的评语
+
+											<div class="rating">
+												<i title="4.0星级评分" class="star-img stars_4"> <img
+													width="84" height="303"
+													src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+													class="offscreen" alt="4.0星级评分">
+												</i>
+											</div>
+
+
+											<p>[@html.htmlcut s=item.comment append="..." len=60][/@html.htmlcut]</p>
+
+										</div>
+									</li>
+									 [/#list]
+								</ul>
+							</div>
+                           [/#if]
+
+						</div>
+						
+						<div class="column column-beta ">
+						    [#if images??]
+							<div id="recent-photos" class="ysection clearfix">
+								<h2>最新相片</h2>
+								
+								<ul class="content clearfix">
+								[#list images as item]
+									<li><a title="鼎泰丰"
+										href="${siteurl}shop/view.htm?id=${item.shop.id}">
+
+
+
+											<div class="photo-box biz-photo-box pb-60s">
+												<img width="60" height="60"
+													src="${item.url!''}"
+													class="photo-box-img" alt="">
+											</div>
+
+									</a></li>
+								[/#list]
+								</ul>
+							</div>
+                            [/#if]
+
+						</div>
+						
+					</div>
+
+                     [#if catalogs?? && catalogs?size>0]
+					<div id="subcategories-list" class="ysection clearfix">
+						<h2>分类</h2>
+						<div class="content">
+							<ul class="content-list">
+								<li class="clearfix">
+								     [#list catalogs as item ]
+									<ul class="column-set">
+										<li><a
+											href="${siteurl}city/${city.id}/catalog/${item.id!'1'}.htm">${item.cname!""}</a></li>
+										
+									</ul>
+									[/#list]
+								</li>
+							</ul>
+						</div>
+					</div>
+					[/#if]
+
+
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+    <script type="text/javascript">
+    //best-of-category-mosaic
+    var lastselect=$("#best-of-category-mosaic");
+    $(document).ready(function(){
+    	$(".tab").click(function(){
+    		$(lastselect).hide();
+    		lastselect=$("#"+$(this).attr("data-tab-id"));
+    		$(".tab").removeClass("selected");
+    		$(this).addClass("selected");
+    		$("#"+$(this).attr("data-tab-id")).show();
+    	});
+    });
+    
+    </script>
+</body>
+
+</html>

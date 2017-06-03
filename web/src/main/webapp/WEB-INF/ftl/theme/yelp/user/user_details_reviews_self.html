@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user_details-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="user-header">
+
+
+	        <ul class="clearfix" id="userTabs">
+
+						<li ><a
+							href="${siteurl}user_details.htm?id=${id!'-1'}">个人主页</a></li>
+
+						<li ><a
+							href="${siteurl}user_details_lists.htm?id=${id!'-1'}">列表</a></li>
+
+						<li class="selected"><a
+							href="${siteurl}user_details_reviews_self.htm?id=${id!'-1'}">评语</a></li>
+
+						<li><a
+							href="${siteurl}user_details_quicktips.htm?id=${id!'-1'}">贴士</a></li>
+
+						<li><a
+							href="${siteurl}user_details_thanx.htm?id=${id!'-1'}">赞扬</a></li>
+
+						<li ><a
+							href="${siteurl}user_details_friends.htm?id=${id!'-1'}">朋友</a></li>
+
+						<li ><a href="${siteurl}user_details_following.htm?id=${id!'-1'}">关注中</a></li>
+
+						<li ><a
+							href="${siteurl}user_details_bookmarks.htm?id=${id!'-1'}">收藏</a></li>
+						<li ><a
+							href="${siteurl}user_details_events.htm?id=${id!'-1'}">活动</a></li>
+					</ul>
+					<div class="about-connections">
+					[#include "user_details_include_top.html"]
+					</div>
+
+				</div>
+
+
+				<div id="user-details" class="container">
+					<div class="clearfix layout-block layout-o layout-border">
+						<div id="user_main_content" class="column column-alpha ">
+
+
+							<div class="clearfix">
+
+								<h3>全部评语</h3>
+								<p>0条评语</p>
+
+							</div>
+							<div class="pull-right">
+								<div
+									class="filter-cities-dropdown drop-menu-origin inline-block"
+									data-component-bound="true">
+									<a class="drop-menu-link location-link inline-block"
+										href="javascript:;" data-component-bound="true"> <span
+										class="i-wrap ig-wrap-common i-dropdown-arrow-link-common-wrap ig-wrap-common-r dropdown-arrow"><i
+											class="i ig-common i-dropdown-arrow-link-common"></i> 全部地点</span>
+									</a>
+									<div class="drop-menu drop-menu-restricted"
+										data-component-bound="true">
+										<div>
+											<ul>
+												<li class="drop-down-menu-link"><a
+													href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw">全部地点</a>
+												</li>
+											</ul>
+
+										</div>
+									</div>
+								</div>
+								<div
+									class="filter-categories-dropdown drop-menu-origin inline-block"
+									data-component-bound="true">
+									<a class="drop-menu-link location-link inline-block"
+										href="javascript:;" data-component-bound="true"> <span
+										class="i-wrap ig-wrap-common i-dropdown-arrow-link-common-wrap ig-wrap-common-r dropdown-arrow"><i
+											class="i ig-common i-dropdown-arrow-link-common"></i> 所有分类</span>
+									</a>
+									<div class="drop-menu drop-menu-restricted"
+										data-component-bound="true">
+										<ul>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw">所有分类</a>
+											</li>
+										</ul>
+
+									</div>
+								</div>
+							</div>
+
+
+							<div>
+								<span class="drop-menu-origin js-review-sorts"
+									data-component-bound="true"> <a class="drop-menu-link"
+									href="javascript:;" data-component-bound="true"> 按以下排列： <strong
+										class="i-wrap ig-wrap-common i-dropdown-arrow-link-common-wrap ig-wrap-common-r dropdown-arrow"><i
+											class="i ig-common i-dropdown-arrow-link-common"></i> 日期</strong>
+								</a>
+									<div class="drop-menu drop-menu-left hidden"
+										data-component-bound="true">
+										<ul>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw&amp;review_sort=alphabetical&amp;review_filter=alphabetical&amp;alphabetical_filter=ALL">按字母顺序排列</a></li>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw&amp;review_sort=rating">评分</a></li>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw&amp;review_sort=time">日期</a></li>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw&amp;review_sort=useful">有用</a></li>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw&amp;review_sort=funny">有趣</a></li>
+											<li class="drop-down-menu-link"><a
+												href="/user_details_reviews_self?userid=HfJEPdrCb1eIqRklSQ1dGw&amp;review_sort=cool">有型</a></li>
+										</ul>
+									</div>
+								</span>
+							</div>
+
+
+                                    [#if list??]
+	                                [#if list?size>0]
+									<ul class="ytype ylist ylist-bordered reviews"
+										data-component-bound="true">
+									
+										[#list list as item]
+										<li>
+											<div data-signup-object="user_id:-jt1ACMiZljnBFvS6RRvnA"
+												data-review-id="KSn8laHkcMCoUtu0WiMoCg" class="review">
+												<div class="review-topbar">
+													<div class="media-block media-block--12 biz-listing-medium">
+														<div class="media-avatar">
+															<div class="photo-box pb-60s">
+																<a href="${siteurl}shop/view.htm?id=${item.shop.id}"> <img
+																	width="60" height="60"
+																	src="${item.user.headimg!'/assets/images/head.png'}"
+																	class="photo-box-img" alt="Crêpe It Up">
+
+																</a>
+
+															</div>
+
+
+
+														</div>
+														<div class="media-story">
+															<div class="media-title clearfix">
+																<a data-hovercard-id="p0Ke6BhOirBmvNRHlATYVA"
+																	href="/biz/cr%C3%AApe-it-up-toronto-4" class="biz-name">${item.shop.name}</a>
+
+															</div>
+															<div class="price-category">
+																<span class="bullet-after"> <span
+																	class="business-attribute price-range">$</span>
+																</span> <span class="category-str-list" style="display: none;"> <a
+																	href="/c/toronto/%E6%B3%95%E5%BC%8F%E8%96%84%E9%A4%85">法式薄饼</a>,
+																	<a href="/c/toronto/%E6%97%A9%E9%A4%90%EF%BC%BFBrunch">早餐及Brunch</a>
+																</span>
+
+
+															</div>
+
+															<address>
+																${item.shop.address}
+															</address>
+
+														</div>
+													</div>
+
+												</div>
+												<div class="review-content">
+													<div class="review-content">
+														<div class="biz-rating biz-rating-very-large clearfix">
+															<div>
+
+																<div class="rating-very-large">
+																	<i title="4.0星级评分" class="star-img stars_4"> <img
+																		width="84" height="303"
+																		src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																		class="offscreen" alt="4.0星级评分">
+																	</i>
+																</div>
+
+
+															</div>
+															<span class="rating-qualifier"> [@html.date date=item.adddate ][/@html.date] <small
+																class="bullet-before has-archived-review"> <strong
+																	class="i-wrap ig-wrap-common_sprite i-updated-review-common_sprite-wrap"><i
+																		class="i ig-common_sprite i-updated-review-common_sprite"></i>
+																		已更新评语</strong>
+															</small>
+															</span>
+
+														</div>
+
+														<div class="review_tags">
+
+															<span
+																class="i-wrap ig-wrap-common i-18x18_checkin_c-common-wrap review-tag"><i
+																class="i ig-common i-18x18_checkin_c-common"></i>
+																1个签到</span>
+
+														</div>
+
+														<p lang="en" style="margin-top: 15px;margin-bottom: 15px;">
+															${item.comment!""}
+														</p>
+
+													</div>
+													<div class="review-footer clearfix">
+														<div data-review-id="KSn8laHkcMCoUtu0WiMoCg"
+															class="rateReview voting-feedback"
+															data-component-bound="true">
+															<p class="voting-intro voting-prompt saving-msg"
+																data-component-bound="true">你觉得这条评语 …?</p>
+															<ul
+																data-csrf-token="2aa9462a7f941da28c8f69639a9b9200edccf5a96bf3b72f5d9b8367bc9397c6"
+																class="voting-buttons" data-component-bound="true">
+
+
+																<li class="vote-item inline-block"><a
+																	class="ybtn ybtn-small useful" rel="useful"
+																	href="javascript:;"><span
+																		class="i-wrap ig-wrap-common i-ufc-useful-common-wrap button-content"><i
+																			class="i ig-common i-ufc-useful-common"></i> <span
+																			class="vote-type">有用</span> <span class="count"></span></span></a>
+																</li>
+
+
+
+																<li class="vote-item inline-block"><a
+																	class="ybtn ybtn-small funny" rel="funny"
+																	href="javascript:;"><span
+																		class="i-wrap ig-wrap-common i-ufc-funny-common-wrap button-content"><i
+																			class="i ig-common i-ufc-funny-common"></i> <span
+																			class="vote-type">有趣</span> <span class="count"></span></span></a>
+																</li>
+
+
+
+																<li class="vote-item inline-block"><a
+																	class="ybtn ybtn-small cool" rel="cool"
+																	href="javascript:;"><span
+																		class="i-wrap ig-wrap-common i-ufc-cool-common-wrap button-content"><i
+																			class="i ig-common i-ufc-cool-common"></i> <span
+																			class="vote-type">有型</span> <span class="count"></span></span></a>
+																</li>
+
+															</ul>
+
+														</div>
+
+														<div class="review-footer-actions pull-right clearfix" style="display: none;">
+
+
+															<a
+																href="/biz_share?bizid=3_HrWm4qrzTN0gAC_CrfTQ&amp;return_url=%2Fuser_details&amp;reviewid=KSn8laHkcMCoUtu0WiMoCg"
+																data-pop-uri="/send_to_friend/review/KSn8laHkcMCoUtu0WiMoCg"
+																class="chiclet-link show-tooltip send-to-friend"
+																data-component-bound="true"> <i
+																class="i ig-common i-24x24_share-common"></i> <span
+																class="tooltip-wrapper"> <span class="tooltip">分享评语</span>
+															</span>
+															</a> <a
+																href="/thanx?complimentable_id=KSn8laHkcMCoUtu0WiMoCg&amp;complimentable_type=REVIEW&amp;previous_url=%2Fuser_details&amp;user_id=-jt1ACMiZljnBFvS6RRvnA"
+																class="chiclet-link show-tooltip send-compliment"
+																data-component-bound="true"> <i
+																class="i ig-common i-24x24_compliment-common"></i> <span
+																class="tooltip-wrapper"> <span class="tooltip">赞扬</span>
+															</span>
+															</a> <a
+																href="/flag_content?biz_id=3_HrWm4qrzTN0gAC_CrfTQ&amp;flag_id=KSn8laHkcMCoUtu0WiMoCg&amp;flag_type=review&amp;previous_url=%2Fuser_details"
+																data-pop-uri="/flag_content?biz_id=3_HrWm4qrzTN0gAC_CrfTQ&amp;flag_id=KSn8laHkcMCoUtu0WiMoCg&amp;flag_type=review&amp;previous_url=%2Fuser_details"
+																class="chiclet-link show-tooltip chiclet-link--flag">
+																<i class="i ig-common i-24x24_flag-common"></i> <span
+																class="tooltip-wrapper"> <span class="tooltip">举报评语</span>
+															</span>
+															</a>
+
+														</div>
+
+													</div>
+													
+
+
+
+												</div>
+											</div>
+
+										</li>
+										
+										[/#list]
+	
+									</ul>
+									  [#include "/theme/yelp/common/pageryelp.html"]
+                                    [@pager page curpage "${siteurl}/user_details_reviews_self.htm?id=${id}"][/@pager]
+					      
+									[#else]
+									<div id="empty_reviews">
+								            <img style="float:left;vertical-align:middle;margin-right:20px;" src="http://s3-media4.fl.yelpcdn.com/assets/2/www/img/a2bf6452b6e7/gfx/empty_reviews.gif">
+								            <p>写点什么呢？该自己做评论家的时候啦！</p>
+								
+								            <p class="aligncent">
+								                <a class="ybtn ybtn-primary" href="${siteurl}user/writeareview.htm">写评语</a>
+								            </p>
+								    </div>
+								    [/#if]
+                                     [/#if]
+
+						</div>
+						 [#include "user_details_left.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

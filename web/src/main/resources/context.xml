@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd              
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	<!--COOKIE登录 -->
+	<import resource="context-shiro.xml" />
+	<context:component-scan base-package="com.quhaodian.actions" />
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="utf-8" p:maxUploadSize="100000000" />
+
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="siteHandlerInterceptor" />
+			</list>
+		</property>
+	</bean>
+	<bean id="siteHandlerInterceptor" class="com.quhaodian.web.interceptor.SiteHandlerInterceptor">
+
+		<!-- http://openyelp.aliapp.com/ http://openyelp.sturgeon.mopaas.com/ http://yelp.tiger.mopaasapp.com -->
+		<!--<property name="url" value="http://www.zhenzhendianping.com:8080/"></property> -->
+		<property name="url" value="http://www.zzdp.me/"></property>  <!-- -->
+	</bean>
+	<bean id="exceptionResolver" class="com.quhaodian.web.handler.MappingExceptionResolver">
+		<property name="url" value="http://www.zzdp.me/"></property> <!-- -->
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthenticatedException">/theme/yelp/login</prop>
+				<prop key="java.lang.exception">error/500</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jacksonMessageConverter" />    <!-- 注册JSON Converter -->
+			</list>
+		</property>
+	</bean>
+	<bean id="jacksonMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+
+
+
+	<bean id="menuOpenDirective" class="com.quhaodian.web.freemaker.MenuOpenDirective"></bean>
+	<bean id="menusDirective" class="com.quhaodian.web.freemaker.MenusDirective"></bean>
+	<bean id="hotAreaDirective" class="com.quhaodian.web.freemaker.HotAreaDirective"></bean>
+	<bean id="AreaCategoryDirective" class="com.quhaodian.web.freemaker.AreaCategoryDirective"></bean>
+	<bean id="talkNewsDirective" class="com.quhaodian.web.freemaker.TalkNewsDirective"></bean>
+	<bean id="eventGoodDirective" class="com.quhaodian.web.freemaker.EventGoodDirective"></bean>
+	<bean id="shopNearDirective" class="com.quhaodian.web.freemaker.ShopNearDirective"></bean>
+	<bean id="shopGoodDirective" class="com.quhaodian.web.freemaker.ShopGoodDirective"></bean>
+	<bean id="categoryNearDirective" class="com.quhaodian.web.freemaker.CategoryNearDirective"></bean>
+
+	<bean id="articleDirective" class="com.quhaodian.web.freemaker.ArticleDirective"></bean>
+	<bean id="shopDirective" class="com.quhaodian.web.freemaker.ShopDirective"></bean>
+	<bean id="talkDirective" class="com.quhaodian.web.freemaker.TalkDirective"></bean>
+	<bean id="eventsDirective" class="com.quhaodian.web.freemaker.EventsDirective"></bean>
+	<bean id="shopReviewDirective" class="com.quhaodian.web.freemaker.ShopReviewDirective"></bean>
+	<bean id="shopImageDirective" class="com.quhaodian.web.freemaker.ShopImageDirective"></bean>
+	<bean id="shopImageListDirective" class="com.quhaodian.web.freemaker.ShopImageListDirective"></bean>
+
+
+
+	<bean id="haveVoteDirective" class="com.quhaodian.web.freemaker.HaveVoteDirective"></bean>
+
+
+
+	<bean id="htmlTags" class="com.ada.common.freemarker.HtmlTags"></bean>
+	<bean id="shiro" class="com.jagregory.shiro.freemarker.ShiroTags"></bean>
+
+	<!-- freemarker的配置 -->
+	<bean id="freemarkerConfigurer"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="tag_syntax">square_bracket</prop>
+				<prop key="template_update_delay">5</prop>
+				<prop key="defaultEncoding">UTF-8</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="locale">zh_CN</prop>
+				<prop key="boolean_format">true,false</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+				<prop key="date_format">yyyy-MM-dd</prop>
+				<prop key="time_format">HH:mm:ss</prop>
+				<prop key="number_format">0.######</prop>
+				<prop key="whitespace_stripping">true</prop>
+			</props>
+		</property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="menuopentag" value-ref="menuOpenDirective" />
+				<entry key="menustag" value-ref="menusDirective" />
+				<entry key="hotarea" value-ref="hotAreaDirective" />
+				<entry key="areacategory" value-ref="AreaCategoryDirective" />
+				<entry key="talknews" value-ref="talkNewsDirective" />
+				<entry key="shiro" value-ref="shiro" />
+				<entry key="html" value-ref="htmlTags" />
+				<entry key="eventgood" value-ref="eventGoodDirective" />
+				<entry key="shopnear" value-ref="shopNearDirective" />
+				<entry key="shopgood" value-ref="shopGoodDirective" />
+				<entry key="categorynear" value-ref="categoryNearDirective" />
+				<entry key="article" value-ref="articleDirective" />
+				<entry key="shop_" value-ref="shopDirective" />
+				<entry key="events_" value-ref="eventsDirective" />
+				<entry key="talk_" value-ref="talkDirective" />
+				<entry key="shopreview_" value-ref="shopReviewDirective" />
+				<entry key="shopimage_" value-ref="shopImageDirective" />
+				<entry key="shopimagelist_" value-ref="shopImageListDirective" />
+
+
+				<entry key="havevote" value-ref="haveVoteDirective" />
+
+
+
+			</map>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<property name="suffix" value=".html" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="exposeRequestAttributes" value="false" />
+		<property name="exposeSessionAttributes" value="false" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+	</bean>
+	<!-- 将Controller抛出的异常转到特定View, 保持SiteMesh的装饰效果 -->
+	<!-- <prop key="java.lang.Throwable">error/500</prop> -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthorizedException">error/403</prop>
+			</props>
+		</property>
+	</bean>
+	<import resource="applicationContext.xml" />
+	<mvc:annotation-driven
+		ignore-default-model-on-redirect="true">
+	</mvc:annotation-driven>
+
+	<bean name="openSessionInViewInterceptor"
+		class="org.springframework.orm.hibernate5.support.OpenSessionInViewInterceptor">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<mvc:interceptors>
+		<ref bean="siteHandlerInterceptor" />
+		<ref bean="openSessionInViewInterceptor" />
+	</mvc:interceptors>
+	<bean id="taskExecutor"
+		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+		<property name="corePoolSize" value="${task.core_pool_size}" />
+		<property name="maxPoolSize" value="${task.max_pool_size}" />
+		<property name="queueCapacity" value="${task.queue_capacity}" />
+		<property name="keepAliveSeconds" value="${task.keep_alive_seconds}" />
+	</bean>
+
+</beans>

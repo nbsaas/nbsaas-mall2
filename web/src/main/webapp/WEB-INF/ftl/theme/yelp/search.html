@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>${find_loc!""}的${curcatalog.cname!""}</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/search.css" />
+		[#include "/theme/yelp/common/scripts.html"]
+
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&ak=slXaZk8V8DUWQF2MQnuW4Q5x"></script>
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+
+				<div id="alert-container"></div>
+
+
+
+				<div class="container indexed-biz-archive">
+
+					<div class="clearfix layout-block layout-full search-exception">
+						<div class="column column-alpha ">
+							<div class="content"></div>
+
+						</div>
+					</div>
+					<div class="clearfix layout-block layout-full search-page-top">
+						<div class="column column-alpha ">
+							<div class="search-header clearfix">
+								<h1>正在查看位于${find_loc!""}的${curcatalog.cname!""}</h1>
+								<span class="pagination-results-window"> 正在显示
+									${firstno!"0"}-${endno!"0"}，共有${totalcount!"0"} 
+								</span>
+								[#if tops?? && tops?size >0]
+					           <ul class="cat_breadcrumbs breadcrumbs">
+					             <li>
+						                <a href="${siteurl}search.htm?catalog=1" class="js-search-header-link">商店</a>
+						            </li>
+					            [#list tops as item]
+					                <li>
+					                    <a class="i-wrap ig-wrap-common i-breadcrumb-arrow-common-wrap breadcrumb-wrap js-search-header-link" href="${siteurl}search.htm?catalog=${item.id}"><i class="i ig-common i-breadcrumb-arrow-common"></i>${item.cname!""}</a>
+					                </li>
+					             [/#list]
+					           </ul>
+                                [/#if]
+                                
+                               [#if catalogs?? && catalogs?size>0]
+
+								<div class="search-category-browse-links">
+									<div class="js-top-category-browse-links">
+										<div class="top-category-browse-links">
+										
+										     [#list catalogs as item ]
+										     [#if item_index lt 24]
+											<ul class="search-category-browse-column">
+												<li><a
+													href="${siteurl}search.htm?catalog=${item.id}"
+													class="category-browse-anchor js-search-header-link">${item.cname!""}</a>
+												</li>
+											</ul>
+											[/#if]
+											 [/#list]
+								
+										
+											
+											
+											
+
+										</div>
+                                         [#if catalogs?size>24]
+										<a id="morediv" class="js-toggle-categories toggle-categories" href="#">更多分类</a>
+									     [/#if]
+									</div>
+
+                                  [/#if]
+
+
+                                    [#if catalogs?? && catalogs?size>24]
+									<div class="js-all-category-browse-links hidden">
+										<div class="all-category-browse-links">
+											  [#list catalogs as item ]
+											<ul class="search-category-browse-column">
+												<li><a
+													href="${siteurl}search.htm?catalog=${item.id}"
+													class="category-browse-anchor js-search-header-link">${item.cname!""}</a>
+												</li>
+											</ul>
+											 [/#list]
+											
+										</div>
+
+										<a id="lessdiv" class="js-toggle-categories toggle-categories" href="#">较少分类</a>
+									</div>
+                                      [/#if]
+
+
+								</div>
+
+
+
+							</div>
+
+							<div class="filter-panel" style="display: none;">
+								<button class="ybtn ybtn-small show-hide" value="submit"
+									type="submit">
+									<span><span
+										class="i-wrap ig-wrap-common i-dropdown-arrow-common-wrap ig-wrap-common-r"><i
+											class="i ig-common i-dropdown-arrow-common show-hide-icon"></i>
+											<span id="filterspan">显示筛选器</span>
+											
+											</span>
+									</span>
+								</button>
+
+								<div class="inner-wrap" style="display: none;">
+									<div class="filter-set sort-filters">
+										<h4>按以下排列</h4>
+										<ul class="radio-list radio-list-links main">
+											<li><label> <input type="radio"
+													value="best_match" name="sort" class="radio"
+													checked="checked"> <span class="radio-link">最配合</span>
+											</label></li>
+											<li><label> <input type="radio" value="rating"
+													name="sort" class="radio"> <span class="radio-link">最高评分</span>
+											</label></li>
+											<li><label> <input type="radio"
+													value="review_count" name="sort" class="radio"> <span
+													class="radio-link">最多评语</span>
+											</label></li>
+										</ul>
+									</div>
+
+									<div class="filter-set place-filters">
+										<h4>邻近地区</h4>
+										<ul class="main">
+											<li><label class="place radio-check"> <input
+													type="checkbox"
+													value="CA:San_Francisco::Financial_District" name="place">
+													<span>Financial District</span>
+											</label></li>
+											<li><label class="place radio-check"> <input
+													type="checkbox" value="CA:San_Francisco::SoMa" name="place">
+													<span>SoMa</span>
+											</label></li>
+											<li><label class="place radio-check"> <input
+													type="checkbox" value="CA:San_Francisco::Union_Square"
+													name="place"> <span>Union Square</span>
+											</label></li>
+											<li><label class="place radio-check"> <input
+													type="checkbox" value="CA:San_Francisco::Mission"
+													name="place"> <span>Mission</span>
+											</label></li>
+										</ul>
+
+
+										<a href="javascript:;" class="more-link">更多邻近地区</a>
+
+										<ul class="more place-more">
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header active toggle-arrow-open"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> San
+													Francisco</span>
+												<div class="js-toggle-list-content toggle-content content">
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Alamo_Square"
+																name="place"> <span>Alamo Square</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Anza_Vista"
+																name="place"> <span>Anza Vista</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Ashbury_Heights" name="place">
+																<span>Ashbury Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Balboa_Terrace"
+																name="place"> <span>Balboa Terrace</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Bayview-Hunters_Point"
+																name="place"> <span>Bayview-Hunters Point</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Bernal_Heights"
+																name="place"> <span>Bernal Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Castro"
+																name="place"> <span>Castro</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Chinatown"
+																name="place"> <span>Chinatown</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Civic_Center"
+																name="place"> <span>Civic Center</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Cole_Valley"
+																name="place"> <span>Cole Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Corona_Heights"
+																name="place"> <span>Corona Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Crocker-Amazon"
+																name="place"> <span>Crocker-Amazon</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Diamond_Heights" name="place">
+																<span>Diamond Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Dogpatch"
+																name="place"> <span>Dogpatch</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Duboce_Triangle" name="place">
+																<span>Duboce Triangle</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Embarcadero"
+																name="place"> <span>Embarcadero</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Excelsior"
+																name="place"> <span>Excelsior</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Fillmore"
+																name="place"> <span>Fillmore</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Financial_District"
+																name="place"> <span>Financial District</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Fisherman's_Wharf" name="place">
+																<span>Fisherman's Wharf</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Forest_Hill"
+																name="place"> <span>Forest Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Glen_Park"
+																name="place"> <span>Glen Park</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Hayes_Valley"
+																name="place"> <span>Hayes Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Ingleside"
+																name="place"> <span>Ingleside</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Ingleside_Heights" name="place">
+																<span>Ingleside Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Ingleside_Terraces"
+																name="place"> <span>Ingleside Terraces</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Inner_Richmond"
+																name="place"> <span>Inner Richmond</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Inner_Sunset"
+																name="place"> <span>Inner Sunset</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Japantown"
+																name="place"> <span>Japantown</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Lakeshore"
+																name="place"> <span>Lakeshore</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Lakeside"
+																name="place"> <span>Lakeside</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Laurel_Heights"
+																name="place"> <span>Laurel Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Lower_Haight"
+																name="place"> <span>Lower Haight</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Lower_Nob_Hill"
+																name="place"> <span>Lower Nob Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Lower_Pacific_Heights"
+																name="place"> <span>Lower Pacific Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Marina/Cow_Hollow" name="place">
+																<span>Marina/Cow Hollow</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Merced_Heights"
+																name="place"> <span>Merced Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Merced_Manor"
+																name="place"> <span>Merced Manor</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Miraloma_Park"
+																name="place"> <span>Miraloma Park</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Mission"
+																name="place"> <span>Mission</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Mission_Bay"
+																name="place"> <span>Mission Bay</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Mission_Terrace" name="place">
+																<span>Mission Terrace</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Monterey_Heights" name="place">
+																<span>Monterey Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Mount_Davidson_Manor"
+																name="place"> <span>Mount Davidson Manor</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::NoPa"
+																name="place"> <span>NoPa</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Nob_Hill"
+																name="place"> <span>Nob Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Noe_Valley"
+																name="place"> <span>Noe Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::North_Beach/Telegraph_Hill"
+																name="place"> <span>North Beach/Telegraph
+																	Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Oceanview"
+																name="place"> <span>Oceanview</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Outer_Mission"
+																name="place"> <span>Outer Mission</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Outer_Richmond"
+																name="place"> <span>Outer Richmond</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Outer_Sunset"
+																name="place"> <span>Outer Sunset</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Pacific_Heights" name="place">
+																<span>Pacific Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Parkmerced"
+																name="place"> <span>Parkmerced</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Parkside"
+																name="place"> <span>Parkside</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Portola"
+																name="place"> <span>Portola</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Potrero_Hill"
+																name="place"> <span>Potrero Hill</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Presidio"
+																name="place"> <span>Presidio</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Presidio_Heights" name="place">
+																<span>Presidio Heights</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Russian_Hill"
+																name="place"> <span>Russian Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Sea_Cliff"
+																name="place"> <span>Sea Cliff</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Sherwood_Forest" name="place">
+																<span>Sherwood Forest</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::SoMa"
+																name="place"> <span>SoMa</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::South_Beach"
+																name="place"> <span>South Beach</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::St_Francis_Wood" name="place">
+																<span>St Francis Wood</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Stonestown"
+																name="place"> <span>Stonestown</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Sunnyside"
+																name="place"> <span>Sunnyside</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Tenderloin"
+																name="place"> <span>Tenderloin</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::The_Haight"
+																name="place"> <span>The Haight</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Twin_Peaks"
+																name="place"> <span>Twin Peaks</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Union_Square"
+																name="place"> <span>Union Square</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Visitacion_Valley" name="place">
+																<span>Visitacion Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::West_Portal"
+																name="place"> <span>West Portal</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Western_Addition" name="place">
+																<span>Western Addition</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox"
+																value="CA:San_Francisco::Westwood_Highlands"
+																name="place"> <span>Westwood Highlands</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::Westwood_Park"
+																name="place"> <span>Westwood Park</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i>
+													Berkeley</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Berkeley_Hills"
+																name="place"> <span>Berkeley Hills</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Claremont"
+																name="place"> <span>Claremont</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Downtown_Berkeley"
+																name="place"> <span>Downtown Berkeley</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::East_Solano_Ave"
+																name="place"> <span>East Solano Ave</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Elmwood"
+																name="place"> <span>Elmwood</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Fourth_Street"
+																name="place"> <span>Fourth Street</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Gourmet_Ghetto"
+																name="place"> <span>Gourmet Ghetto</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::North_Berkeley"
+																name="place"> <span>North Berkeley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::South_Berkeley"
+																name="place"> <span>South Berkeley</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::Telegraph_Ave"
+																name="place"> <span>Telegraph Ave</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::UC_Area"
+																name="place"> <span>UC Area</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::West_Berkeley"
+																name="place"> <span>West Berkeley</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i>
+													Oakland</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Dimond_District"
+																name="place"> <span>Dimond District</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Downtown_Oakland"
+																name="place"> <span>Downtown Oakland</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::East_Oakland"
+																name="place"> <span>East Oakland</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Fruitvale"
+																name="place"> <span>Fruitvale</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Glenview"
+																name="place"> <span>Glenview</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Grand_Lake"
+																name="place"> <span>Grand Lake</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Jack_London_Square"
+																name="place"> <span>Jack London Square</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Lake_Merritt"
+																name="place"> <span>Lake Merritt</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Lakeshore"
+																name="place"> <span>Lakeshore</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Laurel_District"
+																name="place"> <span>Laurel District</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Lower_Hills"
+																name="place"> <span>Lower Hills</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Montclair_Village"
+																name="place"> <span>Montclair Village</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::North_Oakland"
+																name="place"> <span>North Oakland</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Oakland_Chinatown"
+																name="place"> <span>Oakland Chinatown</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Oakland_Hills"
+																name="place"> <span>Oakland Hills</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Old_Oakland"
+																name="place"> <span>Old Oakland</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Piedmont"
+																name="place"> <span>Piedmont</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Piedmont_Ave"
+																name="place"> <span>Piedmont Ave</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Rockridge"
+																name="place"> <span>Rockridge</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Temescal"
+																name="place"> <span>Temescal</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::Uptown" name="place">
+																<span>Uptown</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::West_Oakland"
+																name="place"> <span>West Oakland</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i>
+													Sacramento</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sacramento::Downtown"
+																name="place"> <span>Downtown</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sacramento::Midtown"
+																name="place"> <span>Midtown</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sacramento::Natomas"
+																name="place"> <span>Natomas</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> San
+													Jose</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Blossom_Valley"
+																name="place"> <span>Blossom Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Cambrian_Park"
+																name="place"> <span>Cambrian Park</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Downtown"
+																name="place"> <span>Downtown</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::East_San_Jose"
+																name="place"> <span>East San Jose</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Evergreen"
+																name="place"> <span>Evergreen</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Fairgrounds"
+																name="place"> <span>Fairgrounds</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::North_San_Jose"
+																name="place"> <span>North San Jose</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::North_Valley"
+																name="place"> <span>North Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Santa_Teresa"
+																name="place"> <span>Santa Teresa</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::West_San_Jose"
+																name="place"> <span>West San Jose</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::Willow_Glen"
+																name="place"> <span>Willow Glen</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 城市</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Alameda::" name="place">
+																<span>Alameda</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Alamo::" name="place">
+																<span>Alamo</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Albany::" name="place">
+																<span>Albany</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Antioch::" name="place">
+																<span>Antioch</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Bay_Area::" name="place">
+																<span>Bay Area</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Belmont::" name="place">
+																<span>Belmont</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Benicia::" name="place">
+																<span>Benicia</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Berkeley::" name="place">
+																<span>Berkeley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Brentwood::" name="place">
+																<span>Brentwood</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Brisbane::" name="place">
+																<span>Brisbane</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Burlingame::" name="place">
+																<span>Burlingame</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Campbell::" name="place">
+																<span>Campbell</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Carmel::" name="place">
+																<span>Carmel</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Castro_Valley::" name="place">
+																<span>Castro Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Colma::" name="place">
+																<span>Colma</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Concord::" name="place">
+																<span>Concord</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Corte_Madera::" name="place">
+																<span>Corte Madera</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Cotati::" name="place">
+																<span>Cotati</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Daly_City::" name="place">
+																<span>Daly City</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Danville::" name="place">
+																<span>Danville</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Dixon::" name="place">
+																<span>Dixon</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Dublin::" name="place">
+																<span>Dublin</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:El_Cerrito::" name="place">
+																<span>El Cerrito</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:El_Dorado_Hills::"
+																name="place"> <span>El Dorado Hills</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Elk_Grove::" name="place">
+																<span>Elk Grove</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Emeryville::" name="place">
+																<span>Emeryville</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Fair_Oaks::" name="place">
+																<span>Fair Oaks</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Fairfax::" name="place">
+																<span>Fairfax</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Fairfield::" name="place">
+																<span>Fairfield</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Foster_City::" name="place">
+																<span>Foster City</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Fremont::" name="place">
+																<span>Fremont</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Gilroy::" name="place">
+																<span>Gilroy</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Greenbrae::" name="place">
+																<span>Greenbrae</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Half_Moon_Bay::" name="place">
+																<span>Half Moon Bay</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Hayward::" name="place">
+																<span>Hayward</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Healdsburg::" name="place">
+																<span>Healdsburg</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Hollister::" name="place">
+																<span>Hollister</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Lafayette::" name="place">
+																<span>Lafayette</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Larkspur::" name="place">
+																<span>Larkspur</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Livermore::" name="place">
+																<span>Livermore</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Los_Altos::" name="place">
+																<span>Los Altos</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Los_Gatos::" name="place">
+																<span>Los Gatos</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Marin::" name="place">
+																<span>Marin</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Marin_County::" name="place">
+																<span>Marin County</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Martinez::" name="place">
+																<span>Martinez</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Menlo_Park::" name="place">
+																<span>Menlo Park</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Mill_Valley::" name="place">
+																<span>Mill Valley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Millbrae::" name="place">
+																<span>Millbrae</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Milpitas::" name="place">
+																<span>Milpitas</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Modesto::" name="place">
+																<span>Modesto</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Morgan_Hill::" name="place">
+																<span>Morgan Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Mountain_View::" name="place">
+																<span>Mountain View</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Napa::" name="place">
+																<span>Napa</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Newark::" name="place">
+																<span>Newark</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Novato::" name="place">
+																<span>Novato</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakland::" name="place">
+																<span>Oakland</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Oakley::" name="place">
+																<span>Oakley</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Pacifica::" name="place">
+																<span>Pacifica</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Palo_Alto::" name="place">
+																<span>Palo Alto</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Petaluma::" name="place">
+																<span>Petaluma</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Pinole::" name="place">
+																<span>Pinole</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Pleasant_Hill::" name="place">
+																<span>Pleasant Hill</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Pleasanton::" name="place">
+																<span>Pleasanton</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Rancho_Cordova::" name="place">
+																<span>Rancho Cordova</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Redwood_City::" name="place">
+																<span>Redwood City</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Richmond::" name="place">
+																<span>Richmond</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Rohnert_Park::" name="place">
+																<span>Rohnert Park</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Roseville::" name="place">
+																<span>Roseville</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:SF::" name="place"> <span>SF</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sacramento::" name="place">
+																<span>Sacramento</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Anselmo::" name="place">
+																<span>San Anselmo</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Bruno::" name="place">
+																<span>San Bruno</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Carlos::" name="place">
+																<span>San Carlos</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco::" name="place">
+																<span>San Francisco</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Francisco_Bay_Area::"
+																name="place"> <span>San Francisco Bay
+																	Area</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Jose::" name="place">
+																<span>San Jose</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Leandro::" name="place">
+																<span>San Leandro</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Lorenzo::" name="place">
+																<span>San Lorenzo</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Mateo::" name="place">
+																<span>San Mateo</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Rafael::" name="place">
+																<span>San Rafael</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:San_Ramon::" name="place">
+																<span>San Ramon</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Santa_Clara::" name="place">
+																<span>Santa Clara</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Santa_Cruz::" name="place">
+																<span>Santa Cruz</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Santa_Rosa::" name="place">
+																<span>Santa Rosa</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sausalito::" name="place">
+																<span>Sausalito</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sebastopol::" name="place">
+																<span>Sebastopol</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sonoma::" name="place">
+																<span>Sonoma</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:South_San_Francisco::"
+																name="place"> <span>South San Francisco</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:St._Helena::" name="place">
+																<span>St. Helena</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Stanford::" name="place">
+																<span>Stanford</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Stockton::" name="place">
+																<span>Stockton</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Sunnyvale::" name="place">
+																<span>Sunnyvale</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Tiburon::" name="place">
+																<span>Tiburon</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Tracy::" name="place">
+																<span>Tracy</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Union_City::" name="place">
+																<span>Union City</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Vacaville::" name="place">
+																<span>Vacaville</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Vallejo::" name="place">
+																<span>Vallejo</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Vineburg::" name="place">
+																<span>Vineburg</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Walnut_Creek::" name="place">
+																<span>Walnut Creek</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Watsonville::" name="place">
+																<span>Watsonville</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:West_Sacramento::"
+																name="place"> <span>West Sacramento</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Wilton::" name="place">
+																<span>Wilton</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Winters::" name="place">
+																<span>Winters</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Woodacre::" name="place">
+																<span>Woodacre</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Woodbridge::" name="place">
+																<span>Woodbridge</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Woodside::" name="place">
+																<span>Woodside</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Yountville::" name="place">
+																<span>Yountville</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Yuba_City::" name="place">
+																<span>Yuba City</span>
+														</label></li>
+														<li><label class="place radio-check"> <input
+																type="checkbox" value="CA:Zamora::" name="place">
+																<span>Zamora</span>
+														</label></li>
+													</ul>
+												</div></li>
+										</ul>
+
+									</div>
+
+									<div class="filter-set distance-filters">
+										<h4>距离</h4>
+										<ul class="radio-list radio-list-links main">
+											<li><label> <input type="radio"
+													value="g:-122.530517578,37.6859939294,-122.325897217,37.8488325065"
+													name="l" class="radio" checked="checked"> <span
+													class="radio-link">俯视图</span>
+											</label></li>
+											<li><label> <input type="radio"
+													value="g:-122.479362488,37.7267371848,-122.377052307,37.8081564815"
+													name="l" class="radio"> <span class="radio-link">驾驶路程（8公里）</span>
+											</label></li>
+											<li><label> <input type="radio"
+													value="g:-122.453784943,37.7471004123,-122.402629852,37.7878100617"
+													name="l" class="radio"> <span class="radio-link">单车路程（4公里）</span>
+											</label></li>
+											<li><label> <input type="radio"
+													value="g:-122.44099617,37.7572120667,-122.415418625,37.7775669102"
+													name="l" class="radio"> <span class="radio-link">步行路程（2公里）</span>
+											</label></li>
+											<li><label> <input type="radio"
+													value="g:-122.431404591,37.7648627525,-122.425010204,37.7699514622"
+													name="l" class="radio"> <span class="radio-link">半公里以内</span>
+											</label></li>
+										</ul>
+									</div>
+
+									<div class="filter-set price-filters">
+										<h4>价格</h4>
+										<ul class="main">
+											<li><label class="radio-check"> <input
+													type="checkbox" value="RestaurantsPriceRange2.1"
+													name="price"> <span>$</span>
+											</label></li>
+											<li><label class="radio-check"> <input
+													type="checkbox" value="RestaurantsPriceRange2.2"
+													name="price"> <span>$$</span>
+											</label></li>
+											<li><label class="radio-check"> <input
+													type="checkbox" value="RestaurantsPriceRange2.3"
+													name="price"> <span>$$$</span>
+											</label></li>
+											<li><label class="radio-check"> <input
+													type="checkbox" value="RestaurantsPriceRange2.4"
+													name="price"> <span>$$$$</span>
+											</label></li>
+										</ul>
+									</div>
+
+									<div class="filter-set feature-filters">
+										<h4>特点</h4>
+										<ul class="main">
+											<li><label class="feature open-now radio-check">
+													<input type="checkbox" value="open_now" name="feature">
+
+													<span
+													class="i-wrap ig-wrap-common i-filter-clock-common-wrap clearfix"><i
+														class="i ig-common i-filter-clock-common"></i> 开放中 <span
+														class="current-time"></span> </span>
+											</label></li>
+											<li><label class="feature radio-check"> <input
+													type="checkbox" value="BusinessAcceptsCreditCards"
+													name="feature"> <span>是否接受信用卡</span>
+											</label></li>
+										</ul>
+
+										<a href="javascript:;" class="more-link">更多筛选项目</a>
+
+										<ul class="more feature-more">
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header active toggle-arrow-open"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 一般筛选项目</span>
+												<div class="js-toggle-list-content toggle-content content">
+													<ul class="column">
+														<li><span class="feature open-at radio-check">
+																<label> <input type="checkbox" value="open_time"
+																	name="feature"> 开放时间：[[time of day]]
+															</label><br> <input type="text" value="18:05"
+																class="open-at"> <select name="day">
+																	<option value="0">周一</option>
+																	<option value="1">周二</option>
+																	<option value="2" selected="selected">周三</option>
+																	<option value="3">周四</option>
+																	<option value="4">周五</option>
+																	<option value="5">周六</option>
+																	<option value="6">周日</option>
+															</select>
+														</span></li>
+														<li><label class="feature open-now radio-check">
+																<input type="checkbox" value="open_now" name="feature">
+
+																<span
+																class="i-wrap ig-wrap-common i-filter-clock-common-wrap clearfix"><i
+																	class="i ig-common i-filter-clock-common"></i> 开放中 <span
+																	class="current-time"></span> </span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="BusinessAcceptsCreditCards"
+																name="feature"> <span>是否接受信用卡</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 酒类饮品</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Alcohol.full_bar" name="feature">
+
+																<span>酒吧</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Alcohol.beer_and_wine"
+																name="feature"> <span>啤酒及餐酒</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="HappyHour" name="feature">
+
+																<span>Happy Hour</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 提供菜式</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="GoodForMeal.breakfast"
+																name="feature"> <span>早餐</span>
+														</label></li>
+														<li><label class="feature radio-check disabled">
+																<input type="checkbox" value="GoodForMeal.brunch"
+																name="feature" disabled="disabled"> <span>Brunch</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="GoodForMeal.lunch" name="feature">
+
+																<span>午餐</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="GoodForMeal.dinner"
+																name="feature"> <span>晚餐</span>
+														</label></li>
+														<li><label class="feature radio-check disabled">
+																<input type="checkbox" value="GoodForMeal.dessert"
+																name="feature" disabled="disabled"> <span>甜品</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="GoodForMeal.latenight"
+																name="feature"> <span>宵夜</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 音乐</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Music.dj" name="feature">
+
+																<span>DJ</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Music.jukebox" name="feature">
+
+																<span>点唱机</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Music.karaoke" name="feature">
+
+																<span>卡拉OK</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Music.live" name="feature">
+
+																<span>现场</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 停车场</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="BusinessParking.street"
+																name="feature"> <span>街道</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="BusinessParking.garage"
+																name="feature"> <span>停车场</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="BusinessParking.valet"
+																name="feature"> <span>代客</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="BusinessParking.lot"
+																name="feature"> <span>私人停车场</span>
+														</label></li>
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="BusinessParking.validated"
+																name="feature"> <span>免费泊车</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 无线上网</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="WiFi.free" name="feature">
+
+																<span>免费</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check disabled">
+																<input type="checkbox" value="WiFi.paid" name="feature"
+																disabled="disabled"> <span>收费</span>
+														</label></li>
+													</ul>
+												</div></li>
+											<li class="filter-group"><span
+												class="i-wrap ig-wrap-common i-toggle-arrow-title-common-wrap js-toggle-list-trigger header"
+												href="#"><i
+													class="i ig-common i-toggle-arrow-title-common"></i> 吸烟</span>
+												<div
+													class="js-toggle-list-content toggle-content content hidden">
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Smoking.no" name="feature">
+
+																<span>不是</span>
+														</label></li>
+														<li><label class="feature radio-check disabled">
+																<input type="checkbox" value="Smoking.outdoor"
+																name="feature" disabled="disabled"> <span>室外场地／庭院</span>
+														</label></li>
+													</ul>
+													<ul class="column">
+														<li><label class="feature radio-check"> <input
+																type="checkbox" value="Smoking.yes" name="feature">
+
+																<span>是</span>
+														</label></li>
+													</ul>
+												</div></li>
+										</ul>
+
+									</div>
+
+
+
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+
+					<div
+						class="clearfix layout-block layout-a scroll-map-container search-results-block">
+						<div class="column column-alpha ">
+							<div class="results-wrapper">
+								<div class="search-results-content">
+									<ul class="ylist ylist-bordered search-results">
+                                        [#list list as item]
+
+										<li>
+											<div data-key="1" class="search-result natural-search-result">
+												<div class="biz-listing-large">
+													<div class="main-attributes">
+														<div class="media-block media-block--12">
+															<div class="media-avatar">
+																<div class="photo-box pb-90s">
+																	<a
+																		href="${siteurl}shop/view.htm?id=${item.id}">
+																		<img width="90" height="90"
+																		src="${item.image!'/assets/images/head.png'}"
+																		class="photo-box-img"
+																		alt="BYOBW- Bring Your Own Big Wheel Race">
+
+																	</a>
+
+																</div>
+
+
+
+															</div>
+															<div class="media-story">
+																<h3 class="search-result-title">
+																	<span class="indexed-biz-name">${item_index+1}. <a
+																		data-hovercard-id="QhmWUZ7_QqG_AflTFbTe-w"
+																		href="${siteurl}shop/view.htm?id=${item.id}"
+																		class="biz-name">${item.name!""}</a>
+																	</span>
+
+																</h3>
+
+																<div class="biz-rating biz-rating-large clearfix">
+
+																	<div class="rating-large">
+																		<i title="5.0星级评分" class="star-img stars_5"> <img
+																			width="84" height="303"
+																			src="//s3-media4.fl.yelpcdn.com/assets/srv0/yelp_styleguide/c2252a4cd43e/assets/img/stars/stars_map.png"
+																			class="offscreen" alt="5.0星级评分">
+																		</i>
+																	</div>
+
+
+																	<span class="review-count rating-qualifier">
+																		${item.comment_num!"0"}条评语 </span>
+
+																</div>
+
+																<div class="price-category">
+																	<span class="category-str-list"> <a
+																		href="/search?find_desc=&amp;find_loc=San+Francisco%2C+CA&amp;cflt=localflavor">[#if item.category??]${item.category.cname!""}[/#if]</a>
+																	</span>
+
+
+																</div>
+
+
+																<ul class="tags">
+																</ul>
+
+															</div>
+														</div>
+													</div>
+
+													<div class="secondary-attributes">
+														<span class="neighborhood-str-list">${item.area.parent.name!""} </span>
+
+														<address>
+															<br>${item.area.name!""}<br>
+															${item.address!""}
+														</address>
+
+
+
+														<span class="offscreen">电话号码</span> <span
+															class="biz-phone">${item.phone!""} </span>
+
+													</div>
+												</div>
+
+
+
+
+
+
+
+											</div>
+
+										</li>
+			                            [/#list]
+									</ul>
+
+
+                                    [#include "/theme/yelp/common/pageryelpsearch.html"]
+                                    [@pager page curpage "${siteurl}search.htm?pagesize=${pagesize}&catalog=${catalog!'1'}"][/@pager]
+					      
+							
+
+
+								</div>
+							</div>
+
+						</div>
+						<div class="column column-beta ">
+							<div class="map-wrapper">
+								<div class="search-map">
+									<div class="map-header clearfix">
+										<a
+											class="i-wrap ig-wrap-search i-momap-search-wrap mo-map-trigger"
+											href="javascript:;"><i class="i ig-search i-momap-search"></i>
+											<span>放大地图</span></a>
+
+										<div class="cube-wrapper">
+											<div class="cube show-face1">
+												<div class="face face1">
+													<label> <input type="checkbox"> 在地图被移动后重新搜寻
+													</label>
+												</div>
+												<div class="face face2">
+													<a class="ybtn ybtn-primary ybtn-small redo-search">重新在地图上搜寻</a>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="yelp-map-container" id="map-container">
+										<div id="allmap" class="engine-container"></div>
+									</div>
+								</div>
+								<div class="right-rail-yla-wrapper"></div>
+								<div id="search-adsense"></div>
+							</div>
+
+						</div>
+					</div>
+					<div class="clearfix layout-block layout-a search-footer-block">
+						<div class="column column-alpha ">
+							<div class="talk-list-container">
+								<div class="column"></div>
+								<div class="column"></div>
+
+							</div>
+
+						</div>
+						<div class="column column-beta ">
+						         <div class="search-feedback-box island">
+									<div class="feedback-biz-suggest">
+										<h3>没找到？我还是想点评。</h3>
+										<p>如果没找到你想找的商店，新增啦！</p>
+										<a href="${siteurl}/user/newbiz.htm" id="add-biz-button" class="ybtn ybtn-primary ybtn-small ytype">新增商店</a>
+									</div>
+									<div class="feedback-contact">
+										对搜寻结果有意见？<a href="/contact?topic=feedback" class="search-feedback">帮我地改进。</a>
+									</div>
+								</div>
+
+						</div>
+					</div>
+
+					<input class="hidden" id="goog-history-input">
+
+
+
+
+
+				</div>
+
+
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+ <script type="text/javascript">
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");
+	// 编写自定义函数,创建标注
+	function addMarker(point) {
+		var marker = new BMap.Marker(point);
+		map.addOverlay(marker);
+	}
+	//var marker = new BMap.Marker(point);
+	//map.addOverlay(marker);
+
+	var top_left_control = new BMap.ScaleControl({
+		anchor : BMAP_ANCHOR_TOP_LEFT
+	});// 左上角，添加比例尺
+	var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
+	var top_right_navigation = new BMap.NavigationControl({
+		anchor : BMAP_ANCHOR_TOP_RIGHT,
+		type : BMAP_NAVIGATION_CONTROL_SMALL
+	}); //右上角，仅包含平移和缩放按钮
+	/*缩放控件type有四种类型:
+	BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+
+	//添加控件和比例尺
+	function add_control() {
+		map.addControl(top_left_control);
+		//map.addControl(top_left_navigation);
+		map.addControl(top_right_navigation);
+	}
+	//移除控件和比例尺
+	function delete_control() {
+		map.removeControl(top_left_control);
+		map.removeControl(top_left_navigation);
+		map.removeControl(top_right_navigation);
+	}
+	add_control();
+
+	// 添加带有定位的导航控件
+	var navigationControl = new BMap.NavigationControl({
+		// 靠左上角位置
+		anchor : BMAP_ANCHOR_TOP_LEFT,
+		// LARGE类型
+		type : BMAP_NAVIGATION_CONTROL_LARGE,
+		// 启用显示定位
+		enableGeolocation : true
+	});
+	map.addControl(navigationControl);
+	// 添加定位控件
+	var geolocationControl = new BMap.GeolocationControl();
+	geolocationControl.addEventListener("locationSuccess", function(e) {
+		// 定位成功事件
+		var address = '';
+		address += e.addressComponent.province;
+		address += e.addressComponent.city;
+		address += e.addressComponent.district;
+		address += e.addressComponent.street;
+		address += e.addressComponent.streetNumber;
+		//alert("当前定位地址为：" + address);
+	});
+	geolocationControl.addEventListener("locationError", function(e) {
+		// 定位失败事件
+		// alert(e.message);
+	});
+	map.addControl(geolocationControl);
+
+	var opts = {
+		width : 250, // 信息窗口宽度
+		height : 80, // 信息窗口高度
+		title : "信息窗口", // 信息窗口标题
+		enableMessage : true
+	//设置允许信息窗发送短息
+	};
+	var content = "门道网";
+	// marker.addEventListener("click",function(e){openInfo(content,e)});
+	function openInfo(content, e) {
+		var p = e.target;
+		var point = new BMap.Point(p.getPosition().lng, p.getPosition().lat);
+		var infoWindow = new BMap.InfoWindow(content, opts); // 创建信息窗口对象 
+		map.openInfoWindow(infoWindow, point); //开启信息窗口
+	}
+
+	// 创建地址解析器实例
+	function geowork() {
+		var myGeo = new BMap.Geocoder();
+		// 将地址解析结果显示在地图上,并调整地图视野
+		myGeo.getPoint("西安市", function(point) {
+			if (point) {
+				map.centerAndZoom(point, 16);
+				//map.addOverlay(new BMap.Marker(point));
+			}
+		}, "西安市");
+	}
+	function golocal() {
+
+		var geolocation = new BMap.Geolocation();
+		geolocation.getCurrentPosition(function(r) {
+			if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+				//var mk = new BMap.Marker(r.point);
+				//map.addOverlay(mk);
+				map.panTo(r.point);
+				//alert('您的位置：'+r.point.lng+','+r.point.lat);
+			} else {
+				geowork();
+			}
+		}, {
+			enableHighAccuracy : true
+		})
+
+	}
+	var geoc = new BMap.Geocoder();
+
+	
+	function addponit(point){
+		var marker = new BMap.Marker(point);
+		map.addOverlay(marker);
+	}
+	
+	[#if list?? && list?size>0]
+	[#list list as item]
+	
+	[#if item_index==0]
+	map.centerAndZoom(new BMap.Point(${item.gps!"108.952308, 34.27783"}), 14);
+	[/#if]
+	
+	var p= new BMap.Point(${item.gps!"108.952308, 34.27783"});
+	addponit(p);
+	[/#list]
+	[#else]
+	map.centerAndZoom(new BMap.Point(108.952308, 34.27783), 14);
+	[/#if]
+	
+	$(document).ready(function(){
+		$(".show-hide").click(function(){
+			
+			if($(".inner-wrap").css("display")=="none"){
+				$("#filterspan").text("隐藏筛选器");
+			}else{
+				$("#filterspan").text("显示筛选器");
+			}
+			$(".inner-wrap").toggle();
+			
+			//i-dropdown-arrow-common
+		});
+		
+		$("#morediv").click(function(){
+	    	   $(".js-top-category-browse-links").toggle();
+				$(".js-all-category-browse-links").toggle();
+	       });
+       $("#lessdiv").click(function(){
+    	   $(".js-top-category-browse-links").toggle();
+			$(".js-all-category-browse-links").toggle();
+       });
+		//js-top-category-browse-links
+		//js-all-category-browse-links
+		
+	});
+</script>
+</body>
+
+</html>

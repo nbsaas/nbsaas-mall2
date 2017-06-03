@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user_details-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				
+
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="user-header">
+
+
+
+				
+
+										<ul class="clearfix" id="userTabs">
+
+						<li ><a
+							href="${siteurl}user_details.htm?id=${id!'-1'}">个人主页</a></li>
+
+						<li class="selected"><a
+							href="${siteurl}user_details_lists.htm?id=${id!'-1'}">列表</a></li>
+
+						<li><a
+							href="${siteurl}user_details_reviews_self.htm?id=${id!'-1'}">评语</a></li>
+
+						<li><a
+							href="${siteurl}user_details_quicktips.htm?id=${id!'-1'}">贴士</a></li>
+
+						<li><a
+							href="${siteurl}user_details_thanx.htm?id=${id!'-1'}">赞扬</a></li>
+
+						<li ><a
+							href="${siteurl}user_details_friends.htm?id=${id!'-1'}">朋友</a></li>
+
+						<li ><a href="${siteurl}user_details_following.htm?id=${id!'-1'}">关注中</a></li>
+
+						<li ><a
+							href="${siteurl}user_details_bookmarks.htm?id=${id!'-1'}">收藏</a></li>
+						<li ><a
+							href="${siteurl}user_details_events.htm?id=${id!'-1'}">活动</a></li>
+					</ul>
+
+					<div class="about-connections">
+                        [#include "user_details_include_top.html"]
+					</div>
+
+				</div>
+
+
+				<div id="user-details" class="container">
+					<div class="clearfix layout-block layout-o layout-border">
+						<div id="user_main_content" class="column column-alpha ">
+
+							<div id="user_lists_list" class="ieSucks clearfix">
+								<h3>列表</h3>
+								<div id="empty_reviews">
+									<img
+										style="float: left; vertical-align: middle; margin-right: 20px;"
+										src="http://s3-media4.fl.yelpcdn.com/assets/2/www/img/a2bf6452b6e7/gfx/empty_reviews.gif">
+									<p>你需要在建立表前先撰寫一些評語。點解唔寫噃啲呢？係你做評論家嘅時候啦！</p>
+									<p class="aligncent">
+										<a class="ybtn ybtn-primary"
+											href="https://zh.yelp.com.hk/writeareview">寫評語</a>
+									</p>
+								</div>
+							</div>
+
+						</div>
+						 [#include "user_details_left.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

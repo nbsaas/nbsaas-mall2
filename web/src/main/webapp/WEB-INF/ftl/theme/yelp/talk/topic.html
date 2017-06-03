@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>讨论-${item.topic!""}</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/talk.css" />
+		[#include "/theme/yelp/common/scripts.html"]
+<link rel="stylesheet"
+	href="${siteurl}assets/plugs/kindeditor/themes/default/default.css" />
+<script charset="utf-8"
+	src="${siteurl}assets/plugs/kindeditor/kindeditor-all-min.js"></script>
+<script charset="utf-8"
+	src="${siteurl}assets/plugs/kindeditor/lang/zh_CN.js"></script>
+</head>
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container homepage">
+					[#include "/theme/yelp/common/page-header.html"]
+					<div class="clearfix layout-block layout-n">
+						[#include "/theme/yelp/talk/nav.html"]
+						<div class="column column-beta talk-thread">
+
+
+
+							<div class="topics-list-header">
+								<div class="topics-list-header-title">
+									<h2>${item.topic!""}</h2>
+								</div>
+								<ul class="topics-list-header-actions topics-list-actions">
+									<li class="topics-list-actions-item">
+
+											<input type="hidden"
+												value="4a4cb35baccb2e4795ac19743eee2e7456a0453a89e90e320f9e44246a44299b"
+												class="csrftok" name="csrftok">
+											<div class="ybtn-group">
+												<button class="ybtn ybtn-small show-tooltip" value="submit"
+													type="submit">
+													<span> <i
+														class="i ig-common i-email-subscribe-common active"></i> <span
+														class="tooltip-wrapper"> <span class="tooltip">停止接收有关此对话的更新电邮</span>
+													</span>
+													</span>
+												</button>
+												<a
+													href="${siteurl}talk/flag.htm?id=${item.id}&state=1"
+													data-pop-uri="#"
+													class="ybtn ybtn-small flag show-tooltip"> <i
+													class="i ig-common i-action-flag-common"></i> <span
+													class="tooltip-wrapper"> <span class="tooltip">标注讨论为不当</span>
+												</span>
+												</a>
+
+											</div>
+											<input type="hidden" value="kt-Z_5lZQcdB4ARRR6Uhqw"
+												name="topic_id">
+
+
+									</li>
+									<li class="topics-list-actions-item"><a id="topics-top"
+										href="#topics-bottom" class="show-tooltip scroll-to-link">
+											<b aria-hidden="true">↓</b> <span class="tooltip-wrapper">
+												<span class="tooltip">页尾</span>
+										</span>
+									</a></li>
+								</ul>
+							</div>
+
+							<ol
+								class="ysection topics-list-messages ylist ylist-bordered ylist-border-top js-hovercards beginning-replies">
+								<li class="js-post-edit js-post-delete">
+									<div id="sB0Q3ZYW7kIGzY8nhtErwg" class="topic-reply">
+										<div class="ypassport-wrapper">
+											<div class="ypassport media-block">
+												<div class="media-avatar">
+													<div data-hovercard-id="fzxBobtjX10RLNpKJjXEnA"
+														class="photo-box pb-60s">
+														<a href="${siteurl}user_details.htm?id=${item.user.id}">
+															<img width="60" height="60"
+															src="${item.user.headimg!'/assets/images/head.png'}"
+															class="photo-box-img" alt="${item.user.name!''}">
+
+														</a>
+
+													</div>
+
+
+
+												</div>
+												<div class="media-story">
+													<ul class="user-passport-info">
+														<li class="user-name"><a
+															data-hovercard-id="fzxBobtjX10RLNpKJjXEnA"
+															href="${siteurl}user_details.htm?id=${item.user.id}"
+															class="user-display-name">${item.user.name!""}</a></li>
+														<li class="user-location"><b>西安</b></li>
+													</ul>
+
+													<ul class="user-passport-stats">
+														<li class="friend-count"><span
+															class="i-wrap ig-wrap-common i-friends-orange-common-wrap"><i
+																class="i ig-common i-friends-orange-common"></i> <b>${item.user.friends!"0"}</b>个朋友</span>
+														</li>
+														<li class="review-count"><span
+															class="i-wrap ig-wrap-common i-star-orange-common-wrap"><i
+																class="i ig-common i-star-orange-common"></i> <b>${item.user.comments!"0"}</b>条评语</span>
+														</li>
+
+													</ul>
+
+												</div>
+											</div>
+
+										</div>
+										<div class="topic-reply-body">
+											<span class="time-stamp pull-right">[@html.date date=item.adddate][/@html.date]</span>
+
+											<p class="message-text">${item.message!""}</p>
+											
+										</div>
+									</div>
+
+								</li>
+								[#if list??]
+								[#list list as item]
+								<li>
+									<div id="P0d_NtFlFFLLRv_dArxGpw" class="topic-reply">
+										<div class="ypassport-wrapper">
+											<div class="ypassport media-block">
+												<div class="media-avatar">
+													<div data-hovercard-id="0_5b9GtX2PYw4TuOthKBxg"
+														class="photo-box pb-60s">
+														<a href="${siteurl}user_details.htm?id=${item.user.id}">
+															<img width="60" height="60"
+															src="${item.user.headimg!'/assets/images/head.png'}"
+															class="photo-box-img" alt="${item.user.name!''}">
+
+														</a>
+
+													</div>
+
+
+
+												</div>
+												<div class="media-story">
+													<ul class="user-passport-info">
+														<li class="user-name"><a
+															href="${siteurl}user_details.htm?id=${item.user.id}"
+															class="user-display-name">${item.user.name!""}</a></li>
+														<li class="user-location"><b>西安</b></li>
+													</ul>
+
+													<ul class="user-passport-stats">
+														<li class="friend-count"><span
+															class="i-wrap ig-wrap-common i-friends-orange-common-wrap"><i
+																class="i ig-common i-friends-orange-common"></i> <b>${item.user.friends!"0"}</b>个朋友</span>
+														</li>
+														<li class="review-count"><span
+															class="i-wrap ig-wrap-common i-star-orange-common-wrap"><i
+																class="i ig-common i-star-orange-common"></i> <b>${item.user.comments!"0"}</b>条评语</span>
+														</li>
+														<li class="is-elite"><a href="/elite">精英’${item.user.goods!"0"}</a></li>
+
+													</ul>
+
+												</div>
+											</div>
+
+										</div>
+										<div class="topic-reply-body">
+											<span class="time-stamp pull-right">[@html.date date=item.adddate][/@html.date]</span>
+
+											<p class="message-text">${item.message!""}</p>
+											<div class="message-footer">
+												<div class="pull-right">
+													<div class="review-footer-actions pull-right clearfix">
+
+
+														<a
+															href="#"
+															data-pop-uri="#"
+															class="chiclet-link show-tooltip chiclet-link--flag">
+															<i class="i ig-common i-action-flag-common"></i> <span
+															class="tooltip-wrapper"> <span class="tooltip">举报为不当</span>
+														</span>
+														</a>
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</li>
+								 [/#list] 
+								 [/#if]
+
+
+							</ol>
+                           [#include "/theme/yelp/common/pageryelp.html"]
+                            [@pager page curpage "${siteurl}talk/topic.htm?id=${id}&pagesize=${pagesize}&category=${category!'1'}"][/@pager]
+					          <br/>
+
+							<ul class="ysection topics-list-footer topics-list-actions">
+								<li class="topics-list-actions-item">
+
+										<input type="hidden"
+											value="4a4cb35baccb2e4795ac19743eee2e7456a0453a89e90e320f9e44246a44299b"
+											class="csrftok" name="csrftok">
+										<div class="ybtn-group">
+											<button class="ybtn ybtn-small show-tooltip" value="submit"
+												type="submit">
+												<span> <i
+													class="i ig-common i-email-subscribe-common active"></i> <span
+													class="tooltip-wrapper"> <span class="tooltip">停止接收有关此对话的更新电邮</span>
+												</span>
+												</span>
+											</button>
+											<a
+												href="${siteurl}talk/flag.htm?id=${item.id}&state=1"
+												data-pop-uri="#"
+												class="ybtn ybtn-small flag show-tooltip"> <i
+												class="i ig-common i-action-flag-common"></i> <span
+												class="tooltip-wrapper"> <span class="tooltip">标注讨论为不当</span>
+											</span>
+											</a>
+
+										</div>
+										<input type="hidden" value="kt-Z_5lZQcdB4ARRR6Uhqw"
+											name="topic_id">
+
+
+								</li>
+								<li class="topics-list-actions-item"><a id="topics-bottom"
+									href="#wrap" class="show-tooltip scroll-to-link"> <b
+										aria-hidden="true">↑</b> <span class="tooltip-wrapper">
+											<span class="tooltip">页顶</span>
+									</span>
+								</a></li>
+							</ul>
+
+
+
+
+
+							<form name="talk_form_post" method="POST"
+								class="talk-form-post yform ytype js-captcha-form"
+								action="${siteurl}talk/create_reply.htm">
+								<input type="hidden" value="${item.id}" class="csrftok"
+									name="talk.id"> <input type="hidden"
+									value="${category!'-1'}" name="category">
+
+								<div class="reply-text">
+									<label> 输入你的回复</label>
+									<div class="char-counted-field">
+										<textarea  id="new-conversation-message" name="message"></textarea>
+										<span class="info-field pull-right"></span>
+									</div>
+
+									<input type="hidden" value="1" id="subscribe_cb"
+										name="subscribe">
+									<fieldset>
+										<button
+											class="ybtn ybtn-primary disable-on-submit topic-post-action"
+											value="submit" type="submit" id="reply_button">
+											<span>回复</span>
+										</button>
+										<a class="guidelines-pop-link smaller talk-pop"
+											href=#>查阅我们的讨论指引</a>
+									</fieldset>
+								</div>
+
+							</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+ <script type="text/javascript">
+		var editor = KindEditor.create('textarea[name="message"]', {
+			themeType : 'simple',
+			width : '624px',
+			minWidth : '200px',
+			uploadJson : '${siteurl}/image/upmendaoimgwork.htm',
+			fileManagerJson : '${siteurl}/image/listimages.htm',
+			allowFileManager : false,
+			allowImageUpload : false,
+			items : [
+				'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline',
+				'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'insertorderedlist',
+				'insertunorderedlist', '|', 'emoticons', 'image', 'link']
+		});
+	</script>
+
+</body>
+
+</html>

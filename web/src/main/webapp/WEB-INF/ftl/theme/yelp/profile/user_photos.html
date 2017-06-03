@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+[#include "/theme/yelp/common/scripts.html"]
+<link rel="stylesheet"
+	href="${siteurl}assets/plugs/kindeditor/themes/default/default.css" />
+<script charset="utf-8"
+	src="${siteurl}assets/plugs/kindeditor/kindeditor-min.js"></script>
+<script charset="utf-8"
+	src="${siteurl}assets/plugs/kindeditor/lang/zh_CN.js"></script>
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container user_photos_page">
+					<div class="ytype">
+						<div class="section-header header-with-ui header-with-ui-aligned">
+							<ul class="breadcrumbs">
+								<li><a
+									href="${siteurl}user_details.htm?id=${user.id}">${user.name}</a></li>
+								<li><span
+									class="i-wrap ig-wrap-common i-breadcrumb-arrow-common-wrap breadcrumb-wrap"><i
+										class="i ig-common i-breadcrumb-arrow-common"></i> 个人档案相片</span></li>
+							</ul>
+
+
+							<h2 class="hd-title">你的相片</h2>
+
+						</div>
+					</div>
+
+
+					<div class="clearfix layout-block layout-full">
+						<div class="column column-alpha ">
+							<div id="html-uploader">
+
+								<form name="user_photos_upload_form" method="get"
+									enctype="multipart/form-data" class="yform"
+									action="${siteurl}profile/user_photos_add.htm">
+
+
+
+									<p>按下面的按键去加入你的相片，同时亦可以新增一个说明字幕，然后按"上载相片"去储存你的更变。</p>
+									<div>
+										<input name="url" required="required" readonly="readonly"
+											type="text" id="url1" value=""
+											style="display: inline-block; width: 300px" /> <input
+											type="button" id="image1" value="选择图片" />
+									</div>
+
+									<label> 新增一个说明字幕</label> <span class="help-inline">可选择填写与否</span>
+
+									<input type="text" value="" maxlength="128" size="30"
+										name="messages"><br>
+									<button class="ybtn ybtn-small" value="submit" type="submit"
+										id="upload_button">
+										<span>上载相片</span>
+									</button>
+
+								</form>
+							</div>
+
+							<ol class="clearfix" id="user_photos_self">
+
+                                [#if comments ??]
+                                [#list comments as item]
+								<li class="primary-photo">
+									<div class="wrapper">
+
+
+
+
+										<div class="photo-box pb-m">
+											<a
+												href="${item.url!''}">
+												<img alt="" class="photo-box-img" style="width: 100px;height: 73px;"
+												src="${item.url!''}">
+											</a>
+										</div>
+                                         [#if item.photo==1]
+										<p class="highlight2">首選相片</p>
+										[#else]
+														<p class="highlight2"><a href="${siteurl}profile/user_photos_set.htm?id=${item.id}">設定為首選</a></p>
+										[/#if]
+										<p>
+											<a href="${siteurl}profile/user_photos_delete.htm?id=${item.id}">刪除</a>
+										</p>
+
+
+
+
+
+
+										<form
+											action="${siteurl}profile/user_photos_update.htm"
+											class="photo-caption-field yform" method="POST">
+											<input name="id" class="csrftok"
+												value="${item.id}"
+												type="hidden"> <input name="context"
+												value="hKw8zGncNiiw-bywbFi4YQ" type="hidden"> <label
+												for="photo-caption-0">相片說明字幕</label> <span
+												class="help-inline">可選擇填寫與否</span>
+											<div data-component-bound="true" class="counter-container">
+												<textarea id="photo-caption-0" name="messages"
+													class="captioninput">${item.messages!''}</textarea>
+											</div>
+											<button name="action_edit_caption" type="submit"
+												value="submit" class="ybtn ybtn-small">
+												<span>儲存</span>
+											</button>
+										</form>
+									</div>
+								</li>
+
+							
+                                [/#list]
+                                 [/#if]     
+
+
+							</ol>
+
+								 [#include "/theme/yelp/common/pageryelp.html"]
+                                [@pager page curpage "${siteurl}profile/user_photos.htm?pagesize=${pagesize}"][/@pager]
+					      
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+	<script type="text/javascript">
+		function opendialog(imgurl, img) {
+
+			editor.loadPlugin('image', function() {
+				editor.plugin
+						.imageDialog({
+							showRemote : false,
+							imageUrl : $(imgurl).val(),
+							clickFn : function(url, title, width, height,
+									border, align) {
+								$(imgurl).val(url);
+								var imageurl = "${siteurl}/" + url
+								$(img).attr("src", imageurl);
+
+								editor.hideDialog();
+							}
+						});
+			});
+		}
+
+		KindEditor.ready(function(K) {
+			var editor = KindEditor.editor({
+				allowFileManager : true,
+				uploadJson : '${siteurl}/image/upimgwork.htm'
+			});
+			K('#image1').click(
+					function() {
+						editor.loadPlugin('image', function() {
+							editor.plugin.imageDialog({
+								imageUrl : K('#url1').val(),
+								clickFn : function(url, title, width, height,
+										border, align) {
+									K('#url1').val(url);
+									editor.hideDialog();
+								}
+							});
+						});
+					});
+		});
+	</script>
+
+</body>
+
+</html>

@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="utf-8" />
+<title>活动分类管理</title> [#include "/admin/common/commonurl.html"]
+<style type="text/css">
+.titleinfo {
+	width: 60px;
+}
+</style>
+</head>
+
+<body class="no-skin">
+	<div id="navbar" class="navbar navbar-default">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('navbar', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		[#include "/admin/common/navbar.html"]
+
+		<!-- /.navbar-container -->
+	</div>
+
+	<div class="main-container" id="main-container">
+		<script type="text/javascript">
+			try {
+				ace.settings.check('main-container', 'fixed')
+			} catch (e) {
+			}
+		</script>
+
+		<div id="sidebar" class="sidebar                  responsive">
+			<script type="text/javascript">
+				try {
+					ace.settings.check('sidebar', 'fixed')
+				} catch (e) {
+				}
+			</script>
+			[#include "/admin/common/shortcuts.html"]
+			<!-- /.sidebar-shortcuts -->
+
+			<!-- .nav-list -->
+			[#include "/admin/common/commonmenu.html"]
+			<ul class="nav nav-list">[@menustag id=1] [#list list as item]
+				[@menu item "1,8,13"] [/@menu] [/#list] [/@menustag]
+			</ul>
+			<!-- /.nav-list -->
+
+			<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+				<i class="ace-icon fa fa-angle-double-left"
+					data-icon1="ace-icon fa fa-angle-double-left"
+					data-icon2="ace-icon fa fa-angle-double-right"></i>
+			</div>
+
+			<script type="text/javascript">
+				try {
+					ace.settings.check('sidebar', 'collapsed')
+				} catch (e) {
+				}
+			</script>
+		</div>
+
+		<div class="main-content">
+			<div class="breadcrumbs" id="breadcrumbs">
+				<script type="text/javascript">
+					try {
+						ace.settings.check('breadcrumbs', 'fixed')
+					} catch (e) {
+					}
+				</script>
+
+				<ul class="breadcrumb">
+					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">首页</a>
+					</li>
+
+					<li class="active">欢迎光临</li>
+				</ul>
+				<!-- /.breadcrumb -->
+
+				<div class="nav-search" id="nav-search">
+					<form class="form-search">
+						<span class="input-icon"> <input type="text"
+							placeholder="Search ..." class="nav-search-input"
+							id="nav-search-input" autocomplete="off" /> <i
+							class="ace-icon fa fa-search nav-search-icon"></i>
+						</span>
+					</form>
+				</div>
+				<!-- /.nav-search -->
+			</div>
+
+
+
+			<div class="page-content">
+
+				<form action="${siteurl}/admin/area/circle_save.htm"
+					autocomplete="off" id="myform" method="post" name="myform">
+					<input type="hidden" value="5" name="levelinfo">
+					<table
+						class="table table-hover table-striped table-bordered wst-form">
+						<tbody>
+							<tr>
+								<th width="120" align="right">商圈名称<font color="red">*</font>：
+								</th>
+								<td><input type="text" maxlength="25" value=""
+									class="form-control wst-ipt" id="name" name="name">
+								<div id="communityNameTip"
+										style="display: inline-block; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%;"
+										class="onShow">
+										<div class="onShow"></div>
+									</div></td>
+							</tr>
+							<tr>
+								<th align="right">所属地区<font color="red">*</font>：
+								</th>
+								<td><select
+									onchange="javascript:getAreaList(&quot;areaId2&quot;,this.value,0)"
+									id="areaId1">
+								</select> <select
+									onchange="javascript:getAreaList(&quot;areaId3&quot;,this.value,1)"
+									id="areaId2">
+										<option value="">请选择</option>
+								</select> 
+								<select id="areaId3" name="parent.id">
+										<option value="">请选择</option>
+								</select>
+								<div id="areaId3Tip"
+										style="display: inline-block; margin: 0px; padding: 0px; background: transparent none repeat scroll 0% 0%;"
+										class="onShow">
+										<div class="onShow"></div>
+									</div></td>
+							</tr>
+							<tr>
+								<th align="right">是否显示<font color="red">*</font>：
+								</th>
+								<td><label> <input type="radio" checked=""
+										value="1" name="isShow" id="isShow1">显示&nbsp;&nbsp;
+								</label> <label> <input type="radio" value="0" name="isShow"
+										id="isShow0">隐藏
+								</label></td>
+							</tr>
+							<tr>
+								<th align="right">排序号<font color="red">*</font>：
+								</th>
+								<td><input type="text" maxlength="8" name="sortnum"
+									style="width: 80px" value="0" class="form-control wst-ipt"
+									id="communitySort"></td>
+							</tr>
+							<tr>
+								<td style="padding-left: 250px;" colspan="2">
+									<button class="btn btn-success" type="submit">保&nbsp;存</button>
+									<button
+										onclick="javascript:location.href=&quot;${siteurl}admin/area/circles.htm&quot;"
+										class="btn btn-primary" type="button">返&nbsp;回</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+
+			</div>
+		</div>
+		<!-- /.main-content -->
+
+		[#include "/admin/common/footer.html"]
+
+	</div>
+	<!-- /.main-container -->
+
+	<!-- basic scripts -->
+
+	[#include "/admin/common/scripts.html"]
+	<script src="${siteurl}assets/js/jsrender.min.js"></script>
+
+	<!-- inline scripts related to this page -->
+
+	<script type="text/javascript">
+	 $(document).ready(function(){
+		 
+		 $.getJSON("${siteurl}/area/querybylist.htm", function(data) { 
+			    // Now use this data to update your view models, 
+			    // and Knockout will update your UI automatically 
+			 var template = $.templates("#areastemplate");
+              var areas={};
+              areas.areas=data;
+			 var htmlOutput = template.render(areas);
+			
+			 $("#areaId1").html(htmlOutput);
+		});
+	 });
+	 
+	 function getAreaList(ele,id,level){
+		// alert(id);
+		 $.getJSON("${siteurl}/area/querybylist.htm?id="+id, function(data) { 
+			    // Now use this data to update your view models, 
+			    // and Knockout will update your UI automatically 
+			 var template = $.templates("#areastemplate");
+           var areas={};
+           areas.areas=data;
+			 var htmlOutput = template.render(areas);
+			
+			 $("#"+ele).html(htmlOutput);
+		});
+	 }
+	</script>
+
+	<script id="areastemplate" type="text/x-jsrender">
+  <option value="">请选择</option>
+  {{for areas}}
+   <option value="{{>id}}">{{>name}}</option>
+  {{/for}}
+	</script>
+</body>
+</html>
