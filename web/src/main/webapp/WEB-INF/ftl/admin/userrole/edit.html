@@ -33,7 +33,7 @@ margin-right: 10px;
 			<!-- .nav-list -->
 			[#include "/admin/common/commonmenu.html"]
 			<ul class="nav nav-list">[@menustag id=1] [#list list as item]
-				[@menu item "1,54,82"] [/@menu] [/#list] [/@menustag]
+				[@menu item "1,51,55"] [/@menu] [/#list] [/@menustag]
 			</ul>
 			<!-- /.nav-list -->
 
@@ -47,12 +47,6 @@ margin-right: 10px;
 
 		<div class="main-content">
 			<div class="breadcrumbs" id="breadcrumbs">
-				<script type="text/javascript">
-					try {
-						ace.settings.check('breadcrumbs', 'fixed')
-					} catch (e) {
-					}
-				</script>
 
 				<ul class="breadcrumb">
 					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">首页</a>
@@ -122,14 +116,14 @@ margin-right: 10px;
 
 								<div class="col-sm-11">
 									<span class="fieldSet">
-									    [#if item.childrens?? && item.childrens?size>0]
-									    [@menuchilds id=item.id]
-									    [#list list as childitem]
-										<label>
-											<input type="checkbox" [#if model.authorities?seq_contains("${childitem.permission}")] checked="checked"[/#if]  value="${childitem.permission}" name="authorities">${childitem.name}
-										</label>
-										[/#list]
-										[/@menuchilds]
+									    [#if item?? ]
+											[@menuchilds id=item.id]
+											[#list list as childitem]
+											<label>
+												<input type="checkbox" [#if model.authorities?seq_contains("${childitem.permission}")] checked="checked"[/#if]  value="${childitem.permission}" name="authorities">${childitem.name}
+											</label>
+											[/#list]
+											[/@menuchilds]
 										[/#if]
 									</span>
 								</div>

@@ -73,6 +73,7 @@
 
 
 	<bean id="haveVoteDirective" class="com.quhaodian.web.freemaker.HaveVoteDirective"></bean>
+	<bean id="menuChildsDirective" class="com.ada.admin.freemaker.MenuChildsDirective"></bean>
 
 
 
@@ -119,12 +120,10 @@
 				<entry key="shopreview_" value-ref="shopReviewDirective" />
 				<entry key="shopimage_" value-ref="shopImageDirective" />
 				<entry key="shopimagelist_" value-ref="shopImageListDirective" />
-
-
+				<entry key="menuchilds" value-ref="menuChildsDirective" />
 				<entry key="havevote" value-ref="haveVoteDirective" />
-
-
-
+				<entry key="siteurl" value="#{servletContext.contextPath}/"/>
+				<entry key="sitename" value="一尺三寸"/>
 			</map>
 		</property>
 	</bean>

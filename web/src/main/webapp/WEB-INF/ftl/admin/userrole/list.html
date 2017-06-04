@@ -14,33 +14,13 @@ background: #E19487 !important;
 
 <body class="no-skin">
 	<div id="navbar" class="navbar navbar-default">
-		<script type="text/javascript">
-			try {
-				ace.settings.check('navbar', 'fixed')
-			} catch (e) {
-			}
-		</script>
-
 		[#include "/admin/common/navbar.html"]
 
 		<!-- /.navbar-container -->
 	</div>
 
 	<div class="main-container" id="main-container">
-		<script type="text/javascript">
-			try {
-				ace.settings.check('main-container', 'fixed')
-			} catch (e) {
-			}
-		</script>
-
 		<div id="sidebar" class="sidebar                  responsive">
-			<script type="text/javascript">
-				try {
-					ace.settings.check('sidebar', 'fixed')
-				} catch (e) {
-				}
-			</script>
 			[#include "/admin/common/shortcuts.html"]
 			<!-- /.sidebar-shortcuts -->
 
@@ -49,7 +29,7 @@ background: #E19487 !important;
 			<ul class="nav nav-list">
 				[@menustag id=1]
 				 [#list list as item]
-					[@menu item "1,54,82"] 
+					[@menu item "1,51,55"]
 					[/@menu] 
 					[/#list] 
 				[/@menustag]
@@ -62,22 +42,10 @@ background: #E19487 !important;
 					data-icon2="ace-icon fa fa-angle-double-right"></i>
 			</div>
 
-			<script type="text/javascript">
-				try {
-					ace.settings.check('sidebar', 'collapsed')
-				} catch (e) {
-				}
-			</script>
 		</div>
 
 		<div class="main-content">
 			<div class="breadcrumbs" id="breadcrumbs">
-				<script type="text/javascript">
-					try {
-						ace.settings.check('breadcrumbs', 'fixed')
-					} catch (e) {
-					}
-				</script>
 
 				<ul class="breadcrumb">
 					<li><i class="ace-icon fa fa-home home-icon"></i> <a href="#">首页</a>
@@ -136,8 +104,6 @@ background: #E19487 !important;
 														</button>
 
 														<ul id="searchPropertyOption" class="dropdown-menu ">
-														    [@searchitem name="username" value ="用户名"/]
-															[@searchitem name="name" value ="姓名"/]
 
 														</ul>
 													</div>
