@@ -3,6 +3,10 @@ package com.openyelp.actions.front;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ada.data.page.Filter;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
+import com.ada.userfriend.data.entity.UserFollow;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +17,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ada.data.core.Pagination;
-import com.ada.user.entity.UserInfo;
-import com.ada.user.page.UserFriendPage;
-import com.ada.user.service.UserFollowService;
-import com.ada.user.service.UserFriendService;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.userfriend.data.service.UserFollowService;
+import com.ada.userfriend.data.service.UserFriendService;
 import com.openyelp.data.service.EventInfoService;
 import com.openyelp.data.service.PhotoService;
 import com.openyelp.data.service.ShopBookMarksService;
@@ -49,8 +52,10 @@ public class UserController {
 		if (u.getId() < 0) {
 			return toindex();
 		}
-		UserFriendPage friends = friendService.pageByUser(id, 1, 4);
-		model.addAttribute("friends", friends.getList());
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",id));
+		Page<UserFollow> rs= followService.page(pager);
+		model.addAttribute("friends", rs.getContent());
 		
 		Pagination compliments = userComplimentService.pageByUser(u.getId(), 1,
 				1, 5);
@@ -163,9 +168,11 @@ public class UserController {
 		if (u.getId() < 0) {
 			return toindex();
 		}
-		Pagination rs = followService.pageByUser(id, curpage, pagesize);
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",id));
+		Page<UserFollow> rs= followService.page(pager);
 		if (rs != null) {
-			model.addAttribute("list", rs.getList());
+			model.addAttribute("list", rs.getContent());
 			model.addAttribute("page", rs);
 		}
 		model.addAttribute("curpage", curpage);
@@ -190,9 +197,10 @@ public class UserController {
 		if (u.getId() < 0) {
 			return toindex();
 		}
-		UserFriendPage rs = friendService.pageByUser(id, curpage, pagesize);
-		if (rs != null) {
-			model.addAttribute("list", rs.getList());
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",id));
+		Page<UserFollow> rs= followService.page(pager);		if (rs != null) {
+			model.addAttribute("list", rs.getContent());
 			model.addAttribute("page", rs);
 		}
 		model.addAttribute("curpage", curpage);

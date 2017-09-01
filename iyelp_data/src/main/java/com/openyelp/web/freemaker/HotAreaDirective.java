@@ -9,8 +9,8 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ada.area.entity.Area;
-import com.ada.area.service.AreaService;
+import com.ada.area.data.entity.Area;
+import com.ada.area.data.service.AreaService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.DirectiveUtils;
 
@@ -31,7 +31,7 @@ public class HotAreaDirective implements TemplateDirectiveModel{
 		 //其实完全可以不用它，params是个Map，自己通过key取值就可以了，做一下空值判断  
         Integer size = DirectiveUtils.getInt("size", params);  
 
-        List<Area> page = areaService.findByHot(size);
+        List<Area> page = areaService.list(0,size,null,null);
         
         Map<String, TemplateModel> paramWrap = new HashMap<String, TemplateModel>(params);
 		paramWrap.put("list", DEFAULT_WRAPPER.wrap(page));

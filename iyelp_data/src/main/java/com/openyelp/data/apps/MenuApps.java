@@ -7,8 +7,8 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Locale;
 
-import com.ada.admin.entity.Menu;
-import com.ada.admin.service.MenuService;
+import com.ada.user.data.entity.Menu;
+import com.ada.user.data.service.MenuService;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

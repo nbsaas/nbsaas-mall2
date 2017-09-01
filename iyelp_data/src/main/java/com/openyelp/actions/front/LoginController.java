@@ -18,15 +18,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ada.user.entity.UserInfo;
+import com.ada.user.data.entity.UserInfo;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.openyelp.data.service.UserService;
 import com.openyelp.shiro.filter.UsernamePasswordCaptchaToken;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;
-import com.young.http.Connection;
-import com.young.http.HttpConnection;
 
 /**
  * 登录controller
@@ -74,40 +72,40 @@ public class LoginController {
 	@RequestMapping(value = "qqlogin2")
 	public String qqlogin2(String access_token, String openid, HttpServletRequest request, HttpServletResponse response,
 			Model model) {
-		try {
-			Connection con = HttpConnection.connect("https://graph.qq.com/user/get_user_info");
-			con.data("oauth_consumer_key", "101295055");
-			con.data("access_token", access_token);
-			con.data("openid", openid);
-			con.data("format", "json");
-			String body;
-			body = con.execute().body();
-			JsonParser parser = new JsonParser();
-			JsonElement e = parser.parse(body);
-			String nickname = e.getAsJsonObject().get("nickname").getAsString();
-			String figureurl_qq_1 = e.getAsJsonObject().get("figureurl_qq_1").getAsString();
-			UserInfo user = userService.loginqq(openid, nickname, figureurl_qq_1);
-			if (user!=null) {
-				Subject subject = SecurityUtils.getSubject();
-				if (!subject.isAuthenticated()) {
-					UsernamePasswordCaptchaToken token = new UsernamePasswordCaptchaToken();
-					token.setUsername(openid);
-					token.setPassword("123456".toCharArray());
-					try {
-						subject.login(token);
-					} catch (Exception ex) {
-						ex.printStackTrace();
-					}
-					if (subject.isAuthenticated()) {
-						return "redirect:" + "/index.htm";
-					} else {
-						return "login";
-					}
-				}
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Connection con = HttpConnection.connect("https://graph.qq.com/user/get_user_info");
+//			con.data("oauth_consumer_key", "101295055");
+//			con.data("access_token", access_token);
+//			con.data("openid", openid);
+//			con.data("format", "json");
+//			String body;
+//			body = con.execute().body();
+//			JsonParser parser = new JsonParser();
+//			JsonElement e = parser.parse(body);
+//			String nickname = e.getAsJsonObject().get("nickname").getAsString();
+//			String figureurl_qq_1 = e.getAsJsonObject().get("figureurl_qq_1").getAsString();
+//			UserInfo user = userService.loginqq(openid, nickname, figureurl_qq_1);
+//			if (user!=null) {
+//				Subject subject = SecurityUtils.getSubject();
+//				if (!subject.isAuthenticated()) {
+//					UsernamePasswordCaptchaToken token = new UsernamePasswordCaptchaToken();
+//					token.setUsername(openid);
+//					token.setPassword("123456".toCharArray());
+//					try {
+//						subject.login(token);
+//					} catch (Exception ex) {
+//						ex.printStackTrace();
+//					}
+//					if (subject.isAuthenticated()) {
+//						return "redirect:" + "/index.htm";
+//					} else {
+//						return "login";
+//					}
+//				}
+//			}
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 
 		return FrontUtils.getPath("qqlogin");
 	}

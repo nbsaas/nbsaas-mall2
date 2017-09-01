@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ada.user.entity.UserFriendRequest;
-import com.ada.user.service.UserFriendRequestService;
+import com.ada.userfriend.data.entity.UserFriendRequest;
+import com.ada.userfriend.data.service.UserFriendRequestService;
 import com.openyelp.shiro.utils.UserUtil;
 
 

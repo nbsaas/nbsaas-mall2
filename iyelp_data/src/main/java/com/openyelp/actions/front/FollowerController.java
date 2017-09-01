@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ada.user.entity.UserFollow;
-import com.ada.user.entity.UserInfo;
-import com.ada.user.service.UserFollowService;
+import com.ada.userfriend.data.entity.UserFollow;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.userfriend.data.service.UserFollowService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;
 

@@ -39,7 +39,7 @@
 				<div class="war-landing-content">
 					<div class="clearfix layout-block layout-a search-header-wrap">
 						<div class="column column-alpha ">
-							<h1 class="embossed-text-white">${user.name!""}, 正等待你的下一条评语</h1>
+							<h1 class="embossed-text-white">${(user.name)!""}, 正等待你的下一条评语</h1>
 							<h2>
 								<b>评论从你最爱吃的肉夹馍到最好的医生，有好也有差</b>
 							</h2>
@@ -66,7 +66,7 @@
 													<div class="flex-container-inline">
 														<div class="label">地点</div>
 														<div class="flex-box input-holder">
-															<input type="text" value="${city.name!''}" name="find_loc"
+															<input type="text" value="${(city.name)!''}" name="find_loc"
 																id="dropperText_Review">
 														</div>
 														<a

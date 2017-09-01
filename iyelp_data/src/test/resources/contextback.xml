@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd              
+            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+	<!--COOKIE登录 -->
+	<import resource="context-shiro.xml" />
+	<context:component-scan base-package="com.openyelp.actions" />
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:defaultEncoding="utf-8" p:maxUploadSize="100000000" />
+
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="siteHandlerInterceptor" />
+			</list>
+		</property>
+	</bean>
+	<bean id="siteHandlerInterceptor" class="com.openyelp.web.interceptor.SiteHandlerInterceptor">
+
+		<!-- http://openyelp.aliapp.com/ http://openyelp.sturgeon.mopaas.com/ http://yelp.tiger.mopaasapp.com -->
+		<!--<property name="url" value="http://www.zhenzhendianping.com:8080/"></property> -->
+	</bean>
+	<bean id="exceptionResolver" class="com.openyelp.web.handler.MappingExceptionResolver">
+		<!--<property name="url" value="http://www.zhenzhendianping.com:8080/"></property>  -->
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthenticatedException">/theme/yelp/login</prop>
+				<prop key="java.lang.exception">error/500</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+		<property name="messageConverters">
+			<list>
+				<ref bean="jacksonMessageConverter" />    <!-- 注册JSON Converter -->
+			</list>
+		</property>
+	</bean>
+	<bean id="jacksonMessageConverter"
+		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
+
+
+
+	<bean id="menuOpenDirective" class="com.openyelp.web.freemaker.MenuOpenDirective"></bean>
+	<bean id="menusDirective" class="com.openyelp.web.freemaker.MenusDirective"></bean>
+	<bean id="hotAreaDirective" class="com.openyelp.web.freemaker.HotAreaDirective"></bean>
+	<bean id="AreaCategoryDirective" class="com.openyelp.web.freemaker.AreaCategoryDirective"></bean>
+	<bean id="talkNewsDirective" class="com.openyelp.web.freemaker.TalkNewsDirective"></bean>
+	<bean id="eventGoodDirective" class="com.openyelp.web.freemaker.EventGoodDirective"></bean>
+	<bean id="shopNearDirective" class="com.openyelp.web.freemaker.ShopNearDirective"></bean>
+	<bean id="shopGoodDirective" class="com.openyelp.web.freemaker.ShopGoodDirective"></bean>
+	<bean id="categoryNearDirective" class="com.openyelp.web.freemaker.CategoryNearDirective"></bean>
+
+	<bean id="articleDirective" class="com.openyelp.web.freemaker.ArticleDirective"></bean>
+	<bean id="shopDirective" class="com.openyelp.web.freemaker.ShopDirective"></bean>
+	<bean id="talkDirective" class="com.openyelp.web.freemaker.TalkDirective"></bean>
+	<bean id="eventsDirective" class="com.openyelp.web.freemaker.EventsDirective"></bean>
+	<bean id="shopReviewDirective" class="com.openyelp.web.freemaker.ShopReviewDirective"></bean>
+	<bean id="shopImageDirective" class="com.openyelp.web.freemaker.ShopImageDirective"></bean>
+	<bean id="shopImageListDirective" class="com.openyelp.web.freemaker.ShopImageListDirective"></bean>
+
+
+
+	<bean id="haveVoteDirective" class="com.openyelp.web.freemaker.HaveVoteDirective"></bean>
+
+
+
+	<bean id="htmlTags" class="com.ada.common.freemarker.HtmlTags"></bean>
+	<bean id="shiro" class="com.jagregory.shiro.freemarker.ShiroTags"></bean>
+
+	<!-- freemarker的配置 -->
+	<bean id="freemarkerConfigurer"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/ftl/" />
+		<property name="defaultEncoding" value="UTF-8" />
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="tag_syntax">square_bracket</prop>
+				<prop key="template_update_delay">5</prop>
+				<prop key="defaultEncoding">UTF-8</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="locale">zh_CN</prop>
+				<prop key="boolean_format">true,false</prop>
+				<prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+				<prop key="date_format">yyyy-MM-dd</prop>
+				<prop key="time_format">HH:mm:ss</prop>
+				<prop key="number_format">0.######</prop>
+				<prop key="whitespace_stripping">true</prop>
+			</props>
+		</property>
+		<property name="freemarkerVariables">
+			<map>
+				<entry key="menuopentag" value-ref="menuOpenDirective" />
+				<entry key="menustag" value-ref="menusDirective" />
+				<entry key="hotarea" value-ref="hotAreaDirective" />
+				<entry key="areacategory" value-ref="AreaCategoryDirective" />
+				<entry key="talknews" value-ref="talkNewsDirective" />
+				<entry key="shiro" value-ref="shiro" />
+				<entry key="html" value-ref="htmlTags" />
+				<entry key="eventgood" value-ref="eventGoodDirective" />
+				<entry key="shopnear" value-ref="shopNearDirective" />
+				<entry key="shopgood" value-ref="shopGoodDirective" />
+				<entry key="categorynear" value-ref="categoryNearDirective" />
+				<entry key="article" value-ref="articleDirective" />
+				<entry key="shop_" value-ref="shopDirective" />
+				<entry key="events_" value-ref="eventsDirective" />
+				<entry key="talk_" value-ref="talkDirective" />
+				<entry key="shopreview_" value-ref="shopReviewDirective" />
+				<entry key="shopimage_" value-ref="shopImageDirective" />
+				<entry key="shopimagelist_" value-ref="shopImageListDirective" />
+
+
+				<entry key="havevote" value-ref="haveVoteDirective" />
+
+
+
+			</map>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<property name="suffix" value=".html" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="exposeRequestAttributes" value="false" />
+		<property name="exposeSessionAttributes" value="false" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+	</bean>
+	<!-- 将Controller抛出的异常转到特定View, 保持SiteMesh的装饰效果 -->
+	<!-- <prop key="java.lang.Throwable">error/500</prop> -->
+	<bean
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="org.apache.shiro.authz.UnauthorizedException">error/403</prop>
+			</props>
+		</property>
+	</bean>
+	<import resource="applicationContext.xml" />
+	<mvc:annotation-driven
+		ignore-default-model-on-redirect="true">
+	</mvc:annotation-driven>
+	<mvc:interceptors>
+		<ref bean="siteHandlerInterceptor" />
+	</mvc:interceptors>
+
+
+</beans>

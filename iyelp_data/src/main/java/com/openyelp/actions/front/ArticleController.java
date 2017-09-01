@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ada.article.service.ArticleService;
+import com.ada.article.data.service.ArticleService;
 import com.openyelp.web.utils.FrontUtils;
 
 

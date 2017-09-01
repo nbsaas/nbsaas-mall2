@@ -5,7 +5,6 @@
 		<div id="logo" style="margin-top: 20px;">
 			<a href="${siteurl}/index.htm" style="float: left;">
 			<img alt="" src="${siteurl}assets/images/logo2.png">
-			<img alt="" src="${siteurl}assets/images/logo1.png">
 			</a>
 			<div style="float: right;margin-top: 15px;">
 			<form method="post" action="${siteurl}search.htm" style="float: left;margin-left: 20px;margin-bottom: 15px;">
@@ -173,15 +172,16 @@
 				<a href="${siteurl}index.htm" class="header-nav-link [@nav 1 /]"> 主页 </a>
 				</li>
 				<li id="about-me" class="inline-block">
-				    [#if user.id>0]
+					[@shiro.authenticated]
 				    <a href="${siteurl}user_details.htm?id=${user.id}"
 					class="header-nav-link [@nav 2 /]"> 关于我 
 					</a>
-					[#else]
+					[/@shiro.authenticated]
+					[@shiro.guest]
 					 <a href="${siteurl}login.htm"
 					class="header-nav-link [@nav 2 /]"> 关于我 
 					</a>
-					[/#if]
+					[/@shiro.guest]
 				</li>
 				<li id="write-review" class="inline-block"><a
 					href="${siteurl}user/writeareview.htm" class="header-nav-link [@nav 3 /]">

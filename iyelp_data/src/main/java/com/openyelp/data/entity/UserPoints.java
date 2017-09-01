@@ -1,5 +1,7 @@
 package com.openyelp.data.entity;
 
+import com.ada.user.data.entity.UserInfo;
+
 import java.io.Serializable;
 
 import javax.persistence.Entity;
@@ -9,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ada.user.entity.UserInfo;
 
 @Entity
 @Table(name = "user_points")

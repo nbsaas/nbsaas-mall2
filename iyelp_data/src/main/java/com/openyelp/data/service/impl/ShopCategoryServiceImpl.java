@@ -11,7 +11,7 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ada.admin.entity.Menu;
+import com.ada.user.data.entity.Menu;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
@@ -52,10 +52,10 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		if (bean.getParentId() != null) {
 			ShopCategory parent = dao.findById(bean.getParentId());
 			if (parent != null) {
-				if (parent.getLevelinfo() != null) {
-					bean.setLevelinfo(parent.getLevelinfo() + 1);
+				if (parent.getLevelInfo() != null) {
+					bean.setLevelInfo(parent.getLevelInfo() + 1);
 				} else {
-					bean.setLevelinfo(2);
+					bean.setLevelInfo(2);
 				}
 				if (parent.getIds() != null) {
 					bean.setIds(parent.getIds() + "," + bean.getId());
@@ -64,11 +64,11 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 					bean.setIds(parent.getId() + "," + bean.getId());
 				}
 			} else {
-				bean.setLevelinfo(1);
+				bean.setLevelInfo(1);
 				bean.setIds("" + bean.getId());
 			}
 		} else {
-			bean.setLevelinfo(1);
+			bean.setLevelInfo(1);
 			bean.setIds("" + bean.getId());
 		}
 		return bean;

@@ -1,7 +1,7 @@
 package com.openyelp.data.apps;
 
-import com.ada.user.entity.UserInfo;
-import com.ada.user.entity.UserRole;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.user.data.entity.UserRole;
 import com.openyelp.data.service.UserService;
 
 public class UserServiceApps {

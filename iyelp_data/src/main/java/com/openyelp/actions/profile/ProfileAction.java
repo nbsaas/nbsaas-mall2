@@ -3,6 +3,10 @@ package com.openyelp.actions.profile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ada.data.page.Filter;
+import com.ada.data.page.Page;
+import com.ada.data.page.Pageable;
+import com.ada.userfriend.data.entity.UserFriend;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,9 +15,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ada.data.core.Pagination;
-import com.ada.user.entity.UserInfo;
-import com.ada.user.service.UserFriendRequestService;
-import com.ada.user.service.UserFriendService;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.userfriend.data.service.UserFriendRequestService;
+import com.ada.userfriend.data.service.UserFriendService;
 import com.openyelp.core.web.WebErrors;
 import com.openyelp.data.entity.Photo;
 import com.openyelp.data.entity.UserProfile;
@@ -203,9 +207,12 @@ public class ProfileAction {
 			HttpServletResponse response, Model model) {
 
 		Long userid = UserUtil.getCurrentUser().getId();
-		Pagination rs = friendRequestService.pageByUser(userid, key, curpage,
-				pagesize);
-		model.addAttribute("list", rs.getList());
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",userid));
+		pager.getFilters().add(Filter.like("friend.name",key));
+
+		Page<UserFriend> rs = userFriendService.page(pager);
+		model.addAttribute("list", rs.getContent());
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
@@ -223,9 +230,12 @@ public class ProfileAction {
 			HttpServletResponse response, Model model) {
 		friendRequestService.deleteById(id);
 		Long userid = UserUtil.getCurrentUser().getId();
-		Pagination rs = friendRequestService.pageByUser(userid, key, curpage,
-				pagesize);
-		model.addAttribute("list", rs.getList());
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",userid));
+		pager.getFilters().add(Filter.like("friend.name",key));
+
+		Page<UserFriend> rs = userFriendService.page(pager);
+		model.addAttribute("list", rs.getContent());
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
@@ -246,9 +256,13 @@ public class ProfileAction {
 			HttpServletResponse response, Model model) {
 		userFriendService.deleteById(id);
 		Long userid = UserUtil.getCurrentUser().getId();
-		Pagination rs = userFriendService.pageByUser(userid, key, curpage,
-				pagesize);
-		model.addAttribute("list", rs.getList());
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",userid));
+		pager.getFilters().add(Filter.like("friend.name",key));
+		Page<UserFriend> rs = userFriendService.page(pager);
+
+
+		model.addAttribute("list", rs.getContent());
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
@@ -265,9 +279,16 @@ public class ProfileAction {
 			HttpServletResponse response, Model model) {
 
 		Long userid = UserUtil.getCurrentUser().getId();
-		Pagination rs = userFriendService.pageByUser(userid, key, curpage,
-				pagesize);
-		model.addAttribute("list", rs.getList());
+
+
+//		Pagination rs = userFriendService.pageByUser(userid, key, curpage,
+//				pagesize);
+		Pageable pager=new Pageable();
+		pager.getFilters().add(Filter.eq("user.id",userid));
+		pager.getFilters().add(Filter.like("friend.name",key));
+
+		Page<UserFriend> rs = userFriendService.page(pager);
+		model.addAttribute("list", rs.getContent());
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);

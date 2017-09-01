@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ada.plugin.vo.FileInfo;
-import com.ada.plugin.vo.FileInfo.FileType;
-import com.ada.plugin.vo.FileInfo.OrderType;
+import com.ada.plug.data.vo.FileInfo;
+import com.ada.plug.data.vo.FileInfo.FileType;
+import com.ada.plug.data.vo.FileInfo.OrderType;
 import com.openyelp.services.file.FileService;
 import com.openyelp.utils.JsonUtils;
 

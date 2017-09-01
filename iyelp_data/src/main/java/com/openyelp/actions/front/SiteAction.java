@@ -1,9 +1,11 @@
 package com.openyelp.actions.front;
 
-import com.ada.area.entity.Area;
-import com.ada.area.service.AreaService;
+import com.ada.area.data.entity.Area;
+import com.ada.area.data.service.AreaService;
 import com.ada.data.core.Pagination;
-import com.ada.user.entity.UserInfo;
+import com.ada.data.page.Filter;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.user.utils.ListUtils;
 import com.openyelp.data.apps.ObjectFactory;
 import com.openyelp.data.entity.EntityContent;
 import com.openyelp.data.service.*;
@@ -52,10 +54,17 @@ public class SiteAction {
 					.getName());
 			if (area != null) {
 				UserUtil.setCurrentCity(area);
-				as = areaService.pageByLevel(UserUtil.getCurrentCity().getId(),5,1,20).getList();
+
+
+				//as = areaService.pageByLevel(UserUtil.getCurrentCity().getId(),5,1,20).getList();
+				List<Filter> filters= ListUtils.list(Filter.eq("parent.id",UserUtil.getCurrentCity().getId()));
+				filters.add(Filter.eq("levelInfo",5));
+				as = areaService.list(1,20,filters,null);
 			}
 		} else {
-			as = areaService.pageByLevel(UserUtil.getCurrentCity().getId(),5,1,20).getList();
+			List<Filter> filters= ListUtils.list(Filter.eq("parent.id",UserUtil.getCurrentCity().getId()));
+			filters.add(Filter.eq("levelInfo",5));
+			as = areaService.list(1,20,filters,null);
 		}
 
 		model.addAttribute("curpage", curpage);
@@ -370,7 +379,7 @@ public class SiteAction {
 		model.addAttribute("catalog", catalog);
 		model.addAttribute("areaid", cityid);
 		model.addAttribute("curcatalog", categoryService.findById(catalog));
-		model.addAttribute("areas", areaService.findByParent(cityid));
+		model.addAttribute("areas", areaService.list(0,99,ListUtils.list(Filter.eq("parent.id",cityid)),null));
 		model.addAttribute("area", areaService.findById(cityid));
 		model.addAttribute("shops",
 				shopService.search("", cityid, catalog, 1, 8).getList());

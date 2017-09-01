@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ada.area.entity.Area;
-import com.ada.area.service.AreaService;
+import com.ada.area.data.entity.Area;
+import com.ada.area.data.service.AreaService;
 import com.openyelp.shiro.utils.UserUtil;
 import com.openyelp.web.utils.FrontUtils;
 

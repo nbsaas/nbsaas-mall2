@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
-import com.ada.user.entity.UserInfo;
+import com.ada.user.data.entity.UserInfo;
 import com.openyelp.data.dao.UserProfileDao;
 import com.openyelp.data.entity.UserProfile;
 import com.openyelp.data.service.UserProfileService;

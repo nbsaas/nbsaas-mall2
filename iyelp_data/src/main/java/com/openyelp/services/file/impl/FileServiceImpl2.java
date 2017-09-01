@@ -17,6 +17,8 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
+import com.ada.plug.api.StoragePlugin;
+import com.ada.plug.data.vo.FileInfo;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.ArrayUtils;
@@ -27,10 +29,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ada.plugin.api.StoragePlugin;
-import com.ada.plugin.vo.FileInfo;
-import com.ada.plugin.vo.FileInfo.FileType;
-import com.ada.plugin.vo.FileInfo.OrderType;
 import com.openyelp.services.file.FileService;
 import com.openyelp.services.file.PluginFileService;
 import com.openyelp.utils.FreemarkerUtils;
@@ -82,7 +80,7 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 		});
 	}
 
-	public boolean isValid(FileType fileType, MultipartFile multipartFile) {
+	public boolean isValid(FileInfo.FileType fileType, MultipartFile multipartFile) {
 		if (multipartFile == null) {
 			return false;
 		}
@@ -91,11 +89,11 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 //			return false;
 //		}
 		String[] uploadExtensions=null;
-		if (fileType == FileType.flash) {
+		if (fileType == FileInfo.FileType.flash) {
 			uploadExtensions ="swf,flv".split(",");
-		} else if (fileType == FileType.media) {
+		} else if (fileType == FileInfo.FileType.media) {
 			uploadExtensions ="swf,flv,mp3,wav,avi,rm,rmvb".split(",");
-		} else if (fileType == FileType.file) {
+		} else if (fileType == FileInfo.FileType.file) {
 			uploadExtensions ="zip,rar,7z,doc,docx,xls,xlsx,ppt,pptx".split(",");
 		} else {
 			uploadExtensions ="jpg,jpeg,bmp,gif,png".split(",");
@@ -106,16 +104,16 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 		return false;
 	}
 
-	public String upload(FileType fileType, MultipartFile multipartFile, boolean async) {
+	public String upload(FileInfo.FileType fileType, MultipartFile multipartFile, boolean async) {
 		if (multipartFile == null) {
 			return null;
 		}
 		String uploadPath;
-		if (fileType == FileType.flash) {
+		if (fileType == FileInfo.FileType.flash) {
 			uploadPath = "/upload/flash/${.now?string('yyyyMM')}/";
-		} else if (fileType == FileType.media) {
+		} else if (fileType == FileInfo.FileType.media) {
 			uploadPath = "/upload/media/${.now?string('yyyyMM')}/";
-		} else if (fileType == FileType.file) {
+		} else if (fileType == FileInfo.FileType.file) {
 			uploadPath = "/upload/file/${.now?string('yyyyMM')}/";
 		} else {
 			uploadPath = "upload/image/${.now?string('yyyyMM')}/";
@@ -149,20 +147,20 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 		return null;
 	}
 
-	public String upload(FileType fileType, MultipartFile multipartFile) {
+	public String upload(FileInfo.FileType fileType, MultipartFile multipartFile) {
 		return upload(fileType, multipartFile, false);
 	}
 
-	public String uploadLocal(FileType fileType, MultipartFile multipartFile) {
+	public String uploadLocal(FileInfo.FileType fileType, MultipartFile multipartFile) {
 		if (multipartFile == null) {
 			return null;
 		}
 		String uploadPath;
-		if (fileType == FileType.flash) {
+		if (fileType == FileInfo.FileType.flash) {
 			uploadPath = "flash";
-		} else if (fileType == FileType.media) {
+		} else if (fileType == FileInfo.FileType.media) {
 			uploadPath = "media";
-		} else if (fileType == FileType.file) {
+		} else if (fileType == FileInfo.FileType.file) {
 			uploadPath = "file";
 		} else {
 			uploadPath = "images";
@@ -184,7 +182,7 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 		return null;
 	}
 
-	public List<FileInfo> browser(String path, FileType fileType, OrderType orderType) {
+	public List<FileInfo> browser(String path, FileInfo.FileType fileType, FileInfo.OrderType orderType) {
 		if (path != null) {
 			if (!path.startsWith("/")) {
 				path = "/" + path;
@@ -196,11 +194,11 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 			path = "/";
 		}
 		String uploadPath;
-		if (fileType == FileType.flash) {
+		if (fileType == FileInfo.FileType.flash) {
 			uploadPath = "flash";
-		} else if (fileType == FileType.media) {
+		} else if (fileType == FileInfo.FileType.media) {
 			uploadPath = "media";
-		} else if (fileType == FileType.file) {
+		} else if (fileType == FileInfo.FileType.file) {
 			uploadPath = "file";
 		} else {
 			uploadPath = "images";
@@ -216,9 +214,9 @@ public class FileServiceImpl2 implements FileService, ServletContextAware {
 			fileInfos = storagePlugin.browser(browsePath);
 			break;
 		}
-		if (orderType == OrderType.size) {
+		if (orderType == FileInfo.OrderType.size) {
 			Collections.sort(fileInfos, new SizeComparator());
-		} else if (orderType == OrderType.type) {
+		} else if (orderType == FileInfo.OrderType.type) {
 			Collections.sort(fileInfos, new TypeComparator());
 		} else {
 			Collections.sort(fileInfos, new NameComparator());

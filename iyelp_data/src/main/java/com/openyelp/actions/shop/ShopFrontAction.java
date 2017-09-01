@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ada.area.entity.Area;
+import com.ada.area.data.entity.Area;
 import com.ada.data.core.Pagination;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopBack;

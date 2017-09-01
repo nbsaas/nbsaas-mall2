@@ -1,8 +1,8 @@
 package com.openyelp.data.service;
 
 import com.ada.data.core.Pagination;
-import com.ada.user.entity.UserInfo;
-import com.ada.user.entity.UserRole;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.user.data.entity.UserRole;
 
 public interface UserService {
 	/**加密方法*/

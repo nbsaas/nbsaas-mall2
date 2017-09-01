@@ -27,10 +27,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ada.plugin.api.StoragePlugin;
-import com.ada.plugin.vo.FileInfo;
-import com.ada.plugin.vo.FileInfo.FileType;
-import com.ada.plugin.vo.FileInfo.OrderType;
+import com.ada.plug.api.StoragePlugin;
+import com.ada.plug.data.vo.FileInfo;
+import com.ada.plug.data.vo.FileInfo.FileType;
+import com.ada.plug.data.vo.FileInfo.OrderType;
 import com.openyelp.plugs.file.FilePlugin;
 import com.openyelp.services.file.FileService;
 import com.openyelp.services.file.PluginFileService;

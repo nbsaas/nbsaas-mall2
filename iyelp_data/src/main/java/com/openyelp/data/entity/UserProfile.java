@@ -1,5 +1,7 @@
 package com.openyelp.data.entity;
 
+import com.ada.user.data.entity.UserInfo;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.ada.user.entity.UserInfo;
 /**
  * 用户的个人资料
  * @author 年高

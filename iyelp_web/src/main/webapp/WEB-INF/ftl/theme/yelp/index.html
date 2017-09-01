@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="utf-8">
-<title>真真点评</title>
+<title>${sitename}</title>
 <link rel="stylesheet" href="assets/css/www-pkg.css" />
 <link rel="stylesheet" href="assets/css/homepage.css" />
 
@@ -131,9 +131,9 @@
 
 							<div class="ysection">
 								<div class="island-city-scape island signup-pitch text-centered">
-									<h2 class="embossed-text-white">真真点评，帮你找到最好的商家</h2>
+									<h2 class="embossed-text-white">${sitename}，帮你找到最好的商家</h2>
 									<p class="embossed-text-white">
-										世界各地的人都在用真真点评，去搜索附近、不同类型的商店。</p>
+										世界各地的人都在用${sitename}，去搜索附近、不同类型的商店。</p>
 									<a class="ybtn ybtn-primary ytype" href="${siteurl}signup.htm">免费注册</a>
 								</div>
 							</div>
@@ -222,7 +222,7 @@
 							<div class="ysection eight-col">
 
 								<div class="ysection clearfix new-business-openings">
-									<h2>${city.name!""}的新开商店</h2>
+									<h2>${(city.name)!""}的新开商店</h2>
 
 									<ul class="photo-box-list clearfix">
 										[#if newlist ??] [#list newlist as item]
@@ -232,7 +232,7 @@
 												class="photo-box photo-box--interactive biz-listing-photo">
 												<img width="180" height="180"
 													style="width: 180px; height: 180px;"
-													src="${item.image!'/assets/images/head.png'}"
+													src="${siteurl}${(item.image)!'/assets/images/head.png'}"
 													class="photo-box-img" alt="${item.name!''}">
 
 
@@ -283,7 +283,7 @@
 							
 
 							<div id="best-of-yelp-module" class="ysection clearfix">
-								<h2>真真精选：${city.name!""}</h2>
+								<h2>真真精选：${(city.name)!""}</h2>
 								<div class="content">
 									<div class="ysection clearfix best-of-yelp-main">
 										[#include "index_navigation.html"]

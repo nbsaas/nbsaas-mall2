@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.ada.plugin.api.StoragePlugin;
-import com.ada.plugin.vo.FileInfo;
+import com.ada.plug.api.StoragePlugin;
+import com.ada.plug.data.vo.FileInfo;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;

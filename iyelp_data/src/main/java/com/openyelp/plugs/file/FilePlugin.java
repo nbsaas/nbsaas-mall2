@@ -17,9 +17,9 @@ import org.apache.commons.io.FileUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.ServletContextAware;
 
-import com.ada.plugin.api.StoragePlugin;
-import com.ada.plugin.entity.PluginConfig;
-import com.ada.plugin.vo.FileInfo;
+import com.ada.plug.api.StoragePlugin;
+import com.ada.plug.data.entity.PluginConfig;
+import com.ada.plug.data.vo.FileInfo;
 
 /**
  * Plugin - 本地文件存储

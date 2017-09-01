@@ -1,7 +1,7 @@
 package com.ada.iyelp.apps;
 
-import com.ada.user.entity.UserRole;
-import com.ada.user.service.UserRoleService;
+import com.ada.user.data.entity.UserRole;
+import com.ada.user.data.service.UserRoleService;
 
 public class UserRoleServiceApps {
 

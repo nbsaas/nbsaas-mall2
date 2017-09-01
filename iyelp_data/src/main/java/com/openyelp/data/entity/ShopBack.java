@@ -1,5 +1,8 @@
 package com.openyelp.data.entity;
 
+import com.ada.area.data.entity.Area;
+import com.ada.user.data.entity.UserInfo;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -17,8 +20,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ada.area.entity.Area;
-import com.ada.user.entity.UserInfo;
 
 @Entity
 @Table(name = "shop_back")

@@ -1,6 +1,6 @@
 package com.ada.iyelp.apps;
 
-import com.ada.user.entity.UserInfo;
+import com.ada.user.data.entity.UserInfo;
 import com.openyelp.data.entity.Shop;
 import com.openyelp.data.entity.ShopReview;
 import com.openyelp.data.service.ShopReviewService;

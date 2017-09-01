@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ada.area.entity.Area;
-import com.ada.area.service.AreaService;
+import com.ada.area.data.entity.Area;
+import com.ada.area.data.service.AreaService;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;

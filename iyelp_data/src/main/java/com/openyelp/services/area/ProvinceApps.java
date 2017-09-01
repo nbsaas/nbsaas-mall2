@@ -3,11 +3,13 @@ package com.openyelp.services.area;
 import java.io.IOException;
 import java.util.List;
 
+import com.ada.data.page.Filter;
+import com.ada.user.utils.ListUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
-import com.ada.area.entity.Area;
-import com.ada.area.service.AreaService;
+import com.ada.area.data.entity.Area;
+import com.ada.area.data.service.AreaService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -48,7 +50,7 @@ public class ProvinceApps {
 
 	private static void adddowndatas(int pid) throws IOException {
 		AreaService service = ObjectFactory.get().getBean("cityServiceImpl",AreaService.class);
-		List<Area> citys = service.findByParent(pid);
+		List<Area> citys =  service.list(0,1000, ListUtils.list(Filter.eq("parent.id",pid)),null);
 		for (Area city : citys) {
 			System.out.println(city.getName());
 			
@@ -70,7 +72,7 @@ public class ProvinceApps {
 				int id = arrays2.get(1).getAsInt();
 				Area town = new Area();
 				town.setParent(city);
-				town.setLevelinfo(4);
+				town.setLevelInfo(4);
 				town.setName(name);
 				town.setId(id);
 				try {
@@ -106,7 +108,7 @@ public class ProvinceApps {
 		AreaService service = ObjectFactory.get().getBean(AreaService.class);
 
 
-		List<Area> provinces = service.findByLevel(2);
+		List<Area> provinces = service.list(0,1000, ListUtils.list(Filter.eq("levelInfo",2)),null);
 		for (Area province : provinces) {
 			System.out.println(province.getName());
 
@@ -135,7 +137,7 @@ public class ProvinceApps {
 					city.setParent(province);
 					city.setName(name);
 					//city.setCode(id);
-					city.setLevelinfo(3);
+					city.setLevelInfo(3);
 					service.save(city);
 					System.out.println("" + name + "  id:" + id);
 				}
@@ -148,7 +150,7 @@ public class ProvinceApps {
 		AreaService service = ObjectFactory.get().getBean(AreaService.class);
 
 
-		List<Area> provinces = service.findByLevel(3);
+		List<Area> provinces = service.list(0,1000, ListUtils.list(Filter.eq("levelInfo",3)),null);
 		for (Area province : provinces) {
 			System.out.println(province.getName());
 
@@ -176,7 +178,7 @@ public class ProvinceApps {
 					city.setParent(province);
 					city.setName(name);
 					//city.setCode(id);
-					city.setLevelinfo(4);
+					city.setLevelInfo(4);
 					service.save(city);
 					System.out.println("" + name + "  id:" + id);
 				}
@@ -210,7 +212,7 @@ public class ProvinceApps {
 				Area p = new Area();
 				//p.setCode(id);
 				p.setName(name);
-				p.setLevelinfo(2);
+				p.setLevelInfo(2);
 				p.setParent(area);
 				service.save(p);
 				System.out.println("" + name + "  id:" + id);

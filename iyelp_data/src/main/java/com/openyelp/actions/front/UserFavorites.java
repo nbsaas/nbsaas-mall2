@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.ada.data.core.Pagination;
-import com.ada.user.entity.UserInfo;
+import com.ada.user.data.entity.UserInfo;
 import com.openyelp.data.entity.ShopReviewList;
 import com.openyelp.data.service.ShopReviewListService;
 import com.openyelp.data.service.UserService;

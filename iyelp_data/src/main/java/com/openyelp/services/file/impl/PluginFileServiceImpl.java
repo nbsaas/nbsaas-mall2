@@ -17,7 +17,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.Predicate;
 import org.springframework.stereotype.Service;
 
-import com.ada.plugin.api.StoragePlugin;
+import com.ada.plug.api.StoragePlugin;
 import com.openyelp.services.file.PluginFileService;
 
 /**

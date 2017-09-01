@@ -12,10 +12,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.ada.user.data.entity.UserInfo;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
-import com.ada.user.entity.UserInfo;
 @Entity
 @Table(name = "talk_reply")
 public class TalkReply {

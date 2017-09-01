@@ -12,11 +12,19 @@
 	default-lazy-init="true">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.ada.article" />
-	<context:component-scan base-package="com.ada.user" />
-	<context:component-scan base-package="com.ada.admin" />
-	<context:component-scan base-package="com.ada.area" />
-	<context:component-scan base-package="com.ada.plugin" />
+	<context:component-scan base-package="com.ada.user.data" />
+	<context:component-scan base-package="com.ada.web.data" />
+	<context:component-scan base-package="com.ada.area.data" />
+	<context:component-scan base-package="com.ada.userfriend.data" />
+	<context:component-scan base-package="com.ada.article.data" />
+	<context:component-scan base-package="com.ada.plug.data" />
+
+
+	<context:component-scan base-package="com.ada.user.rest" />
+	<context:component-scan base-package="com.ada.area.rest" />
+
+
+
 	<context:component-scan base-package="com.openyelp.plugs" />
 	<context:component-scan base-package="com.openyelp.services.file" />
 
@@ -43,7 +51,7 @@
 		<property name="password" value="${jdbc.password}" />
 	</bean>
 	<bean id="sessionFactory"
-		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="hibernateProperties">
 			<value>
@@ -58,18 +66,19 @@
 		<property name="packagesToScan">
 			<list>
 				<value>com.openyelp.data</value>
-				<value>com.ada.user.entity</value>
-				<value>com.ada.article.entity</value>
-				<value>com.ada.admin.entity</value>
-				<value>com.ada.area.entity</value>
-				<value>com.ada.plugin.entity</value>
+				<value>com.ada.user.data.entity</value>
+				<value>com.ada.userfriend.data.entity</value>
+				<value>com.ada.web.data.entity</value>
+				<value>com.ada.area.data.entity</value>
+				<value>com.ada.article.data.entity</value>
+				<value>com.ada.plug.data.entity</value>
 			</list>
 		</property>
 		<property name="entityInterceptor" ref="treeInterceptor">
 		</property>
 	</bean>
 	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<tx:annotation-driven />

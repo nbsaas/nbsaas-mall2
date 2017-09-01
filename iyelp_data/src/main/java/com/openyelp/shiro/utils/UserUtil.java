@@ -3,8 +3,8 @@ package com.openyelp.shiro.utils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
-import com.ada.area.entity.Area;
-import com.ada.user.entity.UserInfo;
+import com.ada.area.data.entity.Area;
+import com.ada.user.data.entity.UserInfo;
 import com.openyelp.shiro.realm.UserRealm.ShiroUser;
 
 public class UserUtil {
@@ -91,13 +91,13 @@ public class UserUtil {
 			Area e = (Area) session.getAttribute("area");
 			if (e == null) {
 				e = new Area();
-				e.setId(110);
+				e.setId(113);
 				e.setName("西安");
 			}
 			return e;
 		} else {
 			Area e = new Area();
-			e.setId(110);
+			e.setId(113);
 			e.setName("西安");
 			return e;
 		}

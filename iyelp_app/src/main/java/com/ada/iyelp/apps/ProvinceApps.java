@@ -1,7 +1,9 @@
 package com.ada.iyelp.apps;
 
-import com.ada.area.entity.Area;
-import com.ada.area.service.AreaService;
+import com.ada.area.data.entity.Area;
+import com.ada.area.data.service.AreaService;
+import com.ada.data.page.Filter;
+import com.ada.user.utils.ListUtils;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -18,7 +20,7 @@ public class ProvinceApps {
 
 	public static void main(String[] args) throws IOException {
 		//provinces();
-		citys();
+		//citys();
 		towns();
 	}
 
@@ -47,7 +49,7 @@ public class ProvinceApps {
 
 	private static void adddowndatas(int pid) throws IOException {
 		AreaService service = ObjectFactory.get().getBean("cityServiceImpl",AreaService.class);
-		List<Area> citys = service.findByParent(pid);
+		List<Area> citys =  service.list(0,1000, ListUtils.list(Filter.eq("parent.id",pid)),null);
 		for (Area city : citys) {
 			System.out.println(city.getName());
 			
@@ -69,7 +71,7 @@ public class ProvinceApps {
 				int id = arrays2.get(1).getAsInt();
 				Area town = new Area();
 				town.setParent(city);
-				town.setLevelinfo(4);
+				town.setLevelInfo(4);
 				town.setName(name);
 				town.setId(id);
 				try {
@@ -105,7 +107,7 @@ public class ProvinceApps {
 		AreaService service = ObjectFactory.get().getBean(AreaService.class);
 
 
-		List<Area> provinces = service.findByLevel(2);
+		List<Area> provinces = service.list(0,1000, ListUtils.list(Filter.eq("levelInfo",2)),null);
 		for (Area province : provinces) {
 			System.out.println(province.getName());
 
@@ -113,8 +115,8 @@ public class ProvinceApps {
 				String body = "";
 				Connection con = Jsoup
 						.connect("http://cdn.weather.hao.360.cn/sed_api_area_query.php");
-//				con.data("code", province.getCode() < 10 ? "0" + province.getCode()
-//						+ "" : province.getCode() + "");
+				con.data("code", province.getCode().length() < 2 ? "0" + province.getCode()
+						+ "" : province.getCode() + "");
 				con.data("grade", "city");
 				con.data("_jsonp", "loadCity");
 
@@ -133,8 +135,8 @@ public class ProvinceApps {
 					Area city = new Area();
 					city.setParent(province);
 					city.setName(name);
-					//city.setCode(id);
-					city.setLevelinfo(3);
+					city.setCode(""+id);
+					city.setLevelInfo(3);
 					service.save(city);
 					System.out.println("" + name + "  id:" + id);
 				}
@@ -147,16 +149,16 @@ public class ProvinceApps {
 		AreaService service = ObjectFactory.get().getBean(AreaService.class);
 
 
-		List<Area> provinces = service.findByLevel(3);
+		List<Area> provinces = service.list(0,1000, ListUtils.list(Filter.eq("levelInfo",3)),null);
 		for (Area province : provinces) {
 			System.out.println(province.getName());
 
 			try {
 				Connection con = Jsoup
 						.connect("http://cdn.weather.hao.360.cn/sed_api_area_query.php");
-//				con.data("code", province.getCode() < 1000 ? "0" + province.getCode()
-//						+ "" : province.getCode() + "");
-//				con.data("grade", "town");
+				con.data("code", province.getCode().length() < 4 ? "0" + province.getCode()
+						+ "" : province.getCode() + "");
+				con.data("grade", "town");
 				con.data("_jsonp", "loadTown");
 
 				String body = con.execute().body();
@@ -174,8 +176,8 @@ public class ProvinceApps {
 					Area city = new Area();
 					city.setParent(province);
 					city.setName(name);
-					//city.setCode(id);
-					city.setLevelinfo(4);
+					city.setCode(""+id);
+					city.setLevelInfo(4);
 					service.save(city);
 					System.out.println("" + name + "  id:" + id);
 				}
@@ -207,9 +209,9 @@ public class ProvinceApps {
 				Area area=new Area();
 				area.setId(1);
 				Area p = new Area();
-				//p.setCode(id);
+				p.setCode(""+id);
 				p.setName(name);
-				p.setLevelinfo(2);
+				p.setLevelInfo(2);
 				p.setParent(area);
 				service.save(p);
 				System.out.println("" + name + "  id:" + id);

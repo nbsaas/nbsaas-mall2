@@ -2,7 +2,7 @@ package com.ada.iyelp.apps;
 
 import java.util.Date;
 
-import com.ada.area.entity.Area;
+import com.ada.area.data.entity.Area;
 import com.openyelp.data.entity.AreaHot;
 import com.openyelp.data.service.AreaHotService;
 
@@ -13,8 +13,8 @@ public class AreaHotApps {
 		AreaHotService service = ObjectFactory.get().getBean(AreaHotService.class);
 		Area area=new Area();
 		area.setName("中国");
-		area.setLevelinfo(1);
-		area.setSortnum(0);
+		area.setLevelInfo(1);
+		area.setSortNum(0);
 		area.setId(37);
 		AreaHot hot=new AreaHot();
 		hot.setArea(area);

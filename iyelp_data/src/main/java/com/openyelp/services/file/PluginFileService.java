@@ -5,9 +5,10 @@
  */
 package com.openyelp.services.file;
 
-import java.util.List;
 
-import com.ada.plugin.api.StoragePlugin;
+import com.ada.plug.api.StoragePlugin;
+
+import java.util.List;
 
 /**
  * Service - 插件

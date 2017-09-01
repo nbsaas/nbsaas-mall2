@@ -6,12 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ada.area.dao.AreaDao;
-import com.ada.area.entity.Area;
+import com.ada.area.data.dao.AreaDao;
+import com.ada.area.data.entity.Area;
 import com.ada.data.core.Finder;
 import com.ada.data.core.Pagination;
 import com.ada.data.core.Updater;
-import com.ada.user.entity.UserInfo;
+import com.ada.user.data.entity.UserInfo;
 import com.openyelp.data.dao.FeedDao;
 import com.openyelp.data.dao.ShopCategoryDao;
 import com.openyelp.data.dao.ShopDao;

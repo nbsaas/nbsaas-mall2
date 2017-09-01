@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.util.List;
 
 import com.ada.iyelp.factory.ZHUtils;
+import com.ada.user.data.service.MenuService;
 import com.github.stuxuhai.jpinyin.PinyinFormat;
 import com.github.stuxuhai.jpinyin.PinyinHelper;
 import com.google.gson.JsonArray;
@@ -29,13 +30,17 @@ public class ShopCategoryServiceApps {
         works(array,category);
         // TODO Auto-generated method stub
 
-//		Long time=System.currentTimeMillis();
-//		List<ShopCatalog> cs=	userService.findByPidl2(1);
-//		for (ShopCatalog shopCatalog : cs) {
-//			//System.out.println(shopCatalog);
-//		}
-//		time=System.currentTimeMillis()-time;
-//		System.out.println(time);
+		Long time=System.currentTimeMillis();
+
+        ShopCategoryService userService = ObjectFactory.get()
+                .getBean(ShopCategoryService.class);
+
+		List<ShopCatalog> cs=	userService.findByPidl2(1);
+		for (ShopCatalog shopCatalog : cs) {
+			//System.out.println(shopCatalog);
+		}
+		time=System.currentTimeMillis()-time;
+		System.out.println(time);
 
         //System.out.println(userService.updateNumsAndTime(114));
 

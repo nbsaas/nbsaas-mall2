@@ -1,5 +1,7 @@
 package com.openyelp.data.entity;
 
+import com.ada.area.data.entity.Area;
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,7 +14,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ada.area.entity.Area;
 
 @Entity
 @Table(name = "talk_category_area")

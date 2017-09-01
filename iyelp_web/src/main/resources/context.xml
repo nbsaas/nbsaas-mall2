@@ -9,6 +9,15 @@
             http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 	<!--COOKIE登录 -->
 	<import resource="context-shiro.xml" />
+
+	<context:component-scan base-package="com.ada.user.controller" />
+	<context:component-scan base-package="com.ada.plug.controller" />
+	<context:component-scan base-package="com.ada.area.controller" />
+	<context:component-scan base-package="com.ada.article.controller" />
+
+
+
+
 	<context:component-scan base-package="com.openyelp.actions" />
 
 	<bean id="multipartResolver"
@@ -17,20 +26,9 @@
 
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
-		<property name="interceptors">
-			<list>
-				<ref bean="siteHandlerInterceptor" />
-			</list>
-		</property>
-	</bean>
-	<bean id="siteHandlerInterceptor" class="com.openyelp.web.interceptor.SiteHandlerInterceptor">
-
-		<!-- http://openyelp.aliapp.com/ http://openyelp.sturgeon.mopaas.com/ http://yelp.tiger.mopaasapp.com -->
-		<!--<property name="url" value="http://www.zhenzhendianping.com:8080/"></property> -->
-		<property name="url" value="http://www.zzdp.me/"></property>  <!-- -->
 	</bean>
 	<bean id="exceptionResolver" class="com.openyelp.web.handler.MappingExceptionResolver">
-		<property name="url" value="http://www.zzdp.me/"></property> <!-- -->
+		<property name="url" value="http://localhost:8080/iyelp_web/"></property> <!-- -->
 		<property name="exceptionMappings">
 			<props>
 				<prop key="org.apache.shiro.authz.UnauthenticatedException">/theme/yelp/login</prop>
@@ -52,17 +50,16 @@
 
 
 
-	<bean id="menuOpenDirective" class="com.openyelp.web.freemaker.MenuOpenDirective"></bean>
-	<bean id="menusDirective" class="com.openyelp.web.freemaker.MenusDirective"></bean>
+	<bean id="menuOpenDirective" class="com.ada.user.freemaker.MenuOpenDirective"></bean>
+	<bean id="menusDirective" class="com.ada.user.freemaker.MenusDirective"></bean>
 	<bean id="hotAreaDirective" class="com.openyelp.web.freemaker.HotAreaDirective"></bean>
-	<bean id="AreaCategoryDirective" class="com.openyelp.web.freemaker.AreaCategoryDirective"></bean>
 	<bean id="talkNewsDirective" class="com.openyelp.web.freemaker.TalkNewsDirective"></bean>
 	<bean id="eventGoodDirective" class="com.openyelp.web.freemaker.EventGoodDirective"></bean>
 	<bean id="shopNearDirective" class="com.openyelp.web.freemaker.ShopNearDirective"></bean>
 	<bean id="shopGoodDirective" class="com.openyelp.web.freemaker.ShopGoodDirective"></bean>
 	<bean id="categoryNearDirective" class="com.openyelp.web.freemaker.CategoryNearDirective"></bean>
 
-	<bean id="articleDirective" class="com.openyelp.web.freemaker.ArticleDirective"></bean>
+	<bean id="articleDirective" class="com.ada.article.freemarker.ArticleDirective"></bean>
 	<bean id="shopDirective" class="com.openyelp.web.freemaker.ShopDirective"></bean>
 	<bean id="talkDirective" class="com.openyelp.web.freemaker.TalkDirective"></bean>
 	<bean id="eventsDirective" class="com.openyelp.web.freemaker.EventsDirective"></bean>
@@ -104,7 +101,6 @@
 				<entry key="menuopentag" value-ref="menuOpenDirective" />
 				<entry key="menustag" value-ref="menusDirective" />
 				<entry key="hotarea" value-ref="hotAreaDirective" />
-				<entry key="areacategory" value-ref="AreaCategoryDirective" />
 				<entry key="talknews" value-ref="talkNewsDirective" />
 				<entry key="shiro" value-ref="shiro" />
 				<entry key="html" value-ref="htmlTags" />
@@ -119,7 +115,8 @@
 				<entry key="shopreview_" value-ref="shopReviewDirective" />
 				<entry key="shopimage_" value-ref="shopImageDirective" />
 				<entry key="shopimagelist_" value-ref="shopImageListDirective" />
-
+				<entry key="siteurl" value="#{servletContext.contextPath}/"/>
+				<entry key="sitename" value="票聚客平台"/>
 
 				<entry key="havevote" value-ref="haveVoteDirective" />
 
@@ -155,13 +152,12 @@
 	</mvc:annotation-driven>
 
 	<bean name="openSessionInViewInterceptor"
-		class="org.springframework.orm.hibernate4.support.OpenSessionInViewInterceptor">
+		class="org.springframework.orm.hibernate5.support.OpenSessionInViewInterceptor">
 		<property name="sessionFactory">
 			<ref bean="sessionFactory" />
 		</property>
 	</bean>
 	<mvc:interceptors>
-		<ref bean="siteHandlerInterceptor" />
 		<ref bean="openSessionInViewInterceptor" />
 	</mvc:interceptors>
 	<bean id="taskExecutor"

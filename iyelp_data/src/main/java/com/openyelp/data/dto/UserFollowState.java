@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-import com.ada.user.entity.UserInfo;
-import com.ada.user.entity.UserRole;
+import com.ada.user.data.entity.UserInfo;
+import com.ada.user.data.entity.UserRole;
 
 public class UserFollowState implements Serializable {
 
