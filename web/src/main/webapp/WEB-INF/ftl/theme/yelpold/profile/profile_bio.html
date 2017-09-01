@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/profile.css" />
+				[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div id="profile" class="container">
+					<div class="clearfix layout-block layout-a">
+						<div id="some-id-related-to-this-column"
+							class="column column-alpha ">
+							<div id="breadcrumbs">
+								<a class="inline-block" href="${siteurl}profile/profile.htm"> 账户设定 </a> » 个人资料
+							</div>
+
+							<div class="profile-block">
+
+
+								<form name="profile_bio" method="post" class="profile-bio yform"
+									action="${siteurl}profile/profile_bio.htm">
+									<input type="hidden"
+										value="40b2a3644a2c4ba764f3b363b93aad86f466fedba64477df261569ddeea82cd2"
+										class="csrftok" name="csrftok">
+									<div class="profile-header">
+										<div class="right-header-button">
+											<button class="ybtn ybtn-primary" value="submit"
+												type="submit">
+												<span>保存资料</span>
+											</button>
+										</div>
+										<h2 class="header-content top-h2">你公开的个人资料</h2>
+										<span class="header-content">其他的人可以看到</span>
+									</div>
+									<div class="profile-main">
+										<div class="profile-form ytype">
+
+											<div id="main-form">
+												<input type="hidden" value="awzxzbpI7YLZlMmaGDAeEQ"
+													name="context"> <input type="hidden"
+													value="profile_bio_form" name="form_name"> <span
+													class="profile-photo">你的个人档案相片 (<a
+													href="${siteurl}profile/user_photos.htm?return_url=/profile_bio?return_url=%2Fprofile">新增或编辑</a>)
+												</span>
+
+
+
+
+												<div class="photo-box pb-m">
+													<a
+														href="${siteurl}profile/user_photos.htm">
+														<img style="width: 80px;height: 80px"
+														src="[#if user.headimg??]${user.headimg!}[#else]${siteurl}assets/img/header.jpg[/#if]"
+														class="photo-box-img" alt="">
+													</a>
+												</div>
+			                                    <label for="first_name">昵称</label> <span class="help-block">此栏必需被填写。</span>
+
+												<input required="required" type="text" value="${user.name!''}" size="30" name="name"
+													maxlength="20" id="first_name" class="profile-form-textbox">
+
+												<label for="first_name">名字</label> <span class="help-block">此栏必需被填写。</span>
+
+												<input type="text" value="${profile.first_name!''}" size="30" name="first_name"
+													maxlength="32" id="first_name" class="profile-form-textbox">
+
+
+												<label for="last_name">姓氏</label> <span class="help-block">此栏必需被填写。只有姓氏首字母会被显示在你的个人档案上。</span>
+
+												<input type="text" value="${profile.last_name!''}" size="30" name="last_name"
+													maxlength="32" id="last_name" class="profile-form-textbox">
+
+
+
+												<label for="nickname">外号</label> <span class="help-block">烧腊大王，甜品高手，时尚达人</span>
+
+												<input type="text" value="${profile.nickname!''}" size="30" name="nickname"
+													maxlength="50" id="nickname" class="profile-form-textbox">
+
+
+
+												<fieldset>
+													<label for="gender">性别</label> <label class="radio-check"
+														for="f"> <input type="radio" value="f"
+														name="gender" id="f"> <span>女性</span>
+													</label> <label class="radio-check" for="m"> <input
+														type="radio" value="m" name="gender" id="m"
+														checked="checked"> <span>男性</span>
+													</label>
+
+												</fieldset>
+
+												<label for="tagline">你的标题</label> <span class="help-block">超级新秀Yelper，系咪恨做精英恨到流哂口水呢？</span>
+
+												<input type="text" value="${profile.tagline!''}" size="30" name="tagline"
+													maxlength="100" id="tagline" class="profile-form-textbox">
+
+
+												<label for="love_field">我喜爱...</label> <span
+													class="help-block">请使用逗号作为分隔（例如：寿司、球场、公园）</span>
+
+												<textarea type="text" size="30" name="love_name"
+													maxlength="1024" id="love_name"
+													class="profile-form-textbox profile-form-textarea">${profile.love_name!''}</textarea>
+
+
+												<label for="find_me_in">可以喺边度搵到我</label> <span
+													class="help-block">维园、旺角百老汇、沙田新城市</span> <input type="text"
+													value="${profile.find_me_in!''}" size="30" name="find_me_in" maxlength="80"
+													id="find_me_in" class="profile-form-textbox"> <label
+													for="hometown">出生地</label> <span class="help-block">香港</span>
+
+												<input type="text" value="${profile.hometown!''}" size="30" name="hometown"
+													maxlength="80" id="hometown" class="profile-form-textbox">
+
+												<label for="blog">我个Blog或网页</label> <span class="help-block">www.blog.com</span>
+
+												<input type="text" value="${profile.blog!''}" size="30" name="blog"
+													maxlength="80" id="blog" class="profile-form-textbox">
+
+												<label for="notyelp">除左Yelp最钟意做啲乜</label> <span
+													class="help-block">睇波、行山、做义工</span> <input type="text"
+													value="${profile.notyelp!''}" size="30" name="notyelp" maxlength="80"
+													id="notyelp" class="profile-form-textbox"> <label
+													for="reviews">点解你应该睇我写嘅评语</label> <span class="help-block">我肯定你会认同我嘅意见</span>
+
+												<input type="text" value="${profile.reviews!''}" size="30" name="reviews"
+													maxlength="80" id="reviews" class="profile-form-textbox">
+
+												<label for="secondsite">第二最爱的网页</label> <span
+													class="help-block">www.facebook.com,
+													www.instagram.com</span> <input type="text"
+													value="${profile.secondsite!''}" size="30" name="secondsite"
+													maxlength="80" id="secondsite" class="profile-form-textbox">
+
+												<label for="book">最近觉得最正嗰本书</label> <span class="help-block">《霍金传》</span>
+
+												<input type="text" value="${profile.book!''}" size="30" name="book"
+													maxlength="80" id="book" class="profile-form-textbox">
+
+												<label for="concert">第一次睇嘅演唱会</label> <span
+													class="help-block">陈奕迅、杨千嬅、张敬轩</span> <input type="text"
+													value="${profile.concert!''}" size="30" name="concert" maxlength="80"
+													id="concert" class="profile-form-textbox"> <label
+													for="film">最爱电影</label> <span class="help-block">线人、无间道、家有喜事</span>
+
+												<input type="text" value="${profile.film!''}" size="30" name="film"
+													maxlength="80" id="film" class="profile-form-textbox">
+
+												<label for="lastmeal">最后晚餐想...</label> <span
+													class="help-block">放题、打边炉、云吞麵</span> <input type="text"
+													value="${profile.lastmeal!''}" size="30" name="lastmeal" maxlength="80"
+													id="lastmeal" class="profile-form-textbox">
+													
+													 <label
+													for="donttell">唔好同人讲...</label> <span class="help-block">最惊老鼠、成日去
+													Gamezone 蛇王、逄星期二著鸳鸯袜</span> <input type="text" value="${profile.donttell!''}" size="30"
+													name="donttell" maxlength="80" id="donttell"
+													class="profile-form-textbox"> 
+													
+													<label
+													for="recentdiscovery">最近嘅新发现</label> <span
+													class="help-block">鱼柳包餐散买抵啲、驾驶乐趣、雪糕厚多士好正</span> <input
+													type="text" value="${profile.recentdiscovery!''}" size="30" name="recentdiscovery"
+													maxlength="80" id="recentdiscovery"
+													class="profile-form-textbox"> 
+													
+													<label for="crush">明星偶像</label>
+
+												<span class="help-block">周润发、刘德华、周星驰</span> <input
+													type="text" value="${profile.crush!}" size="30" name="crush" maxlength="80"
+													id="crush" class="profile-form-textbox">
+													
+													 <label
+													for="primary_locale">首选语言</label> <select
+													name="primary_locale">
+													<option value="da_DK">丹麦文 (丹麦)</option>
+													<option value="tr_TR">土耳其文 (土耳其)</option>
+													<option value="de_AT">德文 (奥地利)</option>
+													<option value="de_DE">德文 (德国)</option>
+													<option value="de_CH">德文 (瑞士)</option>
+													<option value="it_IT">意大利文 (意大利)</option>
+													<option value="it_CH">意大利文 (瑞士)</option>
+													<option value="nb_NO">挪威文 (挪威)</option>
+													<option value="cs_CZ">捷克文 (捷克共和国)</option>
+													<option value="ja_JP">日文 (日本)</option>
+													<option value="fr_CA">法文 (加拿大)</option>
+													<option value="fr_BE">法文 (比利时)</option>
+													<option value="fr_FR">法文 (法国)</option>
+													<option value="fr_CH">法文 (瑞士)</option>
+													<option value="pl_PL">波兰文 (波兰)</option>
+													<option value="sv_SE">瑞典文 (瑞典)</option>
+													<option value="sv_FI">瑞典文 (芬兰)</option>
+													<option value="zh_HK" selected="selected">繁体中文
+														(香港)</option>
+													<option value="fi_FI">芬兰文 (芬兰)</option>
+													<option value="en_CA">英文 (加拿大)</option>
+													<option value="en_IE">英文 (爱尔兰)</option>
+													<option value="en_SG">英文 (新加坡)</option>
+													<option value="en_BE">英文 (比利时)</option>
+													<option value="en_AU">英文 (澳洲)</option>
+													<option value="en_CH">英文 (瑞士)</option>
+													<option value="en_NZ">英文 (纽西兰)</option>
+													<option value="en_US">英文 (美国)</option>
+													<option value="en_GB">英文 (英国)</option>
+													<option value="en_HK">英文 (香港)</option>
+													<option value="nl_BE">荷兰文 (比利时)</option>
+													<option value="nl_NL">荷兰文 (荷兰)</option>
+													<option value="pt_BR">葡萄牙文 (巴西)</option>
+													<option value="pt_PT">葡萄牙文 (葡萄牙)</option>
+													<option value="es_MX">西班牙文 (墨西哥)</option>
+													<option value="es_CL">西班牙文 (智利)</option>
+													<option value="es_ES">西班牙文 (西班牙)</option>
+													<option value="es_AR">西班牙文 (阿根廷)</option>
+												</select> <input type="hidden" value="save_profile"
+													name="default_action">
+												<button class="ybtn ybtn-primary ytype" value="submit"
+													type="submit">
+													<span>保存资料</span>
+												</button>
+												<a href="${siteurl}profile/profile.htm">取消</a>
+											</div>
+										</div>
+									</div>
+
+								</form>
+							</div>
+
+
+
+						</div>
+						<div class="column column-beta "></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

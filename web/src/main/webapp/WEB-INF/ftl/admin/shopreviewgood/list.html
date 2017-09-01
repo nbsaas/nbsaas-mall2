@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>Blank Page - Ace Admin</title>
+
+     [#include "/admin/common/commonurl.html"]
+</head>
+
+<body class="no-skin">
+<div id="navbar" class="navbar navbar-default">
+<script type="text/javascript">
+	try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+</script>
+
+[#include "/admin/common/navbar.html"]
+
+<!-- /.navbar-container -->
+</div>
+
+<div class="main-container" id="main-container">
+<script type="text/javascript">
+	try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+</script>
+
+<div id="sidebar" class="sidebar                  responsive">
+<script type="text/javascript">
+	try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+</script>
+[#include "/admin/common/shortcuts.html"]
+<!-- /.sidebar-shortcuts -->
+
+<!-- .nav-list -->
+					[#include "/admin/common/commonmenu.html"]
+                      	<ul class="nav nav-list">
+                      	[@menustag id=1]
+						[#list list as item]
+					     [@menu item "1,44,58"]
+					     [/@menu]
+					     [/#list]
+					     [/@menustag]
+					     </ul>
+<!-- /.nav-list -->
+
+<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+	<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+</div>
+
+<script type="text/javascript">
+	try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+	
+	function updatering(){
+		$("#processinfos").slideDown();
+		$.get("${siteurl}ring/downring.htm",function(){
+			$("#processinfos").slideUp();
+		});
+	}
+</script>
+</div>
+
+<div class="main-content">
+	<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+
+		<ul class="breadcrumb">
+			<li>
+				<i class="ace-icon fa fa-home home-icon"></i>
+				<a href="#">首页</a>
+			</li>
+
+			<li class="active">每日之星管理</li>
+		</ul><!-- /.breadcrumb -->
+
+		<div class="nav-search" id="nav-search">
+			<form class="form-search">
+							<span class="input-icon">
+								<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+								<i class="ace-icon fa fa-search nav-search-icon"></i>
+							</span>
+			</form>
+		</div><!-- /.nav-search -->
+	</div>
+
+
+	
+				<div class="page-content">
+				      [#include "/admin/common/page.html"]
+				       [#include "/admin/common/settings.html"]
+					<div class="row">
+						<div class="col-xs-12">
+							<div class="table-responsive">
+								<table class="table table-striped table-bordered table-hover">
+									<tr>
+										<td class="col-xs-4">商店</td>
+										<td class="col-xs-4 text-center">评论内容</td>
+										<td class="col-xs-2 text-center">添加时间</td>
+										<td class="col-xs-2 text-center">操作</td>
+									</tr>
+									[#list list as item]
+									[#if item.shopReview?? && (item.shopReview.shop)??]
+									<tr id="trr${item.id}">
+										<td>${item.shopReview.shop.name!""}</td>
+										<td class="text-left">${item.shopReview.comment!""}</td>
+										<td class="text-center">${item.addDate!""}</td>
+										
+										<td class="text-center">
+											<div
+												class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+												<a 
+													href="${siteurl}/admin/shopreviewgood/delete.htm?id=${item.id}&curpage=${curpage!'1'}">
+													<button class="btn btn-xs btn-danger">
+														<i class="icon-trash bigger-120">删除</i>
+													</button>
+												</a>
+											</div>
+										</td>
+									</tr>
+									[/#if]
+									[/#list]
+								</table>
+							</div>
+	                  	[@pager page curpage "${siteurl}admin/shopreviewgood/list.htm?x=1"][/@pager]
+	                  
+	
+						</div>
+					</div>
+
+
+				</div>
+</div><!-- /.main-content -->
+
+     [#include "/admin/common/footer.html"]
+
+</div><!-- /.main-container -->
+
+<!-- basic scripts -->
+
+     [#include "/admin/common/scripts.html"]
+
+<!-- inline scripts related to this page -->
+</body>
+</html>

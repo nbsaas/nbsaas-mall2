@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user_details-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="user-header">
+
+
+
+										<ul class="clearfix" id="userTabs">
+
+						<li ><a
+							href="${siteurl}user_details.htm?id=${id!'-1'}">个人主页</a></li>
+
+						<li><a
+							href="${siteurl}user_details_lists.htm?id=${id!'-1'}">列表</a></li>
+
+						<li><a
+							href="${siteurl}user_details_reviews_self.htm?id=${id!'-1'}">评语</a></li>
+
+						<li><a
+							href="${siteurl}user_details_quicktips.htm?id=${id!'-1'}">贴士</a></li>
+
+						<li><a
+							href="${siteurl}user_details_thanx.htm?id=${id!'-1'}">赞扬</a></li>
+
+						<li class="selected"><a
+							href="${siteurl}user_details_friends.htm?id=${id!'-1'}">朋友</a></li>
+
+						<li ><a href="${siteurl}user_details_following.htm?id=${id!'-1'}">关注中</a></li>
+
+						<li ><a
+							href="${siteurl}user_details_bookmarks.htm?id=${id!'-1'}">收藏</a></li>
+						<li ><a
+							href="${siteurl}user_details_events.htm?id=${id!'-1'}">活动</a></li>
+					</ul>
+					<div class="about-connections">
+						[#include "user_details_include_top.html"]
+					</div>
+
+				</div>
+
+
+				<div id="user-details" class="container">
+					<div class="clearfix layout-block layout-o layout-border">
+						<div id="user_main_content" class="column column-alpha ">
+							<div id="user_friends">
+
+
+
+
+
+								<form name="member_search_form" method="POST"
+									class="yform yform-inline yform-search member-search"
+									action="/member_search">
+									<input type="hidden"
+										value="babbc37339fbb50cde6b9177cf34e7fb2b5f210163a7f4287a1e837dbb95b0e8"
+										class="csrftok" name="csrftok"> <label
+										for="name_field"> 姓名</label> <input type="hidden"
+										value="Search" name="action_search">
+									<div class="yform-input-field-wrap">
+										<input type="text" value="" size="20" name="query"
+											class="member-name" id="name_field">
+									</div>
+									<button
+										class="ybtn ybtn-primary ybtn-small yform-search-button"
+										value="submit" type="submit">
+										<span><i class="i ig-common i-search-common"></i></span>
+									</button>
+								</form>
+
+								<h3>我的朋友</h3>
+								<a class="recent" href="/browse/reviews/friends">朋友最新的評語</a>
+
+								<table width="95%" cellspacing="0" cellpadding="0" border="0"
+									class="fs_pagination_controls">
+									<tbody>
+										<tr>
+											<td class="range-of-total"><span>1 至 2，共有2</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+
+								<div class="clearfix">
+									<div class="pull-right">
+										<span class="drop-menu-origin js-user-sorts"
+											data-component-bound="true"> <a class="drop-menu-link"
+											href="javascript:;" data-component-bound="true"> 按以下排列： <strong
+												class="i-wrap ig-wrap-common i-dropdown-arrow-link-common-wrap ig-wrap-common-r dropdown-arrow"><i
+													class="i ig-common i-dropdown-arrow-link-common"></i> 最近活動</strong>
+										</a>
+											<div class="drop-menu hidden" data-component-bound="true">
+												<ul>
+													<li><a
+														href="/user_details_friends?sort=time_last_reviewed&amp;userid=HfJEPdrCb1eIqRklSQ1dGw">最近活動</a>
+													</li>
+													<li><a
+														href="/user_details_friends?sort=first_name&amp;userid=HfJEPdrCb1eIqRklSQ1dGw">按英文字母順序排列</a>
+													</li>
+												</ul>
+											</div>
+										</span>
+									</div>
+								</div>
+
+								<div class="clearfix" id="friends_box_list">
+									<div class="friend_box">
+										<p class="smallest review-announce">&nbsp;</p>
+										<div class="user-passport">
+
+
+
+
+
+											<div class="photo-box pb-ss">
+												<a
+													href="http://zh.yelp.com.hk/user_details?userid=pP2e5hnLpIyh1oH1-9PPjw">
+													<img width="40" height="40"
+													src="http://s3-media1.fl.yelpcdn.com/photo/HTMXWT2hw0b-UVU1AI9AtQ/ss.jpg"
+													class="photo-box-img" alt="Ada L.的相片">
+												</a>
+											</div>
+
+											<ul class="user-stats">
+												<li class="friend-count miniOrange"><span
+													class="i-wrap ig-wrap-common_sprite i-friends-orange-common_sprite-wrap"><i
+														class="i ig-common_sprite i-friends-orange-common_sprite"></i>
+														1<span class="offscreen">個朋友</span></span></li>
+												<li class="review-count miniOrange"><span
+													class="i-wrap ig-wrap-common_sprite i-star-orange-common_sprite-wrap"><i
+														class="i ig-common_sprite i-star-orange-common_sprite"></i>
+														0<span class="offscreen">則評語</span></span></li>
+											</ul>
+
+
+											<ul class="user-passport-info ieSucks">
+												<li class="user-name"><a
+													href="http://zh.yelp.com.hk/user_details?userid=pP2e5hnLpIyh1oH1-9PPjw">Ada
+														L.</a></li>
+												<li class="user-location">San Francisco, CA</li>
+											</ul>
+										</div>
+
+
+									</div>
+									<div class="friend_box">
+										<p class="smallest review-announce">&nbsp;</p>
+										<div class="user-passport">
+
+
+
+
+
+											<div class="photo-box pb-ss">
+												<a
+													href="http://zh.yelp.com.hk/user_details?userid=ZTGDfLEmuWfja2GWztoLMg">
+													<img width="40" height="40"
+													src="http://s3-media4.fl.yelpcdn.com/photo/Te4_-wnmby-5qHD95VXN3w/ss.jpg"
+													class="photo-box-img" alt="Chen K.的相片">
+												</a>
+											</div>
+
+											<ul class="user-stats">
+												<li class="friend-count miniOrange"><span
+													class="i-wrap ig-wrap-common_sprite i-friends-orange-common_sprite-wrap"><i
+														class="i ig-common_sprite i-friends-orange-common_sprite"></i>
+														1<span class="offscreen">個朋友</span></span></li>
+												<li class="review-count miniOrange"><span
+													class="i-wrap ig-wrap-common_sprite i-star-orange-common_sprite-wrap"><i
+														class="i ig-common_sprite i-star-orange-common_sprite"></i>
+														0<span class="offscreen">則評語</span></span></li>
+											</ul>
+
+
+											<ul class="user-passport-info ieSucks">
+												<li class="user-name"><a
+													href="http://zh.yelp.com.hk/user_details?userid=ZTGDfLEmuWfja2GWztoLMg">Chen
+														K.</a></li>
+												<li class="user-location">Chicago, IL</li>
+											</ul>
+										</div>
+
+
+									</div>
+								</div>
+								<table width="95%" cellspacing="0" cellpadding="0" border="0"
+									class="fs_pagination_controls">
+									<tbody>
+										<tr>
+											<td class="range-of-total"><span>1 至 2，共有2</span></td>
+										</tr>
+									</tbody>
+								</table>
+
+
+							</div>
+
+						</div>
+						 [#include "user_details_left.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

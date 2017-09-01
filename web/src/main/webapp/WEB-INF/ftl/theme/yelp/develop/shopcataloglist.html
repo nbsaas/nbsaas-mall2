@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>真真点评</title>
+		<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+				[#include "/theme/yelp/common/scripts.html"]
+		
+	</head>
+
+	<body class="country-hk logged-out ytype jquery" id="yelp_main_body" ryt13230="1">
+
+		<div id="fb-root"></div>
+
+		<div class="lang-en" id="wrap">
+
+
+
+			[#include "/theme/yelp/common/header.html"]
+
+			<div id="print-masthead">
+				<img alt="Yelp" class="print-bkg-img" src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+			</div>
+
+			<span class="offscreen" id="page-content">&nbsp;</span>
+
+			<div class="main-content-wrap main-content-wrap--box">
+
+				<div class="content-container" id="super-container">
+
+					
+
+					<div id="alert-container">
+
+					</div>
+
+					<div class="container homepage">
+				        [#include "/theme/yelp/common/page-header.html"]
+						<div class="clearfix layout-block layout-a layout-border">
+						 <ul style="margin-left: 40px;">
+						  [#list list as item]
+						  <li>
+						    
+						    [#if item.clilds?? && item.clilds?size>0]
+						    <h3 style="margin-top: 3px;margin-bottom: 3px;">${item.name!''}</h3>
+						    <ul style="margin-left: 30px;">
+						    [#list item.clilds as xx]
+						    
+						       [#if xx.clilds?? && xx.clilds?size>0]
+						          <li ><h4 style="margin-top: 3px;margin-bottom: 3px;">${xx.name!''}</h4></li>
+						           <ul style="margin-left: 20px;">
+						          [#list xx.clilds as x2]
+						           <li >${x2.name!''}</li>
+						          [/#list]
+						       [#else]
+						       	 <li >${xx.name!''}</li>
+						       [/#if]
+						       
+						       
+						    
+						    [/#list]
+						     </ul>
+						     [#else]
+						     ${item.name!''}
+						    [/#if]
+						    
+						  </li>
+						  
+						  [/#list]
+						  </ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- google_ad_section_start(weight=ignore) -->
+			<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+			[#include "/theme/yelp/common/footer.html"]
+			
+
+		</div>
+
+				
+	
+	</body>
+
+</html>

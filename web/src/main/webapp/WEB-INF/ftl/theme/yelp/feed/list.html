@@ -1,0 +1,10 @@
+ [#if list?? && list?size>0] 
+ [#list list as item ]
+  [#include "/theme/yelp/index_feed.html"]
+
+[/#list] 
+[#else]
+<li>
+暂无数据
+</li>
+[/#if]

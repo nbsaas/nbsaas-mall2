@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>真真点评-${articleitem.title!""}</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="clearfix layout-block layout-n">
+					<div class="column column-alpha ">
+						<div class="ysection">
+
+
+
+							<div class="titled-nav-list titled-nav-list--responsive">
+								<div class="titled-nav-title-section">
+									<h3>${articleitem.catalog.name!""}</h3>
+								</div>
+
+								<ul class="titled-nav">
+
+                                       [@article id=articleitem.catalog.id size=10]
+										    [#list list as item]
+											
+											<li><a href="${siteurl}article/view.htm?id=${item.id}" [#if item.id==articleitem.id]class="active"[/#if]>
+											<div class="arrange arrange--middle">
+												<div class="arrange_unit arrange_unit--fill">${item.title!""}</div>
+
+												<div class="arrange_unit">
+													<div
+														class="hidden-non-responsive-block responsive-hidden-large">
+														<i
+															class="i ig-common_sprite i-18x18_chevron-common_sprite align-middle"></i>
+													</div>
+												</div>
+											</div>
+
+									</a></li>
+											
+											[/#list]
+									[/@article]
+									
+
+
+								
+								</ul>
+							</div>
+
+						</div>
+						
+
+
+
+					</div>
+					<div class="column column-beta ">
+						<div class="section-header">
+							<h1>${articleitem.title!""}</h1>
+						</div>
+
+
+						<div class="intro-text">
+							<p>
+								${articleitem.introduction!""}
+							</p>
+						</div>
+						<div>
+						${articleitem.contents!""}
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

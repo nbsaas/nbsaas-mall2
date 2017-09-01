@@ -1,0 +1,70 @@
+﻿
+A {
+	COLOR: #4a4a48; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+TD {
+	COLOR: #3C3C3C; FONT-FAMILY: "宋体"; FONT-SIZE: 14px; line-height:110%; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0482C6; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+
+.font_15 {
+	FONT-FAMILY: "宋体";FONT-SIZE: 22px; COLOR:#008000;line-height:130%;TEXT-DECORATION: none
+}
+
+.font_18 {
+	font-size:16px; line-height:28px;COLOR:#000000;TEXT-DECORATION: none
+}
+
+.font_14 {
+	FONT-FAMILY: "宋体";FONT-SIZE: 22px; line-height:130%;TEXT-DECORATION: none
+}
+
+.font_14 a{
+	FONT-FAMILY: "宋体";FONT-SIZE: 22px; line-height:130%;TEXT-DECORATION: none
+}
+
+.font_14 a:hover{
+	FONT-FAMILY: "宋体";FONT-SIZE: 22px; COLOR: #FF3300;line-height:130%;TEXT-DECORATION: none
+}
+.font_22 {
+	FONT-FAMILY: "宋体";FONT-SIZE: 58px; COLOR: #FF0000;line-height:130%;TEXT-DECORATION: none
+}
+.font_24 {
+	FONT-FAMILY: "宋体";FONT-SIZE: 72px; COLOR: #000000;line-height:130%;TEXT-DECORATION: none
+}
+.font_16 {
+	FONT-FAMILY: "宋体";FONT-SIZE: 48px; COLOR: #FF0000;line-height:100%;TEXT-DECORATION: none
+}
+.table4{
+	COLOR: #4a4a48; FONT-FAMILY: "宋体"; FONT-SIZE: 12px; TEXT-DECORATION: none;
+}
+.font_17 a{
+	FONT-FAMILY: "宋体"; FONT-SIZE: 14px; TEXT-DECORATION: none;
+}
+.font_17 a:hover{
+	FONT-FAMILY: "宋体";FONT-SIZE: 14px; COLOR: #FF3300;TEXT-DECORATION: none;
+}
+.font_19 a{
+	FONT-FAMILY: "宋体";FONT-SIZE: 14px; COLOR: #0000FF;TEXT-DECORATION: none;
+}
+.font_19 a:hover{
+	FONT-FAMILY: "宋体";FONT-SIZE: 14px; COLOR: #FF3300;TEXT-DECORATION: none;
+}
+.font_20 {
+	FONT-FAMILY: "宋体";FONT-SIZE: 12px; line-height:130%;TEXT-DECORATION: none;
+}
+.font_20 a{
+	FONT-FAMILY: "宋体";FONT-SIZE: 12px; COLOR: #0000FF;line-height:130%;TEXT-DECORATION: none;
+}
+.font_20 a:hover{
+	FONT-FAMILY: "宋体";FONT-SIZE: 12px; COLOR: #FF3300;line-height:130%;TEXT-DECORATION: none;
+}
+.hr1{ height:1px;border:none;border-top:1px dashed #808080;}
+a.font_21 {font-size:12px;color:#FF0000;}
+ul{
+width:100%;
+margin:10px;
+}
+ul li{float:left; width:50%; height:20px; line-height:20px; overflow:hidden;}

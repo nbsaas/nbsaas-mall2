@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/user.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/member_search.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/friends_widget.css" />
+		[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container ytype">
+					<div class="section-header">
+						<h2>用家搜尋結果</h2>
+					</div>
+
+					<div class="clearfix layout-block layout-a">
+						<div class="column column-alpha member-search-container">
+							<div class="search-input-container clearfix">
+								<div class="filter-cities-dropdown drop-menu-origin pull-right"
+									data-component-bound="true">
+									<a class="drop-menu-link location-link inline-block"
+										id="topbar-account-link" href="#" data-component-bound="true">
+										<span
+										class="i-wrap ig-wrap-common i-dropdown-arrow-common-wrap ig-wrap-common-r dropdown-arrow"><i
+											class="i ig-common i-dropdown-arrow-common"></i> 所有城市</span>
+									</a>
+									<div class="drop-menu drop-menu-restricted slim-drop-menu"
+										data-component-bound="true" style="display: none;">
+										<div>
+											<ul>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="{}" name="find_loc"> <input
+															type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															所有城市</button>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="HK-HK:香港::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															香港</button>
+														<span class="subtle-text">9</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Rosemead::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Rosemead, CA, USA</button>
+														<span class="subtle-text">2</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Duarte::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Duarte, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="WA:University::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															University, WA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="WI:Shorewood::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Shorewood, WI, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Monterey::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Monterey, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="NY:Bay_Ridge::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Bay Ridge, NY, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="LA:Crown_Point::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Crown Point, LA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Mountain_View::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Mountain View, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Dublin::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Dublin, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="ES-C:开姆尼斯::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															开姆尼斯, A Coruña, Spain</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="XWM:Birmingham::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Birmingham, West Midlands, UK</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="IE-D:Dublin::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Dublin, Ireland</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="AU-NSW:Chippendale::"
+															name="find_loc"> <input type="hidden" value="陈"
+															name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Chippendale New South Wales, Australia</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Palm_Springs::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Palm Springs, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="MD:Gaithersburg::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Gaithersburg, MD, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CO:Fort_Collins::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Fort Collins, CO, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="XWM:伍爾弗漢普頓::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															伍爾弗漢普頓, West Midlands, UK</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Santa_Clara::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Santa Clara, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:Berkeley::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Berkeley, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="OXF:Oxford::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Oxford, UK</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="AB:Edmonton::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Edmonton, AB, Canada</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="FR-94:Ivry-sur-Seine::"
+															name="find_loc"> <input type="hidden" value="陈"
+															name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Ivry-sur-Seine, Val-de-Marne, France</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="NV:Las_Vegas::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Las Vegas, NV, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="SG-SG:Singapore::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Singapore, Singapore</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="CA:San_Pablo::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															San Pablo, CA, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="NY:Bayside::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Bayside, NY, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="ON:Toronto::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Toronto, ON, Canada</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+
+												<li class="drop-down-menu-link">
+
+													<form method="POST" action="/member_search">
+														<input type="hidden"
+															value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+															class="csrftok" name="csrftok"> <input
+															type="hidden" value="FL:Jacksonville::" name="find_loc">
+														<input type="hidden" value="陈" name="query">
+														<button type="submit" value="submit" class="pseudoLink">
+															Jacksonville, FL, USA</button>
+														<span class="subtle-text">1</span>
+
+													</form>
+												</li>
+											</ul>
+
+										</div>
+									</div>
+								</div>
+
+
+
+
+
+								<form name="member_search_form" method="POST"
+									id="member-search-form"
+									class="member-search-form yform yform-inline yform-search"
+									action="${siteurl}user/find_friends.htm" data-component-bound="true">
+									<input type="hidden"
+										value="1f4ce3959637ea7721d0c0538c0e8968ae478120b966244912975fd3f3cb9dc7"
+										class="csrftok" name="csrftok"> <input type="hidden"
+										value="搜尋" name="action_search">
+
+									<div class="yform-input-field-wrap">
+										<input type="text" value="${name!''}"
+											placeholder="(例如：Bob Smith, Bob S., bob@email.com)"
+											name="name" id="query" class="name-field" autocomplete="off">
+									</div>
+
+									<button
+										class="ybtn ybtn-primary ybtn-small ytype yform-search-button"
+										value="submit" type="submit">
+										<span><i class="i ig-common i-search-common"></i></span>
+									</button>
+
+									<div style="display: none;" class="auto-name"></div>
+
+								</form>
+
+
+							</div>
+
+							<div class="member-search-results">
+								<ol class="ylist-bordered ylist-border-top"
+									data-component-bound="true">
+					               [#if list ??]
+					               [#list list as item]
+									<li>
+										<div class="member-row">
+											<div class="ypassport-wrapper">
+												<div class="ypassport media-block">
+													<div class="media-avatar">
+														<div data-hovercard-id="-_ooiY2Bos2BsiKphK7_4w" style="width: 60px;height: 60px;"
+															class="photo-box pb-60s">
+															<a href="${siteurl}user_details.htm?id=${item.id}">
+																<img width="60" height="60" style="width: 60px;height: 60px;"
+																src="${item.headimg!''}"
+																class="photo-box-img" alt="${item.name!''}">
+
+															</a>
+
+														</div>
+
+
+
+													</div>
+													<div class="media-story">
+														<ul class="user-passport-info">
+															<li class="user-name"><a
+																data-hovercard-id="-_ooiY2Bos2BsiKphK7_4w"
+																href="${siteurl}user_details.htm?id=${item.id}"
+																class="user-display-name">${item.name!""}</a></li>
+															<li class="user-location"><b>Singapore, 新加坡</b></li>
+														</ul>
+
+														<ul class="user-passport-stats">
+															<li class="friend-count"><span
+																class="i-wrap ig-wrap-common i-friends-orange-common-wrap"><i
+																	class="i ig-common i-friends-orange-common"></i> <b>0</b>個朋友</span>
+															</li>
+															<li class="review-count"><span
+																class="i-wrap ig-wrap-common i-star-orange-common-wrap"><i
+																	class="i ig-common i-star-orange-common"></i> <b>0</b>則評語</span>
+															</li>
+
+														</ul>
+
+													</div>
+												</div>
+
+											</div>
+
+											<div class="action-links">
+												<ul class="iconed-list action-link-list">
+
+													<li class="iconed-list-item"><a rel="陈 丝."
+														href="/mail?action_send_form=1&amp;dst=Qf6ur-OfiEgyVT4rLui0RA&amp;return_url=%2Fmember_search"
+														class="action-link send-pm">
+															<div class="iconed-list-avatar">
+																<i class="i ig-common i-action-message-common"></i>
+															</div>
+															<div class="iconed-list-story">傳送訊息</div>
+													</a></li>
+
+													<li class="iconed-list-item"><a
+														href="/user_add_friend?return_url=%2Fmember_search&amp;userid=Qf6ur-OfiEgyVT4rLui0RA"
+														class="action-link add-friend">
+															<div class="iconed-list-avatar">
+																<i class="i ig-common i-action-friend-common"></i>
+															</div>
+															<div class="iconed-list-story">新增朋友</div>
+													</a></li>
+
+													<li class="iconed-list-item manage-follow-container">
+
+
+														<a style="" rel="Qf6ur-OfiEgyVT4rLui0RA"
+														href="/following_user/add?dst_user_id=Qf6ur-OfiEgyVT4rLui0RA&amp;previous_url=%2Fmember_search"
+														class="action-link manage-following-add">
+															<div class="iconed-list-avatar">
+																<i class="i ig-common i-action-follow-common"></i>
+															</div>
+															<div class="iconed-list-story">關注 陈 丝.</div>
+													</a> <a style="display: none;" rel="Qf6ur-OfiEgyVT4rLui0RA"
+														href="/following_user/remove?dst_user_id=Qf6ur-OfiEgyVT4rLui0RA&amp;previous_url=%2Fmember_search"
+														class="action-link manage-following-remove">
+															<div class="iconed-list-avatar">
+																<i class="i ig-common i-action-unfollow-common"></i>
+															</div>
+															<div class="iconed-list-story">停止關注陈 丝.</div>
+													</a>
+
+													</li>
+												</ul>
+
+											</div>
+										</div>
+									</li>
+									[/#list]
+									[/#if]
+									
+								</ol>
+
+			                      [#include "/theme/yelp/common/pageryelpsearch.html"]
+                                  [@pager page curpage "${siteurl}search.htm?pagesize=${pagesize}"][/@pager]
+					      
+
+
+							</div>
+
+						</div>
+						<div class="column column-beta ">
+							<div class="island friends-widget ysection">
+								<h3>搵朋友</h3>
+								<p>睇吓你聯絡人中有邊個已經用緊Yelp！</p>
+								<ul class="email-providers">
+									<li class="yahoo inline-block"><a title="Yahoo"
+										href="/find_friends/address_book"> <i
+											class="i ig-email_providers i-yahoo-email_providers email-service-icon"></i>
+									</a></li>
+									<li class="gmail inline-block"><a title="Gmail"
+										href="/find_friends/address_book"> <i
+											class="i ig-email_providers i-gmail-email_providers email-service-icon"></i>
+									</a></li>
+								</ul>
+								<a class="ybtn ybtn-small" href="/find_friends/">尋找你的朋友</a>
+							</div>
+
+							<div class="island friends-widget ysection">
+								<h3>邀請朋友加入Yelp！</h3>
+								<p>預埋朋友，乜都好玩啲。</p>
+								<a class="ybtn ybtn-small" href="/find_friends/email_invite">邀請朋友</a>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

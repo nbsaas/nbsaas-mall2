@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>浏览活动</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/events.css" />
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+		
+
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container landing">
+					<div id="page-header">
+						<div class="ieSucks clearfix" id="loc-bar">
+                           [#include "/theme/yelp/common/citys.html"]
+						</div>
+
+
+
+
+					</div>
+
+					<div class="clearfix layout-block layout-g layout-border">
+
+						<div id="browse_events_nav" class="column column-gamma ">
+							<h4>据时间筛选</h4>
+							<ul>
+								<li><a
+									href="${siteurl}events/browse.htm?c=1&amp;audience=everybody&amp;audience=yelp_community">全部</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150319&amp;c=1&amp;audience=everybody&amp;audience=yelp_community">今日</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150320&amp;end_date=20150322&amp;c=1&amp;audience=everybody&amp;audience=yelp_community">明日</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150320&amp;end_date=20150322&amp;c=1&amp;audience=everybody&amp;audience=yelp_community">本週未</a>
+								</li>
+								<li><strong>» 本週</strong></li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150323&amp;end_date=20150329&amp;c=1&amp;audience=everybody&amp;audience=yelp_community">下週</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150330&amp;end_date=20150405&amp;c=1&amp;audience=everybody&amp;audience=yelp_community">下两週</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?end_date=20150318&amp;c=1&amp;audience=everybody&amp;audience=yelp_community">过往</a>
+								</li>
+							</ul>
+		
+			
+
+							<p id="browse-link" class="pseudoLink">... 跳至日期 »</p>
+							<h4 id="nav_sort_by">按以下排列</h4>
+							<ul>
+								<li><strong>» 最热门</strong></li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322&amp;sort_by=upcoming&amp;${curl}&amp;audience=everybody&amp;audience=yelp_community">日期</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322&amp;sort_by=added&amp;${curl}&amp;audience=everybody&amp;audience=yelp_community">最近新增</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322&amp;sort_by=friends&amp;${curl}&amp;audience=everybody&amp;audience=yelp_community">朋友及正在关注用家</a>
+								</li>
+								<li><a
+									href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322&amp;sort_by=free&amp;${curl}&amp;audience=everybody&amp;audience=yelp_community">免费</a>
+								</li>
+							</ul>
+
+							<h4 id="nav_category_filter">据分类显示</h4>
+	                           [#if showall]
+	                            <a href="${siteurl}events/browse.htm?start_date=20150319&amp;end_date=20150322&amp;audience=everybody&amp;audience=yelp_community">所有分类</a>
+							    [#else]
+							     <strong>» 所有分類</strong>
+							    [/#if]
+							<ul id="category_filter_choices">
+						
+							    [#if es??]
+							    [#list es as item]
+								    [#if item.showSelect]
+								    <li><input type="checkbox" value="${item.id}" checked="checked"
+										name="category_filter"
+										onclick="document.location=&quot;${siteurl}events/browse.htm?start_date=20150319${item.url}&quot;;return false">
+										${item.name!""}</li>
+								    [#else]
+								    <li><input type="checkbox" value="${item.id}"
+										name="category_filter"
+										onclick="document.location=&quot;${siteurl}events/browse.htm?start_date=20150319${item.url}&c=${item.id}&quot;;return false">
+										${item.name!""}</li>
+								    [/#if]
+								
+								[/#list]
+								[#else]
+								未有已計劃活動。
+								[/#if]
+							</ul>
+
+							<h4 id="nav_audience_filter">显示活动，适用于</h4>
+							<ul id="audience_filter_choices">
+								<li><input type="checkbox" checked=""
+									onclick="document.location=&quot;${siteurl}events/browse.htm?start_date=20150319\u0026end_date=20150322\u0026c=1\u0026audience=yelp_community&quot;;return false"
+									value="everybody" name="category_filter"> 每人</li>
+								<li><input type="checkbox" checked=""
+									onclick="document.location=&quot;${siteurl}events/browse.htm?start_date=20150319\u0026end_date=20150322\u0026c=1\u0026audience=everybody&quot;;return false"
+									value="yelp_community" name="category_filter"> Yelp社群</li>
+							</ul>
+
+						</div>
+						<div id="main_events" class="column column-alpha ">
+							<div id="browse_events_results">
+								<div id="browse_title">
+									<h1>浏览 热门 音乐 活动 邻近香港 本週</h1>
+								</div>
+								<ul id="main_events_list">
+								
+								   [#if list??]
+								   [#list list as item]
+									<li itemtype="http://schema.org/Event" itemscope="">
+										<div class="media-block">
+											<div class="media-avatar">
+												<div class="photo-box pb-ms">
+													<a
+														href="/events/%E9%A6%99%E6%B8%AF-%E6%9C%89%E9%A3%9B%E9%80%81-ticket-giveaways-a-little-new-music-with-western-district"
+														class="event-photo"> <img width="100" height="100"
+														src="http://s3-media1.fl.yelpcdn.com/ephoto/qRq2CVNMXWvOd2ZmpiE0hg/ms.jpg"
+														alt="有飞送 TICKET GIVEAWAYS:  A Little New Music with Western District的相片"
+														class="photo-box-img">
+													</a>
+												</div>
+
+
+											</div>
+											<div class="media-story">
+												<h2 class="title">
+													<a itemprop="url"
+														href="/events/%E9%A6%99%E6%B8%AF-%E6%9C%89%E9%A3%9B%E9%80%81-ticket-giveaways-a-little-new-music-with-western-district"><span
+														itemprop="name">有飞送 TICKET GIVEAWAYS: A Little New
+															Music with Western District</span></a>
+												</h2>
+												<p>
+													<meta content="2015-03-20T21:30:00+08:00"
+														itemprop="startDate">
+													明日，3月20日, 21:30 &ndash; 23:30 <a
+														href="${siteurl}events/browse.htm?c=1">音乐</a>, <a
+														href="${siteurl}events/browse.htm?audience=yelp_community">Yelp社群</a>
+													<br> <a
+														href="/biz/%E8%97%9D%E7%A9%97%E6%9C%83-%E9%A6%99%E6%B8%AF-2">艺穗会,</a>
+													香港
+												</p>
+												<p itemprop="description" class="event_desc ieSucks">
+													我的有幸得到西区音乐团送出两份双人免费门票。如果你都想欣赏佢的喺3月20号晚于艺穗会嘅A Little New
+													Music 演出嘅话，就快啲喺呢个活动度㩒「预埋我！」，然后我的就会喺12号拣出幸运儿！ &nbsp;We've
+													got 2x double passes to give away to A Little New Music
+													with Western District, the…</p>
+
+												<div class="submitted_by">
+													<label class="event_user_label">提交者：</label>
+
+
+
+
+													<div class="photo-box pb-xss">
+														<a
+															href="http://zh.yelp.com.hk/user_details?userid=Dsg3INxZtnxOIugsHZsBaA">
+															<img width="20" height="20"
+															src="http://s3-media2.fl.yelpcdn.com/photo/oX4nfwFwRX9DGv7aZWXT8g/xss.jpg"
+															class="photo-box-img" alt="Kevin L. photo">
+														</a>
+													</div>
+
+													<a
+														href="/user_details_events?userid=Dsg3INxZtnxOIugsHZsBaA&amp;section=submitted">Kevin
+														L.</a>
+												</div>
+
+												<p class="attending_count">5人有兴趣！</p>
+											</div>
+										</div>
+
+									</li>
+									[/#list]
+									[/#if]
+								</ul>
+								
+								
+								
+					        [#include "/theme/yelp/common/pageryelp.html"]
+					        [#if page??]
+                            [@pager page curpage "${siteurl}events/browse.htm?a=1"][/@pager]
+                            [/#if]
+								<a class="ybtn ybtn-primary ybtn-small add-event-button" style="margin-top: 10px"
+									href="${siteurl}events/create.htm">新增活动</a>
+							</div>
+
+						</div>
+				         [#include "events_sidebar.html"]
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>消息</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/mailbox.css" />
+
+
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container mailbox-overview">
+					<div class="clearfix layout-block layout-full">
+						<div class="column column-alpha ">
+							<h2>消息</h2>
+							<div class="mailbox-top clearfix">
+								<div class="pull-left">
+									<ul class="tabs-pill">
+										<li class="tab inline-block selected"><a
+											href="${siteurl}user/messages.htm">收件箱<span class="count">${page.totalCount}</span></a></li>
+										<li class="tab inline-block"><a
+											href="${siteurl}user/messages_sends.htm">已传送<span
+												class="count"></span></a></li>
+									</ul>
+
+								</div>
+								<a class="ybtn ybtn-primary compose-message pull-right"
+									href="${siteurl}user/messages_write.htm">编写新信息</a>
+							</div>
+							[#if list??]
+
+							<form method="get" class="js-mailbox-container yform"
+								action="${siteurl}user/messages_delete_from.htm"
+								data-component-bound="true">
+								<div class="mailbox-buttons clearfix">
+									<span class="check-buttons"> <a class="js-check-all"
+										href="javascript:;">全选</a> | <a class="js-uncheck-all"
+										href="javascript:;">取消全选</a>
+									</span>
+									<button class="ybtn ybtn-small" value="submit" type="submit">
+										<span>删除</span>
+									</button>
+								</div>
+
+
+								<table class="table mailbox-messages">
+									<tbody>
+									    [#list list as item] 
+										<tr>
+											<td><input type="checkbox"
+												value="${item.id}" name="messageid"></td>
+											<td>
+
+
+
+
+												<div class="photo-box pb-ss">
+													<a
+														href="${siteurl}user_details.htm?id=${item.from.id}">
+														<img width="40" height="40"
+														src="${item.from.headimg!'/assets/images/head.png'}"
+														class="photo-box-img" alt="${item.from.name!''}">
+													</a>
+												</div>
+
+											</td>
+											<td class="nowrap recipients"><a
+												href="${siteurl}user_details.htm?id=${item.from.id}">${item.to.name!''}</a></td>
+											<td class="replied"><i
+												class="i ig-common i-reply-message-common"></i></td>
+											<td class="message-content"><a class="message-subject"
+												href="${siteurl}user/messages_list_view.htm?id=${item.id}">${item.title!""}</a>
+												<p class="subtle-text">${item.contents!""}</p></td>
+											<td class="date-sent nowrap">
+												<div class="time-stamp">[@html.date date=item.addDate][/@html.date]</div>
+											</td>
+										</tr>
+                                        [/#list] 
+									</tbody>
+								</table>
+
+
+								<div class="mailbox-buttons clearfix">
+									<span class="check-buttons"> <a class="js-check-all"
+										href="javascript:;">全选</a> | <a class="js-uncheck-all"
+										href="javascript:;">取消全选</a>
+									</span>
+									<button class="ybtn ybtn-small" value="submit" type="submit">
+										<span>删除</span>
+									</button>
+								</div>
+
+
+								<input type="hidden" value="inbox" name="mailbox"> <input
+									type="hidden" value="0" name="p">
+
+
+								  [#include "/theme/yelp/common/pageryelp.html"]
+                            [@pager page curpage "${siteurl}user/messages.htm?pagesize=${pagesize}"][/@pager]
+
+
+							</form>
+							
+							
+							[#else]
+							<div class="empty-mailbox">
+								<p></p>
+								<a class="ybtn compose-message"
+									href="${siteurl}user/messages_write.htm">撰写新讯息</a>
+							</div>
+							[/#if]
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+     <script type="text/javascript">
+     //messageid
+     $(".js-check-all").click(function(){
+          //alert();
+    	 $("input[name='messageid']").prop("checked",true);
+     });
+     
+     $(".js-uncheck-all").click(function(){
+    	 $("input[name='messageid']").prop("checked",false);
+     });
+     
+     </script>
+
+
+</body>
+
+</html>

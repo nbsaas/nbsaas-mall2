@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+                [#if msg??]
+				<div class="js-hidden">
+					<span class="offscreen">錯誤訊息：</span>
+
+					<div class="alert alert-error">
+						<p class="alert-message">${msg}</p>
+					</div>
+
+				</div>
+                 [/#if]
+
+				<div class="container mailbox-compose-message no-js-hidden">
+					<div class="clearfix layout-block layout-h">
+						<div class="column column-alpha ">
+							<h2>新增訊息</h2>
+
+
+
+
+
+
+							<form name="sendMail" method="POST" id="test-mail-send-form"
+								class="mail-send-form yform" action="${siteurl}user/messages_action_send.htm">
+								<input type="hidden"
+									value="928cd71a4ca5fd97e1e32d239da16b6eeba60084049f7c07390bf6eec1480e26"
+									class="csrftok" name="csrftok"> <input type="hidden"
+									value="yjDWqKhtbN2A2izl5dreXQ" name="context">
+
+								<div
+									data-csrftok="9b99905280a969fb15f775e418a3b8d892edc3dec854b0d1b0ea24322e002cc0"
+									class="friend-tagger clearfix" data-component-bound="true">
+									<label for="next-name"> 至 </label>
+									<div class="pseudo-input embossed-text-white clearfix">
+										 <input type="text" value=""
+									id="subject" name="name"> 
+									</div>
+									<div class="member-auto-complete auto-complete"
+										data-component-bound="true"
+										style="top: 180px; left: 231.5px; width: 465px; display: none;"></div>
+								</div>
+
+
+
+								<label for="subject">主題</label> <input type="text" value=""
+									id="subject" name="title"> <label
+									for="send-mail-textarea">訊息</label>
+								<textarea id="send-mail-textarea" name="contents"></textarea>
+
+
+								<input type="hidden" value="submit" name="action_create_message">
+								<button class="ybtn ybtn-primary disable-on-submit"
+									value="submit" type="submit" id="action_create_message">
+									<span>傳送訊息</span>
+								</button>
+								<a href="/mail">取消</a>
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>
