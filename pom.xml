@@ -22,6 +22,7 @@
 	<dependencies>
 	</dependencies>
 	<modules>
+		<module>iyelp_app</module>
 		<module>iyelp_data</module>
 		<module>iyelp_web</module>
 	</modules>
