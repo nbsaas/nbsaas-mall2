@@ -13,19 +13,17 @@
 * 缓存 Ehcache
 * 视图模板 freemarker 
 * 其它 Jsoup、gson
-* [icore](http://git.oschina.net/cng1985/icore)
+* [disconver](http://git.oschina.net/yichisancun/disconver)
 
-### iyelp 工程介绍
+### quhaodian 工程介绍
 
-* iyelp_api	api工程
-* iyelp_app	本地测试工程
-* iyelp_data	工程的controller，数据模块
-* iyelp_web	视图工程，不放代码，使用freemarker作为视图
+* data	工程的controller，数据模块
+* web	视图工程，不放代码，使用freemarker作为视图
 
 
-### icore 包介绍：
+### disconver 包介绍：
 
-icore工程位置[icore](http://git.oschina.net/cng1985/icore)
+disconver工程位置[disconver](http://git.oschina.net/yichisancun/disconver)
 
 
 * com.ada.admin 后台管理功能

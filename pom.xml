@@ -23,7 +23,7 @@
 	</dependencies>
 	<modules>
 		<module>data</module>
-		<module>iyelp_web</module>
+		<module>web</module>
 	</modules>
 
 	<build>
