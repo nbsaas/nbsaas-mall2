@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/profile.css" />
+				[#include "/theme/yelp/common/scripts.html"]
+
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container">
+                     [#if message??]
+					<span class="offscreen">成功的訊息：</span>
+
+					<div class="alert alert-success">
+						<p class="alert-message">${message!""}</p>
+					</div>
+                     [/#if]
+				</div>
+
+
+				<div id="profile" class="container">
+					<div class="clearfix layout-block layout-a">
+						<div id="some-id-related-to-this-column"
+							class="column column-alpha ">
+							<div id="breadcrumbs">
+								<a class="inline-block" href="${siteurl}profile/profile.htm">
+									账号设置 </a> » 概述
+							</div>
+
+							<div class="profile-block">
+
+								<div class="profile-header">
+									<div class="index-photo">
+
+
+
+
+										<div class="photo-box pb-ss">
+											<a
+												href="${siteurl}/user_details.htm?userid=5sGuA5lmNI8wk5QMz3PrkQ">
+												<img width="40" height="40"
+												src="[#if user.headimg??]${user.headimg!}[#else]${siteurl}assets/img/header.jpg[/#if]"
+												class="photo-box-img" alt="">
+											</a>
+										</div>
+
+									</div>
+									<div class="profile-header-text">
+										<h2 class="index-title">${user.name!""}的账号设置</h2>
+									</div>
+
+								</div>
+								<div class="profile-main">
+									<div class="profile-section">
+										<h2>
+											<a
+												href="${siteurl}profile/profile_bio.htm?return_url=%2Fprofile">个人资料</a>
+										</h2>
+										<p>编辑你的名字，公开的个人档案资讯，以及你的搜索偏好。</p>
+									</div>
+									<div class="profile-section">
+										<h2>
+											<a href="${siteurl}profile/profile_password.htm">密码</a>
+										</h2>
+										<p>账号更改密码。</p>
+									</div>
+									<div class="profile-section">
+										<h2>
+											<a href="${siteurl}profile/profile_email_notifications.htm">电邮／通知</a>
+										</h2>
+										<p>管理你的电邮账号，通知，以及周报订阅。</p>
+									</div>
+									<div class="profile-section">
+										<h2>
+											<a
+												href="${siteurl}profile/profile_location.htm?previous_url=%2Fprofile">地点</a>
+										</h2>
+										<p>新增，编辑，或者移除你的已储存地点。</p>
+									</div>
+									<div class="profile-section">
+										<h2>
+											<a href="${siteurl}profile/profile_friends.htm">朋友</a>
+										</h2>
+										<p>移除朋友以及追踪你已发送的交友邀请。</p>
+									</div>
+									<div class="profile-section" style="display: none;">
+										<h2>
+											<a href="${siteurl}profile/profile_sharing.htm">第三方账号绑定</a>
+										</h2>
+										<p>管理 QQ 及微博 的绑定。</p>
+									</div>
+									<div class="profile-section last">
+										<h2>
+											<a href="${siteurl}profile/profile_privacy.htm">隐私设置</a>
+										</h2>
+										<p>管理你的个人档案及活动的隐私。</p>
+									</div>
+
+								</div>
+							</div>
+
+
+
+						</div>
+						<div class="column column-beta "></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

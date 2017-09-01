@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/profile.css" />
+				[#include "/theme/yelp/common/scripts.html"]
+
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container">
+
+					<div class="alert" data-component-bound="true"
+						style="display: none;">
+						<a href="#" class="alert-dismiss">×</a>
+						<p class="alert-message"></p>
+					</div>
+				</div>
+
+
+				<div id="profile" class="container">
+					<div class="clearfix layout-block layout-a">
+						<div id="some-id-related-to-this-column"
+							class="column column-alpha ">
+							<div id="breadcrumbs">
+								<a class="inline-block" href="${siteurl}profile/profile.htm"> 帳戶設定 </a> » 外在應用程式
+							</div>
+
+							<div class="profile-block">
+
+
+
+
+								<div class="profile-header">
+
+									<div class="fb-on">
+										<a class="ybtn ybtn-primary facebook right-header-button"
+											id="facebook-disconnect" href="#"><span
+											class="i-wrap ig-wrap-send_to_friend i-facebook-send_to_friend-wrap"><i
+												class="i ig-send_to_friend i-facebook-send_to_friend"></i>
+												取消連接至Facebook</span></a>
+									</div>
+									<div style="display: none" class="fb-off">
+										<a class="ybtn ybtn-primary facebook right-header-button"
+											id="facebook-connect" href="#"><span
+											class="i-wrap ig-wrap-send_to_friend i-facebook-send_to_friend-wrap"><i
+												class="i ig-send_to_friend i-facebook-send_to_friend"></i>
+												連接至 Facebook</span></a>
+									</div>
+									<h2 class="header-content top-h2">Facebook</h2>
+									<span class="header-content">在Facebook分享你的評語</span>
+
+								</div>
+								<div class="profile-main">
+									<div class="fb-on">
+										<div id="enabled-msg">
+											<span
+												class="i-wrap ig-wrap-common i-status-success-common-wrap"><i
+												class="i ig-common i-status-success-common"></i>
+												你已準備好更新Facebook</span><br>
+										</div>
+										<div id="autofriend">
+											<div id="autofriend-title">自動加入的Facebook朋友</div>
+											<div id="autofriend-text">自動新增新加入Yelp的Facebook朋友</div>
+											<input type="radio" name="autofriend-toggle"
+												id="autofriend-turnon"> <label
+												for="autofriend-turnon">開啟</label> <input type="radio"
+												checked="checked" name="autofriend-toggle"
+												id="autofriend-turnoff"> <label
+												for="autofriend-turnoff">關閉</label>
+										</div>
+										<h4>常見問題</h4>
+										<dl class="faq">
+											<dt>如何可以刪除已分享至 Facebook 的評語？</dt>
+											<dd>前往你 Facebook 的生活時報，滾動至發佈並按移除</dd>
+											<dt>我應怎樣為我的評語在 Facebook 配置私隱設定？</dt>
+											<dd>你可以在你的Facebook應用程式設定調整你的私隱設定</dd>
+										</dl>
+									</div>
+									<div style="display: none" class="fb-off">
+										<p>當你寫新評語的時候，請准許Yelp自動摘錄一小段並分享至Facebook。</p>
+										<img
+											src="https://s3-media2.fl.yelpcdn.com/assets/2/www/img/30bf62cf2a56/gfx/biz_share_fb-en_US.png"
+											class="share-example" alt="在 Facebook 分享評語"> <span
+											class="sharing-note">你隨時都可選擇是否要將評語分享至Facebook</span>
+									</div>
+
+								</div>
+							</div>
+							<div class="profile-block">
+								<div class="profile-header">
+									<div style="display: none" class="twitter-on">
+										<a class="ybtn ybtn-primary twitter right-header-button"
+											id="twitter-disconnect" href="#"><span
+											class="i-wrap ig-wrap-send_to_friend i-twitter-send_to_friend-wrap"><i
+												class="i ig-send_to_friend i-twitter-send_to_friend"></i>
+												取消連接至Twitter</span></a>
+									</div>
+									<div class="twitter-off">
+										<a class="ybtn ybtn-primary twitter right-header-button"
+											id="twitter-connect" href="#"><span
+											class="i-wrap ig-wrap-send_to_friend i-twitter-send_to_friend-wrap"><i
+												class="i ig-send_to_friend i-twitter-send_to_friend"></i>
+												連接至Twitter</span></a>
+									</div>
+									<h2 class="header-content top-h2">Twitter</h2>
+									<span class="header-content">在Twitter Tweet你的評語</span>
+
+								</div>
+								<div class="profile-main">
+									<div style="display: none" class="twitter-on">
+										<div id="enabled-msg">
+											<span
+												class="i-wrap ig-wrap-common i-status-success-common-wrap"><i
+												class="i ig-common i-status-success-common"></i> 你已經完成連接至
+												Twitter</span><br>
+										</div>
+									</div>
+									<div class="twitter-off">
+										<p>准許Yelp在你寫新評語時自動分享至Twitter，令更多人睇到你的偉論！</p>
+										<img
+											src="https://s3-media1.fl.yelpcdn.com/assets/2/www/img/32bf1b6e0ed9/gfx/biz_share_twitter-en_US.png"
+											class="share-example" alt="連接至Twitter"> <span
+											class="sharing-note">你隨時都可選擇是否要將評語分享至Twitter</span>
+									</div>
+
+								</div>
+							</div>
+
+
+
+						</div>
+						<div class="column column-beta "></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

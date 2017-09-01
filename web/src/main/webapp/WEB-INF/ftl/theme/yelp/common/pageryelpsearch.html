@@ -1,0 +1,28 @@
+[#macro pager pagination curpage url]
+<div class="pagination-block clearfix">
+	<div class="page-of-pages">第${curpage!"1"}页，共${page.totalPage}页</div>
+
+	[#if pagination.totalPage>1]
+
+	<ul class="pagination-links">
+		[#list pagination.firstNo..pagination.endNo as item] [#if
+		curpage?number==item]
+		<li><a class="page-option current" href="${url}&curpage=${item}">
+				${item} </a></li> [#else]
+		<li><a class="page-option available-number"
+			href="${url}&curpage=${item}"> ${item} </a></li> [/#if] [/#list]
+
+        [#if curpage>1]
+		<li><a class="page-option prev-next prev"
+			href="${url}&curpage=${curpage-1}">
+				← </a></li>
+		[/#if]
+		[#if curpage < pagination.totalPage]		
+		<li><a class="page-option prev-next next"
+			href="${url}&curpage=${curpage+1}">
+				→ </a></li>
+	    [/#if]
+	</ul>
+	[/#if]
+</div>
+[/#macro]

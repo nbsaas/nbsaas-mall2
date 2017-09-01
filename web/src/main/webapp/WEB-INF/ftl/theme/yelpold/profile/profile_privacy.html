@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/profile.css" />
+				[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+				<div id="alert-container"></div>
+
+
+				<div id="profile" class="container">
+					<div class="clearfix layout-block layout-a">
+						<div id="some-id-related-to-this-column"
+							class="column column-alpha ">
+							<div id="breadcrumbs">
+								<a class="inline-block" href="${siteurl}profile/profile.htm"> 帳戶設定 </a> » 私隱設定
+							</div>
+
+
+							<form name="profile_privacy_form" method="post" id="main-form"
+								class="yform" action="/profile_privacy">
+								<input type="hidden"
+									value="0e1541e096ed9774610108acf42090955890df9bb6376f5cdbd9d643c618ad60"
+									class="csrftok" name="csrftok">
+								<div class="profile-block">
+
+									<div class="profile-header">
+										<h2 class="header-content top-h2">你的個人檔案</h2>
+										<span class="header-content">管理你個人檔案的可被查看內容。</span>
+
+									</div>
+									<div class="profile-main">
+										<div class="profile-form ytype">
+											<fieldset>
+
+												<strong>用家搜尋</strong> <label class="radio-check"
+													for="should_appear_in_member_search"> <input
+													type="checkbox" value="True"
+													name="should_appear_in_member_search"
+													id="should_appear_in_member_search" checked="checked">
+													<span>在Yelp用家搜尋上顯示我的個人檔案</span>
+												</label> <span class="help-block"> 准許其他用家透過我的名稱或電郵地址搜尋我。 </span>
+											</fieldset>
+
+											<fieldset>
+
+												<strong>收藏</strong> <label class="radio-check"
+													for="should_biz_bookmarks_be_public"> <input
+													type="checkbox" value="True"
+													name="should_biz_bookmarks_be_public"
+													id="should_biz_bookmarks_be_public" checked="checked">
+													<span>把我的已收藏商店改為公開</span>
+												</label>
+
+											</fieldset>
+										</div>
+
+									</div>
+								</div>
+								<div class="profile-block">
+									<div class="profile-header">
+										<h2 class="header-content top-h2">商店資訊發佈設定</h2>
+										<span class="header-content">管理商店透過商店資料頁可以接觸到的資訊。</span>
+
+									</div>
+									<div class="profile-main">
+										<div class="profile-form ytype">
+											<div class="profile-section last">
+												下列設定解釋商店可以查閱你在Yelp的動態類別，包括已收藏商店、透過Yelp瀏覽的網頁、致電、路程查詢、以及Check
+												In。至於日期、時間、你的所在地、以及你所使用的裝置類型則會按預設地顯示。</div>
+											<div id="business-visibility-options"
+												class="profile-section last">
+												<table>
+													<tbody>
+														<tr>
+															<th class="setting-name-column"><h4>商店可以查閱那些有關我的資訊</h4></th>
+															<th class="setting-value-column"><h4>例子</h4></th>
+														</tr>
+														<tr>
+															<td class="setting-name-column">
+																<fieldset>
+																	<label class="radio-check" for="share_user"> <input
+																		type="radio" value="share_user"
+																		name="privacy_share_setting" id="share_user">
+																		<span>我的名稱及Yelp個人檔案</span>
+																	</label> <span class="help-block">名字及姓氏首字母，個人檔案連結，性別，年齡層（20,
+																		30, 等等），及居住城市。</span>
+																</fieldset>
+															</td>
+															<td class="setting-value-column">
+																<div class="biz-feed-wrapper profile-privacy-demo">
+																	<i class="i ig-biz_feed i-directions-biz_feed"></i>
+
+																	<div class="biz-feed-story biz-feed-item">
+																		<div class="biz-feed-avatar">
+																			<div data-hovercard-id="fzxBobtjX10RLNpKJjXEnA"
+																				class="photo-box pb-30s">
+																				<a
+																					href="${siteurl}/user_details.htm?userid=5sGuA5lmNI8wk5QMz3PrkQ">
+																					<img width="30" height="30"
+																					src="//s3-media1.fl.yelpcdn.com/photo/qw1r5knkLNrDAJqoK3gvUg/30s.jpg"
+																					class="photo-box-img" alt="Ada G.">
+
+																				</a>
+
+																			</div>
+
+
+
+																		</div>
+
+																		<div class="biz-feed-story">
+																			<a
+																				href="${siteurl}/user_details.htm?userid=5sGuA5lmNI8wk5QMz3PrkQ">Ada
+																				G.</a>, 一位男仕 廿幾歲 <strong>曾搜尋前往你的商店的路程</strong>.
+																		</div>
+
+																		<div class="biz-feed-meta">今日, 2015年3月5日 11:24
+																			透過 Yelp網站</div>
+																	</div>
+
+																</div>
+
+															</td>
+														</tr>
+														<tr>
+															<td class="setting-name-column">
+																<fieldset>
+																	<label class="radio-check" for="share_demo"> <input
+																		type="radio" value="share_demo"
+																		name="privacy_share_setting" id="share_demo"
+																		checked="checked"> <span>我的資料</span>
+																	</label> <span class="help-block">性別，年齡層（20, 30,
+																		等等），及居住城市。</span>
+																</fieldset>
+															</td>
+															<td class="setting-value-column">
+																<div class="biz-feed-wrapper profile-privacy-demo">
+																	<i class="i ig-biz_feed i-directions-biz_feed"></i>
+
+																	<div class="biz-feed-story biz-feed-item">
+
+																		<div class="biz-feed-story">
+																			一位男仕 廿幾歲 <strong>曾搜尋前往你的商店的路程</strong>.
+																		</div>
+
+																		<div class="biz-feed-meta">今日, 2015年3月5日 11:24
+																			透過 Yelp網站</div>
+																	</div>
+
+																</div>
+
+															</td>
+														</tr>
+														<tr>
+															<td class="setting-name-column last">
+																<fieldset>
+																	<label class="radio-check" for="share_nothing">
+																		<input type="radio" value="share_nothing"
+																		name="privacy_share_setting" id="share_nothing">
+																		<span>基本資料</span>
+																	</label>
+
+																</fieldset>
+															</td>
+															<td class="setting-value-column last">
+																<div class="biz-feed-wrapper profile-privacy-demo">
+																	<i class="i ig-biz_feed i-directions-biz_feed"></i>
+
+																	<div class="biz-feed-story biz-feed-item">
+
+																		<div class="biz-feed-story">
+																			一位Yelp用家 <strong>曾搜尋前往你的商店的路程</strong>.
+																		</div>
+
+																		<div class="biz-feed-meta">今日, 2015年3月5日 11:24
+																			透過 Yelp網站</div>
+																	</div>
+
+																</div>
+
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+
+								<div class="ytype">
+									<button class="ybtn ybtn-primary ytype" value="submit"
+										type="submit">
+										<span>儲存設定</span>
+									</button>
+									<a href="/profile">取消</a>
+								</div>
+
+							</form>
+
+
+						</div>
+						<div class="column column-beta "></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

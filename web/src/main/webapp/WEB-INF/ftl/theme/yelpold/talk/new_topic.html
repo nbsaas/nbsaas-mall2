@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>openyelp</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+<link rel="stylesheet" href="${siteurl}assets/css/talk.css" />
+		[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+				<div id="alert-container"></div>
+
+				<div class="container homepage">
+					[#include "/theme/yelp/common/page-header.html"]
+					<div class="clearfix layout-block layout-a">
+						<div id="new_talk_topic" class="column column-alpha ">
+							<div class="topic-header">
+								<h2 class="topic-unit">开启一个新的讨论</h2>
+								<a class="topic-unit topic-info guidelines-pop-link talk-pop"
+									href="${siteurl}guidelines.htm" data-component-bound="true">查看我们的讨论帮助</a>
+							</div>
+
+							<form name="new_talk_topic" method="POST"
+								class="yform clearfix js-captcha-form"
+								action="${siteurl}/talk/talk.htm" data-component-bound="true">
+								<input type="hidden"
+									value="e15a89b53fc98becbf9bfdfd990373ef4cf08420ce80d2e7af7ce4d413947d4a"
+									class="csrftok" name="csrftok"> <input type="hidden"
+									value="" name="context"> <input type="hidden"
+									value="/talk/new_topic" name="previous_url"> <label
+									for="new-conversation-topic">标题名称</label> 
+									<input type="text" required="required"
+									value="" maxlength="50" name="topic"
+									id="new-conversation-topic"> <label> 分类</label> <span
+									class="help-inline">选择一个合适的分类</span>
+								<div class="category-lists">
+									<fieldset>
+									   [#list categorys1 as item]
+										<label> 
+										<input type="radio" value="${item.id!''}" checked="checked" name="category"
+											id="category_${item.id!''}"> 
+											<span for="category_1">${item.name!''}</span>
+										</label>
+										[/#list]
+								
+									</fieldset>
+									<fieldset>
+									    [#list categorys2 as item]
+										<label> <input type="radio" value="${item.id!''}" name="category"
+											id="category_${item.id!''}"> <span for="category_4">${item.name!''}</span>
+										</label> 
+										[/#list]
+									</fieldset>
+								</div>
+
+
+								<label for="dropperText_ABS"> 城市</label>
+								<div class="input-with-dropper">
+								
+								    [#if city??]
+								      <input type="text" value="${city.name!'西安'}" name="location"
+										id="js-dropper-text" autocomplete="off">
+								    [#else]
+								    <input type="text" value="西安" name="location"
+										id="js-dropper-text" autocomplete="off">
+										[/#if]
+									
+										
+										
+										 <a
+										class="i-wrap ig-wrap-common i-location-picker-arrow-common-wrap location-dropper"
+										id="js-dropper-btn" href="#"><i
+										class="i ig-common i-location-picker-arrow-common"></i> 选择城市</a>
+								</div>
+
+
+
+								<div class="char-counted-field" data-component-bound="true">
+									<label for="new-conversation-message"> 讨论类容</label>
+									<textarea required="required" maxlength="2000" name="message" id="new-conversation-message"></textarea>
+									<fieldset class="pull-left">
+										<label> <input type="checkbox" checked="checked"
+											value="1" class="alignmid" id="subscribe_cb" name="subscribe">
+											<span>当有其他回复的时候请发邮件通知我</span>
+										</label>
+									</fieldset>
+
+									<span class="info-field pull-right"></span>
+
+								</div>
+								<div class="form-footer topic-footer is-aligned">
+									<input type="hidden" value="submit" name="action_create_topic">
+									<span class="topic-unit">
+										<button
+											class="ybtn ybtn-primary disable-on-submit ytype topic-post-action"
+											value="submit" type="submit" id="action_create_topic">
+											<span>分享</span>
+										</button> <a href="${siteurl}talk.htm">取消</a>
+									</span> <span class="topic-unit topic-info"> <a
+										class="pull-right guidelines-pop-link talk-pop"
+										href="${siteurl}guidelines.htm" data-component-bound="true">查閱我們的討論指引</a>
+									</span>
+								</div>
+
+							</form>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

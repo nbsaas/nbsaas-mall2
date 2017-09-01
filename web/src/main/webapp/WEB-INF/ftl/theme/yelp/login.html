@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登陆</title>
+		<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+		<link rel="stylesheet" href="${siteurl}assets/css/gateway.css" />
+		<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101295055" data-redirecturi="${siteurl}qqlogin.htm" charset="utf-8"></script>
+
+	</head>
+	<body>
+		<div class="lang-en" id="wrap">
+
+			<div class="app-header simple-header">
+				<div class="content-container clearfix">
+
+					<h1 id="logo"
+					style="width: 260px; margin-left: auto; margin-right: auto;"><a href="${siteurl}index.htm"> <img alt=""
+					src="${siteurl}assets/images/logo2.png"> <img alt=""
+					src="${siteurl}assets/images/logo1.png"></a></h1>
+
+				</div>
+			</div>
+
+			<div id="print-masthead">
+				<img alt="Yelp" class="print-bkg-img"
+				src="https://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+			</div>
+
+			<span class="offscreen" id="page-content">&nbsp;</span>
+
+			<div class="main-content-wrap main-content-wrap--box">
+
+				<div class="content-container" id="super-container">
+
+					<div id="alert-container"></div>
+
+					<div id="login" class="container gateway">
+
+						<div
+						class="clearfix layout-block layout-h layout-border login-block">
+							<div class="column column-alpha ">
+
+								<form name="login_form" method="POST" id="login-form"
+								action="${siteurl}loginwork.htm">
+									<input type="hidden"
+									value="6d0befa051ecf7852200109730af0e52e1c33e9e1ef8189f55a382d7732734ba"
+									class="csrftok" name="csrftok">
+									<h2>登陆</h2>
+									<p>
+										请输入用户名和密码
+									</p>
+									<p>
+										<label>用户名</label>
+										<input type="hidden" value="" name="context">
+										<input type="text" value="" name="username" class="form200"
+										size="20" maxlength="64" tabindex="1">
+									</p>
+
+									<p>
+										<label> 密码</label>
+										<input type="password" name="password"
+										class="form200" size="20" autocomplete="off" tabindex="2">
+									</p>
+
+									<p class="formLabel">
+										<a href="${siteurl}forgot.htm">忘记密码</a>
+									</p>
+
+									<div class="clearfix">
+										<div id="login-captcha">
+											<div style="display: none;" id="recaptcha-widget">
+												<div class="clearfix" id="recaptcha_wrap">
+													<div id="recaptcha_image"></div>
+
+													<label class="recaptcha_only_if_image recaptcha_instruct">Enter
+														the text above:</label><label
+													class="recaptcha_only_if_audio recaptcha_instruct">Type
+														the words you hear:</label>
+													<input type="text"
+													name="recaptcha_response_field"
+													id="recaptcha_response_field">
+													<a href="#"
+													id="recaptcha_btn_help"
+													class="recaptcha_opt recaptcha_opt_help">Help</a><a
+													href="#" id="recaptcha_btn_reload"
+													class="recaptcha_opt recaptcha_opt_cycle">Get another
+													CAPTCHA</a><a href="#" id="recaptcha_btn_audio"
+													class="recaptcha_opt recaptcha_opt_audio recaptcha_only_if_image">Get
+													an audio CAPTCHA</a><a href="#" id="recaptcha_btn_image"
+													class="recaptcha_opt recaptcha_opt_image recaptcha_only_if_audio">Get
+													an image CAPTCHA</a>
+												</div>
+												<p class="recaptcha_credit">
+													powered by reCAPTCHA
+												</p>
+											</div>
+
+										</div>
+									</div>
+
+									<p style="margin: 10px 0 20px; text-align: right;">
+										<button class="ybtn ybtn-small" value="Log In" type="submit"
+										tabindex="3" name="action_submit">
+											<span>登陆</span>
+										</button>
+										<span id="qqLoginBtn"></span>
+									</p>
+								</form>
+
+							</div>
+							<div class="column column-beta ">
+								<div id="login-to-signup">
+									<h2>没有账号?</h2>
+									<p>
+										注册试试，看看有什么不同
+									</p>
+									<a class="ybtn ybtn-primary" id="sign-up"
+									href="${siteurl}signup.htm">注册</a>
+									<p>
+										赠人玫瑰，手留余香
+									</p>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			[#include "common/footer.html"]
+
+		</div>
+		<script type="text/javascript">
+			var cbLoginFun = function(oInfo, oOpts) {
+				if (QC.Login.check()) {//如果已登录
+					QC.Login.getMe(function(openId, accessToken) {
+						window.location.replace("${siteurl}qqlogin2.htm?access_token="+accessToken+"&openid="+openId);
+						QC.Login.signOut()
+					});
+					//这里可以调用自己的保存接口
+					//...
+				}
+			};
+			QC.Login({
+				btnId : "qqLoginBtn"
+			},cbLoginFun);
+			
+			
+			if (QC.Login.check()) {//如果已登录
+					QC.Login.getMe(function(openId, accessToken) {
+						//alert(["当前登录用户的", "openId为：" + openId, "accessToken为：" + accessToken].join("\n"));
+						window.location.replace("${siteurl}qqlogin2.htm?access_token="+accessToken+"&openid="+openId);
+						QC.Login.signOut()
+					});
+					//这里可以调用自己的保存接口
+					//...
+			}
+		</script>
+
+		<script type="text/javascript"></script>
+
+	</body>
+</html>

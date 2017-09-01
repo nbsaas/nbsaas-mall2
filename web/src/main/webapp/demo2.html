@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Insert title here</title>
+    <script type="text/javascript" src="assets/js/jquery.1.11.1.min.js"></script>
+    <script src="assets/js/knockout-3.3.0.js"></script>
+
+</head>
+<body>
+
+<button id="xx" data-bind="click:add,visible: names().length <3">添加行</button>
+
+<div data-bind="foreach:names">
+    <div>1
+        <select
+                data-bind='options: catalogs, optionsText: "cname", optionsCaption: "选择分类", optionsValue:"id",value=curcatalog '>
+        </select>
+        <select
+                data-bind='options: types, optionsText: "name", optionsCaption: "Select..."'>
+        </select>
+        <span class="read-more remove-category" data-bind='click: $parent.removeLine'>移除</span>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    var CartLine = function () {
+        var self = this;
+        self.category = ko.observableArray();
+    };
+    var catalog=function(){
+        var self = this;
+        self.childers = ko.observableArray();
+
+    }
+    var categorylocal;
+    var Category = function () {
+        var self = this;
+        this.names = ko.observableArray();
+        this.curcatalog = ko.observable(new catalog());
+        this.types = ko.observableArray([]);
+        this.add = function () {
+            var c=new catalog();
+            var child=new catalog();
+            child.name="ada";
+            child.category="11";
+            c.childers.push(child)
+            self.names.push(c);
+            //alert(self.names);
+        };
+        this.setOptionDisable=function(option, item) {
+            //ko.applyBindingsToNode(option, {disable: item.disable}, item);
+            console.warn("ok");
+        }
+        this.removeLine = function(line) {
+            self.names.remove(line)
+        };
+
+    }
+    var cate = new Category();
+    ko.applyBindings(cate);
+
+
+    $.getJSON("http://192.168.199.171:8080/openyelp/category_tree.json", function (data) {
+        //categorylocal = data;
+       // cate.names.push(categorylocal);
+    });
+    var catalogs=[
+        {
+            "id": 2,
+            "name": "health",
+            "cname": "健康及医疗1",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 2,
+            "rgt": 111,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 62,
+            "name": "nightlife",
+            "cname": "夜生活",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 112,
+            "rgt": 151,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 82,
+            "name": "massmedia",
+            "cname": "大众媒体",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 152,
+            "rgt": 159,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 86,
+            "name": "religiousorgs",
+            "cname": "宗教组织",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 160,
+            "rgt": 171,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 92,
+            "name": "homeservices",
+            "cname": "家居服务",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 172,
+            "rgt": 287,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 150,
+            "name": "pets",
+            "cname": "宠物",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 288,
+            "rgt": 305,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 159,
+            "name": "professional",
+            "cname": "专业服务",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 306,
+            "rgt": 369,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 191,
+            "name": "realestate",
+            "cname": "房地产",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 370,
+            "rgt": 393,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 203,
+            "name": "publicservicesgovt",
+            "cname": "政府与公共事务",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 394,
+            "rgt": 411,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 212,
+            "name": "education",
+            "cname": "教育",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 412,
+            "rgt": 467,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 240,
+            "name": "localservices",
+            "cname": "本地服务",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 468,
+            "rgt": 541,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 277,
+            "name": "localflavor",
+            "cname": "本地特色",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 542,
+            "rgt": 545,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 279,
+            "name": "auto",
+            "cname": "汽车",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 546,
+            "rgt": 583,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 298,
+            "name": "eventservices",
+            "cname": "活动策划及统筹",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 584,
+            "rgt": 617,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 315,
+            "name": "beautysvc",
+            "cname": "美容及水疗店",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 618,
+            "rgt": 661,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 337,
+            "name": "arts",
+            "cname": "艺术及娱乐",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 662,
+            "rgt": 713,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 363,
+            "name": "shopping",
+            "cname": "购物",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 714,
+            "rgt": 895,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 454,
+            "name": "hotelstravel",
+            "cname": "酒店及旅游",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 896,
+            "rgt": 961,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 487,
+            "name": "financialservices",
+            "cname": "金融服务",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 962,
+            "rgt": 977,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 495,
+            "name": "food",
+            "cname": "食品",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 978,
+            "rgt": 1049,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 531,
+            "name": "restaurants",
+            "cname": "餐厅",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 1050,
+            "rgt": 1217,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        },
+        {
+            "id": 645,
+            "name": "active",
+            "cname": "体育消闲",
+            "pinyin": null,
+            "py": null,
+            "sortnum": null,
+            "path": null,
+            "icon": null,
+            "ids": null,
+            "lft": 1218,
+            "rgt": 1343,
+            "levelinfo": null,
+            "parentName": "parent",
+            "treeCondition": null,
+            "rgtName": "rgt",
+            "lftName": "lft",
+            "parentId": 1
+        }
+    ];
+</script>
+
+</body>
+</html>

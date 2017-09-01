@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>活动更新</title>
+<link rel="stylesheet" href="${siteurl}assets/css/www-pkg.css" />
+[#include "/theme/yelp/common/scripts.html"]
+
+</head>
+
+<body class="country-hk logged-out ytype jquery" id="yelp_main_body"
+	ryt13230="1">
+
+	<div id="fb-root"></div>
+
+	<div class="lang-en" id="wrap">
+
+
+
+		[#include "/theme/yelp/common/header.html"]
+
+		<div id="print-masthead">
+			<img alt="Yelp" class="print-bkg-img"
+				src="http://s3-media2.fl.yelpcdn.com/assets/2/www/img/b7e9d647188d/gfx/header_print.gif">
+		</div>
+
+		<span class="offscreen" id="page-content">&nbsp;</span>
+
+		<div class="main-content-wrap main-content-wrap--box">
+
+			<div class="content-container" id="super-container">
+
+
+
+
+
+
+				<div id="alert-container"></div>
+
+
+				<div class="container landing">
+
+					<div class="clearfix layout-block layout-a layout-border">
+						<div id="events-feed" class="column column-alpha ">
+							<div class="clearfix page-header">
+								<h2 class="heading">活动更新</h2>
+								<a class="floatLink back_to_events" href="${siteurl}events.htm">返回到活动首页</a>
+
+							</div>
+							<ul>
+								[#if list??] [#list list as item]
+								<li class="clearfix" style="margin-top: 5px"><em
+									class="floatLink smaller desc_time">[@html.date
+										date=item.addDate][/@html.date]</em>
+
+
+
+
+									<div class="photo-box pb-ss">
+										<a href="${siteurl}user_details.htm?id=${item.user.id}"> <img
+											width="40" height="40"
+											src="${item.user.headimg!'/assets/images/head.png'}"
+											class="photo-box-img" alt="${item.user.name!''}">
+										</a>
+									</div>
+
+									<div style="padding-right: 80px;" class="desc_text">
+										<a href="${siteurl}user_details.htm?id=${item.user.id}">${item.user.name}</a>
+										对<a href="${siteurl}events/view.htm?id=${item.eventInfo.id}">${item.eventInfo.name!"真真点评"}</a>表示"有型"
+
+
+									</div></li> [/#list] [/#if]
+									
+									
+							</ul>
+
+							[#include "/theme/yelp/common/pageryelp.html"]
+                                        [@pager page curpage "${siteurl}events/feed.htm?pagesize=${pagesize}"][/@pager]
+			
+
+						</div>
+						[#include "events_sidebar.html"]
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- google_ad_section_start(weight=ignore) -->
+		<!-- <a href="/biz/outlook-autumn-market-fundamental-catwalk-flimsy-roost-legibility-individualism-grocer-predestination-2">yelp</a> -->
+		[#include "/theme/yelp/common/footer.html"]
+
+
+	</div>
+
+
+
+</body>
+
+</html>

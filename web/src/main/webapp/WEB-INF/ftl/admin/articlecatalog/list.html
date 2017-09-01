@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>列表</title>
+	[#include "/admin/common/commonurl.html"]
+	[#include "/admin/common/scripts.html"]
+	<!-- inline scripts related to this page -->
+	<style type="text/css">
+		.disabled{
+			background: #E19487 !important;
+		}
+	</style>
+</head>
+<body class="no-skin">
+<div id="navbar" class="navbar navbar-default">
+	[#include "/admin/common/navbar.html"]
+	<!-- /.navbar-container -->
+</div>
+
+<div class="main-container" id="main-container">
+	<div id="sidebar" class="sidebar  responsive">
+		[#include "/admin/common/shortcuts.html"]
+		<!-- /.sidebar-shortcuts -->
+
+		<!-- .nav-list -->
+		[#include "/admin/common/commonmenu.html"]
+		<ul class="nav nav-list">
+			[@menustag id=1]
+			[#list list as item]
+			[@menu item "1,57,58"]
+			[/@menu]
+			[/#list]
+			[/@menustag]
+		</ul>
+		<!-- /.nav-list -->
+
+		<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+			<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+		</div>
+
+	</div>
+
+	<div class="main-content">
+		<div class="breadcrumbs" id="breadcrumbs">
+			<ul class="breadcrumb">
+				<li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
+				<li >分类管理</li>
+				[#if tops??]
+				[#list tops as item]
+				[#if item.id==pid]
+				<li>
+					${item.name}
+				</li>
+				[#else]
+				<li>
+					<a  href="${siteurl}admin/articlecatalog/view_list.htm?pid=${item.id}">${item.name}</a>
+					[/#if]
+				</li>
+				[/#list]
+				[/#if]
+			</ul>
+			<!-- /.breadcrumb -->
+			<div class="nav-search" id="nav-search">
+				<form class="form-search">
+						<span class="input-icon">
+							<input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+							<i class="ace-icon fa fa-search nav-search-icon"></i>
+						</span>
+				</form>
+			</div>
+			<!-- /.nav-search -->
+		</div>
+
+		<div class="page-content">
+			[#include "/admin/common/page2.html"]
+			[#include "/admin/common/settings.html"]
+
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="widget-box">
+							<div class="widget-body">
+								<div class="widget-main">
+									<form class="form-inline" role="form"
+										  action="${siteurl}admin/articlecatalog/model_save.htm" method="post">
+										<input type="hidden" name="parent.id" value="${pid!'1'}">
+										<input type="hidden" name="pageNumber" value="${(page.pageNumber)!'1'}">
+										<div class="box-body">
+											<div class="widget-main">
+												<div class="row">
+													<div class="col-xs-12 col-sm-12 ">
+														<div class="form-group">
+															<label  for="name">分类名称</label>
+															<input required="required" type="text" maxlength="20" id="name" name="name" placeholder="分类名称 "
+																   class="form-control search-query">
+
+														</div>
+														<div class ="form-group" >
+															<label for="code">编码</label>
+															<input class="form-control"  maxlength="50" type="text" placeholder="编码"  name="code" id="code">
+														</div>
+														<div class ="form-group">
+														<span>
+															<button class="btn btn-purple btn-sm" type="submit">
+																添加 <i class="ace-icon fa fa-plus icon-on-right bigger-110"></i>
+															</button>
+														</span>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<form id="listForm" action="${siteurl}admin/articlecatalog/view_list.htm" method="post">
+						<div class="col-xs-12">
+							<div class="table-responsive">
+								<table class="table table-bordered table-hover dataTable">
+									<tbody>
+									<tr role="row">
+										<td class="col-xs-2 col-md-2 col-sm-2 ">分类名称</td>
+										<td class="col-xs-7 col-md-6 col-sm-4 text-center">编码</td>
+										<td class="col-xs-3 col-md-4 col-sm-6  text-center">操作</td>
+									</tr>
+									[#list list as item]
+									<tr >
+										<td>${item.name!""}</td>
+										<td class="text-center">${item.code!""}</td>
+										<td class="text-center">
+											<div style="display: inline-block;">
+												[#if item.levelinfo lt 4]
+												<a  class="menubutton btn btn-sm btn-info" href="${siteurl}admin/articlecatalog/view_list.htm?pid=${item.id}">
+													<i class="icon-edit">查看子分类</i>
+												</a>
+												[/#if]
+												<a  class="menubutton btn btn-sm btn-success"
+													href="${siteurl}admin/articlecatalog/view_edit.htm?id=${item.id}&pageNumber=${page.pageNumber!'1'}">
+													<i class="fa fa-edit">更新</i>
+												</a>
+												<a  class="menubutton btn btn-sm btn-danger"  onclick="return confirm('删除后无法恢复,确定要删除吗')"
+													href="${siteurl}admin/articlecatalog/model_delete.htm?typeid=${item.id}">
+													<i class="fa fa-trash">删除</i>
+												</a>
+											</div></td>
+									</tr>
+									[/#list]
+									</tbody>
+								</table>
+							</div>
+							[@pager page ][/@pager]
+						</div>
+					</form>
+				</div>
+
+		</div>
+	</div>
+	<!-- /.main-content -->
+	[#include "/admin/common/footer.html"]
+
+</div>
+<!-- /.main-container -->
+<!-- basic scripts -->
+</body>
+</html>

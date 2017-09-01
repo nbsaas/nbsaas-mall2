@@ -1,0 +1,34 @@
+[#macro menu item ids]
+[#if item.childrens??]
+[@shiro.hasPermission name=item.permission]
+<li class="[@menuopentag ids=ids id=item.id][/@menuopentag]">
+	<a href="" class="dropdown-toggle">
+		<i class="${item.icon!'icon-dashboard'}"></i>
+		<span class="menu-text"> ${item.name!""} </span>
+		<b class="arrow fa fa-angle-down"></b>
+	</a>
+
+	<ul class="submenu">
+		[@menustag id=item.id]
+		[#list list as itemx]
+		[@menu itemx ids]
+		[/@menu]
+		[/#list]
+		[/@menustag]
+	</ul>
+</li>
+[/@shiro.hasPermission]
+[#else]
+[@shiro.hasPermission name=item.permission]
+<li class="[@menuopentag ids=ids id=item.id][/@menuopentag]">
+	<a href="${siteurl}${item.path!'#'}">
+		<i class="${item.icon!'icon-dashboard'}"></i>
+		<span class="menu-text"> ${item.name!""} </span>
+	</a>
+</li>
+[/@shiro.hasPermission]
+
+[/#if]
+
+
+[/#macro]
