@@ -8,9 +8,10 @@
 		<artifactId>quhaodian</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>iyelp_web</artifactId>
+	<groupId>com.ada.quhaodian</groupId>
+	<artifactId>web</artifactId>
 	<packaging>war</packaging>
-	<name>iyelp_web Maven Webapp</name>
+	<name>web</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -20,8 +21,8 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ada</groupId>
-			<artifactId>iyelp_data</artifactId>
+			<groupId>com.ada.quhaodian</groupId>
+			<artifactId>data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
