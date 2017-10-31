@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.Map;
 
-import com.openyelp.web.utils.DirectiveUtils;
-import com.openyelp.web.utils.StrUtils;
+import com.quhaodian.web.utils.DirectiveUtils;
+import com.quhaodian.web.utils.StrUtils;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;

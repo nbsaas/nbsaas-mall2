@@ -23,13 +23,13 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="siteHandlerInterceptor" class="com.openyelp.web.interceptor.SiteHandlerInterceptor">
+	<bean id="siteHandlerInterceptor" class="com.quhaodian.web.interceptor.SiteHandlerInterceptor">
 
 		<!-- http://openyelp.aliapp.com/ http://openyelp.sturgeon.mopaas.com/ http://yelp.tiger.mopaasapp.com -->
 		<!--<property name="url" value="http://www.zhenzhendianping.com:8080/"></property> -->
 		<property name="url" value="http://www.zzdp.me/"></property>  <!-- -->
 	</bean>
-	<bean id="exceptionResolver" class="com.openyelp.web.handler.MappingExceptionResolver">
+	<bean id="exceptionResolver" class="com.quhaodian.web.handler.MappingExceptionResolver">
 		<property name="url" value="http://www.zzdp.me/"></property> <!-- -->
 		<property name="exceptionMappings">
 			<props>
@@ -54,25 +54,25 @@
 
 	<bean id="menuOpenDirective" class="com.openyelp.web.freemaker.MenuOpenDirective"></bean>
 	<bean id="menusDirective" class="com.openyelp.web.freemaker.MenusDirective"></bean>
-	<bean id="hotAreaDirective" class="com.openyelp.web.freemaker.HotAreaDirective"></bean>
+	<bean id="hotAreaDirective" class="com.quhaodian.web.freemaker.HotAreaDirective"></bean>
 	<bean id="AreaCategoryDirective" class="com.openyelp.web.freemaker.AreaCategoryDirective"></bean>
-	<bean id="talkNewsDirective" class="com.openyelp.web.freemaker.TalkNewsDirective"></bean>
-	<bean id="eventGoodDirective" class="com.openyelp.web.freemaker.EventGoodDirective"></bean>
-	<bean id="shopNearDirective" class="com.openyelp.web.freemaker.ShopNearDirective"></bean>
-	<bean id="shopGoodDirective" class="com.openyelp.web.freemaker.ShopGoodDirective"></bean>
-	<bean id="categoryNearDirective" class="com.openyelp.web.freemaker.CategoryNearDirective"></bean>
+	<bean id="talkNewsDirective" class="com.quhaodian.web.freemaker.TalkNewsDirective"></bean>
+	<bean id="eventGoodDirective" class="com.quhaodian.web.freemaker.EventGoodDirective"></bean>
+	<bean id="shopNearDirective" class="com.quhaodian.web.freemaker.ShopNearDirective"></bean>
+	<bean id="shopGoodDirective" class="com.quhaodian.web.freemaker.ShopGoodDirective"></bean>
+	<bean id="categoryNearDirective" class="com.quhaodian.web.freemaker.CategoryNearDirective"></bean>
 
 	<bean id="articleDirective" class="com.openyelp.web.freemaker.ArticleDirective"></bean>
-	<bean id="shopDirective" class="com.openyelp.web.freemaker.ShopDirective"></bean>
-	<bean id="talkDirective" class="com.openyelp.web.freemaker.TalkDirective"></bean>
-	<bean id="eventsDirective" class="com.openyelp.web.freemaker.EventsDirective"></bean>
-	<bean id="shopReviewDirective" class="com.openyelp.web.freemaker.ShopReviewDirective"></bean>
-	<bean id="shopImageDirective" class="com.openyelp.web.freemaker.ShopImageDirective"></bean>
-	<bean id="shopImageListDirective" class="com.openyelp.web.freemaker.ShopImageListDirective"></bean>
+	<bean id="shopDirective" class="com.quhaodian.web.freemaker.ShopDirective"></bean>
+	<bean id="talkDirective" class="com.quhaodian.web.freemaker.TalkDirective"></bean>
+	<bean id="eventsDirective" class="com.quhaodian.web.freemaker.EventsDirective"></bean>
+	<bean id="shopReviewDirective" class="com.quhaodian.web.freemaker.ShopReviewDirective"></bean>
+	<bean id="shopImageDirective" class="com.quhaodian.web.freemaker.ShopImageDirective"></bean>
+	<bean id="shopImageListDirective" class="com.quhaodian.web.freemaker.ShopImageListDirective"></bean>
 
 
 
-	<bean id="haveVoteDirective" class="com.openyelp.web.freemaker.HaveVoteDirective"></bean>
+	<bean id="haveVoteDirective" class="com.quhaodian.web.freemaker.HaveVoteDirective"></bean>
 
 
 
