@@ -6012,7 +6012,7 @@ CREATE TABLE IF NOT EXISTS `site_config` (
 DELETE FROM `site_config`;
 /*!40000 ALTER TABLE `site_config` DISABLE KEYS */;
 INSERT INTO `site_config` (`id`, `addDate`, `lastDate`, `description`, `domainName`, `favicon`, `icp`, `keywords`, `logo`, `pageSize`, `shortName`, `theme`, `title`) VALUES
-	(1, '2018-01-31 15:45:19', '2018-01-31 15:45:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'bootstrap', NULL);
+	(1, '2018-01-31 15:45:19', '2018-01-31 15:45:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'yelp', NULL);
 /*!40000 ALTER TABLE `site_config` ENABLE KEYS */;
 
 -- 导出  表 iyelp.site_link 结构
