@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS `area` (
   CONSTRAINT `FKtn7all8h9e6fi9pspra60rht5` FOREIGN KEY (`pid`) REFERENCES `area` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3574 DEFAULT CHARSET=utf8;
 
--- 正在导出表  iyelp.area 的数据：~3,561 rows (大约)
+-- 正在导出表  iyelp.area 的数据：~3,570 rows (大约)
 DELETE FROM `area`;
 /*!40000 ALTER TABLE `area` DISABLE KEYS */;
 INSERT INTO `area` (`id`, `addDate`, `code`, `ids`, `lastDate`, `levelInfo`, `lft`, `name`, `rgt`, `sortNum`, `geo`, `govCode`, `lat`, `lng`, `state`, `area_type`, `pid`) VALUES
@@ -4648,7 +4648,7 @@ CREATE TABLE IF NOT EXISTS `shop_category` (
   CONSTRAINT `FKjarxbwwln348arrh6i3d6sja9` FOREIGN KEY (`pid`) REFERENCES `shop_category` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=958 DEFAULT CHARSET=utf8;
 
--- 正在导出表  iyelp.shop_category 的数据：~973 rows (大约)
+-- 正在导出表  iyelp.shop_category 的数据：~957 rows (大约)
 DELETE FROM `shop_category`;
 /*!40000 ALTER TABLE `shop_category` DISABLE KEYS */;
 INSERT INTO `shop_category` (`id`, `addDate`, `code`, `ids`, `lastDate`, `levelInfo`, `lft`, `name`, `rgt`, `sortNum`, `cname`, `icon`, `nums`, `path`, `pinyin`, `py`, `pid`) VALUES
@@ -6011,6 +6011,8 @@ CREATE TABLE IF NOT EXISTS `site_config` (
 -- 正在导出表  iyelp.site_config 的数据：~0 rows (大约)
 DELETE FROM `site_config`;
 /*!40000 ALTER TABLE `site_config` DISABLE KEYS */;
+INSERT INTO `site_config` (`id`, `addDate`, `lastDate`, `description`, `domainName`, `favicon`, `icp`, `keywords`, `logo`, `pageSize`, `shortName`, `theme`, `title`) VALUES
+	(1, '2018-01-31 15:45:19', '2018-01-31 15:45:19', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'bootstrap', NULL);
 /*!40000 ALTER TABLE `site_config` ENABLE KEYS */;
 
 -- 导出  表 iyelp.site_link 结构
@@ -6093,9 +6095,9 @@ CREATE TABLE IF NOT EXISTS `site_theme_config` (
 DELETE FROM `site_theme_config`;
 /*!40000 ALTER TABLE `site_theme_config` DISABLE KEYS */;
 INSERT INTO `site_theme_config` (`id`, `name`, `path`, `screenShot`) VALUES
-	('bootstrap', NULL, NULL, NULL),
-	('yelp', NULL, NULL, NULL),
-	('yelpold', NULL, NULL, NULL);
+	('bootstrap', 'bootstrap', NULL, NULL),
+	('yelp', 'yelp', NULL, 'dist/img/yelp.jpg'),
+	('yelpold', 'yelpold', NULL, 'dist/img/yelpold.jpg');
 /*!40000 ALTER TABLE `site_theme_config` ENABLE KEYS */;
 
 -- 导出  表 iyelp.talk 结构
@@ -6215,7 +6217,7 @@ CREATE TABLE IF NOT EXISTS `user_account` (
 DELETE FROM `user_account`;
 /*!40000 ALTER TABLE `user_account` DISABLE KEYS */;
 INSERT INTO `user_account` (`id`, `addDate`, `lastDate`, `accountType`, `loginSize`, `password`, `salt`, `username`, `user_id`) VALUES
-	(1, '2018-01-31 11:04:12', '2018-01-31 14:38:15', 2, 25, 'a35a20a519c69aff71d7bbf8e6178da102e8207f', 'c2ea2fabd1b734b7', 'admin', 1);
+	(1, '2018-01-31 11:04:12', '2018-01-31 15:45:34', 2, 30, 'a35a20a519c69aff71d7bbf8e6178da102e8207f', 'c2ea2fabd1b734b7', 'admin', 1);
 /*!40000 ALTER TABLE `user_account` ENABLE KEYS */;
 
 -- 导出  表 iyelp.user_city 结构
@@ -6372,7 +6374,7 @@ CREATE TABLE IF NOT EXISTS `user_info` (
 DELETE FROM `user_info`;
 /*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
 INSERT INTO `user_info` (`id`, `addDate`, `lastDate`, `avatar`, `catalog`, `loginSize`, `name`, `phone`, `registerType`, `state`) VALUES
-	(1, '2018-01-31 11:04:12', '2018-01-31 14:38:15', NULL, NULL, 38, 'admin', NULL, '账号', NULL);
+	(1, '2018-01-31 11:04:12', '2018-01-31 15:45:35', NULL, NULL, 46, 'admin', NULL, '账号', NULL);
 /*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
 
 -- 导出  表 iyelp.user_info_attribute 结构

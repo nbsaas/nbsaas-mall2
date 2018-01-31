@@ -18,6 +18,7 @@ import com.quhaodian.haodian.services.haoservice.lifeservice.joke.ContentList;
 import com.quhaodian.haodian.services.haoservice.lifeservice.joke.JokeApi;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.utils.FrontUtils;
+import com.quhaodian.web.controller.front.BaseController;
 import org.jsoup.Jsoup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class SiteAction {
+public class SiteAction extends BaseController{
 
 
 	@Autowired
@@ -136,7 +137,7 @@ public class SiteAction {
 		model.addAttribute("reviewlists", listService.pageByArea(areaid, 1, 5)
 				.getList());
 
-		return FrontUtils.getPath("index");
+		return getView("index");
 	}
 
 	@Autowired
@@ -198,7 +199,7 @@ public class SiteAction {
 
 		model.addAttribute("siteindex", 7);
 
-		return FrontUtils.getPath("events");
+		return getView("events");
 	}
 
 	@RequestMapping(value = "locations", method = RequestMethod.GET)
@@ -208,7 +209,7 @@ public class SiteAction {
 			HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		return FrontUtils.getPath("locations");
+		return getView("locations");
 	}
 
 	@Autowired
@@ -248,7 +249,7 @@ public class SiteAction {
 		model.addAttribute("firstno", rs.getFirstNo());
 		model.addAttribute("endno", rs.getEndNo());
 
-		return FrontUtils.getPath("search");
+		return getView("search");
 	}
 
 	@RequestMapping(value = "guidelines", method = RequestMethod.GET)
@@ -258,7 +259,7 @@ public class SiteAction {
 			HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		return FrontUtils.getPath("guidelines");
+		return getView("guidelines");
 	}
 
 	@RequestMapping(value = "signup", method = RequestMethod.GET)
@@ -268,7 +269,7 @@ public class SiteAction {
 			HttpServletRequest request, HttpServletResponse response,
 			Model model) {
 
-		return FrontUtils.getPath("signup");
+		return getView("signup");
 	}
 
 	@RequestMapping(value = "joke", method = RequestMethod.GET)
@@ -339,9 +340,9 @@ public class SiteAction {
 		UserAccountVo  result = accountService.reg(user);
 		if (result.getCode() != 0) {
 			model.addAttribute("msg", ""+result.getMsg());
-			return FrontUtils.getPath("signup");
+			return getView("signup");
 		} else {
-			return FrontUtils.getPath("login");
+			return getView("login");
 
 		}
 	}
@@ -350,7 +351,7 @@ public class SiteAction {
 	public String forgot(HttpServletRequest request,
 			HttpServletResponse response, Model model) {
 
-		return FrontUtils.getPath("forgot");
+		return getView("forgot");
 	}
 
 	@RequestMapping(value = "forgotwork", method = RequestMethod.POST)
@@ -358,12 +359,12 @@ public class SiteAction {
 			HttpServletResponse response, Model model) {
 		if (email != null && email.indexOf("@") < 0) {
 			model.addAttribute("msg", "邮件地址不正确");
-			return FrontUtils.getPath("forgot");
+			return getView("forgot");
 
 		}
 
 		model.addAttribute("email", email);
-		return FrontUtils.getPath("forgotok");
+		return getView("forgotok");
 	}
 
 	@Autowired
@@ -393,7 +394,7 @@ public class SiteAction {
 		model.addAttribute("reviews",
 				shopReviewService.page(cityid, catalog, 1, 8).getList());
 
-		return FrontUtils.getPath("catalog");
+		return getView("catalog");
 	}
 
 }

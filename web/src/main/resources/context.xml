@@ -13,6 +13,8 @@
 
 	<context:component-scan base-package="com.quhaodian.haodian.actions" />
 
+	<bean name="webconfig" class="com.quhaodian.web.data.common.InitConfig" init-method="initWebConfig" scope="singleton" lazy-init="false"></bean>
+
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
 		p:defaultEncoding="utf-8" p:maxUploadSize="100000000" />
