@@ -11,7 +11,7 @@
 	<import resource="context-shiro.xml" />
 
 
-	<context:component-scan base-package="com.quhaodian.actions" />
+	<context:component-scan base-package="com.quhaodian.haodian.actions" />
 
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
@@ -42,9 +42,9 @@
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter" />
 
 
-
 	<bean id="menuOpenDirective" class="com.quhaodian.user.freemaker.MenuOpenDirective"></bean>
 	<bean id="menusDirective" class="com.quhaodian.user.freemaker.MenusDirective"></bean>
+	<bean id="menuchildsDirective" class="com.quhaodian.user.freemaker.MenuChildsDirective"></bean>
 	<bean id="hotAreaDirective" class="com.quhaodian.haodian.web.freemaker.HotAreaDirective"></bean>
 	<bean id="talkNewsDirective" class="com.quhaodian.haodian.web.freemaker.TalkNewsDirective"></bean>
 	<bean id="eventGoodDirective" class="com.quhaodian.haodian.web.freemaker.EventGoodDirective"></bean>
@@ -91,8 +91,9 @@
 		</property>
 		<property name="freemarkerVariables">
 			<map>
-				<entry key="menuopentag" value-ref="menuOpenDirective" />
-				<entry key="menustag" value-ref="menusDirective" />
+				<entry key="menuopentag" value-ref="menuOpenDirective"/>
+				<entry key="menustag" value-ref="menusDirective"/>
+				<entry key="menuchilds" value-ref="menuchildsDirective"/>
 				<entry key="hotarea" value-ref="hotAreaDirective" />
 				<entry key="talknews" value-ref="talkNewsDirective" />
 				<entry key="shiro" value-ref="shiro" />
@@ -109,7 +110,7 @@
 				<entry key="shopimage_" value-ref="shopImageDirective" />
 				<entry key="shopimagelist_" value-ref="shopImageListDirective" />
 				<entry key="siteurl" value="#{servletContext.contextPath}/"/>
-				<entry key="sitename" value="票聚客平台"/>
+				<entry key="sitename" value="好店"/>
 
 				<entry key="havevote" value-ref="haveVoteDirective" />
 

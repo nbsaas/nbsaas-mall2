@@ -22,7 +22,7 @@
 
 
 
-	<context:component-scan base-package="com.quhaodian.haodian.services.file" />
+	<context:component-scan base-package="com.quhaodian.haodian.data" />
 
 
 

@@ -34,7 +34,6 @@ import com.quhaodian.haodian.utils.JsonUtils;
 @RequestMapping("files")
 public class FileController  {
 
-	@Resource(name = "fileServiceImpl2")
 	private StorageService fileService;
 
 
