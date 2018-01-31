@@ -9,12 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ada.area.data.dao.AreaDao;
-import com.ada.area.data.entity.Area;
-import com.ada.data.core.Finder;
-import com.ada.data.core.Pagination;
-import com.ada.data.core.Updater;
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.area.data.dao.AreaDao;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.data.core.Finder;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.core.Updater;
+import com.quhaodian.user.data.entity.UserInfo;
 import com.quhaodian.data.dao.FeedDao;
 import com.quhaodian.data.dao.ShopReviewDao;
 import com.quhaodian.data.entity.Shop;

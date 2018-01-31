@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.quhaodian.core.dao.SiteDao;
-import com.ada.data.core.Pagination;
-import com.ada.data.core.Updater;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.core.Updater;
 
 @Service
 @Transactional

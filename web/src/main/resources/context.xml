@@ -10,13 +10,6 @@
 	<!--COOKIE登录 -->
 	<import resource="context-shiro.xml" />
 
-	<context:component-scan base-package="com.ada.user.controller" />
-	<context:component-scan base-package="com.ada.plug.controller" />
-	<context:component-scan base-package="com.ada.area.controller" />
-	<context:component-scan base-package="com.ada.article.controller" />
-
-
-
 
 	<context:component-scan base-package="com.quhaodian.actions" />
 
@@ -50,8 +43,8 @@
 
 
 
-	<bean id="menuOpenDirective" class="com.ada.user.freemaker.MenuOpenDirective"></bean>
-	<bean id="menusDirective" class="com.ada.user.freemaker.MenusDirective"></bean>
+	<bean id="menuOpenDirective" class="com.quhaodian.user.freemaker.MenuOpenDirective"></bean>
+	<bean id="menusDirective" class="com.quhaodian.user.freemaker.MenusDirective"></bean>
 	<bean id="hotAreaDirective" class="com.quhaodian.web.freemaker.HotAreaDirective"></bean>
 	<bean id="talkNewsDirective" class="com.quhaodian.web.freemaker.TalkNewsDirective"></bean>
 	<bean id="eventGoodDirective" class="com.quhaodian.web.freemaker.EventGoodDirective"></bean>
@@ -59,7 +52,7 @@
 	<bean id="shopGoodDirective" class="com.quhaodian.web.freemaker.ShopGoodDirective"></bean>
 	<bean id="categoryNearDirective" class="com.quhaodian.web.freemaker.CategoryNearDirective"></bean>
 
-	<bean id="articleDirective" class="com.ada.article.freemarker.ArticleDirective"></bean>
+	<bean id="articleDirective" class="com.quhaodian.article.freemarker.ArticleDirective"></bean>
 	<bean id="shopDirective" class="com.quhaodian.web.freemaker.ShopDirective"></bean>
 	<bean id="talkDirective" class="com.quhaodian.web.freemaker.TalkDirective"></bean>
 	<bean id="eventsDirective" class="com.quhaodian.web.freemaker.EventsDirective"></bean>

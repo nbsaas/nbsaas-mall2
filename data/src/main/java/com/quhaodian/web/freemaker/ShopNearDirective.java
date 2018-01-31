@@ -9,7 +9,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.Shop;
 import com.quhaodian.data.service.ShopService;
 import com.quhaodian.web.utils.DirectiveUtils;

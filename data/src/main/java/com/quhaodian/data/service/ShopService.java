@@ -1,6 +1,6 @@
 package com.quhaodian.data.service;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.Shop;
 import com.quhaodian.data.entity.ShopCategory;
 

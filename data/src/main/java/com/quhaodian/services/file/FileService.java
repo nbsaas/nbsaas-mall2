@@ -9,9 +9,9 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ada.plug.data.vo.FileInfo;
-import com.ada.plug.data.vo.FileInfo.FileType;
-import com.ada.plug.data.vo.FileInfo.OrderType;
+import com.quhaodian.plug.data.vo.FileInfo;
+import com.quhaodian.plug.data.vo.FileInfo.FileType;
+import com.quhaodian.plug.data.vo.FileInfo.OrderType;
 
 /**
  * Service - 文件

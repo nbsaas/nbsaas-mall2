@@ -1,9 +1,9 @@
 package com.quhaodian.data.dao;
 
 
-import com.ada.data.core.CriteriaDao;
-import com.ada.data.core.Pagination;
-import com.ada.data.core.Updater;
+import com.quhaodian.data.core.CriteriaDao;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.core.Updater;
 import com.quhaodian.data.entity.ShopCategory;
 
 public interface ShopCategoryDao extends CriteriaDao<ShopCategory, Integer>{

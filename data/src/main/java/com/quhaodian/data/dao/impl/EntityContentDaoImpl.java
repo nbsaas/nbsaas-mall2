@@ -7,8 +7,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.ada.data.core.BaseDaoImpl;
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.BaseDaoImpl;
+import com.quhaodian.data.core.Pagination;
 
 @Repository
 public class EntityContentDaoImpl extends BaseDaoImpl<EntityContent, Integer> implements EntityContentDao {

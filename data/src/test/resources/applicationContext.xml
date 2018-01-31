@@ -12,10 +12,10 @@
 	default-lazy-init="true">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.ada.article" />
-	<context:component-scan base-package="com.ada.user" />
+	<context:component-scan base-package="com.quhaodian.article" />
+	<context:component-scan base-package="com.quhaodian.user" />
 	<context:component-scan base-package="com.ada.admin" />
-	<context:component-scan base-package="com.ada.area" />
+	<context:component-scan base-package="com.quhaodian.area" />
 	<context:component-scan base-package="com.ada.plugin" />
 	<context:component-scan base-package="com.openyelp.plugs" />
 	<context:component-scan base-package="com.openyelp.services.file" />
@@ -58,10 +58,10 @@
 		<property name="packagesToScan">
 			<list>
 				<value>com.openyelp.data</value>
-				<value>com.ada.user.entity</value>
-				<value>com.ada.article.entity</value>
+				<value>com.quhaodian.user.entity</value>
+				<value>com.quhaodian.article.entity</value>
 				<value>com.ada.admin.entity</value>
-				<value>com.ada.area.entity</value>
+				<value>com.quhaodian.area.entity</value>
 				<value>com.ada.plugin.entity</value>
 			</list>
 		</property>

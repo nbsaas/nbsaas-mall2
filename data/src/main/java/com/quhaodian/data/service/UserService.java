@@ -1,8 +1,8 @@
 package com.quhaodian.data.service;
 
-import com.ada.data.core.Pagination;
-import com.ada.user.data.entity.UserInfo;
-import com.ada.user.data.entity.UserRole;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.user.data.entity.UserInfo;
+import com.quhaodian.user.data.entity.UserRole;
 
 public interface UserService {
 	/**加密方法*/

@@ -18,7 +18,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.Predicate;
 import org.springframework.stereotype.Service;
 
-import com.ada.plug.api.StoragePlugin;
+import com.quhaodian.plug.api.StoragePlugin;
 
 /**
  * Service - 插件

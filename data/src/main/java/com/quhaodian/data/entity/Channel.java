@@ -8,7 +8,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ada.common.hibernate.HibernateTree;
+import com.quhaodian.common.hibernate.HibernateTree;
 
 @Entity
 @Table(name = "channel")

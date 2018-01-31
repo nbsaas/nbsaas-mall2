@@ -1,6 +1,6 @@
 package com.quhaodian.data.service;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.EntityContent;
 public interface EntityContentService {
 	public Pagination getPage(int pageNo, int pageSize);

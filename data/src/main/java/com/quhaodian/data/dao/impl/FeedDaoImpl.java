@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Repository;
 
-import com.ada.data.core.BaseDaoImpl;
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.BaseDaoImpl;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.dao.FeedDao;
 import com.quhaodian.data.dao.ShopReviewDao;
 import com.quhaodian.data.entity.EventInfo;

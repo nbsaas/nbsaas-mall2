@@ -11,7 +11,7 @@ import com.quhaodian.data.entity.Shop;
 import com.quhaodian.data.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.web.utils.DirectiveUtils;
 
 import freemarker.core.Environment;

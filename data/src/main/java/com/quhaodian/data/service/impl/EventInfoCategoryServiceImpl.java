@@ -1,11 +1,11 @@
 package com.quhaodian.data.service.impl;
 
-import com.ada.data.core.Finder;
-import com.ada.data.core.Updater;
-import com.ada.data.page.Filter;
-import com.ada.data.page.Order;
-import com.ada.data.page.Page;
-import com.ada.data.page.Pageable;
+import com.quhaodian.data.core.Finder;
+import com.quhaodian.data.core.Updater;
+import com.quhaodian.data.page.Filter;
+import com.quhaodian.data.page.Order;
+import com.quhaodian.data.page.Page;
+import com.quhaodian.data.page.Pageable;
 import com.quhaodian.data.dao.EventInfoCategoryDao;
 import com.quhaodian.data.entity.EventInfoCategory;
 import com.quhaodian.data.service.EventInfoCategoryService;

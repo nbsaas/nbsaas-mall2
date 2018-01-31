@@ -7,7 +7,7 @@
 
 	<description>Shiro安全配置</description>
 
-	<bean id="userRealm" class="com.ada.shiro.realm.AccountRealm"></bean>
+	<bean id="userRealm" class="com.quhaodian.shiro.realm.AccountRealm"></bean>
 
 	<!-- Shiro的主要业务层对象基于web的应用程序 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
@@ -16,10 +16,10 @@
 	</bean>
 
 	<!-- Shiro Filter -->
-	<bean id="myCaptchaFilter" class="com.ada.shiro.filter.FormAuthenticationCaptchaFilter">
+	<bean id="myCaptchaFilter" class="com.quhaodian.shiro.filter.FormAuthenticationCaptchaFilter">
 		<property name="loginUrl" value="/login.htm" />
 	</bean>
-	<bean id="rolesAuthorizationFilter" class="com.ada.shiro.filter.RolesAuthorizationFilter">
+	<bean id="rolesAuthorizationFilter" class="com.quhaodian.shiro.filter.RolesAuthorizationFilter">
 	</bean>
 
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">

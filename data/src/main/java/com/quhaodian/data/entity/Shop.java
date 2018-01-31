@@ -23,8 +23,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
-import com.ada.area.data.entity.Area;
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.user.data.entity.UserInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

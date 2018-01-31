@@ -5,19 +5,10 @@
  */
 package com.quhaodian.services.file.impl;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.UUID;
-
-import javax.annotation.Resource;
-import javax.servlet.ServletContext;
-
-import com.quhaodian.plugs.file.FilePlugin;
+import com.quhaodian.plug.api.StoragePlugin;
+import com.quhaodian.plug.data.vo.FileInfo;
+import com.quhaodian.plug.data.vo.FileInfo.FileType;
+import com.quhaodian.plug.data.vo.FileInfo.OrderType;
 import com.quhaodian.services.file.FileService;
 import com.quhaodian.services.file.PluginFileService;
 import com.quhaodian.utils.FreemarkerUtils;
@@ -31,10 +22,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ada.plug.api.StoragePlugin;
-import com.ada.plug.data.vo.FileInfo;
-import com.ada.plug.data.vo.FileInfo.FileType;
-import com.ada.plug.data.vo.FileInfo.OrderType;
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
+import java.io.File;
+import java.util.*;
 
 /**
  * Service - 文件
@@ -147,11 +138,8 @@ public class FileServiceImpl implements FileService, ServletContextAware {
 					}
 				}
 				//
-				if (storagePlugin instanceof FilePlugin) {
 					backpath = storagePlugin.getUrl(destPath);
 					
-					System.out.println(backpath);
-				}
 			}
 			FileUtils.deleteQuietly(tempFile);
 		} catch (Exception e) {

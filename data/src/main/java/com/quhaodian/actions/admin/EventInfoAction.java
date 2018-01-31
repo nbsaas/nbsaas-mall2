@@ -1,6 +1,6 @@
 package com.quhaodian.actions.admin;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.EventInfo;
 import com.quhaodian.data.entity.EventInfoCategory;
 import com.quhaodian.data.service.EventInfoCategoryService;

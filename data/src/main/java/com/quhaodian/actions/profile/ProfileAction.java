@@ -3,10 +3,10 @@ package com.quhaodian.actions.profile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ada.data.page.Filter;
-import com.ada.data.page.Page;
-import com.ada.data.page.Pageable;
-import com.ada.userfriend.data.entity.UserFriend;
+import com.quhaodian.data.page.Filter;
+import com.quhaodian.data.page.Page;
+import com.quhaodian.data.page.Pageable;
+import com.quhaodian.userfriend.data.entity.UserFriend;
 import com.quhaodian.core.web.WebErrors;
 import com.quhaodian.data.entity.Photo;
 import com.quhaodian.data.entity.UserProfile;
@@ -24,10 +24,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ada.data.core.Pagination;
-import com.ada.user.data.entity.UserInfo;
-import com.ada.userfriend.data.service.UserFriendRequestService;
-import com.ada.userfriend.data.service.UserFriendService;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.user.data.entity.UserInfo;
+import com.quhaodian.userfriend.data.service.UserFriendRequestService;
+import com.quhaodian.userfriend.data.service.UserFriendService;
 
 @Controller
 @RequestMapping(value = "profile")

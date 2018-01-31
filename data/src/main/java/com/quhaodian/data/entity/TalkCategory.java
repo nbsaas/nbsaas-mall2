@@ -9,8 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.ada.common.hibernate.HibernateTree;
-import com.ada.data.entity.CatalogEntity;
+import com.quhaodian.common.hibernate.HibernateTree;
+import com.quhaodian.data.entity.CatalogEntity;
 
 @Entity
 @Table(name = "talk_category")

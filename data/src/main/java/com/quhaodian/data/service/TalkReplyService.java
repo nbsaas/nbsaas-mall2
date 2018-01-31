@@ -1,8 +1,8 @@
 package com.quhaodian.data.service;
 
-import com.ada.data.core.Pagination;
-import com.ada.data.page.Page;
-import com.ada.data.page.Pageable;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.page.Page;
+import com.quhaodian.data.page.Pageable;
 import com.quhaodian.data.entity.TalkReply;
 
 

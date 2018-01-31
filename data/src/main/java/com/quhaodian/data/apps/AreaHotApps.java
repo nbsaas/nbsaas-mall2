@@ -2,7 +2,7 @@ package com.quhaodian.data.apps;
 
 import java.util.Date;
 
-import com.ada.area.data.entity.Area;
+import com.quhaodian.area.data.entity.Area;
 import com.quhaodian.data.entity.AreaHot;
 import com.quhaodian.data.service.AreaHotService;
 

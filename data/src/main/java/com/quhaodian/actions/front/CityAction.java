@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ada.area.data.entity.Area;
-import com.ada.area.data.service.AreaService;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.area.data.service.AreaService;
 import com.quhaodian.shiro.utils.UserUtil;
 import com.quhaodian.web.utils.FrontUtils;
 

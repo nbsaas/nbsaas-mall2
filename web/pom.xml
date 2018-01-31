@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.ada</groupId>
-		<artifactId>quhaodian</artifactId>
+		<groupId>com.quhaodian</groupId>
+		<artifactId>haodian</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.ada.quhaodian</groupId>
+	<groupId>com.quhaodian.haodian</groupId>
 	<artifactId>web</artifactId>
 	<packaging>war</packaging>
 	<name>web</name>
@@ -21,7 +21,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.quhaodian</groupId>
+			<groupId>com.quhaodian.haodian</groupId>
 			<artifactId>data</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
@@ -34,6 +34,6 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>iyelp_web</finalName>
+		<finalName>web</finalName>
 	</build>
 </project>

@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.user.data.entity.UserInfo;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 

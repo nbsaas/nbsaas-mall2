@@ -4,11 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.ada</groupId>
-		<artifactId>quhaodian</artifactId>
+		<groupId>com.quhaodian</groupId>
+		<artifactId>haodian</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>com.ada.quhaodian</groupId>
+	<groupId>com.quhaodian.haodian</groupId>
 	<artifactId>data</artifactId>
 	<name>data</name>
 	<url>http://maven.apache.org</url>
@@ -36,49 +36,49 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.ada.discover</groupId>
-			<artifactId>discover_user_hibernate</artifactId>
-			<version>1.5.0</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>user_hibernate</artifactId>
+			<version>1.8.3</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.discover</groupId>
-			<artifactId>discover_site_hibernate</artifactId>
-			<version>1.1.9</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>site_hibernate</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.area</groupId>
-			<artifactId>discover_area_hibernate</artifactId>
-			<version>1.1.9</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>area</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.web</groupId>
-			<artifactId>discover_website</artifactId>
-			<version>1.1.8</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>website</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.article</groupId>
-			<artifactId>discover_article</artifactId>
-			<version>1.1.8</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>article</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.plug</groupId>
-			<artifactId>discover_plug</artifactId>
-			<version>1.1.8</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>plug_alidayu</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.security</groupId>
-			<artifactId>discover_security</artifactId>
-			<version>1.1.8</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>security</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada.userfriend</groupId>
-			<artifactId>discover_user_friend</artifactId>
-			<version>1.1.8</version>
+			<groupId>com.quhaodian</groupId>
+			<artifactId>user_friend</artifactId>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.ada</groupId>
+			<groupId>com.quhaodian</groupId>
 			<artifactId>freemaker</artifactId>
-			<version>1.0.5</version>
+			<version>1.8.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.qiniu</groupId>

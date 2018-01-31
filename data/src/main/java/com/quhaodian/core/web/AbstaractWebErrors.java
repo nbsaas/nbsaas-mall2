@@ -44,7 +44,7 @@ public abstract class AbstaractWebErrors {
 	 */
 	public AbstaractWebErrors(HttpServletRequest request) {
 		WebApplicationContext webApplicationContext = RequestContextUtils
-				.getWebApplicationContext(request);
+				.findWebApplicationContext(request);
 		if (webApplicationContext != null) {
 			LocaleResolver localeResolver = RequestContextUtils
 					.getLocaleResolver(request);

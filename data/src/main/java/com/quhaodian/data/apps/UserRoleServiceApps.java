@@ -1,7 +1,7 @@
 package com.quhaodian.data.apps;
 
-import com.ada.user.data.entity.UserRole;
-import com.ada.user.data.service.UserRoleService;
+import com.quhaodian.user.data.entity.UserRole;
+import com.quhaodian.user.data.service.UserRoleService;
 
 public class UserRoleServiceApps {
 

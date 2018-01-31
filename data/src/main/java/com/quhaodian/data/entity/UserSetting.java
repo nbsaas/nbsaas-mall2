@@ -6,8 +6,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-import com.ada.data.entity.AbstractEntity;
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.data.entity.AbstractEntity;
+import com.quhaodian.user.data.entity.UserInfo;
 
 
 @Entity

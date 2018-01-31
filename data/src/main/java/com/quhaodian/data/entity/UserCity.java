@@ -1,7 +1,7 @@
 package com.quhaodian.data.entity;
 
-import com.ada.area.data.entity.Area;
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.user.data.entity.UserInfo;
 
 import java.util.Date;
 

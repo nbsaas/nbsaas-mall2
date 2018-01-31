@@ -8,7 +8,8 @@ import org.springframework.web.bind.support.WebBindingInitializer;
 import org.springframework.web.context.request.WebRequest;
 
 public class MyDataBinding implements WebBindingInitializer {
-	public void initBinder(WebDataBinder binder, WebRequest request) {
+	@Override
+	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(false);
 
@@ -21,4 +22,5 @@ public class MyDataBinding implements WebBindingInitializer {
 		binder.registerCustomEditor(java.sql.Timestamp.class,
 				new CustomTimestampEditor(datetimeFormat, true));
 	}
+
 }

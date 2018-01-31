@@ -7,7 +7,7 @@ import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.user.data.entity.UserInfo;
 
 /**
  * <p>User: Zhang Kaitao

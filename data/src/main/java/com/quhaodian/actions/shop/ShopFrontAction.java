@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.ada.area.data.entity.Area;
-import com.ada.data.core.Pagination;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.Shop;
 import com.quhaodian.data.entity.ShopBack;
 import com.quhaodian.data.entity.ShopCategory;

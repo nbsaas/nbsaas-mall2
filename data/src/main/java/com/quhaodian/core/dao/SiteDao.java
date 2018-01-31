@@ -2,9 +2,9 @@ package com.quhaodian.core.dao;
 
 
 import com.quhaodian.core.entity.Site;
-import com.ada.data.core.BaseDao;
-import com.ada.data.core.Pagination;
-import com.ada.data.core.Updater;
+import com.quhaodian.data.core.BaseDao;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.core.Updater;
 
 public interface SiteDao extends BaseDao<Site, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);

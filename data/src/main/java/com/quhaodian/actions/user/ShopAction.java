@@ -5,8 +5,8 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ada.data.page.Filter;
-import com.ada.data.page.Pageable;
+import com.quhaodian.data.page.Filter;
+import com.quhaodian.data.page.Pageable;
 import com.quhaodian.data.entity.Shop;
 import com.quhaodian.data.entity.ShopCategory;
 import com.quhaodian.data.service.ShopService;
@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ada.area.data.entity.Area;
-import com.ada.area.data.service.AreaService;
-import com.ada.data.core.Pagination;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.area.data.service.AreaService;
+import com.quhaodian.data.core.Pagination;
 
 @Controller
 @RequestMapping(value = "user")

@@ -1,6 +1,6 @@
 package com.quhaodian.data.apps;
 
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.user.data.entity.UserInfo;
 import com.quhaodian.data.entity.EventInfo;
 import com.quhaodian.data.entity.EventInfoPhoto;
 import com.quhaodian.data.service.EventInfoPhotoService;

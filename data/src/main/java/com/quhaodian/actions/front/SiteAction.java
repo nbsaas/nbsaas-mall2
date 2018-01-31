@@ -1,11 +1,11 @@
 package com.quhaodian.actions.front;
 
-import com.ada.area.data.entity.Area;
-import com.ada.area.data.service.AreaService;
-import com.ada.data.core.Pagination;
-import com.ada.data.page.Filter;
-import com.ada.user.data.entity.UserInfo;
-import com.ada.user.utils.ListUtils;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.area.data.service.AreaService;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.page.Filter;
+import com.quhaodian.user.data.entity.UserInfo;
+import com.quhaodian.user.utils.ListUtils;
 import com.quhaodian.data.apps.ObjectFactory;
 import com.quhaodian.data.entity.EntityContent;
 import com.quhaodian.data.service.*;

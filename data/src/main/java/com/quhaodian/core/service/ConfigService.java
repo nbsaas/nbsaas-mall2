@@ -1,7 +1,7 @@
 package com.quhaodian.core.service;
 
 import com.quhaodian.core.entity.Config;
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 
 public interface ConfigService {
 	public Pagination getPage(int pageNo, int pageSize);

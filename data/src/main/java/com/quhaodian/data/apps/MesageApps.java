@@ -2,7 +2,7 @@ package com.quhaodian.data.apps;
 
 import java.util.List;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.Messages;
 import com.quhaodian.data.service.MessagesService;
 

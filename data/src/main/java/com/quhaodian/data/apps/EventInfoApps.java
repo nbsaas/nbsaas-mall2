@@ -1,6 +1,6 @@
 package com.quhaodian.data.apps;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.service.EventInfoService;
 
 public class EventInfoApps {

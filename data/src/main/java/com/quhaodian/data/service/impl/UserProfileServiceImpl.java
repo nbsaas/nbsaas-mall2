@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.ada.data.core.Pagination;
-import com.ada.data.core.Updater;
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.data.core.Pagination;
+import com.quhaodian.data.core.Updater;
+import com.quhaodian.user.data.entity.UserInfo;
 import com.quhaodian.data.entity.UserProfile;
 import com.quhaodian.data.service.UserProfileService;
 

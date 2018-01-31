@@ -1,6 +1,6 @@
 package com.quhaodian.data.apps;
 
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.user.data.entity.UserInfo;
 import com.quhaodian.data.entity.Shop;
 import com.quhaodian.data.entity.ShopReview;
 import com.quhaodian.data.service.ShopReviewService;

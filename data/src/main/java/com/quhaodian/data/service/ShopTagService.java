@@ -1,6 +1,6 @@
 package com.quhaodian.data.service;
 
-import com.ada.data.core.Pagination;
+import com.quhaodian.data.core.Pagination;
 import com.quhaodian.data.entity.ShopTag;
 public interface ShopTagService {
 	public Pagination getPage(int pageNo, int pageSize);

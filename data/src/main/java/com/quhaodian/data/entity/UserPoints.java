@@ -1,6 +1,6 @@
 package com.quhaodian.data.entity;
 
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.user.data.entity.UserInfo;
 
 import java.io.Serializable;
 

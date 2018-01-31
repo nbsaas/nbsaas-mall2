@@ -6,7 +6,7 @@
 package com.quhaodian.services.file;
 
 
-import com.ada.plug.api.StoragePlugin;
+import com.quhaodian.plug.api.StoragePlugin;
 
 import java.util.List;
 

@@ -2,9 +2,9 @@ package com.quhaodian.data.apps;
 
 import java.util.List;
 
-import com.ada.area.data.entity.Area;
-import com.ada.area.data.service.AreaService;
-import com.ada.user.data.entity.UserInfo;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.area.data.service.AreaService;
+import com.quhaodian.user.data.entity.UserInfo;
 
 public class AreaApps {
 

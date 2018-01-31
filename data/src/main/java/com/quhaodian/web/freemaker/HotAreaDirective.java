@@ -10,8 +10,8 @@ import java.util.Map;
 import com.quhaodian.shiro.utils.UserUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.ada.area.data.entity.Area;
-import com.ada.area.data.service.AreaService;
+import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.area.data.service.AreaService;
 import com.quhaodian.web.utils.DirectiveUtils;
 
 import freemarker.core.Environment;

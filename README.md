@@ -30,7 +30,7 @@ disconver工程位置[disconver](http://git.oschina.net/yichisancun/disconver)
 * com.ada.album 相册功能
 * com.ada.area  地区功能
 * com.ada.article 文章功能
-* com.ada.data hibernate公共包
+* com.quhaodian.data hibernate公共包
 * com.ada.feed 动态功能
 * com.ada.plugin 插件功能
 * com.ada.question 问答功能

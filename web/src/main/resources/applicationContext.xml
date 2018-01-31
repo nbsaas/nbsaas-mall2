@@ -12,16 +12,16 @@
 	default-lazy-init="true">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.ada.user.data" />
-	<context:component-scan base-package="com.ada.web.data" />
-	<context:component-scan base-package="com.ada.area.data" />
-	<context:component-scan base-package="com.ada.userfriend.data" />
-	<context:component-scan base-package="com.ada.article.data" />
-	<context:component-scan base-package="com.ada.plug.data" />
+	<context:component-scan base-package="com.quhaodian.user.data" />
+	<context:component-scan base-package="com.quhaodian.web.data" />
+	<context:component-scan base-package="com.quhaodian.area.data" />
+	<context:component-scan base-package="com.quhaodian.userfriend.data" />
+	<context:component-scan base-package="com.quhaodian.article.data" />
+	<context:component-scan base-package="com.quhaodian.plug.data" />
 
 
-	<context:component-scan base-package="com.ada.user.rest" />
-	<context:component-scan base-package="com.ada.area.rest" />
+	<context:component-scan base-package="com.quhaodian.user.rest" />
+	<context:component-scan base-package="com.quhaodian.area.rest" />
 
 
 
@@ -41,7 +41,7 @@
 			</list>
 		</property>
 	</bean>
-	<bean id="treeInterceptor" class="com.ada.common.hibernate.TreeIntercptor" />
+	<bean id="treeInterceptor" class="com.quhaodian.common.hibernate.TreeIntercptor" />
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -66,12 +66,12 @@
 		<property name="packagesToScan">
 			<list>
 				<value>com.quhaodian.data</value>
-				<value>com.ada.user.data.entity</value>
-				<value>com.ada.userfriend.data.entity</value>
-				<value>com.ada.web.data.entity</value>
-				<value>com.ada.area.data.entity</value>
-				<value>com.ada.article.data.entity</value>
-				<value>com.ada.plug.data.entity</value>
+				<value>com.quhaodian.user.data.entity</value>
+				<value>com.quhaodian.userfriend.data.entity</value>
+				<value>com.quhaodian.web.data.entity</value>
+				<value>com.quhaodian.area.data.entity</value>
+				<value>com.quhaodian.article.data.entity</value>
+				<value>com.quhaodian.plug.data.entity</value>
 			</list>
 		</property>
 		<property name="entityInterceptor" ref="treeInterceptor">

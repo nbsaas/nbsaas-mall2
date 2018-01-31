@@ -17,8 +17,8 @@ import java.util.UUID;
 import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 
-import com.ada.plug.api.StoragePlugin;
-import com.ada.plug.data.vo.FileInfo;
+import com.quhaodian.plug.api.StoragePlugin;
+import com.quhaodian.plug.data.vo.FileInfo;
 import com.quhaodian.services.file.FileService;
 import com.quhaodian.services.file.PluginFileService;
 import com.quhaodian.utils.FreemarkerUtils;
