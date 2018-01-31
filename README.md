@@ -1,6 +1,6 @@
-﻿## 真真店铺
+﻿## 去好店
 
-> 真真店铺 是点评网站。
+> 去好店，让你快速的找到喜欢的店铺。
 
 
 ### 技术选型：
@@ -13,7 +13,7 @@
 * 缓存 Ehcache
 * 视图模板 freemarker 
 * 其它 Jsoup、gson
-* [disconver](http://git.oschina.net/yichisancun/disconver)
+* [disconver](https://gitee.com/quhaodian/disconver)
 
 ### quhaodian 工程介绍
 
@@ -21,30 +21,14 @@
 * web	视图工程，不放代码，使用freemarker作为视图
 
 
-### disconver 包介绍：
 
-disconver工程位置[disconver](http://git.oschina.net/yichisancun/disconver)
+## 搭建步骤
 
-
-* com.ada.admin 后台管理功能
-* com.ada.album 相册功能
-* com.ada.area  地区功能
-* com.ada.article 文章功能
-* com.quhaodian.data hibernate公共包
-* com.ada.feed 动态功能
-* com.ada.plugin 插件功能
-* com.ada.question 问答功能
-* com.ada.shiro shiro权限功能依赖用户模块
-* com.ada.template* 各种代码生成工具
-* com.ada.user 用户模块
-* com.young.word 验证码生成
-* com.young.security 各种安全工具
-
-### 开源协议
-
-如果您的网站使用了 icore, 请在网站页面页脚处保留 icore相关版权信息链接
-
-### 网站地址
-http://www.zzdp.me/
-
+1. 创建数据库。如使用MySQL，字符集选择为`utf8`或者`utf8mb4`（支持更多特殊字符，推荐）。
+2. 执行数据库脚本。数据库脚本在`database`目录下。
+3. 在idea中导入maven项目。点击idea菜单`File` - `open`，选择 `项目所在磁盘位置`。创建好maven项目后，会开始从maven服务器下载第三方jar包（如spring等），需要一定时间，请耐心等待。
+4. 创建mysql数据库，导入`haodian.sql`
+5. 修改数据库连接。打开`/web/src/main/resources/jdbc.propertis`文件，根据实际情况修改`jdbc.url`、`jdbc.username`、`jdbc.password`的值。
+6. 运行程序。在idea中，点击idea菜单`Run` - `Run`，选择`Run` - `Edit Configurations...`，选择`+`，选择`Maven`，选择文件位置,在`comand line`填入`jetty:run`或`tomcat7:run`，然后点击`Run`。
+7. 访问系统。前台地址：[http://localhost:8080/web](http://localhost:8080/)，手机站地址：[http://127.0.0.1:8080/](http://127.0.0.1:8080/)；后台地址：[http://localhost:8080/web/login.htm](http://localhost:8080/web/login.htm)，用户名：admin，密码：123456。
 
