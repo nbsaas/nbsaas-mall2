@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>添加</title>
+	<title>用户管理</title>
 	<!-- Tell the browser to be responsive to screen width -->
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 	<!-- Bootstrap 3.3.6 -->
@@ -25,18 +25,6 @@
 	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 	[#include "/admin/common/commons.html"]
-
-	<!-- jQuery 2.2.3 -->
-	<script src="${siteurl}plugins/jQuery/jquery-2.2.3.min.js"></script>
-	<!-- Bootstrap 3.3.6 -->
-	<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
-	<!-- SlimScroll -->
-	<script src="${siteurl}plugins/slimScroll/jquery.slimscroll.min.js"></script>
-	<!-- FastClick -->
-	<script src="${siteurl}plugins/fastclick/fastclick.js"></script>
-	<!-- AdminLTE App -->
-	<script src="${siteurl}dist/js/app.min.js"></script>
-
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <!-- Site wrapper -->
@@ -79,8 +67,8 @@
 		<!-- Content Header (Page header) -->
 		<section class="content-header">
 			<h1>
-				管理
-				<small>添加</small>
+				用户管理
+				<small>管理你的用户</small>
 			</h1>
 		</section>
 		<!-- Main content -->
@@ -90,22 +78,16 @@
 			<div class="col-xs-12">
 				<div class="box box-default box-solid">
 					<div class="box-header with-border">
-						<h3 class="box-title">添加</h3>
+						<h3 class="box-title">更新</h3>
 					</div>
 					<!-- /.box-header -->
 					<!-- form start -->
-					<form class="form-horizontal" action="${siteurl}admin/shopcategory/model_save.htm" method="post">
 						<div class="box-body">
 						</div>
 						<!-- /.box-body -->
-						<div class="box-footer">
-							<a href="${siteurl}admin/shopcategory/view_list.htm" class="btn btn-default">取消</a>
-							<button type="submit" class="btn btn-primary pull-right">保存</button>
-						</div>
-						<!-- /.box-footer -->
-					</form>
 				</div>
 			</div>
+
 			<!-- /.box -->
 
 		</section>
@@ -125,10 +107,17 @@
 </div>
 <!-- ./wrapper -->
 
-<script type="text/javascript">
-    $(document).ready(function () {
-
-    });
-</script>
+<!-- jQuery 2.2.3 -->
+<script src="${siteurl}plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="${siteurl}bootstrap/js/bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="${siteurl}plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="${siteurl}plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="${siteurl}dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="${siteurl}dist/js/demo.js"></script>
 </body>
 </html>

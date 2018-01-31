@@ -52,7 +52,7 @@
 		<property name="hibernateProperties">
 			<value>
 				hibernate.dialect=${jdbc.dialect}
-				hibernate.show_sql=true
+				hibernate.show_sql=false
 				hibernate.format_sql=true
 				hibernate.query.substitutions=true 1, false 0
 				hibernate.jdbc.batch_size=20

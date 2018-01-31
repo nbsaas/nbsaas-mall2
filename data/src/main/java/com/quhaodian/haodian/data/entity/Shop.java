@@ -24,10 +24,15 @@ import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import com.quhaodian.area.data.entity.Area;
+import com.quhaodian.data.annotations.ColType;
+import com.quhaodian.data.annotations.FormAnnotation;
+import com.quhaodian.data.annotations.FormFieldAnnotation;
 import com.quhaodian.user.data.entity.UserInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
+@FormAnnotation(title = "商店",add = "添加商店",list = "商店",update = "更新商店")
 @JsonIgnoreProperties({"shop_category_links", "tags", "user"})
 @Entity
 @Table(name = "shop")
@@ -38,6 +43,7 @@ public class Shop {
     @Column(unique = true, nullable = false)
     private Long id;
 
+    @FormFieldAnnotation(title = "地址",sortNum = "2",grid =true,col = ColType.col_2)
     @Column(length = 100)
     private String address;
 
@@ -68,15 +74,19 @@ public class Shop {
     @Column(length = 100)
     private String uid;
 
+    @FormFieldAnnotation(title = "商店名称",sortNum = "1",grid =true,col = ColType.col_2)
     @Column(length = 100)
     private String name;
 
     @Column(length = 300)
     private String image;
 
+
+    @FormFieldAnnotation(title = "电话",sortNum = "3",grid =true,col = ColType.col_2)
     @Column(length = 100)
     private String phone;
 
+    @FormFieldAnnotation(title = "网址",sortNum = "5",grid =true,col = ColType.col_2)
     @Column(length = 100)
     private String website;
 
@@ -107,6 +117,7 @@ public class Shop {
     /**
      * 0为未审核 1为审核过的
      */
+    @FormFieldAnnotation(title = "状态",sortNum = "6",grid =true,col = ColType.col_2)
     private Integer state;
 
     /**

@@ -282,4 +282,9 @@ public class ShopCategoryServiceImpl implements ShopCategoryService {
 		return menus;
 	}
 
+	@Override
+	public Page<ShopCategory> page(Pageable pageable) {
+		return dao.page(pageable);
+	}
+
 }

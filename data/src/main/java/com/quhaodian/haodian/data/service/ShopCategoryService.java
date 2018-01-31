@@ -47,4 +47,5 @@ public interface ShopCategoryService {
 
 	public List<ShopCategory> findTop(int id);
 
+    Page<ShopCategory> page(Pageable pageable);
 }

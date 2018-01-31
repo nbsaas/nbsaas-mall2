@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+import com.quhaodian.data.page.Page;
+import com.quhaodian.data.page.Pageable;
 import com.quhaodian.haodian.data.dao.ShopDao;
 import com.quhaodian.haodian.data.service.ShopService;
 import com.quhaodian.haodian.data.dao.FeedDao;
@@ -117,6 +119,11 @@ public class ShopServiceImpl implements ShopService {
 			beans[i] = deleteById(ids[i]);
 		}
 		return beans;
+	}
+
+	@Override
+	public Page<Shop> page(Pageable pageable) {
+		return dao.page(pageable);
 	}
 
 	private ShopDao dao;

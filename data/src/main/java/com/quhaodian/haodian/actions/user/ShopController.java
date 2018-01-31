@@ -25,7 +25,7 @@ import com.quhaodian.data.core.Pagination;
 
 @Controller
 @RequestMapping(value = "user")
-public class ShopAction {
+public class ShopController {
 
 	@Autowired
 	AreaService areaService;
