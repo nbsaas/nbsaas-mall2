@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.quhaodian.haodian.data.entity.ShopImage;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
+import com.quhaodian.web.controller.front.BaseController;
 import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -35,7 +36,7 @@ import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller
 @RequestMapping(value = "shop")
-public class ShopFrontAction {
+public class ShopFrontAction extends BaseController {
 	@Autowired
 	private ShopService shopService;
 
@@ -61,7 +62,7 @@ public class ShopFrontAction {
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("id", id);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("shop/view");
+		return getView("shop/view");
 	}
 
 	@RequestMapping(value = "findbytype", method = RequestMethod.GET)
@@ -77,7 +78,7 @@ public class ShopFrontAction {
 		model.addAttribute("category", shopCategoryService.findById(id));
 		model.addAttribute("id", id);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("shop/findbytype");
+		return getView("shop/findbytype");
 	}
 
 	@RequestMapping(value = "findbytype2", method = RequestMethod.GET)
@@ -96,7 +97,7 @@ public class ShopFrontAction {
 		model.addAttribute("category", shopCategoryService.findById(catalog));
 		model.addAttribute("catalog", catalog);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("shop/findbytype2");
+		return getView("shop/findbytype2");
 	}
 
 	@Autowired
@@ -121,7 +122,7 @@ public class ShopFrontAction {
 		model.addAttribute("photo", shopImageService.findById(id, num));
 
 		model.addAttribute("url", FrontUtils.urls(request));
-		return FrontUtils.getPath("shop/photos");
+		return getView("shop/photos");
 	}
 
 	@RequiresUser
@@ -188,7 +189,7 @@ public class ShopFrontAction {
 		model.addAttribute("id", id);
 		model.addAttribute("pagesize", pagesize);
 
-		return FrontUtils.getPath("shop/writeareview");
+		return getView("shop/writeareview");
 	}
 
 	@RequiresUser
@@ -199,7 +200,7 @@ public class ShopFrontAction {
 		model.addAttribute("maxtimes", TimeVo.times(1, 62));
 		model.addAttribute("mintimes", TimeVo.times(0, 48));
 
-		return FrontUtils.getPath("shop/biz_attribute");
+		return getView("shop/biz_attribute");
 	}
 
 	@Autowired
@@ -223,7 +224,7 @@ public class ShopFrontAction {
 		if (s != null && s.getId() != null) {
 			return FrontUtils.redirect("/shop/view.htm?id=" + s.getShop().getId());
 		} else {
-			return FrontUtils.getPath("user/biz_attribute.htm?id=" + s.getShop().getId());
+			return getView("user/biz_attribute.htm?id=" + s.getShop().getId());
 
 		}
 	}
@@ -249,7 +250,7 @@ public class ShopFrontAction {
 		Shop shop = shopService.findById(id);
 		model.addAttribute("shop", shop);
 
-		return FrontUtils.getPath("shop/user_photos");
+		return getView("shop/user_photos");
 	}
 
 	@RequestMapping(value = "user_photos_upload_finished", method = RequestMethod.GET)
@@ -260,7 +261,7 @@ public class ShopFrontAction {
 		Shop shop = shopService.findById(id);
 		model.addAttribute("shop", shop);
 
-		return FrontUtils.getPath("shop/user_photos_upload_finished");
+		return getView("shop/user_photos_upload_finished");
 	}
 
 	@RequestMapping(value = "send_to_friend", method = RequestMethod.GET)
@@ -271,7 +272,7 @@ public class ShopFrontAction {
 		Shop shop = shopService.findById(id);
 		model.addAttribute("shop", shop);
 
-		return FrontUtils.getPath("shop/send_to_friend");
+		return getView("shop/send_to_friend");
 	}
 
 	@Autowired
@@ -281,7 +282,7 @@ public class ShopFrontAction {
 	public String types(@RequestParam(value = "id", required = true, defaultValue = "1") int id, Model model) {
 		String cs = shopCategoryService.findByPidForJson(id);
 		model.addAttribute("text", cs);
-		return FrontUtils.getPath("common/text");
+		return getView("common/text");
 	}
 
 	@ResponseBody

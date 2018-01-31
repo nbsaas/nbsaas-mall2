@@ -19,6 +19,7 @@ import com.quhaodian.haodian.data.service.EventInfoPhotoService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.webbinding.CustomTimestampEditor;
 import com.quhaodian.haodian.data.entity.EventInfoJoin;
+import com.quhaodian.web.controller.front.BaseController;
 import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -36,7 +37,7 @@ import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller
 @RequestMapping(value = "events")
-public class EventsAction {
+public class EventsAction  extends BaseController{
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -65,7 +66,7 @@ public class EventsAction {
 			HttpServletResponse response, Model model) {
 
 		model.addAttribute("list", eventInfoCategoryService.findByPid(1));
-		return FrontUtils.getPath("events/create");
+		return getView("events/create");
 	}
 
 	@RequiresUser
@@ -136,7 +137,7 @@ public class EventsAction {
 		Pagination govs = eventInfoService.pageByGov(areaid, 1, 3);
 		model.addAttribute("govs", govs.getList());
 
-		return FrontUtils.getPath("events/feed");
+		return getView("events/feed");
 	}
 
 	@RequestMapping(value = "browse", method = RequestMethod.GET)
@@ -195,7 +196,7 @@ public class EventsAction {
 
 		model.addAttribute("curl", makeUrl(ids, "c"));
 
-		return FrontUtils.getPath("events/browse");
+		return getView("events/browse");
 
 	}
 
@@ -235,7 +236,7 @@ public class EventsAction {
 		EventInfo info = eventInfoService.findById(id);
 		model.addAttribute("event", info);
 
-		return FrontUtils.getPath("events/addphoto");
+		return getView("events/addphoto");
 	}
 
 	@Autowired
@@ -320,7 +321,7 @@ public class EventsAction {
 		model.addAttribute("mys", eventInfoJoinService.findByMe(UserUtil
 				.getCurrentUser().getId(), id));
 
-		return FrontUtils.getPath("events/view");
+		return getView("events/view");
 	}
 
 	@Autowired
@@ -346,7 +347,7 @@ public class EventsAction {
 		}
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("events/photos");
+		return getView("events/photos");
 	}
 
 	
@@ -359,7 +360,7 @@ public class EventsAction {
 		EventInfo info = eventInfoService.findById(id);
 		model.addAttribute("event", info);
 
-		return FrontUtils.getPath("events/addimages");
+		return getView("events/addimages");
 	}
 	
 	
@@ -376,7 +377,7 @@ public class EventsAction {
 			Model model) {
 		image.setUser(UserUtil.getCurrentUser());
 		photoService.save(image);
-		return FrontUtils.redirect("/events/photos.htm?id=" + id);
+		return redirect("/events/photos.htm?id=" + id);
 	}
 
 	/**
@@ -410,7 +411,7 @@ public class EventsAction {
 			}
 		}
 
-		return FrontUtils.redirect("/events/photos.htm?id=" + id);
+		return redirect("/events/photos.htm?id=" + id);
 	}
 
 }

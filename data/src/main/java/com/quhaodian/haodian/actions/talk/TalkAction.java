@@ -64,7 +64,7 @@ public class TalkAction extends BaseAction {
 		model.addAttribute("categorys1", a1);
 		model.addAttribute("categorys2", a2);
 		
-		return FrontUtils.getPath("talk/new_topic");
+		return getView("talk/new_topic");
 	}
 
 	@RequestMapping(value = "talk", method = RequestMethod.GET)
@@ -88,7 +88,7 @@ public class TalkAction extends BaseAction {
 		
 		model.addAttribute("siteindex", 6);
 
-		return FrontUtils.getPath("talk");
+		return getView("talk");
 	}
 
 	@RequiresUser
@@ -113,7 +113,7 @@ public class TalkAction extends BaseAction {
 
 		model.addAttribute("id", id);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("mytalk");
+		return getView("mytalk");
 	}
 
 	@RequiresUser
@@ -129,7 +129,7 @@ public class TalkAction extends BaseAction {
 
 		} else {
 			model.addAttribute("msg", "请选择城市");
-			return FrontUtils.getPath("talk/new_topic");
+			return getView("talk/new_topic");
 
 		}
 	}
@@ -151,7 +151,7 @@ public class TalkAction extends BaseAction {
 					+ talkReply.getTalk().getId());
 		} else {
 			model.addAttribute("msg", "请选择城市");
-			return FrontUtils.getPath("talk/new_topic");
+			return getView("talk/new_topic");
 
 		}
 	}
@@ -176,7 +176,7 @@ public class TalkAction extends BaseAction {
 
 		model.addAttribute("id", id);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("talk/topic");
+		return getView("talk/topic");
 	}
 	@RequestMapping(value = "talk/flag", method = RequestMethod.GET)
 	public String flag(
@@ -186,7 +186,7 @@ public class TalkAction extends BaseAction {
 		model.addAttribute("id", id);
 		model.addAttribute("state", state);
 
-		return FrontUtils.getPath("talk/flag");
+		return getView("talk/flag");
 	}
 	@RequestMapping(value = "talk/flagsubmit", method = {RequestMethod.GET,RequestMethod.POST})
 	public String flagsumbit(
@@ -196,10 +196,10 @@ public class TalkAction extends BaseAction {
 		model.addAttribute("id", id);
 		model.addAttribute("state", state);
        if(state==1){
-   		return FrontUtils.redirect("/talk/topic.htm?id="+id);
+   		return redirect("/talk/topic.htm?id="+id);
 
        }else{
-   		return FrontUtils.redirect("/talk/topic.htm?id="+id);
+   		return redirect("/talk/topic.htm?id="+id);
 
        }
 	}

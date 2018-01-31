@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.quhaodian.haodian.data.entity.UserCity;
 import com.quhaodian.haodian.data.service.UserCityService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
+import com.quhaodian.web.controller.front.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +21,7 @@ import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller
 @RequestMapping(value = "profile")
-public class LocationAction {
+public class LocationAction extends BaseController{
 
 	@Autowired
     UserCityService service;
@@ -37,7 +38,7 @@ public class LocationAction {
 			city.setId(-1l);
 		}
 		model.addAttribute("cityitem", city);
-		return FrontUtils.getPath("profile/profile_location_add_or_edit");
+		return getView("profile/profile_location_add_or_edit");
 	}
 
 	@RequestMapping(value = "profile_location_save", method = RequestMethod.POST)
@@ -52,7 +53,7 @@ public class LocationAction {
 		}
 		
 		model.addAttribute("city", city);
-		return FrontUtils.getPath("profile/profile_location_add_or_edit");
+		return getView("profile/profile_location_add_or_edit");
 	}
 
 	@RequestMapping(value = "profile_location", method = RequestMethod.GET)
@@ -62,6 +63,6 @@ public class LocationAction {
 				100);
 		List list = p.getList();
 		model.addAttribute("list", list);
-		return FrontUtils.getPath("profile/profile_location");
+		return getView("profile/profile_location");
 	}
 }

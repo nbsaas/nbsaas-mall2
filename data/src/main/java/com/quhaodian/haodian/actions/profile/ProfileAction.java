@@ -17,6 +17,7 @@ import com.quhaodian.haodian.data.service.UserService;
 import com.quhaodian.haodian.data.service.UserSettingService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.utils.FrontUtils;
+import com.quhaodian.web.controller.front.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,7 +32,7 @@ import com.quhaodian.userfriend.data.service.UserFriendService;
 
 @Controller
 @RequestMapping(value = "profile")
-public class ProfileAction {
+public class ProfileAction extends BaseController{
 
 	@Autowired
     UserProfileService userProfileService;
@@ -47,7 +48,7 @@ public class ProfileAction {
 			profile = userProfileService.findById(profile.getId());
 		}
 		model.addAttribute("profile", profile);
-		return FrontUtils.getPath("profile/profile_bio");
+		return getView("profile/profile_bio");
 	}
 
 	@RequestMapping(value = "profile_bio", method = RequestMethod.POST)
@@ -62,7 +63,7 @@ public class ProfileAction {
 		UserUtil.setCurrentUser(info);
 		//UserUtil.getCurrentUser().setProfile(profile);
 		model.addAttribute("message", "你的个人资料已被更新！");
-		return FrontUtils.getPath("profile/profile");
+		return getView("profile/profile");
 	}
 
 	@Autowired
@@ -87,7 +88,7 @@ public class ProfileAction {
 		model.addAttribute("firstno", rs.getFirstNo());
 		model.addAttribute("endno", rs.getEndNo());
 
-		return FrontUtils.getPath("profile/user_photos");
+		return getView("profile/user_photos");
 	}
 
 	@RequestMapping(value = "user_photos_add", method = { RequestMethod.GET,
@@ -129,14 +130,14 @@ public class ProfileAction {
 	public String profile(HttpServletRequest request,
 			HttpServletResponse response, Model model) {
 
-		return FrontUtils.getPath("profile/profile");
+		return getView("profile/profile");
 	}
 
 	@RequestMapping(value = "profile_password", method = RequestMethod.GET)
 	public String profile_password(HttpServletRequest request,
 			HttpServletResponse response, Model model) {
 
-		return FrontUtils.getPath("profile/profile_password");
+		return getView("profile/profile_password");
 	}
 
 	@RequestMapping(value = "profile_password", method = RequestMethod.POST)
@@ -171,7 +172,7 @@ public class ProfileAction {
 			}
 			if (u.getId() > 0) {
 				model.addAttribute("message", "修改密码成功");
-				return FrontUtils.getPath("profile/profile");
+				return getView("profile/profile");
 
 			}
 		} else {
@@ -179,7 +180,7 @@ public class ProfileAction {
 		}
 
 		errors.toModel(model);
-		return FrontUtils.getPath("profile/profile_password");
+		return getView("profile/profile_password");
 	}
 
 	@Autowired
@@ -191,7 +192,7 @@ public class ProfileAction {
 			Model model) {
 //		userService.updatePassword(UserUtil.getCurrentShiroUser().getId(),
 //				old_password, password);
-		return FrontUtils.getPath("profile/profile_email_notifications");
+		return getView("profile/profile_email_notifications");
 	}
 
 	@Autowired
@@ -216,7 +217,7 @@ public class ProfileAction {
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("profile/profile_friends_invited");
+		return getView("profile/profile_friends_invited");
 	}
 
 	@RequestMapping(value = "profile_friends_invited_remove", method = {
@@ -239,7 +240,7 @@ public class ProfileAction {
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("profile/profile_friends_invited");
+		return getView("profile/profile_friends_invited");
 	}
 
 	@Autowired
@@ -266,7 +267,7 @@ public class ProfileAction {
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("profile/profile_friends");
+		return getView("profile/profile_friends");
 	}
 
 	@RequestMapping(value = "profile_friends", method = { RequestMethod.GET,
@@ -292,14 +293,14 @@ public class ProfileAction {
 		model.addAttribute("page", rs);
 		model.addAttribute("curpage", curpage);
 		model.addAttribute("pagesize", pagesize);
-		return FrontUtils.getPath("profile/profile_friends");
+		return getView("profile/profile_friends");
 	}
 
 	@RequestMapping(value = "profile_sharing", method = RequestMethod.GET)
 	public String profile_sharing(HttpServletRequest request,
 			HttpServletResponse response, Model model) {
 
-		return FrontUtils.getPath("profile/profile_sharing");
+		return getView("profile/profile_sharing");
 	}
 
 	@Autowired
@@ -310,7 +311,7 @@ public class ProfileAction {
 			HttpServletResponse response, Model model) {
 		Long userid = UserUtil.getCurrentUser().getId();
 		model.addAttribute("setting", settingService.findByUser(userid));
-		return FrontUtils.getPath("profile/profile_privacy");
+		return getView("profile/profile_privacy");
 	}
 
 	@RequestMapping(value = "profile_privacy_save", method = {
@@ -327,6 +328,6 @@ public class ProfileAction {
 		}
 		settingService.update(setting);
 		model.addAttribute("setting", settingService.findByUser(userid));
-		return FrontUtils.redirect("/profile/profile_privacy.htm");
+		return redirect("/profile/profile_privacy.htm");
 	}
 }

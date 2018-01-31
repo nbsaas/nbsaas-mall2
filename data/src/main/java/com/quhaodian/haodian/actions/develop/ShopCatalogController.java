@@ -1,5 +1,6 @@
 package com.quhaodian.haodian.actions.develop;
 
+import com.quhaodian.web.controller.front.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,7 +11,7 @@ import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller
 @RequestMapping(value = "develop")
-public class ShopCatalogController {
+public class ShopCatalogController extends BaseController{
 
 	@Autowired
 	ShopCategoryService categoryService;
@@ -18,6 +19,6 @@ public class ShopCatalogController {
 	@RequestMapping(value = "shopcataloglist")
 	public String list(Model model){
 		model.addAttribute("list", categoryService.findByPidl2(1));
-		return FrontUtils.getPath("develop/shopcataloglist");
+		return getView("develop/shopcataloglist");
 	}
 }

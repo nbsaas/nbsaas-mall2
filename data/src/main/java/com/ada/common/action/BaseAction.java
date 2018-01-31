@@ -3,10 +3,11 @@ package com.ada.common.action;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import com.quhaodian.web.controller.front.BaseController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class BaseAction {
+public class BaseAction extends BaseController{
 	Logger logger = LoggerFactory.getLogger("log");
 
 	public HttpSession getSession(HttpServletRequest request) {

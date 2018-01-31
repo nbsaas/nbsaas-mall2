@@ -3,6 +3,7 @@ package com.quhaodian.haodian.actions.front;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.quhaodian.web.controller.front.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller
 @RequestMapping(value = "article")
-public class ArticleController {
+public class ArticleController extends BaseController{
 
 	
 	@Autowired
@@ -30,7 +31,7 @@ public class ArticleController {
 		
 		model.addAttribute("articleitem", articleService.findById(id));
 		
-		return FrontUtils.getPath("article/view");
+		return getView("article/view");
 
 	}
 }
