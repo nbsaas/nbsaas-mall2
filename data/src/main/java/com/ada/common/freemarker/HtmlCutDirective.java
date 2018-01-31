@@ -4,8 +4,8 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.Map;
 
-import com.quhaodian.web.utils.DirectiveUtils;
-import com.quhaodian.web.utils.StrUtils;
+import com.quhaodian.haodian.web.utils.DirectiveUtils;
+import com.quhaodian.haodian.web.utils.StrUtils;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;

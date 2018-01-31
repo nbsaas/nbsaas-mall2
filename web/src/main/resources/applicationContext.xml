@@ -12,21 +12,17 @@
 	default-lazy-init="true">
 
 	<context:annotation-config />
-	<context:component-scan base-package="com.quhaodian.user.data" />
-	<context:component-scan base-package="com.quhaodian.web.data" />
-	<context:component-scan base-package="com.quhaodian.area.data" />
-	<context:component-scan base-package="com.quhaodian.userfriend.data" />
-	<context:component-scan base-package="com.quhaodian.article.data" />
-	<context:component-scan base-package="com.quhaodian.plug.data" />
-
-
-	<context:component-scan base-package="com.quhaodian.user.rest" />
-	<context:component-scan base-package="com.quhaodian.area.rest" />
+	<context:component-scan base-package="com.quhaodian.user" />
+	<context:component-scan base-package="com.quhaodian.web" />
+	<context:component-scan base-package="com.quhaodian.area" />
+	<context:component-scan base-package="com.quhaodian.userfriend" />
+	<context:component-scan base-package="com.quhaodian.article" />
+	<context:component-scan base-package="com.quhaodian.plug" />
+	<context:component-scan base-package="com.quhaodian.site" />
 
 
 
-	<context:component-scan base-package="com.quhaodian.plugs" />
-	<context:component-scan base-package="com.quhaodian.services.file" />
+	<context:component-scan base-package="com.quhaodian.haodian.services.file" />
 
 
 
@@ -65,13 +61,14 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.quhaodian.data</value>
+				<value>com.quhaodian.haodian.data</value>
 				<value>com.quhaodian.user.data.entity</value>
 				<value>com.quhaodian.userfriend.data.entity</value>
 				<value>com.quhaodian.web.data.entity</value>
 				<value>com.quhaodian.area.data.entity</value>
 				<value>com.quhaodian.article.data.entity</value>
 				<value>com.quhaodian.plug.data.entity</value>
+				<value>com.quhaodian.site.data.entity</value>
 			</list>
 		</property>
 		<property name="entityInterceptor" ref="treeInterceptor">
