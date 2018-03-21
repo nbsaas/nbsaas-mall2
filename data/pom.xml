@@ -36,50 +36,38 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>user_hibernate</artifactId>
+			<groupId>com.quhaodian.discover</groupId>
+			<artifactId>discover-website</artifactId>
+			<version>1.8.9</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.quhaodian.discover</groupId>
+			<artifactId>discover-area</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.quhaodian.discover</groupId>
+			<artifactId>discover-article</artifactId>
+			<version>1.8.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.quhaodian.discover</groupId>
+			<artifactId>discover-plug-alidayu</artifactId>
 			<version>1.8.3</version>
 		</dependency>
 		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>site_hibernate</artifactId>
+			<groupId>com.quhaodian.discover</groupId>
+			<artifactId>discover-security</artifactId>
 			<version>1.8.1</version>
 		</dependency>
 		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>area</artifactId>
+			<groupId>com.quhaodian.discover</groupId>
+			<artifactId>discover-user-friend</artifactId>
 			<version>1.8.1</version>
 		</dependency>
-		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>website</artifactId>
-			<version>1.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>article</artifactId>
-			<version>1.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>plug_alidayu</artifactId>
-			<version>1.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>security</artifactId>
-			<version>1.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>user_friend</artifactId>
-			<version>1.8.1</version>
-		</dependency>
-		<dependency>
-			<groupId>com.quhaodian</groupId>
-			<artifactId>freemaker</artifactId>
-			<version>1.8.1</version>
-		</dependency>
+
 		<dependency>
 			<groupId>com.qiniu</groupId>
 			<artifactId>qiniu-java-sdk</artifactId>
