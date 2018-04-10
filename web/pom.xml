@@ -4,9 +4,9 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.quhaodian</groupId>
-		<artifactId>haodian</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>com.quhaodian.haodian</groupId>
+		<artifactId>haodian-root</artifactId>
+		<version>0.0.1</version>
 	</parent>
 	<groupId>com.quhaodian.haodian</groupId>
 	<artifactId>web</artifactId>
@@ -23,7 +23,7 @@
 		<dependency>
 			<groupId>com.quhaodian.haodian</groupId>
 			<artifactId>data</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.1</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>

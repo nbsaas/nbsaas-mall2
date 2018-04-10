@@ -16,7 +16,7 @@ public class ObjectFactory {
 	public static ApplicationContext get() {
 		if (applicationContext == null) {
 			applicationContext = new ClassPathXmlApplicationContext(
-					"applicationContext.xml");
+					"applicationContext-area.xml");
 		}
 		return applicationContext;
 

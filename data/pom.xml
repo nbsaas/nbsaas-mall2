@@ -4,11 +4,10 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.quhaodian</groupId>
-		<artifactId>haodian</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<groupId>com.quhaodian.haodian</groupId>
+		<artifactId>haodian-root</artifactId>
+		<version>0.0.1</version>
 	</parent>
-	<groupId>com.quhaodian.haodian</groupId>
 	<artifactId>data</artifactId>
 	<name>data</name>
 	<url>http://maven.apache.org</url>
@@ -38,7 +37,7 @@
 		<dependency>
 			<groupId>com.quhaodian.discover</groupId>
 			<artifactId>discover-website</artifactId>
-			<version>1.8.9</version>
+			<version>1.8.17</version>
 		</dependency>
 
 		<dependency>
@@ -93,6 +92,16 @@
 			<groupId>com.github.stuxuhai</groupId>
 			<artifactId>jpinyin</artifactId>
 			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jxls</groupId>
+			<artifactId>jxls</artifactId>
+			<version>2.4.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jxls</groupId>
+			<artifactId>jxls-poi</artifactId>
+			<version>1.0.14</version>
 		</dependency>
 	</dependencies>
 </project>
