@@ -108,5 +108,10 @@
 			<artifactId>jxls-poi</artifactId>
 			<version>1.0.14</version>
 		</dependency>
+		<dependency>
+			<groupId>com.quhaodian.jsonrpc</groupId>
+			<version>1.01</version>
+			<artifactId>core</artifactId>
+		</dependency>
 	</dependencies>
 </project>

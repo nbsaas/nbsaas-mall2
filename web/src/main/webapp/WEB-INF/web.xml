@@ -9,9 +9,6 @@
 		<param-value>classpath:context.xml</param-value>
 	</context-param>
 
-
-
-
 	<filter>
 		<filter-name>Character Encoding</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -73,7 +70,8 @@
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>rpc</servlet-name>
-		<servlet-class>com.openyelp.servlet.Rpc</servlet-class>
+		<servlet-class>com.quhaodian.servlet.RpcServlet</servlet-class>
+		<load-on-startup>2</load-on-startup>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>rpc</servlet-name>
