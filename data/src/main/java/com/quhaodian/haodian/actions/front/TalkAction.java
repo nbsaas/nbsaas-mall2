@@ -1,4 +1,4 @@
-package com.quhaodian.haodian.actions.talk;
+package com.quhaodian.haodian.actions.front;
 
 import java.util.ArrayList;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package com.quhaodian.haodian.actions.shop;
+package com.quhaodian.haodian.actions.front;
 
 import java.util.Date;
 import java.util.HashSet;

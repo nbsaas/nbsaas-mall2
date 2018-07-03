@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.actions.admin;
 
-import com.quhaodian.haodian.actions.shop.TimeVo;
+import com.quhaodian.haodian.actions.front.TimeVo;
 import com.quhaodian.haodian.data.entity.Shop;
 import com.quhaodian.haodian.data.entity.ShopTime;
 import com.quhaodian.haodian.data.service.ShopService;

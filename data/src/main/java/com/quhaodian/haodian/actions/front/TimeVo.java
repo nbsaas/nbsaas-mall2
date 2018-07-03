@@ -1,4 +1,4 @@
-package com.quhaodian.haodian.actions.shop;
+package com.quhaodian.haodian.actions.front;
 
 import java.io.Serializable;
 import java.util.ArrayList;

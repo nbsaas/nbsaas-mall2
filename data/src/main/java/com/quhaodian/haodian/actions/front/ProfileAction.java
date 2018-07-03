@@ -1,4 +1,4 @@
-package com.quhaodian.haodian.actions.profile;
+package com.quhaodian.haodian.actions.front;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

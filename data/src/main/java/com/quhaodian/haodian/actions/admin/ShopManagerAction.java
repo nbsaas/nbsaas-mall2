@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.quhaodian.haodian.data.service.ShopService;
-import com.quhaodian.haodian.actions.shop.TimeVo;
+import com.quhaodian.haodian.actions.front.TimeVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

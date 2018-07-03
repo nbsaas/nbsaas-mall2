@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.data.entity;
 
-import com.quhaodian.haodian.actions.shop.TimeUtils;
+import com.quhaodian.haodian.actions.front.TimeUtils;
 
 import java.io.Serializable;
 import java.util.Calendar;

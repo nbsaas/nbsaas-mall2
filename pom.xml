@@ -23,7 +23,8 @@
 	<modules>
 		<module>data</module>
 		<module>web</module>
-	</modules>
+        <module>api</module>
+    </modules>
 
 	<build>
 		<finalName>iyelp</finalName>

@@ -1,4 +1,4 @@
-package com.quhaodian.haodian.actions.shop;
+package com.quhaodian.haodian.actions.front;
 
 public class TimeUtils {
 	public static String showtime(int index) {

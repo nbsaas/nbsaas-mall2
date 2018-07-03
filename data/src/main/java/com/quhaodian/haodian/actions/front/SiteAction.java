@@ -301,31 +301,6 @@ public class SiteAction extends BaseController{
 		return "login";
 	}
 
-	@RequestMapping(value = "demo", method = RequestMethod.GET)
-	public @ResponseBody String demo(HttpServletRequest request,
-			HttpServletResponse response, Model model) {
-
-		String result = "demo";
-		return result;
-	}
-
-	@RequestMapping(value = "downring", method = RequestMethod.GET)
-	public String downring(HttpServletRequest request,
-			HttpServletResponse response, Model model) {
-		try {
-			String html = Jsoup
-					.connect(
-							"http://91mydoor.com/downring/DownRing?type=2&star=0&end=10")
-					.execute().body();
-			model.addAttribute("msg", html);
-		} catch (IOException e) {
-			e.printStackTrace();
-			model.addAttribute("msg", "erro");
-		}
-
-		return "msg";
-	}
-
 	@Autowired
 	UserService userService;
 
