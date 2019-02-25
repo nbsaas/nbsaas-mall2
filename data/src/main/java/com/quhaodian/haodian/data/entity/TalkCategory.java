@@ -9,8 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.quhaodian.common.hibernate.HibernateTree;
-import com.quhaodian.data.entity.CatalogEntity;
+import com.haoxuer.discover.data.entity.CatalogEntity;
 
 @Entity
 @Table(name = "talk_category")
@@ -65,7 +64,6 @@ public class TalkCategory extends CatalogEntity {
 
 
 	/**
-	 * @see HibernateTree#getRgtName()
 	 */
 	public String getRgtName() {
 		return DEF_RIGHT_NAME;

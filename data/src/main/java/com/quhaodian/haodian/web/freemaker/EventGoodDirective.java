@@ -11,7 +11,7 @@ import com.quhaodian.haodian.data.entity.EventInfo;
 import com.quhaodian.haodian.web.utils.DirectiveUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.service.EventInfoGoodService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 

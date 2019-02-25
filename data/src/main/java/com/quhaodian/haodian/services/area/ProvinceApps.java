@@ -3,13 +3,13 @@ package com.quhaodian.haodian.services.area;
 import java.io.IOException;
 import java.util.List;
 
-import com.quhaodian.data.page.Filter;
-import com.quhaodian.user.utils.ListUtils;
+import com.haoxuer.discover.data.page.Filter;
+import com.haoxuer.discover.user.utils.ListUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.area.data.service.AreaService;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.area.data.service.AreaService;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;

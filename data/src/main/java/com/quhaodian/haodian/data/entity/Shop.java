@@ -23,11 +23,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.data.annotations.ColType;
-import com.quhaodian.data.annotations.FormAnnotation;
-import com.quhaodian.data.annotations.FormFieldAnnotation;
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.data.annotations.ColType;
+import com.haoxuer.discover.data.annotations.FormAnnotation;
+import com.haoxuer.discover.data.annotations.FormFieldAnnotation;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 

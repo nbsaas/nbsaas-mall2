@@ -13,16 +13,16 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 
-import com.quhaodian.plug.data.service.StorageService;
+import com.haoxuer.discover.plug.data.service.StorageService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.quhaodian.plug.data.vo.FileInfo;
-import com.quhaodian.plug.data.vo.FileInfo.FileType;
-import com.quhaodian.plug.data.vo.FileInfo.OrderType;
+import com.haoxuer.discover.plug.data.vo.FileInfo;
+import com.haoxuer.discover.plug.data.vo.FileInfo.FileType;
+import com.haoxuer.discover.plug.data.vo.FileInfo.OrderType;
 import com.quhaodian.haodian.utils.JsonUtils;
 /**
  * Controller - 文件处理

@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.actions.event;
 
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.entity.EventInfo;
 import com.quhaodian.haodian.data.entity.EventInfoCategory;
 import com.quhaodian.haodian.data.entity.EventInfoComment;
@@ -14,7 +14,7 @@ import com.quhaodian.haodian.data.service.EventInfoService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.utils.FrontUtils;
 import com.quhaodian.haodian.web.webbinding.CustomTimestampEditor;
-import com.quhaodian.web.controller.front.BaseController;
+import com.haoxuer.discover.web.controller.front.BaseController;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

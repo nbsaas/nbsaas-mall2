@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.data.apps;
 
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 import com.quhaodian.haodian.data.entity.UserProfile;
 import com.quhaodian.haodian.data.service.UserProfileService;
 

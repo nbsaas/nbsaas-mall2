@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.data.service;
 
 import com.quhaodian.haodian.data.entity.EventInfoComment;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 
 
 public interface EventInfoCommentService {

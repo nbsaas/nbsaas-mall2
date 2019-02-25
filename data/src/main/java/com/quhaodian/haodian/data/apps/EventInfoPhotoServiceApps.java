@@ -3,7 +3,7 @@ package com.quhaodian.haodian.data.apps;
 import com.quhaodian.haodian.data.entity.EventInfo;
 import com.quhaodian.haodian.data.entity.EventInfoPhoto;
 import com.quhaodian.haodian.data.service.EventInfoPhotoService;
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 
 public class EventInfoPhotoServiceApps {
 

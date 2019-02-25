@@ -1,33 +1,40 @@
 <?xml version="1.1" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	   default-lazy-init="true" xmlns:context="http://www.springframework.org/schema/context"
-	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context.xsd"
+	default-lazy-init="true">
 
 	<description>Shiro安全配置</description>
 
-	<bean id="userRealm" class="com.quhaodian.shiro.realm.AccountRealm"></bean>
-	<bean id="userInfoRealm" class="com.quhaodian.shiro.realm.UserInfoRealm"></bean>
+	<bean id="securityRealm" class="com.haoxuer.discover.user.shiro.realm.SecurityRealm"/>
+	<bean id="userRealm" class="com.haoxuer.discover.user.shiro.realm.AccountRealm"/>
+	<bean id="userInfoRealm" class="com.haoxuer.discover.user.shiro.realm.UserInfoRealm"/>
 
 	<!-- Shiro的主要业务层对象基于web的应用程序 -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realms">
 			<list>
-				<ref bean="userRealm"></ref>
-				<ref bean="userInfoRealm"></ref>
+				<ref bean="securityRealm"/>
+				<ref bean="userRealm"/>
+				<ref bean="userInfoRealm"/>
 			</list>
 		</property>
 		<property name="cacheManager" ref="shiroEhcacheManager" />
 	</bean>
 
-	<!-- Shiro Filter -->
-	<bean id="myCaptchaFilter" class="com.quhaodian.haodian.shiro.filter.FormAuthenticationCaptchaFilter">
-		<property name="loginUrl" value="/login.htm" />
-	</bean>
-	<bean id="rolesAuthorizationFilter" class="com.quhaodian.shiro.filter.RolesAuthorizationFilter">
+	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManagerConfigFile" value="classpath:cache/ehcache-shiro.xml" />
 	</bean>
 
+	<!-- Shiro Filter -->
+	<bean id="myCaptchaFilter" class="com.haoxuer.discover.user.shiro.filter.FormAuthenticationCaptchaFilter">
+		<property name="loginUrl" value="/login.htm" />
+	</bean>
+	<bean id="rolesAuthorizationFilter" class="com.haoxuer.discover.user.shiro.filter.RolesAuthorizationFilter">
+	</bean>
+	<!-- Shiro Filter -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
 		<property name="securityManager" ref="securityManager" />
 		<property name="loginUrl" value="/login.htm" />
@@ -35,34 +42,31 @@
 		<property name="filters">
 			<map>
 				<entry key="authc" value-ref="myCaptchaFilter" />
-				<entry key="adminroles" value-ref="rolesAuthorizationFilter" />
+				<entry key="anyRoles" value-ref="rolesAuthorizationFilter" />
 			</map>
 		</property>
 		<property name="filterChainDefinitions">
 			<value>
 				/static/** = anon
 				/login.htm = authc
-				/admin/** =user,adminroles[admin]
-				/home/** = user
-				/rest/**=authcBasic,perms["remote:invoke"]
+				/admin/**=user,anyRoles[admin,cityadmin,sadmin,superadmin]
+				/home/** =user
 			</value>
 		</property>
 	</bean>
 
-	<bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
-		<property name="cacheManagerConfigFile" value="classpath:cache/ehcache-shiro.xml" />
-	</bean>
+
 	<!-- 保证实现了Shiro内部lifecycle函数的bean执行 -->
 	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
 
 	<!-- AOP式方法级权限检查 -->
 	<bean
-			class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
-			depends-on="lifecycleBeanPostProcessor">
+		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor">
 		<property name="proxyTargetClass" value="true" />
 	</bean>
 	<bean
-			class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
 		<property name="securityManager" ref="securityManager" />
 	</bean>
 </beans>

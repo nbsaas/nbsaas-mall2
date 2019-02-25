@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.actions.admin;
 
 
-import com.quhaodian.data.page.Filter;
+import com.haoxuer.discover.data.page.Filter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +11,9 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 
-import com.quhaodian.data.page.Order;
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
+import com.haoxuer.discover.data.page.Order;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
 import  com.quhaodian.haodian.data.entity.ShopCategory;
 import com.quhaodian.haodian.data.service.ShopCategoryService;
 import org.springframework.web.bind.annotation.RequestParam;

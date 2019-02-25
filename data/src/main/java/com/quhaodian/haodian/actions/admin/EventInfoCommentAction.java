@@ -4,7 +4,7 @@ import com.quhaodian.haodian.data.entity.EventInfoCategory;
 import com.quhaodian.haodian.data.entity.EventInfoComment;
 import com.quhaodian.haodian.data.service.EventInfoCategoryService;
 import com.quhaodian.haodian.data.service.EventInfoCommentService;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

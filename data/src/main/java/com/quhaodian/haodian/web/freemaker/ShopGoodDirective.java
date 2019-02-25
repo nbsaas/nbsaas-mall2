@@ -12,7 +12,7 @@ import com.quhaodian.haodian.data.entity.Shop;
 import com.quhaodian.haodian.web.utils.DirectiveUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;

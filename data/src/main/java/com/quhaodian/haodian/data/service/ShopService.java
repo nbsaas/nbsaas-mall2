@@ -1,8 +1,8 @@
 package com.quhaodian.haodian.data.service;
 
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
 import com.quhaodian.haodian.data.entity.Shop;
 import com.quhaodian.haodian.data.entity.ShopCategory;
 

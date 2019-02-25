@@ -6,8 +6,8 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.quhaodian.data.core.BaseDaoImpl;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.BaseDaoImpl;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.entity.ShopReviewList;
 
 @Repository

@@ -13,11 +13,11 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.quhaodian.area.data.dao.AreaDao;
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.data.core.Finder;
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.data.core.Updater;
+import com.haoxuer.discover.area.data.dao.AreaDao;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.data.core.Finder;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.data.core.Updater;
 import com.quhaodian.haodian.data.dao.FeedDao;
 import com.quhaodian.haodian.data.dao.ShopImageDao;
 

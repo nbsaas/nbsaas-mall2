@@ -11,8 +11,8 @@ import com.quhaodian.haodian.web.utils.DirectiveUtils;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.area.data.service.AreaService;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.area.data.service.AreaService;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;

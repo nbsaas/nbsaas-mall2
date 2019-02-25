@@ -1,10 +1,10 @@
 package com.quhaodian.haodian.data.service;
 
 import com.quhaodian.haodian.data.entity.TalkCategory;
-import com.quhaodian.data.page.Filter;
-import com.quhaodian.data.page.Order;
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
+import com.haoxuer.discover.data.page.Filter;
+import com.haoxuer.discover.data.page.Order;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
 
 import java.util.List;
 

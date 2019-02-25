@@ -2,9 +2,9 @@ package com.quhaodian.haodian.data.dao;
 
 
 import com.quhaodian.haodian.data.entity.Channel;
-import com.quhaodian.data.core.BaseDao;
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.data.core.Updater;
+import com.haoxuer.discover.data.core.BaseDao;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.data.core.Updater;
 
 public interface ChannelDao extends BaseDao<Channel, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);

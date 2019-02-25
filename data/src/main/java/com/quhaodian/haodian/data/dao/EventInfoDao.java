@@ -2,9 +2,9 @@ package com.quhaodian.haodian.data.dao;
 
 
 import com.quhaodian.haodian.data.entity.EventInfo;
-import  com.quhaodian.data.core.BaseDao;
-import  com.quhaodian.data.core.Updater;
-import com.quhaodian.data.core.Pagination;
+import  com.haoxuer.discover.data.core.BaseDao;
+import  com.haoxuer.discover.data.core.Updater;
+import com.haoxuer.discover.data.core.Pagination;
 
 public interface EventInfoDao extends BaseDao<EventInfo, Long>{
 	public Pagination getPage(int pageNo, int pageSize);

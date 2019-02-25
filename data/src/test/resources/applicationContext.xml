@@ -52,8 +52,8 @@
 		<property name="packagesToScan">
 			<list>
 				<value>com.openyelp.data</value>
-				<value>com.quhaodian.user.entity</value>
-				<value>com.quhaodian.article.entity</value>
+				<value>com.haoxuer.discover.user.entity</value>
+				<value>com.haoxuer.discover.article.entity</value>
 				<value>com.ada.admin.entity</value>
 				<value>com.quhaodian.area.entity</value>
 				<value>com.ada.plugin.entity</value>

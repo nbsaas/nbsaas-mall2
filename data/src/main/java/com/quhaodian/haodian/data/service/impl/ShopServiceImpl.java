@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
 import com.quhaodian.haodian.data.dao.ShopDao;
 import com.quhaodian.haodian.data.service.ShopService;
 import com.quhaodian.haodian.data.dao.FeedDao;
@@ -19,11 +19,11 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.quhaodian.area.data.dao.AreaDao;
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.data.core.Finder;
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.data.core.Updater;
+import com.haoxuer.discover.area.data.dao.AreaDao;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.data.core.Finder;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.data.core.Updater;
 import com.quhaodian.haodian.data.dao.ShopTagDao;
 import com.quhaodian.haodian.data.entity.ShopCategory;
 import com.quhaodian.haodian.data.entity.ShopTag;

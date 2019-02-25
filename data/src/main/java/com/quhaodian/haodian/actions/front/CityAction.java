@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.area.data.service.AreaService;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.area.data.service.AreaService;
 import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller

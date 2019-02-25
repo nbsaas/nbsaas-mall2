@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.data.service;
 
 import com.quhaodian.haodian.data.entity.EventInfoGood;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 
 public interface EventInfoGoodService {
 	public Pagination getPage(int pageNo, int pageSize);

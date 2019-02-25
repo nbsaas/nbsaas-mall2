@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.quhaodian.userfriend.data.entity.UserFriendRequest;
-import com.quhaodian.userfriend.data.service.UserFriendRequestService;
+import com.haoxuer.discover.userfriend.data.entity.UserFriendRequest;
+import com.haoxuer.discover.userfriend.data.service.UserFriendRequestService;
 
 
 @RequestMapping(value = "friendrequest")

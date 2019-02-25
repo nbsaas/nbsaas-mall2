@@ -9,7 +9,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
-import com.quhaodian.data.entity.CatalogEntity;
+import com.haoxuer.discover.data.entity.CatalogEntity;
 
 @Entity
 @Table(name = "eventinfo_category")

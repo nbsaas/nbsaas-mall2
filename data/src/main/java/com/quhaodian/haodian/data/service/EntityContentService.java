@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.data.service;
 
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.entity.EntityContent;
 public interface EntityContentService {
 	public Pagination getPage(int pageNo, int pageSize);

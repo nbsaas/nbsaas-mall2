@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.quhaodian.userfriend.data.entity.UserFollow;
-import com.quhaodian.user.data.entity.UserInfo;
-import com.quhaodian.userfriend.data.service.UserFollowService;
+import com.haoxuer.discover.userfriend.data.entity.UserFollow;
+import com.haoxuer.discover.user.data.entity.UserInfo;
+import com.haoxuer.discover.userfriend.data.service.UserFollowService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.utils.FrontUtils;
 

@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.data.apps;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.area.data.service.AreaService;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.area.data.service.AreaService;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;

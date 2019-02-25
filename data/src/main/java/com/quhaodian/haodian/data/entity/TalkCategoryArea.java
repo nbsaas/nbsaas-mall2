@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.data.entity;
 
-import com.quhaodian.area.data.entity.Area;
+import com.haoxuer.discover.area.data.entity.Area;
 
 import java.util.Date;
 

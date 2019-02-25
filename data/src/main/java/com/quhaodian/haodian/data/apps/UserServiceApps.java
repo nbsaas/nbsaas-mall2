@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.data.apps;
 
-import com.quhaodian.user.data.entity.UserInfo;
-import com.quhaodian.user.data.entity.UserRole;
+import com.haoxuer.discover.user.data.entity.UserInfo;
+import com.haoxuer.discover.user.data.entity.UserRole;
 import com.quhaodian.haodian.data.service.UserService;
 
 public class UserServiceApps {

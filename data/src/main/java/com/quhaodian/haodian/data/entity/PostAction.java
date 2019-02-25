@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.data.entity;
 
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

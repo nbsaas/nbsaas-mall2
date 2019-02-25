@@ -3,10 +3,10 @@ package com.quhaodian.haodian.actions.front;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.quhaodian.data.page.Filter;
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
-import com.quhaodian.userfriend.data.entity.UserFriend;
+import com.haoxuer.discover.data.page.Filter;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
+import com.haoxuer.discover.userfriend.data.entity.UserFriend;
 import com.quhaodian.haodian.web.WebErrors;
 import com.quhaodian.haodian.data.entity.Photo;
 import com.quhaodian.haodian.data.entity.UserProfile;
@@ -17,7 +17,7 @@ import com.quhaodian.haodian.data.service.UserService;
 import com.quhaodian.haodian.data.service.UserSettingService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.utils.FrontUtils;
-import com.quhaodian.web.controller.front.BaseController;
+import com.haoxuer.discover.web.controller.front.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,10 +25,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.user.data.entity.UserInfo;
-import com.quhaodian.userfriend.data.service.UserFriendRequestService;
-import com.quhaodian.userfriend.data.service.UserFriendService;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.user.data.entity.UserInfo;
+import com.haoxuer.discover.userfriend.data.service.UserFriendRequestService;
+import com.haoxuer.discover.userfriend.data.service.UserFriendService;
 
 @Controller
 @RequestMapping(value = "profile")

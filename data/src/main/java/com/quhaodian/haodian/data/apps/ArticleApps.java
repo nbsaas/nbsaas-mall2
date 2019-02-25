@@ -2,13 +2,13 @@ package com.quhaodian.haodian.data.apps;
 
 import java.util.List;
 
-import com.quhaodian.article.data.entity.Article;
-import com.quhaodian.article.data.entity.ArticleCatalog;
-import com.quhaodian.article.data.service.ArticleCatalogService;
-import com.quhaodian.article.data.service.ArticleService;
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.article.data.entity.Article;
+import com.haoxuer.discover.article.data.entity.ArticleCatalog;
+import com.haoxuer.discover.article.data.service.ArticleCatalogService;
+import com.haoxuer.discover.article.data.service.ArticleService;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 
 public class ArticleApps {
 

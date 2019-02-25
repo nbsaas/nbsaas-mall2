@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.quhaodian.haodian.data.entity.ShopImage;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
-import com.quhaodian.web.controller.front.BaseController;
+import com.haoxuer.discover.web.controller.front.BaseController;
 import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.entity.Shop;
 import com.quhaodian.haodian.data.entity.ShopBack;
 import com.quhaodian.haodian.data.entity.ShopCategory;

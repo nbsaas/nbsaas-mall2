@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.rest.resources;
 
-import com.quhaodian.data.page.Filter;
-import com.quhaodian.data.page.Order;
+import com.haoxuer.discover.data.page.Filter;
+import com.haoxuer.discover.data.page.Order;
 import com.quhaodian.haodian.api.CategoryApi;
 import com.quhaodian.haodian.data.dao.ShopCategoryDao;
 import com.quhaodian.haodian.data.entity.ShopCategory;
@@ -9,7 +9,7 @@ import com.quhaodian.haodian.domain.list.CategoryList;
 import com.quhaodian.haodian.domain.request.CategoryFindByPidRequest;
 import com.quhaodian.haodian.domain.simple.CategorySimple;
 import com.quhaodian.haodian.rest.conver.ShopCategorySimpleConver;
-import com.quhaodian.user.utils.ConverResourceUtils;
+import com.haoxuer.discover.user.utils.ConverResourceUtils;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

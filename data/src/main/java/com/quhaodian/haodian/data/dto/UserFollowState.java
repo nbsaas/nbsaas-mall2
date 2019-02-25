@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Set;
 
-import com.quhaodian.user.data.entity.UserInfo;
-import com.quhaodian.user.data.entity.UserRole;
+import com.haoxuer.discover.user.data.entity.UserInfo;
+import com.haoxuer.discover.user.data.entity.UserRole;
 
 public class UserFollowState implements Serializable {
 

@@ -2,7 +2,7 @@ package com.quhaodian.haodian.data.apps;
 
 import java.util.List;
 
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.entity.Shop;
 import com.quhaodian.haodian.data.entity.ShopTime;
 import com.quhaodian.haodian.data.service.ShopService;

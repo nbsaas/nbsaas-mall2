@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.data.entity;
 
-import com.quhaodian.data.entity.CatalogEntity;
+import com.haoxuer.discover.data.entity.CatalogEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;

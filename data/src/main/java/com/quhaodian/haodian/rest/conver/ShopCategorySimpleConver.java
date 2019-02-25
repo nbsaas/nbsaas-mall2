@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.rest.conver;
 
-import com.quhaodian.data.rest.core.Conver;
+import com.haoxuer.discover.data.rest.core.Conver;
 import com.quhaodian.haodian.data.entity.ShopCategory;
 import com.quhaodian.haodian.domain.simple.CategorySimple;
 

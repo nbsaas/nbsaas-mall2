@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 import com.quhaodian.haodian.data.service.MessagesService;
 
 @Controller

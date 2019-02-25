@@ -1,9 +1,9 @@
 package com.quhaodian.haodian.data.service;
 
 import com.quhaodian.haodian.data.entity.TalkReply;
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.data.page.Page;
-import com.quhaodian.data.page.Pageable;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.data.page.Page;
+import com.haoxuer.discover.data.page.Pageable;
 
 
 public interface TalkReplyService {

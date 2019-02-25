@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.quhaodian.haodian.data.entity.Shop;
 import com.quhaodian.haodian.data.entity.ShopCategory;
 import com.quhaodian.haodian.data.service.ShopService;
-import com.quhaodian.data.page.Filter;
-import com.quhaodian.data.page.Pageable;
+import com.haoxuer.discover.data.page.Filter;
+import com.haoxuer.discover.data.page.Pageable;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
 import com.quhaodian.haodian.web.utils.FrontUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.area.data.service.AreaService;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.area.data.service.AreaService;
+import com.haoxuer.discover.data.core.Pagination;
 
 @Controller
 @RequestMapping(value = "user")

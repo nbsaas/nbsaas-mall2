@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.data.service;
 
 import com.quhaodian.haodian.data.entity.ShopReviewVote;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 
 public interface ShopReviewVoteService {
 	public Pagination getPage(int pageNo, int pageSize);

@@ -1,11 +1,11 @@
 package com.quhaodian.haodian.shiro.utils;
 
-import com.quhaodian.shiro.realm.ShiroUser;
+import com.haoxuer.discover.user.shiro.realm.ShiroUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 
-import com.quhaodian.area.data.entity.Area;
-import com.quhaodian.user.data.entity.UserInfo;
+import com.haoxuer.discover.area.data.entity.Area;
+import com.haoxuer.discover.user.data.entity.UserInfo;
 
 public class UserUtil {
 	/**

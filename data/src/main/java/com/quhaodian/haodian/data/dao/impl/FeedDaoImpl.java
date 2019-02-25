@@ -14,8 +14,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.stereotype.Repository;
 
-import com.quhaodian.data.core.BaseDaoImpl;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.BaseDaoImpl;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.dao.FeedDao;
 import com.quhaodian.haodian.data.entity.Feed;
 import com.quhaodian.haodian.data.entity.ShopImageList;

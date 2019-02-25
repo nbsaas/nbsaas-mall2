@@ -2,7 +2,7 @@ package com.quhaodian.haodian.actions.admin;
 
 import com.quhaodian.haodian.data.entity.EventInfoCategory;
 import com.quhaodian.haodian.data.service.EventInfoCategoryService;
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.data.entity.EventInfo;
 import com.quhaodian.haodian.data.service.EventInfoService;
 import org.springframework.beans.factory.annotation.Autowired;

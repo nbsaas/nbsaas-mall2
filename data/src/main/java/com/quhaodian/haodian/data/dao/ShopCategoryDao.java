@@ -2,9 +2,9 @@ package com.quhaodian.haodian.data.dao;
 
 
 import com.quhaodian.haodian.data.entity.ShopCategory;
-import com.quhaodian.data.core.CriteriaDao;
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.data.core.Updater;
+import com.haoxuer.discover.data.core.CriteriaDao;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.data.core.Updater;
 
 public interface ShopCategoryDao extends CriteriaDao<ShopCategory, Integer>{
 	public Pagination getPage(int pageNo, int pageSize);

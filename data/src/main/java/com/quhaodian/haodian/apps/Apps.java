@@ -1,5 +1,16 @@
 package com.quhaodian.haodian.apps;
 
+import com.haoxuer.imake.ChainMake;
+import com.haoxuer.imake.template.hibernate.TemplateHibernateDir;
+import com.haoxuer.imake.templates.adminlte.TemplateAdminLTE;
+import com.quhaodian.haodian.data.apps.ObjectFactory;
+import com.quhaodian.haodian.data.entity.EntityContent;
+import com.quhaodian.haodian.data.entity.ShopCategory;
+import com.quhaodian.haodian.data.service.EntityContentService;
+import com.quhaodian.haodian.services.haoservice.lifeservice.joke.ContentList;
+import com.quhaodian.haodian.services.haoservice.lifeservice.joke.JokeApi;
+import com.quhaodian.haodian.services.haoservice.lifeservice.joke.JokeContent;
+
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,22 +18,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import com.quhaodian.haodian.data.apps.ObjectFactory;
-import com.quhaodian.haodian.data.entity.EntityContent;
-import com.quhaodian.haodian.data.entity.Shop;
-import com.quhaodian.haodian.data.entity.ShopCategory;
-import com.quhaodian.haodian.data.service.EntityContentService;
-import com.quhaodian.haodian.services.haoservice.lifeservice.joke.ContentList;
-import com.quhaodian.haodian.services.haoservice.lifeservice.joke.JokeApi;
-import com.quhaodian.haodian.services.haoservice.lifeservice.joke.JokeContent;
-import com.quhaodian.imake.ChainMake;
-import com.quhaodian.imake.template.hibernate.TemplateHibernateDir;
-import com.quhaodian.imake.templates.adminlte.TemplateAdminLTE;
-
 public class Apps {
 
 	public static void main(String[] args) {
-		ChainMake make=	new ChainMake(TemplateAdminLTE.class,TemplateHibernateDir.class);
+		ChainMake make=	new ChainMake(TemplateAdminLTE.class, TemplateHibernateDir.class);
 		make.setAction("com.quhaodian.haodian.actions.admin");
 		File view=new File("E:\\mvnspace\\quhaodian\\web\\src\\main\\webapp\\WEB-INF\\ftl\\admin");
 		make.setView(view);

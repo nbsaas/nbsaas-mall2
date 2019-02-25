@@ -7,8 +7,8 @@ import java.io.Writer;
 import java.util.HashMap;
 import java.util.Locale;
 
-import com.quhaodian.user.data.entity.Menu;
-import com.quhaodian.user.data.service.MenuService;
+import com.haoxuer.discover.user.data.entity.Menu;
+import com.haoxuer.discover.user.data.service.MenuService;
 
 import freemarker.template.Configuration;
 import freemarker.template.Template;

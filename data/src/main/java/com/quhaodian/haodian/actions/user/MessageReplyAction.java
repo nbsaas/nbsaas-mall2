@@ -1,7 +1,7 @@
 package com.quhaodian.haodian.actions.user;
 
-import com.quhaodian.data.core.Pagination;
-import com.quhaodian.discover.rest.base.ResponseObject;
+import com.haoxuer.discover.data.core.Pagination;
+import com.haoxuer.discover.rest.base.ResponseObject;
 import com.quhaodian.haodian.data.entity.MessageReply;
 import com.quhaodian.haodian.data.service.MessageReplyService;
 import com.quhaodian.haodian.data.service.MessagesService;

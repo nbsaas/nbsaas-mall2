@@ -4,10 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import com.haoxuer.discover.plug.api.StoragePlugin;
+import com.haoxuer.discover.plug.data.vo.FileInfo;
 import org.springframework.stereotype.Component;
 
-import com.quhaodian.plug.api.StoragePlugin;
-import com.quhaodian.plug.data.vo.FileInfo;
 import com.qiniu.common.QiniuException;
 import com.qiniu.http.Response;
 import com.qiniu.storage.UploadManager;
@@ -26,44 +26,14 @@ public class QiNiuStoragePlugin extends StoragePlugin {
 
 	@Override
 	public String getVersion() {
-		// TODO Auto-generated method stub
-		return "1.1";
-	}
-
-	public boolean getIsEnabled() {
-		
-		return true;
+		return "1.0.1";
 	}
 
 	@Override
-	public String getAuthor() {
-		// TODO Auto-generated method stub
-		return "ada";
+	public String viewName() {
+		return "qiniu";
 	}
 
-	@Override
-	public String getSiteUrl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getInstallUrl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getUninstallUrl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public String getSettingUrl() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	String domain = "openyelp";
 	final String url = "http://zzdp.yichisancun.com/";;

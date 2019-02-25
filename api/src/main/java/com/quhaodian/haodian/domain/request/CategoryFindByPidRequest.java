@@ -1,6 +1,6 @@
 package com.quhaodian.haodian.domain.request;
 
-import com.quhaodian.discover.rest.base.RequestUserTokenObject;
+import com.haoxuer.discover.rest.base.RequestUserTokenObject;
 
 public class CategoryFindByPidRequest extends RequestUserTokenObject {
   

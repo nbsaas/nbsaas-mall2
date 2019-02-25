@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.quhaodian.haodian.data.entity.UserCity;
 import com.quhaodian.haodian.data.service.UserCityService;
 import com.quhaodian.haodian.shiro.utils.UserUtil;
-import com.quhaodian.web.controller.front.BaseController;
+import com.haoxuer.discover.web.controller.front.BaseController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.quhaodian.data.core.Pagination;
+import com.haoxuer.discover.data.core.Pagination;
 import com.quhaodian.haodian.web.utils.FrontUtils;
 
 @Controller
