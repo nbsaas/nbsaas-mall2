@@ -11,7 +11,7 @@
 	<import resource="context-shiro.xml" />
 
 
-	<context:component-scan base-package="com.quhaodian.haodian.actions" />
+	<context:component-scan base-package="com.haoxuer.haodian.actions" />
 
 	<bean name="webconfig" class="com.haoxuer.discover.web.data.common.InitConfig" init-method="initWebConfig" scope="singleton" lazy-init="false"></bean>
 
@@ -22,7 +22,7 @@
 	<bean
 		class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
 	</bean>
-	<bean id="exceptionResolver" class="com.quhaodian.haodian.web.handler.MappingExceptionResolver">
+	<bean id="exceptionResolver" class="com.haoxuer.haodian.web.handler.MappingExceptionResolver">
 		<property name="url" value="http://localhost:8080/iyelp_web/"></property> <!-- -->
 		<property name="exceptionMappings">
 			<props>
@@ -47,24 +47,24 @@
 	<bean id="menuOpenDirective" class="com.haoxuer.discover.user.freemaker.MenuOpenDirective" />
 	<bean id="menusDirective" class="com.haoxuer.discover.user.freemaker.MenusDirective" />
 	<bean id="menuchildsDirective" class="com.haoxuer.discover.user.freemaker.MenuChildsDirective" />
-	<bean id="hotAreaDirective" class="com.quhaodian.haodian.web.freemaker.HotAreaDirective"></bean>
-	<bean id="talkNewsDirective" class="com.quhaodian.haodian.web.freemaker.TalkNewsDirective"></bean>
-	<bean id="eventGoodDirective" class="com.quhaodian.haodian.web.freemaker.EventGoodDirective"></bean>
-	<bean id="shopNearDirective" class="com.quhaodian.haodian.web.freemaker.ShopNearDirective"></bean>
-	<bean id="shopGoodDirective" class="com.quhaodian.haodian.web.freemaker.ShopGoodDirective"></bean>
-	<bean id="categoryNearDirective" class="com.quhaodian.haodian.web.freemaker.CategoryNearDirective"></bean>
+	<bean id="hotAreaDirective" class="com.haoxuer.haodian.web.freemaker.HotAreaDirective"></bean>
+	<bean id="talkNewsDirective" class="com.haoxuer.haodian.web.freemaker.TalkNewsDirective"></bean>
+	<bean id="eventGoodDirective" class="com.haoxuer.haodian.web.freemaker.EventGoodDirective"></bean>
+	<bean id="shopNearDirective" class="com.haoxuer.haodian.web.freemaker.ShopNearDirective"></bean>
+	<bean id="shopGoodDirective" class="com.haoxuer.haodian.web.freemaker.ShopGoodDirective"></bean>
+	<bean id="categoryNearDirective" class="com.haoxuer.haodian.web.freemaker.CategoryNearDirective"></bean>
 
 	<bean id="articleDirective" class="com.haoxuer.discover.article.freemarker.ArticleDirective" />
-	<bean id="shopDirective" class="com.quhaodian.haodian.web.freemaker.ShopDirective"></bean>
-	<bean id="talkDirective" class="com.quhaodian.haodian.web.freemaker.TalkDirective"></bean>
-	<bean id="eventsDirective" class="com.quhaodian.haodian.web.freemaker.EventsDirective"></bean>
-	<bean id="shopReviewDirective" class="com.quhaodian.haodian.web.freemaker.ShopReviewDirective"></bean>
-	<bean id="shopImageDirective" class="com.quhaodian.haodian.web.freemaker.ShopImageDirective"></bean>
-	<bean id="shopImageListDirective" class="com.quhaodian.haodian.web.freemaker.ShopImageListDirective"></bean>
+	<bean id="shopDirective" class="com.haoxuer.haodian.web.freemaker.ShopDirective"></bean>
+	<bean id="talkDirective" class="com.haoxuer.haodian.web.freemaker.TalkDirective"></bean>
+	<bean id="eventsDirective" class="com.haoxuer.haodian.web.freemaker.EventsDirective"></bean>
+	<bean id="shopReviewDirective" class="com.haoxuer.haodian.web.freemaker.ShopReviewDirective"></bean>
+	<bean id="shopImageDirective" class="com.haoxuer.haodian.web.freemaker.ShopImageDirective"></bean>
+	<bean id="shopImageListDirective" class="com.haoxuer.haodian.web.freemaker.ShopImageListDirective"></bean>
 
 
 
-	<bean id="haveVoteDirective" class="com.quhaodian.haodian.web.freemaker.HaveVoteDirective"></bean>
+	<bean id="haveVoteDirective" class="com.haoxuer.haodian.web.freemaker.HaveVoteDirective"></bean>
 
 
 

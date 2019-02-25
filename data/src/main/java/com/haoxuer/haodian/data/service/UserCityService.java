@@ -1,0 +1,20 @@
+package com.haoxuer.haodian.data.service;
+
+import com.haoxuer.haodian.data.entity.UserCity;
+import com.haoxuer.discover.data.core.Pagination;
+
+
+public interface UserCityService {
+	public Pagination getPage(int pageNo, int pageSize);
+
+	public UserCity findById(Long id);
+	public Pagination findByUser(long userid,int pageNo, int pageSize);
+
+	public UserCity save(UserCity bean);
+
+	public UserCity update(UserCity bean);
+
+	public UserCity deleteById(Long id);
+	
+	public UserCity[] deleteByIds(Long[] ids);
+}

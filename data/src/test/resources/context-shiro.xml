@@ -16,7 +16,7 @@
 	</bean>
 	
 	<!-- Shiro Filter -->
-	<bean id="myCaptchaFilter" class="com.quhaodian.haodian.shiro.filter.AuthenticatedFilter">
+	<bean id="myCaptchaFilter" class="com.haoxuer.haodian.shiro.filter.AuthenticatedFilter">
 	 <property name="loginUrl" value="/login.htm"/>
 	</bean>
 	

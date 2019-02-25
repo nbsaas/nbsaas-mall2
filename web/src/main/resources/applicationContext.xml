@@ -16,8 +16,8 @@
 
 
 
-	<context:component-scan base-package="com.quhaodian.haodian.data" />
-	<context:component-scan base-package="com.quhaodian.haodian.rest" />
+	<context:component-scan base-package="com.haoxuer.haodian.data" />
+	<context:component-scan base-package="com.haoxuer.haodian.rest" />
 
 
 
@@ -55,7 +55,7 @@
 		</property>
 		<property name="packagesToScan">
 			<list>
-				<value>com.quhaodian.haodian.data</value>
+				<value>com.haoxuer.haodian.data</value>
 				<value>com.haoxuer.discover.user.data.entity</value>
 				<value>com.haoxuer.discover.userfriend.data.entity</value>
 				<value>com.haoxuer.discover.web.data.entity</value>
