@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>管理</title>
+    <title>微博第三方登陆配置</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -46,11 +46,11 @@
             [@sidebar_form /]
             <!-- /.search form -->
             <!-- sidebar menu: : style can be found in sidebar.less -->
-            <ul class="sidebar-menu">
+            <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">主面板</li>
                 [@menustag id=1]
                 [#list list as item]
-                [@menu item "1,15,17"]
+                [@menu item "1,15,25"]
                 [/@menu]
                 [/#list]
                 [/@menustag]
@@ -70,17 +70,56 @@
             <!-- /.box -->
             <div class="box box-default box-solid">
                 <div class="box-header with-border">
-                    <h3 class="box-title">ftp配置</h3>
+                    <h3 class="box-title">微博第三方登陆配置</h3>
                 </div>
                 <!-- /.box-header -->
                 <!-- form start -->
-                <form class="form-horizontal" action="${siteurl}admin/storage_plugin/file/update.htm" method="post">
+                <form class="form-horizontal" action="${siteurl}admin/plugin_oauth/weibo/update.htm" method="post">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="urlPrefix" class="col-sm-2 control-label">网址前缀</label>
+                            <label for="name" class="col-sm-2 control-label">第三方登陆名称</label>
                             <div class="col-sm-10">
 
-                                <input class="form-control" maxlength="100" id="urlPrefix" name="urlPrefix" value="${pluginConfig.attributes['urlPrefix']!''}" placeholder="网址前缀" type="text">
+                                <input  required="required"  class="form-control" maxlength="100" id="name" name="name" value="${pluginConfig.attributes['name']!''}" placeholder="第三方登陆名称" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="icon" class="col-sm-2 control-label">icon</label>
+                            <div class="col-sm-10">
+
+                                <input  required="required"  class="form-control" maxlength="100" id="icon" name="icon" value="${pluginConfig.attributes['icon']!''}" placeholder="icon" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="bg" class="col-sm-2 control-label">背景class</label>
+                            <div class="col-sm-10">
+
+                                <input  required="required"  class="form-control" maxlength="100" id="bg" name="bg" value="${pluginConfig.attributes['bg']!''}" placeholder="背景class" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="apikey" class="col-sm-2 control-label">apikey</label>
+                            <div class="col-sm-10">
+
+                                <input  required="required"  class="form-control" maxlength="100" id="apikey" name="apikey" value="${pluginConfig.attributes['apikey']!''}" placeholder="apikey" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="secret" class="col-sm-2 control-label">secret</label>
+                            <div class="col-sm-10">
+                                <input required="required" class="form-control" maxlength="100" id="secret" name="secret" value="${pluginConfig.attributes['secret']!''}" placeholder="secret" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="callback" class="col-sm-2 control-label">callback</label>
+                            <div class="col-sm-10">
+                                <input required="required" class="form-control" maxlength="100" id="callback" name="callback" value="${pluginConfig.attributes['callback']!''}" placeholder="callback" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="scope" class="col-sm-2 control-label">scope</label>
+                            <div class="col-sm-10">
+                                <input required="required" class="form-control" maxlength="100" id="scope" name="scope" value="${pluginConfig.attributes['scope']!''}" placeholder="scope" type="text">
                             </div>
                         </div>
                         <div class="form-group">
@@ -91,10 +130,10 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="isEnabled" class="col-sm-2 control-label">是否启用</label>
+                            <label for="enabled" class="col-sm-2 control-label">是否启用</label>
                             <div class="col-sm-10">
 
-                                <input type="checkbox" id="isEnabled" name="isEnabled"  [#if pluginConfig.isEnabled] checked[/#if] />
+                                <input type="checkbox" id="enabled" name="enabled"  [#if pluginConfig.isEnabled] checked[/#if] />
                             </div>
                         </div>
                     </div>
@@ -132,7 +171,7 @@
 <!-- FastClick -->
 <script src="${siteurl}plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
-<script src="${siteurl}dist/js/app.min.js"></script>
+<script src="${siteurl}dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="${siteurl}dist/js/demo.js"></script>
 <script src="${siteurl}dist/js/list.js"></script>

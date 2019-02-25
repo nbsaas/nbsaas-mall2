@@ -165,7 +165,16 @@ public class LoginController {
 		subject.logout();
 		return FrontUtils.getPath("login");
 	}
-
+	/**
+	 * 退出登录
+	 *
+	 * @return
+	 */
+	@RequestMapping("/signout")
+	public String signout() {
+		SecurityUtils.getSubject().logout();
+		return "redirect:/login.htm";
+	}
 	@RequestMapping(value = "loginwork")
 	public String loginok(String username, String password, Model model) {
 
