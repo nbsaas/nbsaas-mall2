@@ -54,11 +54,8 @@ public class ShopManagerAction {
     }
 
     @RequestMapping(value = "shop/view_add", method = RequestMethod.GET)
-    public String view_add(HttpServletRequest request, Long pid,
-                           HttpServletResponse response, Model model) {
-        Shop item = shopService.findById(pid);
-        model.addAttribute("item", item);
-        return "admin/shop/view_add";
+    public String view_add() {
+        return "admin/shop/add";
     }
 
     @RequestMapping(value = "shop/model_add", method = RequestMethod.POST)
