@@ -29,6 +29,7 @@ public class App {
         makeCodes("config/user.yml");
         makeCodes("config/shop.yml");
         makeCodes("config/area.yml");
+        makeCodes("config/talk.yml");
 
     }
 

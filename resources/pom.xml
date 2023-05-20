@@ -16,6 +16,7 @@
         <module>shop-resource</module>
         <module>user-resource</module>
         <module>area-resource</module>
+        <module>talk-resource</module>
     </modules>
 
     <properties>
