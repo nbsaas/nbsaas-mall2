@@ -30,5 +30,6 @@
 		<module>resources</module>
 		<module>apis</module>
         <module>code-generator</module>
+        <module>adapters</module>
     </modules>
 </project>

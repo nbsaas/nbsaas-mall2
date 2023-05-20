@@ -26,7 +26,28 @@
         </dependency>
         <dependency>
             <groupId>com.nbsaas.life</groupId>
+            <artifactId>security</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
             <artifactId>user-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>shop-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>area-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>order-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
     </dependencies>

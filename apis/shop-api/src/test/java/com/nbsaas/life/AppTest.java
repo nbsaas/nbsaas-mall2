@@ -1,4 +1,4 @@
-package com.nbsaas.basic;
+package com.nbsaas.life;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
