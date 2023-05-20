@@ -2,61 +2,33 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.haoxuer.haodian</groupId>
-	<artifactId>haodian-root</artifactId>
+	<parent>
+		<groupId>com.nbsaas.boot</groupId>
+		<artifactId>boot-nbsaas</artifactId>
+		<version>1.0.8-2023</version>
+	</parent>
+	<groupId>com.nbsaas.life</groupId>
+	<artifactId>nbsaas-life</artifactId>
 	<version>1.0.1</version>
 	<packaging>pom</packaging>
 
-	<name>quhaodian</name>
-	<url>http://maven.apache.org</url>
+	<name>nbsaas-life</name>
+	<url>http://www.nbsaas.com</url>
 	<repositories>
 		<repository>
 			<id>aliyun</id>
 			<url>http://maven.aliyun.com/nexus/content/repositories/central/</url>
 		</repository>
 	</repositories>
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
 	<dependencies>
 	</dependencies>
 	<modules>
 		<module>data</module>
 		<module>web</module>
         <module>api</module>
+		<module>gates</module>
+		<module>resources</module>
+		<module>apis</module>
+        <module>code-generator</module>
     </modules>
-
-	<build>
-		<finalName>iyelp</finalName>
-		<plugins>
-			<!-- Maven Jetty Plugin -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
-					<meminitial>512m</meminitial>
-					<maxmem>1024m</maxmem>
-					<fork>true</fork>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.4.15.v20190215</version>
-				<configuration>
-					<webApp>
-						<contextPath>/web/</contextPath>
-						<descriptor>${project.basedir}/src/main/webapp/WEB_INF/web.xml</descriptor>
-					</webApp>
-					<httpConnector>
-						<port>8080</port>
-					</httpConnector>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
 </project>

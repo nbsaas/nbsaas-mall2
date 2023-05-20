@@ -1,0 +1,9 @@
+package com.nbsaas.life.shop.data.repository;
+
+import com.nbsaas.life.shop.data.entity.Shop;
+import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
+import java.io.Serializable;
+
+public interface ShopRepository  extends  JpaRepositoryImplementation<Shop, Serializable>{
+
+}

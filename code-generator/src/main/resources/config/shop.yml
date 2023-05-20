@@ -1,0 +1,9 @@
+projectName: shop #多项目的时候模块名
+multiple: true #是否多模块项目
+templateDir: /template/jpa #代码模块文件夹
+entityPackage: com.nbsaas.life.shop.data.entity
+entities:
+  - Shop
+  - ShopTag
+outputPath: E:\codes\nbsaas\nbsaas-life #项目根目录
+basePackage: com.nbsaas.life #基础包名

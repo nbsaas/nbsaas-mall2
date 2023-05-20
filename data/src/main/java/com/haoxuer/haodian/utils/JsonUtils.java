@@ -82,7 +82,7 @@ public final class JsonUtils {
 		Assert.hasText(json);
 		Assert.notNull(typeReference);
 		try {
-			return mapper.readValue(json, typeReference);
+			return (T) mapper.readValue(json, typeReference);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

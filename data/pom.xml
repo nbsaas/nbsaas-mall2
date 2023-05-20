@@ -4,13 +4,13 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.haoxuer.haodian</groupId>
-		<artifactId>haodian-root</artifactId>
+		<groupId>com.nbsaas.life</groupId>
+		<artifactId>nbsaas-life</artifactId>
 		<version>1.0.1</version>
 	</parent>
 	<artifactId>data</artifactId>
 	<name>data</name>
-	<url>http://maven.apache.org</url>
+	<url>http://www.nbsaas.com</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -22,7 +22,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.haoxuer.haodian</groupId>
+			<groupId>com.nbsaas.life</groupId>
 			<artifactId>api</artifactId>
 			<version>1.0.1</version>
 		</dependency>
