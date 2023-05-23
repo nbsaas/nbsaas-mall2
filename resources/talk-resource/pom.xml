@@ -30,5 +30,10 @@
             <version>1.0.1</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.nbsaas.basic</groupId>
+            <artifactId>talk-api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 </project>
