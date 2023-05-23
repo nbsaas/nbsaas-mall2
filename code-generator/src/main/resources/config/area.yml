@@ -4,5 +4,6 @@ templateDir: /template/jpa #代码模块文件夹
 entityPackage: com.nbsaas.life.area.data.entity
 entities:
   - Area
+  - AreaHot
 outputPath: E:\codes\nbsaas\nbsaas-life #项目根目录
 basePackage: com.nbsaas.life #基础包名
