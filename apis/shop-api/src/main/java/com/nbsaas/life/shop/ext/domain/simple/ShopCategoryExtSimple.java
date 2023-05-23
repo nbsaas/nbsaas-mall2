@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 列表对象
@@ -23,5 +24,7 @@ public class ShopCategoryExtSimple implements Serializable {
     private String name;
 
     private String cname;
+
+    private List<ShopCategoryExtSimple> children;
 
 }

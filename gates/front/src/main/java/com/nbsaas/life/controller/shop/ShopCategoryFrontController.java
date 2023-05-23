@@ -48,6 +48,15 @@ public class ShopCategoryFrontController {
         });
     }
 
+    @RequestMapping("/tree")
+    public ListResponse<ShopCategoryExtSimple> tree(ShopCategorySearchRequest request) {
+        return shopCategoryApi.listExt(request,item->{
+            ShopCategoryExtSimple simple=new ShopCategoryExtSimple();
+            BeanUtils.copyProperties(item,simple);
+            return simple;
+        });
+    }
+
     @RequestMapping("/view")
     public ResponseObject<ShopCategoryResponse> view(@Validated(ViewOperator.class) ShopCategoryDataRequest request) {
         return shopCategoryApi.view(request);
