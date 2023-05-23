@@ -3,22 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.life</groupId>
-        <artifactId>nbsaas-life</artifactId>
+        <artifactId>apis</artifactId>
         <version>1.0.1</version>
     </parent>
-    <artifactId>apis</artifactId>
-    <packaging>pom</packaging>
 
-    <name>apis</name>
+    <artifactId>system-api</artifactId>
+    <packaging>jar</packaging>
+
+    <name>system-api</name>
     <url>http://maven.apache.org</url>
-    <modules>
-        <module>user-api</module>
-        <module>shop-api</module>
-        <module>area-api</module>
-        <module>talk-api</module>
-        <module>order-api</module>
-        <module>system-api</module>
-    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -30,16 +23,6 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.boot</groupId>
-            <artifactId>rest</artifactId>
-            <version>1.0.8-2023</version>
-            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>

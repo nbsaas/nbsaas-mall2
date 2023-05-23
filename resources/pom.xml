@@ -17,6 +17,7 @@
         <module>user-resource</module>
         <module>area-resource</module>
         <module>talk-resource</module>
+        <module>system-resource</module>
     </modules>
 
     <properties>

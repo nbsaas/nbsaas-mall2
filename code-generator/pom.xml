@@ -50,6 +50,11 @@
             <artifactId>talk-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.nbsaas.basic</groupId>
+            <artifactId>system-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
