@@ -9,6 +9,8 @@ import com.nbsaas.life.shop.api.domain.request.ShopCategoryDataRequest;
 import com.nbsaas.life.shop.api.domain.request.ShopCategorySearchRequest;
 import com.nbsaas.life.shop.api.domain.response.ShopCategoryResponse;
 import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
+import com.nbsaas.life.shop.ext.domain.simple.ShopCategoryExtSimple;
+import org.springframework.beans.BeanUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +37,15 @@ public class ShopCategoryFrontController {
     @RequestMapping("/list")
     public ListResponse<ShopCategorySimple> list(ShopCategorySearchRequest request) {
         return shopCategoryApi.list(request);
+    }
+
+    @RequestMapping("/simples")
+    public ListResponse<ShopCategoryExtSimple> simples(ShopCategorySearchRequest request) {
+        return shopCategoryApi.listExt(request,item->{
+            ShopCategoryExtSimple simple=new ShopCategoryExtSimple();
+            BeanUtils.copyProperties(item,simple);
+            return simple;
+        });
     }
 
     @RequestMapping("/view")
