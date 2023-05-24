@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>gates</name>
-    <url>http://maven.apache.org</url>
+    <url>http://www.nbsaas.com</url>
     <modules>
         <module>gateway</module>
         <module>front</module>

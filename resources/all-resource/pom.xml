@@ -6,10 +6,11 @@
         <artifactId>resources</artifactId>
         <version>1.0.1</version>
     </parent>
-    <artifactId>shop-resource</artifactId>
+
+    <artifactId>all-resource</artifactId>
     <packaging>jar</packaging>
 
-    <name>shop-resource</name>
+    <name>all-resource</name>
     <url>http://www.nbsaas.com</url>
 
     <properties>
@@ -23,6 +24,7 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>com.nbsaas.life</groupId>
             <artifactId>user-resource</artifactId>
@@ -30,7 +32,22 @@
         </dependency>
         <dependency>
             <groupId>com.nbsaas.life</groupId>
-            <artifactId>shop-api</artifactId>
+            <artifactId>shop-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>area-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>talk-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.basic</groupId>
+            <artifactId>system-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
     </dependencies>

@@ -11,7 +11,7 @@
     <packaging>jar</packaging>
 
     <name>admin</name>
-    <url>http://maven.apache.org</url>
+    <url>http://www.nbsaas.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,33 +32,10 @@
 
         <dependency>
             <groupId>com.nbsaas.life</groupId>
-            <artifactId>user-resource</artifactId>
+            <artifactId>all-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
-        <dependency>
-            <groupId>com.nbsaas.life</groupId>
-            <artifactId>shop-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.life</groupId>
-            <artifactId>area-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.life</groupId>
-            <artifactId>order-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.life</groupId>
-            <artifactId>talk-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.basic</groupId>
-            <artifactId>system-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
+
+
     </dependencies>
 </project>
