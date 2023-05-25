@@ -1,7 +1,30 @@
 ﻿## 去好店
 
 > 去好店，让你快速的找到喜欢的店铺。
+## 最近项目正在进行重构，spring boot+nuxt3+vue3，前后端分离，请大家耐心等待
 
+### 技术选型：
+
+* **服务端**
+* Spring、SpringMVC、spring data jpa
+* Spring boot,Spring cloud,Spring alibaba
+* 安全权限 Shiro
+* 缓存 Ehcache
+* 代码生成模板 freemarker
+* 其它 Jsoup、gson
+* 核心采用Request-Response模式，Chain模型。
+* [boot-nbsaas](https://gitee.com/cng1985/boot-nbsaas)
+
+* **pc端**
+* nuxt3
+* element-plus
+
+
+* **后台管理端**
+* vue3
+* element-plus
+
+# 老项目
 
 ### 技术选型：
 
