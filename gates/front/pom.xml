@@ -25,7 +25,16 @@
             <scope>test</scope>
         </dependency>
 
-
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>2.10.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>security</artifactId>
+            <version>1.0.1</version>
+        </dependency>
 
         <dependency>
             <groupId>com.nbsaas.life</groupId>

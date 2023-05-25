@@ -23,7 +23,6 @@ import javax.annotation.Resource;
 /**
 *  前端控制器
 */
-@RequiresAuthentication
 @RestController
 @RequestMapping("/area")
 public class AreaFrontController {
@@ -43,32 +42,5 @@ public class AreaFrontController {
         return areaApi.list(request);
     }
 
-        /**
-        * 添加数据
-        *
-        * @param request
-        * @return
-        */
-    @CreateData
-  @RequestMapping("/create")
-   public ResponseObject<AreaResponse> create(@Validated(AddOperator.class) AreaDataRequest request) {
-       return areaApi.create(request);
-    }
 
-    @UpdateData
-    @RequestMapping("/update")
-   public ResponseObject
-    <AreaResponse> update(@Validated(UpdateOperator.class) AreaDataRequest request) {
-         return areaApi.update(request);
-    }
-
-     @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AreaDataRequest request) {
-        return areaApi.delete(request);
-    }
-
-    @RequestMapping("/view")
-    public ResponseObject <AreaResponse> view(@Validated(ViewOperator.class) AreaDataRequest request) {
-         return areaApi.view(request);
-    }
 }
