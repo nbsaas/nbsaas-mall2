@@ -5,7 +5,7 @@
 
 ### 技术选型：
 
-* **服务端**
+#### 服务端
 * Spring、SpringMVC、spring data jpa
 * Spring boot,Spring cloud,Spring alibaba
 * 安全权限 Shiro
@@ -15,12 +15,12 @@
 * 核心采用Request-Response模式，Chain模型。
 * [boot-nbsaas](https://gitee.com/cng1985/boot-nbsaas)
 
-* **[pc端](https://gitee.com/cng1985/nbsaas-life-nuxt3)**
+#### [pc端](https://gitee.com/cng1985/nbsaas-life-nuxt3)
 * nuxt3
 * element-plus
 
 
-* **后台管理端**
+#### 后台管理端
 * vue3
 * element-plus
 
