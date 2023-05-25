@@ -15,7 +15,7 @@
 * 核心采用Request-Response模式，Chain模型。
 * [boot-nbsaas](https://gitee.com/cng1985/boot-nbsaas)
 
-* **pc端**
+* **[pc端](https://gitee.com/cng1985/nbsaas-life-nuxt3)**
 * nuxt3
 * element-plus
 
