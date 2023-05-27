@@ -5,5 +5,10 @@ entityPackage: com.nbsaas.life.user.data.entity
 entities:
   - UserInfo
   - UserCity
+  - UserAccount
+  - UserLoginLog
+  - UserOauthConfig
+  - UserOauthToken
+  - UserPassword
 outputPath: E:\codes\nbsaas\nbsaas-life #项目根目录
 basePackage: com.nbsaas.life #基础包名

@@ -1,6 +1,8 @@
 package com.nbsaas.life.aop;
 
 
+import com.nbsaas.life.user.ext.domain.response.UserInfoExtResponse;
+import com.nbsaas.life.utils.UserUtils;
 import org.apache.commons.beanutils.BeanUtils;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -8,6 +10,7 @@ import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 
 @Component
 @Aspect
@@ -20,15 +23,13 @@ public class CommonPointcuts {
         Object[] args = point.getArgs();
         if (args != null && args.length > 0) {
             Object object = args[0];
-//            UserBasicInformationExtResponse user = UserUtils.user();
-//
-//            setValue(object, "createUser", user.getId());
-//            setValue(object, "createName", user.getNickname() );
-//            setValue(object, "createDate", new Date());
-//
-//            setValue(object, "updateUser", user.getId());
-//            setValue(object, "updateName", user.getNickname());
-//            setValue(object, "updateDate", new Date());
+            UserInfoExtResponse user = UserUtils.user();
+
+            setValue(object, "createUser", user.getId());
+            setValue(object, "addDate", new Date());
+
+            setValue(object, "updateUser", user.getId());
+            setValue(object, "lastDate", new Date());
         }
         // ...
     }
@@ -39,10 +40,9 @@ public class CommonPointcuts {
         Object[] args = point.getArgs();
         if (args != null && args.length > 0) {
             Object object = args[0];
-//            UserBasicInformationExtResponse user = UserUtils.user();
-//            setValue(object, "updateUser", user.getId());
-//            setValue(object, "updateName", user.getNickname());
-//            setValue(object, "updateDate", new Date());
+            UserInfoExtResponse user = UserUtils.user();
+
+            setValue(object, "updateUser", user.getId());
         }
     }
 

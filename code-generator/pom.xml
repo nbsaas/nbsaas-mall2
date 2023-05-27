@@ -30,7 +30,11 @@
             <artifactId>code-generator</artifactId>
             <version>1.0.9-2023</version>
         </dependency>
-
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>all-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

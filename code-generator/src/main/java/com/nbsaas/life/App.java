@@ -64,6 +64,7 @@ public class App {
                     .after(new RestCommand())
                     .after(new ExtApiCommand())
                     .after(new RepositoryCommand())
+                     .after(new FieldCommand())
                     .after(new FinishCommand()).execute(context);
         }
     }
