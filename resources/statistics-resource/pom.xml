@@ -3,23 +3,15 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.life</groupId>
-        <artifactId>nbsaas-life</artifactId>
+        <artifactId>resources</artifactId>
         <version>1.0.1</version>
     </parent>
-    <artifactId>apis</artifactId>
-    <packaging>pom</packaging>
 
-    <name>apis</name>
-    <url>http://www.nbsaas.com</url>
-    <modules>
-        <module>user-api</module>
-        <module>shop-api</module>
-        <module>area-api</module>
-        <module>talk-api</module>
-        <module>order-api</module>
-        <module>system-api</module>
-        <module>statistics-api</module>
-    </modules>
+    <artifactId>statistics-resource</artifactId>
+    <packaging>jar</packaging>
+
+    <name>statistics-resource</name>
+    <url>http://maven.apache.org</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,14 +25,13 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-validation</artifactId>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>statistics-api</artifactId>
+            <version>1.0.1</version>
         </dependency>
         <dependency>
-            <groupId>com.nbsaas.boot</groupId>
-            <artifactId>rest</artifactId>
-            <version>1.0.9-2023</version>
-            <scope>compile</scope>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
 </project>

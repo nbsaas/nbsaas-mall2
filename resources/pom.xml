@@ -19,6 +19,7 @@
         <module>talk-resource</module>
         <module>system-resource</module>
         <module>all-resource</module>
+        <module>statistics-resource</module>
     </modules>
 
     <properties>
