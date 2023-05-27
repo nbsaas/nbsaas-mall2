@@ -96,7 +96,7 @@ public class UserExtResource implements UserExtApi {
          * 描述：user账户表写入
          */
         UserAccountDataRequest userAccount = new UserAccountDataRequest();
-        userAccount.setAccountType(AccountType.phone);
+        userAccount.setAccountType(request.getAccountType());
         userAccount.setUsername(request.getUsername());
         userAccount.setLoginSize(0);
         userAccount.setUser(response.getId());
