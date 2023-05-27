@@ -4,7 +4,6 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.nbsaas.boot.rest.annotations.UpdateData;
 import com.nbsaas.boot.rest.annotations.UpdateOperator;
-import com.nbsaas.boot.rest.annotations.ViewOperator;
 import com.nbsaas.boot.rest.enums.StoreState;
 import com.nbsaas.boot.rest.response.PageResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
@@ -21,7 +20,9 @@ import com.nbsaas.life.user.ext.apis.UserExtApi;
 import com.nbsaas.life.user.ext.domain.request.UserLoginRequest;
 import com.nbsaas.life.user.ext.domain.request.UserRegisterRequest;
 import com.nbsaas.life.user.ext.domain.response.UserInfoExtResponse;
+import com.nbsaas.life.utils.UserUtils;
 import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
@@ -143,17 +144,20 @@ public class UserInfoFrontController {
         return userInfoApi.search(request);
     }
 
-
+    @RequiresUser
     @UpdateData
     @RequestMapping("/update")
-   public ResponseObject
-    <UserInfoResponse> update(@Validated(UpdateOperator.class) UserInfoDataRequest request) {
-         return userInfoApi.update(request);
+    public ResponseObject<UserInfoResponse> update(@Validated(UpdateOperator.class) UserInfoDataRequest request) {
+        request.setId(UserUtils.user().getId());
+        return userInfoApi.update(request);
     }
 
 
-    @RequestMapping("/view")
-    public ResponseObject <UserInfoResponse> view(@Validated(ViewOperator.class) UserInfoDataRequest request) {
-         return userInfoApi.view(request);
+    @RequiresUser
+    @RequestMapping("/current")
+    public ResponseObject<UserInfoResponse> current() {
+        UserInfoDataRequest request = new UserInfoDataRequest();
+        request.setId(UserUtils.user().getId());
+        return userInfoApi.view(request);
     }
 }
