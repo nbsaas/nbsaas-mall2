@@ -13,6 +13,7 @@ import org.apache.shiro.subject.PrincipalCollection;
 public class DataRealm<T> extends AuthorizingRealm {
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         //用户的角色集合
         info.addRole("front");
