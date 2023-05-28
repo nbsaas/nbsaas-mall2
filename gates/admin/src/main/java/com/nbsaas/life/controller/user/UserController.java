@@ -69,7 +69,7 @@ public class UserController {
 
 
     @RequestMapping("/login")
-    public ResponseObject<UserInfoExtResponse> login(UserLoginRequest request,HttpServletRequest servletRequest) {
+    public ResponseObject<UserInfoExtResponse> login(@Validated UserLoginRequest request,HttpServletRequest servletRequest) {
         ResponseObject<UserInfoExtResponse> result =userExtApi.login(request);
         if (result.getCode()!=200){
             UserLoginLogDataRequest loginFailEvent=new UserLoginLogDataRequest();
@@ -133,5 +133,12 @@ public class UserController {
         UserInfoDataRequest request = new UserInfoDataRequest();
         request.setId(UserUtils.user().getId());
         return userInfoApi.view(request);
+    }
+
+    @RequiresUser
+    @RequestMapping("/logout")
+    public ResponseObject<?> logout() {
+        SecurityUtils.getSubject().logout();
+        return ResponseObject.success();
     }
 }

@@ -1,8 +1,15 @@
 package com.nbsaas.life.system.ext.resource;
 
+import com.nbsaas.boot.rest.filter.Filter;
 import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
+import com.nbsaas.life.system.api.apis.RoleApi;
+import com.nbsaas.life.system.api.apis.RoleMenuApi;
+import com.nbsaas.life.system.api.domain.field.RoleMenuField;
+import com.nbsaas.life.system.api.domain.request.RoleMenuDataRequest;
+import com.nbsaas.life.system.api.domain.response.RoleResponse;
 import com.nbsaas.life.system.api.domain.simple.MenuSimple;
+import com.nbsaas.life.system.api.domain.simple.RoleMenuSimple;
 import com.nbsaas.life.system.data.entity.Menu;
 import com.nbsaas.life.system.data.mapper.MenuMapper;
 import com.nbsaas.life.system.data.repository.MenuRepository;
@@ -27,6 +34,12 @@ public class MenuExtResource implements MenuExtApi {
 
     @Resource
     private MenuRepository menuRepository;
+
+    @Resource
+    private RoleMenuApi roleMenuApi;
+
+    @Resource
+    private RoleApi roleApi;
 
 
     @Transactional(readOnly = true)
@@ -57,7 +70,12 @@ public class MenuExtResource implements MenuExtApi {
 
     @Override
     public ListResponse<Long> selectForPermission(Long role) {
-        return null;
+        ListResponse<Long> result = new ListResponse<Long>();
+        List<RoleMenuSimple> roles = roleMenuApi.listData(Filter.eq(RoleMenuField.role, role));
+        if (roles != null) {
+            result.setData(roles.stream().map(RoleMenuSimple::getMenu).collect(Collectors.toList()));
+        }
+        return result;
     }
 
     @Override
@@ -67,7 +85,23 @@ public class MenuExtResource implements MenuExtApi {
 
     @Override
     public ResponseObject<?> updateRoleMenus(UpdateRoleMenuRequest request) {
-        return null;
+        ResponseObject<?> result = new ResponseObject<>();
+        RoleResponse role = roleApi.oneData(Filter.eq("id", request.getRoleId()));
+        if (role == null) {
+            result.setCode(501);
+            result.setMsg("无效校色id");
+            return result;
+        }
+        roleMenuApi.deleteByFilter(Filter.eq(RoleMenuField.role, request.getRoleId()));
+
+        for (Long menu : request.getMenus()) {
+            RoleMenuDataRequest form = new RoleMenuDataRequest();
+            form.setRole(request.getRoleId());
+            form.setMenu(menu);
+            roleMenuApi.createData(form);
+        }
+
+        return result;
     }
 
     private List<MenuExtSimple> makeTree(List<MenuSimple> menuList) {

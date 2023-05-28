@@ -15,6 +15,7 @@ import com.nbsaas.life.system.ext.domain.simple.MenuExtSimple;
 import com.nbsaas.life.utils.UserUtils;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -67,7 +68,7 @@ public class MenuController {
     }
 
     @RequestMapping("/updateRoleMenus")
-    public ResponseObject<?> updateRoleMenus(UpdateRoleMenuRequest request) {
+    public ResponseObject<?> updateRoleMenus(@RequestBody@Validated UpdateRoleMenuRequest request) {
         return menuExtApi.updateRoleMenus(request);
     }
 
