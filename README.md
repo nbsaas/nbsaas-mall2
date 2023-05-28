@@ -26,34 +26,14 @@
 * [scui](https://gitee.com/lolicode/scui)
 * axios
 
-# 老项目
-
-### 技术选型：
-
-* **服务端**
-
-* SSH (Spring、SpringMVC、Hibernate）
-* 安全权限 Shiro
-* 搜索工具 Lucene
-* 缓存 Ehcache
-* 视图模板 freemarker 
-* 其它 Jsoup、gson
-* [disconver](https://gitee.com/quhaodian/disconver)
-
-### quhaodian 工程介绍
-
-* data	工程的controller，数据模块
-* web	视图工程，不放代码，使用freemarker作为视图
-
 
 
 ## 搭建步骤
 
 1. 创建数据库。如使用MySQL，字符集选择为`utf8`或者`utf8mb4`（支持更多特殊字符，推荐）。
-2. 执行数据库脚本。数据库脚本在`database`目录下。
-3. 在idea中导入maven项目。点击idea菜单`File` - `open`，选择 `项目所在磁盘位置`。创建好maven项目后，会开始从maven服务器下载第三方jar包（如spring等），需要一定时间，请耐心等待。
-4. 创建mysql数据库，导入`haodian.sql`
-5. 修改数据库连接。打开`/web/src/main/resources/jdbc.propertis`文件，根据实际情况修改`jdbc.url`、`jdbc.username`、`jdbc.password`的值。
-6. 运行程序。在idea中，点击idea菜单`Run` - `Run`，选择`Run` - `Edit Configurations...`，选择`+`，选择`Maven`，选择文件位置,在`comand line`填入`jetty:run`或`tomcat7:run`，然后点击`Run`。
-7. 访问系统。前台地址：[http://localhost:8080/web](http://localhost:8080/)，手机站地址：[http://127.0.0.1:8080/](http://127.0.0.1:8080/)；后台地址：[http://localhost:8080/web/login.htm](http://localhost:8080/web/login.htm)，用户名：admin，密码：123456。
+2. 在idea中导入maven项目。点击idea菜单`File` - `open`，选择 `项目所在磁盘位置`。创建好maven项目后，会开始从maven服务器下载第三方jar包（如spring等），需要一定时间，请耐心等待。
+3. 创建mysql数据库，导入`/documents/nbsaas_life.sql`
+4. 修改数据库连接。打开`/gates/admin/main/resources/application.yml`文件，根据实际情况修改`jdbc.url`、`jdbc.username`、`jdbc.password`的值。
+5. 运行程序AdminApplication(后台)，FrontApplication(前台)
+6. 访问系统。前台接口地址：[http://localhost:8081](http://localhost:8081/)，后台接口地址：[http://127.0.0.1:8082/](http://127.0.0.1:8082/)；用户名：ada，密码：123456。
 
