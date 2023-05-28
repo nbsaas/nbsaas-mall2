@@ -20,9 +20,11 @@
 * element-plus
 
 
-#### 后台管理端
+#### [后台管理端](https://gitee.com/cng1985/nbsaas-life-admin)
 * vue3
 * element-plus
+* [scui](https://gitee.com/lolicode/scui)
+* axios
 
 # 老项目
 
