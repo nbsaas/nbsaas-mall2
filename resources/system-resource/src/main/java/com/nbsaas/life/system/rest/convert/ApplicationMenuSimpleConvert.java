@@ -24,7 +24,7 @@ public class ApplicationMenuSimpleConvert implements Converter<ApplicationMenuSi
                     result.setRouter(source.getRouter());
                     result.setRgt(source.getRgt());
                     if(source.getApp()!=null){
-                    result.setAppName(source.getApp().getName());
+                        result.setAppName(source.getApp().getName());
                     }
                     result.setSortNum(source.getSortNum());
                     result.setCreator(source.getCreator());
@@ -41,7 +41,7 @@ public class ApplicationMenuSimpleConvert implements Converter<ApplicationMenuSi
                     result.setIcon(source.getIcon());
                     result.setNum(source.getNum());
                     if(source.getApp()!=null){
-                    result.setApp(source.getApp().getId());
+                        result.setApp(source.getApp().getId());
                     }
                     result.setLft(source.getLft());
                     result.setName(source.getName());

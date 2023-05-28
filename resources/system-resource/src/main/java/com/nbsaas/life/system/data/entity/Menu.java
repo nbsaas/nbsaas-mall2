@@ -1,6 +1,7 @@
 package com.nbsaas.life.system.data.entity;
 
 import com.nbsaas.boot.code.annotation.CatalogClass;
+import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
@@ -42,8 +43,11 @@ public class Menu extends CatalogEntity {
     /**
      * 父分类
      */
+
+    @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private Menu parent;
+
     /**
      * url地址
      */

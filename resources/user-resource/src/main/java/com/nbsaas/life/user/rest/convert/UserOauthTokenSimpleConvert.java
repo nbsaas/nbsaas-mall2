@@ -20,7 +20,7 @@ public class UserOauthTokenSimpleConvert implements Converter<UserOauthTokenSimp
                     result.setAccess_token(source.getAccess_token());
                     result.setExpiresTime(source.getExpiresTime());
                     if(source.getUser()!=null){
-                    result.setUser(source.getUser().getId());
+                        result.setUser(source.getUser().getId());
                     }
                     result.setLastDate(source.getLastDate());
                     result.setRefresh_token(source.getRefresh_token());

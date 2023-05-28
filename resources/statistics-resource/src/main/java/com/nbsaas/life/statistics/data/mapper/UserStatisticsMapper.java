@@ -24,4 +24,7 @@ public interface UserStatisticsMapper {
 
     List<LabelNum> lastYear();
 
+
+
+
 }

@@ -34,6 +34,9 @@ public class MenuSimpleConvert implements Converter<MenuSimple, Menu> {
                     result.setPath(source.getPath());
                     result.setPermission(source.getPermission());
                     result.setLastDate(source.getLastDate());
+                    if(source.getParent()!=null){
+                        result.setParent(source.getParent().getId());
+                    }
                     result.setCatalog(source.getCatalog());
                     result.setIcon(source.getIcon());
                     result.setLft(source.getLft());

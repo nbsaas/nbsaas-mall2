@@ -30,5 +30,9 @@
             <artifactId>system-api</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+        </dependency>
     </dependencies>
 </project>

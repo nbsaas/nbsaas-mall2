@@ -44,6 +44,8 @@ private static final long serialVersionUID = 1L;
             //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
 
+        private Long parent;
+
         private Integer catalog;
 
         private String icon;

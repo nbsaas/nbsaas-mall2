@@ -23,13 +23,7 @@ private static final long serialVersionUID = 1L;
 
         private Long user;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
-
         private Long id;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
 
         private Integer loginSize;
 

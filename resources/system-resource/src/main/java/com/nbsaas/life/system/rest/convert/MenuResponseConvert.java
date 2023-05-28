@@ -16,6 +16,9 @@ public class MenuResponseConvert  implements Converter<MenuResponse,Menu> {
     public MenuResponse convert(Menu source) {
         MenuResponse  result = new  MenuResponse();
         BeanDataUtils.copyProperties(source, result);
+                    if(source.getParent()!=null){
+                    result.setParent(source.getParent().getId());
+                    }
         return result;
     }
 

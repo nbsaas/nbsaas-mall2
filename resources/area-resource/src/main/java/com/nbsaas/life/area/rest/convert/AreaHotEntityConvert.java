@@ -18,9 +18,9 @@ public AreaHot convert(AreaHotDataRequest source) {
 AreaHot result = new AreaHot();
 BeanDataUtils.copyProperties(source, result);
             if(source.getArea()!=null){
-            Area area =new Area();
-            area.setId(source.getArea());
-            result.setArea(area);
+                Area area =new Area();
+                area.setId(source.getArea());
+                result.setArea(area);
             }
 return result;
 }

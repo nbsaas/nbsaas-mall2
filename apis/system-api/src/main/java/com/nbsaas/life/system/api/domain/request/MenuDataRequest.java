@@ -30,6 +30,7 @@ private static final long serialVersionUID = 1L;
         private String path;
         private String permission;
         private Date lastDate;
+        private Long parent;
         private Integer catalog;
         private String icon;
         private Integer lft;

@@ -20,12 +20,12 @@ public class UserLoginLogSimpleConvert implements Converter<UserLoginLogSimple, 
                     result.setStoreState(source.getStoreState());
                     result.setPassword(source.getPassword());
                     if(source.getUser()!=null){
-                    result.setUser(source.getUser().getId());
+                        result.setUser(source.getUser().getId());
                     }
                     result.setIp(source.getIp());
                     result.setLastDate(source.getLastDate());
                     if(source.getUser()!=null){
-                    result.setUserName(source.getUser().getName());
+                        result.setUserName(source.getUser().getName());
                     }
                     result.setId(source.getId());
                     result.setClient(source.getClient());

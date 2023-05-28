@@ -18,14 +18,14 @@ public class AreaHotSimpleConvert implements Converter<AreaHotSimple, AreaHot> {
         AreaHotSimple result = new AreaHotSimple();
 
                     if(source.getArea()!=null){
-                    result.setAreaName(source.getArea().getName());
+                        result.setAreaName(source.getArea().getName());
                     }
                     result.setLastDate(source.getLastDate());
                     result.setSortNum(source.getSortNum());
                     result.setId(source.getId());
                     result.setAddDate(source.getAddDate());
                     if(source.getArea()!=null){
-                    result.setArea(source.getArea().getId());
+                        result.setArea(source.getArea().getId());
                     }
 
 

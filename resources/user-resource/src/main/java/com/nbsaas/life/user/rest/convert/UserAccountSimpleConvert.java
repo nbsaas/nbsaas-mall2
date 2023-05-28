@@ -20,7 +20,7 @@ public class UserAccountSimpleConvert implements Converter<UserAccountSimple, Us
                     result.setUsername(source.getUsername());
                     result.setAccountType(source.getAccountType());
                     if(source.getUser()!=null){
-                    result.setUser(source.getUser().getId());
+                        result.setUser(source.getUser().getId());
                     }
                     result.setId(source.getId());
                     result.setLoginSize(source.getLoginSize());

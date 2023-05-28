@@ -18,9 +18,9 @@ public UserPassword convert(UserPasswordDataRequest source) {
 UserPassword result = new UserPassword();
 BeanDataUtils.copyProperties(source, result);
             if(source.getUser()!=null){
-            UserInfo user =new UserInfo();
-            user.setId(source.getUser());
-            result.setUser(user);
+                UserInfo user =new UserInfo();
+                user.setId(source.getUser());
+                result.setUser(user);
             }
 return result;
 }

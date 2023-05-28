@@ -21,8 +21,6 @@ private static final long serialVersionUID = 1L;
         private String username;
         private AccountType accountType;
         private Long user;
-        private Date lastDate;
         private Long id;
-        private Date addDate;
         private Integer loginSize;
 }

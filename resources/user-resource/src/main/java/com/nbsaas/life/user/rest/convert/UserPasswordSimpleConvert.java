@@ -19,7 +19,7 @@ public class UserPasswordSimpleConvert implements Converter<UserPasswordSimple, 
 
                     result.setPassword(source.getPassword());
                     if(source.getUser()!=null){
-                    result.setUser(source.getUser().getId());
+                        result.setUser(source.getUser().getId());
                     }
                     result.setLastDate(source.getLastDate());
                     result.setSecurityType(source.getSecurityType());

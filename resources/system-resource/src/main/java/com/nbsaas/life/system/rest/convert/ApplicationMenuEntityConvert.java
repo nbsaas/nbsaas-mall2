@@ -18,9 +18,9 @@ public ApplicationMenu convert(ApplicationMenuDataRequest source) {
 ApplicationMenu result = new ApplicationMenu();
 BeanDataUtils.copyProperties(source, result);
             if(source.getApp()!=null){
-            Application app =new Application();
-            app.setId(source.getApp());
-            result.setApp(app);
+                Application app =new Application();
+                app.setId(source.getApp());
+                result.setApp(app);
             }
 return result;
 }

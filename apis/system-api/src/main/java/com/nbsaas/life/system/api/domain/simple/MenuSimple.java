@@ -36,6 +36,7 @@ public class MenuSimple implements Serializable {
             private String permission;
                 //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
             private Date lastDate;
+            private Long parent;
             private Integer catalog;
             private String icon;
             private Integer lft;
