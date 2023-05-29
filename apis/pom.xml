@@ -19,6 +19,7 @@
         <module>order-api</module>
         <module>system-api</module>
         <module>statistics-api</module>
+        <module>ad-api</module>
     </modules>
 
     <properties>

@@ -52,6 +52,11 @@
         </dependency>
         <dependency>
             <groupId>com.nbsaas.life</groupId>
+            <artifactId>ad-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
             <artifactId>statistics-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
