@@ -1,32 +1,61 @@
 package com.nbsaas.life.talk.api.domain.simple;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import java.math.BigDecimal;
-import lombok.Data;
 
 /**
 * 列表对象
-*/
+ */
 @Data
 public class TalkSimple implements Serializable {
 
-    /**
-    * 序列化参数
-    */
-    private static final long serialVersionUID = 1L;
+        /**
+         * 序列化参数
+         */
+        private static final long serialVersionUID = 1L;
 
 
-            private Integer replies;
-            private String lastMessage;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date lastDate;
-            private Integer subscribe;
-            private String message;
-            private Long id;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date addDate;
-            private String topic;
+        /**
+         *
+         **/
+        private Integer replies;
+
+        /**
+         * 最新修改时间
+         **/
+        private Date lastDate;
+
+        /**
+         *
+         **/
+        private String topic;
+
+        /**
+         * 主键id
+         **/
+        private Long id;
+
+        /**
+         *
+         **/
+        private String message;
+
+        /**
+         *
+         **/
+        private Integer subscribe;
+
+        /**
+         *
+         **/
+        private String lastMessage;
+
+        /**
+         * 添加时间
+         **/
+        private Date addDate;
 
 
 }

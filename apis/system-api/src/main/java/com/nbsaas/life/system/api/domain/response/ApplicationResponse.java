@@ -1,8 +1,10 @@
 package com.nbsaas.life.system.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -10,25 +12,25 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class ApplicationResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+public class ApplicationResponse implements Serializable {
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date lastDate;
 
-        private Long id;
+    private String appKey;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+    private String name;
 
-        private String note;
+    private Long id;
 
-        private String name;
+    private String note;
 
-        private String appKey;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date addDate;
 
 
 }

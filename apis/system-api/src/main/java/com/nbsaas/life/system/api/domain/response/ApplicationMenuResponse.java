@@ -1,8 +1,10 @@
 package com.nbsaas.life.system.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -10,53 +12,53 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class ApplicationMenuResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+public class ApplicationMenuResponse implements Serializable {
+        /**
+         * 序列化参数
+         */
+        private static final long serialVersionUID = 1L;
 
-        private String router;
-
-        private Integer rgt;
-
-        private String appName;
-
-        private Integer sortNum;
-
-        private Long creator;
-
-        private Long id;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
-
-        private Integer depth;
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date lastDate;
 
         private String code;
 
-        private Integer menuType;
+        private Integer lft;
 
-        private String ids;
+        private Integer depth;
 
-        private String path;
-
-        private String permission;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+        private String router;
 
         private Integer catalog;
 
+        private Long num;
+
         private String icon;
 
-        private Long num;
+        private String appName;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date addDate;
+
+        private Integer sortNum;
 
         private Long app;
 
-        private Integer lft;
+        private Long id;
+
+        private Integer menuType;
+
+        private Integer rgt;
+
+        private Long creator;
 
         private String name;
+
+        private String permission;
+
+        private String path;
+
+        private String ids;
 
 
 }

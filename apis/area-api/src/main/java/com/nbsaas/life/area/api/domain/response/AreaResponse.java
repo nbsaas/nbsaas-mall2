@@ -1,8 +1,10 @@
 package com.nbsaas.life.area.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -16,31 +18,31 @@ public class AreaResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        private Integer rgt;
-
-        private String ids;
-
-        private Float lat;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
 
-        private Float lng;
+        private Float lat;
 
         private Integer sortNum;
 
         private Long id;
 
+        private String code;
+
         private Integer lft;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
-
-        private String name;
+        private Integer rgt;
 
         private Integer depth;
 
-        private String code;
+        private String name;
+
+        private Float lng;
+
+        private String ids;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date addDate;
 
 
 }

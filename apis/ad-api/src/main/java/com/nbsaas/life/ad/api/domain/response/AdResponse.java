@@ -1,8 +1,10 @@
 package com.nbsaas.life.ad.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -12,41 +14,41 @@ import java.util.Date;
 @ToString(callSuper = true)
 public class AdResponse  implements Serializable {
 /**
-* 序列化参数
-*/
+ * 序列化参数
+ */
 private static final long serialVersionUID = 1L;
 
-        private String url;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date lastDate;
 
-        private String title;
+    private String path;
 
-        private Integer sortNum;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date beginDate;
 
-        private Long id;
+    private Long bussId;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+    private String note;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date endDate;
+    private Integer catalog;
 
-        private String adPositionName;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date addDate;
 
-        private Long bussId;
+    private Integer sortNum;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date beginDate;
+    private Long id;
 
-        private String path;
+    private Long adPosition;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+    private String adPositionName;
 
-        private Integer catalog;
+    private String url;
 
-        private String note;
+    private String title;
 
-        private Long adPosition;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date endDate;
 
 
 }

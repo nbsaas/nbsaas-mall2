@@ -1,9 +1,8 @@
 package com.nbsaas.life.shop.rest.convert;
 
-import com.nbsaas.life.shop.data.entity.ShopCategory;
-import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
-
 import com.nbsaas.boot.rest.api.Converter;
+import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
+import com.nbsaas.life.shop.data.entity.ShopCategory;
 /**
 * 列表对象转换器
 */
@@ -17,25 +16,25 @@ public class ShopCategorySimpleConvert implements Converter<ShopCategorySimple, 
     public ShopCategorySimple convert(ShopCategory source) {
         ShopCategorySimple result = new ShopCategorySimple();
 
-                    result.setPy(source.getPy());
-                    result.setRgt(source.getRgt());
-                    result.setSortNum(source.getSortNum());
-                    result.setCname(source.getCname());
-                    result.setId(source.getId());
-                    result.setAddDate(source.getAddDate());
-                    result.setDepth(source.getDepth());
-                    result.setCode(source.getCode());
-                    result.setNums(source.getNums());
-                    result.setPinyin(source.getPinyin());
-                    result.setIds(source.getIds());
-                    result.setPath(source.getPath());
-                    result.setLastDate(source.getLastDate());
-                    result.setIcon(source.getIcon());
-                    result.setLft(source.getLft());
-                    result.setName(source.getName());
+        result.setLastDate(source.getLastDate());
+        result.setNums(source.getNums());
+        result.setIcon(source.getIcon());
+        result.setPinyin(source.getPinyin());
+        result.setPath(source.getPath());
+        result.setCode(source.getCode());
+        result.setLft(source.getLft());
+        result.setDepth(source.getDepth());
+        result.setAddDate(source.getAddDate());
+        result.setPy(source.getPy());
+        result.setSortNum(source.getSortNum());
+        result.setId(source.getId());
+        result.setRgt(source.getRgt());
+        result.setName(source.getName());
+        result.setIds(source.getIds());
+        result.setCname(source.getCname());
 
 
-    return result;
-  }
+        return result;
+    }
 
 }

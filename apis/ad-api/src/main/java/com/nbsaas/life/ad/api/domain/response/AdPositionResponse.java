@@ -1,8 +1,10 @@
 package com.nbsaas.life.ad.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -16,27 +18,27 @@ public class AdPositionResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        private Integer height;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
-
-        private Integer width;
 
         private Integer sortNum;
 
-        private Long id;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        private String name;
 
         private String key;
 
+        private Long id;
+
+        private Integer height;
+
         private String note;
 
-        private String name;
+        private Integer width;
 
         private String template;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date addDate;
 
 
 }

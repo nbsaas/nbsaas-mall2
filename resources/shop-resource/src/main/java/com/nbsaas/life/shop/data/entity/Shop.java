@@ -1,6 +1,7 @@
 package com.nbsaas.life.shop.data.entity;
 
 
+import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.code.annotation.FormAnnotation;
 import com.nbsaas.boot.code.annotation.FormField;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
@@ -131,11 +132,25 @@ public class Shop extends AbstractEntity {
     @JoinTable(name = "shop_tag_links")
     private Set<ShopTag> tags = new HashSet<>();
 
+    @FieldConvert
     @Comment("用户")
     @ManyToOne(fetch = FetchType.LAZY)
     private UserInfo user;
 
-    @Comment("区域")
+    @FieldConvert
+    @Comment("省份id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Area province;
+
+
+    @FieldConvert
+    @Comment("城市id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Area city;
+
+
+    @FieldConvert
+    @Comment("区县id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Area area;
 

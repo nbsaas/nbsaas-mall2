@@ -1,33 +1,66 @@
 package com.nbsaas.life.user.api.domain.simple;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import java.math.BigDecimal;
-import lombok.Data;
 
 /**
 * 列表对象
-*/
+ */
 @Data
 public class UserOauthConfigSimple implements Serializable {
 
-    /**
-    * 序列化参数
-    */
-    private static final long serialVersionUID = 1L;
+        /**
+         * 序列化参数
+         */
+        private static final long serialVersionUID = 1L;
 
 
-            private String model;
-            private String appSecret;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date lastDate;
-            private Long id;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date addDate;
-            private Integer state;
-            private String name;
-            private String appKey;
-            private String className;
+        /**
+         * 最新修改时间
+         **/
+        private Date lastDate;
+
+        /**
+         * 程序密钥
+         **/
+        private String appSecret;
+
+        /**
+         * java实现类
+         **/
+        private String className;
+
+        /**
+         * 程序key
+         **/
+        private String appKey;
+
+        /**
+         * 主键id
+         **/
+        private Long id;
+
+        /**
+         * 状态
+         **/
+        private Integer state;
+
+        /**
+         * 第三方标识
+         **/
+        private String model;
+
+        /**
+         * 第三方登陆名称
+         **/
+        private String name;
+
+        /**
+         * 添加时间
+         **/
+        private Date addDate;
 
 
 }

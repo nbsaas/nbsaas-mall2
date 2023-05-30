@@ -1,34 +1,61 @@
 package com.nbsaas.life.system.api.domain.simple;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import java.math.BigDecimal;
-import lombok.Data;
 
 /**
 * 列表对象
-*/
+ */
 @Data
 public class SequenceSimple implements Serializable {
 
-    /**
-    * 序列化参数
-    */
-    private static final long serialVersionUID = 1L;
+        /**
+         * 序列化参数
+         */
+        private static final long serialVersionUID = 1L;
 
 
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date createDate;
-            private Long currentNum;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date lastDate;
-            private Long id;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date addDate;
-            private String name;
-            private Integer increment;
-                //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-            private Date updateDate;
+        /**
+         *
+         **/
+        private Integer increment;
+
+        /**
+         *
+         **/
+        private Date createDate;
+
+        /**
+         *
+         **/
+        private Date updateDate;
+
+        /**
+         * 最新修改时间
+         **/
+        private Date lastDate;
+
+        /**
+         *
+         **/
+        private String name;
+
+        /**
+         * 主键id
+         **/
+        private Long id;
+
+        /**
+         *
+         **/
+        private Long currentNum;
+
+        /**
+         * 添加时间
+         **/
+        private Date addDate;
 
 
 }

@@ -1,8 +1,10 @@
 package com.nbsaas.life.user.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -16,27 +18,27 @@ public class UserOauthTokenResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        private String access_token;
+        private String openId;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date lastDate;
 
         private Long expiresTime;
 
-        private Long user;
+        private Long id;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+        private Long user;
 
         private String refresh_token;
 
-        private String openId;
-
-        private Long id;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
-
         private String tokenType;
 
+        private String access_token;
+
         private Integer loginSize;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date addDate;
 
 
 }

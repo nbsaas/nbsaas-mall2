@@ -1,8 +1,10 @@
 package com.nbsaas.life.system.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -16,43 +18,43 @@ public class MenuResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        private String router;
-
-        private Integer rgt;
-
-        private Integer sortNum;
-
-        private Long id;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
-
-        private Integer depth;
-
-        private String code;
-
-        private Long nums;
-
-        private Integer menuType;
-
-        private String ids;
-
-        private String path;
-
-        private String permission;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
-
-        private Long parent;
-
-        private Integer catalog;
 
         private String icon;
 
+        private Long nums;
+
+        private String path;
+
+        private String code;
+
         private Integer lft;
 
+        private Integer depth;
+
+        private String permission;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date addDate;
+
+        private Integer sortNum;
+
+        private Long parent;
+
+        private String router;
+
+        private Long id;
+
+        private Integer catalog;
+
+        private Integer menuType;
+
+        private Integer rgt;
+
         private String name;
+
+        private String ids;
 
 
 }

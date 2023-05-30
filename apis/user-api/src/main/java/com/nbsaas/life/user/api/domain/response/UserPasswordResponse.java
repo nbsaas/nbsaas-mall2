@@ -1,10 +1,12 @@
 package com.nbsaas.life.user.api.domain.response;
 
-import lombok.*;
+import com.nbsaas.life.user.api.domain.enums.SecurityType;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
-            import com.nbsaas.life.user.api.domain.enums.SecurityType;
 /**
 * 响应对象
 */
@@ -17,23 +19,23 @@ public class UserPasswordResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        private String password;
+    private SecurityType securityType;
 
-        private Long user;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date lastDate;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+    private String salt;
 
-        private SecurityType securityType;
+    private Long id;
 
-        private String salt;
+    private Long user;
 
-        private Long id;
+    private String password;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+    private Integer checkSize;
 
-        private Integer checkSize;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date addDate;
 
 
 }

@@ -1,8 +1,10 @@
 package com.nbsaas.life.shop.api.domain.response;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -11,44 +13,44 @@ import java.util.Date;
 @Setter
 @ToString(callSuper = true)
 public class ShopCategoryResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+        /**
+         * 序列化参数
+         */
+        private static final long serialVersionUID = 1L;
 
-        private String py;
-
-        private Integer rgt;
-
-        private Integer sortNum;
-
-        private String cname;
-
-        private Long id;
-
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
-
-        private Integer depth;
-
-        private String code;
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date lastDate;
 
         private Long nums;
 
-        private String pinyin;
+        private String icon;
 
-        private String ids;
+        private String pinyin;
 
         private String path;
 
-            //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
-
-        private String icon;
+        private String code;
 
         private Integer lft;
 
+        private Integer depth;
+
+        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+        private Date addDate;
+
+        private String py;
+
+        private Integer sortNum;
+
+        private Long id;
+
+        private Integer rgt;
+
         private String name;
+
+        private String ids;
+
+        private String cname;
 
 
 }
