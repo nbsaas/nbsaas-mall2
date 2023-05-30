@@ -5,10 +5,7 @@
  */
 package com.nbsaas.life.ad.data.entity;
 
-import com.nbsaas.boot.code.annotation.ComposeView;
-import com.nbsaas.boot.code.annotation.FormAnnotation;
-import com.nbsaas.boot.code.annotation.FormField;
-import com.nbsaas.boot.code.annotation.InputType;
+import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.SortEntity;
 import lombok.Data;
 
@@ -34,6 +31,7 @@ public class AdPosition extends SortEntity {
     @Column(length = 30, name = "data_key")
     private String key;
 
+    @SearchItem(label = "广告位",name = "name")
     @FormField(title = "广告位", sortNum = "10", grid = true, required = true, col = 22)
     @Column(nullable = false)
     private String name;

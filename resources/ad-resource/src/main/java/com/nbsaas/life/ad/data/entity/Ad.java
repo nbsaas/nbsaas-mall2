@@ -20,6 +20,7 @@ public class Ad extends SortEntity {
     /**
      * 标题
      */
+    @SearchItem(label = "广告名称",name = "title")
     @FormField(title = "广告名称", sortNum = "10", grid = true, col = 22, required = true)
     private String title;
 
@@ -48,13 +49,13 @@ public class Ad extends SortEntity {
     /**
      * 起始日期
      */
-    @FormField(title = "广告开始时间", sortNum = "20", grid = true, col = 22, type = InputType.el_date_time_picker)
+    @FormField(title = "广告开始时间", sortNum = "20",  col = 22, type = InputType.el_date_time_picker)
     private Date beginDate;
 
     /**
      * 结束日期
      */
-    @FormField(title = "广告结束时间", sortNum = "30", grid = true, col = 22, type = InputType.el_date_time_picker)
+    @FormField(title = "广告结束时间", sortNum = "30", grid = true, col = 22, type = InputType.el_date_time_picker,width = "160")
     private Date endDate;
 
     /**
@@ -70,7 +71,7 @@ public class Ad extends SortEntity {
     private Integer catalog;
 
 
-    @FormField(title = "内容", sortNum = "60", grid = true, col = 22, type = InputType.textarea)
+    @FormField(title = "内容", sortNum = "60", grid = true, col = 22, type = InputType.textarea,width = "10000")
     private String note;
 
     private Long bussId;
