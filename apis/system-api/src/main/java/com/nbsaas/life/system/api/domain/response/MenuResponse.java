@@ -18,7 +18,7 @@ public class MenuResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
 
         private String icon;
@@ -35,7 +35,7 @@ private static final long serialVersionUID = 1L;
 
         private String permission;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date addDate;
 
         private Integer sortNum;

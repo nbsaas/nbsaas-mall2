@@ -18,7 +18,7 @@ public UserLoginLog convert(UserLoginLogDataRequest source) {
 UserLoginLog result = new UserLoginLog();
 BeanDataUtils.copyProperties(source, result);
             if(source.getUser()!=null){
-                UserInfo user =new UserInfo();
+                UserInfo user = new UserInfo();
                 user.setId(source.getUser());
                 result.setUser(user);
             }

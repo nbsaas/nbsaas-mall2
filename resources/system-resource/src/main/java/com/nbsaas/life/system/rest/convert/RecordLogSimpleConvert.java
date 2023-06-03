@@ -3,13 +3,13 @@ package com.nbsaas.life.system.rest.convert;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.life.system.api.domain.simple.RecordLogSimple;
 import com.nbsaas.life.system.data.entity.RecordLog;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
-public class RecordLogSimpleConvert implements Converter<RecordLogSimple, RecordLog> {
-
-
+public class RecordLogSimpleConvert implements Converter
+        <RecordLogSimple, RecordLog> {
 
 
     @Override

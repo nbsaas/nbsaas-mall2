@@ -7,18 +7,19 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 import com.nbsaas.boot.rest.api.Converter;
 
 /**
-* 实体对象转化成响应对象
-*/
+ * 实体对象转化成响应对象
+ */
 
-public class UserAccountResponseConvert  implements Converter<UserAccountResponse,UserAccount> {
+public class UserAccountResponseConvert implements Converter
+        <UserAccountResponse, UserAccount> {
 
     @Override
     public UserAccountResponse convert(UserAccount source) {
-        UserAccountResponse  result = new  UserAccountResponse();
+        UserAccountResponse result = new UserAccountResponse();
         BeanDataUtils.copyProperties(source, result);
-                    if(source.getUser()!=null){
-                    result.setUser(source.getUser().getId());
-                    }
+        if (source.getUser() != null) {
+            result.setUser(source.getUser().getId());
+        }
         return result;
     }
 

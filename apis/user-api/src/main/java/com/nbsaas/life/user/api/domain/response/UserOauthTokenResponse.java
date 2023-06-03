@@ -20,7 +20,7 @@ private static final long serialVersionUID = 1L;
 
         private String openId;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
 
         private Long expiresTime;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 1L;
 
         private Integer loginSize;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date addDate;
 
 

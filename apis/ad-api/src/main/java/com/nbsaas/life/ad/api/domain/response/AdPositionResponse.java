@@ -18,7 +18,7 @@ public class AdPositionResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
 
         private Integer sortNum;
@@ -37,7 +37,7 @@ private static final long serialVersionUID = 1L;
 
         private String template;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date addDate;
 
 

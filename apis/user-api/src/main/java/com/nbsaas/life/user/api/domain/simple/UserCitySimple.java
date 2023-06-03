@@ -1,9 +1,10 @@
 package com.nbsaas.life.user.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+
+import lombok.Data;
 
 /**
 * 列表对象
@@ -11,41 +12,41 @@ import java.util.Date;
 @Data
 public class UserCitySimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         *
-         **/
-        private Integer state;
+    /**
+     *
+     **/
+    private Integer state;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         * 所在地址
-         **/
-        private String address;
+    /**
+     * 所在地址
+     **/
+    private String address;
 
-        /**
-         * 地点的名称
-         **/
-        private String name;
+    /**
+     * 地点的名称
+     **/
+    private String name;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

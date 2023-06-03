@@ -1,15 +1,16 @@
 package com.nbsaas.life.system.rest.convert;
 
-import com.nbsaas.boot.rest.api.Converter;
-import com.nbsaas.life.system.api.domain.simple.RoleSimple;
 import com.nbsaas.life.system.data.entity.Role;
+import com.nbsaas.life.system.api.domain.simple.RoleSimple;
+
+import com.nbsaas.boot.rest.api.Converter;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
-public class RoleSimpleConvert implements Converter<RoleSimple, Role> {
-
-
+public class RoleSimpleConvert implements Converter
+        <RoleSimple, Role> {
 
 
     @Override
@@ -23,7 +24,7 @@ public class RoleSimpleConvert implements Converter<RoleSimple, Role> {
         result.setAddDate(source.getAddDate());
 
 
-    return result;
-  }
+        return result;
+    }
 
 }

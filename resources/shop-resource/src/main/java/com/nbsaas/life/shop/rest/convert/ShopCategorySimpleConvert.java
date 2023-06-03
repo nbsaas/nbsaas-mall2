@@ -1,15 +1,16 @@
 package com.nbsaas.life.shop.rest.convert;
 
-import com.nbsaas.boot.rest.api.Converter;
-import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
 import com.nbsaas.life.shop.data.entity.ShopCategory;
+import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
+
+import com.nbsaas.boot.rest.api.Converter;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
-public class ShopCategorySimpleConvert implements Converter<ShopCategorySimple, ShopCategory> {
-
-
+public class ShopCategorySimpleConvert implements Converter
+        <ShopCategorySimple, ShopCategory> {
 
 
     @Override

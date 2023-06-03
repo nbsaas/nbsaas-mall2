@@ -6,15 +6,17 @@ import com.nbsaas.life.system.data.entity.Menu;
 import lombok.Data;
 
 import java.util.stream.Collectors;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
 @Data
-public class MenuSimpleConvert implements Converter<MenuSimple, Menu> {
+public class MenuSimpleConvert implements Converter
+        <MenuSimple, Menu> {
 
 
-        private int fetch;
+    private int fetch;
 
 
     @Override
@@ -50,7 +52,7 @@ public class MenuSimpleConvert implements Converter<MenuSimple, Menu> {
             }
         }
 
-    return result;
-  }
+        return result;
+    }
 
 }

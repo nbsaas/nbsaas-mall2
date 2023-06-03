@@ -1,10 +1,9 @@
 package com.nbsaas.life.talk.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -12,11 +11,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class TalkResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+public class TalkResponse implements Serializable {
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
     private Integer replies;
 

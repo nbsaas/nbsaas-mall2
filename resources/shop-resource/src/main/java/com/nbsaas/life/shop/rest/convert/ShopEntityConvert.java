@@ -1,11 +1,15 @@
 package com.nbsaas.life.shop.rest.convert;
 
+import com.nbsaas.life.shop.data.entity.Shop;
+import com.nbsaas.life.shop.api.domain.request.ShopDataRequest;
+
+import org.springframework.beans.BeanUtils;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.boot.utils.BeanDataUtils;
 import com.nbsaas.life.area.data.entity.Area;
-import com.nbsaas.life.shop.api.domain.request.ShopDataRequest;
-import com.nbsaas.life.shop.data.entity.Shop;
+import com.nbsaas.life.area.data.entity.Area;
 import com.nbsaas.life.user.data.entity.UserInfo;
+import com.nbsaas.life.area.data.entity.Area;
 
 /**
 * 请求对象转换成实体对象

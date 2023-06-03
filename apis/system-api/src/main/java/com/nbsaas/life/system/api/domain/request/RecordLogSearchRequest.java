@@ -11,8 +11,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
-* 搜索bean
-*/
+ * 搜索bean
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
@@ -24,36 +24,43 @@ public class RecordLogSearchRequest extends PageRequest implements Serializable 
      */
     private static final long serialVersionUID = 1L;
 
+
     /**
      *
      **/
     @Search(name = "createName", operator = Operator.like)
     private String createName;
+
     /**
      * 主键id
      **/
     @Search(name = "id", operator = Operator.eq)
     private Long id;
+
     /**
      *
      **/
     @Search(name = "app", operator = Operator.like)
     private String app;
+
     /**
      *
      **/
     @Search(name = "createUser", operator = Operator.eq)
     private Long createUser;
+
     /**
      *
      **/
     @Search(name = "data", operator = Operator.like)
     private String data;
+
     /**
      *
      **/
     @Search(name = "title", operator = Operator.like)
     private String title;
+
     /**
      *
      **/

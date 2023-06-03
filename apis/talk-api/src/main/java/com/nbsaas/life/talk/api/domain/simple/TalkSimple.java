@@ -1,9 +1,10 @@
 package com.nbsaas.life.talk.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+
+import lombok.Data;
 
 /**
 * 列表对象
@@ -11,51 +12,51 @@ import java.util.Date;
 @Data
 public class TalkSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         *
-         **/
-        private Integer replies;
+    /**
+     *
+     **/
+    private Integer replies;
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         *
-         **/
-        private String topic;
+    /**
+     *
+     **/
+    private String topic;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         *
-         **/
-        private String message;
+    /**
+     *
+     **/
+    private String message;
 
-        /**
-         *
-         **/
-        private Integer subscribe;
+    /**
+     *
+     **/
+    private Integer subscribe;
 
-        /**
-         *
-         **/
-        private String lastMessage;
+    /**
+     *
+     **/
+    private String lastMessage;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

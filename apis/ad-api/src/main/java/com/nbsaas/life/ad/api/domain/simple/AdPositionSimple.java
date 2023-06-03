@@ -11,61 +11,61 @@ import java.util.Date;
 @Data
 public class AdPositionSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         * 排序号
-         **/
-        private Integer sortNum;
+    /**
+     * 排序号
+     **/
+    private Integer sortNum;
 
-        /**
-         *
-         **/
-        private String name;
+    /**
+     *
+     **/
+    private String name;
 
-        /**
-         *
-         **/
-        private String key;
+    /**
+     *
+     **/
+    private String key;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         *
-         **/
-        private Integer height;
+    /**
+     *
+     **/
+    private Integer height;
 
-        /**
-         *
-         **/
-        private String note;
+    /**
+     *
+     **/
+    private String note;
 
-        /**
-         *
-         **/
-        private Integer width;
+    /**
+     *
+     **/
+    private Integer width;
 
-        /**
-         *
-         **/
-        private String template;
+    /**
+     *
+     **/
+    private String template;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

@@ -6,26 +6,27 @@ import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
+
 /**
-* 响应对象
-*/
+ * 响应对象
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)
 public class ErrorLogResponse implements Serializable {
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date lastDate;
 
-        private String param;
+    private String param;
 
-        private String name;
+    private String name;
 
-        private String serverName;
+    private String serverName;
 
         private Long id;
 
@@ -35,7 +36,7 @@ public class ErrorLogResponse implements Serializable {
 
         private String url;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date addDate;
 
 

@@ -8,11 +8,11 @@ import java.io.Serializable;
 import java.util.Date;
 /**
 * 响应对象
-*/
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class RoleMenuResponse  implements Serializable {
+public class RoleMenuResponse implements Serializable {
     /**
      * 序列化参数
      */

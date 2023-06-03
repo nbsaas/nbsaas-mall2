@@ -3,13 +3,13 @@ package com.nbsaas.life.area.rest.convert;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.life.area.api.domain.simple.AreaHotSimple;
 import com.nbsaas.life.area.data.entity.AreaHot;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
-public class AreaHotSimpleConvert implements Converter<AreaHotSimple, AreaHot> {
-
-
+public class AreaHotSimpleConvert implements Converter
+        <AreaHotSimple, AreaHot> {
 
 
     @Override

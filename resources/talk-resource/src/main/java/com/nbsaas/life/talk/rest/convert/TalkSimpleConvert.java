@@ -1,15 +1,16 @@
 package com.nbsaas.life.talk.rest.convert;
 
-import com.nbsaas.boot.rest.api.Converter;
-import com.nbsaas.life.talk.api.domain.simple.TalkSimple;
 import com.nbsaas.life.talk.data.entity.Talk;
+import com.nbsaas.life.talk.api.domain.simple.TalkSimple;
+
+import com.nbsaas.boot.rest.api.Converter;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
-public class TalkSimpleConvert implements Converter<TalkSimple, Talk> {
-
-
+public class TalkSimpleConvert implements Converter
+        <TalkSimple, Talk> {
 
 
     @Override

@@ -5,115 +5,116 @@ import lombok.Data;
 
 import java.io.Serializable;
 import java.util.Date;
+
 /**
-* 请求对象
+ * 请求对象
  */
 @Data
 public class ApplicationMenuDataRequest implements Serializable, RequestId {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         * 最新修改时间
-         **/
+    /**
+     * 最新修改时间
+     **/
         private Date lastDate;
 
-        /**
-         * 编码
-         **/
+    /**
+     * 编码
+     **/
         private String code;
 
-        /**
-         * 左节点
-         **/
+    /**
+     * 左节点
+     **/
         private Integer lft;
 
-        /**
-         * 深度
-         **/
+    /**
+     * 深度
+     **/
         private Integer depth;
 
-        /**
-         * 路由
-         **/
+    /**
+     * 路由
+     **/
         private String router;
 
-        /**
-         * 分类
-         **/
+    /**
+     * 分类
+     **/
         private Integer catalog;
 
-        /**
-         *
-         **/
+    /**
+     *
+     **/
         private Long num;
 
-        /**
-         * 图标
-         **/
+    /**
+     * 图标
+     **/
         private String icon;
 
-        /**
-         * 应用
-         **/
+    /**
+     * 应用
+     **/
         private String appName;
 
-        /**
-         * 添加时间
-         **/
+    /**
+     * 添加时间
+     **/
         private Date addDate;
 
-        /**
-         * 排序号
-         **/
+    /**
+     * 排序号
+     **/
         private Integer sortNum;
 
-        /**
-         * 应用
-         **/
+    /**
+     * 应用
+     **/
         private Long app;
 
-        /**
-         * 主键id
-         **/
+    /**
+     * 主键id
+     **/
         private Long id;
 
-        /**
-         * 菜单类型
-         **/
+    /**
+     * 菜单类型
+     **/
         private Integer menuType;
 
-        /**
-         * 右节点
-         **/
+    /**
+     * 右节点
+     **/
         private Integer rgt;
 
-        /**
-         * 创建人id
-         **/
+    /**
+     * 创建人id
+     **/
         private Long creator;
 
-        /**
-         * 名称
-         **/
+    /**
+     * 名称
+     **/
         private String name;
 
-        /**
-         * 权限
-         **/
+    /**
+     * 权限
+     **/
         private String permission;
 
-        /**
-         * 路径
-         **/
+    /**
+     * 路径
+     **/
         private String path;
 
-        /**
-         * ids
-         **/
+    /**
+     * ids
+     **/
         private String ids;
 }

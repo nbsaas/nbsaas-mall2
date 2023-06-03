@@ -11,8 +11,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
-* 搜索bean
-*/
+ * 搜索bean
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
@@ -24,11 +24,13 @@ public class AreaHotSearchRequest extends PageRequest implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
+
     /**
      * 排序号
      **/
     @Search(name = "sortNum", operator = Operator.eq)
     private Integer sortNum;
+
     /**
      * 主键id
      **/

@@ -7,14 +7,15 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 import com.nbsaas.boot.rest.api.Converter;
 
 /**
-* 实体对象转化成响应对象
-*/
+ * 实体对象转化成响应对象
+ */
 
-public class UserCityResponseConvert  implements Converter<UserCityResponse,UserCity> {
+public class UserCityResponseConvert implements Converter
+        <UserCityResponse, UserCity> {
 
     @Override
     public UserCityResponse convert(UserCity source) {
-        UserCityResponse  result = new  UserCityResponse();
+        UserCityResponse result = new UserCityResponse();
         BeanDataUtils.copyProperties(source, result);
         return result;
     }

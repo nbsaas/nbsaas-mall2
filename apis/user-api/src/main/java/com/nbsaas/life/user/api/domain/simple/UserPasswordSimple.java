@@ -12,51 +12,51 @@ import java.util.Date;
 @Data
 public class UserPasswordSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         *
-         **/
-        private SecurityType securityType;
+    /**
+     *
+     **/
+    private SecurityType securityType;
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         * 加密盐
-         **/
-        private String salt;
+    /**
+     * 加密盐
+     **/
+    private String salt;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         * 用户id
-         **/
-        private Long user;
+    /**
+     * 用户id
+     **/
+    private Long user;
 
-        /**
-         * 密码
-         **/
-        private String password;
+    /**
+     * 密码
+     **/
+    private String password;
 
-        /**
-         * 校验次数
-         **/
-        private Integer checkSize;
+    /**
+     * 校验次数
+     **/
+    private Integer checkSize;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

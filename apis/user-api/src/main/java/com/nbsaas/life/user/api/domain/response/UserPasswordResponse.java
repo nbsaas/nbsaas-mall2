@@ -13,11 +13,11 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserPasswordResponse  implements Serializable {
-/**
-* 序列化参数
-*/
-private static final long serialVersionUID = 1L;
+public class UserPasswordResponse implements Serializable {
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
     private SecurityType securityType;
 

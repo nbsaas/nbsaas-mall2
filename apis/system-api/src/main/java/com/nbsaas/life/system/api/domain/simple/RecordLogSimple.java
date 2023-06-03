@@ -11,61 +11,61 @@ import java.util.Date;
 @Data
 public class RecordLogSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         *
-         **/
-        private Date createDate;
+    /**
+     *
+     **/
+    private Date createDate;
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         *
-         **/
-        private String createName;
+    /**
+     *
+     **/
+    private String createName;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         *
-         **/
-        private String app;
+    /**
+     *
+     **/
+    private String app;
 
-        /**
-         *
-         **/
-        private Long createUser;
+    /**
+     *
+     **/
+    private Long createUser;
 
-        /**
-         *
-         **/
-        private String data;
+    /**
+     *
+     **/
+    private String data;
 
-        /**
-         *
-         **/
-        private String title;
+    /**
+     *
+     **/
+    private String title;
 
-        /**
-         *
-         **/
-        private String ip;
+    /**
+     *
+     **/
+    private String ip;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

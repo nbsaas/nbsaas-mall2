@@ -11,8 +11,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
-* 搜索bean
-*/
+ * 搜索bean
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
@@ -24,11 +24,13 @@ public class ConfigSearchRequest extends PageRequest implements Serializable {
      */
     private static final long serialVersionUID = 1L;
 
+
     /**
      * 主键id
      **/
     @Search(name = "id", operator = Operator.eq)
     private Long id;
+
     /**
      *
      **/

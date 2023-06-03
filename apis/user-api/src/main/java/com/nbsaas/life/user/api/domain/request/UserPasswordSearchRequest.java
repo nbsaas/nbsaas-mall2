@@ -11,8 +11,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
-* 搜索bean
-*/
+ * 搜索bean
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
@@ -24,21 +24,25 @@ public class UserPasswordSearchRequest extends PageRequest implements Serializab
      */
     private static final long serialVersionUID = 1L;
 
+
     /**
      * 加密盐
      **/
     @Search(name = "salt", operator = Operator.like)
     private String salt;
+
     /**
      * 主键id
      **/
     @Search(name = "id", operator = Operator.eq)
     private Long id;
+
     /**
      * 密码
      **/
     @Search(name = "password", operator = Operator.like)
     private String password;
+
     /**
      * 校验次数
      **/

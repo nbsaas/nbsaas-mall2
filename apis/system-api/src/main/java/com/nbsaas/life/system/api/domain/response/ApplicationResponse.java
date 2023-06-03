@@ -6,9 +6,10 @@ import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
+
 /**
-* 响应对象
-*/
+ * 响应对象
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)

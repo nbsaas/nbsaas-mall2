@@ -1,9 +1,10 @@
 package com.nbsaas.life.shop.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+
+import lombok.Data;
 
 /**
 * 列表对象
@@ -11,36 +12,36 @@ import java.util.Date;
 @Data
 public class ShopTagSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         * 使用的店铺标签数量
-         **/
-        private Integer size;
+    /**
+     * 使用的店铺标签数量
+     **/
+    private Integer size;
 
-        /**
-         * 商家标签名称
-         **/
-        private String name;
+    /**
+     * 商家标签名称
+     **/
+    private String name;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

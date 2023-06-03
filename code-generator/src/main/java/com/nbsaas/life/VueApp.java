@@ -3,8 +3,7 @@ package com.nbsaas.life;
 import com.nbsaas.boot.generator.GeneratorApp;
 import com.nbsaas.boot.generator.beans.FormBean;
 import com.nbsaas.boot.generator.beans.FormBeanConvert;
-import com.nbsaas.boot.generator.command.common.*;
-import com.nbsaas.boot.generator.command.jpa.RepositoryCommand;
+import com.nbsaas.boot.generator.command.common.FinishCommand;
 import com.nbsaas.boot.generator.command.vue3.VueCommand;
 import com.nbsaas.boot.generator.config.Config;
 import com.nbsaas.boot.generator.context.InputRequestObject;
@@ -20,7 +19,7 @@ public class VueApp {
 
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
 
-        makeCodes("vue/ad.yml");
+        makeCodes("vue/system.yml");
 
 
     }

@@ -6,26 +6,27 @@ import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.Date;
+
 /**
-* 响应对象
-*/
+ * 响应对象
+ */
 @Getter
 @Setter
 @ToString(callSuper = true)
 public class ApplicationMenuResponse implements Serializable {
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    private Date lastDate;
 
-        private String code;
+    private String code;
 
-        private Integer lft;
+    private Integer lft;
 
-        private Integer depth;
+    private Integer depth;
 
         private String router;
 
@@ -37,7 +38,7 @@ public class ApplicationMenuResponse implements Serializable {
 
         private String appName;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date addDate;
 
         private Integer sortNum;

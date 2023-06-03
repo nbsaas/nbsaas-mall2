@@ -11,41 +11,41 @@ import java.util.Date;
 @Data
 public class AreaHotSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         * 排序号
-         **/
-        private Integer sortNum;
+    /**
+     * 排序号
+     **/
+    private Integer sortNum;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         * 区域id
-         **/
-        private String areaName;
+    /**
+     * 区域id
+     **/
+    private String areaName;
 
-        /**
-         * 区域id
-         **/
-        private Long area;
+    /**
+     * 区域id
+     **/
+    private Long area;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

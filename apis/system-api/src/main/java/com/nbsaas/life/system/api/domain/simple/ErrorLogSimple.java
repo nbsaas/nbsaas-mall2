@@ -11,56 +11,56 @@ import java.util.Date;
 @Data
 public class ErrorLogSimple implements Serializable {
 
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
 
-        /**
-         * 最新修改时间
-         **/
-        private Date lastDate;
+    /**
+     * 最新修改时间
+     **/
+    private Date lastDate;
 
-        /**
-         *
-         **/
-        private String param;
+    /**
+     *
+     **/
+    private String param;
 
-        /**
-         *
-         **/
-        private String name;
+    /**
+     *
+     **/
+    private String name;
 
-        /**
-         *
-         **/
-        private String serverName;
+    /**
+     *
+     **/
+    private String serverName;
 
-        /**
-         * 主键id
-         **/
-        private Long id;
+    /**
+     * 主键id
+     **/
+    private Long id;
 
-        /**
-         *
-         **/
-        private String app;
+    /**
+     *
+     **/
+    private String app;
 
-        /**
-         *
-         **/
-        private String note;
+    /**
+     *
+     **/
+    private String note;
 
-        /**
-         *
-         **/
-        private String url;
+    /**
+     *
+     **/
+    private String url;
 
-        /**
-         * 添加时间
-         **/
-        private Date addDate;
+    /**
+     * 添加时间
+     **/
+    private Date addDate;
 
 
 }

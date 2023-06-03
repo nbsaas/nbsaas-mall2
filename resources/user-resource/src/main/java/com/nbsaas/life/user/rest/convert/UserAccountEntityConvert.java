@@ -18,7 +18,7 @@ public UserAccount convert(UserAccountDataRequest source) {
 UserAccount result = new UserAccount();
 BeanDataUtils.copyProperties(source, result);
             if(source.getUser()!=null){
-                UserInfo user =new UserInfo();
+                UserInfo user = new UserInfo();
                 user.setId(source.getUser());
                 result.setUser(user);
             }

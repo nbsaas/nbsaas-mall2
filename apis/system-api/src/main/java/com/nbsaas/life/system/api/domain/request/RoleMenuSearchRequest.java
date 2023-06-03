@@ -11,8 +11,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
-* 搜索bean
-*/
+ * 搜索bean
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
@@ -23,6 +23,7 @@ public class RoleMenuSearchRequest extends PageRequest implements Serializable {
      * 序列化参数
      */
     private static final long serialVersionUID = 1L;
+
 
     /**
      * 主键id

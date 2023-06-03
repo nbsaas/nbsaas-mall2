@@ -3,13 +3,13 @@ package com.nbsaas.life.ad.rest.convert;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.life.ad.api.domain.simple.AdSimple;
 import com.nbsaas.life.ad.data.entity.Ad;
+
 /**
-* 列表对象转换器
-*/
+ * 列表对象转换器
+ */
 
-public class AdSimpleConvert implements Converter<AdSimple, Ad> {
-
-
+public class AdSimpleConvert implements Converter
+        <AdSimple, Ad> {
 
 
     @Override

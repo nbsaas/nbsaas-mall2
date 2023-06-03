@@ -11,8 +11,8 @@ import lombok.ToString;
 import java.io.Serializable;
 
 /**
-* 搜索bean
-*/
+ * 搜索bean
+ */
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
@@ -24,31 +24,37 @@ public class UserLoginLogSearchRequest extends PageRequest implements Serializab
      */
     private static final long serialVersionUID = 1L;
 
+
     /**
      * 备注
      **/
     @Search(name = "note", operator = Operator.like)
     private String note;
+
     /**
      * 主键id
      **/
     @Search(name = "id", operator = Operator.eq)
     private Long id;
+
     /**
      * 登陆账号
      **/
     @Search(name = "account", operator = Operator.like)
     private String account;
+
     /**
      * 登录密码
      **/
     @Search(name = "password", operator = Operator.like)
     private String password;
+
     /**
      * 登录IP
      **/
     @Search(name = "ip", operator = Operator.like)
     private String ip;
+
     /**
      * 客户端
      **/

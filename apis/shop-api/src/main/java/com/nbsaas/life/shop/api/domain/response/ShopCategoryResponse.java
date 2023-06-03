@@ -1,10 +1,9 @@
 package com.nbsaas.life.shop.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -13,12 +12,12 @@ import java.util.Date;
 @Setter
 @ToString(callSuper = true)
 public class ShopCategoryResponse  implements Serializable {
-        /**
-         * 序列化参数
-         */
-        private static final long serialVersionUID = 1L;
+    /**
+     * 序列化参数
+     */
+    private static final long serialVersionUID = 1L;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date lastDate;
 
         private Long nums;
@@ -35,7 +34,7 @@ public class ShopCategoryResponse  implements Serializable {
 
         private Integer depth;
 
-        //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
         private Date addDate;
 
         private String py;
