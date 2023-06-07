@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>com.nbsaas.boot</groupId>
 		<artifactId>boot-nbsaas</artifactId>
-		<version>1.0.10-2023</version>
+		<version>${nbsaas.version}</version>
 	</parent>
 	<groupId>com.nbsaas.life</groupId>
 	<artifactId>nbsaas-life</artifactId>
@@ -25,6 +25,7 @@
 		<maven.compiler.target>8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mybatis.version>3.0.1</mybatis.version>
+		<nbsaas.version>1.0.10-2023</nbsaas.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>

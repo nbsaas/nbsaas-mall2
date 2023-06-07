@@ -37,18 +37,18 @@
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>jpa-dao</artifactId>
-            <version>1.0.10-2023</version>
+            <version>${nbsaas.version}</version>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>code-annotation</artifactId>
-            <version>1.0.10-2023</version>
+            <version>${nbsaas.version}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>utils</artifactId>
-            <version>1.0.10-2023</version>
+            <version>${nbsaas.version}</version>
         </dependency>
     </dependencies>
 </project>
