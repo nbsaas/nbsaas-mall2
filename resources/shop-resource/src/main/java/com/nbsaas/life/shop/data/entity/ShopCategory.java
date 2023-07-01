@@ -5,6 +5,7 @@ import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @Data
@@ -43,4 +44,11 @@ public class ShopCategory extends CatalogEntity {
 	private List<ShopCategory> children;
 
 
+	@Override
+	public Serializable getParentId() {
+		if (parent!=null){
+			return parent.getId();
+		}
+		return null;
+	}
 }

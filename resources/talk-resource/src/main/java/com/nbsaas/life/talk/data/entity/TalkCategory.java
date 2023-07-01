@@ -5,6 +5,7 @@ import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -26,4 +27,11 @@ public class TalkCategory extends CatalogEntity {
 	private List<TalkCategory> children;
 
 
+	@Override
+	public Serializable getParentId() {
+		if (parent != null) {
+			return parent.getId();
+		}
+		return null;
+	}
 }

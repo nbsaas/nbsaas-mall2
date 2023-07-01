@@ -6,6 +6,7 @@ import lombok.Data;
 import org.hibernate.annotations.Comment;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.List;
 
 @CatalogClass
@@ -46,7 +47,7 @@ public class ApplicationMenu extends CatalogEntity {
 
 
     @Comment("应用")
-    @SearchItem(label = "应用", name = "app", key = "app.id", classType = "Long", operator = "eq")
+    @SearchItem(label = "应用", name = "app", key = "app.id", classType = Long.class, operator = "eq")
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
@@ -55,4 +56,11 @@ public class ApplicationMenu extends CatalogEntity {
     @Comment("菜单类型")
     private Integer menuType;
 
+    @Override
+    public Serializable getParentId() {
+        if (parent != null) {
+            return parent.getId();
+        }
+        return null;
+    }
 }

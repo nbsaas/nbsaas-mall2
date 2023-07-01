@@ -18,7 +18,10 @@ import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 
 @Data
@@ -31,4 +34,15 @@ public class Area extends CatalogEntity {
 
 
     private Float lat;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Area parent;
+
+    @Override
+    public Serializable getParentId() {
+        if (parent != null) {
+            return parent.getId();
+        }
+        return null;
+    }
 }

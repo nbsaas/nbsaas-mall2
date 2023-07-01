@@ -39,23 +39,6 @@ public class ShopCategoryFrontController {
         return shopCategoryApi.list(request);
     }
 
-    @RequestMapping("/simples")
-    public ListResponse<ShopCategoryExtSimple> simples(ShopCategorySearchRequest request) {
-        return shopCategoryApi.listExt(request,item->{
-            ShopCategoryExtSimple simple=new ShopCategoryExtSimple();
-            BeanUtils.copyProperties(item,simple);
-            return simple;
-        });
-    }
-
-    @RequestMapping("/tree")
-    public ListResponse<ShopCategoryExtSimple> tree(ShopCategorySearchRequest request) {
-        return shopCategoryApi.listExt(request,item->{
-            ShopCategoryExtSimple simple=new ShopCategoryExtSimple();
-            BeanUtils.copyProperties(item,simple);
-            return simple;
-        });
-    }
 
     @RequestMapping("/view")
     public ResponseObject<ShopCategoryResponse> view(@Validated(ViewOperator.class) ShopCategoryDataRequest request) {

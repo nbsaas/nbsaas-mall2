@@ -33,7 +33,7 @@ public class DictItem extends AbstractEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @FieldConvert
-    @FieldName(name = "title")
+    @FieldName(parent = "title")
     private Dict dict;
 
 }
