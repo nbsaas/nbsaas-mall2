@@ -24,12 +24,13 @@
 * element-plus
 
 
-#### [后台管理端](https://gitee.com/cng1985/nbsaas-life-admin)
+#### 后台管理端
+
 * vue3
 * element-plus
-* [scui](https://gitee.com/lolicode/scui)
 * axios
-
+* [nuxt3前端](https://gitee.com/cng1985/nbsaas-life-nuxt3)
+* [vue3管理端](https://gitee.com/cng1985/nbsaas-life-admin)
 
 
 ## 搭建步骤
