@@ -3,6 +3,7 @@ multiple: true #是否多模块项目
 templateDir: /template/vue #代码模块文件夹
 entityPackage: com.nbsaas.life.shop.data.entity
 entities:
-  - Shop
+#  - Shop
+  - ShopCategory
 outputPath: E:\codes\vue3\nbsaas-life-admin #项目根目录
 basePackage: com.nbsaas.boot #基础包名

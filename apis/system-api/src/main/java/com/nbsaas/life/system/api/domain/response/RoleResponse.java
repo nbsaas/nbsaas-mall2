@@ -1,34 +1,45 @@
 package com.nbsaas.life.system.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
- */
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class RoleResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class RoleResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private String name;
+        /**
+        * 角色名称
+        **/
+            private String name;
 
-    private Long id;
+        /**
+        * 角色描述
+        **/
+            private String remark;
 
-    private String remark;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

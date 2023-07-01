@@ -1,43 +1,65 @@
 package com.nbsaas.life.user.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
-
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserOauthConfigResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserOauthConfigResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private String appSecret;
+        /**
+        * 第三方登陆名称
+        **/
+            private String name;
 
-    private String className;
+        /**
+        * 第三方标识
+        **/
+            private String model;
 
-    private String appKey;
+        /**
+        * 程序key
+        **/
+            private String appKey;
 
-        private Long id;
+        /**
+        * 程序密钥
+        **/
+            private String appSecret;
 
-        private Integer state;
+        /**
+        * java实现类
+        **/
+            private String className;
 
-        private String model;
+        /**
+        * 状态
+        **/
+            private Integer state;
 
-        private String name;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

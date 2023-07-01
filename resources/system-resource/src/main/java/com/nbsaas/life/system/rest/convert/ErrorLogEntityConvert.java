@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class ErrorLogEntityConvert  implements Converter<ErrorLog, ErrorLogDataRequest> {
-@Override
-public ErrorLog convert(ErrorLogDataRequest source) {
-ErrorLog result = new ErrorLog();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public ErrorLog convert(ErrorLogDataRequest source) {
+        ErrorLog result = new ErrorLog();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

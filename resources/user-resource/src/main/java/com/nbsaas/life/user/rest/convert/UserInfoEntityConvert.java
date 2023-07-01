@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class UserInfoEntityConvert  implements Converter<UserInfo, UserInfoDataRequest> {
-@Override
-public UserInfo convert(UserInfoDataRequest source) {
-UserInfo result = new UserInfo();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public UserInfo convert(UserInfoDataRequest source) {
+        UserInfo result = new UserInfo();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

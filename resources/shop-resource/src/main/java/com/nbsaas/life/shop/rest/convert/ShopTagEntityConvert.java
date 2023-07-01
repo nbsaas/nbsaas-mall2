@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class ShopTagEntityConvert  implements Converter<ShopTag, ShopTagDataRequest> {
-@Override
-public ShopTag convert(ShopTagDataRequest source) {
-ShopTag result = new ShopTag();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public ShopTag convert(ShopTagDataRequest source) {
+        ShopTag result = new ShopTag();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

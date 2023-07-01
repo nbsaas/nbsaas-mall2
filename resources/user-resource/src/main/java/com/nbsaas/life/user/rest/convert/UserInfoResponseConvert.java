@@ -7,18 +7,21 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 import com.nbsaas.boot.rest.api.Converter;
 
 /**
- * 实体对象转化成响应对象
- */
+* 实体对象转化成响应对象
+*/
 
-public class UserInfoResponseConvert implements Converter
-        <UserInfoResponse, UserInfo> {
+public class UserInfoResponseConvert  implements Converter
+<UserInfoResponse,UserInfo> {
 
-    @Override
-    public UserInfoResponse convert(UserInfo source) {
-        UserInfoResponse result = new UserInfoResponse();
-        BeanDataUtils.copyProperties(source, result);
-        return result;
-    }
+@Override
+public UserInfoResponse convert(UserInfo source) {
+UserInfoResponse  result = new  UserInfoResponse();
+BeanDataUtils.copyProperties(source, result);
+            if(source.getStoreState()!=null){
+                result.setStoreStateName(String.valueOf(source.getStoreState()));
+            }
+return result;
+}
 
 }
 

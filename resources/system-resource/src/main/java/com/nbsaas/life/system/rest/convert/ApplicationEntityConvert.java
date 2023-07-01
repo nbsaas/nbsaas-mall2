@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class ApplicationEntityConvert  implements Converter<Application, ApplicationDataRequest> {
-@Override
-public Application convert(ApplicationDataRequest source) {
-Application result = new Application();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public Application convert(ApplicationDataRequest source) {
+        Application result = new Application();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

@@ -1,7 +1,6 @@
 package com.nbsaas.life.shop.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,80 +11,180 @@ import java.util.Date;
 @Setter
 @ToString(callSuper = true)
 public class ShopResponse  implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
 
-        private String address;
+        /**
+        * 优惠数量
+        **/
+            private Integer discountNum;
 
-        private Double longitude;
+        /**
+        * 距离中心点的距离
+        **/
+            private Integer distance;
 
-        private Float overallRating;
+        /**
+        * 城市id
+        **/
+            private Long city;
 
-        private Long city;
+        /**
+        * 设备评分
+        **/
+            private Float facilityRating;
 
-        private Integer photos;
+        /**
+        * 纬度
+        **/
+            private Double latitude;
 
-        private Float serviceRating;
+        /**
+        * 团购数量
+        **/
+            private Integer grouponNum;
 
-        private Float tasteRating;
+        /**
+        * POI唯一标识
+        **/
+            private String poi;
 
-        private Double latitude;
+        /**
+        * 照片数量
+        **/
+            private Integer photos;
 
-        private String image;
+        /**
+        * 环境评分
+        **/
+            private Float environmentRating;
 
-        private Integer discountNum;
+        /**
+        * 省份id
+        **/
+            private Long province;
 
-        private String shopHours;
+        /**
+        * POI商户的价格
+        **/
+            private Float price;
 
-        private Long id;
+        /**
+        * 状态
+        **/
+            private Integer state;
 
-        private Long province;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-        private String phone;
+        /**
+        * 经度
+        **/
+            private Double longitude;
 
-        private Integer checkinNum;
+        /**
+        * 口味评分
+        **/
+            private Float tasteRating;
 
-        private Float price;
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
-        private Integer grouponNum;
+        /**
+        * 卫生评分
+        **/
+            private Float hygieneRating;
 
-        private Float technologyRating;
+        /**
+        * 区县id
+        **/
+            private Long area;
 
-        private Float imageNum;
+        /**
+        * 图片
+        **/
+            private String image;
 
-        private String website;
+        /**
+        * 网址
+        **/
+            private String website;
 
-        private Integer distance;
+        /**
+        * 地址
+        **/
+            private String address;
 
-        private Float facilityRating;
+        /**
+        * 总体评分
+        **/
+            private Float overallRating;
 
-        private Integer state;
+        /**
+        * 图片数量
+        **/
+            private Float imageNum;
 
-        private String detailUrl;
+        /**
+        * 服务评分
+        **/
+            private Float serviceRating;
 
-        private Integer favoriteNum;
+        /**
+        * 营业时间
+        **/
+            private String shopHours;
 
-        private String poi;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-        private Long user;
+        /**
+        * 收藏数量
+        **/
+            private Integer favoriteNum;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 评论数量
+        **/
+            private Integer commentNum;
 
-        private Float hygieneRating;
+        /**
+        * 电话
+        **/
+            private String phone;
 
-        private String name;
+        /**
+        * 商店名称
+        **/
+            private String name;
 
-        private Long area;
+        /**
+        * POI详情页
+        **/
+            private String detailUrl;
 
-        private Integer commentNum;
+        /**
+        * 技术评分
+        **/
+            private Float technologyRating;
 
-        private Float environmentRating;
+        /**
+        * 签到数量
+        **/
+            private Integer checkinNum;
 
+        /**
+        * 用户
+        **/
+            private Long user;
 
 }

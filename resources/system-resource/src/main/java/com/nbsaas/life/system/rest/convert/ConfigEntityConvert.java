@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class ConfigEntityConvert  implements Converter<Config, ConfigDataRequest> {
-@Override
-public Config convert(ConfigDataRequest source) {
-Config result = new Config();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public Config convert(ConfigDataRequest source) {
+        Config result = new Config();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

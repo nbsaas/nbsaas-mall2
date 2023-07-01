@@ -8,7 +8,13 @@ public class ApplicationField  {
 
 
 
-    public static final String  lastDate = "lastDate";
+    public static final String  note = "note";
+
+
+    public static final String  name = "name";
+
+
+    public static final String  appKey = "appKey";
 
 
     public static final String  id = "id";
@@ -17,12 +23,6 @@ public class ApplicationField  {
     public static final String  addDate = "addDate";
 
 
-    public static final String  note = "note";
-
-
-    public static final String  name = "name";
-
-
-    public static final String  appKey = "appKey";
+    public static final String  lastDate = "lastDate";
 
 }

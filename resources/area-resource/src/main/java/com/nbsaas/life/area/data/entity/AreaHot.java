@@ -26,21 +26,21 @@ import javax.persistence.Table;
 
 /**
  * 地区
- * @author 年高
  *
+ * @author 年高
  */
 
 @Data
 @Entity
-@Table(name = "area_hot")
+@Table(name = "sys_common_area_hot")
 public class AreaHot extends SortEntity {
 
 
-	@Comment("区域id")
-	@FieldConvert
-	@FieldName
-	@ManyToOne
-	private Area area;
+    @Comment("区域id")
+    @FieldConvert
+    @FieldName
+    @ManyToOne
+    private Area area;
 
 
 }

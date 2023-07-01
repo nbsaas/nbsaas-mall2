@@ -1,10 +1,8 @@
 package com.nbsaas.life.ad.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -18,27 +16,55 @@ public class AdPositionResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
 
-        private Integer sortNum;
+        /**
+        * 
+        **/
+            private String template;
 
-        private String name;
+        /**
+        * 
+        **/
+            private String note;
 
-        private String key;
+        /**
+        * 
+        **/
+            private String name;
 
-        private Long id;
+        /**
+        * 
+        **/
+            private Integer width;
 
-        private Integer height;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-        private String note;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-        private Integer width;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-        private String template;
+        /**
+        * 
+        **/
+            private String key;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 
+        **/
+            private Integer height;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

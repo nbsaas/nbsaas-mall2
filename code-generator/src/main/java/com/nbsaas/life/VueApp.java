@@ -19,7 +19,7 @@ public class VueApp {
 
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
 
-        makeCodes("vue/shop.yml");
+        makeCodes("vue/area.yml");
 
 
     }

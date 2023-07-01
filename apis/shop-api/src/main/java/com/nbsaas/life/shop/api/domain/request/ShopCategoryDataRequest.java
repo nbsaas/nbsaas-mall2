@@ -3,99 +3,98 @@ package com.nbsaas.life.shop.api.domain.request;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
-
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class ShopCategoryDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class ShopCategoryDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-        private Date lastDate;
 
-    /**
-     *
-     **/
-        private Long nums;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     *
-     **/
-        private String icon;
+        /**
+        * 
+        **/
+            private String cname;
 
-    /**
-     *
-     **/
-        private String pinyin;
+        /**
+        * 
+        **/
+            private String icon;
 
-    /**
-     *
-     **/
-        private String path;
+        /**
+        * 
+        **/
+            private String py;
 
-    /**
-     * 编码
-     **/
-        private String code;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 左节点
-     **/
-        private Integer lft;
+        /**
+        * 
+        **/
+            private String path;
 
-    /**
-     * 深度
-     **/
-        private Integer depth;
+        /**
+        * 
+        **/
+            private String pinyin;
 
-    /**
-     * 添加时间
-     **/
-        private Date addDate;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     *
-     **/
-        private String py;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     * 排序号
-     **/
-        private Integer sortNum;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 主键id
-     **/
-        private Long id;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     * 右节点
-     **/
-        private Integer rgt;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 名称
-     **/
-        private String name;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    /**
-     * ids
-     **/
-        private String ids;
+        /**
+        * 
+        **/
+            private Long nums;
 
-    /**
-     *
-     **/
-        private String cname;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

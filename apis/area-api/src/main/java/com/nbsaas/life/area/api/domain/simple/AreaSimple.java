@@ -1,81 +1,113 @@
 package com.nbsaas.life.area.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+    import java.util.List;
 
 /**
 * 列表对象
- */
+*/
 @Data
 public class AreaSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
+
+    private String value;
+    private String label;
+    private List<AreaSimple> children;
+    private Boolean hasChildren;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     *
-     **/
-    private Float lat;
+            /**
+            * 
+            **/
+                private Long parent;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+            /**
+            * 编码
+            **/
+                private String code;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 经度
+            **/
+                private Double lng;
 
-    /**
-     * 编码
-     **/
-    private String code;
+            /**
+            * 地区全称
+            **/
+                private String fullName;
 
-    /**
-     * 左节点
-     **/
-    private Integer lft;
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
 
-    /**
-     * 右节点
-     **/
-    private Integer rgt;
+            /**
+            * 国标编码
+            **/
+                private String govCode;
 
-    /**
-     * 深度
-     **/
-    private Integer depth;
+            /**
+            * 深度
+            **/
+                private Integer depth;
 
-    /**
-     * 名称
-     **/
-    private String name;
+            /**
+            * 地区类型
+            **/
+                private String areaType;
 
-    /**
-     *
-     **/
-    private Float lng;
+            /**
+            * 名称
+            **/
+                private String name;
 
-    /**
-     * ids
-     **/
-    private String ids;
+            /**
+            * ids
+            **/
+                private String ids;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 排序号
+            **/
+                private Integer sortNum;
+
+            /**
+            * 状态
+            **/
+                private Integer state;
+
+            /**
+            * 主键id
+            **/
+                private Long id;
+
+            /**
+            * 左节点
+            **/
+                private Integer lft;
+
+            /**
+            * 纬度
+            **/
+                private Double lat;
+
+            /**
+            * 右节点
+            **/
+                private Integer rgt;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

@@ -13,16 +13,17 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class UserLoginLogEntityConvert  implements Converter<UserLoginLog, UserLoginLogDataRequest> {
-@Override
-public UserLoginLog convert(UserLoginLogDataRequest source) {
-UserLoginLog result = new UserLoginLog();
-BeanDataUtils.copyProperties(source, result);
-            if(source.getUser()!=null){
-                UserInfo user = new UserInfo();
-                user.setId(source.getUser());
-                result.setUser(user);
-            }
-return result;
-}
+
+    @Override
+    public UserLoginLog convert(UserLoginLogDataRequest source) {
+        UserLoginLog result = new UserLoginLog();
+        BeanDataUtils.copyProperties(source, result);
+                    if(source.getUser()!=null){
+                    UserInfo user =new UserInfo();
+                    user.setId(source.getUser());
+                    result.setUser(user);
+                    }
+        return result;
+    }
 }
 

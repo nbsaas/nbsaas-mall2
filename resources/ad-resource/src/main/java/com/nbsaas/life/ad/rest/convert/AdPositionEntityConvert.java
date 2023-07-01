@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class AdPositionEntityConvert  implements Converter<AdPosition, AdPositionDataRequest> {
-@Override
-public AdPosition convert(AdPositionDataRequest source) {
-AdPosition result = new AdPosition();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public AdPosition convert(AdPositionDataRequest source) {
+        AdPosition result = new AdPosition();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

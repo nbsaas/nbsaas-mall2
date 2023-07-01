@@ -1,36 +1,50 @@
 package com.nbsaas.life.area.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
- */
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class AreaHotResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class AreaHotResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private Integer sortNum;
+        /**
+        * 区域id
+        **/
+            private Long area;
 
-    private Long id;
+        /**
+        * 区域id
+        **/
+            private String areaName;
 
-    private String areaName;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    private Long area;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

@@ -1,83 +1,88 @@
 package com.nbsaas.life.user.api.domain.simple;
 
-import com.nbsaas.boot.rest.enums.StoreState;
-import com.nbsaas.life.user.api.domain.enums.LoginState;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+            import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.life.user.api.domain.enums.LoginState;
 
 /**
 * 列表对象
- */
+*/
 @Data
 public class UserLoginLogSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 备注
-     **/
-    private String note;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+            /**
+            * 备注
+            **/
+                private String note;
 
-    /**
-     *
-     **/
-    private LoginState state;
+            /**
+            * 登录密码
+            **/
+                private String password;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 登录IP
+            **/
+                private String ip;
 
-    /**
-     *
-     **/
-    private StoreState storeState;
+            /**
+            * 客户端
+            **/
+                private String client;
 
-    /**
-     * 登陆账号
-     **/
-    private String account;
+            /**
+            * 
+            **/
+                private StoreState storeState;
 
-    /**
-     * 用户id
-     **/
-    private Long user;
+                private String storeStateName;
 
-    /**
-     * 登录密码
-     **/
-    private String password;
+            /**
+            * 
+            **/
+                private LoginState state;
 
-    /**
-     * 登录IP
-     **/
-    private String ip;
+                private String stateName;
 
-    /**
-     * 用户id
-     **/
-    private String userName;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     * 客户端
-     **/
-    private String client;
+            /**
+            * 用户id
+            **/
+                private String userName;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 用户id
+            **/
+                private Long user;
+
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
+
+            /**
+            * 登陆账号
+            **/
+                private String account;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

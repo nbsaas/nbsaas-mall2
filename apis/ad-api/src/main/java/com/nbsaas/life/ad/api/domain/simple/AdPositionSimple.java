@@ -1,71 +1,72 @@
 package com.nbsaas.life.ad.api.domain.simple;
 
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
 
 /**
 * 列表对象
- */
+*/
 @Data
 public class AdPositionSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     * 排序号
-     **/
-    private Integer sortNum;
+            /**
+            * 
+            **/
+                private String template;
 
-    /**
-     *
-     **/
-    private String name;
+            /**
+            * 
+            **/
+                private String note;
 
-    /**
-     *
-     **/
-    private String key;
+            /**
+            * 
+            **/
+                private String name;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 
+            **/
+                private Integer width;
 
-    /**
-     *
-     **/
-    private Integer height;
+            /**
+            * 排序号
+            **/
+                private Integer sortNum;
 
-    /**
-     *
-     **/
-    private String note;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     *
-     **/
-    private Integer width;
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
 
-    /**
-     *
-     **/
-    private String template;
+            /**
+            * 
+            **/
+                private String key;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 
+            **/
+                private Integer height;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

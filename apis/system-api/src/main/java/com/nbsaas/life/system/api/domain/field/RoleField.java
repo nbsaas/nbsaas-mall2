@@ -8,7 +8,7 @@ public class RoleField  {
 
 
 
-    public static final String  lastDate = "lastDate";
+    public static final String  name = "name";
 
 
     public static final String  remark = "remark";
@@ -20,6 +20,6 @@ public class RoleField  {
     public static final String  addDate = "addDate";
 
 
-    public static final String  name = "name";
+    public static final String  lastDate = "lastDate";
 
 }

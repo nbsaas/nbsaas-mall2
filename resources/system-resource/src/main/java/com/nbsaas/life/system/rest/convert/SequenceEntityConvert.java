@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class SequenceEntityConvert  implements Converter<Sequence, SequenceDataRequest> {
-@Override
-public Sequence convert(SequenceDataRequest source) {
-Sequence result = new Sequence();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public Sequence convert(SequenceDataRequest source) {
+        Sequence result = new Sequence();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

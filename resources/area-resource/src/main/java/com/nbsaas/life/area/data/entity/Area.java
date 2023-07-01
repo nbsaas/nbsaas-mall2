@@ -14,29 +14,52 @@ package com.nbsaas.life.area.data.entity;
  *
  */
 
+import com.nbsaas.boot.code.annotation.CatalogClass;
+import com.nbsaas.boot.code.annotation.FieldConvert;
+import com.nbsaas.boot.code.annotation.FormAnnotation;
+import com.nbsaas.boot.code.annotation.SearchItem;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
 import lombok.Data;
+import org.hibernate.annotations.Comment;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
-
+@FormAnnotation(title = "地区", model = "地区")
+@CatalogClass(lazyData = true)
+@org.hibernate.annotations.Table(appliesTo = "sys_common_area", comment = "地区")
 @Data
 @Entity
-@Table(name = "area")
+@Table(name = "sys_common_area")
 public class Area extends CatalogEntity {
 
 
-    private Float lng;
+    @Comment("经度")
+    private Double lng;
 
+    @Comment("纬度")
+    private Double lat;
 
-    private Float lat;
+    @Comment("国标编码")
+    private String govCode;
 
+    @Comment("地区类型")
+    private String areaType;
+
+    @Comment("地区全称")
+    private String fullName;
+
+    @Comment("状态")
+    private Integer state;
+
+    @SearchItem(label = "父分类", name = "parent", key = "parent.id", operator = "eq", classType = Long.class)
+    @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private Area parent;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "parent")
+    private List<Area> children;
 
     @Override
     public Serializable getParentId() {

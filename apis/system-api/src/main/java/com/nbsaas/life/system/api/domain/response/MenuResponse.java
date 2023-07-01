@@ -1,10 +1,8 @@
 package com.nbsaas.life.system.api.domain.response;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
 /**
 * 响应对象
@@ -18,43 +16,95 @@ public class MenuResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
 
-        private String icon;
+        /**
+        * 
+        **/
+            private Long parent;
 
-        private Long nums;
+        /**
+        * 编码
+        **/
+            private String code;
 
-        private String path;
+        /**
+        * 菜单类型
+        **/
+            private Integer catalog;
 
-        private String code;
+        /**
+        * 
+        **/
+            private String icon;
 
-        private Integer lft;
+        /**
+        * 
+        **/
+            private String permission;
 
-        private Integer depth;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-        private String permission;
+        /**
+        * 
+        **/
+            private String path;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 
+        **/
+            private String router;
 
-        private Integer sortNum;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-        private Long parent;
+        /**
+        * 名称
+        **/
+            private String name;
 
-        private String router;
+        /**
+        * ids
+        **/
+            private String ids;
 
-        private Long id;
+        /**
+        * 是否租户使用
+        **/
+            private Integer menuType;
 
-        private Integer catalog;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-        private Integer menuType;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-        private Integer rgt;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-        private String name;
+        /**
+        * 
+        **/
+            private Long nums;
 
-        private String ids;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

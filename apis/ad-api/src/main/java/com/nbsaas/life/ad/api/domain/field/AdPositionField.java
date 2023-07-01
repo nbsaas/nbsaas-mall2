@@ -8,10 +8,13 @@ public class AdPositionField  {
 
 
 
-    public static final String  height = "height";
+    public static final String  template = "template";
 
 
-    public static final String  lastDate = "lastDate";
+    public static final String  note = "note";
+
+
+    public static final String  name = "name";
 
 
     public static final String  width = "width";
@@ -29,12 +32,9 @@ public class AdPositionField  {
     public static final String  key = "key";
 
 
-    public static final String  note = "note";
+    public static final String  height = "height";
 
 
-    public static final String  name = "name";
-
-
-    public static final String  template = "template";
+    public static final String  lastDate = "lastDate";
 
 }

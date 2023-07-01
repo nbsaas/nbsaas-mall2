@@ -1,34 +1,49 @@
 package com.nbsaas.life.user.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.nbsaas.life.user.api.domain.enums.AccountType;
-
+            import com.nbsaas.life.user.api.domain.enums.AccountType;
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserAccountResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserAccountResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private Integer loginSize;
 
-    private Long id;
+        /**
+        * 
+        **/
+            //枚举
+            private AccountType accountType;
 
-    private Long user;
+            private String accountTypeName;
 
-    private String username;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private AccountType accountType;
+        /**
+        * 用户id
+        **/
+            private Long user;
 
+        /**
+        * 用户名
+        **/
+            private String username;
+
+        /**
+        * 登陆次数
+        **/
+            private Integer loginSize;
 
 }

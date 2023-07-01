@@ -3,189 +3,188 @@ package com.nbsaas.life.shop.api.domain.request;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
-
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class ShopDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class ShopDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-        private Date lastDate;
 
-    /**
-     * 地址
-     **/
-        private String address;
+        /**
+        * 优惠数量
+        **/
+            private Integer discountNum;
 
-    /**
-     * 经度
-     **/
-        private Double longitude;
+        /**
+        * 距离中心点的距离
+        **/
+            private Integer distance;
 
-    /**
-     * 总体评分
-     **/
-        private Float overallRating;
+        /**
+        * 城市id
+        **/
+            private Long city;
 
-    /**
-     * 城市id
-     **/
-        private Long city;
+        /**
+        * 设备评分
+        **/
+            private Float facilityRating;
 
-    /**
-     * 照片数量
-     **/
-        private Integer photos;
+        /**
+        * 纬度
+        **/
+            private Double latitude;
 
-    /**
-     * 服务评分
-     **/
-        private Float serviceRating;
+        /**
+        * 团购数量
+        **/
+            private Integer grouponNum;
 
-    /**
-     * 口味评分
-     **/
-        private Float tasteRating;
+        /**
+        * POI唯一标识
+        **/
+            private String poi;
 
-    /**
-     * 纬度
-     **/
-        private Double latitude;
+        /**
+        * 照片数量
+        **/
+            private Integer photos;
 
-    /**
-     * 图片
-     **/
-        private String image;
+        /**
+        * 环境评分
+        **/
+            private Float environmentRating;
 
-    /**
-     * 优惠数量
-     **/
-        private Integer discountNum;
+        /**
+        * 省份id
+        **/
+            private Long province;
 
-    /**
-     * 营业时间
-     **/
-        private String shopHours;
+        /**
+        * POI商户的价格
+        **/
+            private Float price;
 
-    /**
-     * 主键id
-     **/
-        private Long id;
+        /**
+        * 状态
+        **/
+            private Integer state;
 
-    /**
-     * 省份id
-     **/
-        private Long province;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 电话
-     **/
-        private String phone;
+        /**
+        * 经度
+        **/
+            private Double longitude;
 
-    /**
-     * 签到数量
-     **/
-        private Integer checkinNum;
+        /**
+        * 口味评分
+        **/
+            private Float tasteRating;
 
-    /**
-     * POI商户的价格
-     **/
-        private Float price;
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
-    /**
-     * 团购数量
-     **/
-        private Integer grouponNum;
+        /**
+        * 卫生评分
+        **/
+            private Float hygieneRating;
 
-    /**
-     * 技术评分
-     **/
-        private Float technologyRating;
+        /**
+        * 区县id
+        **/
+            private Long area;
 
-    /**
-     * 图片数量
-     **/
-        private Float imageNum;
+        /**
+        * 图片
+        **/
+            private String image;
 
-    /**
-     * 网址
-     **/
-        private String website;
+        /**
+        * 网址
+        **/
+            private String website;
 
-    /**
-     * 距离中心点的距离
-     **/
-        private Integer distance;
+        /**
+        * 地址
+        **/
+            private String address;
 
-    /**
-     * 设备评分
-     **/
-        private Float facilityRating;
+        /**
+        * 总体评分
+        **/
+            private Float overallRating;
 
-    /**
-     * 状态
-     **/
-        private Integer state;
+        /**
+        * 图片数量
+        **/
+            private Float imageNum;
 
-    /**
-     * POI详情页
-     **/
-        private String detailUrl;
+        /**
+        * 服务评分
+        **/
+            private Float serviceRating;
 
-    /**
-     * 收藏数量
-     **/
-        private Integer favoriteNum;
+        /**
+        * 营业时间
+        **/
+            private String shopHours;
 
-    /**
-     * POI唯一标识
-     **/
-        private String poi;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 用户
-     **/
-        private Long user;
+        /**
+        * 收藏数量
+        **/
+            private Integer favoriteNum;
 
-    /**
-     * 添加时间
-     **/
-        private Date addDate;
+        /**
+        * 评论数量
+        **/
+            private Integer commentNum;
 
-    /**
-     * 卫生评分
-     **/
-        private Float hygieneRating;
+        /**
+        * 电话
+        **/
+            private String phone;
 
-    /**
-     * 商店名称
-     **/
-        private String name;
+        /**
+        * 商店名称
+        **/
+            private String name;
 
-    /**
-     * 区县id
-     **/
-        private Long area;
+        /**
+        * POI详情页
+        **/
+            private String detailUrl;
 
-    /**
-     * 评论数量
-     **/
-        private Integer commentNum;
+        /**
+        * 技术评分
+        **/
+            private Float technologyRating;
 
-    /**
-     * 环境评分
-     **/
-        private Float environmentRating;
+        /**
+        * 签到数量
+        **/
+            private Integer checkinNum;
+
+        /**
+        * 用户
+        **/
+            private Long user;
 }

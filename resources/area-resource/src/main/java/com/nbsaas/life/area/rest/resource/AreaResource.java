@@ -1,8 +1,11 @@
 package com.nbsaas.life.area.rest.resource;
 
+import com.nbsaas.boot.rest.request.PageRequest;
+import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.life.area.api.apis.AreaApi;
 import com.nbsaas.life.area.data.entity.Area;
 import com.nbsaas.life.area.api.domain.request.AreaDataRequest;
+import com.nbsaas.life.area.api.domain.request.AreaSearchRequest;
 import com.nbsaas.life.area.api.domain.response.AreaResponse;
 import com.nbsaas.life.area.api.domain.simple.AreaSimple;
 import com.nbsaas.life.area.rest.convert.AreaSimpleConvert;
@@ -49,7 +52,19 @@ public class AreaResource extends BaseResource<Area,AreaResponse, AreaSimple, Ar
 
     @Override
     public Function<Area, AreaResponse> getConvertResponse() {
-        return new AreaResponseConvert();
+    return new AreaResponseConvert();
+    }
+
+
+
+    @Override
+    public ListResponse<AreaSimple> list(PageRequest request) {
+        AreaSimpleConvert convert=new AreaSimpleConvert();
+        if (request instanceof AreaSearchRequest){
+             AreaSearchRequest searchRequest=(AreaSearchRequest)request;
+             convert.setFetch(searchRequest.getFetch());
+        }
+        return listSimple(request,convert);
     }
 
 }

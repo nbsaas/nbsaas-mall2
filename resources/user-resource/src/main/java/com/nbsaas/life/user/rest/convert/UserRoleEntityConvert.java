@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class UserRoleEntityConvert  implements Converter<UserRole, UserRoleDataRequest> {
-@Override
-public UserRole convert(UserRoleDataRequest source) {
-UserRole result = new UserRole();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public UserRole convert(UserRoleDataRequest source) {
+        UserRole result = new UserRole();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

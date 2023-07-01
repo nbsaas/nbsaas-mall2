@@ -1,44 +1,69 @@
 package com.nbsaas.life.user.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.nbsaas.boot.rest.enums.StoreState;
-
+            import com.nbsaas.boot.rest.enums.StoreState;
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserInfoResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserInfoResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
 
-    private String avatar;
+        /**
+        * 
+        **/
+            private String phone;
 
-    private Integer loginSize;
+        /**
+        * 
+        **/
+            private Integer catalog;
 
-    private String name;
+        /**
+        * 
+        **/
+            private String name;
 
-        private Long id;
+        /**
+        * 
+        **/
+            //枚举
+            private StoreState storeState;
 
-        private StoreState storeState;
+            private String storeStateName;
 
-        private String phone;
+        /**
+        * 
+        **/
+            private String avatar;
 
-        private Integer catalog;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
+        /**
+        * 
+        **/
+            private Integer loginSize;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

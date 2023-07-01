@@ -4,109 +4,114 @@ import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.boot.rest.request.PageRequest;
 import lombok.*;
-
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
 
 /**
- * 搜索bean
- */
+* 搜索bean
+*/
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class ShopCategorySearchRequest extends PageRequest implements Serializable {
+public class ShopCategorySearchRequest   extends PageRequest implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    @Search(name = "nums", operator = Operator.eq)
-    private Long nums;
+    @Search(name = "parent.id",operator = Operator.eq)
+    private Long parent;
 
-    /**
-     *
-     **/
-    @Search(name = "icon", operator = Operator.like)
-    private String icon;
 
-    /**
-     *
-     **/
-    @Search(name = "pinyin", operator = Operator.like)
-    private String pinyin;
+            /**
+            * 编码
+            **/
+            @Search(name = "code",operator = Operator.like)
+            private String code;
 
-    /**
-     *
-     **/
-    @Search(name = "path", operator = Operator.like)
-    private String path;
+            /**
+            * 
+            **/
+            @Search(name = "cname",operator = Operator.like)
+            private String cname;
 
-    /**
-     * 编码
-     **/
-    @Search(name = "code", operator = Operator.like)
-    private String code;
+            /**
+            * 
+            **/
+            @Search(name = "icon",operator = Operator.like)
+            private String icon;
 
-    /**
-     * 左节点
-     **/
-    @Search(name = "lft", operator = Operator.eq)
-    private Integer lft;
+            /**
+            * 
+            **/
+            @Search(name = "py",operator = Operator.like)
+            private String py;
 
-    /**
-     * 深度
-     **/
-    @Search(name = "depth", operator = Operator.eq)
-    private Integer depth;
+            /**
+            * 
+            **/
+            @Search(name = "path",operator = Operator.like)
+            private String path;
 
-    /**
-     *
-     **/
-    @Search(name = "py", operator = Operator.like)
-    private String py;
+            /**
+            * 
+            **/
+            @Search(name = "pinyin",operator = Operator.like)
+            private String pinyin;
 
-    /**
-     * 排序号
-     **/
-    @Search(name = "sortNum", operator = Operator.eq)
-    private Integer sortNum;
+            /**
+            * 深度
+            **/
+            @Search(name = "depth",operator = Operator.eq)
+            private Integer depth;
 
-    /**
-     * 主键id
-     **/
-    @Search(name = "id", operator = Operator.eq)
-    private Long id;
+            /**
+            * 名称
+            **/
+            @Search(name = "name",operator = Operator.like)
+            private String name;
 
-    /**
-     * 右节点
-     **/
-    @Search(name = "rgt", operator = Operator.eq)
-    private Integer rgt;
+            /**
+            * ids
+            **/
+            @Search(name = "ids",operator = Operator.like)
+            private String ids;
 
-    /**
-     * 名称
-     **/
-    @Search(name = "name", operator = Operator.like)
-    private String name;
+            /**
+            * 排序号
+            **/
+            @Search(name = "sortNum",operator = Operator.eq)
+            private Integer sortNum;
 
-    /**
-     * ids
-     **/
-    @Search(name = "ids", operator = Operator.like)
-    private String ids;
+            /**
+            * 主键id
+            **/
+            @Search(name = "id",operator = Operator.eq)
+            private Long id;
 
-    /**
-     *
-     **/
-    @Search(name = "cname", operator = Operator.like)
-    private String cname;
+            /**
+            * 左节点
+            **/
+            @Search(name = "lft",operator = Operator.eq)
+            private Integer lft;
 
+            /**
+            * 
+            **/
+            @Search(name = "nums",operator = Operator.eq)
+            private Long nums;
+
+            /**
+            * 右节点
+            **/
+            @Search(name = "rgt",operator = Operator.eq)
+            private Integer rgt;
+
+
+    private int fetch;
 
 }

@@ -41,7 +41,6 @@ public class ShopCheckIn extends AbstractEntity {
      * 签到的商铺
      */
     @ManyToOne
-    @JoinColumn(name = "shopid")
     private Shop shop;
 
 

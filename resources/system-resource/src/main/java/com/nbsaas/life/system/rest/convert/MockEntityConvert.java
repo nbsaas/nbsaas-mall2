@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class MockEntityConvert  implements Converter<Mock, MockDataRequest> {
-@Override
-public Mock convert(MockDataRequest source) {
-Mock result = new Mock();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public Mock convert(MockDataRequest source) {
+        Mock result = new Mock();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

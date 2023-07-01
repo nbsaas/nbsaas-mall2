@@ -1,41 +1,64 @@
 package com.nbsaas.life.user.api.domain.response;
 
-import com.nbsaas.life.user.api.domain.enums.SecurityType;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Date;
+            import com.nbsaas.life.user.api.domain.enums.SecurityType;
 /**
 * 响应对象
 */
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserPasswordResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserPasswordResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private SecurityType securityType;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
+        /**
+        * 密码
+        **/
+            private String password;
 
-    private String salt;
+        /**
+        * 加密盐
+        **/
+            private String salt;
 
-    private Long id;
+        /**
+        * 
+        **/
+            //枚举
+            private SecurityType securityType;
 
-    private Long user;
+            private String securityTypeName;
 
-    private String password;
+        /**
+        * 校验次数
+        **/
+            private Integer checkSize;
 
-    private Integer checkSize;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 用户id
+        **/
+            private Long user;
 
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

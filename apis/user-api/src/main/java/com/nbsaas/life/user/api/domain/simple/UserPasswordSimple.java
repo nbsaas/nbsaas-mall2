@@ -1,62 +1,65 @@
 package com.nbsaas.life.user.api.domain.simple;
 
-import com.nbsaas.life.user.api.domain.enums.SecurityType;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+            import com.nbsaas.life.user.api.domain.enums.SecurityType;
 
 /**
 * 列表对象
- */
+*/
 @Data
 public class UserPasswordSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    private SecurityType securityType;
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
+            /**
+            * 密码
+            **/
+                private String password;
 
-    /**
-     * 加密盐
-     **/
-    private String salt;
+            /**
+            * 加密盐
+            **/
+                private String salt;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 
+            **/
+                private SecurityType securityType;
 
-    /**
-     * 用户id
-     **/
-    private Long user;
+                private String securityTypeName;
 
-    /**
-     * 密码
-     **/
-    private String password;
+            /**
+            * 校验次数
+            **/
+                private Integer checkSize;
 
-    /**
-     * 校验次数
-     **/
-    private Integer checkSize;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 用户id
+            **/
+                private Long user;
+
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

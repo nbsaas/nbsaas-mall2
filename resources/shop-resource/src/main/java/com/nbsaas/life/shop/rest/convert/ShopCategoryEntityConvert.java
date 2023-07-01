@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class ShopCategoryEntityConvert  implements Converter<ShopCategory, ShopCategoryDataRequest> {
-@Override
-public ShopCategory convert(ShopCategoryDataRequest source) {
-ShopCategory result = new ShopCategory();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public ShopCategory convert(ShopCategoryDataRequest source) {
+        ShopCategory result = new ShopCategory();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

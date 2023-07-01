@@ -1,70 +1,70 @@
 package com.nbsaas.life.ad.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class AdPositionDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class AdPositionDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-        private Date lastDate;
 
-    /**
-     * 排序号
-     **/
-        private Integer sortNum;
+        /**
+        * 
+        **/
+            private String template;
 
-    /**
-     *
-     **/
-        private String name;
+        /**
+        * 
+        **/
+            private String note;
 
-    /**
-     *
-     **/
-        private String key;
+        /**
+        * 
+        **/
+            private String name;
 
-    /**
-     * 主键id
-     **/
-        private Long id;
+        /**
+        * 
+        **/
+            private Integer width;
 
-    /**
-     *
-     **/
-        private Integer height;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     *
-     **/
-        private String note;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     *
-     **/
-        private Integer width;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     *
-     **/
-        private String template;
+        /**
+        * 
+        **/
+            private String key;
 
-    /**
-     * 添加时间
-     **/
-        private Date addDate;
+        /**
+        * 
+        **/
+            private Integer height;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

@@ -23,12 +23,10 @@ public class ShopBookMarks extends AbstractEntity {
 	private String messages;
 	
 	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="userid")
+	@ManyToOne(fetch=FetchType.LAZY)
 	private UserInfo user;
 
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="shopid")
+	@ManyToOne(fetch=FetchType.LAZY)
 	private Shop shop;
 
 

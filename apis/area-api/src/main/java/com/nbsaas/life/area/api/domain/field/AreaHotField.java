@@ -8,10 +8,10 @@ public class AreaHotField  {
 
 
 
+    public static final String  area = "area";
+
+
     public static final String  areaName = "areaName";
-
-
-    public static final String  lastDate = "lastDate";
 
 
     public static final String  sortNum = "sortNum";
@@ -23,6 +23,6 @@ public class AreaHotField  {
     public static final String  addDate = "addDate";
 
 
-    public static final String  area = "area";
+    public static final String  lastDate = "lastDate";
 
 }

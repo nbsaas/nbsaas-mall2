@@ -4,38 +4,52 @@ import com.nbsaas.life.shop.data.entity.ShopCategory;
 import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
 
 import com.nbsaas.boot.rest.api.Converter;
-
+    import java.util.stream.Collectors;
+    import lombok.Data;
 /**
- * 列表对象转换器
- */
+* 列表对象转换器
+*/
 
-public class ShopCategorySimpleConvert implements Converter
-        <ShopCategorySimple, ShopCategory> {
-
-
-    @Override
-    public ShopCategorySimple convert(ShopCategory source) {
-        ShopCategorySimple result = new ShopCategorySimple();
-
-        result.setLastDate(source.getLastDate());
-        result.setNums(source.getNums());
-        result.setIcon(source.getIcon());
-        result.setPinyin(source.getPinyin());
-        result.setPath(source.getPath());
-        result.setCode(source.getCode());
-        result.setLft(source.getLft());
-        result.setDepth(source.getDepth());
-        result.setAddDate(source.getAddDate());
-        result.setPy(source.getPy());
-        result.setSortNum(source.getSortNum());
-        result.setId(source.getId());
-        result.setRgt(source.getRgt());
-        result.setName(source.getName());
-        result.setIds(source.getIds());
-        result.setCname(source.getCname());
+    @Data
+public class ShopCategorySimpleConvert implements Converter<ShopCategorySimple, ShopCategory> {
 
 
-        return result;
-    }
+    private int fetch;
+
+
+@Override
+public ShopCategorySimple convert(ShopCategory source) {
+    ShopCategorySimple result = new ShopCategorySimple();
+
+                result.setCode(source.getCode());
+                result.setCname(source.getCname());
+                result.setIcon(source.getIcon());
+                result.setPy(source.getPy());
+                result.setAddDate(source.getAddDate());
+                result.setPath(source.getPath());
+                result.setPinyin(source.getPinyin());
+                result.setDepth(source.getDepth());
+                result.setName(source.getName());
+                result.setIds(source.getIds());
+                result.setSortNum(source.getSortNum());
+                result.setId(source.getId());
+                result.setLft(source.getLft());
+                result.setNums(source.getNums());
+                result.setRgt(source.getRgt());
+                result.setLastDate(source.getLastDate());
+
+        result.setLabel(source.getName());
+        result.setValue(""+source.getId());
+        if (source.getChildren()!=null&&source.getChildren().size()>0){
+            if (fetch!=0){
+                result.setChildren(source.getChildren().stream().map(this).collect(Collectors.toList()));
+            }
+            result.setHasChildren(true);
+        }else{
+            result.setHasChildren(false);
+        }
+
+    return result;
+}
 
 }

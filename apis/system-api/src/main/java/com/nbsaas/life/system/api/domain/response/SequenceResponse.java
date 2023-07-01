@@ -1,42 +1,60 @@
 package com.nbsaas.life.system.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class SequenceResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class SequenceResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private Integer increment;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date createDate;
+        /**
+        * 
+        **/
+            private Date updateDate;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date updateDate;
+        /**
+        * 
+        **/
+            private String name;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
+        /**
+        * 
+        **/
+            private Integer increment;
 
-    private String name;
+        /**
+        * 
+        **/
+            private Long currentNum;
 
-    private Long id;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private Long currentNum;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 
+        **/
+            private Date createDate;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

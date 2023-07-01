@@ -1,67 +1,70 @@
 package com.nbsaas.life.system.api.domain.simple;
 
-import com.nbsaas.boot.rest.enums.StoreState;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+            import com.nbsaas.boot.rest.enums.StoreState;
 
 /**
- * 列表对象
- */
+* 列表对象
+*/
 @Data
 public class DictItemSimple implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-    private Date lastDate;
 
-    /**
-     *
-     **/
-    private String title;
+            /**
+            * 
+            **/
+                private String dictTitle;
 
-    /**
-     * 主键id
-     **/
-    private Long id;
+            /**
+            * 键值
+            **/
+                private String dataValue;
 
-    /**
-     *
-     **/
-    private StoreState storeState;
+            /**
+            * 
+            **/
+                private Long dict;
 
-    /**
-     * 排序字段
-     **/
-    private Integer sortNum;
+            /**
+            * 排序字段
+            **/
+                private Integer sortNum;
 
-    /**
-     * 键值
-     **/
-    private String dataValue;
+            /**
+            * 
+            **/
+                private StoreState storeState;
 
-    /**
-     * 编码
-     **/
-    private String dataCode;
+                private String storeStateName;
 
-    /**
-     *
-     **/
-    private Long dict;
+            /**
+            * 主键id
+            **/
+                private Long id;
 
-    /**
-     * 添加时间
-     **/
-    private Date addDate;
+            /**
+            * 编码
+            **/
+                private String dataCode;
+
+            /**
+            * 添加时间
+            **/
+                private Date addDate;
+
+            /**
+            * 最新修改时间
+            **/
+                private Date lastDate;
 
 
 }

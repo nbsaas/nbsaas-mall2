@@ -1,120 +1,120 @@
 package com.nbsaas.life.system.api.domain.request;
 
-import com.nbsaas.boot.rest.request.RequestId;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.util.Date;
+import java.math.BigDecimal;
+import lombok.Data;
+import com.nbsaas.boot.rest.request.RequestId;
+/**
+* 请求对象
+*/
+@Data
+public class ApplicationMenuDataRequest implements Serializable,RequestId {
 
 /**
- * 请求对象
- */
-@Data
-public class ApplicationMenuDataRequest implements Serializable, RequestId {
-
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     * 最新修改时间
-     **/
-        private Date lastDate;
 
-    /**
-     * 编码
-     **/
-        private String code;
+        /**
+        * 应用
+        **/
+            private Long app;
 
-    /**
-     * 左节点
-     **/
-        private Integer lft;
+        /**
+        * 创建人id
+        **/
+            private Long creator;
 
-    /**
-     * 深度
-     **/
-        private Integer depth;
+        /**
+        * 编码
+        **/
+            private String code;
 
-    /**
-     * 路由
-     **/
-        private String router;
+        /**
+        * 分类
+        **/
+            private Integer catalog;
 
-    /**
-     * 分类
-     **/
-        private Integer catalog;
+        /**
+        * 应用
+        **/
+            //private String appNameName;
 
-    /**
-     *
-     **/
-        private Long num;
+        /**
+        * 
+        **/
+            private Long num;
 
-    /**
-     * 图标
-     **/
-        private String icon;
+        /**
+        * 图标
+        **/
+            private String icon;
 
-    /**
-     * 应用
-     **/
-        private String appName;
+        /**
+        * 权限
+        **/
+            private String permission;
 
-    /**
-     * 添加时间
-     **/
-        private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-    /**
-     * 排序号
-     **/
-        private Integer sortNum;
+        /**
+        * 路径
+        **/
+            private String path;
 
-    /**
-     * 应用
-     **/
-        private Long app;
+        /**
+        * 路由
+        **/
+            private String router;
 
-    /**
-     * 主键id
-     **/
-        private Long id;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-    /**
-     * 菜单类型
-     **/
-        private Integer menuType;
+        /**
+        * 名称
+        **/
+            private String name;
 
-    /**
-     * 右节点
-     **/
-        private Integer rgt;
+        /**
+        * ids
+        **/
+            private String ids;
 
-    /**
-     * 创建人id
-     **/
-        private Long creator;
+        /**
+        * 菜单类型
+        **/
+            private Integer menuType;
 
-    /**
-     * 名称
-     **/
-        private String name;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-    /**
-     * 权限
-     **/
-        private String permission;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    /**
-     * 路径
-     **/
-        private String path;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-    /**
-     * ids
-     **/
-        private String ids;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 }

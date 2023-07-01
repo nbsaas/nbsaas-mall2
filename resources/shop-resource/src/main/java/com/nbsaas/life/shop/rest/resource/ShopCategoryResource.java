@@ -1,8 +1,11 @@
 package com.nbsaas.life.shop.rest.resource;
 
+import com.nbsaas.boot.rest.request.PageRequest;
+import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.life.shop.api.apis.ShopCategoryApi;
 import com.nbsaas.life.shop.data.entity.ShopCategory;
 import com.nbsaas.life.shop.api.domain.request.ShopCategoryDataRequest;
+import com.nbsaas.life.shop.api.domain.request.ShopCategorySearchRequest;
 import com.nbsaas.life.shop.api.domain.response.ShopCategoryResponse;
 import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
 import com.nbsaas.life.shop.rest.convert.ShopCategorySimpleConvert;
@@ -49,7 +52,19 @@ public class ShopCategoryResource extends BaseResource<ShopCategory,ShopCategory
 
     @Override
     public Function<ShopCategory, ShopCategoryResponse> getConvertResponse() {
-        return new ShopCategoryResponseConvert();
+    return new ShopCategoryResponseConvert();
+    }
+
+
+
+    @Override
+    public ListResponse<ShopCategorySimple> list(PageRequest request) {
+        ShopCategorySimpleConvert convert=new ShopCategorySimpleConvert();
+        if (request instanceof ShopCategorySearchRequest){
+             ShopCategorySearchRequest searchRequest=(ShopCategorySearchRequest)request;
+             convert.setFetch(searchRequest.getFetch());
+        }
+        return listSimple(request,convert);
     }
 
 }

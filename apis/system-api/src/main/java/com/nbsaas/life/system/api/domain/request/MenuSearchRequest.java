@@ -3,121 +3,118 @@ package com.nbsaas.life.system.api.domain.request;
 import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.boot.rest.request.PageRequest;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
-
+import lombok.*;
 import java.io.Serializable;
+import java.util.Date;
+import java.math.BigDecimal;
 
 /**
- * 搜索bean
- */
+* 搜索bean
+*/
 @Getter
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class MenuSearchRequest extends PageRequest implements Serializable {
+public class MenuSearchRequest   extends PageRequest implements Serializable {
 
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
 
-    /**
-     *
-     **/
-    @Search(name = "icon", operator = Operator.like)
-    private String icon;
 
-    /**
-     *
-     **/
-    @Search(name = "nums", operator = Operator.eq)
-    private Long nums;
+            /**
+            * 编码
+            **/
+            @Search(name = "code",operator = Operator.like)
+            private String code;
 
-    /**
-     *
-     **/
-    @Search(name = "path", operator = Operator.like)
-    private String path;
+            /**
+            * 菜单类型
+            **/
+            @Search(name = "catalog",operator = Operator.eq)
+            private Integer catalog;
 
-    /**
-     * 编码
-     **/
-    @Search(name = "code", operator = Operator.like)
-    private String code;
+            /**
+            * 
+            **/
+            @Search(name = "icon",operator = Operator.like)
+            private String icon;
 
-    /**
-     * 左节点
-     **/
-    @Search(name = "lft", operator = Operator.eq)
-    private Integer lft;
+            /**
+            * 
+            **/
+            @Search(name = "permission",operator = Operator.like)
+            private String permission;
 
-    /**
-     * 深度
-     **/
-    @Search(name = "depth", operator = Operator.eq)
-    private Integer depth;
+            /**
+            * 
+            **/
+            @Search(name = "path",operator = Operator.like)
+            private String path;
 
-    /**
-     *
-     **/
-    @Search(name = "permission", operator = Operator.like)
-    private String permission;
+            /**
+            * 
+            **/
+            @Search(name = "router",operator = Operator.like)
+            private String router;
 
-    /**
-     * 排序号
-     **/
-    @Search(name = "sortNum", operator = Operator.eq)
-    private Integer sortNum;
+            /**
+            * 深度
+            **/
+            @Search(name = "depth",operator = Operator.eq)
+            private Integer depth;
 
-    /**
-     *
-     **/
-    @Search(name = "router", operator = Operator.like)
-    private String router;
+            /**
+            * 名称
+            **/
+            @Search(name = "name",operator = Operator.like)
+            private String name;
 
-    /**
-     * 主键id
-     **/
-    @Search(name = "id", operator = Operator.eq)
-    private Long id;
+            /**
+            * ids
+            **/
+            @Search(name = "ids",operator = Operator.like)
+            private String ids;
 
-    /**
-     * 菜单类型
-     **/
-    @Search(name = "catalog", operator = Operator.eq)
-    private Integer catalog;
+            /**
+            * 是否租户使用
+            **/
+            @Search(name = "menuType",operator = Operator.eq)
+            private Integer menuType;
 
-    /**
-     * 是否租户使用
-     **/
-    @Search(name = "menuType", operator = Operator.eq)
-    private Integer menuType;
+            /**
+            * 排序号
+            **/
+            @Search(name = "sortNum",operator = Operator.eq)
+            private Integer sortNum;
 
-    /**
-     * 右节点
-     **/
-    @Search(name = "rgt", operator = Operator.eq)
-    private Integer rgt;
+            /**
+            * 主键id
+            **/
+            @Search(name = "id",operator = Operator.eq)
+            private Long id;
 
-    /**
-     * 名称
-     **/
-    @Search(name = "name", operator = Operator.like)
-    private String name;
+            /**
+            * 左节点
+            **/
+            @Search(name = "lft",operator = Operator.eq)
+            private Integer lft;
 
-    /**
-     * ids
-     **/
-    @Search(name = "ids", operator = Operator.like)
-    private String ids;
+            /**
+            * 
+            **/
+            @Search(name = "nums",operator = Operator.eq)
+            private Long nums;
+
+            /**
+            * 右节点
+            **/
+            @Search(name = "rgt",operator = Operator.eq)
+            private Integer rgt;
+
 
     private int fetch;
-
-    @Search(name = "levelInfo", operator = Operator.eq)
-    private Integer level;
 
 }

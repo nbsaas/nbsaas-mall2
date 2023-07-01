@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class TalkEntityConvert  implements Converter<Talk, TalkDataRequest> {
-@Override
-public Talk convert(TalkDataRequest source) {
-Talk result = new Talk();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public Talk convert(TalkDataRequest source) {
+        Talk result = new Talk();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class UserCityEntityConvert  implements Converter<UserCity, UserCityDataRequest> {
-@Override
-public UserCity convert(UserCityDataRequest source) {
-UserCity result = new UserCity();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public UserCity convert(UserCityDataRequest source) {
+        UserCity result = new UserCity();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 

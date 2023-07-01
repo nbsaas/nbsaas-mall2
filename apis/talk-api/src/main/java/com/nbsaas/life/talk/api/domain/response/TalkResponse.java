@@ -1,7 +1,6 @@
 package com.nbsaas.life.talk.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -11,29 +10,51 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class TalkResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class TalkResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private Integer replies;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
+        /**
+        * 
+        **/
+            private Integer replies;
 
-    private String topic;
+        /**
+        * 
+        **/
+            private Integer subscribe;
 
-    private Long id;
+        /**
+        * 
+        **/
+            private String lastMessage;
 
-    private String message;
+        /**
+        * 
+        **/
+            private String topic;
 
-    private Integer subscribe;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-    private String lastMessage;
+        /**
+        * 
+        **/
+            private String message;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date addDate;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

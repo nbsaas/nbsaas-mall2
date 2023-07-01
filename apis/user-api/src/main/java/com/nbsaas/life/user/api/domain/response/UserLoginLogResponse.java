@@ -1,51 +1,88 @@
 package com.nbsaas.life.user.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.nbsaas.life.user.api.domain.enums.LoginState;
-import com.nbsaas.boot.rest.enums.StoreState;
-
+            import com.nbsaas.boot.rest.enums.StoreState;
+            import com.nbsaas.life.user.api.domain.enums.LoginState;
 /**
- * 响应对象
- */
+* 响应对象
+*/
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class UserLoginLogResponse implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+public class UserLoginLogResponse  implements Serializable {
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    private String note;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-    private Date lastDate;
+        /**
+        * 备注
+        **/
+            private String note;
 
-    private LoginState state;
+        /**
+        * 登录密码
+        **/
+            private String password;
 
-    private Long id;
+        /**
+        * 登录IP
+        **/
+            private String ip;
 
-        private StoreState storeState;
+        /**
+        * 客户端
+        **/
+            private String client;
 
-        private String account;
+        /**
+        * 
+        **/
+            //枚举
+            private StoreState storeState;
 
-        private Long user;
+            private String storeStateName;
 
-        private String password;
+        /**
+        * 
+        **/
+            //枚举
+            private LoginState state;
 
-        private String ip;
+            private String stateName;
 
-        private String userName;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-        private String client;
+        /**
+        * 用户id
+        **/
+            private String userName;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 用户id
+        **/
+            private Long user;
 
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
+
+        /**
+        * 登陆账号
+        **/
+            private String account;
+
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

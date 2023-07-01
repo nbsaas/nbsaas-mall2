@@ -1,7 +1,6 @@
 package com.nbsaas.life.shop.api.domain.response;
 
 import lombok.*;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
@@ -12,44 +11,90 @@ import java.util.Date;
 @Setter
 @ToString(callSuper = true)
 public class ShopCategoryResponse  implements Serializable {
-    /**
-     * 序列化参数
-     */
-    private static final long serialVersionUID = 1L;
+/**
+* 序列化参数
+*/
+private static final long serialVersionUID = 1L;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date lastDate;
 
-        private Long nums;
+        /**
+        * 编码
+        **/
+            private String code;
 
-        private String icon;
+        /**
+        * 
+        **/
+            private String cname;
 
-        private String pinyin;
+        /**
+        * 
+        **/
+            private String icon;
 
-        private String path;
+        /**
+        * 
+        **/
+            private String py;
 
-        private String code;
+        /**
+        * 添加时间
+        **/
+            private Date addDate;
 
-        private Integer lft;
+        /**
+        * 
+        **/
+            private String path;
 
-        private Integer depth;
+        /**
+        * 
+        **/
+            private String pinyin;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm", timezone = "GMT+8")
-        private Date addDate;
+        /**
+        * 深度
+        **/
+            private Integer depth;
 
-        private String py;
+        /**
+        * 名称
+        **/
+            private String name;
 
-        private Integer sortNum;
+        /**
+        * ids
+        **/
+            private String ids;
 
-        private Long id;
+        /**
+        * 排序号
+        **/
+            private Integer sortNum;
 
-        private Integer rgt;
+        /**
+        * 主键id
+        **/
+            private Long id;
 
-        private String name;
+        /**
+        * 左节点
+        **/
+            private Integer lft;
 
-        private String ids;
+        /**
+        * 
+        **/
+            private Long nums;
 
-        private String cname;
+        /**
+        * 右节点
+        **/
+            private Integer rgt;
 
+        /**
+        * 最新修改时间
+        **/
+            private Date lastDate;
 
 }

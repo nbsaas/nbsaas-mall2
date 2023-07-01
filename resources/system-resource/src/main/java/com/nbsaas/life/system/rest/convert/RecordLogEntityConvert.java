@@ -12,11 +12,12 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 */
 
 public class RecordLogEntityConvert  implements Converter<RecordLog, RecordLogDataRequest> {
-@Override
-public RecordLog convert(RecordLogDataRequest source) {
-RecordLog result = new RecordLog();
-BeanDataUtils.copyProperties(source, result);
-return result;
-}
+
+    @Override
+    public RecordLog convert(RecordLogDataRequest source) {
+        RecordLog result = new RecordLog();
+        BeanDataUtils.copyProperties(source, result);
+        return result;
+    }
 }
 
