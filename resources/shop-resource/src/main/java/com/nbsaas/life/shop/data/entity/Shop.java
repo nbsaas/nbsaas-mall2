@@ -4,7 +4,9 @@ package com.nbsaas.life.shop.data.entity;
 import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.code.annotation.FormAnnotation;
 import com.nbsaas.boot.code.annotation.FormField;
+import com.nbsaas.boot.code.annotation.SearchItem;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
+import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.life.area.data.entity.Area;
 import com.nbsaas.life.user.data.entity.UserInfo;
 import lombok.Data;
@@ -22,6 +24,7 @@ import java.util.*;
 public class Shop extends AbstractEntity {
 
 
+    @SearchItem(label = "商店名称",name = "name",key = "name")
     @FormField(title = "商店名称", sortNum = "1", grid = true)
     @Column(length = 100)
     @Comment("商店名称")

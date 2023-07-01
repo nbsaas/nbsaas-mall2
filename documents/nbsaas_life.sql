@@ -35,7 +35,10 @@ CREATE TABLE IF NOT EXISTS `area` (
   `lft` int(11) DEFAULT NULL COMMENT '左节点',
   `rgt` int(11) DEFAULT NULL COMMENT '右节点',
   `sort_num` int(11) DEFAULT NULL COMMENT '排序号',
-  PRIMARY KEY (`id`)
+  `parent_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK2dmtr5518yrmeswf3hau5ksik` (`parent_id`),
+  CONSTRAINT `FK2dmtr5518yrmeswf3hau5ksik` FOREIGN KEY (`parent_id`) REFERENCES `area` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 正在导出表  nbsaas-life.area 的数据：~0 rows (大约)
@@ -56,6 +59,54 @@ CREATE TABLE IF NOT EXISTS `area_hot` (
 
 -- 正在导出表  nbsaas-life.area_hot 的数据：~0 rows (大约)
 DELETE FROM `area_hot`;
+
+-- 导出  表 nbsaas-life.bs_basic_ad 结构
+DROP TABLE IF EXISTS `bs_basic_ad`;
+CREATE TABLE IF NOT EXISTS `bs_basic_ad` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `add_date` datetime(6) DEFAULT NULL COMMENT '添加时间',
+  `last_date` datetime(6) DEFAULT NULL COMMENT '最新修改时间',
+  `sort_num` int(11) DEFAULT NULL COMMENT '排序号',
+  `begin_date` datetime(6) DEFAULT NULL,
+  `buss_id` bigint(20) DEFAULT NULL,
+  `catalog` int(11) DEFAULT NULL,
+  `end_date` datetime(6) DEFAULT NULL,
+  `note` varchar(255) DEFAULT NULL,
+  `path` varchar(255) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `url` varchar(255) DEFAULT NULL,
+  `ad_position_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK4o90micfofe3dsox57fsbf54h` (`ad_position_id`),
+  CONSTRAINT `FK4o90micfofe3dsox57fsbf54h` FOREIGN KEY (`ad_position_id`) REFERENCES `bs_basic_ad_position` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 正在导出表  nbsaas-life.bs_basic_ad 的数据：~0 rows (大约)
+DELETE FROM `bs_basic_ad`;
+INSERT INTO `bs_basic_ad` (`id`, `add_date`, `last_date`, `sort_num`, `begin_date`, `buss_id`, `catalog`, `end_date`, `note`, `path`, `title`, `url`, `ad_position_id`) VALUES
+	(1, '2023-05-29 23:58:35.000000', '2023-05-30 21:28:01.947000', NULL, '2023-05-15 00:00:00.000000', NULL, NULL, '2023-05-24 03:02:00.000000', '213123', 'http://file.nbsaas.com/newbyte/upload/image/202305/cb8a4bda-dcdd-41de-b15b-480d105ac1d7.png', 'ghfgh', '213213', 1);
+
+-- 导出  表 nbsaas-life.bs_basic_ad_position 结构
+DROP TABLE IF EXISTS `bs_basic_ad_position`;
+CREATE TABLE IF NOT EXISTS `bs_basic_ad_position` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `add_date` datetime(6) DEFAULT NULL COMMENT '添加时间',
+  `last_date` datetime(6) DEFAULT NULL COMMENT '最新修改时间',
+  `sort_num` int(11) DEFAULT NULL COMMENT '排序号',
+  `height` int(11) NOT NULL,
+  `data_key` varchar(30) DEFAULT NULL,
+  `name` varchar(255) NOT NULL,
+  `note` varchar(255) DEFAULT NULL,
+  `template` longtext NOT NULL,
+  `width` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- 正在导出表  nbsaas-life.bs_basic_ad_position 的数据：~2 rows (大约)
+DELETE FROM `bs_basic_ad_position`;
+INSERT INTO `bs_basic_ad_position` (`id`, `add_date`, `last_date`, `sort_num`, `height`, `data_key`, `name`, `note`, `template`, `width`) VALUES
+	(1, '2023-05-29 23:42:18.840000', '2023-05-29 23:42:18.840000', NULL, 0, 'ada', 'ada', '', '', 0),
+	(2, '2023-05-29 23:42:29.000000', '2023-05-29 23:59:45.844000', NULL, 2, 'adaw', 'aahfg', 'fghttt', '', 3);
 
 -- 导出  表 nbsaas-life.shop 结构
 DROP TABLE IF EXISTS `shop`;
@@ -92,9 +143,15 @@ CREATE TABLE IF NOT EXISTS `shop` (
   `website` varchar(100) DEFAULT NULL COMMENT '网址',
   `area_id` bigint(20) DEFAULT NULL,
   `user_id` bigint(20) DEFAULT NULL,
+  `city_id` bigint(20) DEFAULT NULL,
+  `province_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FKh3yi008wvrvqq1g7us3ykfb8x` (`area_id`),
   KEY `FKrgns5md52jfqejfjpr4th9adq` (`user_id`),
+  KEY `FKen1u2w6px9vqngrq6w8knbvuw` (`city_id`),
+  KEY `FKat362tlvb3jvjaegek1eky2y6` (`province_id`),
+  CONSTRAINT `FKat362tlvb3jvjaegek1eky2y6` FOREIGN KEY (`province_id`) REFERENCES `area` (`id`),
+  CONSTRAINT `FKen1u2w6px9vqngrq6w8knbvuw` FOREIGN KEY (`city_id`) REFERENCES `area` (`id`),
   CONSTRAINT `FKh3yi008wvrvqq1g7us3ykfb8x` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
   CONSTRAINT `FKrgns5md52jfqejfjpr4th9adq` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='店铺';
@@ -1390,7 +1447,7 @@ CREATE TABLE IF NOT EXISTS `sys_app` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-life.sys_app 的数据：~1 rows (大约)
+-- 正在导出表  nbsaas-life.sys_app 的数据：~0 rows (大约)
 DELETE FROM `sys_app`;
 INSERT INTO `sys_app` (`id`, `add_date`, `last_date`, `app_key`, `name`, `note`) VALUES
 	(1, '2023-05-27 14:16:35.984000', '2023-05-27 14:16:35.984000', NULL, 'ada', NULL);
@@ -1441,6 +1498,55 @@ CREATE TABLE IF NOT EXISTS `sys_config` (
 -- 正在导出表  nbsaas-life.sys_config 的数据：~0 rows (大约)
 DELETE FROM `sys_config`;
 
+-- 导出  表 nbsaas-life.sys_dict 结构
+DROP TABLE IF EXISTS `sys_dict`;
+CREATE TABLE IF NOT EXISTS `sys_dict` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `add_date` datetime(6) DEFAULT NULL COMMENT '添加时间',
+  `last_date` datetime(6) DEFAULT NULL COMMENT '最新修改时间',
+  `dict_key` varchar(255) DEFAULT NULL COMMENT '字典key',
+  `title` varchar(255) DEFAULT NULL COMMENT '字典名称',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='字典表';
+
+-- 正在导出表  nbsaas-life.sys_dict 的数据：~4 rows (大约)
+DELETE FROM `sys_dict`;
+INSERT INTO `sys_dict` (`id`, `add_date`, `last_date`, `dict_key`, `title`) VALUES
+	(1, NULL, '2023-06-03 20:34:35.185000', 'ada', '测试'),
+	(2, NULL, '2023-06-03 20:30:08.269000', 'dfds', '性别'),
+	(3, NULL, '2023-06-03 20:31:03.910000', 'sdf', '汉口'),
+	(5, NULL, '2023-06-03 20:31:08.316000', 'fghfg', '钢筋');
+
+-- 导出  表 nbsaas-life.sys_dict_item 结构
+DROP TABLE IF EXISTS `sys_dict_item`;
+CREATE TABLE IF NOT EXISTS `sys_dict_item` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `add_date` datetime(6) DEFAULT NULL COMMENT '添加时间',
+  `last_date` datetime(6) DEFAULT NULL COMMENT '最新修改时间',
+  `data_code` varchar(255) DEFAULT NULL COMMENT '编码',
+  `data_value` varchar(255) DEFAULT NULL COMMENT '键值',
+  `sort_num` int(11) DEFAULT NULL COMMENT '排序字段',
+  `store_state` int(11) DEFAULT NULL,
+  `dict_id` bigint(20) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FKdem7dtr28pt4kqu9rk7strqdj` (`dict_id`),
+  CONSTRAINT `FKdem7dtr28pt4kqu9rk7strqdj` FOREIGN KEY (`dict_id`) REFERENCES `sys_dict` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='字典子项';
+
+-- 正在导出表  nbsaas-life.sys_dict_item 的数据：~9 rows (大约)
+DELETE FROM `sys_dict_item`;
+INSERT INTO `sys_dict_item` (`id`, `add_date`, `last_date`, `data_code`, `data_value`, `sort_num`, `store_state`, `dict_id`) VALUES
+	(1, '2023-06-03 20:11:29.784000', '2023-06-03 20:11:29.784000', 'tyu', 'tyut', NULL, NULL, NULL),
+	(2, '2023-06-03 20:13:19.605000', '2023-06-03 20:13:19.605000', 'uio', 'uiouio', NULL, NULL, NULL),
+	(3, '2023-06-03 20:13:23.647000', '2023-06-03 20:13:23.647000', 'uio', 'uiouio', NULL, NULL, NULL),
+	(6, NULL, '2023-06-03 20:31:29.912000', '001', '男', NULL, NULL, 2),
+	(13, NULL, '2023-06-03 20:41:39.707000', 'tuany', 'tr有678', 0, NULL, 1),
+	(14, '2023-06-03 20:33:52.870000', '2023-06-03 20:33:52.870000', 'rty', '团员', NULL, NULL, 1),
+	(15, '2023-06-03 20:40:33.742000', '2023-06-03 20:40:33.742000', 'yu', 'u吃', NULL, NULL, 1),
+	(16, NULL, '2023-06-03 20:41:31.717000', '粤语', '月衰退', 2, NULL, 1),
+	(17, NULL, '2023-06-03 20:45:00.989000', '11', '111', 5, NULL, 3),
+	(18, '2023-06-03 20:45:56.857000', '2023-06-03 20:45:56.857000', '冯蘅芳', '凤凰', 0, NULL, 3);
+
 -- 导出  表 nbsaas-life.sys_error_log 结构
 DROP TABLE IF EXISTS `sys_error_log`;
 CREATE TABLE IF NOT EXISTS `sys_error_log` (
@@ -1485,41 +1591,21 @@ CREATE TABLE IF NOT EXISTS `sys_menu` (
   CONSTRAINT `FK2jrf4gb0gjqi8882gxytpxnhe` FOREIGN KEY (`parent_id`) REFERENCES `sys_menu` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-life.sys_menu 的数据：~32 rows (大约)
+-- 正在导出表  nbsaas-life.sys_menu 的数据：~12 rows (大约)
 DELETE FROM `sys_menu`;
 INSERT INTO `sys_menu` (`id`, `add_date`, `code`, `depth`, `ids`, `last_date`, `lft`, `name`, `rgt`, `sort_num`, `catalog`, `icon`, `menu_type`, `nums`, `path`, `permission`, `router`, `parent_id`) VALUES
 	(1, NULL, '', 1, '', NULL, NULL, '首页', NULL, 0, NULL, 'fa fa-home', NULL, NULL, '/home', '', '/home', NULL),
-	(2, NULL, '', 1, '', NULL, NULL, '系统设置', NULL, 0, NULL, 'fa  fa-gear', NULL, NULL, '', '', '/setting', NULL),
+	(2, NULL, '', 1, '', NULL, NULL, '系统设置', NULL, 111, NULL, 'fa  fa-gear', NULL, NULL, '', '', '/setting', NULL),
 	(3, NULL, '', 2, '', NULL, NULL, '菜单管理', NULL, 0, NULL, 'fa fa-list', NULL, NULL, '/menu/index', 'menu', '/menu/index', 2),
-	(4, NULL, '', NULL, '', NULL, NULL, '未命名1', NULL, 0, NULL, '', NULL, NULL, '', 'ghj,ghj,ghj,ghj', '/sss', NULL),
+	(4, NULL, '', NULL, '', NULL, NULL, '店铺管理', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', 'ghj,ghj,ghj,ghj', '/sss', NULL),
 	(5, NULL, '', NULL, '', NULL, NULL, '广告管理', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', 'ad_home', '/ad_home', NULL),
 	(6, NULL, '', NULL, '', NULL, NULL, '角色管理', NULL, 0, NULL, 'fa fa-list', NULL, NULL, '', 'role', '/role/index', 2),
-	(7, NULL, '', NULL, '', NULL, NULL, '扽跟等', NULL, 0, NULL, '', NULL, NULL, '', 'fghfgh', '', NULL),
-	(8, NULL, '', NULL, '', NULL, NULL, '未命名5', NULL, 0, NULL, 'fa fa-home', NULL, NULL, '', '', '', NULL),
-	(9, NULL, '', NULL, '', NULL, NULL, '未命名6', NULL, 0, NULL, 'fa fa-user', NULL, NULL, '', 'rtyrty,rtyrty,rty', '', NULL),
-	(10, NULL, '', NULL, '', NULL, NULL, '未命名7', NULL, 0, NULL, 'fa fa-home', NULL, NULL, '', '', '', NULL),
-	(11, '2023-05-28 16:28:01.149000', NULL, NULL, NULL, '2023-05-28 16:28:01.149000', NULL, '未命名8', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, NULL),
-	(12, NULL, '', NULL, '', NULL, NULL, '未命名9', NULL, 0, NULL, '', NULL, NULL, '', '', '', NULL),
-	(13, NULL, '', NULL, '', NULL, NULL, '未命名10', NULL, 0, NULL, '', NULL, NULL, '', '', '', NULL),
 	(16, NULL, '', NULL, '', NULL, NULL, '个人信息', NULL, 0, NULL, 'fa fa-user', NULL, NULL, '', '', '/usercenter/index', 2),
-	(17, NULL, '', NULL, '', NULL, NULL, '数据字典', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', '', '', 2),
+	(17, NULL, '', NULL, '', NULL, NULL, '数据字典', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', 'dict', '/dict/index', 2),
 	(18, NULL, '', NULL, '', NULL, NULL, '系统配置', NULL, 0, NULL, 'fa  fa-gear', NULL, NULL, '', '', '/system/index', 2),
-	(19, '2023-05-28 16:28:08.844000', NULL, NULL, NULL, '2023-05-28 16:28:08.844000', NULL, '未命名16', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 2),
-	(20, '2023-05-28 16:28:09.040000', NULL, NULL, NULL, '2023-05-28 16:28:09.040000', NULL, '未命名17', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 2),
-	(21, '2023-05-28 16:28:09.236000', NULL, NULL, NULL, '2023-05-28 16:28:09.236000', NULL, '未命名18', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 2),
-	(22, '2023-05-28 16:28:09.505000', NULL, NULL, NULL, '2023-05-28 16:28:09.505000', NULL, '未命名19', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 2),
-	(23, NULL, '', NULL, '', NULL, NULL, '字段管理', NULL, 0, NULL, '', NULL, NULL, '', '', '/dic', 4),
-	(24, NULL, '', NULL, '', NULL, NULL, '未命名2', NULL, 0, NULL, '', NULL, NULL, '', '', '', 4),
-	(26, NULL, '', NULL, '', NULL, NULL, '未命名1uy', NULL, 0, NULL, '', NULL, NULL, '', '', '', 4),
-	(27, NULL, '', NULL, '', NULL, NULL, '未命名2', NULL, 0, NULL, '', NULL, NULL, '', '', '', 4),
-	(28, NULL, '', NULL, '', NULL, NULL, '未命名3', NULL, 0, NULL, '', NULL, NULL, '', '', '', 4),
-	(29, '2023-05-28 16:31:34.034000', NULL, NULL, NULL, '2023-05-28 16:31:34.034000', NULL, '未命名4', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 4),
-	(32, NULL, '', NULL, '', NULL, NULL, '未命名1', NULL, 0, NULL, '', NULL, NULL, '', '', '', 4),
-	(33, '2023-05-28 16:32:10.561000', NULL, NULL, NULL, '2023-05-28 16:32:10.561000', NULL, '未命名2', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 4),
-	(34, '2023-05-28 16:32:10.740000', NULL, NULL, NULL, '2023-05-28 16:32:10.740000', NULL, '未命名3', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 4),
-	(35, '2023-05-28 16:32:10.928000', NULL, NULL, NULL, '2023-05-28 16:32:10.928000', NULL, '未命名4', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 4),
-	(36, NULL, '', NULL, '', NULL, NULL, '未命名5', NULL, 0, NULL, '', NULL, NULL, '', '', '', 4),
-	(37, '2023-05-28 16:32:11.302000', NULL, NULL, NULL, '2023-05-28 16:32:11.303000', NULL, '未命名6', NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 4);
+	(23, NULL, '', NULL, '', NULL, NULL, '店铺管理', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', '', '/shop/index', 4),
+	(38, NULL, '', NULL, '', NULL, NULL, '广告管理', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', 'ad', '/ad/index', 5),
+	(39, NULL, '', NULL, '', NULL, NULL, '广告位管理', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', 'adPosition', '/adPosition/index', 5);
 
 -- 导出  表 nbsaas-life.sys_mock 结构
 DROP TABLE IF EXISTS `sys_mock`;
@@ -1565,22 +1651,11 @@ CREATE TABLE IF NOT EXISTS `sys_role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表 ';
 
--- 正在导出表  nbsaas-life.sys_role 的数据：~13 rows (大约)
+-- 正在导出表  nbsaas-life.sys_role 的数据：~3 rows (大约)
 DELETE FROM `sys_role`;
 INSERT INTO `sys_role` (`id`, `add_date`, `last_date`, `name`, `remark`) VALUES
-	(1, NULL, '2023-05-28 17:03:47.190000', '12', '3123'),
-	(2, '2023-05-28 14:04:19.753000', '2023-05-28 14:04:19.753000', '管理员', NULL),
-	(3, '2023-05-28 14:04:35.111000', '2023-05-28 14:04:35.111000', '管理员', '管理员'),
-	(4, NULL, '2023-05-28 17:07:16.797000', 'kk', ''),
-	(7, '2023-05-28 17:08:10.104000', '2023-05-28 17:08:10.104000', 'uyiyui', ''),
-	(8, '2023-05-28 17:08:12.723000', '2023-05-28 17:08:12.723000', 'yuiyui', ''),
-	(9, '2023-05-28 17:08:15.408000', '2023-05-28 17:08:15.408000', 'yuiyui', ''),
-	(10, '2023-05-28 17:08:17.380000', '2023-05-28 17:08:17.380000', 'yuiy', ''),
-	(15, '2023-05-28 17:13:32.613000', '2023-05-28 17:13:32.613000', 'uiou', 'iou'),
-	(16, '2023-05-28 17:13:35.073000', '2023-05-28 17:13:35.073000', 'uiou', ''),
-	(17, '2023-05-28 17:13:37.886000', '2023-05-28 17:13:37.886000', 'uiouio', ''),
-	(18, '2023-05-28 17:13:41.373000', '2023-05-28 17:13:41.373000', 'uiouio', ''),
-	(19, '2023-05-28 17:13:44.052000', '2023-05-28 17:13:44.052000', 'uiouio', '');
+	(1, NULL, '2023-06-07 21:32:37.245000', '管理员', '3123'),
+	(15, NULL, '2023-06-07 21:32:20.702000', '其他', 'iou');
 
 -- 导出  表 nbsaas-life.sys_role_menu 结构
 DROP TABLE IF EXISTS `sys_role_menu`;
@@ -1597,53 +1672,28 @@ CREATE TABLE IF NOT EXISTS `sys_role_menu` (
   CONSTRAINT `FKkeitxsgxwayackgqllio4ohn5` FOREIGN KEY (`role_id`) REFERENCES `sys_role` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色功能表';
 
--- 正在导出表  nbsaas-life.sys_role_menu 的数据：~44 rows (大约)
+-- 正在导出表  nbsaas-life.sys_role_menu 的数据：~19 rows (大约)
 DELETE FROM `sys_role_menu`;
 INSERT INTO `sys_role_menu` (`id`, `add_date`, `last_date`, `menu_id`, `role_id`) VALUES
-	(5, '2023-05-28 17:30:06.368000', '2023-05-28 17:30:06.368000', 1, 15),
-	(6, '2023-05-28 17:30:06.378000', '2023-05-28 17:30:06.378000', 2, 15),
-	(7, '2023-05-28 17:30:06.381000', '2023-05-28 17:30:06.381000', 3, 15),
-	(8, '2023-05-28 17:30:06.385000', '2023-05-28 17:30:06.385000', 6, 15),
-	(9, '2023-05-28 17:30:06.389000', '2023-05-28 17:30:06.389000', 16, 15),
-	(10, '2023-05-28 17:30:06.392000', '2023-05-28 17:30:06.392000', 17, 15),
-	(11, '2023-05-28 17:30:06.396000', '2023-05-28 17:30:06.396000', 18, 15),
-	(12, '2023-05-28 17:30:06.400000', '2023-05-28 17:30:06.400000', 19, 15),
-	(13, '2023-05-28 17:30:06.404000', '2023-05-28 17:30:06.404000', 20, 15),
-	(14, '2023-05-28 17:30:06.407000', '2023-05-28 17:30:06.407000', 21, 15),
-	(15, '2023-05-28 17:30:06.411000', '2023-05-28 17:30:06.411000', 22, 15),
-	(16, '2023-05-28 17:30:26.961000', '2023-05-28 17:30:26.961000', 1, 16),
-	(17, '2023-05-28 17:30:26.965000', '2023-05-28 17:30:26.965000', 2, 16),
-	(18, '2023-05-28 17:30:26.969000', '2023-05-28 17:30:26.969000', 3, 16),
-	(19, '2023-05-28 17:30:26.974000', '2023-05-28 17:30:26.974000', 6, 16),
-	(20, '2023-05-28 17:30:26.978000', '2023-05-28 17:30:26.978000', 16, 16),
-	(21, '2023-05-28 17:30:26.981000', '2023-05-28 17:30:26.981000', 17, 16),
-	(22, '2023-05-28 17:30:26.985000', '2023-05-28 17:30:26.985000', 18, 16),
-	(23, '2023-05-28 17:30:26.988000', '2023-05-28 17:30:26.988000', 19, 16),
-	(24, '2023-05-28 17:30:26.994000', '2023-05-28 17:30:26.994000', 20, 16),
-	(25, '2023-05-28 17:30:26.999000', '2023-05-28 17:30:26.999000', 21, 16),
-	(26, '2023-05-28 17:30:27.003000', '2023-05-28 17:30:27.003000', 22, 16),
-	(27, '2023-05-28 17:30:27.006000', '2023-05-28 17:30:27.006000', 4, 16),
-	(28, '2023-05-28 17:30:27.010000', '2023-05-28 17:30:27.010000', 23, 16),
-	(29, '2023-05-28 17:30:27.013000', '2023-05-28 17:30:27.013000', 24, 16),
-	(30, '2023-05-28 17:30:27.016000', '2023-05-28 17:30:27.016000', 26, 16),
-	(31, '2023-05-28 17:30:27.019000', '2023-05-28 17:30:27.019000', 27, 16),
-	(32, '2023-05-28 17:30:27.023000', '2023-05-28 17:30:27.023000', 28, 16),
-	(33, '2023-05-28 17:30:27.027000', '2023-05-28 17:30:27.027000', 29, 16),
-	(34, '2023-05-28 17:30:27.030000', '2023-05-28 17:30:27.030000', 32, 16),
-	(35, '2023-05-28 17:30:27.034000', '2023-05-28 17:30:27.034000', 33, 16),
-	(36, '2023-05-28 17:30:27.037000', '2023-05-28 17:30:27.037000', 34, 16),
-	(37, '2023-05-28 17:30:27.040000', '2023-05-28 17:30:27.040000', 35, 16),
-	(38, '2023-05-28 17:30:27.043000', '2023-05-28 17:30:27.043000', 36, 16),
-	(39, '2023-05-28 17:30:27.047000', '2023-05-28 17:30:27.047000', 37, 16),
-	(46, '2023-05-28 18:27:22.199000', '2023-05-28 18:27:22.199000', 1, 1),
-	(47, '2023-05-28 18:27:22.206000', '2023-05-28 18:27:22.206000', 2, 1),
-	(48, '2023-05-28 18:27:22.209000', '2023-05-28 18:27:22.209000', 3, 1),
-	(49, '2023-05-28 18:27:22.213000', '2023-05-28 18:27:22.213000', 6, 1),
-	(50, '2023-05-28 18:27:22.216000', '2023-05-28 18:27:22.216000', 16, 1),
-	(51, '2023-05-28 18:27:22.222000', '2023-05-28 18:27:22.222000', 17, 1),
-	(52, '2023-05-28 18:27:22.225000', '2023-05-28 18:27:22.225000', 18, 1),
-	(53, '2023-05-28 18:27:22.229000', '2023-05-28 18:27:22.229000', 4, 1),
-	(54, '2023-05-28 18:27:22.232000', '2023-05-28 18:27:22.232000', 23, 1);
+	(55, '2023-05-29 23:38:29.445000', '2023-05-29 23:38:29.445000', 1, 1),
+	(56, '2023-05-29 23:38:29.453000', '2023-05-29 23:38:29.453000', 2, 1),
+	(57, '2023-05-29 23:38:29.456000', '2023-05-29 23:38:29.456000', 3, 1),
+	(58, '2023-05-29 23:38:29.460000', '2023-05-29 23:38:29.460000', 6, 1),
+	(59, '2023-05-29 23:38:29.464000', '2023-05-29 23:38:29.464000', 16, 1),
+	(60, '2023-05-29 23:38:29.467000', '2023-05-29 23:38:29.467000', 17, 1),
+	(61, '2023-05-29 23:38:29.471000', '2023-05-29 23:38:29.471000', 18, 1),
+	(62, '2023-05-29 23:38:29.475000', '2023-05-29 23:38:29.475000', 4, 1),
+	(63, '2023-05-29 23:38:29.478000', '2023-05-29 23:38:29.478000', 23, 1),
+	(64, '2023-05-29 23:38:29.482000', '2023-05-29 23:38:29.482000', 5, 1),
+	(65, '2023-05-29 23:38:29.486000', '2023-05-29 23:38:29.486000', 38, 1),
+	(66, '2023-05-29 23:38:29.489000', '2023-05-29 23:38:29.489000', 39, 1),
+	(67, '2023-06-07 21:34:57.655000', '2023-06-07 21:34:57.655000', 1, 15),
+	(68, '2023-06-07 21:34:57.662000', '2023-06-07 21:34:57.662000', 2, 15),
+	(69, '2023-06-07 21:34:57.666000', '2023-06-07 21:34:57.666000', 3, 15),
+	(70, '2023-06-07 21:34:57.669000', '2023-06-07 21:34:57.669000', 6, 15),
+	(71, '2023-06-07 21:34:57.673000', '2023-06-07 21:34:57.673000', 16, 15),
+	(72, '2023-06-07 21:34:57.677000', '2023-06-07 21:34:57.677000', 17, 15),
+	(73, '2023-06-07 21:34:57.680000', '2023-06-07 21:34:57.680000', 18, 15);
 
 -- 导出  表 nbsaas-life.sys_sequence 结构
 DROP TABLE IF EXISTS `sys_sequence`;
@@ -1825,17 +1875,18 @@ CREATE TABLE IF NOT EXISTS `user_info` (
   `name` varchar(20) DEFAULT NULL,
   `phone` varchar(15) DEFAULT NULL,
   `store_state` int(11) DEFAULT NULL,
+  `sex` varchar(2) DEFAULT NULL COMMENT '性别',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 正在导出表  nbsaas-life.user_info 的数据：~5 rows (大约)
 DELETE FROM `user_info`;
-INSERT INTO `user_info` (`id`, `add_date`, `last_date`, `avatar`, `catalog`, `login_size`, `name`, `phone`, `store_state`) VALUES
-	(303, '2023-05-27 12:52:05.399000', '2023-05-27 12:52:05.399000', NULL, NULL, 0, 'ada5', 'ada5', NULL),
-	(304, '2023-05-27 12:52:16.133000', '2023-05-27 12:52:16.133000', NULL, NULL, 0, 'ada', 'ada', NULL),
-	(327, NULL, '2023-05-28 18:40:32.716000', '', NULL, NULL, 'ada', '', NULL),
-	(337, '2023-05-27 13:02:31.471000', '2023-05-27 13:02:31.471000', NULL, NULL, 0, 'ada3', 'ada3', NULL),
-	(344, '2023-05-27 14:11:56.597000', '2023-05-27 14:11:56.597000', NULL, NULL, 0, 'ada3', 'ada3', NULL);
+INSERT INTO `user_info` (`id`, `add_date`, `last_date`, `avatar`, `catalog`, `login_size`, `name`, `phone`, `store_state`, `sex`) VALUES
+	(303, '2023-05-27 12:52:05.399000', '2023-05-27 12:52:05.399000', NULL, NULL, 0, 'ada5', 'ada5', NULL, NULL),
+	(304, '2023-05-27 12:52:16.133000', '2023-05-27 12:52:16.133000', NULL, NULL, 0, 'ada', 'ada', NULL, NULL),
+	(327, NULL, '2023-05-28 18:40:32.716000', '', NULL, NULL, 'ada', '', NULL, NULL),
+	(337, '2023-05-27 13:02:31.471000', '2023-05-27 13:02:31.471000', NULL, NULL, 0, 'ada3', 'ada3', NULL, NULL),
+	(344, '2023-05-27 14:11:56.597000', '2023-05-27 14:11:56.597000', NULL, NULL, 0, 'ada3', 'ada3', NULL, NULL);
 
 -- 导出  表 nbsaas-life.user_info_attribute 结构
 DROP TABLE IF EXISTS `user_info_attribute`;
@@ -1869,7 +1920,7 @@ CREATE TABLE IF NOT EXISTS `user_login_log` (
   CONSTRAINT `FKj91w0nnfocpdp796lr3ot4lxs` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-life.user_login_log 的数据：~950 rows (大约)
+-- 正在导出表  nbsaas-life.user_login_log 的数据：~924 rows (大约)
 DELETE FROM `user_login_log`;
 INSERT INTO `user_login_log` (`id`, `add_date`, `last_date`, `account`, `client`, `ip`, `note`, `password`, `state`, `store_state`, `user_id`) VALUES
 	(1, '2023-05-27 13:32:26.184000', '2023-05-27 13:32:26.184000', 'ada', NULL, '127.0.0.1', NULL, '123456', NULL, NULL, 327),
@@ -2855,7 +2906,29 @@ INSERT INTO `user_login_log` (`id`, `add_date`, `last_date`, `account`, `client`
 	(981, '2023-05-28 18:04:40.193000', '2023-05-28 18:04:40.193000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
 	(982, '2023-05-28 18:27:35.399000', '2023-05-28 18:27:35.399000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
 	(983, '2023-05-28 18:39:57.440000', '2023-05-28 18:39:57.440000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
-	(984, '2023-05-28 18:43:32.051000', '2023-05-28 18:43:32.051000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327);
+	(984, '2023-05-28 18:43:32.051000', '2023-05-28 18:43:32.051000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(985, '2023-05-29 23:36:03.898000', '2023-05-29 23:36:03.898000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(986, '2023-05-29 23:38:45.575000', '2023-05-29 23:38:45.575000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(987, '2023-05-30 21:03:12.456000', '2023-05-30 21:03:12.456000', 'admin', 'web front', '127.0.0.1', NULL, 'wtjt1234', 0, 1, NULL),
+	(988, '2023-05-30 21:03:13.610000', '2023-05-30 21:03:13.610000', 'admin', 'web front', '127.0.0.1', NULL, 'wtjt1234', 0, 1, NULL),
+	(989, '2023-05-30 21:03:19.505000', '2023-05-30 21:03:19.505000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(990, '2023-05-30 21:04:31.050000', '2023-05-30 21:04:31.050000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(991, '2023-05-30 21:12:54.526000', '2023-05-30 21:12:54.526000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(992, '2023-05-30 21:29:47.959000', '2023-05-30 21:29:47.959000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(993, '2023-06-03 18:29:20.502000', '2023-06-03 18:29:20.502000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(994, '2023-06-03 19:22:52.649000', '2023-06-03 19:22:52.649000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(995, '2023-06-03 19:23:57.121000', '2023-06-03 19:23:57.121000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(996, '2023-06-03 19:40:37.299000', '2023-06-03 19:40:37.299000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(997, '2023-06-03 20:19:38.178000', '2023-06-03 20:19:38.178000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(998, '2023-06-03 20:20:56.022000', '2023-06-03 20:20:56.022000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(999, '2023-06-03 20:22:07.829000', '2023-06-03 20:22:07.829000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1000, '2023-06-07 21:30:13.813000', '2023-06-07 21:30:13.813000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1001, '2023-07-01 14:48:55.169000', '2023-07-01 14:48:55.169000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1002, '2023-07-01 15:03:41.525000', '2023-07-01 15:03:41.525000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1003, '2023-07-01 15:05:18.843000', '2023-07-01 15:05:18.843000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1004, '2023-07-01 15:06:28.904000', '2023-07-01 15:06:28.904000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1005, '2023-07-01 15:09:59.604000', '2023-07-01 15:09:59.604000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
+	(1006, '2023-07-01 15:12:51.564000', '2023-07-01 15:12:51.564000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327);
 
 -- 导出  表 nbsaas-life.user_oauth_config 结构
 DROP TABLE IF EXISTS `user_oauth_config`;
