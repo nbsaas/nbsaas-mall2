@@ -1,8 +1,8 @@
 ﻿## 去好店
-[![maven](https://img.shields.io/maven-central/v/com.nbsaas.boot/boot-nbsaas.svg)](http://mvnrepository.com/artifact/com.nbsaas.boot/boot-nbsaas)
+[![maven](https://img.shields.io/maven-central/v/com.nbsaas.boot/nbsaas-boot.svg)](http://mvnrepository.com/artifact/com.nbsaas.boot/nbsaas-boot)
 [![QQ](https://img.shields.io/badge/chat-on%20QQ-ff69b4.svg?style=flat-square)](//shang.qq.com/wpa/qunwpa?idkey=d1a308945e4b2ff8aeb1711c2c7914342dae15e9ce7041e94756ab355430dc78)
 [![使用IntelliJ IDEA开发维护](https://img.shields.io/badge/IntelliJ%20IDEA-提供支持-blue.svg)](https://www.jetbrains.com/idea/)
-[![GitHub forks](https://img.shields.io/github/stars/nbsaas/boot-nbsaas.svg?style=social&logo=github&label=Stars)](https://github.com/nbsaas/boot-nbsaas)
+[![GitHub forks](https://img.shields.io/github/stars/nbsaas/nbsaas-boot.svg?style=social&logo=github&label=Stars)](https://github.com/nbsaas/nbsaas-boot)
 
 > 去好店，让你快速的找到喜欢的店铺。
 ## 最近项目正在进行重构，spring boot+nuxt3+vue3，前后端分离，请大家耐心等待
