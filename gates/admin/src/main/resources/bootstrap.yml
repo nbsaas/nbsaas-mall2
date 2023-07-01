@@ -1,26 +1,3 @@
 spring:
   application:
-    name: front
-  cloud:
-    nacos:
-      config:
-        server-addr: 152.136.143.111:8848
-        file-extension: yml
-        prefix: gateway
-        group: DEFAULT_GROUP
-        username: nacos
-        password: ada.young
-        namespace: 539b9870-1109-4807-b89d-518986cc1f2a
-      discovery:
-        server-addr: ${spring.cloud.nacos.config.server-addr}
-        username: ${spring.cloud.nacos.config.username}
-        password: ${spring.cloud.nacos.config.password}
-        namespace: ${spring.cloud.nacos.config.namespace}
-      logic-delete-value: 0
-      #逻辑未删除值
-      logic-not-delete-value: 1
-    gateway:
-      discovery:
-        locator:
-          enabled: true  #是否与服务注册于发现组件结合，通过 serviceId 转发到具体的服务
-          lower-case-service-id: off
+    name: admin
