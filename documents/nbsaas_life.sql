@@ -106,15 +106,12 @@ CREATE TABLE IF NOT EXISTS `shop` (
   `city_id` bigint(20) DEFAULT NULL,
   `province_id` bigint(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FKrgns5md52jfqejfjpr4th9adq` (`user_id`),
   KEY `FKtdqeb7d7rp83i560gb5wxvgap` (`area_id`),
   KEY `FK1dl8hrct854p7up7k1c555c52` (`city_id`),
   KEY `FKg4c2lcuxp5trq30hqjao6mfuh` (`province_id`),
+  KEY `FKrgns5md52jfqejfjpr4th9adq` (`user_id`),
   CONSTRAINT `FK1dl8hrct854p7up7k1c555c52` FOREIGN KEY (`city_id`) REFERENCES `sys_common_area` (`id`),
-  CONSTRAINT `FKat362tlvb3jvjaegek1eky2y6` FOREIGN KEY (`province_id`) REFERENCES `area` (`id`),
-  CONSTRAINT `FKen1u2w6px9vqngrq6w8knbvuw` FOREIGN KEY (`city_id`) REFERENCES `area` (`id`),
   CONSTRAINT `FKg4c2lcuxp5trq30hqjao6mfuh` FOREIGN KEY (`province_id`) REFERENCES `sys_common_area` (`id`),
-  CONSTRAINT `FKh3yi008wvrvqq1g7us3ykfb8x` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
   CONSTRAINT `FKrgns5md52jfqejfjpr4th9adq` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`),
   CONSTRAINT `FKtdqeb7d7rp83i560gb5wxvgap` FOREIGN KEY (`area_id`) REFERENCES `sys_common_area` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='店铺';
@@ -1228,8 +1225,7 @@ CREATE TABLE IF NOT EXISTS `shop_image_list` (
   KEY `FKfxephd5e2ctlqomnksi88f067` (`area_id`),
   CONSTRAINT `FKcbaj2818dcbmkckk94b8bf8oi` FOREIGN KEY (`shop_id`) REFERENCES `shop` (`id`),
   CONSTRAINT `FKfxephd5e2ctlqomnksi88f067` FOREIGN KEY (`area_id`) REFERENCES `sys_common_area` (`id`),
-  CONSTRAINT `FKk7r3ak6nuuc65m2l83ks8ybaj` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`),
-  CONSTRAINT `FKsy225ayg666dgyd32inkd6ku5` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`)
+  CONSTRAINT `FKk7r3ak6nuuc65m2l83ks8ybaj` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 正在导出表  nbsaas-life.shop_image_list 的数据：~0 rows (大约)
@@ -1324,8 +1320,7 @@ CREATE TABLE IF NOT EXISTS `shop_review_list` (
   KEY `FK2ytkilexdey19x38jgo3vy7pt` (`user_id`),
   KEY `FK63ektye81vbsni5wg72t766m8` (`area_id`),
   CONSTRAINT `FK2ytkilexdey19x38jgo3vy7pt` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`),
-  CONSTRAINT `FK63ektye81vbsni5wg72t766m8` FOREIGN KEY (`area_id`) REFERENCES `sys_common_area` (`id`),
-  CONSTRAINT `FKsrndyp1kpsjew0c9aps4em98j` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`)
+  CONSTRAINT `FK63ektye81vbsni5wg72t766m8` FOREIGN KEY (`area_id`) REFERENCES `sys_common_area` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- 正在导出表  nbsaas-life.shop_review_list 的数据：~0 rows (大约)
@@ -5437,7 +5432,6 @@ CREATE TABLE IF NOT EXISTS `talk_category_area` (
   KEY `FK8cpkfmdx1civgd47a90psc4b3` (`talk_category_id`),
   KEY `FKo824ku5bd3sjp3oamb85casip` (`area_id`),
   CONSTRAINT `FK8cpkfmdx1civgd47a90psc4b3` FOREIGN KEY (`talk_category_id`) REFERENCES `talk_category` (`id`),
-  CONSTRAINT `FKndyh1uf9q4x8t2jsj0vt5a7bq` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
   CONSTRAINT `FKo824ku5bd3sjp3oamb85casip` FOREIGN KEY (`area_id`) REFERENCES `sys_common_area` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -5501,7 +5495,6 @@ CREATE TABLE IF NOT EXISTS `user_city` (
   PRIMARY KEY (`id`),
   KEY `FKlc7g7bu4x60qtb3q3p2xq6cax` (`user_id`),
   KEY `FKvsytm8f5uk0kn96f8u148o1j` (`area_id`),
-  CONSTRAINT `FK5huqg86y782fjmox33bqsffxv` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`),
   CONSTRAINT `FKlc7g7bu4x60qtb3q3p2xq6cax` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`),
   CONSTRAINT `FKvsytm8f5uk0kn96f8u148o1j` FOREIGN KEY (`area_id`) REFERENCES `sys_common_area` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='用户城市关联表';
@@ -5587,7 +5580,7 @@ CREATE TABLE IF NOT EXISTS `user_login_log` (
   CONSTRAINT `FKj91w0nnfocpdp796lr3ot4lxs` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-life.user_login_log 的数据：~935 rows (大约)
+-- 正在导出表  nbsaas-life.user_login_log 的数据：~918 rows (大约)
 DELETE FROM `user_login_log`;
 INSERT INTO `user_login_log` (`id`, `add_date`, `last_date`, `account`, `client`, `ip`, `note`, `password`, `state`, `store_state`, `user_id`) VALUES
 	(1, '2023-05-27 13:32:26.184000', '2023-05-27 13:32:26.184000', 'ada', NULL, '127.0.0.1', NULL, '123456', NULL, NULL, 327),

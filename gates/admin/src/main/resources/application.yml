@@ -33,6 +33,7 @@ spring:
       hibernate:
         format_sql: true
         dialect: org.hibernate.dialect.MySQL57Dialect
+        show_sql: true
   cache:
     type: ehcache
     ehcache:
