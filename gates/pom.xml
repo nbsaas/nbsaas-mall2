@@ -16,6 +16,7 @@
         <module>front</module>
         <module>admin</module>
         <module>shop</module>
+        <module>agent</module>
     </modules>
 
     <properties>

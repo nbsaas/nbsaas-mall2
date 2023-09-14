@@ -19,6 +19,7 @@ import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.code.annotation.FormAnnotation;
 import com.nbsaas.boot.code.annotation.SearchItem;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -53,7 +54,7 @@ public class Area extends CatalogEntity {
     @Comment("状态")
     private Integer state;
 
-    @SearchItem(label = "父分类", name = "parent", key = "parent.id", operator = "eq", classType = Long.class)
+    @SearchItem(label = "父分类", name = "parent", key = "parent.id", operator =  Operator.eq, classType = Long.class)
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
     private Area parent;

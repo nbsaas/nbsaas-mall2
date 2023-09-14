@@ -5,6 +5,7 @@ import com.nbsaas.boot.code.annotation.CatalogClass;
 import com.nbsaas.boot.code.annotation.FormAnnotation;
 import com.nbsaas.boot.code.annotation.SearchItem;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -42,7 +43,7 @@ public class ShopCategory extends CatalogEntity {
 
 	private String icon;
 
-	@SearchItem(label = "父分类", name = "parent", key = "parent.id", operator = "eq", classType = Long.class)
+	@SearchItem(label = "父分类", name = "parent", key = "parent.id", operator = Operator.eq, classType = Long.class)
 	@ManyToOne(fetch = FetchType.LAZY)
 	private ShopCategory parent;
 

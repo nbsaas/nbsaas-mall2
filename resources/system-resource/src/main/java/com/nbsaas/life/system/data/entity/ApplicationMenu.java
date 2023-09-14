@@ -2,6 +2,7 @@ package com.nbsaas.life.system.data.entity;
 
 import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.jpa.data.entity.CatalogEntity;
+import com.nbsaas.boot.rest.filter.Operator;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -47,7 +48,7 @@ public class ApplicationMenu extends CatalogEntity {
 
 
     @Comment("应用")
-    @SearchItem(label = "应用", name = "app", key = "app.id", classType = Long.class, operator = "eq")
+    @SearchItem(label = "应用", name = "app", key = "app.id", classType = Long.class, operator = Operator.eq)
     @FieldName
     @FieldConvert
     @ManyToOne(fetch = FetchType.LAZY)
