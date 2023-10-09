@@ -1,3 +1,9 @@
 spring:
   application:
     name: lifeFront
+  cloud:
+    polaris:
+      address: grpc://119.91.66.223:8091
+      namespace: nbsaas
+      enabled: true
+      #local-ip-address: 49.232.223.97
