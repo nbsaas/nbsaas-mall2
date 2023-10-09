@@ -12,7 +12,6 @@
     <name>gates</name>
     <url>http://www.nbsaas.com</url>
     <modules>
-        <module>gateway</module>
         <module>front</module>
         <module>admin</module>
         <module>shop</module>
@@ -97,9 +96,15 @@
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
 
+        <!-- -->
         <dependency>
             <groupId>com.tencent.cloud</groupId>
             <artifactId>spring-cloud-starter-tencent-polaris-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-yaml</artifactId>
+            <version>2.15.2</version>
         </dependency>
     </dependencies>
     <build>

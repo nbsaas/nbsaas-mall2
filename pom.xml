@@ -44,6 +44,7 @@
 		<module>apis</module>
 		<module>code-generator</module>
 		<module>gates</module>
+		<module>gateway</module>
 		<module>resources</module>
     </modules>
 </project>

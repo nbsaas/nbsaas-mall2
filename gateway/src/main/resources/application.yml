@@ -1,0 +1,6 @@
+server:
+  port: 8000 #修改默认的端口号
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: image/png,image/jpeg,image/jpg,text/html,application/javascript,text/css,text/plain,application/octet-stream,application/json
