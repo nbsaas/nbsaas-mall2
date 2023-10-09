@@ -40,12 +40,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-loadbalancer</artifactId>
-            <version>3.1.1</version>
         </dependency>
         <dependency>
             <groupId>com.tencent.cloud</groupId>
             <artifactId>spring-cloud-starter-tencent-polaris-discovery</artifactId>
         </dependency>
+        <!-- polaris不兼容 snakeyaml 2-->
         <dependency>
             <groupId>com.fasterxml.jackson.dataformat</groupId>
             <artifactId>jackson-dataformat-yaml</artifactId>
