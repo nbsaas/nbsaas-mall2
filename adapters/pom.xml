@@ -13,7 +13,6 @@
     <name>adapters</name>
     <url>http://www.nbsaas.com</url>
     <modules>
-        <module>security</module>
         <module>tools</module>
     </modules>
 

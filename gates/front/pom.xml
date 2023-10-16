@@ -31,9 +31,9 @@
             <version>2.10.9.2</version>
         </dependency>
         <dependency>
-            <groupId>com.nbsaas.life</groupId>
+            <groupId>com.nbsaas.boot</groupId>
             <artifactId>security</artifactId>
-            <version>1.0.1</version>
+            <version>${boot.version}</version>
         </dependency>
 
         <dependency>

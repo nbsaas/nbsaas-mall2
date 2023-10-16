@@ -5,7 +5,7 @@ import com.nbsaas.boot.rest.annotations.UpdateOperator;
 import com.nbsaas.boot.rest.enums.StoreState;
 import com.nbsaas.boot.rest.response.PageResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
-import com.nbsaas.life.security.token.DataToken;
+import com.nbsaas.boot.security.token.DataToken;
 import com.nbsaas.life.user.api.apis.UserInfoApi;
 import com.nbsaas.life.user.api.domain.enums.AccountType;
 import com.nbsaas.life.user.api.domain.enums.LoginState;

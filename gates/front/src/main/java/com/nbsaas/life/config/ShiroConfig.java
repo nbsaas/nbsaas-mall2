@@ -1,7 +1,8 @@
 package com.nbsaas.life.config;
 
-import com.nbsaas.life.security.config.MySessionManager;
-import com.nbsaas.life.security.realm.DataRealm;
+import com.nbsaas.boot.security.cache.ShiroCaffeineCacheManager;
+import com.nbsaas.boot.security.config.MySessionManager;
+import com.nbsaas.boot.security.realm.DataRealm;
 import com.nbsaas.life.user.ext.domain.response.UserInfoExtResponse;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -49,6 +50,7 @@ public class ShiroConfig {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
         securityManager.setRealm(shiroRealm());
         securityManager.setSessionManager(sessionManager());
+        securityManager.setCacheManager(new ShiroCaffeineCacheManager());
         return securityManager;
     }
 

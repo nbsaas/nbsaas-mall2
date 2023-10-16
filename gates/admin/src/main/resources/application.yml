@@ -35,9 +35,9 @@ spring:
         dialect: org.hibernate.dialect.MySQL57Dialect
         show_sql: true
   cache:
-    type: ehcache
-    ehcache:
-      config: classpath:/ehcache.xml
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterAccess=30m,expireAfterWrite=30m
   # 指定ehcache配置文件路径
   servlet:
     multipart:
