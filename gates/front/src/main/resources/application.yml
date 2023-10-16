@@ -6,8 +6,6 @@ server:
     mime-types: image/png,image/jpeg,image/jpg,text/html,application/javascript,text/css,text/plain,application/octet-stream,application/json
 
 spring:
-  application:
-    name: front
   profiles:
     active: dev
   main:

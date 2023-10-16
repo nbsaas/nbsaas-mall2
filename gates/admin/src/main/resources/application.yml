@@ -6,8 +6,6 @@ server:
     mime-types: image/png,image/jpeg,image/jpg,text/html,application/javascript,text/css,text/plain,application/octet-stream,application/json
 
 spring:
-  application:
-    name: front
   # 环境 dev|test|pc
   main:
     allow-bean-definition-overriding: true
