@@ -2,7 +2,7 @@ package com.nbsaas.life.ad.rest.resource;
 
 import com.nbsaas.life.ad.api.apis.AdPositionApi;
 import com.nbsaas.life.ad.data.entity.AdPosition;
-import com.nbsaas.life.ad.api.domain.request.AdPositionDataRequest;
+import com.nbsaas.life.ad.api.domain.request.AdPositionRequest;
 import com.nbsaas.life.ad.api.domain.response.AdPositionResponse;
 import com.nbsaas.life.ad.api.domain.simple.AdPositionSimple;
 import com.nbsaas.life.ad.rest.convert.AdPositionSimpleConvert;
@@ -17,9 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -27,7 +24,7 @@ import java.util.function.Function;
 */
 @Transactional
 @Service
-public class AdPositionResource extends BaseResource<AdPosition,AdPositionResponse, AdPositionSimple, AdPositionDataRequest>  implements AdPositionApi {
+public class AdPositionResource extends BaseResource<AdPosition,AdPositionResponse, AdPositionSimple, AdPositionRequest>  implements AdPositionApi {
 
     @Resource
     private AdPositionRepository adPositionRepository;
@@ -43,7 +40,7 @@ public class AdPositionResource extends BaseResource<AdPosition,AdPositionRespon
     }
 
     @Override
-    public Function<AdPositionDataRequest, AdPosition> getConvertForm() {
+    public Function<AdPositionRequest, AdPosition> getConvertForm() {
         return new AdPositionEntityConvert();
     }
 

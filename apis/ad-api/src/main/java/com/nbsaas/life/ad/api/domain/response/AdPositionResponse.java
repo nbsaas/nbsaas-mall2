@@ -18,22 +18,22 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 
+        * 模板
         **/
             private String template;
 
         /**
-        * 
+        * 描述
         **/
             private String note;
 
         /**
-        * 
+        * 广告位
         **/
             private String name;
 
         /**
-        * 
+        * 宽度
         **/
             private Integer width;
 
@@ -53,12 +53,12 @@ private static final long serialVersionUID = 1L;
             private Date addDate;
 
         /**
-        * 
+        * 标识
         **/
             private String key;
 
         /**
-        * 
+        * 高度
         **/
             private Integer height;
 

@@ -2,7 +2,7 @@ package com.nbsaas.life.ad.rest.resource;
 
 import com.nbsaas.life.ad.api.apis.AdApi;
 import com.nbsaas.life.ad.data.entity.Ad;
-import com.nbsaas.life.ad.api.domain.request.AdDataRequest;
+import com.nbsaas.life.ad.api.domain.request.AdRequest;
 import com.nbsaas.life.ad.api.domain.response.AdResponse;
 import com.nbsaas.life.ad.api.domain.simple.AdSimple;
 import com.nbsaas.life.ad.rest.convert.AdSimpleConvert;
@@ -17,9 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
 
 /**
@@ -27,7 +24,7 @@ import java.util.function.Function;
 */
 @Transactional
 @Service
-public class AdResource extends BaseResource<Ad,AdResponse, AdSimple, AdDataRequest>  implements AdApi {
+public class AdResource extends BaseResource<Ad,AdResponse, AdSimple, AdRequest>  implements AdApi {
 
     @Resource
     private AdRepository adRepository;
@@ -43,7 +40,7 @@ public class AdResource extends BaseResource<Ad,AdResponse, AdSimple, AdDataRequ
     }
 
     @Override
-    public Function<AdDataRequest, Ad> getConvertForm() {
+    public Function<AdRequest, Ad> getConvertForm() {
         return new AdEntityConvert();
     }
 

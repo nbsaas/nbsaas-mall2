@@ -1,7 +1,7 @@
 package com.nbsaas.life.ad.rest.convert;
 
 import com.nbsaas.life.ad.data.entity.Ad;
-import com.nbsaas.life.ad.api.domain.request.AdDataRequest;
+import com.nbsaas.life.ad.api.domain.request.AdRequest;
 
 import org.springframework.beans.BeanUtils;
 import com.nbsaas.boot.rest.api.Converter;
@@ -12,10 +12,10 @@ import com.nbsaas.boot.utils.BeanDataUtils;
 * 请求对象转换成实体对象
 */
 
-public class AdEntityConvert  implements Converter<Ad, AdDataRequest> {
+public class AdEntityConvert  implements Converter<Ad, AdRequest> {
 
     @Override
-    public Ad convert(AdDataRequest source) {
+    public Ad convert(AdRequest source) {
         Ad result = new Ad();
         BeanDataUtils.copyProperties(source, result);
                     if(source.getAdPosition()!=null){

@@ -4,6 +4,7 @@ import com.nbsaas.life.ad.data.entity.AdPosition;
 import com.nbsaas.life.ad.api.domain.simple.AdPositionSimple;
 
 import com.nbsaas.boot.rest.api.Converter;
+
 /**
 * 列表对象转换器
 */

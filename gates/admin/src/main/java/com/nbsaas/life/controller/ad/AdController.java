@@ -5,8 +5,8 @@ import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.boot.rest.response.PageResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.life.ad.api.apis.AdApi;
-import com.nbsaas.life.ad.api.domain.request.AdDataRequest;
-import com.nbsaas.life.ad.api.domain.request.AdSearchRequest;
+import com.nbsaas.life.ad.api.domain.request.AdRequest;
+import com.nbsaas.life.ad.api.domain.request.AdSearch;
 import com.nbsaas.life.ad.api.domain.response.AdResponse;
 import com.nbsaas.life.ad.api.domain.simple.AdSimple;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
@@ -30,12 +30,12 @@ public class AdController {
 
 
     @RequestMapping("/search")
-    public PageResponse<AdSimple> search(AdSearchRequest request) {
+    public PageResponse<AdSimple> search(AdSearch request) {
         return adApi.search(request);
     }
 
     @RequestMapping("/list")
-    public ListResponse<AdSimple> list(AdSearchRequest request) {
+    public ListResponse<AdSimple> list(AdSearch request) {
         return adApi.list(request);
     }
 
@@ -48,23 +48,23 @@ public class AdController {
     @CreateData
     @RequestMapping("/create")
     public ResponseObject
-            <AdResponse> create(@Validated(AddOperator.class) AdDataRequest request) {
+            <AdResponse> create(@Validated(AddOperator.class) AdRequest request) {
         return adApi.create(request);
     }
 
     @UpdateData
     @RequestMapping("/update")
-    public ResponseObject<AdResponse> update(@Validated(UpdateOperator.class) AdDataRequest request) {
+    public ResponseObject<AdResponse> update(@Validated(UpdateOperator.class) AdRequest request) {
         return adApi.update(request);
     }
 
     @RequestMapping("/delete")
-    public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdDataRequest request) {
+    public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdRequest request) {
         return adApi.delete(request);
     }
 
     @RequestMapping("/view")
-    public ResponseObject<AdResponse> view(@Validated(ViewOperator.class) AdDataRequest request) {
+    public ResponseObject<AdResponse> view(@Validated(ViewOperator.class) AdRequest request) {
         return adApi.view(request);
     }
 }

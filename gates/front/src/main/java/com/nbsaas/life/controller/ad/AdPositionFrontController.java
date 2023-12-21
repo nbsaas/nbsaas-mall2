@@ -9,8 +9,8 @@ import com.nbsaas.boot.rest.response.PageResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.rest.annotations.CreateData;
 import com.nbsaas.boot.rest.annotations.UpdateData;
-import com.nbsaas.life.ad.api.domain.request.AdPositionDataRequest;
-import com.nbsaas.life.ad.api.domain.request.AdPositionSearchRequest;
+import com.nbsaas.life.ad.api.domain.request.AdPositionRequest;
+import com.nbsaas.life.ad.api.domain.request.AdPositionSearch;
 import com.nbsaas.life.ad.api.domain.response.AdPositionResponse;
 import com.nbsaas.life.ad.api.domain.simple.AdPositionSimple;
 import com.nbsaas.life.ad.api.apis.AdPositionApi;
@@ -34,12 +34,12 @@ public class AdPositionFrontController {
 
 
     @RequestMapping("/search")
-   public PageResponse<AdPositionSimple> search(AdPositionSearchRequest request) {
+   public PageResponse<AdPositionSimple> search(AdPositionSearch request) {
         return adPositionApi.search(request);
     }
 
     @RequestMapping("/list")
-    public ListResponse <AdPositionSimple> list(AdPositionSearchRequest request) {
+    public ListResponse <AdPositionSimple> list(AdPositionSearch request) {
         return adPositionApi.list(request);
     }
 
@@ -51,24 +51,24 @@ public class AdPositionFrontController {
         */
     @CreateData
   @RequestMapping("/create")
-   public ResponseObject<AdPositionResponse> create(@Validated(AddOperator.class) AdPositionDataRequest request) {
+   public ResponseObject<AdPositionResponse> create(@Validated(AddOperator.class) AdPositionRequest request) {
        return adPositionApi.create(request);
     }
 
     @UpdateData
     @RequestMapping("/update")
    public ResponseObject
-    <AdPositionResponse> update(@Validated(UpdateOperator.class) AdPositionDataRequest request) {
+    <AdPositionResponse> update(@Validated(UpdateOperator.class) AdPositionRequest request) {
          return adPositionApi.update(request);
     }
 
      @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdPositionDataRequest request) {
+     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdPositionRequest request) {
         return adPositionApi.delete(request);
     }
 
     @RequestMapping("/view")
-    public ResponseObject <AdPositionResponse> view(@Validated(ViewOperator.class) AdPositionDataRequest request) {
+    public ResponseObject <AdPositionResponse> view(@Validated(ViewOperator.class) AdPositionRequest request) {
          return adPositionApi.view(request);
     }
 }

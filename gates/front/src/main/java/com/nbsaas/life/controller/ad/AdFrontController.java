@@ -9,8 +9,8 @@ import com.nbsaas.boot.rest.response.PageResponse;
 import com.nbsaas.boot.rest.response.ResponseObject;
 import com.nbsaas.boot.rest.annotations.CreateData;
 import com.nbsaas.boot.rest.annotations.UpdateData;
-import com.nbsaas.life.ad.api.domain.request.AdDataRequest;
-import com.nbsaas.life.ad.api.domain.request.AdSearchRequest;
+import com.nbsaas.life.ad.api.domain.request.AdRequest;
+import com.nbsaas.life.ad.api.domain.request.AdSearch;
 import com.nbsaas.life.ad.api.domain.response.AdResponse;
 import com.nbsaas.life.ad.api.domain.simple.AdSimple;
 import com.nbsaas.life.ad.api.apis.AdApi;
@@ -34,12 +34,12 @@ public class AdFrontController {
 
 
     @RequestMapping("/search")
-   public PageResponse<AdSimple> search(AdSearchRequest request) {
+   public PageResponse<AdSimple> search(AdSearch request) {
         return adApi.search(request);
     }
 
     @RequestMapping("/list")
-    public ListResponse <AdSimple> list(AdSearchRequest request) {
+    public ListResponse <AdSimple> list(AdSearch request) {
         return adApi.list(request);
     }
 
@@ -51,24 +51,24 @@ public class AdFrontController {
         */
     @CreateData
   @RequestMapping("/create")
-   public ResponseObject<AdResponse> create(@Validated(AddOperator.class) AdDataRequest request) {
+   public ResponseObject<AdResponse> create(@Validated(AddOperator.class) AdRequest request) {
        return adApi.create(request);
     }
 
     @UpdateData
     @RequestMapping("/update")
    public ResponseObject
-    <AdResponse> update(@Validated(UpdateOperator.class) AdDataRequest request) {
+    <AdResponse> update(@Validated(UpdateOperator.class) AdRequest request) {
          return adApi.update(request);
     }
 
      @RequestMapping("/delete")
-     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdDataRequest request) {
+     public ResponseObject<?> delete(@Validated(DeleteOperator.class) AdRequest request) {
         return adApi.delete(request);
     }
 
     @RequestMapping("/view")
-    public ResponseObject <AdResponse> view(@Validated(ViewOperator.class) AdDataRequest request) {
+    public ResponseObject <AdResponse> view(@Validated(ViewOperator.class) AdRequest request) {
          return adApi.view(request);
     }
 }

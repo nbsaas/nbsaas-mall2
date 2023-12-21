@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class AdPositionSearchRequest   extends PageRequest implements Serializable {
+public class AdPositionSearch   extends PageRequest implements Serializable {
 
 /**
 * 序列化参数
@@ -28,19 +28,19 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 模板
             **/
             @Search(name = "template",operator = Operator.like)
             private String template;
 
             /**
-            * 
+            * 描述
             **/
             @Search(name = "note",operator = Operator.like)
             private String note;
 
             /**
-            * 
+            * 宽度
             **/
             @Search(name = "width",operator = Operator.eq)
             private Integer width;
@@ -58,13 +58,13 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
             /**
-            * 
+            * 标识
             **/
             @Search(name = "key",operator = Operator.like)
             private String key;
 
             /**
-            * 
+            * 高度
             **/
             @Search(name = "height",operator = Operator.eq)
             private Integer height;
