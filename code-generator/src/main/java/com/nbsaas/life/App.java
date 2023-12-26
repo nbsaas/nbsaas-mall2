@@ -28,7 +28,7 @@ public class App {
         //config/bootadmin/user.yml tenant trade
         //makeCodes("config/user.yml");
         makeCodes("config/shop.yml");
-        //makeCodes("config/area.yml");
+        makeCodes("config/area.yml");
        // makeCodes("config/talk.yml");
        // makeCodes("config/system.yml");
         makeCodes("config/ad.yml");

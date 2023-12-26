@@ -14,10 +14,8 @@
     <modules>
         <module>order-resource</module>
         <module>shop-resource</module>
-        <module>user-resource</module>
         <module>area-resource</module>
         <module>talk-resource</module>
-        <module>system-resource</module>
         <module>all-resource</module>
         <module>statistics-resource</module>
         <module>ad-resource</module>
@@ -50,6 +48,16 @@
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>utils</artifactId>
             <version>${nbsaas.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>system-resource</artifactId>
+            <version>${boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>user-resource</artifactId>
+            <version>${boot.version}</version>
         </dependency>
     </dependencies>
 </project>

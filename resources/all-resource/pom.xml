@@ -24,12 +24,6 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.nbsaas.life</groupId>
-            <artifactId>user-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
         <dependency>
             <groupId>com.nbsaas.life</groupId>
             <artifactId>shop-resource</artifactId>
@@ -43,11 +37,6 @@
         <dependency>
             <groupId>com.nbsaas.life</groupId>
             <artifactId>talk-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.basic</groupId>
-            <artifactId>system-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
         <dependency>

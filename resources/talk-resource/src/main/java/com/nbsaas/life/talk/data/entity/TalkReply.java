@@ -2,7 +2,7 @@ package com.nbsaas.life.talk.data.entity;
 
 
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
-import com.nbsaas.life.user.data.entity.UserInfo;
+import com.nbsaas.boot.user.data.entity.UserInfo;
 import lombok.Data;
 
 import javax.persistence.*;

@@ -24,11 +24,6 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>com.nbsaas.life</groupId>
-            <artifactId>user-resource</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>app-resource</artifactId>
             <version>${boot.version}</version>
@@ -36,6 +31,11 @@
         <dependency>
             <groupId>com.nbsaas.life</groupId>
             <artifactId>shop-api</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.life</groupId>
+            <artifactId>area-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
     </dependencies>
