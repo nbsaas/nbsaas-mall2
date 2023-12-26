@@ -2746,24 +2746,6 @@
 					]
 				}
 			]
-		},
-		{
-			"_type": "ERDDataModel",
-			"_id": "AAAAAAGIW1b9QrdBQz4=",
-			"_parent": {
-				"$ref": "AAAAAAFF+h6SjaM2Hec="
-			},
-			"name": "Data Model2",
-			"ownedElements": [
-				{
-					"_type": "ERDDiagram",
-					"_id": "AAAAAAGIW1b9QrdCaNQ=",
-					"_parent": {
-						"$ref": "AAAAAAGIW1b9QrdBQz4="
-					},
-					"name": "ERDDiagram1"
-				}
-			]
 		}
 	]
 }
