@@ -27,7 +27,7 @@ public class App {
         //config/bootadmin/system.yml
         //config/bootadmin/user.yml tenant trade
         //makeCodes("config/user.yml");
-        //makeCodes("config/shop.yml");
+        makeCodes("config/shop.yml");
         //makeCodes("config/area.yml");
        // makeCodes("config/talk.yml");
        // makeCodes("config/system.yml");
@@ -66,6 +66,7 @@ public class App {
                     .after(new RestCommand())
                     .after(new ExtApiCommand())
                     .after(new RepositoryCommand())
+                     .after(new ExtResourceCommand())
                      .after(new FieldCommand())
                     .after(new FinishCommand()).execute(context);
         }

@@ -9,7 +9,7 @@ import com.nbsaas.boot.rest.request.RequestId;
 * 请求对象
 */
 @Data
-public class ShopImageDataRequest implements Serializable,RequestId {
+public class ShopImageRequest implements Serializable,RequestId {
 
 /**
 * 序列化参数

@@ -29,6 +29,11 @@
             <version>1.0.1</version>
         </dependency>
         <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>app-resource</artifactId>
+            <version>${boot.version}</version>
+        </dependency>
+        <dependency>
             <groupId>com.nbsaas.life</groupId>
             <artifactId>shop-api</artifactId>
             <version>1.0.1</version>

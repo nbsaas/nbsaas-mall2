@@ -6,6 +6,7 @@ import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
 import com.nbsaas.boot.rest.api.Converter;
     import java.util.stream.Collectors;
     import lombok.Data;
+
 /**
 * 列表对象转换器
 */

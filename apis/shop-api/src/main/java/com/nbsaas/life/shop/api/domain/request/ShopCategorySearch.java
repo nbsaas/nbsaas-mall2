@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class ShopCategorySearchRequest   extends PageRequest implements Serializable {
+public class ShopCategorySearch   extends PageRequest implements Serializable {
 
 /**
 * 序列化参数

@@ -1,11 +1,8 @@
 package com.nbsaas.life.shop.rest.resource;
 
-import com.nbsaas.boot.rest.request.PageRequest;
-import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.life.shop.api.apis.ShopImageApi;
 import com.nbsaas.life.shop.data.entity.ShopImage;
-import com.nbsaas.life.shop.api.domain.request.ShopImageDataRequest;
-import com.nbsaas.life.shop.api.domain.request.ShopImageSearchRequest;
+import com.nbsaas.life.shop.api.domain.request.ShopImageRequest;
 import com.nbsaas.life.shop.api.domain.response.ShopImageResponse;
 import com.nbsaas.life.shop.api.domain.simple.ShopImageSimple;
 import com.nbsaas.life.shop.rest.convert.ShopImageSimpleConvert;
@@ -20,17 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
-
 /**
 *   业务接口实现
 */
 @Transactional
 @Service
-public class ShopImageResource extends BaseResource<ShopImage,ShopImageResponse, ShopImageSimple, ShopImageDataRequest>  implements ShopImageApi {
+public class ShopImageResource extends BaseResource<ShopImage,ShopImageResponse, ShopImageSimple, ShopImageRequest>  implements ShopImageApi {
 
     @Resource
     private ShopImageRepository shopImageRepository;
@@ -46,7 +39,7 @@ public class ShopImageResource extends BaseResource<ShopImage,ShopImageResponse,
     }
 
     @Override
-    public Function<ShopImageDataRequest, ShopImage> getConvertForm() {
+    public Function<ShopImageRequest, ShopImage> getConvertForm() {
         return new ShopImageEntityConvert();
     }
 

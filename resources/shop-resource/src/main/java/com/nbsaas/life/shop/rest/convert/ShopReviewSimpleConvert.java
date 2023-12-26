@@ -4,6 +4,7 @@ import com.nbsaas.life.shop.data.entity.ShopReview;
 import com.nbsaas.life.shop.api.domain.simple.ShopReviewSimple;
 
 import com.nbsaas.boot.rest.api.Converter;
+
 /**
 * 列表对象转换器
 */

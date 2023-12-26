@@ -20,8 +20,8 @@ private static final long serialVersionUID = 1L;
     private String value;
     private String label;
     private List<ShopCategorySimple> children;
-    private Boolean hasChildren;
 
+    private Boolean hasChildren;
 
 
             /**

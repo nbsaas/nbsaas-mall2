@@ -1,11 +1,8 @@
 package com.nbsaas.life.shop.rest.resource;
 
-import com.nbsaas.boot.rest.request.PageRequest;
-import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.life.shop.api.apis.ShopCheckInApi;
 import com.nbsaas.life.shop.data.entity.ShopCheckIn;
-import com.nbsaas.life.shop.api.domain.request.ShopCheckInDataRequest;
-import com.nbsaas.life.shop.api.domain.request.ShopCheckInSearchRequest;
+import com.nbsaas.life.shop.api.domain.request.ShopCheckInRequest;
 import com.nbsaas.life.shop.api.domain.response.ShopCheckInResponse;
 import com.nbsaas.life.shop.api.domain.simple.ShopCheckInSimple;
 import com.nbsaas.life.shop.rest.convert.ShopCheckInSimpleConvert;
@@ -20,17 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
-
 /**
 *   业务接口实现
 */
 @Transactional
 @Service
-public class ShopCheckInResource extends BaseResource<ShopCheckIn,ShopCheckInResponse, ShopCheckInSimple, ShopCheckInDataRequest>  implements ShopCheckInApi {
+public class ShopCheckInResource extends BaseResource<ShopCheckIn,ShopCheckInResponse, ShopCheckInSimple, ShopCheckInRequest>  implements ShopCheckInApi {
 
     @Resource
     private ShopCheckInRepository shopCheckInRepository;
@@ -46,7 +39,7 @@ public class ShopCheckInResource extends BaseResource<ShopCheckIn,ShopCheckInRes
     }
 
     @Override
-    public Function<ShopCheckInDataRequest, ShopCheckIn> getConvertForm() {
+    public Function<ShopCheckInRequest, ShopCheckIn> getConvertForm() {
         return new ShopCheckInEntityConvert();
     }
 

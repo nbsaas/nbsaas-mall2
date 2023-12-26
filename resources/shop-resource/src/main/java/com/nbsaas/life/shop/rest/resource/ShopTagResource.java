@@ -2,7 +2,7 @@ package com.nbsaas.life.shop.rest.resource;
 
 import com.nbsaas.life.shop.api.apis.ShopTagApi;
 import com.nbsaas.life.shop.data.entity.ShopTag;
-import com.nbsaas.life.shop.api.domain.request.ShopTagDataRequest;
+import com.nbsaas.life.shop.api.domain.request.ShopTagRequest;
 import com.nbsaas.life.shop.api.domain.response.ShopTagResponse;
 import com.nbsaas.life.shop.api.domain.simple.ShopTagSimple;
 import com.nbsaas.life.shop.rest.convert.ShopTagSimpleConvert;
@@ -17,17 +17,13 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
-
 /**
 *   业务接口实现
 */
 @Transactional
 @Service
-public class ShopTagResource extends BaseResource<ShopTag,ShopTagResponse, ShopTagSimple, ShopTagDataRequest>  implements ShopTagApi {
+public class ShopTagResource extends BaseResource<ShopTag,ShopTagResponse, ShopTagSimple, ShopTagRequest>  implements ShopTagApi {
 
     @Resource
     private ShopTagRepository shopTagRepository;
@@ -43,14 +39,17 @@ public class ShopTagResource extends BaseResource<ShopTag,ShopTagResponse, ShopT
     }
 
     @Override
-    public Function<ShopTagDataRequest, ShopTag> getConvertForm() {
+    public Function<ShopTagRequest, ShopTag> getConvertForm() {
         return new ShopTagEntityConvert();
     }
 
     @Override
     public Function<ShopTag, ShopTagResponse> getConvertResponse() {
-        return new ShopTagResponseConvert();
+    return new ShopTagResponseConvert();
     }
+
+
+
 
 }
 

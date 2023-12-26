@@ -18,6 +18,7 @@ private static final long serialVersionUID = 1L;
 
 
 
+
             /**
             * 使用的店铺标签数量
             **/

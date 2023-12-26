@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 @Setter
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class ShopImageSearchRequest   extends PageRequest implements Serializable {
+public class ShopTagSearch   extends PageRequest implements Serializable {
 
 /**
 * 序列化参数
@@ -25,22 +25,22 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 消息
+            * 使用的店铺标签数量
             **/
-            @Search(name = "messages",operator = Operator.like)
-            private String messages;
+            @Search(name = "size",operator = Operator.eq)
+            private Integer size;
+
+            /**
+            * 商家标签名称
+            **/
+            @Search(name = "name",operator = Operator.like)
+            private String name;
 
             /**
             * 主键id
             **/
             @Search(name = "id",operator = Operator.eq)
             private Long id;
-
-            /**
-            * 图片地址
-            **/
-            @Search(name = "url",operator = Operator.like)
-            private String url;
 
 
 

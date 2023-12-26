@@ -1,11 +1,8 @@
 package com.nbsaas.life.shop.rest.resource;
 
-import com.nbsaas.boot.rest.request.PageRequest;
-import com.nbsaas.boot.rest.response.ListResponse;
 import com.nbsaas.life.shop.api.apis.ShopCategoryApi;
 import com.nbsaas.life.shop.data.entity.ShopCategory;
-import com.nbsaas.life.shop.api.domain.request.ShopCategoryDataRequest;
-import com.nbsaas.life.shop.api.domain.request.ShopCategorySearchRequest;
+import com.nbsaas.life.shop.api.domain.request.ShopCategoryRequest;
 import com.nbsaas.life.shop.api.domain.response.ShopCategoryResponse;
 import com.nbsaas.life.shop.api.domain.simple.ShopCategorySimple;
 import com.nbsaas.life.shop.rest.convert.ShopCategorySimpleConvert;
@@ -20,17 +17,16 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
-import javax.annotation.Resource;
-import java.util.Collection;
-import java.util.List;
 import java.util.function.Function;
-
+import com.nbsaas.boot.rest.request.PageRequest;
+import com.nbsaas.boot.rest.response.ListResponse;
+import com.nbsaas.life.shop.api.domain.request.ShopCategorySearch;
 /**
 *   业务接口实现
 */
 @Transactional
 @Service
-public class ShopCategoryResource extends BaseResource<ShopCategory,ShopCategoryResponse, ShopCategorySimple, ShopCategoryDataRequest>  implements ShopCategoryApi {
+public class ShopCategoryResource extends BaseResource<ShopCategory,ShopCategoryResponse, ShopCategorySimple, ShopCategoryRequest>  implements ShopCategoryApi {
 
     @Resource
     private ShopCategoryRepository shopCategoryRepository;
@@ -46,7 +42,7 @@ public class ShopCategoryResource extends BaseResource<ShopCategory,ShopCategory
     }
 
     @Override
-    public Function<ShopCategoryDataRequest, ShopCategory> getConvertForm() {
+    public Function<ShopCategoryRequest, ShopCategory> getConvertForm() {
         return new ShopCategoryEntityConvert();
     }
 
@@ -60,8 +56,8 @@ public class ShopCategoryResource extends BaseResource<ShopCategory,ShopCategory
     @Override
     public ListResponse<ShopCategorySimple> list(PageRequest request) {
         ShopCategorySimpleConvert convert=new ShopCategorySimpleConvert();
-        if (request instanceof ShopCategorySearchRequest){
-             ShopCategorySearchRequest searchRequest=(ShopCategorySearchRequest)request;
+        if (request instanceof ShopCategorySearch){
+             ShopCategorySearch searchRequest=(ShopCategorySearch)request;
              convert.setFetch(searchRequest.getFetch());
         }
         return listSimple(request,convert);

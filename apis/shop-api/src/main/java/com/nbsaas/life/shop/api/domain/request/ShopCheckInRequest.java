@@ -9,7 +9,7 @@ import com.nbsaas.boot.rest.request.RequestId;
 * 请求对象
 */
 @Data
-public class ShopTagDataRequest implements Serializable,RequestId {
+public class ShopCheckInRequest implements Serializable,RequestId {
 
 /**
 * 序列化参数
@@ -19,14 +19,19 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 使用的店铺标签数量
+        * 
         **/
-            private Integer size;
+            private Double latitude;
 
         /**
-        * 商家标签名称
+        * 
         **/
-            private String name;
+            private String comment;
+
+        /**
+        * 
+        **/
+            private String gps;
 
         /**
         * 主键id
@@ -37,6 +42,11 @@ private static final long serialVersionUID = 1L;
         * 添加时间
         **/
             private Date addDate;
+
+        /**
+        * 
+        **/
+            private Double longitude;
 
         /**
         * 最新修改时间
