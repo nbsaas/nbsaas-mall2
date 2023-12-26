@@ -17,7 +17,7 @@
 * 代码生成模板 freemarker
 * 其它 Jsoup、gson
 * 核心采用Request-Response模式，Chain模型。
-* [boot-nbsaas](https://gitee.com/cng1985/boot-nbsaas)
+* [nbsaas-boot](https://gitee.com/cng1985/nbsaas-boot)
 
 #### [pc端](https://gitee.com/cng1985/nbsaas-life-nuxt3)
 * nuxt3
