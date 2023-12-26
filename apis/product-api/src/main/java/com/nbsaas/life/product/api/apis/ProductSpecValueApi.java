@@ -1,0 +1,15 @@
+package com.nbsaas.life.product.api.apis;
+
+import com.nbsaas.life.product.api.domain.request.ProductSpecValueRequest;
+import com.nbsaas.life.product.api.domain.simple.ProductSpecValueSimple;
+import com.nbsaas.life.product.api.domain.response.ProductSpecValueResponse;
+import com.nbsaas.boot.rest.api.BaseApi;
+
+
+/**
+* 对外接口
+*/
+public interface ProductSpecValueApi extends BaseApi<ProductSpecValueResponse, ProductSpecValueSimple, ProductSpecValueRequest> {
+
+
+}

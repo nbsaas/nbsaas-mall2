@@ -20,6 +20,7 @@
         <module>system-api</module>
         <module>statistics-api</module>
         <module>ad-api</module>
+        <module>product-api</module>
     </modules>
 
     <properties>

@@ -18,7 +18,6 @@ import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
 import java.util.function.Function;
-
 /**
 *   业务接口实现
 */
@@ -46,8 +45,11 @@ public class AdResource extends BaseResource<Ad,AdResponse, AdSimple, AdRequest>
 
     @Override
     public Function<Ad, AdResponse> getConvertResponse() {
-        return new AdResponseConvert();
+    return new AdResponseConvert();
     }
+
+
+
 
 }
 

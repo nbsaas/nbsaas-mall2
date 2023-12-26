@@ -21,6 +21,7 @@
         <module>all-resource</module>
         <module>statistics-resource</module>
         <module>ad-resource</module>
+        <module>product-resource</module>
     </modules>
 
     <properties>
