@@ -24,13 +24,9 @@ import java.util.List;
 public class App {
     public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
 
-        //config/bootadmin/system.yml
-        //config/bootadmin/user.yml tenant trade
-        //makeCodes("config/user.yml");
         makeCodes("config/shop.yml");
         makeCodes("config/area.yml");
-       // makeCodes("config/talk.yml");
-       // makeCodes("config/system.yml");
+        makeCodes("config/talk.yml");
         makeCodes("config/ad.yml");
         makeCodes("config/product.yml");
 
