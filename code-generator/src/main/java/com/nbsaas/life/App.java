@@ -29,6 +29,8 @@ public class App {
         makeCodes("config/talk.yml");
         makeCodes("config/ad.yml");
         makeCodes("config/product.yml");
+        makeCodes("config/customer.yml");
+        makeCodes("config/promote.yml");
 
 
     }

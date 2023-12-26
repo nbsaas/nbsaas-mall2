@@ -7,7 +7,7 @@
 		<artifactId>nbsaas-boot</artifactId>
 		<version>1.1.4-2023</version>
 	</parent>
-	<groupId>com.nbsaas.life</groupId>
+	<groupId>com.nbsaas.boot</groupId>
 	<artifactId>nbsaas-life</artifactId>
 	<version>1.0.1</version>
 	<packaging>pom</packaging>

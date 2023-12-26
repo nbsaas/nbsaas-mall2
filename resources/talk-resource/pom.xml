@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.nbsaas.life</groupId>
+        <groupId>com.nbsaas.boot</groupId>
         <artifactId>resources</artifactId>
         <version>1.0.1</version>
     </parent>
@@ -30,7 +30,7 @@
             <version>1.0.1</version>
         </dependency>
         <dependency>
-            <groupId>com.nbsaas.life</groupId>
+            <groupId>com.nbsaas.boot</groupId>
             <artifactId>area-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
