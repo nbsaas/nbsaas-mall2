@@ -58,7 +58,7 @@ public class App {
                     .after(new ApiCommand())
                     .after(new ConvertCommand())
                     .after(new ControllerAdminCommand())
-                    .after(new ControllerFrontCommand())
+                    .after(new ControllerFront2Command())
                     .after(new RestCommand())
                     .after(new ExtApiCommand())
                     .after(new RepositoryCommand())
