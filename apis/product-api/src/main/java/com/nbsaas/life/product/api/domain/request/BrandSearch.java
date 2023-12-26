@@ -7,6 +7,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
+import com.nbsaas.boot.rest.enums.StoreState;
 
 /**
 * 搜索bean
@@ -22,6 +23,9 @@ public class BrandSearch   extends PageRequest implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
+
+    @Search(name = "storeState",operator = Operator.eq)
+    private StoreState storeState;
 
 
             /**

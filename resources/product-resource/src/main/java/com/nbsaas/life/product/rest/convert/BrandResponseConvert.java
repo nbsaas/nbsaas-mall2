@@ -15,6 +15,9 @@ public class BrandResponseConvert  implements Converter<BrandResponse,Brand> {
     public BrandResponse convert(Brand source) {
         BrandResponse  result = new  BrandResponse();
         BeanDataUtils.copyProperties(source, result);
+                    if(source.getStoreState()!=null){
+                        result.setStoreStateName(String.valueOf(source.getStoreState()));
+                    }
         return result;
     }
 

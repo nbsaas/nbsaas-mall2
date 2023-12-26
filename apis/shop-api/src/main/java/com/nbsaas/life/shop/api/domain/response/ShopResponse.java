@@ -4,6 +4,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+            import com.nbsaas.boot.rest.enums.StoreState;
 /**
 * 响应对象
 */
@@ -166,6 +167,14 @@ private static final long serialVersionUID = 1L;
         * 商店名称
         **/
             private String name;
+
+        /**
+        * 
+        **/
+            //枚举
+            private StoreState storeState;
+
+            private String storeStateName;
 
         /**
         * POI详情页

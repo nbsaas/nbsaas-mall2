@@ -4,6 +4,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+            import com.nbsaas.boot.rest.enums.StoreState;
 /**
 * 响应对象
 */
@@ -16,6 +17,14 @@ public class BrandResponse  implements Serializable {
 */
 private static final long serialVersionUID = 1L;
 
+
+        /**
+        * 
+        **/
+            //枚举
+            private StoreState storeState;
+
+            private String storeStateName;
 
         /**
         * 主键id

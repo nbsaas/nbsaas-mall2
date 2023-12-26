@@ -54,6 +54,10 @@ public ShopSimple convert(Shop source) {
                 result.setCommentNum(source.getCommentNum());
                 result.setPhone(source.getPhone());
                 result.setName(source.getName());
+                if(source.getStoreState()!=null){
+                    result.setStoreStateName(String.valueOf(source.getStoreState()));
+                }
+                result.setStoreState(source.getStoreState());
                 result.setDetailUrl(source.getDetailUrl());
                 result.setTechnologyRating(source.getTechnologyRating());
                 result.setCheckinNum(source.getCheckinNum());

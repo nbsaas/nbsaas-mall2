@@ -5,6 +5,7 @@ import java.util.Date;
 import java.math.BigDecimal;
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
+            import com.nbsaas.boot.rest.enums.StoreState;
 /**
 * 请求对象
 */
@@ -167,6 +168,11 @@ private static final long serialVersionUID = 1L;
         * 商店名称
         **/
             private String name;
+
+        /**
+        * 
+        **/
+            private StoreState storeState;
 
         /**
         * POI详情页

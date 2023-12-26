@@ -18,6 +18,10 @@ public class BrandSimpleConvert implements Converter<BrandSimple, Brand> {
 public BrandSimple convert(Brand source) {
     BrandSimple result = new BrandSimple();
 
+                if(source.getStoreState()!=null){
+                    result.setStoreStateName(String.valueOf(source.getStoreState()));
+                }
+                result.setStoreState(source.getStoreState());
                 result.setId(source.getId());
                 result.setAddDate(source.getAddDate());
                 result.setLastDate(source.getLastDate());

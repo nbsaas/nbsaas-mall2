@@ -7,8 +7,13 @@ entities:
   - ShopTag
   - ShopCategory
   - ShopCheckIn
+  - ShopConfig
   - ShopImage
   - ShopReview
+  - ShopRole
+  - ShopRoleMenu
+  - ShopStaff
+  - ShopStaffRole
   - ShopTag
 outputPath: E:\codes\nbsaas\nbsaas-life #项目根目录
 basePackage: com.nbsaas.life #基础包名

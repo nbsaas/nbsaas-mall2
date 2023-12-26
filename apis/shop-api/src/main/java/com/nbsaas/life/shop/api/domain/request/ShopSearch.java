@@ -7,6 +7,7 @@ import lombok.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
+import com.nbsaas.boot.rest.enums.StoreState;
 
 /**
 * 搜索bean
@@ -25,6 +26,9 @@ private static final long serialVersionUID = 1L;
 
     @Search(name = "name",operator = Operator.like)
     private String name;
+
+    @Search(name = "storeState",operator = Operator.eq)
+    private StoreState storeState;
 
 
             /**

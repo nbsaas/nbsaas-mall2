@@ -9,6 +9,12 @@ public class BrandField  {
 
 
     /**
+    * 
+    **/
+    public static final String  storeState = "storeState";
+
+
+    /**
     * 主键id
     **/
     public static final String  id = "id";

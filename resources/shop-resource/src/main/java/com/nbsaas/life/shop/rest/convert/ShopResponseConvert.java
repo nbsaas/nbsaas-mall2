@@ -24,6 +24,9 @@ public class ShopResponseConvert  implements Converter<ShopResponse,Shop> {
                     if(source.getArea()!=null){
                         result.setArea(source.getArea().getId());
                     }
+                    if(source.getStoreState()!=null){
+                        result.setStoreStateName(String.valueOf(source.getStoreState()));
+                    }
                     if(source.getUser()!=null){
                         result.setUser(source.getUser().getId());
                     }

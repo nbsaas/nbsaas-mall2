@@ -5,7 +5,10 @@ import com.nbsaas.boot.code.annotation.FieldConvert;
 import com.nbsaas.boot.code.annotation.FormAnnotation;
 import com.nbsaas.boot.code.annotation.FormField;
 import com.nbsaas.boot.code.annotation.SearchItem;
+import com.nbsaas.boot.code.annotation.bean.StoreStateBean;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
+import com.nbsaas.boot.rest.enums.StoreState;
+import com.nbsaas.boot.rest.filter.Operator;
 import com.nbsaas.boot.rest.filter.Search;
 import com.nbsaas.life.area.data.entity.Area;
 import com.nbsaas.life.user.data.entity.UserInfo;
@@ -15,7 +18,7 @@ import org.hibernate.annotations.Comment;
 import javax.persistence.*;
 import java.util.*;
 
-
+@StoreStateBean
 @org.hibernate.annotations.Table(appliesTo = "shop", comment = "店铺")
 @Data
 @FormAnnotation(title = "商店", model = "商店")
@@ -156,6 +159,9 @@ public class Shop extends AbstractEntity {
     @Comment("区县id")
     @ManyToOne(fetch = FetchType.LAZY)
     private Area area;
+
+    @SearchItem(label = "storeState", name = "storeState",classType = StoreState.class,operator = Operator.eq)
+    private StoreState storeState;
 
 
     public ShopTime getCurDay() {

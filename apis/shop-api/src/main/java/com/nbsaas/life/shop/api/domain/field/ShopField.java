@@ -189,6 +189,12 @@ public class ShopField  {
 
 
     /**
+    * 
+    **/
+    public static final String  storeState = "storeState";
+
+
+    /**
     * POI详情页
     **/
     public static final String  detailUrl = "detailUrl";

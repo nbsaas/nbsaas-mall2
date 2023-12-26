@@ -18,6 +18,10 @@ import javax.annotation.Resource;
 import org.springframework.data.jpa.repository.support.JpaRepositoryImplementation;
 
 import java.util.function.Function;
+import com.nbsaas.boot.rest.enums.StoreState;
+import com.nbsaas.boot.rest.request.RequestId;
+import java.util.Optional;
+import com.nbsaas.boot.rest.response.ResponseObject;
 /**
 *   业务接口实现
 */
@@ -51,6 +55,27 @@ public class BrandResource extends BaseResource<Brand,BrandResponse, BrandSimple
 
 
 
+    @Override
+    public ResponseObject<BrandResponse> create(BrandRequest request) {
+        request.setStoreState(StoreState.normal);
+        return super.create(request);
+   }
+
+    @Override
+    public ResponseObject<?> delete(RequestId request) {
+
+        ResponseObject<?> result = new ResponseObject<>();
+        Optional<Brand> optional = getJpaRepository().findById(request.getId());
+        if (!optional.isPresent()) {
+            result.setCode(501);
+            result.setMsg("无效id");
+            return result;
+        }
+        Brand bean = optional.get();
+        bean.setStoreState(StoreState.draft);
+        return result;
+
+    }
 }
 
 
