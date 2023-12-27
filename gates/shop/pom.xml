@@ -29,5 +29,11 @@
             <artifactId>all-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>security</artifactId>
+            <version>${boot.version}</version>
+        </dependency>
+
     </dependencies>
 </project>

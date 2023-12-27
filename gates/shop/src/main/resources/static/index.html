@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.0/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+
+</head>
+<body>
+    <ul id="messageList"></ul>
+    <input type="text" id="message" placeholder="Type your message here...">
+    <button id="sendButton">Send</button>
+
+
+    <script>
+        let stompClient = null;
+
+        function connect() {
+            let socket = new SockJS('/chat');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function () {
+                stompClient.subscribe('/topic/public', function (message) {
+                    showMessage(JSON.parse(message.body).content);
+                });
+            });
+        }
+
+        function sendMessage() {
+            let messageInput = document.getElementById('message');
+            let messageContent = messageInput.value.trim();
+
+            if (messageContent) {
+                let chatMessage = {
+                    content: messageContent,
+                    sender: 'User'
+                };
+                stompClient.send("/app/sendMessage", {}, JSON.stringify(chatMessage));
+                messageInput.value = '';
+            }
+        }
+
+        function showMessage(message) {
+            let messageElement = document.createElement('li');
+            messageElement.textContent = message;
+            document.getElementById('messageList').appendChild(messageElement);
+        }
+
+        document.getElementById('sendButton').addEventListener('click', sendMessage);
+        connect();
+    </script>
+</body>
+</html>

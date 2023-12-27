@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Room</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var socket = new WebSocket('ws://' + location.host + '/websocket-demo');
+            socket.onmessage = function (event) {
+                var chatMessage = JSON.parse(event.data);
+                var messagesArea = document.getElementById('messages');
+                messagesArea.innerHTML += chatMessage.from + ': ' + chatMessage.text + '<br>';
+            };
+
+            document.getElementById('send').addEventListener('click', function () {
+                var from = document.getElementById('from').value;
+                var text = document.getElementById('text').value;
+
+                socket.send(JSON.stringify({
+                    'from': from,
+                    'text': text
+                }));
+            });
+        });
+    </script>
+</head>
+<body>
+    <label for="from">Username:</label>
+    <input type="text" id="from">
+    <br>
+    <label for="text">Message:</label>
+    <input type="text" id="text">
+    <br>
+    <button id="send">Send</button>
+    <hr>
+    <div id="messages"></div>
+  </body>
+</html>

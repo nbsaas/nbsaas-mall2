@@ -1,0 +1,43 @@
+server:
+  port: 8003 #修改默认的端口号
+  compression:
+    enabled: true
+    min-response-size: 2048
+    mime-types: image/png,image/jpeg,image/jpg,text/html,application/javascript,text/css,text/plain,application/octet-stream,application/json
+
+spring:
+  profiles:
+    active: dev
+  main:
+    allow-bean-definition-overriding: true
+  jpa:
+    hibernate:
+      ddl-auto: update #none update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL57Dialect
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterAccess=30m #expireAfterAccess=5s,expireAfterWrite=5s
+  # 指定ehcache配置文件路径
+  servlet:
+    multipart:
+      # 过滤springmvc的文件上传
+      enabled: false
+      # 单个文件最大值
+      max-file-size: 500MB
+      # 上传文件总的最大值
+      max-request-size: 1000MB
+  mvc:
+    format:
+      date-time: yyyy-MM-dd HH:mm:ss
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+logging:
+  level:
+    root: info
+shiro:
+  enabled: true
