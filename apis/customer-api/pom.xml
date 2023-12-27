@@ -3,14 +3,14 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.boot</groupId>
-        <artifactId>resources</artifactId>
+        <artifactId>apis</artifactId>
         <version>1.0.1</version>
     </parent>
-    <artifactId>customer-resource</artifactId>
+    <artifactId>customer-api</artifactId>
     <packaging>jar</packaging>
 
-    <name>customer-resource</name>
-    <url>http://maven.apache.org</url>
+    <name>order-api</name>
+    <url>http://www.nbsaas.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -22,11 +22,6 @@
             <artifactId>junit</artifactId>
             <version>3.8.1</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.boot</groupId>
-            <artifactId>customer-api</artifactId>
-            <version>1.0.1</version>
         </dependency>
     </dependencies>
 </project>
