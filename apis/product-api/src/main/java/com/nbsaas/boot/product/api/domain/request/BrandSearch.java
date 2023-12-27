@@ -29,6 +29,24 @@ private static final long serialVersionUID = 1L;
 
 
             /**
+            * 品牌介绍
+            **/
+            @Search(name = "note",operator = Operator.like)
+            private String note;
+
+            /**
+            * 品牌名称
+            **/
+            @Search(name = "name",operator = Operator.like)
+            private String name;
+
+            /**
+            * 品牌logo
+            **/
+            @Search(name = "logo",operator = Operator.like)
+            private String logo;
+
+            /**
             * 主键id
             **/
             @Search(name = "id",operator = Operator.eq)

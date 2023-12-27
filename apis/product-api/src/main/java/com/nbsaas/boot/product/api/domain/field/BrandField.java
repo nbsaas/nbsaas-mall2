@@ -9,9 +9,33 @@ public class BrandField  {
 
 
     /**
+    * 品牌介绍
+    **/
+    public static final String  note = "note";
+
+
+    /**
+    * 品牌名称
+    **/
+    public static final String  name = "name";
+
+
+    /**
+    * 品牌logo
+    **/
+    public static final String  logo = "logo";
+
+
+    /**
     * 
     **/
     public static final String  storeState = "storeState";
+
+
+    /**
+    * 
+    **/
+    public static final String  recommend = "recommend";
 
 
     /**

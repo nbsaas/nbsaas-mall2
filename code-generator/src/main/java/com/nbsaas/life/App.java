@@ -8,6 +8,7 @@ import com.nbsaas.boot.generator.command.jpa.RepositoryCommand;
 import com.nbsaas.boot.generator.config.Config;
 import com.nbsaas.boot.generator.context.InputRequestObject;
 import com.nbsaas.life.command.ControllerShopCommand;
+import com.nbsaas.life.command.MapperPackageCommand;
 import com.nbsaas.life.command.MapperXmlCommand;
 import org.yaml.snakeyaml.Yaml;
 
@@ -65,6 +66,7 @@ public class App {
                     .after(new RepositoryCommand())
                     .after(new ExtResourceCommand())
                     .after(new MapperXmlCommand())
+                    .after(new MapperPackageCommand())
                     .after(new ControllerShopCommand())
                     .after(new FieldCommand())
                     .after(new FinishCommand()).execute(context);

@@ -20,9 +20,29 @@ private static final long serialVersionUID = 1L;
 
 
         /**
+        * 品牌介绍
+        **/
+            private String note;
+
+        /**
+        * 品牌名称
+        **/
+            private String name;
+
+        /**
+        * 品牌logo
+        **/
+            private String logo;
+
+        /**
         * 
         **/
             private StoreState storeState;
+
+        /**
+        * 
+        **/
+            private Integer recommend;
 
         /**
         * 主键id
