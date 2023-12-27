@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.nbsaas.boot</groupId>
-        <artifactId>nbsaas-life</artifactId>
+        <artifactId>nbsaas-mall2</artifactId>
         <version>1.0.1</version>
     </parent>
     <artifactId>resources</artifactId>
