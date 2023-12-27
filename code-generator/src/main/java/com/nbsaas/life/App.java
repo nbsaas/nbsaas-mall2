@@ -1,7 +1,5 @@
 package com.nbsaas.life;
 
-import com.nbsaas.boot.chain.Command;
-import com.nbsaas.boot.chain.impl.ChainBase;
 import com.nbsaas.boot.generator.GeneratorApp;
 import com.nbsaas.boot.generator.beans.FormBean;
 import com.nbsaas.boot.generator.beans.FormBeanConvert;
@@ -9,7 +7,8 @@ import com.nbsaas.boot.generator.command.common.*;
 import com.nbsaas.boot.generator.command.jpa.RepositoryCommand;
 import com.nbsaas.boot.generator.config.Config;
 import com.nbsaas.boot.generator.context.InputRequestObject;
-import com.nbsaas.boot.rest.response.ResponseObject;
+import com.nbsaas.life.command.ControllerShopCommand;
+import com.nbsaas.life.command.MapperXmlCommand;
 import org.yaml.snakeyaml.Yaml;
 
 import java.io.File;
@@ -56,7 +55,7 @@ public class App {
             context.setConfig(config);
             context.setFormBean(formBean);
 
-             new DomainCommand()
+            new DomainCommand()
                     .after(new ApiCommand())
                     .after(new ConvertCommand())
                     .after(new ControllerAdminCommand())
@@ -64,8 +63,10 @@ public class App {
                     .after(new RestCommand())
                     .after(new ExtApiCommand())
                     .after(new RepositoryCommand())
-                     .after(new ExtResourceCommand())
-                     .after(new FieldCommand())
+                    .after(new ExtResourceCommand())
+                    .after(new MapperXmlCommand())
+                    .after(new ControllerShopCommand())
+                    .after(new FieldCommand())
                     .after(new FinishCommand()).execute(context);
         }
     }
