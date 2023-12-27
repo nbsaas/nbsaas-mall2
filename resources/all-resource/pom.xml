@@ -51,6 +51,11 @@
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
+            <artifactId>config-resource</artifactId>
+            <version>${boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
             <artifactId>product-resource</artifactId>
             <version>1.0.1</version>
         </dependency>

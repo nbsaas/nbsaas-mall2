@@ -24,7 +24,11 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>system-admin</artifactId>
+            <version>${boot.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>security</artifactId>

@@ -24,8 +24,6 @@ public class PasswordResource implements PasswordApi {
 
     @Override
     public PasswordResponse passwordBySalt(PasswordRequest request) {
-        RandomNumberGenerator generator = new SecureRandomNumberGenerator();
-
         ByteSource salt = ByteSource.Util.bytes(Base64.decode(request.getSalt()));
         Sha256Hash sha256Hash = new Sha256Hash(request.getPassword(), salt, 2048);
         return PasswordResponse.builder().password(sha256Hash.toBase64()).salt(salt.toBase64()).build();
