@@ -45,7 +45,7 @@ public class AdResource extends BaseResource<Ad,AdResponse, AdSimple, AdRequest>
 
     @Override
     public Function<Ad, AdResponse> getConvertResponse() {
-    return new AdResponseConvert();
+        return new AdResponseConvert();
     }
 
 

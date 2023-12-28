@@ -49,7 +49,7 @@ public class ProductResource extends BaseResource<Product,ProductResponse, Produ
 
     @Override
     public Function<Product, ProductResponse> getConvertResponse() {
-    return new ProductResponseConvert();
+        return new ProductResponseConvert();
     }
 
 

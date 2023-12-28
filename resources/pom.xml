@@ -22,6 +22,7 @@
         <module>product-resource</module>
         <module>promote-resource</module>
         <module>customer-resource</module>
+        <module>common-resource</module>
     </modules>
 
     <properties>

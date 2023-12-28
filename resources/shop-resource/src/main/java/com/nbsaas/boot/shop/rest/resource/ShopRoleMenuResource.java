@@ -45,7 +45,7 @@ public class ShopRoleMenuResource extends BaseResource<ShopRoleMenu,ShopRoleMenu
 
     @Override
     public Function<ShopRoleMenu, ShopRoleMenuResponse> getConvertResponse() {
-    return new ShopRoleMenuResponseConvert();
+        return new ShopRoleMenuResponseConvert();
     }
 
 

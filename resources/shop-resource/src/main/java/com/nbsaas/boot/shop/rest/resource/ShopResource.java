@@ -49,7 +49,7 @@ public class ShopResource extends BaseResource<Shop,ShopResponse, ShopSimple, Sh
 
     @Override
     public Function<Shop, ShopResponse> getConvertResponse() {
-    return new ShopResponseConvert();
+        return new ShopResponseConvert();
     }
 
 

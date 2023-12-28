@@ -48,7 +48,7 @@ public class AreaResource extends BaseResource<Area,AreaResponse, AreaSimple, Ar
 
     @Override
     public Function<Area, AreaResponse> getConvertResponse() {
-    return new AreaResponseConvert();
+        return new AreaResponseConvert();
     }
 
 

@@ -11,7 +11,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-@org.hibernate.annotations.Table(appliesTo = "user_info",comment = "客户表")
+//@org.hibernate.annotations.Table(appliesTo = "user_info",comment = "客户表")
 @CreateByUser
 @ComposeView
 @Data

@@ -45,7 +45,7 @@ public class ProductSpecResource extends BaseResource<ProductSpec,ProductSpecRes
 
     @Override
     public Function<ProductSpec, ProductSpecResponse> getConvertResponse() {
-    return new ProductSpecResponseConvert();
+        return new ProductSpecResponseConvert();
     }
 
 

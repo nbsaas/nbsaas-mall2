@@ -1,0 +1,8 @@
+projectName: common #多项目的时候模块名
+multiple: true #是否多模块项目
+templateDir: /template/jpa #代码模块文件夹
+entityPackage: com.nbsaas.boot.common.data.entity
+entities:
+  - SequenceTable
+outputPath: E:\codes\nbsaas\nbsaas-mall2 #项目根目录
+basePackage: com.nbsaas.boot #基础包名

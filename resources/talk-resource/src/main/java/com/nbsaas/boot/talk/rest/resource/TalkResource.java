@@ -45,7 +45,7 @@ public class TalkResource extends BaseResource<Talk,TalkResponse, TalkSimple, Ta
 
     @Override
     public Function<Talk, TalkResponse> getConvertResponse() {
-    return new TalkResponseConvert();
+        return new TalkResponseConvert();
     }
 
 

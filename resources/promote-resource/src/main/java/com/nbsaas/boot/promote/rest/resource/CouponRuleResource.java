@@ -45,7 +45,7 @@ public class CouponRuleResource extends BaseResource<CouponRule,CouponRuleRespon
 
     @Override
     public Function<CouponRule, CouponRuleResponse> getConvertResponse() {
-    return new CouponRuleResponseConvert();
+        return new CouponRuleResponseConvert();
     }
 
 

@@ -45,7 +45,7 @@ public class ShopReviewResource extends BaseResource<ShopReview,ShopReviewRespon
 
     @Override
     public Function<ShopReview, ShopReviewResponse> getConvertResponse() {
-    return new ShopReviewResponseConvert();
+        return new ShopReviewResponseConvert();
     }
 
 

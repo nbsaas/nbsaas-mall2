@@ -45,7 +45,7 @@ public class ShopCheckInResource extends BaseResource<ShopCheckIn,ShopCheckInRes
 
     @Override
     public Function<ShopCheckIn, ShopCheckInResponse> getConvertResponse() {
-    return new ShopCheckInResponseConvert();
+        return new ShopCheckInResponseConvert();
     }
 
 
