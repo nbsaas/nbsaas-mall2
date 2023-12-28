@@ -6,4 +6,7 @@ import com.nbsaas.boot.rest.response.ListResponse;
 public interface CustomerCountApi {
 
     ListResponse<CountSimple> countByRecent12Month();
+
+    ListResponse<CountSimple> countByYear(Integer year);
+
 }

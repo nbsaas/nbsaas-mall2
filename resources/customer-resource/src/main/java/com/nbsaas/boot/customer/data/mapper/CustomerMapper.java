@@ -2,6 +2,7 @@ package com.nbsaas.boot.customer.data.mapper;
 
 import com.nbsaas.boot.common.ext.domain.simple.CountSimple;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,4 +14,7 @@ public interface CustomerMapper {
      * @return
      */
     List<CountSimple> countByRecent12Month();
+
+    List<CountSimple> countByYear(@Param("year") Integer year);
+
 }

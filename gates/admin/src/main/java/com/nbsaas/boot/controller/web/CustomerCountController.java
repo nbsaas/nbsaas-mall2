@@ -17,6 +17,11 @@ public class CustomerCountController {
         return customerCountApi.countByRecent12Month();
     }
 
+    @RequestMapping("/countByYear")
+    public ListResponse<CountSimple> countByYear(Integer year) {
+        return customerCountApi.countByYear(year);
+    }
+
     @Resource
     private CustomerCountApi customerCountApi;
 }

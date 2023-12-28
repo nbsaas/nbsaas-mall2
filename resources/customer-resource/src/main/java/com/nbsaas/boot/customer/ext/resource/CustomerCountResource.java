@@ -22,4 +22,12 @@ public class CustomerCountResource implements CustomerCountApi {
         result.setData(customerMapper.countByRecent12Month());
         return result;
     }
+
+    @Transactional(readOnly = true)
+    @Override
+    public ListResponse<CountSimple> countByYear(Integer year) {
+        ListResponse<CountSimple> result = new ListResponse<>();
+        result.setData(customerMapper.countByYear(year));
+        return result;
+    }
 }
