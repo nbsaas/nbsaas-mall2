@@ -32,6 +32,7 @@ public class App {
         makeCodes("config/customer.yml");
         makeCodes("config/promote.yml");
         makeCodes("config/common.yml");
+        makeCodes("config/order.yml");
 
 
     }
