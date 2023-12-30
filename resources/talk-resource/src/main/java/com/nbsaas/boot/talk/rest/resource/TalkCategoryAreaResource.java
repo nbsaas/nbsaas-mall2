@@ -45,7 +45,7 @@ public class TalkCategoryAreaResource extends BaseResource<TalkCategoryArea,Talk
 
     @Override
     public Function<TalkCategoryArea, TalkCategoryAreaResponse> getConvertResponse() {
-    return new TalkCategoryAreaResponseConvert();
+        return new TalkCategoryAreaResponseConvert();
     }
 
 

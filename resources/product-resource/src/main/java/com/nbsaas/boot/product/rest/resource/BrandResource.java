@@ -49,7 +49,7 @@ public class BrandResource extends BaseResource<Brand,BrandResponse, BrandSimple
 
     @Override
     public Function<Brand, BrandResponse> getConvertResponse() {
-    return new BrandResponseConvert();
+        return new BrandResponseConvert();
     }
 
 

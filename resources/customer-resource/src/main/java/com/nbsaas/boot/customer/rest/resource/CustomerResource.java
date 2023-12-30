@@ -45,7 +45,7 @@ public class CustomerResource extends BaseResource<Customer,CustomerResponse, Cu
 
     @Override
     public Function<Customer, CustomerResponse> getConvertResponse() {
-    return new CustomerResponseConvert();
+        return new CustomerResponseConvert();
     }
 
 

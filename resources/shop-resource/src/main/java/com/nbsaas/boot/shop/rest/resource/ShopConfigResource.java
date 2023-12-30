@@ -45,7 +45,7 @@ public class ShopConfigResource extends BaseResource<ShopConfig,ShopConfigRespon
 
     @Override
     public Function<ShopConfig, ShopConfigResponse> getConvertResponse() {
-    return new ShopConfigResponseConvert();
+        return new ShopConfigResponseConvert();
     }
 
 

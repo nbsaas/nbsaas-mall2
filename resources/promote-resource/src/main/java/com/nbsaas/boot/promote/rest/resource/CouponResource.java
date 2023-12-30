@@ -45,7 +45,7 @@ public class CouponResource extends BaseResource<Coupon,CouponResponse, CouponSi
 
     @Override
     public Function<Coupon, CouponResponse> getConvertResponse() {
-    return new CouponResponseConvert();
+        return new CouponResponseConvert();
     }
 
 

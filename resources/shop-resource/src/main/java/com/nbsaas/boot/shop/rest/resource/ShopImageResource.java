@@ -45,7 +45,7 @@ public class ShopImageResource extends BaseResource<ShopImage,ShopImageResponse,
 
     @Override
     public Function<ShopImage, ShopImageResponse> getConvertResponse() {
-    return new ShopImageResponseConvert();
+        return new ShopImageResponseConvert();
     }
 
 

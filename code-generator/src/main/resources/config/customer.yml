@@ -4,5 +4,5 @@ templateDir: /template/jpa #代码模块文件夹
 entityPackage: com.nbsaas.boot.customer.data.entity
 entities:
   - Customer
-outputPath: E:\codes\nbsaas\nbsaas-life #项目根目录
+outputPath: E:\codes\nbsaas\nbsaas-mall2 #项目根目录
 basePackage: com.nbsaas.boot #基础包名

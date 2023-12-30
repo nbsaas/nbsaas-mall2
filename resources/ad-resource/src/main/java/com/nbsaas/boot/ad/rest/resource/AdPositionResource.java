@@ -45,7 +45,7 @@ public class AdPositionResource extends BaseResource<AdPosition,AdPositionRespon
 
     @Override
     public Function<AdPosition, AdPositionResponse> getConvertResponse() {
-    return new AdPositionResponseConvert();
+        return new AdPositionResponseConvert();
     }
 
 

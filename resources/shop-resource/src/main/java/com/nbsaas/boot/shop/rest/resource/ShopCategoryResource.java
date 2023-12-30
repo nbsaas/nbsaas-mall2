@@ -48,7 +48,7 @@ public class ShopCategoryResource extends BaseResource<ShopCategory,ShopCategory
 
     @Override
     public Function<ShopCategory, ShopCategoryResponse> getConvertResponse() {
-    return new ShopCategoryResponseConvert();
+        return new ShopCategoryResponseConvert();
     }
 
 

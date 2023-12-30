@@ -5,5 +5,5 @@ entityPackage: com.nbsaas.boot.promote.data.entity
 entities:
   - Coupon
   - CouponRule
-outputPath: E:\codes\nbsaas\nbsaas-life #项目根目录
+outputPath: E:\codes\nbsaas\nbsaas-mall2 #项目根目录
 basePackage: com.nbsaas.boot #基础包名

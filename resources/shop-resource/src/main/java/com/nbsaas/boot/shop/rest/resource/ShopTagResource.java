@@ -45,7 +45,7 @@ public class ShopTagResource extends BaseResource<ShopTag,ShopTagResponse, ShopT
 
     @Override
     public Function<ShopTag, ShopTagResponse> getConvertResponse() {
-    return new ShopTagResponseConvert();
+        return new ShopTagResponseConvert();
     }
 
 

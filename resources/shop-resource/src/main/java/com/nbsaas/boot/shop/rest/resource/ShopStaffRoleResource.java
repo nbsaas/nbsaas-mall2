@@ -45,7 +45,7 @@ public class ShopStaffRoleResource extends BaseResource<ShopStaffRole,ShopStaffR
 
     @Override
     public Function<ShopStaffRole, ShopStaffRoleResponse> getConvertResponse() {
-    return new ShopStaffRoleResponseConvert();
+        return new ShopStaffRoleResponseConvert();
     }
 
 

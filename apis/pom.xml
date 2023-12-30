@@ -21,6 +21,7 @@
         <module>product-api</module>
         <module>promote-api</module>
         <module>customer-api</module>
+        <module>common-api</module>
     </modules>
 
     <properties>

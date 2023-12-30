@@ -69,5 +69,15 @@
             <artifactId>promote-resource</artifactId>
             <version>1.0.1</version>
         </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>common-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>order-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
     </dependencies>
 </project>

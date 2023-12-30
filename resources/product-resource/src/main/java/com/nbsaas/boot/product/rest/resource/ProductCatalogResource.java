@@ -48,7 +48,7 @@ public class ProductCatalogResource extends BaseResource<ProductCatalog,ProductC
 
     @Override
     public Function<ProductCatalog, ProductCatalogResponse> getConvertResponse() {
-    return new ProductCatalogResponseConvert();
+        return new ProductCatalogResponseConvert();
     }
 
 

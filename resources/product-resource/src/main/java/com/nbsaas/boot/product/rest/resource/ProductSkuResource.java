@@ -45,7 +45,7 @@ public class ProductSkuResource extends BaseResource<ProductSku,ProductSkuRespon
 
     @Override
     public Function<ProductSku, ProductSkuResponse> getConvertResponse() {
-    return new ProductSkuResponseConvert();
+        return new ProductSkuResponseConvert();
     }
 
 
