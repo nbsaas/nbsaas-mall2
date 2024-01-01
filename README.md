@@ -7,21 +7,54 @@
 > 去好店，让你快速的找到喜欢的店铺。
 ## 最近项目正在进行重构，spring boot+nuxt3+vue3，前后端分离，请大家耐心等待
 ![输入图片说明](documents/images/banner.png)
-### 技术选型：
 
-#### 服务端
-* Spring、SpringMVC、spring data jpa
-* Spring boot,Spring cloud,Spring alibaba
-* 安全权限 Shiro
-* 缓存 Ehcache
-* 代码生成模板 freemarker
-* 其它 Jsoup、gson
-* 核心采用Request-Response模式，Chain模型。
-* [nbsaas-boot](https://gitee.com/cng1985/nbsaas-boot)
 
-#### [pc端](https://gitee.com/cng1985/nbsaas-life-nuxt3)
-* nuxt3
-* element-plus
+## 编码规范
+
+### 1.项目结构规范
+
+```
+{主工程}
+{主工程}.adapters
+{主工程}.admins
+{主工程}.api
+{主工程}.apps
+{主工程}.code-generator
+{主工程}.commons
+{主工程}.gates
+{主工程}.gateway
+{主工程}.models
+{主工程}.resources
+
+```
+
+### 2.Api模块结构规范
+
+```
+com.{公司域名}.{主工程}.{子工程}
+com.{公司域名}.{主工程}.{子工程}.api.apis
+com.{公司域名}.{主工程}.{子工程}.api.domain.enums
+com.{公司域名}.{主工程}.{子工程}.api.domain.request
+com.{公司域名}.{主工程}.{子工程}.api.domain.response
+com.{公司域名}.{主工程}.{子工程}.api.domain.simple
+com.{公司域名}.{主工程}.{子工程}.ext.apis
+com.{公司域名}.{主工程}.{子工程}.ext.domain.enums
+com.{公司域名}.{主工程}.{子工程}.ext.domain.request
+com.{公司域名}.{主工程}.{子工程}.ext.domain.response
+com.{公司域名}.{主工程}.{子工程}.ext.domain.simple
+```
+
+### 3.Resource模块结构规范
+
+```
+com.{公司域名}.{主工程}.{子工程}
+com.{公司域名}.{主工程}.{子工程}.data.entity
+com.{公司域名}.{主工程}.{子工程}.data.repository
+com.{公司域名}.{主工程}.{子工程}.rest.conver
+com.{公司域名}.{主工程}.{子工程}.rest.resource
+com.{公司域名}.{主工程}.{子工程}.ext.conver
+com.{公司域名}.{主工程}.{子工程}.ext.resource
+```
 
 ### vue视图结构
 
@@ -39,6 +72,24 @@
 /views/业务模块/view_业务n.vue
 
 ```
+
+### 技术选型：
+
+#### 服务端
+* Spring、SpringMVC、spring data jpa
+* Spring boot,Spring cloud,Spring alibaba
+* 安全权限 Shiro
+* 缓存 Ehcache
+* 代码生成模板 freemarker
+* 其它 Jsoup、gson
+* 核心采用Request-Response模式，Chain模型。
+* [nbsaas-boot](https://gitee.com/cng1985/nbsaas-boot)
+
+#### [pc端](https://gitee.com/cng1985/nbsaas-life-nuxt3)
+* nuxt3
+* element-plus
+
+
 #### 后台管理端
 
 * vue3
