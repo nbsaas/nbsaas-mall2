@@ -23,7 +23,22 @@
 * nuxt3
 * element-plus
 
+### vue视图结构
 
+```
+/views/业务模块/add.vue
+/views/业务模块/component_组件业务1.vue
+/views/业务模块/component_组件业务2.vue
+/views/业务模块/component_组件业务n.vue
+/views/业务模块/index.vue
+/views/业务模块/update.vue
+/views/业务模块/view.vue
+/views/业务模块/view_layout.vue
+/views/业务模块/view_业务1.vue
+/views/业务模块/view_业务2.vue
+/views/业务模块/view_业务n.vue
+
+```
 #### 后台管理端
 
 * vue3
