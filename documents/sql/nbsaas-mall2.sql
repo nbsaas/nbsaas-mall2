@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `bs_basic_ad` (
   CONSTRAINT `FK4o90micfofe3dsox57fsbf54h` FOREIGN KEY (`ad_position_id`) REFERENCES `bs_basic_ad_position` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-mall2.bs_basic_ad 的数据：~0 rows (大约)
+-- 正在导出表  nbsaas-mall2.bs_basic_ad 的数据：~1 rows (大约)
 DELETE FROM `bs_basic_ad`;
 INSERT INTO `bs_basic_ad` (`id`, `add_date`, `last_date`, `sort_num`, `begin_date`, `buss_id`, `catalog`, `end_date`, `note`, `path`, `title`, `url`, `ad_position_id`) VALUES
 	(1, '2023-05-29 23:58:35.000000', '2023-05-30 21:28:01.947000', NULL, '2023-05-15 00:00:00.000000', NULL, NULL, '2023-05-24 03:02:00.000000', '213123', 'http://file.nbsaas.com/newbyte/upload/image/202305/cb8a4bda-dcdd-41de-b15b-480d105ac1d7.png', 'ghfgh', '213213', 1);
@@ -98,7 +98,7 @@ CREATE TABLE IF NOT EXISTS `bs_order` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='订单';
 
--- 正在导出表  nbsaas-mall2.bs_order 的数据：~2 rows (大约)
+-- 正在导出表  nbsaas-mall2.bs_order 的数据：~3 rows (大约)
 DELETE FROM `bs_order`;
 INSERT INTO `bs_order` (`id`, `add_date`, `catalog`, `last_date`, `order_ext`, `source_client`, `state`) VALUES
 	(1, NULL, NULL, NULL, '{"note": "ada", "remark": "dfsd"}', NULL, NULL),
@@ -373,6 +373,13 @@ CREATE TABLE IF NOT EXISTS `nbsaas_common_config` (
 
 -- 正在导出表  nbsaas-mall2.nbsaas_common_config 的数据：~0 rows (大约)
 DELETE FROM `nbsaas_common_config`;
+INSERT INTO `nbsaas_common_config` (`id`, `add_date`, `last_date`, `class_name`, `config_data`) VALUES
+	(1, '2024-01-04 21:14:28.749000', '2024-01-04 21:14:43.718000', 'SiteConfig', '{"name":"aaa","phone":"","address":""}'),
+	(2, '2024-01-04 21:18:39.007000', '2024-01-04 21:18:39.007000', 'SmsConfig', '{}'),
+	(3, '2024-01-04 21:18:40.171000', '2024-01-04 21:18:40.171000', 'WeChatConfig', '{}'),
+	(4, '2024-01-04 21:18:40.530000', '2024-01-04 21:18:40.530000', 'AliOssConfig', '{}'),
+	(5, '2024-01-04 21:18:41.143000', '2024-01-04 21:18:41.143000', 'AMapConfig', '{}'),
+	(6, '2024-01-04 21:18:41.608000', '2024-01-04 21:18:41.608000', 'AliOcrConfig', '{}');
 
 -- 导出  表 nbsaas-mall2.shop 结构
 DROP TABLE IF EXISTS `shop`;
@@ -1728,10 +1735,10 @@ CREATE TABLE IF NOT EXISTS `sys_app` (
   KEY `sys_app_name_index` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-mall2.sys_app 的数据：~0 rows (大约)
+-- 正在导出表  nbsaas-mall2.sys_app 的数据：~1 rows (大约)
 DELETE FROM `sys_app`;
 INSERT INTO `sys_app` (`id`, `add_date`, `last_date`, `app_key`, `name`, `note`) VALUES
-	(1, '2023-05-27 14:16:35.984000', '2023-05-27 14:16:35.984000', NULL, 'ada', NULL);
+	(1, '2023-05-27 14:16:35.000000', '2023-05-27 14:16:35.000000', 'shop', '商家端', '');
 
 -- 导出  表 nbsaas-mall2.sys_app_menu 结构
 DROP TABLE IF EXISTS `sys_app_menu`;
@@ -1765,6 +1772,9 @@ CREATE TABLE IF NOT EXISTS `sys_app_menu` (
 
 -- 正在导出表  nbsaas-mall2.sys_app_menu 的数据：~0 rows (大约)
 DELETE FROM `sys_app_menu`;
+INSERT INTO `sys_app_menu` (`id`, `add_date`, `code`, `depth`, `ids`, `last_date`, `lft`, `name`, `rgt`, `sort_num`, `catalog`, `creator`, `icon`, `menu_type`, `num`, `path`, `permission`, `router`, `app_id`, `parent_id`) VALUES
+	(1, '2024-01-04 20:56:44.209000', NULL, 1, '00001', '2024-01-04 20:56:44.209000', NULL, '未命名1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 1, NULL),
+	(2, '2024-01-04 20:56:45.245000', NULL, 1, '00002', '2024-01-04 20:56:45.246000', NULL, '未命名2', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', NULL, NULL, 1, NULL);
 
 -- 导出  表 nbsaas-mall2.sys_app_role 结构
 DROP TABLE IF EXISTS `sys_app_role`;
@@ -1844,7 +1854,7 @@ CREATE TABLE IF NOT EXISTS `sys_common_area` (
   CONSTRAINT `FKkxaawvt3h2jxmxsvoklroy1mg` FOREIGN KEY (`parent_id`) REFERENCES `sys_common_area` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='地区';
 
--- 正在导出表  nbsaas-mall2.sys_common_area 的数据：~3,672 rows (大约)
+-- 正在导出表  nbsaas-mall2.sys_common_area 的数据：~3,633 rows (大约)
 DELETE FROM `sys_common_area`;
 INSERT INTO `sys_common_area` (`id`, `add_date`, `code`, `depth`, `ids`, `last_date`, `lft`, `name`, `rgt`, `sort_num`, `lat`, `lng`, `parent_id`, `area_type`, `full_name`, `gov_code`, `state`) VALUES
 	(1, '2018-08-24 16:05:06.000000', NULL, 1, NULL, '2018-08-24 16:05:07.000000', 1, '中国', 7288, NULL, NULL, NULL, NULL, '0', '中国', '中国', 0),
@@ -5545,7 +5555,7 @@ CREATE TABLE IF NOT EXISTS `sys_dict_item` (
   CONSTRAINT `FKdem7dtr28pt4kqu9rk7strqdj` FOREIGN KEY (`dict_id`) REFERENCES `sys_dict` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='字典子项';
 
--- 正在导出表  nbsaas-mall2.sys_dict_item 的数据：~9 rows (大约)
+-- 正在导出表  nbsaas-mall2.sys_dict_item 的数据：~10 rows (大约)
 DELETE FROM `sys_dict_item`;
 INSERT INTO `sys_dict_item` (`id`, `add_date`, `last_date`, `data_code`, `data_value`, `sort_num`, `store_state`, `dict_id`) VALUES
 	(1, '2023-06-03 20:11:29.784000', '2023-06-03 20:11:29.784000', 'tyu', 'tyut', NULL, NULL, NULL),
@@ -5608,19 +5618,20 @@ DELETE FROM `sys_menu`;
 INSERT INTO `sys_menu` (`id`, `add_date`, `code`, `depth`, `ids`, `last_date`, `lft`, `name`, `rgt`, `sort_num`, `catalog`, `icon`, `menu_type`, `nums`, `path`, `permission`, `router`, `parent_id`) VALUES
 	(1, NULL, '', 1, '', NULL, NULL, '首页', NULL, 0, NULL, 'fa fa-home', NULL, NULL, '/home', '', '/home', NULL),
 	(2, NULL, '', 1, '', NULL, NULL, '系统设置', NULL, 111, NULL, 'fa  fa-gear', NULL, NULL, '', '', '/setting', NULL),
-	(3, NULL, '', 2, '', NULL, NULL, '菜单管理', NULL, 0, NULL, 'fa fa-list', NULL, NULL, '/menu/index', 'menu', '/menu/index', 2),
+	(3, NULL, '', 2, '', NULL, NULL, '菜单管理', NULL, 100, NULL, 'fa fa-list', NULL, NULL, '', 'menu', '/menu/index', 2),
 	(4, NULL, '', NULL, '', NULL, NULL, '店铺管理', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', 'ghj,ghj,ghj,ghj', '/sss', NULL),
 	(5, NULL, '', NULL, '', NULL, NULL, '广告管理', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', 'ad_home', '/ad_home', NULL),
-	(6, NULL, '', NULL, '', NULL, NULL, '角色管理', NULL, 0, NULL, 'fa fa-list', NULL, NULL, '', 'role', '/role/index', 2),
+	(6, NULL, '', NULL, '', NULL, NULL, '角色管理', NULL, 100, NULL, 'fa fa-list', NULL, NULL, '', 'role', '/role/index', 2),
 	(16, NULL, '', NULL, '', NULL, NULL, '个人信息', NULL, 0, NULL, 'fa fa-user', NULL, NULL, '', '', '/usercenter/index', 2),
-	(17, NULL, '', NULL, '', NULL, NULL, '数据字典', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', 'dict', '/dict/index', 2),
-	(18, NULL, '', NULL, '', NULL, NULL, '系统配置', NULL, 0, NULL, 'fa  fa-gear', NULL, NULL, '', '', '/system/index', 2),
+	(17, NULL, '', NULL, '', NULL, NULL, '数据字典', NULL, 900, NULL, 'fa fa-support', NULL, NULL, '', 'dict', '/dict/index', 2),
+	(18, NULL, '', NULL, '', NULL, NULL, '系统配置', NULL, 1000, NULL, 'fa  fa-gear', NULL, NULL, '', '', '/system/index', 2),
 	(23, NULL, '', NULL, '', NULL, NULL, '店铺管理', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', 'shop', '/shop/index', 4),
 	(38, NULL, '', NULL, '', NULL, NULL, '广告管理', NULL, 0, NULL, 'fa fa-support', NULL, NULL, '', 'ad', '/ad/index', 5),
 	(39, NULL, '', NULL, '', NULL, NULL, '广告位管理', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', 'adPosition', '/adPosition/index', 5),
 	(40, '2023-07-01 15:17:34.850000', NULL, 1, NULL, '2023-07-01 15:17:34.851000', NULL, '配置中心', NULL, 11, NULL, 'fa fa-support', NULL, NULL, '', '', '', NULL),
 	(41, '2023-07-01 15:17:49.174000', NULL, 1, NULL, '2023-07-01 15:17:49.174000', NULL, '地区配置', NULL, 0, NULL, 'fa fa-circle-o', NULL, NULL, '', 'area', '/area/index', 40),
-	(42, '2023-07-01 15:33:37.021000', NULL, 1, NULL, '2023-07-01 15:33:37.021000', NULL, '商家分类管理', NULL, 2, NULL, 'fa fa-circle-o', NULL, NULL, '', 'shopCategory', '/shopCategory/index', 40);
+	(42, '2023-07-01 15:33:37.021000', NULL, 1, NULL, '2023-07-01 15:33:37.021000', NULL, '商家分类管理', NULL, 2, NULL, 'fa fa-circle-o', NULL, NULL, '', 'shopCategory', '/shopCategory/index', 40),
+	(43, '2024-01-04 20:55:11.535000', NULL, 2, '00043', '2024-01-04 20:55:11.535000', NULL, '应用管理', NULL, 1, NULL, 'fa fa-support', NULL, NULL, '', 'application', '/application/index', 2);
 
 -- 导出  表 nbsaas-mall2.sys_mock 结构
 DROP TABLE IF EXISTS `sys_mock`;
@@ -5666,7 +5677,7 @@ CREATE TABLE IF NOT EXISTS `sys_role` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='角色表 ';
 
--- 正在导出表  nbsaas-mall2.sys_role 的数据：~3 rows (大约)
+-- 正在导出表  nbsaas-mall2.sys_role 的数据：~2 rows (大约)
 DELETE FROM `sys_role`;
 INSERT INTO `sys_role` (`id`, `add_date`, `last_date`, `name`, `remark`) VALUES
 	(1, NULL, '2023-06-07 21:32:37.245000', '管理员', '3123'),
@@ -5715,21 +5726,22 @@ INSERT INTO `sys_role_menu` (`id`, `add_date`, `last_date`, `menu_id`, `role_id`
 	(71, '2023-06-07 21:34:57.673000', '2023-06-07 21:34:57.673000', 16, 15),
 	(72, '2023-06-07 21:34:57.677000', '2023-06-07 21:34:57.677000', 17, 15),
 	(73, '2023-06-07 21:34:57.680000', '2023-06-07 21:34:57.680000', 18, 15),
-	(88, '2023-07-01 15:34:25.137000', '2023-07-01 15:34:25.137000', 1, 1),
-	(89, '2023-07-01 15:34:25.143000', '2023-07-01 15:34:25.143000', 4, 1),
-	(90, '2023-07-01 15:34:25.146000', '2023-07-01 15:34:25.146000', 23, 1),
-	(91, '2023-07-01 15:34:25.150000', '2023-07-01 15:34:25.150000', 5, 1),
-	(92, '2023-07-01 15:34:25.153000', '2023-07-01 15:34:25.153000', 38, 1),
-	(93, '2023-07-01 15:34:25.156000', '2023-07-01 15:34:25.156000', 39, 1),
-	(94, '2023-07-01 15:34:25.159000', '2023-07-01 15:34:25.159000', 40, 1),
-	(95, '2023-07-01 15:34:25.162000', '2023-07-01 15:34:25.162000', 41, 1),
-	(96, '2023-07-01 15:34:25.166000', '2023-07-01 15:34:25.166000', 42, 1),
-	(97, '2023-07-01 15:34:25.170000', '2023-07-01 15:34:25.170000', 2, 1),
-	(98, '2023-07-01 15:34:25.174000', '2023-07-01 15:34:25.174000', 3, 1),
-	(99, '2023-07-01 15:34:25.177000', '2023-07-01 15:34:25.177000', 6, 1),
-	(100, '2023-07-01 15:34:25.180000', '2023-07-01 15:34:25.180000', 16, 1),
-	(101, '2023-07-01 15:34:25.183000', '2023-07-01 15:34:25.183000', 17, 1),
-	(102, '2023-07-01 15:34:25.187000', '2023-07-01 15:34:25.187000', 18, 1);
+	(103, '2024-01-04 20:55:36.501000', '2024-01-04 20:55:36.501000', 1, 1),
+	(104, '2024-01-04 20:55:36.505000', '2024-01-04 20:55:36.505000', 4, 1),
+	(105, '2024-01-04 20:55:36.505000', '2024-01-04 20:55:36.505000', 23, 1),
+	(106, '2024-01-04 20:55:36.506000', '2024-01-04 20:55:36.506000', 5, 1),
+	(107, '2024-01-04 20:55:36.506000', '2024-01-04 20:55:36.506000', 38, 1),
+	(108, '2024-01-04 20:55:36.509000', '2024-01-04 20:55:36.509000', 39, 1),
+	(109, '2024-01-04 20:55:36.510000', '2024-01-04 20:55:36.510000', 40, 1),
+	(110, '2024-01-04 20:55:36.510000', '2024-01-04 20:55:36.510000', 41, 1),
+	(111, '2024-01-04 20:55:36.511000', '2024-01-04 20:55:36.511000', 42, 1),
+	(112, '2024-01-04 20:55:36.511000', '2024-01-04 20:55:36.511000', 2, 1),
+	(113, '2024-01-04 20:55:36.511000', '2024-01-04 20:55:36.511000', 3, 1),
+	(114, '2024-01-04 20:55:36.512000', '2024-01-04 20:55:36.512000', 6, 1),
+	(115, '2024-01-04 20:55:36.512000', '2024-01-04 20:55:36.512000', 16, 1),
+	(116, '2024-01-04 20:55:36.513000', '2024-01-04 20:55:36.513000', 17, 1),
+	(117, '2024-01-04 20:55:36.513000', '2024-01-04 20:55:36.513000', 18, 1),
+	(118, '2024-01-04 20:55:36.514000', '2024-01-04 20:55:36.514000', 43, 1);
 
 -- 导出  表 nbsaas-mall2.sys_sequence 结构
 DROP TABLE IF EXISTS `sys_sequence`;
@@ -6022,7 +6034,14 @@ INSERT INTO `user_login_log` (`id`, `add_date`, `last_date`, `account`, `client`
 	(2, '2023-09-14 23:30:56.134000', '2023-09-14 23:30:56.134000', 'ada', 'web front', '127.0.0.1', NULL, '', 1, 1, 327),
 	(3, '2024-01-04 20:48:02.367000', '2024-01-04 20:48:02.367000', 'admin', 'web front', '127.0.0.1', NULL, '123456', 0, 1, NULL),
 	(4, '2024-01-04 20:48:05.866000', '2024-01-04 20:48:05.866000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
-	(5, '2024-01-04 20:51:26.801000', '2024-01-04 20:51:26.801000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327);
+	(5, '2024-01-04 20:51:26.801000', '2024-01-04 20:51:26.801000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
+	(6, '2024-01-04 20:56:34.031000', '2024-01-04 20:56:34.031000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
+	(7, '2024-01-04 20:57:55.674000', '2024-01-04 20:57:55.674000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
+	(8, '2024-01-04 20:59:31.146000', '2024-01-04 20:59:31.146000', 'ada', 'web front', '127.0.0.1', NULL, 'ada.young', 0, 1, NULL),
+	(9, '2024-01-04 20:59:35.466000', '2024-01-04 20:59:35.466000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
+	(10, '2024-01-04 21:12:36.653000', '2024-01-04 21:12:36.653000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
+	(11, '2024-01-04 21:12:57.744000', '2024-01-04 21:12:57.744000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327),
+	(12, '2024-01-04 21:18:34.883000', '2024-01-04 21:18:34.883000', 'ada', 'web admin', '127.0.0.1', NULL, '', 1, 1, 327);
 
 -- 导出  表 nbsaas-mall2.user_oauth_config 结构
 DROP TABLE IF EXISTS `user_oauth_config`;
@@ -6083,7 +6102,7 @@ CREATE TABLE IF NOT EXISTS `user_password` (
   CONSTRAINT `FKbnfetqc91yx2vu6qwk04ceci7` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- 正在导出表  nbsaas-mall2.user_password 的数据：~4 rows (大约)
+-- 正在导出表  nbsaas-mall2.user_password 的数据：~5 rows (大约)
 DELETE FROM `user_password`;
 INSERT INTO `user_password` (`id`, `add_date`, `last_date`, `check_size`, `password`, `salt`, `security_type`, `user_id`) VALUES
 	(283, '2023-05-27 12:52:05.401000', '2023-05-27 12:52:05.401000', NULL, 'cqNEUTvQvOa59iuUpbMQUI308VqsK4X4OA7ng9oRUt4=', 'shTrrd1fs4NNrI0RF8QlhgHiV/Xrx6GQr8gjGa+kFL8=', 0, 303),

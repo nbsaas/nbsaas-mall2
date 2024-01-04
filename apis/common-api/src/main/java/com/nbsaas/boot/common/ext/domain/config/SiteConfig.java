@@ -1,4 +1,4 @@
-package com.nbsaas.boot.config;
+package com.nbsaas.boot.common.ext.domain.config;
 
 
 import lombok.Data;

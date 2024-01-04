@@ -96,7 +96,13 @@ com.{公司域名}.{主工程}.{子工程}.ext.resource
 * axios
 * [nuxt3前端](https://gitee.com/cng1985/nbsaas-life-nuxt3)
 * [vue3管理端](https://gitee.com/cng1985/nbsaas-life-admin)
-
+### 后台演示环境
+[http://mall2.nbsaas.com](http://mall2.nbsaas.com)
+账号 ada 密码123456
+###  后台部分效果图
+![home](documents/images/home.png)
+![menu](documents/images/menu.png)
+![user](documents/images/user.png)
 
 ## 搭建步骤
 

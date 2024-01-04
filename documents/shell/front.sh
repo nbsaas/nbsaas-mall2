@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "mall-front服务  重启开始............."
-SERVER_JAR_NAME="/data/cloud/nbsaas-power-front.jar"
+SERVER_JAR_NAME="/data/cloud/nbsaas-mall2-front.jar"
 
 ID=$(ps -ef | grep "$SERVER_JAR_NAME" | grep -v "grep" | awk '{print $2}')
 echo $ID

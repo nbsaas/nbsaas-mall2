@@ -43,4 +43,7 @@
 
 
     </dependencies>
+    <build>
+        <finalName>nbsaas-mall2-admin</finalName>
+    </build>
 </project>
