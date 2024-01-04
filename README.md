@@ -48,6 +48,7 @@ com.{公司域名}.{主工程}.{子工程}.ext.domain.simple
 com.{公司域名}.{主工程}.{子工程}
 com.{公司域名}.{主工程}.{子工程}.data.entity
 com.{公司域名}.{主工程}.{子工程}.data.repository
+com.{公司域名}.{主工程}.{子工程}.data.mapper
 com.{公司域名}.{主工程}.{子工程}.rest.conver
 com.{公司域名}.{主工程}.{子工程}.rest.resource
 com.{公司域名}.{主工程}.{子工程}.ext.conver
@@ -74,7 +75,7 @@ com.{公司域名}.{主工程}.{子工程}.ext.resource
 ### 技术选型：
 
 #### 服务端
-* Spring、SpringMVC、spring data jpa
+* Spring、SpringMVC、spring data jpa、mybatis
 * Spring boot,Spring cloud,[spring-cloud-tencent](https://gitee.com/Tencent/spring-cloud-tencent) 
 * 安全权限 Shiro
 * 缓存 caffeine
