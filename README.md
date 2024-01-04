@@ -111,5 +111,6 @@ com.{公司域名}.{主工程}.{子工程}.ext.resource
 3. 创建mysql数据库，导入`/documents/sql/nbsaas-mall2.sql`
 4. 修改数据库连接。打开`/gates/admin/main/resources/application.yml`文件，根据实际情况修改`jdbc.url`、`jdbc.username`、`jdbc.password`的值。
 5. 运行程序AdminApplication(后台)，FrontApplication(前台)
-6. 访问系统。前台接口地址：[http://localhost:8081](http://localhost:8081/)，后台接口地址：[http://127.0.0.1:8082/](http://127.0.0.1:8082/)；用户名：ada，密码：123456。
+6. 下载vue3后台管理端[https://gitee.com/cng1985/nbsaas-life-admin](https://gitee.com/cng1985/nbsaas-life-admin
+7. 访问系统。前台接口地址：[http://localhost:8081](http://localhost:8081/)，后台接口地址：[http://127.0.0.1:8082/](http://127.0.0.1:8082/)；用户名：ada，密码：123456。
 
