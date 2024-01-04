@@ -79,7 +79,7 @@ com.{公司域名}.{主工程}.{子工程}.ext.resource
 * Spring、SpringMVC、spring data jpa
 * Spring boot,Spring cloud,[spring-cloud-tencent](https://gitee.com/Tencent/spring-cloud-tencent) 
 * 安全权限 Shiro
-* 缓存 Ehcache
+* 缓存 caffeine
 * 代码生成模板 freemarker
 * 其它 Jsoup、gson
 * 核心采用Request-Response模式，Chain模型。
