@@ -77,7 +77,7 @@ com.{公司域名}.{主工程}.{子工程}.ext.resource
 
 #### 服务端
 * Spring、SpringMVC、spring data jpa
-* Spring boot,Spring cloud,Spring alibaba
+* Spring boot,Spring cloud,[spring-cloud-tencent](https://gitee.com/Tencent/spring-cloud-tencent) 
 * 安全权限 Shiro
 * 缓存 Ehcache
 * 代码生成模板 freemarker
