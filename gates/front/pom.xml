@@ -46,5 +46,12 @@
             <artifactId>guava</artifactId>
             <version>31.1-jre</version>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.vladmihalcea</groupId>-->
+<!--            <artifactId>hibernate-types-52</artifactId>-->
+<!--            <version>2.21.1</version>-->
+<!--        </dependency>-->
+
     </dependencies>
 </project>

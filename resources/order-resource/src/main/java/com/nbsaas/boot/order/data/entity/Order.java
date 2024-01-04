@@ -6,9 +6,13 @@ import com.nbsaas.boot.code.annotation.bean.StoreStateBean;
 import com.nbsaas.boot.code.annotation.data.Dict;
 import com.nbsaas.boot.code.annotation.data.DictItem;
 import com.nbsaas.boot.jpa.data.entity.LongEntity;
+import com.nbsaas.boot.order.ext.domain.simple.OrderExt;
+import io.hypersistence.utils.hibernate.type.json.JsonType;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
+import org.hibernate.annotations.Type;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.Date;
@@ -61,4 +65,8 @@ public class Order extends LongEntity {
     })
     @Comment("订单类型")
     private Integer catalog;
+
+    @Type(type = "io.hypersistence.utils.hibernate.type.json.JsonType")
+    @Column(columnDefinition = "json")
+    private OrderExt orderExt;
 }

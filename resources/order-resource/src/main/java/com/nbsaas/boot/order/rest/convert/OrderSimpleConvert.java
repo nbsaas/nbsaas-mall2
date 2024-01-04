@@ -56,7 +56,7 @@ public OrderSimple convert(Order source) {
                 result.setId(source.getId());
                 result.setAddDate(source.getAddDate());
                 result.setLastDate(source.getLastDate());
-
+    result.setOrderExt(source.getOrderExt());
 
     return result;
 }

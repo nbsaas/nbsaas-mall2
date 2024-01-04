@@ -3,6 +3,8 @@ package com.nbsaas.boot.order.api.domain.simple;
 import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
+
+import com.nbsaas.boot.order.ext.domain.simple.OrderExt;
 import lombok.Data;
 
 /**
@@ -55,5 +57,6 @@ private static final long serialVersionUID = 1L;
             **/
                 private Date lastDate;
 
+    private OrderExt orderExt;
 
 }

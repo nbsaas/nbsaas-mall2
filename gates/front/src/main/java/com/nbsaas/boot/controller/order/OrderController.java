@@ -24,7 +24,7 @@ import javax.annotation.Resource;
 /**
 *  对外控制器
 */
-@RequiresAuthentication
+//@RequiresAuthentication
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -34,7 +34,7 @@ public class OrderController {
     private OrderApi orderApi;
 
 
-    @RequiresPermissions("order")
+//    @RequiresPermissions("order")
     @RequestMapping("/search")
     public PageResponse <OrderSimple> search(OrderSearch request) {
         return orderApi.search(request);
@@ -52,10 +52,10 @@ public class OrderController {
     * @param request
     * @return
     */
-    @RequiresPermissions("order")
-    @CreateData
+//    @RequiresPermissions("order")
+   // @CreateData
     @RequestMapping("/create")
-    public ResponseObject <OrderResponse> create(@Validated(AddOperator.class) OrderRequest request) {
+    public ResponseObject <OrderResponse> create(OrderRequest request) {
         return orderApi.create(request);
     }
 
