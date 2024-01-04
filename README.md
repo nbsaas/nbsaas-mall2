@@ -102,7 +102,7 @@ com.{公司域名}.{主工程}.{子工程}.ext.resource
 
 1. 创建数据库。如使用MySQL，字符集选择为`utf8`或者`utf8mb4`（支持更多特殊字符，推荐）。
 2. 在idea中导入maven项目。点击idea菜单`File` - `open`，选择 `项目所在磁盘位置`。创建好maven项目后，会开始从maven服务器下载第三方jar包（如spring等），需要一定时间，请耐心等待。
-3. 创建mysql数据库，导入`/documents/sql/nbsaas_life.sql`
+3. 创建mysql数据库，导入`/documents/sql/nbsaas-mall2.sql`
 4. 修改数据库连接。打开`/gates/admin/main/resources/application.yml`文件，根据实际情况修改`jdbc.url`、`jdbc.username`、`jdbc.password`的值。
 5. 运行程序AdminApplication(后台)，FrontApplication(前台)
 6. 访问系统。前台接口地址：[http://localhost:8081](http://localhost:8081/)，后台接口地址：[http://127.0.0.1:8082/](http://127.0.0.1:8082/)；用户名：ada，密码：123456。
