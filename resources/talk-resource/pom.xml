@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>area-resource</artifactId>
-            <version>1.0.1</version>
+            <version>${boot.version}</version>
         </dependency>
     </dependencies>
 </project>

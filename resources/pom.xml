@@ -14,7 +14,6 @@
     <modules>
         <module>order-resource</module>
         <module>shop-resource</module>
-        <module>area-resource</module>
         <module>talk-resource</module>
         <module>all-resource</module>
         <module>statistics-resource</module>

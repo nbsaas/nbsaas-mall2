@@ -13,7 +13,6 @@
     <url>http://www.nbsaas.com</url>
     <modules>
         <module>shop-api</module>
-        <module>area-api</module>
         <module>talk-api</module>
         <module>order-api</module>
         <module>statistics-api</module>

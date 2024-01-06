@@ -1,5 +1,8 @@
 package com.nbsaas.boot.controller.area;
 
+import com.nbsaas.boot.area.ext.apis.AreaExtApi;
+import com.nbsaas.boot.area.ext.domain.request.PoiSearchRequest;
+import com.nbsaas.boot.area.ext.domain.response.PoiResponse;
 import com.nbsaas.boot.rest.annotations.AddOperator;
 import com.nbsaas.boot.rest.annotations.DeleteOperator;
 import com.nbsaas.boot.rest.annotations.UpdateOperator;
@@ -33,7 +36,13 @@ public class AreaController {
     @Resource
     private AreaApi areaApi;
 
+    @RequestMapping("/lbs")
+    public ResponseObject<PoiResponse> lbs(PoiSearchRequest poiSearchRequest) {
+        return areaExtApi.lbs(poiSearchRequest);
+    }
 
+    @Resource
+    private AreaExtApi areaExtApi;
     @RequiresPermissions("area")
     @RequestMapping("/search")
     public PageResponse <AreaSimple> search(AreaSearch request) {
