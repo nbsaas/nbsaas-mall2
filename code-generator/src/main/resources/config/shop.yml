@@ -15,5 +15,6 @@ entities:
   - ShopStaff
   - ShopStaffRole
   - ShopTag
+  - Staff
 outputPath: E:\codes\nbsaas\nbsaas-mall2 #项目根目录
 basePackage: com.nbsaas.boot #基础包名

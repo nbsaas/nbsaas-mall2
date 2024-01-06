@@ -30,6 +30,11 @@ private static final long serialVersionUID = 1L;
                 private String phone;
 
             /**
+            * 用户账号id
+            **/
+                private String staffName;
+
+            /**
             * 
             **/
                 private String name;
@@ -40,6 +45,11 @@ private static final long serialVersionUID = 1L;
                 private String shopName;
 
             /**
+            * 用户账号id
+            **/
+                private Long staff;
+
+            /**
             * 主键id
             **/
                 private Long id;
@@ -48,16 +58,6 @@ private static final long serialVersionUID = 1L;
             * 
             **/
                 private String avatar;
-
-            /**
-            * 用户账号id
-            **/
-                private String userName;
-
-            /**
-            * 用户账号id
-            **/
-                private Long user;
 
             /**
             * 添加时间

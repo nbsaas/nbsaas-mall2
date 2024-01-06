@@ -4,6 +4,8 @@ import lombok.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+            import com.nbsaas.boot.rest.enums.DataScope;
+            import com.nbsaas.boot.rest.enums.State;
 /**
 * 响应对象
 */
@@ -18,9 +20,24 @@ private static final long serialVersionUID = 1L;
 
 
         /**
+        * 用户介绍
+        **/
+            private String note;
+
+        /**
         * 地址
         **/
             private String address;
+
+        /**
+        * 用户类型
+        **/
+            private Integer catalog;
+
+        /**
+        * 所在组织
+        **/
+            private String structureName;
 
         /**
         * 性别
@@ -28,9 +45,22 @@ private static final long serialVersionUID = 1L;
             private String sex;
 
         /**
+        * 用户头像
+        **/
+            private String avatar;
+
+        /**
         * 身份证号码
         **/
             private String idNumber;
+
+        /**
+        * 
+        **/
+            //枚举
+            private DataScope dataScope;
+
+            private String dataScopeName;
 
         /**
         * 生日
@@ -53,6 +83,16 @@ private static final long serialVersionUID = 1L;
             private Integer auditState;
 
             private String auditStateName;
+
+        /**
+        * 所在组织
+        **/
+            private Long structure;
+
+        /**
+        * 用户登录次数
+        **/
+            private Integer loginSize;
 
         /**
         * 真实姓名
@@ -78,6 +118,14 @@ private static final long serialVersionUID = 1L;
         * 备注
         **/
             private String comment;
+
+        /**
+        * 
+        **/
+            //枚举
+            private State state;
+
+            private String stateName;
 
         /**
         * 主键id

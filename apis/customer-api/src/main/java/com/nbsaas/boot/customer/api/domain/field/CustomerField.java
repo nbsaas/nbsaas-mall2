@@ -9,9 +9,27 @@ public class CustomerField  {
 
 
     /**
+    * 用户介绍
+    **/
+    public static final String  note = "note";
+
+
+    /**
     * 地址
     **/
     public static final String  address = "address";
+
+
+    /**
+    * 用户类型
+    **/
+    public static final String  catalog = "catalog";
+
+
+    /**
+    * 所在组织
+    **/
+    public static final String  structureName = "structureName";
 
 
     /**
@@ -21,9 +39,21 @@ public class CustomerField  {
 
 
     /**
+    * 用户头像
+    **/
+    public static final String  avatar = "avatar";
+
+
+    /**
     * 身份证号码
     **/
     public static final String  idNumber = "idNumber";
+
+
+    /**
+    * 
+    **/
+    public static final String  dataScope = "dataScope";
 
 
     /**
@@ -48,6 +78,18 @@ public class CustomerField  {
     * 
     **/
     public static final String  auditState = "auditState";
+
+
+    /**
+    * 所在组织
+    **/
+    public static final String  structure = "structure";
+
+
+    /**
+    * 用户登录次数
+    **/
+    public static final String  loginSize = "loginSize";
 
 
     /**
@@ -78,6 +120,12 @@ public class CustomerField  {
     * 备注
     **/
     public static final String  comment = "comment";
+
+
+    /**
+    * 
+    **/
+    public static final String  state = "state";
 
 
     /**

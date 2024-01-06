@@ -17,6 +17,12 @@ public class CustomerResponseConvert  implements Converter<CustomerResponse,Cust
     public CustomerResponse convert(Customer source) {
         CustomerResponse  result = new  CustomerResponse();
         BeanDataUtils.copyProperties(source, result);
+                    if(source.getStructure()!=null){
+                        result.setStructureName(source.getStructure().getName());
+                    }
+                    if(source.getDataScope()!=null){
+                        result.setDataScopeName(String.valueOf(source.getDataScope()));
+                    }
                     if(source.getAuditState()!=null){
                     Map<Integer,String> AuditStateMap=new HashMap<>();
                         AuditStateMap.put(0,"待审核");
@@ -26,6 +32,12 @@ public class CustomerResponseConvert  implements Converter<CustomerResponse,Cust
                     result.setAuditStateName(label);
                     }
                     result.setAuditState(source.getAuditState());
+                    if(source.getStructure()!=null){
+                        result.setStructure(source.getStructure().getId());
+                    }
+                    if(source.getState()!=null){
+                        result.setStateName(String.valueOf(source.getState()));
+                    }
         return result;
     }
 

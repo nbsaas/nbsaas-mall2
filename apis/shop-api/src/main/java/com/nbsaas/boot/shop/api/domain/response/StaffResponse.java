@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString(callSuper = true)
-public class ShopStaffResponse  implements Serializable {
+public class StaffResponse  implements Serializable {
 /**
 * 序列化参数
 */
@@ -18,34 +18,24 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 商家id
+        * 内容
         **/
-            private Long shop;
+            private String note;
 
         /**
-        * 
+        * 联系电话
         **/
             private String phone;
 
         /**
-        * 用户账号id
-        **/
-            private String staffName;
-
-        /**
-        * 
+        * 客户名称
         **/
             private String name;
 
         /**
-        * 商家id
+        * 头像
         **/
-            private String shopName;
-
-        /**
-        * 用户账号id
-        **/
-            private Long staff;
+            private String avatar;
 
         /**
         * 主键id
@@ -53,19 +43,9 @@ private static final long serialVersionUID = 1L;
             private Long id;
 
         /**
-        * 
-        **/
-            private String avatar;
-
-        /**
         * 添加时间
         **/
             private Date addDate;
-
-        /**
-        * 用户登录次数
-        **/
-            private Integer loginSize;
 
         /**
         * 最新修改时间

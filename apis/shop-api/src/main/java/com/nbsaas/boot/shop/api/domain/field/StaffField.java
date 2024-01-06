@@ -4,32 +4,32 @@ package com.nbsaas.boot.shop.api.domain.field;
 /**
 *   字段映射类
 */
-public class ShopStaffField  {
+public class StaffField  {
 
 
 
     /**
-    * 商家id
+    * 内容
     **/
-    public static final String  shop = "shop";
+    public static final String  note = "note";
 
 
     /**
-    * 用户账号id
+    * 联系电话
     **/
-    public static final String  staffName = "staffName";
+    public static final String  phone = "phone";
 
 
     /**
-    * 商家id
+    * 客户名称
     **/
-    public static final String  shopName = "shopName";
+    public static final String  name = "name";
 
 
     /**
-    * 用户账号id
+    * 头像
     **/
-    public static final String  staff = "staff";
+    public static final String  avatar = "avatar";
 
 
     /**
@@ -42,12 +42,6 @@ public class ShopStaffField  {
     * 添加时间
     **/
     public static final String  addDate = "addDate";
-
-
-    /**
-    * 用户登录次数
-    **/
-    public static final String  loginSize = "loginSize";
 
 
     /**

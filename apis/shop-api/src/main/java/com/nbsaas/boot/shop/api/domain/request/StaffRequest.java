@@ -9,7 +9,7 @@ import com.nbsaas.boot.rest.request.RequestId;
 * 请求对象
 */
 @Data
-public class ShopStaffRequest implements Serializable,RequestId {
+public class StaffRequest implements Serializable,RequestId {
 
 /**
 * 序列化参数
@@ -19,24 +19,24 @@ private static final long serialVersionUID = 1L;
 
 
         /**
-        * 商家id
+        * 内容
         **/
-            private Long shop;
+            private String note;
 
         /**
-        * 用户账号id
+        * 联系电话
         **/
-            //private String staffNameName;
+            private String phone;
 
         /**
-        * 商家id
+        * 客户名称
         **/
-            //private String shopNameName;
+            private String name;
 
         /**
-        * 用户账号id
+        * 头像
         **/
-            private Long staff;
+            private String avatar;
 
         /**
         * 主键id
@@ -47,11 +47,6 @@ private static final long serialVersionUID = 1L;
         * 添加时间
         **/
             private Date addDate;
-
-        /**
-        * 用户登录次数
-        **/
-            private Integer loginSize;
 
         /**
         * 最新修改时间

@@ -21,24 +21,24 @@ public ShopStaffSimple convert(ShopStaff source) {
                 if(source.getShop()!=null){
                     result.setShop(source.getShop().getId());
                 }
-                if(source.getUser()!=null){
-                    result.setPhone(source.getUser().getPhone());
+                if(source.getStaff()!=null){
+                    result.setPhone(source.getStaff().getPhone());
                 }
-                if(source.getUser()!=null){
-                    result.setName(source.getUser().getName());
+                if(source.getStaff()!=null){
+                    result.setStaffName(source.getStaff().getName());
+                }
+                if(source.getStaff()!=null){
+                    result.setName(source.getStaff().getName());
                 }
                 if(source.getShop()!=null){
                     result.setShopName(source.getShop().getName());
                 }
+                if(source.getStaff()!=null){
+                    result.setStaff(source.getStaff().getId());
+                }
                 result.setId(source.getId());
-                if(source.getUser()!=null){
-                    result.setAvatar(source.getUser().getAvatar());
-                }
-                if(source.getUser()!=null){
-                    result.setUserName(source.getUser().getName());
-                }
-                if(source.getUser()!=null){
-                    result.setUser(source.getUser().getId());
+                if(source.getStaff()!=null){
+                    result.setAvatar(source.getStaff().getAvatar());
                 }
                 result.setAddDate(source.getAddDate());
                 result.setLoginSize(source.getLoginSize());

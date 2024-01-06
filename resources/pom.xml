@@ -23,6 +23,7 @@
         <module>promote-resource</module>
         <module>customer-resource</module>
         <module>common-resource</module>
+        <module>store-resource</module>
     </modules>
 
     <properties>
@@ -55,6 +56,11 @@
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
             <artifactId>system-resource</artifactId>
+            <version>${boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.nbsaas.boot</groupId>
+            <artifactId>trade-resource</artifactId>
             <version>${boot.version}</version>
         </dependency>
         <dependency>

@@ -4,6 +4,7 @@ import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.code.annotation.data.Dict;
 import com.nbsaas.boot.code.annotation.data.DictItem;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
+import com.nbsaas.boot.user.data.entity.AbstractUser;
 import lombok.Data;
 import org.hibernate.annotations.Comment;
 
@@ -11,14 +12,12 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
-//@org.hibernate.annotations.Table(appliesTo = "user_info",comment = "客户表")
 @CreateByUser
 @ComposeView
 @Data
-@FormAnnotation(title = "客户", model = "客户", menu = "1,60,61",searchWidth = "100",viewWidth = "120")
+@FormAnnotation(title = "客户", model = "客户")
 @Entity
-@Table(name = "user_info")
-public class Customer extends AbstractEntity {
+public class Customer extends AbstractUser {
 
     @Comment("客户名称")
     @SearchItem(name = "name",key = "name",label = "客户名称")

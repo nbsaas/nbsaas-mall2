@@ -1,4 +1,4 @@
-package com.nbsaas.boot.order.api.domain.simple;
+package com.nbsaas.boot.shop.api.domain.simple;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -9,7 +9,7 @@ import lombok.Data;
 * 列表对象
 */
 @Data
-public class OrderSimple implements Serializable {
+public class StaffSimple implements Serializable {
 
 /**
 * 序列化参数
@@ -20,25 +20,24 @@ private static final long serialVersionUID = 1L;
 
 
             /**
-            * 
+            * 内容
             **/
-                private Integer sourceClient;
-
-                private String sourceClientName;
+                private String note;
 
             /**
-            * 
+            * 联系电话
             **/
-                private Integer catalog;
-
-                private String catalogName;
+                private String phone;
 
             /**
-            * 
+            * 客户名称
             **/
-                private Integer state;
+                private String name;
 
-                private String stateName;
+            /**
+            * 头像
+            **/
+                private String avatar;
 
             /**
             * 主键id

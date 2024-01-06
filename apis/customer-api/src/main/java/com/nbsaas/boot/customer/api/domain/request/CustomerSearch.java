@@ -29,6 +29,15 @@ private static final long serialVersionUID = 1L;
     @Search(name = "realName",operator = Operator.like)
     private String realName;
 
+    @Search(name = "structure.id",operator = Operator.eq)
+    private Long structure;
+
+
+            /**
+            * 用户介绍
+            **/
+            @Search(name = "note",operator = Operator.like)
+            private String note;
 
             /**
             * 地址
@@ -37,10 +46,22 @@ private static final long serialVersionUID = 1L;
             private String address;
 
             /**
+            * 用户类型
+            **/
+            @Search(name = "catalog",operator = Operator.eq)
+            private Integer catalog;
+
+            /**
             * 性别
             **/
             @Search(name = "sex",operator = Operator.like)
             private String sex;
+
+            /**
+            * 用户头像
+            **/
+            @Search(name = "avatar",operator = Operator.like)
+            private String avatar;
 
             /**
             * 身份证号码
@@ -59,6 +80,12 @@ private static final long serialVersionUID = 1L;
             **/
             @Search(name = "selfFile",operator = Operator.like)
             private String selfFile;
+
+            /**
+            * 用户登录次数
+            **/
+            @Search(name = "loginSize",operator = Operator.eq)
+            private Integer loginSize;
 
             /**
             * 身份证前面

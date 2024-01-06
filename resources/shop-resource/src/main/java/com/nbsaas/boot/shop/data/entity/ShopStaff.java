@@ -14,9 +14,9 @@ import java.util.Date;
 
 @BeanExt(
         items = {
-                @FormExtField(fieldName = "avatar", parentField = "avatar", parent = "user", fieldClass = String.class),
-                @FormExtField(fieldName = "name", parentField = "name", parent = "user", fieldClass = String.class),
-                @FormExtField(fieldName = "phone", parentField = "phone", parent = "user", fieldClass = String.class)
+                @FormExtField(fieldName = "avatar", parentField = "avatar", parent = "staff", fieldClass = String.class),
+                @FormExtField(fieldName = "name", parentField = "name", parent = "staff", fieldClass = String.class),
+                @FormExtField(fieldName = "phone", parentField = "phone", parent = "staff", fieldClass = String.class)
 
         }
 )
@@ -35,7 +35,7 @@ public class ShopStaff extends LongEntity {
     @FieldConvert
     @FieldName
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private Staff staff;
 
     @FormField(title = "商家名称", grid = true, col = 22, width = "260", ignore = true)
     @SearchItem(label = "商家", name = "shop", key = "shop.id", operator = Operator.eq, classType = Long.class)

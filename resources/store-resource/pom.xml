@@ -6,10 +6,12 @@
         <artifactId>resources</artifactId>
         <version>1.0.1</version>
     </parent>
-    <artifactId>customer-resource</artifactId>
+
+    <groupId>com.nbsaas.life</groupId>
+    <artifactId>store-resource</artifactId>
     <packaging>jar</packaging>
 
-    <name>customer-resource</name>
+    <name>store-resource</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -25,17 +27,13 @@
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
-            <artifactId>customer-api</artifactId>
+            <artifactId>shop-resource</artifactId>
             <version>1.0.1</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.nbsaas.boot</groupId>
-            <artifactId>common-api</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>com.nbsaas.boot</groupId>
-            <artifactId>area-resource</artifactId>
+            <artifactId>customer-resource</artifactId>
             <version>1.0.1</version>
             <scope>compile</scope>
         </dependency>
