@@ -26,7 +26,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<mybatis.version>3.0.1</mybatis.version>
 		<nbsaas.version>1.1.5-2023</nbsaas.version>
-		<boot.version>1.0.13-2023</boot.version>
+		<boot.version>1.1.1-2024</boot.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
