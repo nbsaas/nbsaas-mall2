@@ -1,14 +1,12 @@
 package com.nbsaas.boot.shop.data.entity;
 
 
-import com.nbsaas.boot.code.annotation.FieldConvert;
-import com.nbsaas.boot.code.annotation.FormAnnotation;
-import com.nbsaas.boot.code.annotation.FormField;
-import com.nbsaas.boot.code.annotation.SearchItem;
+import com.nbsaas.boot.code.annotation.*;
 import com.nbsaas.boot.code.annotation.bean.StoreStateBean;
 import com.nbsaas.boot.jpa.data.entity.AbstractEntity;
 import com.nbsaas.boot.rest.enums.StoreState;
 import com.nbsaas.boot.rest.filter.Operator;
+import com.nbsaas.boot.shop.api.domain.enums.ShopState;
 import com.nbsaas.boot.user.data.entity.UserInfo;
 import com.nbsaas.boot.area.data.entity.Area;
 import lombok.Data;
@@ -17,6 +15,11 @@ import org.hibernate.annotations.Comment;
 import javax.persistence.*;
 import java.util.*;
 
+@BeanExt(
+        items = {
+                @FormExtField(fieldName = "ShopCategoryLabel", parentField = "cname", parent = "shopCategory", fieldClass = String.class)
+        }
+)
 @StoreStateBean
 @org.hibernate.annotations.Table(appliesTo = "shop", comment = "店铺")
 @Data
@@ -37,12 +40,20 @@ public class Shop extends AbstractEntity {
     @Comment("地址")
     private String address;
 
+    @Comment("店铺状态")
+    private ShopState shopState;
+
     @Comment("营业时间")
     @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "shop_time")
     @MapKeyColumn(name = "week_index", length = 100)
     @OrderBy("week asc")
     private Map<Integer, ShopTime> times = new HashMap<>();
+
+    @FieldName
+    @FieldConvert
+    @ManyToOne(fetch = FetchType.LAZY)
+    private ShopCategory shopCategory;
 
     @Comment("商家所有分类")
     @ManyToMany(fetch = FetchType.EAGER)
@@ -161,6 +172,12 @@ public class Shop extends AbstractEntity {
 
     @SearchItem(label = "storeState", name = "storeState",classType = StoreState.class,operator = Operator.eq)
     private StoreState storeState;
+
+    public static Shop fromId(Long shop) {
+        Shop result=new Shop();
+        result.setId(shop);
+        return result;
+    }
 
 
     public ShopTime getCurDay() {

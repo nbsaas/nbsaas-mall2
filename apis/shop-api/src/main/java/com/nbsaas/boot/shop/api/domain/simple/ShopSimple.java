@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.math.BigDecimal;
 import lombok.Data;
+            import com.nbsaas.boot.shop.api.domain.enums.ShopState;
             import com.nbsaas.boot.rest.enums.StoreState;
 
 /**
@@ -51,6 +52,13 @@ private static final long serialVersionUID = 1L;
                 private Integer grouponNum;
 
             /**
+            * 
+            **/
+                private ShopState shopState;
+
+                private String shopStateName;
+
+            /**
             * POI唯一标识
             **/
                 private String poi;
@@ -59,6 +67,11 @@ private static final long serialVersionUID = 1L;
             * 照片数量
             **/
                 private Integer photos;
+
+            /**
+            * 
+            **/
+                private Long shopCategory;
 
             /**
             * 环境评分
@@ -84,6 +97,11 @@ private static final long serialVersionUID = 1L;
             * 主键id
             **/
                 private Long id;
+
+            /**
+            * 
+            **/
+                private String ShopCategoryLabel;
 
             /**
             * 经度
@@ -129,6 +147,11 @@ private static final long serialVersionUID = 1L;
             * 总体评分
             **/
                 private Float overallRating;
+
+            /**
+            * 
+            **/
+                private String shopCategoryName;
 
             /**
             * 图片数量

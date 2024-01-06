@@ -1,7 +1,7 @@
 package com.nbsaas.boot.aop;
 
 
-import com.nbsaas.boot.user.ext.domain.response.UserInfoExtResponse;
+import com.nbsaas.boot.shop.api.domain.response.ShopStaffResponse;
 import com.nbsaas.boot.utils.UserUtils;
 import org.apache.commons.beanutils.BeanUtils;
 import org.aspectj.lang.JoinPoint;
@@ -23,12 +23,13 @@ public class CommonPointcuts {
         Object[] args = point.getArgs();
         if (args != null && args.length > 0) {
             Object object = args[0];
-            UserInfoExtResponse user = UserUtils.user();
+            ShopStaffResponse user = UserUtils.user();
 
-            setValue(object, "createUser", user.getId());
+            setValue(object, "createUser", user.getStaff());
             setValue(object, "addDate", new Date());
+            setValue(object, "staff", user.getId());
 
-            setValue(object, "updateUser", user.getId());
+            setValue(object, "updateUser", user.getStaff());
             setValue(object, "lastDate", new Date());
         }
         // ...
@@ -40,7 +41,7 @@ public class CommonPointcuts {
         Object[] args = point.getArgs();
         if (args != null && args.length > 0) {
             Object object = args[0];
-            UserInfoExtResponse user = UserUtils.user();
+            ShopStaffResponse user = UserUtils.user();
 
             setValue(object, "updateUser", user.getId());
         }

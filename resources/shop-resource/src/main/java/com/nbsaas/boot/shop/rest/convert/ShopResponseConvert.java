@@ -18,11 +18,23 @@ public class ShopResponseConvert  implements Converter<ShopResponse,Shop> {
                     if(source.getCity()!=null){
                         result.setCity(source.getCity().getId());
                     }
+                    if(source.getShopState()!=null){
+                        result.setShopStateName(String.valueOf(source.getShopState()));
+                    }
+                    if(source.getShopCategory()!=null){
+                        result.setShopCategory(source.getShopCategory().getId());
+                    }
                     if(source.getProvince()!=null){
                         result.setProvince(source.getProvince().getId());
                     }
+                    if(source.getShopCategory()!=null){
+                    result.setShopCategoryLabel(source.getShopCategory().getCname());
+                    }
                     if(source.getArea()!=null){
                         result.setArea(source.getArea().getId());
+                    }
+                    if(source.getShopCategory()!=null){
+                        result.setShopCategoryName(source.getShopCategory().getName());
                     }
                     if(source.getStoreState()!=null){
                         result.setStoreStateName(String.valueOf(source.getStoreState()));

@@ -26,8 +26,15 @@ public ShopSimple convert(Shop source) {
                 result.setFacilityRating(source.getFacilityRating());
                 result.setLatitude(source.getLatitude());
                 result.setGrouponNum(source.getGrouponNum());
+                if(source.getShopState()!=null){
+                    result.setShopStateName(String.valueOf(source.getShopState()));
+                }
+                result.setShopState(source.getShopState());
                 result.setPoi(source.getPoi());
                 result.setPhotos(source.getPhotos());
+                if(source.getShopCategory()!=null){
+                    result.setShopCategory(source.getShopCategory().getId());
+                }
                 result.setEnvironmentRating(source.getEnvironmentRating());
                 if(source.getProvince()!=null){
                     result.setProvince(source.getProvince().getId());
@@ -35,6 +42,9 @@ public ShopSimple convert(Shop source) {
                 result.setPrice(source.getPrice());
                 result.setState(source.getState());
                 result.setId(source.getId());
+                if(source.getShopCategory()!=null){
+                    result.setShopCategoryLabel(source.getShopCategory().getCname());
+                }
                 result.setLongitude(source.getLongitude());
                 result.setTasteRating(source.getTasteRating());
                 result.setLastDate(source.getLastDate());
@@ -46,6 +56,9 @@ public ShopSimple convert(Shop source) {
                 result.setWebsite(source.getWebsite());
                 result.setAddress(source.getAddress());
                 result.setOverallRating(source.getOverallRating());
+                if(source.getShopCategory()!=null){
+                    result.setShopCategoryName(source.getShopCategory().getName());
+                }
                 result.setImageNum(source.getImageNum());
                 result.setServiceRating(source.getServiceRating());
                 result.setShopHours(source.getShopHours());

@@ -1,9 +1,11 @@
-projectName: ad #多项目的时候模块名
+projectName: order #多项目的时候模块名
 multiple: true #是否多模块项目
 templateDir: /template/jpa #代码模块文件夹
-entityPackage: com.nbsaas.boot.ad.data.entity
+entityPackage: com.nbsaas.boot.order.data.entity
 entities:
-  - Ad
-  - AdPosition
+  - Order
+  - OrderAddress
+  - OrderHotelItem
+  - OrderItem
 outputPath: E:\codes\nbsaas\nbsaas-mall2 #项目根目录
 basePackage: com.nbsaas.boot #基础包名

@@ -14,6 +14,8 @@ import com.nbsaas.boot.shop.api.domain.request.ShopStaffSearch;
 import com.nbsaas.boot.shop.api.domain.response.ShopStaffResponse;
 import com.nbsaas.boot.shop.api.domain.simple.ShopStaffSimple;
 import com.nbsaas.boot.shop.api.apis.ShopStaffApi;
+import com.nbsaas.boot.shop.ext.apis.ShopStaffExtApi;
+import com.nbsaas.boot.shop.ext.domain.request.ShopStaffExtRequest;
 import org.apache.shiro.authz.annotation.RequiresAuthentication;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.validation.annotation.Validated;
@@ -32,6 +34,9 @@ public class ShopStaffController {
 
     @Resource
     private ShopStaffApi shopStaffApi;
+
+    @Resource
+    private ShopStaffExtApi shopStaffExtApi;
 
 
     @RequiresPermissions("shopStaff")
@@ -55,8 +60,8 @@ public class ShopStaffController {
     @RequiresPermissions("shopStaff")
     @CreateData
     @RequestMapping("/create")
-    public ResponseObject <ShopStaffResponse> create(@Validated(AddOperator.class) ShopStaffRequest request) {
-        return shopStaffApi.create(request);
+    public ResponseObject <?> create(@Validated(AddOperator.class) ShopStaffExtRequest request) {
+        return shopStaffExtApi.create(request);
     }
 
    @RequiresPermissions("shopStaff")

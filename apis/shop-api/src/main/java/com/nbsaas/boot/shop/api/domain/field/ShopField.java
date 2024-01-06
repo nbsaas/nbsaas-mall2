@@ -45,6 +45,12 @@ public class ShopField  {
 
 
     /**
+    * 
+    **/
+    public static final String  shopState = "shopState";
+
+
+    /**
     * POI唯一标识
     **/
     public static final String  poi = "poi";
@@ -54,6 +60,12 @@ public class ShopField  {
     * 照片数量
     **/
     public static final String  photos = "photos";
+
+
+    /**
+    * 
+    **/
+    public static final String  shopCategory = "shopCategory";
 
 
     /**
@@ -138,6 +150,12 @@ public class ShopField  {
     * 总体评分
     **/
     public static final String  overallRating = "overallRating";
+
+
+    /**
+    * 
+    **/
+    public static final String  shopCategoryName = "shopCategoryName";
 
 
     /**

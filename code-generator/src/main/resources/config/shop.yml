@@ -8,12 +8,15 @@ entities:
   - ShopCategory
   - ShopCheckIn
   - ShopConfig
+  - ShopHotWord
   - ShopImage
   - ShopReview
   - ShopRole
   - ShopRoleMenu
+  - ShopSearchWord
   - ShopStaff
   - ShopStaffRole
+  - ShopStaffStructure
   - ShopTag
   - Staff
 outputPath: E:\codes\nbsaas\nbsaas-mall2 #项目根目录

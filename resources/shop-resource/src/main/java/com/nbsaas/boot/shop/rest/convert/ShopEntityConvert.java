@@ -7,6 +7,7 @@ import org.springframework.beans.BeanUtils;
 import com.nbsaas.boot.rest.api.Converter;
 import com.nbsaas.boot.utils.BeanDataUtils;
             import com.nbsaas.boot.area.data.entity.Area;
+            import com.nbsaas.boot.shop.data.entity.ShopCategory;
             import com.nbsaas.boot.area.data.entity.Area;
             import com.nbsaas.boot.area.data.entity.Area;
             import com.nbsaas.boot.user.data.entity.UserInfo;
@@ -25,6 +26,11 @@ public class ShopEntityConvert  implements Converter<Shop, ShopRequest> {
                     Area city =new Area();
                     city.setId(source.getCity());
                     result.setCity(city);
+                    }
+                    if(source.getShopCategory()!=null){
+                    ShopCategory shopCategory =new ShopCategory();
+                    shopCategory.setId(source.getShopCategory());
+                    result.setShopCategory(shopCategory);
                     }
                     if(source.getProvince()!=null){
                     Area province =new Area();

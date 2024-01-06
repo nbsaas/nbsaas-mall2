@@ -5,6 +5,7 @@ import java.util.Date;
 import java.math.BigDecimal;
 import lombok.Data;
 import com.nbsaas.boot.rest.request.RequestId;
+            import com.nbsaas.boot.shop.api.domain.enums.ShopState;
             import com.nbsaas.boot.rest.enums.StoreState;
 /**
 * 请求对象
@@ -50,6 +51,11 @@ private static final long serialVersionUID = 1L;
             private Integer grouponNum;
 
         /**
+        * 
+        **/
+            private ShopState shopState;
+
+        /**
         * POI唯一标识
         **/
             private String poi;
@@ -58,6 +64,11 @@ private static final long serialVersionUID = 1L;
         * 照片数量
         **/
             private Integer photos;
+
+        /**
+        * 
+        **/
+            private Long shopCategory;
 
         /**
         * 环境评分
@@ -128,6 +139,11 @@ private static final long serialVersionUID = 1L;
         * 总体评分
         **/
             private Float overallRating;
+
+        /**
+        * 
+        **/
+            //private String shopCategoryNameName;
 
         /**
         * 图片数量

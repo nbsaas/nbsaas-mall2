@@ -6,4 +6,5 @@ import java.io.Serializable;
 
 public interface ShopConfigRepository  extends  JpaRepositoryImplementation<ShopConfig, Serializable>{
 
+    ShopConfig findByClassNameAndShopId(String simpleName, Long shop);
 }
