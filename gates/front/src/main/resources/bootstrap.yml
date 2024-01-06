@@ -1,6 +1,6 @@
 spring:
   application:
-    name: lifeFront
+    name: mall2Front
   cloud:
     polaris:
       address: grpc://119.91.66.223:8091

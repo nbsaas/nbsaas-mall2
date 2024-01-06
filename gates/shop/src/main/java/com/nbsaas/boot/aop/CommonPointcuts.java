@@ -28,14 +28,23 @@ public class CommonPointcuts {
             setValue(object, "createUser", user.getStaff());
             setValue(object, "addDate", new Date());
             setValue(object, "staff", user.getId());
-
+            setValue(object, "shop", user.getShop());
             setValue(object, "updateUser", user.getStaff());
             setValue(object, "lastDate", new Date());
         }
         // ...
     }
 
+    @Before("@annotation(com.nbsaas.boot.rest.annotations.SearchData)")
+    public void search(JoinPoint point) {
 
+        Object[] args = point.getArgs();
+        if (args != null && args.length > 0) {
+            Object object = args[0];
+            ShopStaffResponse user = UserUtils.user();
+            setValue(object, "shop", user.getShop());
+        }
+    }
     @Before("@annotation(com.nbsaas.boot.rest.annotations.UpdateData)")
     public void updateData(JoinPoint point) {
         Object[] args = point.getArgs();

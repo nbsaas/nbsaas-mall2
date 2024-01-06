@@ -1,6 +1,6 @@
 spring:
   application:
-    name: lifeAdmin
+    name: mall2Admin
   cloud:
     polaris:
       address: grpc://119.91.66.223:8091

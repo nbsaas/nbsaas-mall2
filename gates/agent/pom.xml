@@ -25,4 +25,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+    <build>
+        <finalName>nbsaas-mall2-agent</finalName>
+    </build>
 </project>
