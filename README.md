@@ -4,9 +4,11 @@
 [![使用IntelliJ IDEA开发维护](https://img.shields.io/badge/IntelliJ%20IDEA-提供支持-blue.svg)](https://www.jetbrains.com/idea/)
 [![GitHub forks](https://img.shields.io/github/stars/nbsaas/nbsaas-boot.svg?style=social&logo=github&label=Stars)](https://github.com/nbsaas/nbsaas-boot)
 
-> 去好店，让你快速的找到喜欢的店铺。
-## 最近项目正在进行重构，spring boot+nuxt3+vue3，前后端分离，请大家耐心等待
-![输入图片说明](documents/images/banner.png)
+> 去好店，基于中台理念，一个平台，多个应用，根据不通的应用场景使用不同的应用，支持电商平台、外卖平台、酒店平台、综合平台。
+> 以及辅助支持业务的pc端，小程序端，app端。
+> 场景+应用+平台，去好店，是一个平台，一个应用。
+
+![架构图](documents/images/mall2.png)
 
 
 ## 编码规范
